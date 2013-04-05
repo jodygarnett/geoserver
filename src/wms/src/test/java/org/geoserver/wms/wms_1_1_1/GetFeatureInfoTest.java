@@ -16,11 +16,10 @@ import java.util.logging.Level;
 
 import javax.xml.namespace.QName;
 
-import org.junit.Test;
-
 import org.geoserver.catalog.Catalog;
 import org.geoserver.catalog.CatalogBuilder;
 import org.geoserver.catalog.CoverageInfo;
+import org.geoserver.catalog.FeatureTypeInfo;
 import org.geoserver.catalog.LayerInfo;
 import org.geoserver.catalog.ProjectionPolicy;
 import org.geoserver.catalog.StyleInfo;
@@ -34,14 +33,21 @@ import org.geoserver.wfs.WFSInfo;
 import org.geoserver.wms.WMSInfo;
 import org.geoserver.wms.WMSTestSupport;
 import org.geotools.factory.CommonFactoryFinder;
+import org.geotools.geometry.jts.ReferencedEnvelope;
+import org.geotools.geometry.jts.ReferencedEnvelope3D;
+import org.geotools.referencing.CRS;
 import org.geotools.styling.FeatureTypeStyle;
 import org.geotools.styling.Rule;
 import org.geotools.styling.Style;
 import org.geotools.styling.StyleFactory;
 import org.geotools.util.logging.Logging;
+import org.junit.Test;
 import org.opengis.filter.Filter;
 import org.opengis.filter.FilterFactory;
 import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+
+import com.sun.xml.internal.messaging.saaj.util.ByteOutputStream;
 
 public class GetFeatureInfoTest extends WMSTestSupport {
     
@@ -50,7 +56,9 @@ public class GetFeatureInfoTest extends WMSTestSupport {
     public static QName TASMANIA_BM = new QName(WCS_URI, "BlueMarble", WCS_PREFIX);
     public static QName SQUARES = new QName(MockData.CITE_URI, "squares", MockData.CITE_PREFIX);
     public static QName CUSTOM = new QName(MockData.CITE_URI, "custom", MockData.CITE_PREFIX);
-
+    
+    public static QName POINT_TEST_2D = new QName(MockData.CITE_URI, "point_test_2d", MockData.CITE_PREFIX);
+    public static QName POINT_TEST_3D = new QName(MockData.CITE_URI, "point_test_3d", MockData.CITE_PREFIX);
 
     @Override
     protected void onSetUp(SystemTestData testData) throws Exception {
@@ -88,8 +96,36 @@ public class GetFeatureInfoTest extends WMSTestSupport {
         testData.addStyle("raster","raster.sld",GetFeatureInfoTest.class,catalog);
         testData.addStyle("rasterScales","rasterScales.sld",GetFeatureInfoTest.class,catalog);
         testData.addStyle("squares","squares.sld",GetFeatureInfoTest.class,catalog);
+        testData.addStyle("point_test","point_test.sld",GetFeatureInfoTest.class,catalog);
+        
         testData.addVectorLayer(SQUARES,Collections.EMPTY_MAP,"squares.properties",
                 GetFeatureInfoTest.class,catalog);
+        
+        
+        Map<LayerProperty, Object> properties = new HashMap<SystemTestData.LayerProperty, Object>();
+        properties.put(LayerProperty.LATLON_ENVELOPE,
+        		new ReferencedEnvelope(130.875825803896, 130.898939990319, -16.4491956225999, -16.4338185791628, CRS.decode("EPSG:4326") )
+        );
+        properties.put(LayerProperty.ENVELOPE,
+        		new ReferencedEnvelope(130.875825803896, 130.898939990319, -16.4491956225999, -16.4338185791628, CRS.decode("EPSG:4326") )
+        );
+        properties.put(LayerProperty.SRS,4326);
+        
+		testData.addVectorLayer(POINT_TEST_2D, properties, "point_test_2d.properties",
+                GetFeatureInfoTest.class,catalog);
+		
+		
+		properties = new HashMap<SystemTestData.LayerProperty, Object>();
+		properties.put(LayerProperty.LATLON_ENVELOPE,
+        		new ReferencedEnvelope(130.875825803896, 130.898939990319, -16.4491956225999, -16.4338185791628, CRS.decode("EPSG:4326") )
+        );
+        properties.put(LayerProperty.ENVELOPE,
+        		new ReferencedEnvelope3D(130.875825803896, 130.898939990319, -16.4491956225999, -16.4338185791628, 95.1442741322517, 98.1069524121285, CRS.decode("EPSG:4326") )
+        );
+        properties.put(LayerProperty.SRS,4939);
+        testData.addVectorLayer(POINT_TEST_3D,properties,"point_test_3d.properties",
+                GetFeatureInfoTest.class,catalog);
+        
         Map propertyMap = new HashMap();
         propertyMap.put(LayerProperty.STYLE,"raster");
         testData.addRasterLayer(TASMANIA_BM, "tazbm.tiff","tiff",propertyMap,
@@ -104,6 +140,54 @@ public class GetFeatureInfoTest extends WMSTestSupport {
 
     
     /**
+	     * Test GetFeatureInfo with 3D content, and the result returns the expected point.
+	     */
+	    @Test 
+	    public void testPoint3d() throws Exception {
+	    	
+	    	FeatureTypeInfo info = getCatalog().getFeatureTypeByName(MockData.CITE_URI,"point_test_3d");
+	//    	
+	//    	FeatureSource<FeatureType, Feature> featureSource = (FeatureSource) info.getFeatureSource(null,  null );
+	//    	ReferencedEnvelope b = featureSource.getBounds();
+	    	
+	    	
+	    	ReferencedEnvelope b = info.getLatLonBoundingBox();
+	        String bbox = b.minX()+","+b.minY()+","+b.maxX()+","+b.maxY()+"&srs=EPSG:4326";
+
+	        // first request against 2D dataset
+	    	String layer2d = getLayerId(POINT_TEST_2D);
+	    	String base2d = "wms?version=1.1.1&format=png&info_format=text/html&request=GetFeatureInfo&layers="
+	                + layer2d + "&query_layers=" + layer2d + "&styles=point_test&bbox="+bbox+"&feature_count=10";
+	        
+	        Document dom2d = getAsDOM(base2d + "&width=" + 10 + "&height=" + 10 + "&x="+5+"&y=" + 5);
+	        checkServiceException( dom2d );
+	        //print(dom2d);	  
+	        assertXpathEvaluatesTo("11", "count(/html/body/table/tr)", dom2d);
+
+	        // second request against 3D dataset
+	        String layer3d = getLayerId(POINT_TEST_3D);
+	    	String base3d = "wms?version=1.1.1&format=png&info_format=text/html&request=GetFeatureInfo&layers="
+	                + layer3d + "&query_layers=" + layer3d + "&styles=point_test&bbox="+bbox+"&feature_count=10";
+	        
+	        Document dom3d = getAsDOM(base3d + "&width=" + 10 + "&height=" + 10 + "&x="+5+"&y=" + 5);
+	        checkServiceException( dom3d );
+	        print(dom3d);	        
+	        assertXpathEvaluatesTo("11", "count(/html/body/table/tr)", dom3d);
+	        
+	        
+	    }
+	    public void checkServiceException( Document dom ) throws Exception {
+	    	if( dom.getFirstChild().getNodeName().equals("ServiceExceptionReport")){
+	    		ByteOutputStream buffer = new ByteOutputStream();
+	    		print(dom, buffer );
+	    		String msg = buffer.toString();
+	    		throw new IllegalStateException( "Service Exception:"+msg );
+	        }	        
+	    }
+
+
+
+	/**
      * Tests GML output does not break when asking for an area that has no data with
      * GML feature bounding enabled
      * 
