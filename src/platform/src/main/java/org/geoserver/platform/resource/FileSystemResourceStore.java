@@ -28,6 +28,7 @@ public class FileSystemResourceStore implements ResourceStore {
     protected FileSystemResourceStore(){
         // Used by Spring, baseDirectory set by subclass
     }
+
     
     /**
      * LockProvider used during {@link Resource#out()}.
@@ -83,7 +84,17 @@ public class FileSystemResourceStore implements ResourceStore {
             throw new IllegalArgumentException("Unable to acess directory " + resourceDirectory);
         }
     }
-
+    
+    @Override
+    public void addListener(String path, ResourceListener listener) {
+        // TODO Auto-generated method stub
+    }
+    @Override
+    public void removeListener(String path, ResourceListener listener) {
+        // TODO Auto-generated method stub
+        
+    }
+    
     @Override
     public Resource get(String path) {
         path = Paths.valid(path);

@@ -60,6 +60,7 @@ import org.geoserver.platform.ContextLoadedEvent;
 import org.geoserver.platform.GeoServerExtensions;
 import org.geoserver.platform.resource.Resource;
 import org.geoserver.platform.resource.Resource.Type;
+import org.geoserver.platform.resource.ResourceListener;
 import org.geoserver.platform.resource.ResourceStore;
 import org.geoserver.platform.resource.Resources;
 import org.geoserver.security.auth.AuthenticationCache;
@@ -655,6 +656,16 @@ public class GeoServerSecurityManager extends ProviderManager implements Applica
     @Override
     public boolean move(String path, String target) {
         return dataDir.move(path, target);
+    }
+
+    @Override
+    public void addListener(String path, ResourceListener listener) {
+        dataDir.addListener(path, listener);
+    }
+
+    @Override
+    public void removeListener(String path, ResourceListener listener) {
+        dataDir.removeListener(path, listener);
     }
 
     /**

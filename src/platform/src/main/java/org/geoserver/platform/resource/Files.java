@@ -5,10 +5,14 @@
 package org.geoserver.platform.resource;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Collections;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -24,12 +28,127 @@ import org.geotools.util.logging.Logging;
  */
 public final class Files {
     
+    /**
+     * Quick Resource adaptor suitable for a single file.
+     */
+    private static final class ResourceAdaptor implements Resource {
+        private final File file;
+
+        private ResourceAdaptor(File file) {
+            this.file = file;
+        }
+
+        @Override
+        public String path() {
+            return Paths.convert(file.getPath()); 
+        }
+
+        @Override
+        public String name() {
+            return file.getName();
+        }
+
+        @Override
+        public Lock lock() {
+            return new Lock() {
+                public void release() {
+                }
+            };
+        }
+
+        @Override
+        public InputStream in() {
+            try {
+                return new FileInputStream(file);
+            } catch (FileNotFoundException e) {
+                throw new IllegalStateException(e);
+            }
+        }
+
+        @Override
+        public OutputStream out() {
+            try {
+                return new FileOutputStream(file);
+            } catch (FileNotFoundException e) {
+                throw new IllegalStateException(e);
+            }
+        }
+
+        @Override
+        public File file() {
+            return file;
+        }
+
+        @Override
+        public File dir() {
+            throw new IllegalStateException("Resource adaptor cannot be used to create directory");
+        }
+
+        @Override
+        public long lastmodified() {
+            return file.lastModified();
+        }
+
+        @Override
+        public Resource parent() {
+            throw new IllegalStateException("Resource adaptor dos not support parent()");
+        }
+
+        @Override
+        public Resource get(String resourcePath) {
+            throw new IllegalStateException();
+        }
+
+        @Override
+        public List<Resource> list() {
+            return Collections.emptyList();
+        }
+
+        @Override
+        public Type getType() {
+            return Type.RESOURCE;
+        }
+
+        @Override
+        public String toString() {
+            return "ResourceAdaptor("+file+")";
+        }
+    }
+
     private static final Logger LOGGER = Logging.getLogger(Files.class);
    
     private Files() {
         // utility class do not subclass
     }
-
+    
+    /**
+     * Adapter allowing a File reference to be quickly used a Resource.
+     * 
+     * This is used as a placeholder when updating code to use resource, while still maintaining deprecated File methods: 
+     * <pre></code>
+     * //deprecated
+     * public FileWatcher( File file ){
+     *    this.resource = Files.asResource( file );
+     * }
+     * //deprecated
+     * public FileWatcher( Resource resource ){
+     *    this.resource = resource;    
+     * }
+     * </code></pre>
+     * Note this only an adapter for single files (not directories).
+     * 
+     * @param file File (not a directory) to adapt as a Resource
+     * @return resource adaptor for provided file
+     */
+    public static Resource asResource(final File file ){
+        if( file == null || !file.exists() ){
+            throw new IllegalArgumentException("File required");
+        }
+        if( file.isDirectory() ){
+            throw new IllegalArgumentException("File required (not a directory)");
+        }
+        return new ResourceAdaptor(file);
+    }
     /**
      * Safe buffered output stream to temp file, output stream close used to renmae file into place.
      * 

@@ -25,6 +25,7 @@ import org.geoserver.catalog.WorkspaceInfo;
 import org.geoserver.platform.GeoServerResourceLoader;
 import org.geoserver.platform.resource.Paths;
 import org.geoserver.platform.resource.Resource;
+import org.geoserver.platform.resource.ResourceListener;
 import org.geoserver.platform.resource.ResourceStore;
 import org.geoserver.platform.resource.Resources;
 
@@ -96,6 +97,15 @@ public class GeoServerDataDirectory implements ResourceStore {
     @Override
     public boolean remove(String path) {
         return resourceLoader.remove(path);
+    }
+
+    public void addListener(String path, ResourceListener listener) {
+        resourceLoader.addListener(path, listener);
+    }
+
+    @Override
+    public void removeListener(String path, ResourceListener listener) {
+        resourceLoader.removeListener(path, listener);
     }
 
     /**

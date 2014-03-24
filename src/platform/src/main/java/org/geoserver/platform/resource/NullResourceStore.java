@@ -127,4 +127,13 @@ final class NullResourceStore implements ResourceStore {
     public boolean move(String path, String target) {
         return false; // unable to move empty resource
     }
+
+    @Override
+    public void addListener(String path, ResourceListener listener) {
+        // no events provided
+    }
+    @Override
+    public void removeListener(String path, ResourceListener listener) {
+        // no events provided
+    }
 }

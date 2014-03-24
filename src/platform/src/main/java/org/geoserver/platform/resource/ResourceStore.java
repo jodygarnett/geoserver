@@ -84,4 +84,30 @@ public interface ResourceStore {
      * @return true if resource was moved target path
      */
     boolean move( String path, String target);
+    
+    /**
+     * Listen for changes to ResourceStore content.
+     * <p>
+     * Listeners can be configured to check for changes to individual files or directory contents.
+     * </p>
+     * <ul>
+     * <li>path="styles": listener receives events for any change to the contents of the styles directory</li>
+     * <li>path="user_projections/epsg.properties": listener notified for any change to the epsg.properties resource</li>
+     * </ul>
+     * <p>
+     * Notification is course grained, often just based on change of last modified time stamp, as such they are issued after the change has been
+     * performed.
+     * </p>
+     * 
+     * @param path Path to resource
+     * @param listener Listener to receive change notification
+     */
+    void addListener( String path, ResourceListener listener);
+    
+    /**
+     * Remove resource store content listener.
+     * @param path
+     * @param listener
+     */
+    void removeListener( String path, ResourceListener listener);
 }

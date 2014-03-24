@@ -16,6 +16,7 @@ import java.util.Properties;
 import java.util.Set;
 
 import org.geoserver.platform.FileWatcher;
+import org.geoserver.platform.resource.Resource;
 
 
 /**
@@ -26,7 +27,10 @@ import org.geoserver.platform.FileWatcher;
  *
  */
 public class PropertyFileWatcher extends FileWatcher<Properties> {
-    
+    public PropertyFileWatcher(Resource resource) {
+        super(resource);
+    }
+    @Deprecated
     public PropertyFileWatcher(File file) {
         super(file);
     }
