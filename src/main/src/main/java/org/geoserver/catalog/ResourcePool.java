@@ -29,7 +29,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -154,7 +157,7 @@ public class ResourcePool {
 
     Catalog catalog;
     Map<String, CoordinateReferenceSystem> crsCache;
-    Map<String, DataAccess> dataStoreCache;
+    DataStoreCache dataStoreCache;
     Map<String, FeatureType> featureTypeCache;
     Map<String, List<AttributeTypeInfo>> featureTypeAttributeCache;
     Map<String, WebMapServer> wmsCache;
@@ -255,8 +258,14 @@ public class ResourcePool {
     public Map<String, DataAccess> getDataStoreCache() {
         return dataStoreCache;
     }
-
-    protected Map<String,DataAccess> createDataStoreCache() {
+    /**
+     * DataStoreCache implementation responsible for freeing DataAccess resources
+     * when they are no longer in use.
+     * 
+     * @return Cache used to look up DataAccess via id
+     * @see #getDataStoreCache()
+     */
+    protected DataStoreCache createDataStoreCache() {
         return new DataStoreCache();
     }
 
@@ -1739,7 +1748,6 @@ public class ResourcePool {
         public CatalogResourceCache(int hardReferences) {
             super(hardReferences);
             super.cleaner = new ValueCleaner() {
-
                 @Override
                 public void clean(Object key, Object object) {
                     dispose((K) key, (V) object);
@@ -1785,25 +1793,84 @@ public class ResourcePool {
             fireDisposed(info, featureType);
         }
     }
-    
+    /**
+     * Custom CatalogResourceCache responsible for disposing
+     * of DataAccess instances (allowing the recovery of operating
+     * system resources).
+     */
+    @SuppressWarnings("rawtypes")
     class DataStoreCache extends CatalogResourceCache<String, DataAccess> {
-    	
-        protected void dispose(String id, DataAccess da) {
-        	DataStoreInfo info = catalog.getDataStore(id);
-        	String name = null;
-        	if(info != null) {
-	            name = info.getName();
-	            LOGGER.info( "Disposing datastore '" + name + "'" );
-	            
-	            fireDisposed(info, da);
-        	}
-            
+        
+        final private ScheduledExecutorService later = Executors.newSingleThreadScheduledExecutor();
+
+        /**
+         * Ensure data access entry is removed from catalog, and
+         * ensure DataAccess dispose is called to return system resources.
+         * <p>
+         * This method is used when cleaning up a weak reference and
+         * will immediately dispose of the indicated dataAccess.
+         * 
+         * @param id DataStore id, or null if not known
+         * @param dataAccess DataAccess to dispose 
+         */
+        protected void dispose(String id, final DataAccess dataAccess) {
+            DataStoreInfo info = catalog.getDataStore(id);
+            final String name;
+            if (info != null) {
+                name = info.getName();
+                LOGGER.info("Disposing datastore '" + name + "'");
+
+                fireDisposed(info, dataAccess);
+            }
+            else {
+                name = "Untracked";
+            }
+            final String implementation = dataAccess.getClass().getSimpleName();
             try {
-                da.dispose();
+                LOGGER.info("Dispose data access '" + name + "' "+implementation);
+                dataAccess.dispose();
             } catch( Exception e ) {
-                LOGGER.warning( "Error occured disposing datastore '" + name + "'");
+                LOGGER.warning( "Error occured disposing data access '" + name + "' "+implementation );
                 LOGGER.log(Level.FINE, "", e );
             }
+        }
+        /** Override to provide a 45 second delay before data access is disposed */
+        @Override
+        public DataAccess remove(final Object key) {
+            final DataAccess object = super.remove(key);
+            if (object != null) {
+                later.schedule( new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            dispose( (String) key, object);
+                        }
+                        catch(Exception e) {
+                            LOGGER.log(Level.WARNING, "Error dispoing entry during remove: " + key, e);
+                        }
+                    }
+                }, 45, TimeUnit.SECONDS );
+            }
+            return object;
+        }
+
+        @Override
+        public void clear() {
+            final HashMap<String,DataAccess> all = new HashMap<String,DataAccess>(this);
+            later.schedule( new Runnable() {
+                @Override
+                public void run() {
+                    for (Entry<String,DataAccess> entry : all.entrySet()) {
+                        try {
+                            dispose( entry.getKey(), entry.getValue());
+                        }
+                        catch(Exception e) {
+                            LOGGER.log(Level.WARNING, "Error dispoing entry during clear: " + entry, e);
+                        }
+                    }
+                }                
+            }, 45, TimeUnit.SECONDS );
+            super.clear();
         }
     }
     
