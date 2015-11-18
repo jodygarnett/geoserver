@@ -18,6 +18,7 @@ import java.util.logging.Logger;
 
 import javax.servlet.ServletContext;
 
+import org.geoserver.platform.resource.DataDirectoryResourceStore;
 import org.geoserver.platform.resource.FileSystemResourceStore;
 import org.geoserver.platform.resource.Files;
 import org.geoserver.platform.resource.Paths;
@@ -104,7 +105,13 @@ public class GeoServerResourceLoader extends DefaultResourceLoader implements Re
      * @param baseDirectory The directory in which
      */
     public GeoServerResourceLoader(ResourceStore resourceStore) {
-        this.baseDirectory = resourceStore.get(Paths.BASE).dir();
+        if( resourceStore instanceof FileSystemResourceStore){
+            FileSystemResourceStore files = (FileSystemResourceStore) resourceStore;            
+            this.baseDirectory = files.getBaseDirectory();
+        }
+        else {
+            this.baseDirectory = null; // Client code will supply via setBaseDirectory
+        }
         this.resources = resourceStore;
     }
     
@@ -150,6 +157,10 @@ public class GeoServerResourceLoader extends DefaultResourceLoader implements Re
     }
 
     /**
+     * Base directory used to access configuration files.
+     * 
+     * This location is often provided by {@link GeoServerResourceLoader#lookupGeoServerDataDirectory(ServletContext)}.
+     * 
      * @return The base directory.
      */
     public File getBaseDirectory() {
@@ -572,16 +583,18 @@ public class GeoServerResourceLoader extends DefaultResourceLoader implements Re
     /**
      * Determines the location of the geoserver data directory based on the following lookup
      * mechanism:
-     *  
-     * 1) Java environment variable
-     * 2) Servlet context variable
-     * 3) System variable 
-     *
-     * For each of these, the methods checks that
-     * 1) The path exists
-     * 2) Is a directory
-     * 3) Is writable
+     * <ol> 
+     * <li>Java environment variable</li>
+     * <li>Servlet context variable</li>
+     * <li>System variable</li> 
+     * </ol>
      * 
+     * For each of these, the methods checks that
+     * <ol>
+     * <li>The path exists</li>
+     * <li>Is a directory</li>
+     * <li>Is writable</li>
+     * </ol>
      * @param servContext The servlet context.
      * @return String The absolute path to the data directory, or <code>null</code> if it could not
      * be found. 

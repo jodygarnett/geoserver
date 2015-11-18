@@ -33,13 +33,27 @@ package org.geoserver.platform.resource;
  * 
  * <pre>
  * <code>
- * File file = resourceStore.get("module/logo.png");
- * BufferedImage img = ImageIO.read( file );
+ * Resource logo = resourceStore.get("module/logo.png");
+ * BufferedImage img = ImageIO.read( logo.file() );
+ * </code>
+ * </pre>
+ *
+ * A directory can be unpacked to disk, but this is not common:
+ * 
+ * <pre>
+ * <code>
+ * Resources styles = resourceStore.get("styles");
+ * File directory = styles.dir(); // WARNING sill unpack all icons, fonts and sld files!
  * </code>
  * </pre>
  * 
- * The base directory is available using {@link Paths#BASE} (as "") but relative paths ("." and "..") are not supported.
+ * Usage tips:
+ * <ul>
+ * <li>Technically the base directory is available using {@link Paths#BASE} (as ""), be careful not use use dir().</li>
+ * <li>Relative paths ("." and "..") are not supported, see {@link Paths#convert(String)} if you need to convert.</li>
+ * </ul>
  * 
+ * @see Paths
  * @see Resources
  * @see Resource
  */

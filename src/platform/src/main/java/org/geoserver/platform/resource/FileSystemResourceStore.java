@@ -28,12 +28,43 @@ public class FileSystemResourceStore implements ResourceStore {
     /** Base directory for ResourceStore content */
     protected File baseDirectory = null;
 
+    /** Watcher used to monitor file change */
     protected FileSystemWatcher watcher;
 
     protected FileSystemResourceStore(){
         // Used by Spring, baseDirectory set by subclass
     }
 
+    public FileSystemResourceStore(File resourceDirectory) {
+        if (resourceDirectory == null) {
+            throw new NullPointerException("root resource directory required");
+        }
+        if (resourceDirectory.isFile()) {
+            throw new IllegalArgumentException("Directory required, file present at this location "
+                    + resourceDirectory);
+        }
+        if (!resourceDirectory.exists()) {
+            boolean create = resourceDirectory.mkdirs();
+            if (!create) {
+                throw new IllegalArgumentException("Unable to create directory "
+                        + resourceDirectory);
+            }
+        }
+        if (resourceDirectory.exists() && resourceDirectory.isDirectory()) {
+            this.baseDirectory = resourceDirectory;
+        } else {
+            throw new IllegalArgumentException("Unable to acess directory " + resourceDirectory);
+        }
+    }
+
+    /**
+     * Base directory used to access configuration files.
+     * 
+     * @return The base directory.
+     */
+    public File getBaseDirectory() {
+        return baseDirectory;
+    }
     
     /**
      * LockProvider used during {@link Resource#out()}.
@@ -66,37 +97,28 @@ public class FileSystemResourceStore implements ResourceStore {
         this.lockProvider = lockProvider;
     }
     
-    
-    
-    public FileSystemResourceStore(File resourceDirectory) {
-        if (resourceDirectory == null) {
-            throw new NullPointerException("root resource directory required");
-        }
-        if (resourceDirectory.isFile()) {
-            throw new IllegalArgumentException("Directory required, file present at this location "
-                    + resourceDirectory);
-        }
-        if (!resourceDirectory.exists()) {
-            boolean create = resourceDirectory.mkdirs();
-            if (!create) {
-                throw new IllegalArgumentException("Unable to create directory "
-                        + resourceDirectory);
-            }
-        }
-        if (resourceDirectory.exists() && resourceDirectory.isDirectory()) {
-            this.baseDirectory = resourceDirectory;
-        } else {
-            throw new IllegalArgumentException("Unable to acess directory " + resourceDirectory);
-        }
-    }
-    
+    /**
+     * Manage listener for file changes.
+     * <p>
+     * This is an internal method, used by {@link FileSystemResource} to monitor file, made available to assist with test cases.
+     * @param file
+     * @param path
+     * @param listener
+     */
     public synchronized void addListener(File file, String path, ResourceListener listener) {
         if( watcher == null ){
             watcher = new FileSystemWatcher();
         }
         watcher.addListener( file, path, listener );
     }
-    
+    /**
+     * Manage listener for file changes.
+     * <p>
+     * This is an internal method, used by {@link FileSystemResource} to monitor file, made available to assist with test cases.
+     * @param file
+     * @param path
+     * @param listener
+     */
     public synchronized void removeListener(File file, String path, ResourceListener listener) {
         if( watcher != null ){
             watcher.removeListener(file, path, listener );
