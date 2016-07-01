@@ -181,7 +181,6 @@
         <constructor-arg index="3">
             <list>
               <value>GetCapabilities</value>
-              <value>Capabilities</value>
               <value>GetMap</value>
               <value>Map</value>
               <value>DescribeLayer</value>

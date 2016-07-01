@@ -29,6 +29,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -518,7 +519,7 @@ public class Dispatcher extends AbstractController {
         }
 
         //try to infer from context
-        //JD: for cite compliance, a service *must* be specified explicitley by 
+        //JD: for cite compliance, a service *must* be specified explicitly by 
         // either a kvp, or an xml attribute, however in reality the context 
         // is often a good way to infer the service or request 
         String service = req.getService();
@@ -546,12 +547,12 @@ public class Dispatcher extends AbstractController {
         }
 
         //load from teh context
-        Service serviceDescriptor = findService(service, req.getVersion(), req.getNamespace());
+        Service serviceDescriptor = findService(service, req.getVersion(), req.getNamespace(), req.getRequest() );
         if (serviceDescriptor == null) {
             //hack for backwards compatability, try finding the service with the context instead 
             // of the service
             if (req.getContext() != null) {
-                serviceDescriptor = findService(req.getContext(), req.getVersion(), req.getNamespace());
+                serviceDescriptor = findService(req.getContext(), req.getVersion(), req.getNamespace(), req.getRequest());
                 if (serviceDescriptor != null) {
                     //found, assume that the client is using <service>/<request>
                     if (req.getRequest() == null) {
@@ -1084,10 +1085,10 @@ public class Dispatcher extends AbstractController {
         return response;
     }
     
-    Collection loadServices() {
-        Collection services = GeoServerExtensions.extensions(Service.class);
+    List<Service> loadServices() {
+        List<Service> services = GeoServerExtensions.extensions(Service.class);
 
-        if (!(new HashSet(services).size() == services.size())) {
+        if (!(new HashSet<Service>(services).size() == services.size())) {
             String msg = "Two identical service descriptors found";
             throw new IllegalStateException(msg);
         }
@@ -1095,9 +1096,9 @@ public class Dispatcher extends AbstractController {
         return services;
     }
 
-    Service findService(String id, String ver, String namespace) throws ServiceException {
+    Service findService(String id, final String ver, final String namespace, final String operation) throws ServiceException {
         Version version = (ver != null) ? new Version(ver) : null;
-        Collection services = loadServices();
+        List<Service> services = loadServices();
         
         // the id is actually the pathinfo, in case workspace specific services
         // are active we want to skip the workspace part in the path and go directly to the
@@ -1105,88 +1106,92 @@ public class Dispatcher extends AbstractController {
         if(id.contains("/")) {
             id = id.substring(id.indexOf("/") + 1);
         }
+        final String serviceId = id;
 
-        //first just match on service,request
-        List matches = new ArrayList();
-
-        for (Iterator itr = services.iterator(); itr.hasNext();) {
-            Service sBean = (Service) itr.next();
-
-            if (sBean.getId().equalsIgnoreCase(id)) {
-                matches.add(sBean);
-            }
-        }
+        // first just match on service,request
+        List<Service> matches = new ArrayList<Service>();
+        matches = services.stream()
+                .filter(service-> service.getId().equalsIgnoreCase(serviceId))
+                .collect(Collectors.toList());
 
         if (matches.isEmpty()) {
             return null;
         }
-
+        
+        if( operation != null ){
+            // filter out services that do not support the requested operation
+            matches = services.stream()
+                    .filter(service-> {
+                        for( String op : service.getOperations()){
+                            if( op.equalsIgnoreCase(operation)){
+                                return true;
+                            }
+                        }
+                        return false;
+                    })
+                    .collect(Collectors.toList());
+        }
+        
+        if (matches.isEmpty()) {
+            return null;
+        }
+        if (matches.size() == 1 ){
+          // only a single match, that was easy
+          return matches.get(0);
+        }
         Service sBean = null;
 
-        //if multiple, use version to filter match
-        if (matches.size() > 1) {
-            List vmatches = new ArrayList(matches);
+        // if multiple, use version and namespace to filter match
+        List<Service> vmatches = null;
 
-            //match up the version
-            if (version != null) {
-                //version specified, look for a match
-                for (Iterator itr = vmatches.iterator(); itr.hasNext();) {
-                    Service s = (Service) itr.next();
+        // match up the version
+        if (version != null) {
+            // version specified, look for a match
+            vmatches = matches.stream()
+                    .filter( service-> service.getVersion().equals(version))
+                    .collect(Collectors.toList());
 
-                    if (version.equals(s.getVersion())) {
-                        continue;
-                    }
-
+            if (vmatches.isEmpty()) {
+                // no matching version found, drop out and next step 
+                // will sort to return highest version
+                vmatches = new ArrayList<Service>(matches);
+            }
+        }
+        // if still multiple matches use namespace, if available, to filter
+        if (namespace != null && vmatches.size() > 1) {
+            List<Service> nmatches = new ArrayList<Service>(vmatches);
+            for (Iterator<Service> itr = nmatches.iterator(); itr.hasNext();) {
+                Service s = (Service) itr.next();
+                if (s.getNamespace() != null && !s.getNamespace().equals(namespace)) {
+                    //service declares namespace, kick it out if there is no match
                     itr.remove();
                 }
-
-                if (vmatches.isEmpty()) {
-                    //no matching version found, drop out and next step 
-                    // will sort to return highest version
-                    vmatches = new ArrayList(matches);
+                else {
+                    //service does not declare namespace, leave it along
                 }
             }
 
-            //if still multiple matches use namespace, if available, to filter
-            if (namespace != null && vmatches.size() > 1) {
-                List nmatches = new ArrayList(vmatches);
-                for (Iterator itr = nmatches.iterator(); itr.hasNext();) {
-                    Service s = (Service) itr.next();
-                    if (s.getNamespace() != null && !s.getNamespace().equals(namespace)) {
-                        //service declares namespace, kick it out if there is no match
-                        itr.remove();
-                    }
-                    else {
-                        //service does not declare namespace, leave it along
-                    }
-                }
-
-                if (!nmatches.isEmpty()) {
-                    vmatches = nmatches;
-                }
+            if (!nmatches.isEmpty()) {
+                vmatches = nmatches;
             }
-            
-            //multiple services found, sort by version
-            if (vmatches.size() > 1) {
-                //use highest version
-                Comparator comparator = new Comparator() {
-                        public int compare(Object o1, Object o2) {
-                            Service s1 = (Service) o1;
-                            Service s2 = (Service) o2;
-
-                            return s1.getVersion().compareTo(s2.getVersion());
-                        }
-                    };
-
-                Collections.sort(vmatches, comparator);
-            }
-
-            sBean = (Service) vmatches.get(vmatches.size() - 1);
-        } else {
-            //only a single match, that was easy
-            sBean = (Service) matches.get(0);
         }
+        
+        // multiple services found, sort by version
+        // if version is available may consider limiting this list?
+        if (vmatches.size() > 1) {
+            //use highest version
+            Comparator comparator = new Comparator() {
+                    public int compare(Object o1, Object o2) {
+                        Service s1 = (Service) o1;
+                        Service s2 = (Service) o2;
 
+                        return s1.getVersion().compareTo(s2.getVersion());
+                    }
+                };
+
+            Collections.sort(vmatches, comparator);
+        }
+        sBean = (Service) vmatches.get(vmatches.size() - 1);
         return sBean;
     }
 
