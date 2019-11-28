@@ -17,6 +17,17 @@
   <packaging>jar</packaging>
   <version>2.17-SNAPSHOT</version>
   <name>GeoServer Web Application</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <configId>minimal</configId>
+    <configDirectory>${basedir}/../../../data</configDirectory>
+    <webappSourceDirectory>${basedir}/src/main/webapp</webappSourceDirectory>
+    <sde.version>9.3</sde.version>
+    <jetty.port>8080</jetty.port>
+    <jetty.run.daemon>false</jetty.run.daemon>
+  </properties>
+
   <dependencies>
     <dependency>
         <groupId>org.marlin</groupId>
@@ -381,15 +392,6 @@
 	</plugin>
     </plugins>
   </build>
-
-  <properties>
-    <configId>minimal</configId>
-    <configDirectory>${basedir}/../../../data</configDirectory>
-    <webappSourceDirectory>${basedir}/src/main/webapp</webappSourceDirectory>
-    <sde.version>9.3</sde.version>
-    <jetty.port>8080</jetty.port>
-    <jetty.run.daemon>false</jetty.run.daemon>
-  </properties>
 
   <profiles>
     <profile>
