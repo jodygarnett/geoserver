@@ -5,7 +5,6 @@
  */
 package org.geoserver.web;
 
-import java.util.List;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.AbstractLink;
@@ -15,12 +14,18 @@ import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.model.StringResourceModel;
 
+import java.util.List;
+
 public class ToolPage extends GeoServerSecuredPage {
     @SuppressWarnings("serial")
     public ToolPage() {
         List links = getGeoServerApplication().getBeansOfType(ToolLinkInfo.class);
-        links.addAll(getGeoServerApplication().getBeansOfType(ToolLinkExternalInfo.class));
-
+        for ( ToolLinkExternalInfo link : getGeoServerApplication().getBeansOfType(ToolLinkExternalInfo.class)){
+            if( link.getDescriptionKey() == null ){
+                continue;
+            }
+            links.add(link);
+        }
         links = filterByAuth(links);
 
         add(

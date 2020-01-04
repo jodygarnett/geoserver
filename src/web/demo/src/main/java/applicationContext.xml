@@ -39,13 +39,11 @@
   <bean id="openLayersPreview" class="org.geoserver.web.demo.OpenLayersFormatLink">
     <property name="id" value="ol"/>
     <property name="titleKey" value="ol.title"/>
-    <property name="descriptionKey" value="ol.description"/>
     <property name="order" value="10"/>
   </bean>
   <bean id="gMLPreview" class="org.geoserver.web.demo.GMLFormatLink">
     <property name="id" value="gml"/>
     <property name="titleKey" value="gml.title"/>
-    <property name="descriptionKey" value="gml.description"/>
     <property name="order" value="20"/>
     <property name="geoserver">
       <ref bean="geoServer"/>
@@ -54,7 +52,6 @@
   <bean id="kMLPreview" class="org.geoserver.web.demo.KMLFormatLink">
     <property name="id" value="kml"/>
     <property name="titleKey" value="kml.title"/>
-    <property name="descriptionKey" value="kml.description"/>
     <property name="order" value="30"/>
   </bean>
   <bean id="demoRequests" class="org.geoserver.web.DemoLinkInfo">
