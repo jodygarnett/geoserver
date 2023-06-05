@@ -113,40 +113,55 @@ public class GeoPackageGetFeatureOutputFormat extends WFSGetFeatureOutputFormat 
         // create the geopackage file and write the features into it.
         // geopackage is written to a temporary file, copied into the outputStream, then the temp
         // file deleted.
-        File file = createTempFile("geopkg", ".tmp.gpkg");
+        File file = null;
+        try {
+            file = createTempFile("geopkg", ".tmp.gpkg");
 
-        try (GeoPackage geopkg = GeoPkg.getGeoPackage(file)) {
-            for (FeatureCollection collection : featureCollection.getFeatures()) {
+            try (GeoPackage geopkg = GeoPkg.getGeoPackage(file)) {
+                for (FeatureCollection collection : featureCollection.getFeatures()) {
 
-                FeatureEntry e = new FeatureEntry();
+                    FeatureEntry e = new FeatureEntry();
 
-                if (!(collection instanceof SimpleFeatureCollection)) {
-                    throw new ServiceException(
-                            "GeoPackage OutputFormat does not support Complex Features.");
+                    if (!(collection instanceof SimpleFeatureCollection)) {
+                        throw new ServiceException(
+                                "GeoPackage OutputFormat does not support Complex Features.");
+                    }
+
+                    SimpleFeatureCollection features = (SimpleFeatureCollection) collection;
+                    FeatureTypeInfo meta = lookupFeatureType(features);
+                    if (meta != null) {
+                        // initialize entry metadata
+                        e.setIdentifier(meta.getTitle());
+                        e.setDescription(abstractOrDescription(meta));
+                    }
+                    geopkg.add(e, features);
+
+                    if (!"false".equals(System.getProperty(PROPERTY_INDEXED))) {
+                        geopkg.createSpatialIndex(e);
+                    }
                 }
+            }
 
-                SimpleFeatureCollection features = (SimpleFeatureCollection) collection;
-                FeatureTypeInfo meta = lookupFeatureType(features);
-                if (meta != null) {
-                    // initialize entry metadata
-                    e.setIdentifier(meta.getTitle());
-                    e.setDescription(abstractOrDescription(meta));
+            // write to output and delete temporary file
+            try (InputStream temp = new FileInputStream(file)) {
+                IOUtils.copy(temp, output);
+                output.flush();
+            }
+        } finally {
+            if (file != null) {
+                if (file.exists()) {
+                    file.delete();
                 }
-
-                geopkg.add(e, features);
-
-                if (!"false".equals(System.getProperty(PROPERTY_INDEXED))) {
-                    geopkg.createSpatialIndex(e);
+                File shm = new File(file.getPath() + "-shm");
+                if (shm.exists()) {
+                    shm.delete();
+                }
+                File wal = new File(file.getPath() + "-wal");
+                if (wal.exists()) {
+                    wal.delete();
                 }
             }
         }
-
-        // write to output and delete temporary file
-        try (InputStream temp = new FileInputStream(file)) {
-            IOUtils.copy(temp, output);
-            output.flush();
-        }
-        file.delete();
     }
 
     FeatureTypeInfo lookupFeatureType(SimpleFeatureCollection features) {
