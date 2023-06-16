@@ -71,6 +71,7 @@ import org.geoserver.platform.GeoServerResourceLoader;
 import org.geoserver.platform.resource.Resource;
 import org.geoserver.platform.resource.Resource.Type;
 import org.geoserver.platform.resource.Resources;
+import org.geotools.geometry.jts.ReferencedEnvelope;
 import org.geotools.styling.StyledLayerDescriptor;
 import org.geotools.util.SuppressFBWarnings;
 import org.geotools.util.logging.Logging;
@@ -506,7 +507,11 @@ public class CatalogImpl implements Catalog {
                             + "'";
             throw new IllegalArgumentException(msg);
         }
-
+        if (extendedValidation) {
+            // don't perform this validation on load, just on save/add at runtime
+            validateBounds(resource.getNativeBoundingBox());
+            validateBounds(resource.getLatLonBoundingBox());
+        }
         validateKeywords(resource.getKeywords());
 
         // don't perform this validation on load, it would force connection to
@@ -1906,6 +1911,18 @@ public class CatalogImpl implements Catalog {
         return obj;
     }
 
+    public static void validateBounds(ReferencedEnvelope bounds) {
+        if (bounds != null) {
+            if (bounds.isEmpty() || bounds.isNull()) {
+                throw new IllegalArgumentException("Bounds are empty (with max x less than min x)");
+            }
+            if (bounds.getCoordinateReferenceSystem() == null) {
+                throw new IllegalArgumentException(
+                        "Bounds coordinate reference system are not provided");
+            }
+        }
+    }
+
     public static void validateKeywords(List<KeywordInfo> keywords) {
         if (keywords != null) {
             for (KeywordInfo kw : keywords) {
@@ -1921,7 +1938,7 @@ public class CatalogImpl implements Catalog {
                     m = KeywordInfo.RE.matcher(kw.getVocabulary());
                     if (!m.matches()) {
                         throw new IllegalArgumentException(
-                                "Keyword vocbulary must not contain the '\\' character");
+                                "Keyword vocabulary must not contain the '\\' character");
                     }
                 }
             }

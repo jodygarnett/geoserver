@@ -47,6 +47,7 @@ import org.geotools.ows.wms.CRSEnvelope;
 import org.geotools.ows.wms.Layer;
 import org.geotools.ows.wmts.model.WMTSLayer;
 import org.geotools.referencing.CRS;
+import org.geotools.referencing.crs.DefaultEngineeringCRS;
 import org.geotools.referencing.crs.DefaultGeographicCRS;
 import org.geotools.util.NumberRange;
 import org.geotools.util.factory.GeoTools;
@@ -570,7 +571,7 @@ public class CatalogBuilder {
 
             // fix the native bounds if necessary, some datastores do
             // not build a proper referenced envelope
-            CoordinateReferenceSystem crs = ftinfo.getNativeCRS();
+            CoordinateReferenceSystem crs = ftinfo.getNativeCRS() != null ? ftinfo.getNativeCRS() : DefaultEngineeringCRS.GENERIC_2D;
             if (bounds != null && bounds.getCoordinateReferenceSystem() == null && crs != null) {
                 bounds = new ReferencedEnvelope(bounds, crs);
             }

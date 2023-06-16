@@ -12,6 +12,7 @@
     <maxx>1672274.923</maxx>
     <miny>4854820.302</miny>
     <maxy>4865479.16</maxy>
+    <crs class="projected">EPSG:3003</crs>
   </nativeBoundingBox>
   <latLonBoundingBox>
     <minx>11.031</minx>
