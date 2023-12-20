@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#installation_upgrade" class="md-skip">
+        <a href="#upgrading-existing-versions" class="md-skip">
           Skip to content
         </a>
       
@@ -87,6 +87,10 @@
     <div data-md-component="announce">
       
     </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
     
     
       
@@ -886,10 +890,10 @@
   
 
 
-<h1 id="installation_upgrade">Upgrading existing versions</h1>
+<h1 id="upgrading-existing-versions">Upgrading existing versions</h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Be aware that some upgrades are not reversible, meaning that the data directory may be changed so that it is no longer compatible with older versions of GeoServer. See <a href="../../user/datadirectory/migrating.md">Migrating a data directory between versions</a> for more details.</p>
+<p>Be aware that some upgrades are not reversible, meaning that the data directory may be changed so that it is no longer compatible with older versions of GeoServer. See <a href="../datadirectory/migrating.md">Migrating a data directory between versions</a> for more details.</p>
 </div>
 <p>The general GeoServer upgrade process is as follows:</p>
 <ol>
@@ -923,7 +927,7 @@
 </ol>
 <h2 id="notes-on-upgrading-specific-versions">Notes on upgrading specific versions</h2>
 <h3 id="wcs-arcgrid-output-format-removal">WCS ArcGRID output format removal</h3>
-<p>The ArcGRID output format for WCS has been removed in GeoServer 2.24.0. If you have been using this format, you will need to switch to another text based format, such as GML coverage, or can get back the ArcGRID format by installing the <a href="../../user/community/gdal/index.md">WCS GDAL</a> community module and use a configuration like the following (please adapt to your system):</p>
+<p>The ArcGRID output format for WCS has been removed in GeoServer 2.24.0. If you have been using this format, you will need to switch to another text based format, such as GML coverage, or can get back the ArcGRID format by installing the <a href="../community/gdal/index.md">WCS GDAL</a> community module and use a configuration like the following (please adapt to your system):</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;ToolConfiguration&gt;</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&lt;executable&gt;</span>gdal_translate<span class="nt">&lt;/executable&gt;</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&lt;environment&gt;</span>
@@ -956,7 +960,7 @@
 <li>WMS "feature portrayal" with dynamic remote WFS references provided in the request (<code>REMOTE_OWS_TYPE</code> and <code>REMOTE_OWS_URL</code> parameters).</li>
 <li>WPS remote inputs via either GET or POST request (e.g., remote GeoJSON file source).</li>
 </ul>
-<p>The list of locations that are safe to contact can be configured using the <a href="../../user/security/urlchecks.md">URL Checks</a> page.</p>
+<p>The list of locations that are safe to contact can be configured using the <a href="../security/urlchecks.md">URL Checks</a> page.</p>
 <h3 id="log4j-upgrade-geoserver-221-and-newer">Log4J Upgrade (GeoServer 2.21 and newer)</h3>
 <p>As of GeoServer 2.21, the logging system used by GeoServer has been upgraded from Log4J 1.2 to Log4J 2.</p>
 <ul>
@@ -983,7 +987,7 @@
 </li>
 </ul>
 <h3 id="jts-type-bindings-geoserver-214-and-newer">JTS Type Bindings (GeoServer 2.14 and newer)</h3>
-<p>As of GeoServer 2.14, the output produced by <a href="../../user/rest/index.md">REST</a> featuretype and structured coverage requests using a different package name (<code>org.locationtech</code> instead of <code>com.vividsolutions</code>) for geometry type bindings, due to the upgrade to JTS (Java Topology Suite) 1.16.0. For example:</p>
+<p>As of GeoServer 2.14, the output produced by <a href="../rest/index.md">REST</a> featuretype and structured coverage requests using a different package name (<code>org.locationtech</code> instead of <code>com.vividsolutions</code>) for geometry type bindings, due to the upgrade to JTS (Java Topology Suite) 1.16.0. For example:</p>
 <p>Before:</p>
 <div class="language-text highlight"><pre><span></span><code>...
 &lt;attribute&gt;
@@ -1282,7 +1286,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.view", "content.action.edit", "content.code.copy", "content.tabs.link", "navigation.tabs", "navigation.tracking", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "announce.dismiss"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.view", "content.action.edit", "content.code.copy", "content.tabs.link", "navigation.tabs", "navigation.tracking", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "announce.dismiss"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "2.25"}</script>
     
     
       <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>

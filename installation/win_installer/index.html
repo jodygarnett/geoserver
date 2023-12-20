@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#installation_windows_installer" class="md-skip">
+        <a href="#windows-installer" class="md-skip">
           Skip to content
         </a>
       
@@ -89,6 +89,10 @@
     <div data-md-component="announce">
       
     </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
     
     
       
@@ -792,14 +796,14 @@
   
 
 
-<h1 id="installation_windows_installer">Windows installer</h1>
+<h1 id="windows-installer">Windows installer</h1>
 <p>The Windows installer provides an easy way to set up GeoServer on your system, as it requires no configuration files to be edited or command line settings.</p>
 <ol>
 <li>
 <p>Make sure you have a Java Runtime Environment (JRE) installed on your system. GeoServer requires a <strong>Java 11</strong> or <strong>Java 17</strong> environment, as provided by <a href="https://adoptium.net">Adoptium</a> Windows installers.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For more information about Java and GeoServer, please see the section on <a href="../../user/production/java.md">Java Considerations</a>.</p>
+<p>For more information about Java and GeoServer, please see the section on <a href="../production/java.md">Java Considerations</a>.</p>
 </div>
 </li>
 <li>
@@ -831,7 +835,7 @@
 <em>Welcome screen</em></p>
 </li>
 <li>
-<p>Read the <a href="../../user/introduction/license.md">License</a> and click :<strong>I Agree</strong>.</p>
+<p>Read the <a href="../../introduction/license/">License</a> and click :<strong>I Agree</strong>.</p>
 <p><img alt="" src="../images/win_license.png" />
 <em>GeoServer license</em></p>
 </li>
@@ -857,7 +861,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For more information about Java and GeoServer, please see the section on <a href="../../user/production/java.md">Java Considerations</a>.</p>
+<p>For more information about Java and GeoServer, please see the section on <a href="../production/java.md">Java Considerations</a>.</p>
 </div>
 <p><img alt="" src="../images/win_jre.png" />
 <em>Selecting a valid JRE</em></p>
@@ -868,12 +872,12 @@
 <em>Setting a GeoServer data directory</em></p>
 </li>
 <li>
-<p>Enter the username and password for administration of GeoServer. GeoServer's <a href="../../user/webadmin/index.md">Web administration interface</a> requires authentication for management, and what is entered here will become those administrator credentials. The defaults are :<strong>admin / geoserver<code>. It is recommended to change these from the defaults. When finished, click :guilabel:</code>Next</strong>.</p>
+<p>Enter the username and password for administration of GeoServer. GeoServer's <a href="../webadmin/index.md">Web administration interface</a> requires authentication for management, and what is entered here will become those administrator credentials. The defaults are :<strong>admin / geoserver<code>. It is recommended to change these from the defaults. When finished, click :guilabel:</code>Next</strong>.</p>
 <p><img alt="" src="../images/win_creds.png" />
 <em>Setting the username and password for GeoServer administration</em></p>
 </li>
 <li>
-<p>Enter the port that GeoServer will respond on. This affects the location of the GeoServer <a href="../../user/webadmin/index.md">Web administration interface</a>, as well as the endpoints of the GeoServer services such as <a href="../../user/services/wms/index.md">Web Map Service (WMS)</a> and <a href="../../user/services/wfs/index.md">Web Feature Service (WFS)</a>. The default port is :<strong>8080<code>, though any valid and unused port will work. When finished, click :guilabel:</code>Next</strong>.</p>
+<p>Enter the port that GeoServer will respond on. This affects the location of the GeoServer <a href="../webadmin/index.md">Web administration interface</a>, as well as the endpoints of the GeoServer services such as <a href="../services/wms/index.md">Web Map Service (WMS)</a> and <a href="../services/wfs/index.md">Web Feature Service (WFS)</a>. The default port is :<strong>8080<code>, though any valid and unused port will work. When finished, click :guilabel:</code>Next</strong>.</p>
 <p><img alt="" src="../images/win_port.png" />
 <em>Setting the GeoServer port</em></p>
 </li>
@@ -901,7 +905,7 @@
 <p>If you installed GeoServer as a service, it is already running. Otherwise, you can start GeoServer by going to the Start Menu, and clicking :<strong>Start GeoServer</strong> in the GeoServer folder.</p>
 </li>
 <li>
-<p>Navigate to <code>http://localhost:8080/geoserver</code> (or wherever you installed GeoServer) to access the GeoServer <a href="../../user/webadmin/index.md">Web administration interface</a>.</p>
+<p>Navigate to <code>http://localhost:8080/geoserver</code> (or wherever you installed GeoServer) to access the GeoServer <a href="../webadmin/index.md">Web administration interface</a>.</p>
 <p>If you see the GeoServer Welcome page, then GeoServer is successfully installed.</p>
 <p><img alt="" src="../images/success.png" />
 <em>GeoServer Welcome Page</em></p>
@@ -1198,7 +1202,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.view", "content.action.edit", "content.code.copy", "content.tabs.link", "navigation.tabs", "navigation.tracking", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "announce.dismiss"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.view", "content.action.edit", "content.code.copy", "content.tabs.link", "navigation.tabs", "navigation.tracking", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "announce.dismiss"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "2.25"}</script>
     
     
       <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
