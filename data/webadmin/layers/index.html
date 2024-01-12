@@ -1,0 +1,2705 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Designed for interoperability to publishes data from any major spatial data source using open standards.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.geoserver.org/data/webadmin/layers/">
+      
+      
+        <link rel="prev" href="../layerpreview/">
+      
+      
+        <link rel="next" href="../stores/">
+      
+      
+      <link rel="icon" href="../../../assets/images/geoserver_mark.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+    
+    
+      
+        <title>Layers - GeoServer</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#layers" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://geoserver.org/" title="GeoServer" class="md-header__button md-logo" aria-label="GeoServer" data-md-component="logo">
+      
+  <img src="../../../assets/images/geoserver_mark.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GeoServer
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Layers
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/geoserver/geoserver" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    geoserver
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  User Manual
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../introduction/" class="md-tabs__link">
+          
+  
+    
+  
+  Introduction
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../installation/" class="md-tabs__link">
+          
+  
+    
+  
+  Installation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../gettingstarted/" class="md-tabs__link">
+          
+  
+    
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../webadmin/" class="md-tabs__link">
+          
+  
+    
+  
+  Web Admin
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  Data
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://geoserver.org/" title="GeoServer" class="md-nav__button md-logo" aria-label="GeoServer" data-md-component="logo">
+      
+  <img src="../../../assets/images/geoserver_mark.png" alt="logo">
+
+    </a>
+    GeoServer
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/geoserver/geoserver" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    geoserver
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Manual
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../introduction/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Introduction
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../introduction/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../introduction/history/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    History
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../introduction/gettinginvolved/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting involved
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../introduction/license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../installation/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Installation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux binary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/win_binary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Windows binary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/win_installer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Windows installer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/war/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web archive
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Container
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/upgrade/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Upgrading existing versions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../gettingstarted/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gettingstarted/geopkg-quickstart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publishing a GeoPackage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gettingstarted/group-quickstart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publishing a Layer Group
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gettingstarted/image-quickstart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publishing a Image
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gettingstarted/postgis-quickstart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publishing a PostGIS table
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gettingstarted/shapefile-quickstart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publishing a shapefile
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gettingstarted/style-quickstart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publishing a style
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gettingstarted/web-admin-quickstart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using the web administration interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../webadmin/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Web Admin
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Web Admin
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../webadmin/about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About GeoServer Page
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../webadmin/welcome/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Data
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Data
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Data Settings
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Data Settings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../layergroups/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Layer Groups
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../layerpreview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Layer Preview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Layers
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Layers
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#layer-types" class="md-nav__link">
+    Layer types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data_webadmin_layers_add_a_layer" class="md-nav__link">
+    Add a Layer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove-a-layer" class="md-nav__link">
+    Remove a Layer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data_webadmin_layers_edit_data" class="md-nav__link">
+    Edit Layer: Data
+  </a>
+  
+    <nav class="md-nav" aria-label="Edit Layer: Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-info" class="md-nav__link">
+    Basic Info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinate-reference-systems" class="md-nav__link">
+    Coordinate Reference Systems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bounding-boxes" class="md-nav__link">
+    Bounding Boxes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coverage-parameters-raster" class="md-nav__link">
+    Coverage Parameters (Raster)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#curves-support-vector" class="md-nav__link">
+    Curves support (Vector)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data_webadmin_layers_edit_publishing" class="md-nav__link">
+    Feature Type Details (Vector)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricting-features-showing-up-in-the-layer" class="md-nav__link">
+    Restricting features showing up in the layer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-layer-publishing" class="md-nav__link">
+    Edit Layer: Publishing
+  </a>
+  
+    <nav class="md-nav" aria-label="Edit Layer: Publishing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#http-settings" class="md-nav__link">
+    HTTP Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#root-layer-in-capabilities" class="md-nav__link">
+    Root Layer in Capabilities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services-settings" class="md-nav__link">
+    Services Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wms-settings" class="md-nav__link">
+    WMS Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wms-attribution" class="md-nav__link">
+    WMS Attribution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wfs-settings" class="md-nav__link">
+    WFS Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wcs-settings" class="md-nav__link">
+    WCS Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kml-format-settings" class="md-nav__link">
+    KML Format Settings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data_webadmin_layers_edit_dimensions" class="md-nav__link">
+    Edit Layer: Dimensions
+  </a>
+  
+    <nav class="md-nav" aria-label="Edit Layer: Dimensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vector-custom-dimensions" class="md-nav__link">
+    Vector Custom Dimensions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-layer-security" class="md-nav__link">
+    Edit Layer: Security
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stores/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stores
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workspaces/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Workspaces
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../vector/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Vector
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../raster/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Raster
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../database/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Database
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../cascaded/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Cascade
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../app-schema/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Application Schema
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#layer-types" class="md-nav__link">
+    Layer types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data_webadmin_layers_add_a_layer" class="md-nav__link">
+    Add a Layer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove-a-layer" class="md-nav__link">
+    Remove a Layer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data_webadmin_layers_edit_data" class="md-nav__link">
+    Edit Layer: Data
+  </a>
+  
+    <nav class="md-nav" aria-label="Edit Layer: Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-info" class="md-nav__link">
+    Basic Info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinate-reference-systems" class="md-nav__link">
+    Coordinate Reference Systems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bounding-boxes" class="md-nav__link">
+    Bounding Boxes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coverage-parameters-raster" class="md-nav__link">
+    Coverage Parameters (Raster)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#curves-support-vector" class="md-nav__link">
+    Curves support (Vector)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data_webadmin_layers_edit_publishing" class="md-nav__link">
+    Feature Type Details (Vector)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricting-features-showing-up-in-the-layer" class="md-nav__link">
+    Restricting features showing up in the layer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-layer-publishing" class="md-nav__link">
+    Edit Layer: Publishing
+  </a>
+  
+    <nav class="md-nav" aria-label="Edit Layer: Publishing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#http-settings" class="md-nav__link">
+    HTTP Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#root-layer-in-capabilities" class="md-nav__link">
+    Root Layer in Capabilities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services-settings" class="md-nav__link">
+    Services Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wms-settings" class="md-nav__link">
+    WMS Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wms-attribution" class="md-nav__link">
+    WMS Attribution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wfs-settings" class="md-nav__link">
+    WFS Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wcs-settings" class="md-nav__link">
+    WCS Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kml-format-settings" class="md-nav__link">
+    KML Format Settings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data_webadmin_layers_edit_dimensions" class="md-nav__link">
+    Edit Layer: Dimensions
+  </a>
+  
+    <nav class="md-nav" aria-label="Edit Layer: Dimensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vector-custom-dimensions" class="md-nav__link">
+    Vector Custom Dimensions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-layer-security" class="md-nav__link">
+    Edit Layer: Security
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/geoserver/geoserver/edit/main/docs/en/user/docs/data/webadmin/layers.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/geoserver/geoserver/raw/main/docs/en/user/docs/data/webadmin/layers.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
+  
+
+
+<h1 id="layers">Layers</h1>
+<p>In GeoServer, the term "layer" refers to a raster or vector dataset that represents a collection of geographic features. Vector layers are analogous to "featureTypes" and raster layers are analogous to "coverages". All layers have a source of data, known as a Store. The layer is associated with the Workspace in which the Store is defined.</p>
+<p>In the Layers section of the web interface, you can view and edit existing layers, add (register) a new layer, or remove (unregister) a layer. The Layers View page displays the list of layers, and the Store and Workspace in which each layer is contained. The View page also displays the layer's status and native SRS.</p>
+<p><img alt="" src="../img/data_layers.png" />
+<em>Layers View</em></p>
+<h2 id="layer-types">Layer types</h2>
+<p>Layers can be divided into two types of data: raster and vector. These two formats differ in how they store spatial information. Vector types store information about feature types as mathematical paths---a point as a single x,y coordinate, lines as a series of x,y coordinates, and polygons as a series of x,y coordinates that start and end on the same place. Raster format data is a cell-based representation of features on the earth surface. Each cell has a distinct value, and all cells with the same value represent a specific feature.</p>
+<hr />
+<p>Field                                Description</p>
+<hr />
+<p><img alt="image" src="../img/raster_icon.png" />        Raster (grid)</p>
+<p><img alt="image" src="../img/polygon_icon.png" />       Polygon</p>
+<p><img alt="image" src="../img/line_string_icon.png" />   Line</p>
+<p><img alt="image" src="../img/point_icon.png" />         Point</p>
+<hr />
+<h2 id="data_webadmin_layers_add_a_layer">Add a Layer</h2>
+<p>At the upper left-hand corner of the layers view page there are two buttons for the adding and removal of layers. The green plus button allows you to add a new layer. The red minus button allows you to remove selected layers.</p>
+<p><img alt="" src="../img/data_layers_add_remove.png" />
+<em>Buttons to Add and Remove a Layer</em></p>
+<p>Clicking the <strong>Add a new layer</strong> button brings up a <strong>New Layer Chooser</strong> panel. The menu displays all currently enabled stores. From this menu, select the Store where the layer should be added.</p>
+<p><img alt="" src="../img/data_layers_add_chooser.png" />
+<em>List of all currently enabled stores</em></p>
+<p>Upon selection of a Store, a list is displayed of resources within the store. Resources which have already been published as layers are listed first, followed by other resources which are available to be published. In this example, <code>giant_polygon</code>, <code>poi</code>, <code>poly_landmarks</code> and <code>tiger_roads</code> are all existing layers within the NYC store.</p>
+<p><img alt="" src="../img/data_layers_add_view.png" />
+<em>List of published and available resources in a store</em></p>
+<p>To add a layer for an available resource click <strong>Publish</strong>. To add a new layer for a published resource click <strong>Publish Again</strong>. (Note that when re-publishing the name of the new layer may have to be modified to avoid conflict with an existing layer.) The actions display an <a href="layers.rst#data_webadmin_layers_edit_data">Edit Layer</a> page to enter the definition of the new layer.</p>
+<h2 id="remove-a-layer">Remove a Layer</h2>
+<p>To remove a layer, select it by clicking the checkbox next to the layer. As shown below, multiple layers can be selected for batch removal. Note that selections for removal will not persist from one results pages to the next.</p>
+<p><img alt="" src="../img/data_layers_delete.png" />
+<em>Some layers selected for removal</em></p>
+<p>All layers can be selected for removal by clicking the checkbox in the header.</p>
+<p><img alt="" src="../img/data_layers_delete_all.png" />
+<em>All layers selected for removal</em></p>
+<p>Once layer(s) are selected, the <strong>Remove selected resources</strong> link is activated. Once you've clicked the link, you will be asked to confirm or cancel the removal. Selecting <strong>OK</strong> removes the selected layer(s).</p>
+<h2 id="data_webadmin_layers_edit_data">Edit Layer: Data</h2>
+<p>To view or edit a layer, click the layer name. A layer configuration page will be displayed. The <strong>Data</strong> tab, activated by default, allows you to define and change data parameters for a layer.</p>
+<p><img alt="" src="../img/data_layers_edit_data.png" />
+<em>Edit Layer: Data tab</em></p>
+<h3 id="basic-info">Basic Info</h3>
+<p>The beginning sections---Basic Resource Info, Keywords and Metadata link---are analogous to the <a href="../../configuration/service-metadata/index.md">Service Metadata</a> section for WCS, WFS, and WMS. These sections provide "data about the data," specifically textual information that make the layer data easier to understand and work with. The metadata information will appear in the capabilities documents which refer to the layer.</p>
+<ul>
+<li>
+<p><strong>Name</strong>---Identifier used to reference the layer in WMS requests. (Note that for a new layer for an already-published resource, the name must be changed to avoid conflict.)</p>
+</li>
+<li>
+<p><strong>Enabled</strong>---A layer that is not enabled won't be available to any kind of request, it will just show up in the configuration (and in REST config)</p>
+</li>
+<li>
+<p><strong>Advertised</strong>---A layer is advertised by default. A non-advertised layer will be available in all data access requests (for example, WMS GetMap, WMS GetFeature) but won't appear in any capabilities document or in the layer preview.</p>
+</li>
+<li>
+<p><strong>Title</strong>---Human-readable description to briefly identify the layer to clients (required)</p>
+</li>
+<li>
+<p><strong>Abstract</strong>---Describes the layer in detail</p>
+</li>
+<li>
+<p><strong>Keywords</strong>---List of short words associated with the layer to assist catalog searching</p>
+</li>
+<li>
+<p><strong>Metadata Links</strong>---Allows linking to external documents that describe the data layer. The "type" input provides a few example types, like FGDC or ISO19115:2003, but allows any other type to be declared. The optional "About" entry can be used to point to the definition of the metadata standard, or any other side information about it. Finally, "URL" points to the actual metadata, while "Format" provides its mime type.</p>
+<p><img alt="" src="../img/data_layers_meta.png" />
+<em>Adding a metadata link in FGDC format</em></p>
+</li>
+</ul>
+<h3 id="coordinate-reference-systems">Coordinate Reference Systems</h3>
+<p>A coordinate reference system (CRS) defines how georeferenced spatial data relates to real locations on the Earth's surface. CRSes are part of a more general model called Spatial Reference Systems (SRS), which includes referencing by coordinates and geographic identifiers. GeoServer needs to know the Coordinate Reference System of your data. This information is used for computing the latitude/longitude bounding box and reprojecting the data during both WMS and WFS requests.</p>
+<p><img alt="" src="../img/data_layers_CRS.png" />
+<em>Coordinate reference system of a layer</em></p>
+<ul>
+<li><strong>Native SRS</strong>---Specifies the coordinate system the layer is stored in. Clicking the projection link displays a description of the SRS.</li>
+<li><strong>Declared SRS</strong>---Specifies the coordinate system GeoServer publishes to clients</li>
+<li><strong>SRS Handling</strong>---Determines how GeoServer should handle projection when the two SRSes differ. Possible values are:<ul>
+<li><strong>Force declared</strong> (default): the declared SRS is forced upon the data, overwriting the native one. This is the default option and normally the best course of action, the declared code comes from the EPSG database and has a wealth of extra information in it, starting from a valid EPSG code, an area of validity, a link back in the database to find the best transformation steps to other coordinate reference systems should reprojection be required. Use this option when the source has no native CRS, has a wrong one, or has one matching the EPSG code (in order to get full metadata in the CRS used by GeoServer).</li>
+<li><strong>Reproject from native</strong>: This setting should be used when the native data set has a CRS that is not matching any official EPSG. OGC protocols need to advertise a EPSG code for the layers, with this setting the declared one will be advertised, and reprojection from native will happen on the fly as needed (in case a third CRS is requested, the reprojection will go directly from native to declared)</li>
+<li><strong>Keep native</strong>: this is a setting that should be used in very rare cases. Keeping native means using the declared one in the capabilities documents, but then using the native CRS in all otherrequests (with no reprojection in between, unless explicitly requested from client). This is particularly problematic if the source is a shapefile, as the PRJ files lack all the extra information provided by the EPSG database (it will for example break WFS 1.1 and 2.0 SRS declarations in GML output). The setting meant to be used in cases where WMS is the primary target, and the native and declared CRSs have very small differences, avoiding on the fly reprojection and datum change.</li>
+</ul>
+</li>
+</ul>
+<p>In summary, use <strong>Force Declared</strong> as your primary option, <strong>Reproject from native</strong> only if your source data does not match any EPSG code, and <strong>Keep Native</strong> only if you really know what you're doing.</p>
+<p>For WMS Server and WFS-NG layers with multiple supported CRS in capability document, the Native CRS can be selected from clicking Find button next to Native SRS field</p>
+<p><img alt="" src="../img/cascade_srs.png" /></p>
+<h3 id="bounding-boxes">Bounding Boxes</h3>
+<p>The bounding box determines the extent of the data within a layer.</p>
+<ul>
+<li><strong>Native Bounding Box</strong>---The bounds of the data specified in the Native SRS. These bounds can be generated by clicking the <strong>Compute from data</strong> button or they can be generated from the SRS definition by clicking the <strong>Compute from SRS bounds</strong> button. The SRS used depends on the <strong>SRS Handling</strong> chosen: the declared SRS when <em>Force declared</em> or <em>Reproject native to declared</em> are chosen, otherwise the native SRS is used. If the SRS does not have a bounding defined then none is generated.</li>
+<li><strong>Lat/Lon Bounding Box</strong>---The bounds specified in geographic coordinates. These bounds can be calculated by clicking the <strong>Compute from native bounds</strong> button.</li>
+</ul>
+<p><img alt="" src="../img/data_layers_BB.png" />
+<em>Bounding Boxes of a layer</em></p>
+<h3 id="coverage-parameters-raster">Coverage Parameters (Raster)</h3>
+<p>Optional coverage parameters are possible for certain types of raster data. For example, WorldImage formats request a valid range of grid coordinates in two dimensions known as a <strong>ReadGridGeometry2D.</strong> For ImageMosaic, you can use <strong>InputImageThresholdValue</strong>, <strong>InputTransparentColor</strong>, and <strong>OutputTransparentColor</strong> to control the rendering of the mosaic in terms of thresholding and transparency.</p>
+<h3 id="curves-support-vector">Curves support (Vector)</h3>
+<p>GeoServer can handle geometries containing circular arcs (initially only from Oracle Spatial and the "properties data store", though more data sources are planned).</p>
+<p>These geometries are kept in memory in their circular representation for as long as possible, are properly visually depicted in WMS, and encoded in GML 3.x as curved.</p>
+<p>There are two options pertaining the circular arcs:</p>
+<ul>
+<li><strong>Linear geometries can contain circular arcs</strong> should be checked to inform the GML encoder that the layer can contain circular arcs among other linear segments in the geometries, and thus use "gml:Curve" in place of "gml:LineString" in GML 3.1 output format. This is required because there is no quick way to know from the data sources if the linear geometries do contain circular arcs, and the choice of top level GML elements influences whether it is possible, or not, to represent circular arcs in their natural form.</li>
+<li><strong>Linearization tolerance</strong> controls how accurately the linearized version of geometries matches the original circular version of them. The tolerance can be expressed as an absolute number in the native unit of measure of the data, or it can be expressed in meters or feet using the "m" and "ft" suffixes (such as "10m" or "15ft").</li>
+</ul>
+<p><img alt="" src="../img/curved.png" />
+<em>Curved geometry control</em></p>
+<h3 id="data_webadmin_layers_edit_publishing">Feature Type Details (Vector)</h3>
+<p>Vector layers have a list of the <strong>Feature Type Details</strong>. These include the <strong>Property</strong> and <strong>Type</strong> of a data source. For example, the <code>sf:archsites</code> layer shown below includes a geometry (<code>the_geom</code>) of type "point".</p>
+<p><img alt="" src="../img/data_layers_feature.png" />
+<em>Feature Type Details</em></p>
+<p>The <strong>Nillable</strong> option refers to whether the property requires a value or may be flagged as being null. Meanwhile <strong>Min/Max Occurrences</strong> refers to how many values a field is allowed to have. Currently both <strong>Nillable</strong> and <strong>Min/Max Occurrences</strong> are set to <code>true</code> and <code>0/1</code> but may be extended with future work on complex features.</p>
+<p>The <strong>Customize attributes</strong> checkbox opens an attribute editor allowing customization.</p>
+<p><img alt="" src="../img/data_layers_feature_customize.png" />
+<em>Attribute customization</em></p>
+<p>It is possible to:</p>
+<ul>
+<li>Change the order of attributes, using either the up/down arrows, or dragging the attribute row.</li>
+<li>Remove an attribute using the "remove" icon at the end of the attribute row.</li>
+<li>Add a new attribute, which will be computed based on the <strong>Source</strong> CQL expression.</li>
+<li>Rename an attribute.</li>
+<li>Add a description of the attribute, which will be visible wherever the feature type is described.</li>
+<li>Change the nillability of the attribute, for example, making the attribute mandatory even if it's not in the data source, and vice-versa.</li>
+<li>Change the type of the attribute using the <code>pe</code> column. The most common types are available in a drop-down on editing, but it's possible to indicate any valid Java class, as long as GeoServer has a converter that goes from the value produced by the <strong>Source</strong> expression to the target type (new converters can be plugged in with some Java programming).</li>
+<li>Reset the table to the native settings, using the <strong>Reset customization</strong> link.</li>
+</ul>
+<p>Some of the feature type edits might result in the layer not being editable anymore, for example, by removing an attribute that is marked as mandatory in the data source.</p>
+<h3 id="restricting-features-showing-up-in-the-layer">Restricting features showing up in the layer</h3>
+<p>By default GeoServer will publish all the features available in the layer. It is possible to restrict the features to a subset by specifying a CQL filter in the configuration:</p>
+<p><img alt="" src="../img/data_layers_cql.png" />
+<em>Restrict the features on layer by CQL filter</em></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is recommended to use this setting for layers that are not meant to be edited. The filter is only applied to reads, if a WFS-T insert adds a feature not matching the filter, it will be added to the store anyways, but won't show up in any of the outputs.</p>
+</div>
+<h2 id="edit-layer-publishing">Edit Layer: Publishing</h2>
+<p>The Publishing tab configures HTTP and WMS/WFS/WCS settings.</p>
+<p><img alt="" src="../img/data_layers_edit_publish.png" />
+<em>Edit Layer: Publishing tab</em></p>
+<h3 id="http-settings">HTTP Settings</h3>
+<p>Cache parameters that apply to the HTTP response from client requests.</p>
+<ul>
+<li><strong>Response Cache Headers</strong>--- If selected, GeoServer will not request the same tile twice within the time specified in <strong>Cache Time</strong>. One hour measured in seconds (3600), is the default value for <strong>Cache Time</strong>.</li>
+</ul>
+<p><img alt="" src="../img/data_http_response_caching_settings.png" /></p>
+<h3 id="root-layer-in-capabilities">Root Layer in Capabilities</h3>
+<p>Capabilities documents in GeoServer always have a top level (root) Layer element that works as a container of all the available layers and groups.</p>
+<p>When a layer is the only top level element in the Capabilities document, it is possible to remove this root Layer and return a hierarchy where the layer is the root instead.</p>
+<p>To enable this functionality, choose the <strong>No</strong> option from the Root Layer in Capabilities section.</p>
+<p>By default this behaviour is inherited from the global WMS service settings (<strong>WMS Global Settings</strong> option). Finally, it is possible to override the service settings and force a <strong>Yes</strong> to always include the GeoServer root element.</p>
+<p><img alt="" src="../img/data_layers_root_in_capabilities.png" />
+<em>Layer root layer in capabilities options</em></p>
+<h3 id="services-settings">Services Settings</h3>
+<p>Sets services configuration on layer level.</p>
+<blockquote>
+<p><img alt="" src="../img/service_enable_layer.png" />
+<em>Services Settings</em></p>
+</blockquote>
+<ul>
+<li>
+<p><strong>Selectively enable services for layer</strong>---Activate/deactivate service enable/disable configuration for the layer.</p>
+</li>
+<li>
+<p><strong>Enabled Services</strong>---Selects enabled services list for this layer.</p>
+</li>
+<li>
+<p><strong>Disabled Services</strong>---Selects disabled services list for this layer.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is also possible to set by-default disabled services to all layers using the <code>org.geoserver.service.disabled</code> system/env/servlet context variable. This variable accepts a comma separated list of services that should be disabled by default, in case the resource in question has no explicit configuration.</p>
+</div>
+</li>
+</ul>
+<h3 id="wms-settings">WMS Settings</h3>
+<p>Sets the WMS specific publishing parameters.</p>
+<blockquote>
+<p><img alt="" src="../img/wms_settings.png" />
+<em>WMS Settings</em></p>
+</blockquote>
+<ul>
+<li><strong>Queryable</strong>---Controls whether the layer is queryable via WMS <code>GetFeatureInfo</code> requests.</li>
+<li><strong>Default style</strong>---Style that will be used when the client does not specify a named style in GetMap requests.</li>
+<li><strong>Additional styles</strong>---Other styles that can be associated with this layer. Some clients (and the GeoServer Layer Preview) will present those as styling alternatives for that layer to the user.</li>
+<li><strong>Default rendering buffer</strong>---Default value of the <code>buffer</code> GetMap/GetFeatureInfo vendor parameter. See the <a href="../../services/wms/vendor.md">WMS vendor parameters</a> for more details.</li>
+<li><strong>Default WMS path</strong>---Location of the layer in the WMS capabilities layer tree. Useful for building non-opaque layer groups</li>
+<li><strong>Default Interpolation Method</strong>---Allows to specify a default resampling (interpolation) method for this layer. The available options are <em>Nearest neighbor</em>, <em>Bilinear</em>, <em>Bicubic</em>, or <em>Use service default</em>, which means that no layer specific configuration will be created (the default interpolation method selected in the WMS service configuration page will be used, see <a href="../../services/wms/webadmin.rst#services_webadmin_wms_raster_options">Raster Rendering Options</a> for details). Can be overridden by the <a href="../../services/wms/vendor.rst#wms_vendor_parameter_interpolations">interpolations vendor parameter</a>.</li>
+</ul>
+<h3 id="wms-attribution">WMS Attribution</h3>
+<p>Sets publishing information about data providers.</p>
+<blockquote>
+<p><img alt="" src="../img/data_layers_WMS.png" />
+<em>WMS Attribution</em></p>
+</blockquote>
+<ul>
+<li><strong>Attribution Text</strong>---Human-readable text describing the data provider. This might be used as the text for a hyperlink to the data provider's website.</li>
+<li><strong>Attribution Link</strong>---URL to the data provider's website.</li>
+<li><strong>Logo URL</strong>---URL to an image that serves as a logo for the data provider.</li>
+<li><strong>Logo Content Type, Width, and Height</strong>---These fields provide information about the logo image that clients may use to assist with layout. GeoServer will auto-detect these values if you click the <strong>Auto-detect image size and type</strong> link at the bottom of the section. The text, link, and URL are each advertised in the WMS Capabilities document if they are provided. Some WMS clients will display this information to advise users which providers provide a particular dataset. If you omit some of the fields, those that are provided will be published and those that are not will be omitted from the Capabilities document.</li>
+</ul>
+<h3 id="wfs-settings">WFS Settings</h3>
+<p>Sets the WFS specific publishing parameters.</p>
+<blockquote>
+<p><img alt="" src="../img/wfs_settings.png" />
+<em>WFS Settings</em></p>
+</blockquote>
+<ul>
+<li>
+<p><strong>Per-Request Feature Limit</strong>---Sets the maximum number of features for a layer a WFS GetFeature operation should generate (regardless of the actual number of query hits)</p>
+</li>
+<li>
+<p><strong>Maximum number of decimals</strong>---Sets the maximum number of decimals in GML output.</p>
+</li>
+<li>
+<p><strong>Activate complex to simple features conversion</strong> - If the target output format does not handle complex features natively, this option enables the conversion of complex features to simple features, using only SF-0 (simple) attributes. This means that nested features and multiple-value attributes will be omitted from the final result, instead of throwing errors while generating the output. Output formats capable of handling complex features are not affected.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is also possible to override the <code>OtherSRS/OtherCRS</code> list configured in the WFS service, including overriding it with an empty list if need be. The input area will accept a comma separated list of EPSG codes:</p>
+<p><img alt="" src="../img/data_layers_WFS.png" />
+<em>WFS otherSRS/otherCRS override</em></p>
+<p>The list will be used only for the capabilities document generation, but will not be used to limit the actual target SRS usage in GetFeature requests.</p>
+</div>
+</li>
+<li>
+<p><strong>Encode coordinates measures</strong>---Checking this setting will cause coordinates measures ("M") to be encoded in WFS output formats that support measures. The default (not checked) is to not encode coordinates measures.</p>
+</li>
+</ul>
+<h3 id="wcs-settings">WCS Settings</h3>
+<ul>
+<li><strong>Request SRS</strong>---Provides a list of SRSs the layer can be converted to. <strong>New Request SRS</strong> allows you to add an SRS to that list.</li>
+<li><strong>Interpolation Methods</strong>---Sets the raster rendering process, if applicable.</li>
+<li><strong>Formats</strong>---Lists which output formats a layers supports.</li>
+<li><strong>GeoSearch</strong>---When enabled, allows the Google Geosearch crawler to index from this particular layer. See <a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&amp;answer=94554">What is a Geo Sitemap?</a> for more information.</li>
+</ul>
+<h3 id="kml-format-settings">KML Format Settings</h3>
+<p>Limits features based on certain criteria, otherwise known as <strong>regionation</strong>.</p>
+<ul>
+<li><strong>Default Regionating Attribute</strong>---Choose which feature should show up more prominently than others.</li>
+<li><strong>Regionating Methods</strong>---There are four types of regionating methods:<ul>
+<li><em>external-sorting</em>---Creates a temporary auxiliary database within GeoServer. The first request to build an index takes longer than subsequent requests.</li>
+<li><em>geometry</em>---Externally sorts by length (if lines) or area (if polygons)</li>
+<li><em>native-sorting</em>---Uses the default sorting algorithm of the backend where the data is hosted. It is faster than external-sorting, but will only work with PostGIS datastores.</li>
+<li><em>random</em>---Uses the existing order of the data and does not sort</li>
+</ul>
+</li>
+</ul>
+<h2 id="data_webadmin_layers_edit_dimensions">Edit Layer: Dimensions</h2>
+<p>GeoServer supports adding specific dimensions to WMS layers, as specified in WMS 1.1.1 and WMS 1.3.0 standards. There are two pre-defined dimensions in the WMS standards mentioned above, <strong>TIME</strong> and <strong>ELEVATION</strong>. Enabling dimensions for a layer allows users to specify those as extra parameters in GetMap requests, filtering the dataset to that particular set of times or elevations.</p>
+<p>These dimensions can be enabled and configured on the Dimensions tab.</p>
+<p><img alt="" src="../img/data_layers_dimension_editor_time.png" />
+<em>TIME dimension enabled for a WMS layer</em></p>
+<p>For each enabled dimension the following configuration options are available:</p>
+<ul>
+<li><strong>Attribute</strong>---Attribute name for picking the value for this dimension (vector only). This is treated at start of the range if <strong>End attribute</strong> is also given.</li>
+<li><strong>End attribute</strong>---Attribute name for picking the end of the value range for this dimension (optional, vector only).</li>
+<li><strong>Presentation</strong>---The presentation type for the available values in the capabilities document. Either <em>each value separately (list)</em>, <em>interval and resolution</em>, or <em>continuous interval</em>.</li>
+<li><strong>Default value</strong>---Default value to use for this dimension if none is provided with the request. Select one of from four strategies:<ul>
+<li><strong>smallest domain value</strong>---Uses the smallest available value from the data</li>
+<li><strong>biggest domain value</strong>---Uses the biggest available value from the data</li>
+<li><strong>nearest to the reference value</strong>---Selects the data value closest to the given reference value</li>
+<li><strong>reference value</strong>---Tries to use the given reference value as-is, regardless of whether its actually available in the data or not.</li>
+</ul>
+</li>
+<li><strong>Reference value</strong>---The default value specifier. Only shown for the default value strategies where its used.</li>
+<li><strong>Nearest match</strong>---Whether to enable, or not, WMS nearest match support on this dimension. Currently supported only on the time dimension.</li>
+<li><strong>Nearest match on raw data</strong>---Whether to enable, or not, nearest match support on this dimension for raw data requests (WCS for coverage layers, WFS for feature layers). Currently supported only on the time dimension for WCS service.</li>
+<li><strong>Acceptable interval</strong>---A maximum search distance from the specified value (available only when nearest match is enabled). Can be empty (no limit), a single value (symmetric search) or using a <code>before/after</code> syntax to specify an asymmetric search range. Time distances should specified using the ISO period syntax. For example, <code>PT1H/PT0H</code> allows to search up to one hour before the user specified value, but not after.</li>
+<li><strong>On nearest match fail</strong>---What to do if the nearest match fails the acceptable interval. The default behavior is to use the original value and thus return an empty result, but can also be configured to throw an <code>InvalidDimensionValue</code> exception instead. In case the value is not set, it defaults to ignoring the nearest match and using the original value. To switch to the opposite default, set the following variable (system, environment, or web.xml, as usual): <code>org.geoserver.wms.nearestFail=EXCEPTION</code>.</li>
+<li><strong>Begin of data range</strong>---A manually declared start value for the data range. When specified, the <code>End of data range</code> has to be specified also. Has to be either numeric, an ISO 8601 DateTime format or the string <code>PRESENT</code>. If left blank GeoServer will determine the value automatically based on the data. When using 'PRESENT' the current DateTime of the server will be used when the capabilities document is generated. Setting this value manually may be desired when working with layers consisting of huge amounts of data where the automatic determination can get slow. This parameter is only handled for WMS Layers in their capabilities document.</li>
+<li><strong>End of data range</strong>---A manually declared end value for the data range. When specified, the <code>Begin of data range</code> has to be specified also. Has to be either numeric, an ISO 8601 DateTime format or the string <code>PRESENT</code>. If left blank GeoServer will determine the value automatically based on the data. When using 'PRESENT' the current DateTime of the server will be used when the capabilities document is generated. Setting this value manually may be desired when working with layers consisting of huge amounts of data where the automatic determination can get slow. This parameter is only handled for WMS Layers in their capabilities document.</li>
+</ul>
+<p>For time dimension the value must be in ISO 8601 DateTime format <code>yyyy-MM-ddThh:mm:ss.SSSZ</code> For elevation dimension, the value must be and integer of floating point number.</p>
+<p>Only for the "Reference value" strategy, it is also possible to use ranges or times and ranges of elevation, in the form <code>fromValue/toValue</code>. Only for the "Reference value" strategy, and limited to times, it's also possible to use relative times like <code>P1M/PRESENT</code>, but caution is given that the reference value is copied verbatim into the capabilities document, and as a result, not all client might be recognizing that syntax.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more information on specifying times, please see the section on <a href="../../services/wms/time.md">Time Support in GeoServer WMS</a>.</p>
+</div>
+<h3 id="vector-custom-dimensions">Vector Custom Dimensions</h3>
+<p>GeoServer also supports adding custom dimensions to vector layers, defining their names and configurations.</p>
+<p><img alt="" src="../img/data_layers_dimension_editor_custom.png" />
+<em>Custom dimension enabled for a vector layer</em></p>
+<p>For each enabled dimension the following configuration options are available:</p>
+<ul>
+<li><strong>Name</strong>---Custom dimension name.</li>
+<li><strong>Attribute</strong>---Attribute name for picking the value for this dimension (vector only). This is treated at start of the range if <strong>End attribute</strong> is also given.</li>
+<li><strong>End attribute</strong>---Attribute name for picking the end of the value range for this dimension (optional, vector only).</li>
+<li><strong>Presentation</strong>---The presentation type for the available values in the capabilities document. Either <em>each value separately (list)</em>, <em>interval and resolution</em>, or <em>continuous interval</em>.</li>
+<li><strong>Default value</strong>---Default value to use for this dimension if none is provided with the request. Select one of from four strategies:<ul>
+<li><strong>smallest domain value</strong>---Uses the smallest available value from the data</li>
+<li><strong>biggest domain value</strong>---Uses the biggest available value from the data</li>
+<li><strong>nearest to the reference value</strong>---Selects the data value closest to the given reference value</li>
+<li><strong>reference value</strong>---Tries to use the given reference value as-is, regardless of whether its actually available in the data or not.</li>
+</ul>
+</li>
+<li><strong>Reference value</strong>---The default value specifier. Only shown for the default value strategies where its used.</li>
+<li><strong>Nearest match</strong>---Whether to enable, or not, WMS nearest match support on this dimension.</li>
+<li><strong>Acceptable interval</strong>---A maximum search distance from the specified value (available only when nearest match is enabled). Can be empty (no limit), a single value (symmetric search) or using a <code>before/after</code> syntax to specify an asymmetric search range.</li>
+<li><strong>Begin of data range</strong>---A manually declared start value for the data range. When specified, the <code>End of data range</code> has to be specified also. Has to be either numeric, an ISO 8601 DateTime format or the string <code>PRESENT</code>. If left blank GeoServer will determine the value automatically based on the data. When using 'PRESENT' the current DateTime of the server will be used when the capabilities document is generated. Setting this value manually may be desired when working with layers consisting of huge amounts of data where the automatic determination can get slow. This parameter is only handled for WMS Layers in their capabilities document.</li>
+<li><strong>End of data range</strong>---A manually declared end value for the data range. When specified, the <code>Begin of data range</code> has to be specified also. Has to be either numeric, an ISO 8601 DateTime format or the string <code>PRESENT</code>. If left blank GeoServer will determine the value automatically based on the data. When using 'PRESENT' the current DateTime of the server will be used when the capabilities document is generated. Setting this value manually may be desired when working with layers consisting of huge amounts of data where the automatic determination can get slow. This parameter is only handled for WMS Layers in their capabilities document.</li>
+</ul>
+<h3 id="edit-layer-security">Edit Layer: Security</h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more information on data access rules, please see the section on <a href="../../security/webadmin/data.md">Data</a>.</p>
+</div>
+<p>Sets data access rules at layer level.</p>
+<p><img alt="" src="../img/data_layers_security_editor.png" /></p>
+<p>To create/edit layer's data access rules simply check/uncheck checkboxes according to desired access mode and role. The Grant access to any role checkbox grant each role for each access mode.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../layerpreview/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Layer Preview">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Layer Preview
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../stores/" class="md-footer__link md-footer__link--next" aria-label="Next: Stores">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Stores
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Copyright and theme information -->
+<div class="md-copyright">
+  
+  <span class="md-copyright__highlight">
+    Copyright &copy; 2023 Open Source Geospatial Foundation
+  </span>
+  
+  
+  &mdash; Made by the
+  <a
+          href="https://geonetwork-opensource.org/"
+          target="_blank" rel="noopener"
+  >GeoNetwork Community</a>,
+  built with
+  <a
+          href="https://squidfunk.github.io/mkdocs-material/"
+          target="_blank" rel="noopener"
+  >
+    Material for MkDocs
+  </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/geoserver" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://geoserver.org/" target="_blank" rel="noopener" title="GeoServer Home" class="md-social__link">
+      <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="193.34px" height="193.34px" viewBox="0 0 193.34 193.34" enable-background="new 0 0 193.34 193.34"
+	 xml:space="preserve">
+<g>
+	<g>
+		<path fill="#0092C8" d="M152.666,78.305L114.58,40.218c-5.069-5.066-11.759-7.597-18.418-7.597
+			c-6.651,0-13.338,2.536-18.396,7.597L39.677,78.305c-5.058,5.053-7.597,11.73-7.595,18.381
+			c-0.002,6.658,2.526,13.357,7.598,18.429l38.085,38.086c5.058,5.06,11.745,7.598,18.401,7.597h0.012
+			c6.651,0,13.336-2.535,18.401-7.597l38.084-38.086c5.065-5.066,7.599-11.76,7.596-18.414
+			C160.263,90.049,157.724,83.363,152.666,78.305"/>
+	</g>
+	<g>
+		<defs>
+			<path id="SVGID_1_" d="M80,42.457L41.912,80.543c-8.89,8.89-8.89,23.442,0,32.337L80,150.965c8.892,8.894,23.45,8.895,32.342,0
+				l38.086-38.085c8.897-8.896,8.894-23.447,0.001-32.337l-38.088-38.086c-4.447-4.45-10.309-6.672-16.169-6.672
+				C90.31,35.785,84.446,38.009,80,42.457"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  overflow="visible"/>
+		</clipPath>
+		
+			<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-1.1152" y1="578.5859" x2="0.5991" y2="578.5859" gradientTransform="matrix(62.1889 -26.3976 -26.3976 -62.1889 15385.8525 36072.457)">
+			<stop  offset="0" style="stop-color:#0092C8"/>
+			<stop  offset="1" style="stop-color:#00AFDD"/>
+		</linearGradient>
+		<polygon clip-path="url(#SVGID_2_)" fill="url(#SVGID_3_)" points="-11.605,54.728 140.042,-9.643 203.951,140.918 
+			52.304,205.288 		"/>
+	</g>
+	<g>
+		<defs>
+			<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="-31.977" y="-31.433" width="256.283" height="256.283">
+				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+			</filter>
+		</defs>
+		<mask maskUnits="userSpaceOnUse" x="-31.977" y="-31.433" width="256.283" height="256.283" id="SVGID_4_">
+			<g filter="url(#Adobe_OpacityMaskFilter)">
+				<rect x="32.071" y="32.618" width="128.185" height="128.179"/>
+				<g enable-background="new    ">
+					<path fill="#FFFFFF" d="M74.216,116.232c10.716-7.749-7.75-15.5-12.309-17.778c-4.558-2.279,0-6.838,4.787-8.89
+						c4.789-2.051,3.177,13.009,8.89,7.294c5.471-5.47-9.345-11.852,3.305-19.491c12.653-7.635-5.584-5.582-5.584-12.65
+						c0-7.067,7.979-7.977,7.979-13.449c0-3.58-6.162-4.171-10.424-4.154l-31.189,31.19c-0.694,0.693-1.335,1.418-1.933,2.168
+						c0.148,5.851,7.16,6.814,11.175,6.814c5.016,0,7.751,7.751,2.737,12.765c-5.014,5.016-5.387,13.595-2.114,16.866
+						c2.203,2.206,1.443,6.312,0.708,8.771l5.916,5.912C57.781,126.397,64.845,123.012,74.216,116.232"/>
+					<path fill="#FFFFFF" d="M93.543,41.044c8.619-1.109,0.641,5.976,4.737,7.768c3.704,1.618,13.599-3.339,14.686-10.062
+						c-4.831-4.083-10.832-6.132-16.809-6.13c-2.662,0-5.327,0.412-7.891,1.224C87.793,37.293,88.174,41.737,93.543,41.044"/>
+					<path fill="#FFFFFF" d="M114.599,89.498c-1.434-5.905-15.203-8.056-21.801-3.249c-9.726,7.087-11.281,20.726-3.728,21.498
+						c7.554,0.773,14.438,8.093,10.643,15.337c-3.793,7.244,4.584,24.899,13.775,12.095c9.192-12.803,4.615-15.301,5.34-22.352
+						c0.72-7.048,9.363-15.99,7.246-18.594C123.952,91.629,115.722,94.123,114.599,89.498"/>
+					<path fill="#FFFFFF" d="M83.665,157.613c3.879,2.117,8.191,3.182,12.494,3.182h0.012c6.651,0,13.338-2.534,18.402-7.597
+						l3.215-3.213C112.307,148.96,93.251,154.596,83.665,157.613"/>
+					<path fill="#FFFFFF" d="M138.319,107.358c-10.275,3.558-17.391,15.021-11.461,16.601c5.588,1.488,11.523-2.986,15.498,1.456
+						l10.302-10.302C150.673,111.063,147.48,104.188,138.319,107.358"/>
+					<path fill="#FFFFFF" d="M105.108,65.492c2.338-0.313,0.499-2.935-0.828-3.516c-1.327-0.582-5.552-0.283-3.988,1.63
+						C101.474,65.052,102.773,65.807,105.108,65.492"/>
+					<path fill="#FFFFFF" d="M154.772,96.18c-0.018-1.368-5.071-2.765-6.405-2.646c-1.329,0.125-1.774,2.366,1.97,3.283
+						C153.161,97.507,154.789,97.547,154.772,96.18"/>
+					<path fill="#FFFFFF" d="M110.593,54.962c-0.564,4.5,3.939,6.19,1.688,8.44c-2.251,2.25-15.5,7.035-12.382,8.44
+						c8.325,3.748-5.78,3.222,0,9.003c2.871,2.87,11.933-2.198,10.974-5.628c-0.27-0.97,2.503-4.625,4.721-2.698
+						c1.917,1.666,7.844,3.504,7.844,13.321c0,5.226,4.501,10.323,9.103,9.075c3.82-1.037,4.46-5.837,2.088-7.598
+						c-3.03-2.249,5.093-4.964,13.362,3.959c3.815,4.115,10.121-0.905,11.415-1.175V90.1c-1.125-4.326-3.373-8.424-6.745-11.798
+						l-31.506-31.502C115.353,47.403,110.823,53.121,110.593,54.962"/>
+				</g>
+			</g>
+		</mask>
+		<g mask="url(#SVGID_4_)">
+			<g>
+				<defs>
+					<rect id="SVGID_5_" x="32.075" y="32.622" width="128.178" height="128.176"/>
+				</defs>
+				<clipPath id="SVGID_6_">
+					<use xlink:href="#SVGID_5_"  overflow="visible"/>
+				</clipPath>
+				<g clip-path="url(#SVGID_6_)">
+					<defs>
+						<path id="SVGID_7_" d="M96.157,32.621c-6.656-0.003-13.34,2.536-18.4,7.597L39.67,78.303
+							c-4.984,4.983-7.527,11.542-7.595,18.098v0.569c0.068,6.564,2.597,13.144,7.597,18.141l38.084,38.087
+							c5.06,5.063,11.746,7.603,18.402,7.6h0.007c6.653,0,13.341-2.535,18.405-7.6l38.084-38.087
+							c5.068-5.065,7.599-11.756,7.598-18.412c0.001-6.651-2.533-13.335-7.592-18.395l-38.09-38.087
+							c-5.062-5.066-11.749-7.597-18.401-7.597H96.157z"/>
+					</defs>
+					<clipPath id="SVGID_8_">
+						<use xlink:href="#SVGID_7_"  overflow="visible"/>
+					</clipPath>
+					
+						<linearGradient id="SVGID_9_" gradientUnits="userSpaceOnUse" x1="-1.2285" y1="578.752" x2="0.4859" y2="578.752" gradientTransform="matrix(43.2909 -44.829 -44.829 -43.2909 26057.1094 25134.7637)">
+						<stop  offset="0" style="stop-color:#8CC63F"/>
+						<stop  offset="0.6137" style="stop-color:#C9E39F"/>
+						<stop  offset="1" style="stop-color:#F1F6DE"/>
+					</linearGradient>
+					<polygon clip-path="url(#SVGID_8_)" fill="url(#SVGID_9_)" points="-31.977,98.946 93.928,-31.433 224.306,94.472 
+						98.401,224.851 					"/>
+				</g>
+			</g>
+		</g>
+		<g opacity="0.25">
+			<g>
+				<defs>
+					<rect id="SVGID_10_" x="32.082" y="32.622" width="128.177" height="128.176"/>
+				</defs>
+				<clipPath id="SVGID_11_">
+					<use xlink:href="#SVGID_10_"  overflow="visible"/>
+				</clipPath>
+				<g clip-path="url(#SVGID_11_)">
+					<defs>
+						<rect id="SVGID_12_" x="32.082" y="32.622" width="128.177" height="128.176"/>
+					</defs>
+					<clipPath id="SVGID_13_">
+						<use xlink:href="#SVGID_12_"  overflow="visible"/>
+					</clipPath>
+					<path clip-path="url(#SVGID_13_)" fill="#0092C8" d="M96.166,160.795c-6.657,0.004-13.344-2.536-18.401-7.595l-38.084-38.087
+						c-5.075-5.07-7.602-11.767-7.599-18.429c-0.003-6.651,2.538-13.328,7.595-18.378L77.765,40.22
+						c5.057-5.062,11.744-7.6,18.399-7.598c6.654-0.003,13.349,2.531,18.416,7.598l38.085,38.086
+						c5.06,5.058,7.6,11.743,7.594,18.396c0.005,6.654-2.533,13.347-7.594,18.411L114.58,153.2
+						c-5.065,5.066-11.755,7.598-18.408,7.595H96.166z M44.148,82.775c-3.826,3.827-5.741,8.853-5.743,13.909
+						c0.002,5.081,1.912,10.125,5.745,13.958l38.086,38.085c3.828,3.829,8.863,5.741,13.929,5.744
+						c5.07-0.003,10.106-1.912,13.941-5.744l38.084-38.085c3.832-3.833,5.741-8.873,5.745-13.941
+						c-0.003-5.067-1.914-10.098-5.742-13.927l-38.087-38.084c-3.835-3.834-8.873-5.743-13.943-5.746
+						c-5.067,0.001-10.1,1.917-13.928,5.746L44.148,82.775z"/>
+				</g>
+			</g>
+		</g>
+		<g opacity="0.15">
+			<g>
+				<defs>
+					<rect id="SVGID_14_" x="32.082" y="32.621" width="124.887" height="87.036"/>
+				</defs>
+				<clipPath id="SVGID_15_">
+					<use xlink:href="#SVGID_14_"  overflow="visible"/>
+				</clipPath>
+				<g clip-path="url(#SVGID_15_)">
+					<defs>
+						<rect id="SVGID_16_" x="32.082" y="32.621" width="124.887" height="87.036"/>
+					</defs>
+					<clipPath id="SVGID_17_">
+						<use xlink:href="#SVGID_16_"  overflow="visible"/>
+					</clipPath>
+					<path clip-path="url(#SVGID_17_)" fill="#FFFFFF" d="M156.97,84.014c-1.14-2.049-2.57-3.976-4.304-5.71L114.58,40.22
+						c-5.069-5.069-11.759-7.599-18.417-7.597c-6.652-0.001-13.339,2.534-18.397,7.597L39.677,78.304
+						c-5.057,5.055-7.597,11.73-7.595,18.381c-0.002,6.657,2.526,13.358,7.598,18.428l4.54,4.544
+						C52.275,107.132,91.137,54.294,156.97,84.014"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.view", "content.action.edit", "content.code.copy", "content.tabs.link", "navigation.tabs", "navigation.tracking", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "2.24"}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+    
+  </body>
+</html>
