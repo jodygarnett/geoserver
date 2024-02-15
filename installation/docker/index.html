@@ -336,6 +336,26 @@
   
 
       
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../styling/" class="md-tabs__link">
+          
+  
+    
+  
+  Styling
+
+        </a>
+      </li>
+    
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -926,6 +946,72 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../styling/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Styling
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1038,8 +1124,8 @@
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Release</p>
-<p>These instructions are for GeoServer 2.24.1.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker pull docker.osgeo.org/geoserver: 2.24.1
+<p>These instructions are for GeoServer 2.24.2.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker pull docker.osgeo.org/geoserver: 2.24.2
 </span></code></pre></div>
 </div>
 </li>
@@ -1047,7 +1133,7 @@
 <p>Run the container</p>
 <div class="admonition abstract">
 <p class="admonition-title">Release</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker run -it -p8080:8080 docker.osgeo.org/geoserver: 2.24.1
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker run -it -p8080:8080 docker.osgeo.org/geoserver: 2.24.2
 </span></code></pre></div>
 </div>
 <div class="admonition abstract">
@@ -1080,7 +1166,7 @@
 <p>Download the container</p>
 <div class="admonition abstract">
 <p class="admonition-title">Release</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker pull docker.osgeo.org/geoserver: 2.24.1
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker pull docker.osgeo.org/geoserver: 2.24.2
 </span></code></pre></div>
 </div>
 <div class="admonition abstract">
@@ -1093,7 +1179,7 @@
 <p>Run the container</p>
 <div class="admonition abstract">
 <p class="admonition-title">Release</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker run \-\-mount type=bind,src=/MY/DATADIRECTORY,target=/opt/geoserver_data -it -p8080:8080 docker.osgeo.org/geoserver: 2.24.1
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker run \-\-mount type=bind,src=/MY/DATADIRECTORY,target=/opt/geoserver_data -it -p8080:8080 docker.osgeo.org/geoserver: 2.24.2
 </span></code></pre></div>
 </div>
 <div class="admonition abstract">
@@ -1119,7 +1205,7 @@
 <div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker run -it -p8080:8080 \\
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>  \-\-env INSTALL_EXTENSIONS=true \\
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>  \-\-env STABLE_EXTENSIONS=&quot;ysld,h2&quot; \\
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>  docker.osgeo.org/geoserver: 2.24.1
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>  docker.osgeo.org/geoserver: 2.24.2
 </span></code></pre></div>
 </div>
 <div class="admonition abstract">

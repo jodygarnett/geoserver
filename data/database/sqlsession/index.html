@@ -336,6 +336,26 @@
   
 
       
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../styling/" class="md-tabs__link">
+          
+  
+    
+  
+  Styling
+
+        </a>
+      </li>
+    
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -1427,6 +1447,72 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../styling/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Styling
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1495,7 +1581,7 @@
 
 <h1 id="custom-sql-session-startstop-scripts">Custom SQL session start/stop scripts</h1>
 <p>Starting with version 2.1.4 GeoServer support custom SQL scripts that can be run every time GeoServer grabs a connection from the connection pool, and every time the session is returned to the pool.</p>
-<p>These scripts can be parametrized with the expansion of environment variables, which can be in turn set into the OGC request parameters with the same mechanism as <a href="../../styling/sld/extensions/substitution.md">Variable substitution in SLD</a>.</p>
+<p>These scripts can be parametrized with the expansion of environment variables, which can be in turn set into the OGC request parameters with the same mechanism as <a href="../../../styling/sld/extensions/substitution/">Variable substitution in SLD</a>.</p>
 <p>In addition to the parameters provided via the request the <code>GSUSER</code> variable is guaranteed to contain the current GeoServer user, or be null if no authentication is available. This is useful if the SQL sessions scripts are used to provide tight control over database access</p>
 <p>The SQL script can expand environment variables using the <code>${variableName, defaultValue}</code> syntax, for example the following alters the current database user to be the same as the GeoServer current user, or <code>geoserver</code> in case no user was authenticated</p>
 <blockquote>

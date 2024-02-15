@@ -2,457 +2,1092 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.geoserver.org/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/app-schema/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/app-schema/app-schema-resolution/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/app-schema/complex-features/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/app-schema/configuration/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/app-schema/cql-functions/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/app-schema/data-access-integration/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/app-schema/data-stores/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/app-schema/feature-chaining/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/app-schema/installation/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/app-schema/joining/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/app-schema/mapping-file/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/app-schema/mongo-tutorial/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/app-schema/polymorphism/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/app-schema/property-interpolation/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/app-schema/secondary-namespaces/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/app-schema/solr-tutorial/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/app-schema/supported-gml-versions/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/app-schema/tutorial/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/app-schema/wfs-2.0-support/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/app-schema/wfs-service-settings/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/app-schema/wms-support/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/cascaded/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/cascaded/stored_query/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/cascaded/wfs/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/cascaded/wms/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/cascaded/wmts/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/database/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/database/connection-pooling/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/database/db2/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/database/h2/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/database/jndi/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/database/mysql/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/database/oracle/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/database/postgis/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/database/primarykey/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/database/sqlserver/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/database/sqlsession/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/database/sqlview/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/raster/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/raster/arcgrid/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/raster/coverageview/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/raster/gdal/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/raster/geopkg/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/raster/geotiff/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/raster/imagepyramid/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/raster/worldimage/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/raster/imagemosaic/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/raster/imagemosaic/configuration/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/raster/imagemosaic/tutorial/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/vector/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/vector/directory/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/vector/featurepregen/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/vector/geopkg/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/vector/properties/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/vector/shapefile/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/webadmin/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/webadmin/layergroups/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/webadmin/layerpreview/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/webadmin/layers/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/webadmin/stores/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/data/webadmin/workspaces/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/gettingstarted/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/gettingstarted/geopkg-quickstart/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/gettingstarted/group-quickstart/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/gettingstarted/image-quickstart/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/gettingstarted/postgis-quickstart/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/gettingstarted/shapefile-quickstart/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/gettingstarted/style-quickstart/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/gettingstarted/web-admin-quickstart/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/installation/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/installation/docker/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/installation/linux/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/installation/upgrade/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/installation/war/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/installation/win_binary/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/installation/win_installer/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/introduction/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/introduction/gettinginvolved/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/introduction/history/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/introduction/license/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/introduction/overview/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/introduction/download/GPL/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/introduction/download/NOTICE/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/introduction/download/apache-1.1/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/introduction/download/apache-2.0/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/introduction/download/epl-1.0/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/css/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/css/cascading/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/css/directives/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/css/filters/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/css/install/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/css/metadata/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/css/multivalueprops/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/css/nested/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/css/properties/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/css/styledmarks/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/css/transformation/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/css/tutorial/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/css/valuetypes/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/css/cookbook/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/css/cookbook/line/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/css/cookbook/point/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/css/cookbook/polygon/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/css/cookbook/raster/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/css/examples/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/css/examples/extrude/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/css/examples/kml/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/css/examples/misc/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/css/examples/randomfills/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/css/examples/transformation/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/mbstyle/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/mbstyle/installing/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/mbstyle/source/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/mbstyle/cookbook/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/mbstyle/cookbook/lines/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/mbstyle/cookbook/points/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/mbstyle/cookbook/polygons/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/mbstyle/reference/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/qgis/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/introduction/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/language/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/working/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/cookbook/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/cookbook/lines/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/cookbook/points/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/cookbook/polygons/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/cookbook/rasters/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/extensions/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/extensions/geometry-transformations/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/extensions/label-obstacles/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/extensions/margins/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/extensions/pointsymbols/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/extensions/randomized/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/extensions/rendering-selection/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/extensions/rendering-transform/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/extensions/substitution/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/extensions/uom/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/extensions/composite-blend/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/extensions/composite-blend/example/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/extensions/composite-blend/modes/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/extensions/composite-blend/syntax/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/extensions/z-order/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/extensions/z-order/example/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/extensions/z-order/syntax/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/reference/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/reference/filters/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/reference/labeling/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/reference/layers/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/reference/linesymbolizer/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/reference/pointsymbolizer/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/reference/polygonsymbolizer/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/reference/rastersymbolizer/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/reference/rules/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/reference/sld/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/reference/styles/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/reference/textsymbolizer/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/tipstricks/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/tipstricks/mixed-geometries/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/sld/tipstricks/transformation-func/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/webadmin/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/workshop/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/workshop/css/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/workshop/css/css/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/workshop/css/done/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/workshop/css/linestring/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/workshop/css/point/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/workshop/css/polygon/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/workshop/css/raster/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/workshop/design/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/workshop/design/style/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/workshop/design/symbology/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/workshop/mbstyle/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/workshop/mbstyle/done/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/workshop/mbstyle/linestring/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/workshop/mbstyle/mbstyle/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/workshop/mbstyle/point/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/workshop/mbstyle/polygon/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/workshop/mbstyle/raster/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/workshop/setup/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/workshop/setup/data/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/workshop/setup/install/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/workshop/ysld/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/workshop/ysld/done/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/workshop/ysld/linestring/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/workshop/ysld/point/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/workshop/ysld/polygon/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/workshop/ysld/raster/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/workshop/ysld/ysld/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/ysld/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/ysld/gs-extensions/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/ysld/installing/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/ysld/cookbook/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/ysld/cookbook/lines/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/ysld/cookbook/points/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/ysld/cookbook/polygons/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/ysld/cookbook/rasters/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/ysld/reference/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/ysld/reference/featurestyles/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/ysld/reference/filters/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/ysld/reference/functions/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/ysld/reference/rules/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/ysld/reference/scalezoom/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/ysld/reference/structure/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/ysld/reference/transforms/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/ysld/reference/variables/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/ysld/reference/symbolizers/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/ysld/reference/symbolizers/line/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/ysld/reference/symbolizers/point/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/ysld/reference/symbolizers/polygon/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/ysld/reference/symbolizers/raster/</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.geoserver.org/styling/ysld/reference/symbolizers/text/</loc>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/webadmin/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/webadmin/about/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.geoserver.org/webadmin/welcome/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

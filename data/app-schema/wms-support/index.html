@@ -16,6 +16,8 @@
         <link rel="prev" href="../wfs-service-settings/">
       
       
+        <link rel="next" href="../../../styling/">
+      
       
       <link rel="icon" href="../../../assets/images/geoserver_mark.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
@@ -327,6 +329,26 @@
     
   
   Data
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../styling/" class="md-tabs__link">
+          
+  
+    
+  
+  Styling
 
         </a>
       </li>
@@ -1632,6 +1654,72 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../styling/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Styling
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1758,7 +1846,7 @@
 <li><strong>[myfeaturetypeid]</strong> is the id of the feature type. This <em>must</em> the same as the id specified in the file featuretype.xml of the same directory.</li>
 </ul>
 <h2 id="getmap">GetMap</h2>
-<p>Read <a href="../../services/wms/reference.md#wms_getmap">GetMap</a> for general information on the GetMap request. Read <a href="../../styling/index.md">Styling</a> for general information on how to style WMS maps with SLD files. When styling complex features, you can use XPaths to specify nested properties in your filters, as explained in <code class="interpreted-text" role="ref">app-schema.filtering-nested</code>. However, in WMS styling filters X-paths do not support handling referenced features (see <code class="interpreted-text" role="ref">app-schema.feature-chaining-by-reference</code>) as if they were actual nested features (because the filters are applied after building the features rather than before.) The prefix/namespace context that is used in the XPath expression is defined locally in the XML tags of the style file. This is an example of a Style file for complex features:</p>
+<p>Read <a href="../../services/wms/reference.md#wms_getmap">GetMap</a> for general information on the GetMap request. Read <a href="../../../styling/">Styling</a> for general information on how to style WMS maps with SLD files. When styling complex features, you can use XPaths to specify nested properties in your filters, as explained in <code class="interpreted-text" role="ref">app-schema.filtering-nested</code>. However, in WMS styling filters X-paths do not support handling referenced features (see <code class="interpreted-text" role="ref">app-schema.feature-chaining-by-reference</code>) as if they were actual nested features (because the filters are applied after building the features rather than before.) The prefix/namespace context that is used in the XPath expression is defined locally in the XML tags of the style file. This is an example of a Style file for complex features:</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">&lt;StyledLayerDescriptor</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.0.0&quot;</span><span class="w"> </span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.opengis.net/sld StyledLayerDescriptor.xsd&quot;</span><span class="w"> </span>
@@ -1946,6 +2034,22 @@ will be called multiple times if there are various feature collections
             </div>
           </a>
         
+        
+          
+          <a href="../../../styling/" class="md-footer__link md-footer__link--next" aria-label="Next: Styling">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Styling
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
