@@ -24,7 +24,7 @@
     
     
       
-        <title>Web administration interface - GeoServer</title>
+        <title>Web administration interface {: #web_admin } - GeoServer</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#web-administration-interface" class="md-skip">
+        <a href="#web_admin" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Web administration interface
+              Web administration interface {: #web_admin }
             
           </span>
         </div>
@@ -688,7 +688,7 @@
         
   
   <span class="md-ellipsis">
-    About GeoServer Page
+    About GeoServer Page {: #about }
   </span>
   
 
@@ -1041,7 +1041,7 @@
   
 
 
-<h1 id="web-administration-interface">Web administration interface</h1>
+<h1 id="web_admin">Web administration interface</h1>
 <p>The Web administration interface is a web-based tool for configuring all aspects of GeoServer, from adding data to changing service settings. In a default GeoServer installation, this interface is accessed via a web browser at <code>http://localhost:8080/geoserver/web</code>. However, this URL may vary depending on your local installation.</p>
 <p><img alt="" src="images/web-admin.png" />
 <em>Web admin interface</em></p>
@@ -1061,13 +1061,13 @@
 <p>The <strong>About &amp; Status</strong> section provides access to GeoServer diagnostic and configuration tools, and can be particularly useful for debugging.</p>
 <ul>
 <li>
-<p>The <a href="../configuration/status.md">Status</a> page shows a summary of server configuration parameters and run-time status.</p>
+<p>The <a href="../configuration/status/">Status</a> page shows a summary of server configuration parameters and run-time status.</p>
 </li>
 <li>
-<p>The <a href="../configuration/logging.md">GeoServer Logs</a> page shows the GeoServer log output. This is useful for determining errors without having to leave the browser.</p>
+<p>The <a href="../configuration/logging/">GeoServer Logs</a> page shows the GeoServer log output. This is useful for determining errors without having to leave the browser.</p>
 </li>
 <li>
-<p>The <a href="../configuration/contact.md">Contact Information</a> page sets the public contact information available in the Capabilities document of the WMS server.</p>
+<p>The <a href="../configuration/contact/">Contact Information</a> page sets the public contact information available in the Capabilities document of the WMS server.</p>
 </li>
 <li>
 <p>The <a href="about/">About GeoServer Page</a> section provides links to the GeoServer documentation, homepage and bug tracker.</p>
@@ -1100,50 +1100,50 @@
 <p>In each of these pages that contain a table, there are three different ways to locate an object: sorting, searching, and paging. To alphabetically sort a data type, click on the column header. For simple searching, enter the search criteria in the search box and hit Enter. And to page through the entries (25 at a time), use the arrow buttons located on the bottom and top of the table.</p>
 <p><strong>These pages are shown to administrators, and users that have data admin permissions.</strong></p>
 <h2 id="services">Services</h2>
-<p>The <a href="../services/index.md">Services</a> section is for configuring the services published by GeoServer.</p>
+<p>The <a href="../services/">Services</a> section is for configuring the services published by GeoServer.</p>
 <ul>
-<li>The <a href="../services/wcs/webadmin.md">Web Coverage Service (WCS)</a> page manages metadata, resource limits, and SRS availability for WCS.</li>
-<li>The <a href="../services/wfs/webadmin.md">Web Feature Service (WFS)</a> page manages metadata, feature publishing, service level options, and data-specific output for WFS.</li>
-<li>The <a href="../services/wms/webadmin.md">Web Map Service (WMS)</a> page manages metadata, resource limits, SRS availability, and other data-specific output for WMS.</li>
-<li>The <a href="../services/wps/administration.md">Web Processing Service (WPS)</a> page manages metadata and resource limits for WPS.</li>
+<li>The <a href="../services/wcs/webadmin/">Web Coverage Service (WCS)</a> page manages metadata, resource limits, and SRS availability for WCS.</li>
+<li>The <a href="../services/wfs/webadmin/">Web Feature Service (WFS)</a> page manages metadata, feature publishing, service level options, and data-specific output for WFS.</li>
+<li>The <a href="../services/wms/webadmin/">Web Map Service (WMS)</a> page manages metadata, resource limits, SRS availability, and other data-specific output for WMS.</li>
+<li>The <a href="../services/wps/administration/">Web Processing Service (WPS)</a> page manages metadata and resource limits for WPS.</li>
 </ul>
 <h2 id="settings">Settings</h2>
 <p>The <strong>Settings</strong> section contains configuration settings that apply to the entire server.</p>
 <ul>
-<li>The <a href="../configuration/globalsettings.md">Global Settings</a> page configures messaging, logging, character and proxy settings for the entire server.</li>
-<li>The <a href="../configuration/image_processing/index.md">Image Processing</a> page configures several JAI parameters, used by both WMS and WCS operations.</li>
-<li>The <a href="../configuration/raster_access.md">Coverage Access</a> page configures settings related to loading and publishing coverages.</li>
+<li>The <a href="../configuration/globalsettings/">Global Settings</a> page configures messaging, logging, character and proxy settings for the entire server.</li>
+<li>The <a href="../configuration/image_processing/">Image Processing</a> page configures several JAI parameters, used by both WMS and WCS operations.</li>
+<li>The <a href="../configuration/raster_access/">Coverage Access</a> page configures settings related to loading and publishing coverages.</li>
 </ul>
 <h2 id="tile-caching">Tile Caching</h2>
-<p>The <strong>Tile Caching</strong> section configures the embedded <a href="../geowebcache/index.md">GeoWebCache</a>.</p>
+<p>The <strong>Tile Caching</strong> section configures the embedded <a href="../geowebcache/">GeoWebCache</a>.</p>
 <ul>
-<li>The <a href="../geowebcache/webadmin/layers.md">Tile Layers</a> page shows which layers in GeoServer are also available as tiled (cached)layers, with the ability to add, edit, and delete.</li>
-<li>The <a href="../geowebcache/webadmin/defaults.md">Caching Defaults</a> page sets the global options for the caching service.</li>
-<li>The <a href="../geowebcache/webadmin/gridsets.md">Gridsets</a> page shows all available gridsets for the tile caches, with the ability to add, edit, and delete.</li>
-<li>The <a href="../geowebcache/webadmin/diskquotas.md">Disk Quota</a> page sets the options for tile cache management on disk, including strategies to reduce file size when necessary.</li>
-<li>The <a href="../geowebcache/webadmin/blobstores.md">BlobStores</a> pages manages the different blobstores (tile cache sources) known to the embedded GeoWebCache.</li>
+<li>The <a href="../geowebcache/webadmin/layers/">Tile Layers</a> page shows which layers in GeoServer are also available as tiled (cached)layers, with the ability to add, edit, and delete.</li>
+<li>The <a href="../geowebcache/webadmin/defaults/">Caching Defaults</a> page sets the global options for the caching service.</li>
+<li>The <a href="../geowebcache/webadmin/gridsets/">Gridsets</a> page shows all available gridsets for the tile caches, with the ability to add, edit, and delete.</li>
+<li>The <a href="../geowebcache/webadmin/diskquotas/">Disk Quota</a> page sets the options for tile cache management on disk, including strategies to reduce file size when necessary.</li>
+<li>The <a href="../geowebcache/webadmin/blobstores/">BlobStores</a> pages manages the different blobstores (tile cache sources) known to the embedded GeoWebCache.</li>
 </ul>
 <h2 id="security">Security</h2>
-<p>The <a href="../security/webadmin/index.md">Security</a> section configures the built-in <a href="../security/index.md">security subsystem</a>.</p>
+<p>The <a href="../security/webadmin/">Security</a> section configures the built-in <a href="../security/">security subsystem</a>.</p>
 <ul>
-<li>The <a href="../security/webadmin/settings.md">Settings</a> page manages high-level options for the security subsystem.</li>
-<li>The <a href="../security/webadmin/auth.md">Authentication</a> page manages authentication filters, filter chains, and providers.</li>
-<li>The <a href="../security/webadmin/passwords.md">Passwords</a> page manages the password policies for users and the root account.</li>
-<li>The <a href="../security/webadmin/ugr.md">Users, Groups, Roles</a> page manages the users, groups, and roles, and how they are all associated with each other. Passwords for user accounts can be changed here.</li>
-<li>The <a href="../security/webadmin/data.md">Data</a> page manages the data-level security options, allowing workspaces and layers to be restricted by role.</li>
-<li>The <a href="../security/webadmin/services.md">Services</a> page manages the service-level security options, allowing services and operations to be restricted by role.</li>
+<li>The <a href="../security/webadmin/settings/">Settings</a> page manages high-level options for the security subsystem.</li>
+<li>The <a href="../security/webadmin/auth/">Authentication</a> page manages authentication filters, filter chains, and providers.</li>
+<li>The <a href="../security/webadmin/passwords/">Passwords</a> page manages the password policies for users and the root account.</li>
+<li>The <a href="../security/webadmin/ugr/">Users, Groups, Roles</a> page manages the users, groups, and roles, and how they are all associated with each other. Passwords for user accounts can be changed here.</li>
+<li>The <a href="../security/webadmin/data/">Data</a> page manages the data-level security options, allowing workspaces and layers to be restricted by role.</li>
+<li>The <a href="../security/webadmin/services/">Services</a> page manages the service-level security options, allowing services and operations to be restricted by role.</li>
 </ul>
 <h2 id="demos">Demos</h2>
-<p>The <a href="../configuration/demos/index.md">Demos</a> section contains links to example WMS, WCS, and WFS requests for GeoServer as well as a listing all SRS info known to GeoServer. In addition, there is a reprojection console for converting coordinates between spatial reference systems, and a request builder for WCS requests.</p>
+<p>The <a href="../configuration/demos/">Demos</a> section contains links to example WMS, WCS, and WFS requests for GeoServer as well as a listing all SRS info known to GeoServer. In addition, there is a reprojection console for converting coordinates between spatial reference systems, and a request builder for WCS requests.</p>
 <p><strong>You do not need to be logged into GeoServer to access these pages.</strong></p>
 <h2 id="tools">Tools</h2>
-<p>The <a href="../configuration/tools/index.md">Tools</a> section contains administrative tools.</p>
+<p>The <a href="../configuration/tools/">Tools</a> section contains administrative tools.</p>
 <ul>
-<li>The <a href="../configuration/tools/resource/index.md">Web Resource</a> tool provides management of data directory icons, fonts, and configuration files.</li>
-<li>The <a href="../configuration/tools/bulk/index.md">Catalog Bulk Load Tool</a> can bulk copy configuration for testing</li>
+<li>The <a href="../configuration/tools/resource/">Web Resource</a> tool provides management of data directory icons, fonts, and configuration files.</li>
+<li>The <a href="../configuration/tools/bulk/">Catalog Bulk Load Tool</a> can bulk copy configuration for testing</li>
 </ul>
 <h2 id="extensions">Extensions</h2>
-<p><a href="../extensions/index.md">GeoServer extensions</a> can add functionality and extra options to the web interface. Details can be found in the section for each extension.</p>
+<p><a href="../extensions/">GeoServer extensions</a> can add functionality and extra options to the web interface. Details can be found in the section for each extension.</p>
 <h2 id="user-interface">User interface</h2>
 <h3 id="navigation">Navigation</h3>
 <p>A navigation menu is provided along the left-hand-side of the screen listing configuration pages.</p>
@@ -1191,7 +1191,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../gettingstarted/web-admin-quickstart/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Using the web administration interface">
+          <a href="../gettingstarted/web-admin-quickstart/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Using the web administration interface {: #web_admin_quickstart }">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1201,20 +1201,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Using the web administration interface
+                Using the web administration interface {: #web_admin_quickstart }
               </div>
             </div>
           </a>
         
         
           
-          <a href="about/" class="md-footer__link md-footer__link--next" aria-label="Next: About GeoServer Page">
+          <a href="about/" class="md-footer__link md-footer__link--next" aria-label="Next: About GeoServer Page {: #about }">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                About GeoServer Page
+                About GeoServer Page {: #about }
               </div>
             </div>
             <div class="md-footer__button md-icon">

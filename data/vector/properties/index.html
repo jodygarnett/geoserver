@@ -24,7 +24,7 @@
     
     
       
-        <title>Java Properties - GeoServer</title>
+        <title>Java Properties {: #data_java_properties } - GeoServer</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#java-properties" class="md-skip">
+        <a href="#data_java_properties" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Java Properties
+              Java Properties {: #data_java_properties }
             
           </span>
         </div>
@@ -875,7 +875,7 @@
         
   
   <span class="md-ellipsis">
-    Directory of spatial files
+    Directory of spatial files {: #data_shapefiles_directory }
   </span>
   
 
@@ -896,7 +896,7 @@
         
   
   <span class="md-ellipsis">
-    Pregeneralized Features
+    Pregeneralized Features {: #data_featurepregen }
   </span>
   
 
@@ -917,7 +917,7 @@
         
   
   <span class="md-ellipsis">
-    GeoPackage
+    GeoPackage {: #data_geopkg_vector }
   </span>
   
 
@@ -947,7 +947,7 @@
           
   
   <span class="md-ellipsis">
-    Java Properties
+    Java Properties {: #data_java_properties }
   </span>
   
 
@@ -958,7 +958,7 @@
         
   
   <span class="md-ellipsis">
-    Java Properties
+    Java Properties {: #data_java_properties }
   </span>
   
 
@@ -1026,7 +1026,7 @@
         
   
   <span class="md-ellipsis">
-    Shapefile
+    Shapefile {: #data_shapefile }
   </span>
   
 
@@ -1489,7 +1489,7 @@
   
 
 
-<h1 id="java-properties">Java Properties</h1>
+<h1 id="data_java_properties">Java Properties</h1>
 <p>The Properties data store provides access to one or more feature types (layers) stored in Java property files; these are plain text files stored on the local filesystem. The Properties data store was never intended to be shipped with GeoServer. It originated in a GeoTools tutorial, and later found widespread use by developers in automated tests that required a convenient store for small snippets of data. It slipped into GeoServer through the completeness of the packaging process, and was automatically detected and offered to users via the web interface. The Property data store has proved useful in tutorials and examples.</p>
 <ul>
 <li>We do not recommend the use the Properties data store for large amounts of data, with either many features or large geometries. Its performance will be terrible.</li>
@@ -1538,7 +1538,7 @@ stations.31=31|ALBY|Albany|POINT(117.8102 -34.9502)
 </ul>
 </li>
 </ul>
-<p>Note that in this example <code>srid=4326</code> sets the spatial reference system (SRS) to <code>EPSG:4326</code>, which is by convention in longitude/latitude order when referred to in the short form. If you request these features in GML 3 you will see that GeoServer correctly translates the geometry to the URN form SRS <code>urn:x-ogc:def:crs:EPSG:4326</code> in latitude/longitude form. See the <a href="../../services/wfs/webadmin.md">WFS settings</a> page for more on SRS axis order options.</p>
+<p>Note that in this example <code>srid=4326</code> sets the spatial reference system (SRS) to <code>EPSG:4326</code>, which is by convention in longitude/latitude order when referred to in the short form. If you request these features in GML 3 you will see that GeoServer correctly translates the geometry to the URN form SRS <code>urn:x-ogc:def:crs:EPSG:4326</code> in latitude/longitude form. See the <a href="../../../services/wfs/webadmin/">WFS settings</a> page for more on SRS axis order options.</p>
 
 
 
@@ -1576,7 +1576,7 @@ stations.31=31|ALBY|Albany|POINT(117.8102 -34.9502)
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../geopkg/" class="md-footer__link md-footer__link--prev" aria-label="Previous: GeoPackage">
+          <a href="../geopkg/" class="md-footer__link md-footer__link--prev" aria-label="Previous: GeoPackage {: #data_geopkg_vector }">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1586,20 +1586,20 @@ stations.31=31|ALBY|Albany|POINT(117.8102 -34.9502)
                 Previous
               </span>
               <div class="md-ellipsis">
-                GeoPackage
+                GeoPackage {: #data_geopkg_vector }
               </div>
             </div>
           </a>
         
         
           
-          <a href="../shapefile/" class="md-footer__link md-footer__link--next" aria-label="Next: Shapefile">
+          <a href="../shapefile/" class="md-footer__link md-footer__link--next" aria-label="Next: Shapefile {: #data_shapefile }">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Shapefile
+                Shapefile {: #data_shapefile }
               </div>
             </div>
             <div class="md-footer__button md-icon">

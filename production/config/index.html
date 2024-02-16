@@ -1,0 +1,1397 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Designed for interoperability to publishes data from any major spatial data source using open standards.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.geoserver.org/production/config/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/geoserver_mark.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
+    
+    
+      
+        <title>Configuration Considerations {: #production_config } - GeoServer</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f2e4d321.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#production_config" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://geoserver.org/" title="GeoServer" class="md-header__button md-logo" aria-label="GeoServer" data-md-component="logo">
+      
+  <img src="../../assets/images/geoserver_mark.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GeoServer
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Configuration Considerations {: #production_config }
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/geoserver/geoserver" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    geoserver
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  User Manual
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../introduction/" class="md-tabs__link">
+          
+  
+    
+  
+  Introduction
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../installation/" class="md-tabs__link">
+          
+  
+    
+  
+  Installation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../gettingstarted/" class="md-tabs__link">
+          
+  
+    
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../webadmin/" class="md-tabs__link">
+          
+  
+    
+  
+  Web Admin
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../data/" class="md-tabs__link">
+          
+  
+    
+  
+  Data
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../styling/" class="md-tabs__link">
+          
+  
+    
+  
+  Styling
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://geoserver.org/" title="GeoServer" class="md-nav__button md-logo" aria-label="GeoServer" data-md-component="logo">
+      
+  <img src="../../assets/images/geoserver_mark.png" alt="logo">
+
+    </a>
+    GeoServer
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/geoserver/geoserver" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    geoserver
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Manual
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../introduction/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../installation/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../gettingstarted/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../webadmin/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Web Admin
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../data/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Data
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../styling/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Styling
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#use-production-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use production logging
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logging-configuration-hardening" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logging configuration hardening
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-a-service-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set a service strategy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#personalize-your-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personalize your server
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-service-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure service limits
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-security-for-data-modification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set security for data modification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache-your-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cache your data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#welcome-page-selectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Welcome page selectors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disable-the-geoserver-web-administration-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disable the GeoServer web administration interface
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disable-the-auto-complete-on-web-administration-interface-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disable the Auto-complete on web administration interface login
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disable-anonymous-access-to-the-layer-preview-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disable anonymous access to the layer preview page
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#x-frame-options-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      X-Frame-Options Policy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#x-content-type-options-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      X-Content-Type-Options Policy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ows-serviceexception-xml-mimetype" class="md-nav__link">
+    <span class="md-ellipsis">
+      OWS ServiceException XML mimeType
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production_config_external_entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      External Entities Resolution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session Management
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/geoserver/geoserver/edit/main/docs/en/user/docs/production/config.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/geoserver/geoserver/raw/main/docs/en/user/docs/production/config.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
+  
+
+
+<h1 id="production_config">Configuration Considerations</h1>
+<h2 id="use-production-logging">Use production logging</h2>
+<p>Logging may visibly affect the performance of your server. High logging levels are often necessary to track down issues, but by default you should run with low levels. (You can switch the logging levels while GeoServer is running.)</p>
+<p>You can change the logging level in the <a href="../../configuration/globalsettings/#config_globalsettings_log_profile">Logging Profile</a>. You will want to choose the <code>PRODUCTION</code> logging configuration, where only problems are written to the log files.</p>
+<h2 id="logging-configuration-hardening">Logging configuration hardening</h2>
+<p>For production systems, it is advised to set <code>GEOSERVER_LOG_LOCATION</code> parameter during startup. The value may be defined as either an environment variable, java system property, or servlet context parameter.</p>
+<p>The location set for <code>GEOSERVER_LOG_LOCATION</code> has priority, causing the value provided using the Admin Console GUI or REST API to be ignored. This approach establishes a separation of responsibility between those setting up and controlling the actual machine, and those configuring the GeoServer application.</p>
+<p>See <a href="../../configuration/logging/">Advanced log configuration</a> for more information.</p>
+<h2 id="set-a-service-strategy">Set a service strategy</h2>
+<p>A service strategy is the method in which output is served to the client. This is a balance between proper form (being absolutely sure of reporting errors with the proper OGC codes, etc.) and speed (serving output as quickly as possible). This is a decision to be made based on the function that GeoServer is providing. You can configure the service strategy by modifying the <strong><code>web.xml</code></strong> file of your GeoServer instance.</p>
+<p>The possible strategies are:</p>
+<hr />
+<p><strong>Strategy</strong>       <strong>Description</strong></p>
+<p><code>SPEED</code>            Serves output right away. This is the fastest strategy, but proper OGC errors are usually omitted.</p>
+<p><code>BUFFER</code>           Stores the whole result in memory, and then serves it after the output is complete. This ensures proper OGC error reporting, but delays the response quite a bit and can exhaust memory if the response is large.</p>
+<p><code>FILE</code>             Similar to <code>BUFFER</code>, but stores the whole result in a file instead of in memory. Slower than <code>BUFFER</code>, but ensures there won't be memory issues.</p>
+<p><code>PARTIAL-BUFFER</code>   A balance between <code>BUFFER</code> and <code>SPEED</code>, this strategy tries to buffer in memory a few KB of response, then serves the full output.</p>
+<hr />
+<h2 id="personalize-your-server">Personalize your server</h2>
+<p>This isn't a performance consideration, but it is just as important. In order to make GeoServer as useful as possible, you should customize the server's metadata to your organization. It may be tempting to skip some of the configuration steps, and leave in the same keywords and abstract as the sample, but this will only confuse potential users.</p>
+<p>Suggestions:</p>
+<ul>
+<li>Fill out the WFS, WMS, and WCS <a href="../../configuration/service-metadata/">Service Metadata</a> sections (this info will be broadcast as part of the capabilities documents)</li>
+<li>Serve your data with your own namespace (and provide a correct URI)</li>
+<li>Remove default layers (such as <code>topp:states</code>)</li>
+</ul>
+<h2 id="configure-service-limits">Configure service limits</h2>
+<p>Make sure clients cannot request an inordinate amount of resources from your server.</p>
+<p>In particular:</p>
+<ul>
+<li>Set the <a href="../../services/wfs/webadmin/">maximum amount of features</a> returned by each WFS GetFeature request (this can also be set on a per featuretype basis by modifying the <a href="../../data/webadmin/layers/">layer publishing wfs settings</a>).</li>
+<li>Set the <a href="../../services/wms/configuration/">WMS request limits</a> so that no request will consume too much memory or too much time</li>
+<li>Set <a href="../../services/wps/administration/">WPS limits</a>, so no process will consume too much memory or too much time. You may also limit the <a href="../../services/wps/security/">size input parameters</a> for further control.</li>
+</ul>
+<h2 id="set-security-for-data-modification">Set security for data modification</h2>
+<p>GeoServer includes support for WFS-T (transactions) by default, which lets users modify your data.</p>
+<p>If you don't want your database modified, you can turn off transactions in the <a href="../../services/wfs/webadmin/">WFS settings</a>. Set the <strong>Service Level</strong> to <code>Basic</code>. For extra security, we recommend any database access use datastore credentials providing read-only permissions. This will eliminate the possibility of a SQL injection (though GeoServer is generally not vulnerable to that sort of attack).</p>
+<p>If you would like some users to be able to modify data, set the service level <strong>Service Level</strong> to <code>Transactional</code> (or <code>Complete</code>) and use <a href="../../security/service/">Service Security</a> to limit access to the <code>WFS.Transaction</code> operation.</p>
+<p>If you would like some users to be able to modify some but not all of your data, set the <strong>Service Level</strong> to <code>Transactional</code> (or <code>Complete</code>), and use <a href="../../security/layer/">Layer security</a> to limit write access to specific layers. Data security can be used to allow write access based on workspace, datastore, or layer security.</p>
+<h2 id="cache-your-data">Cache your data</h2>
+<p>Server-side caching of WMS tiles is the best way to increase performance. In caching, pre-rendered tiles will be saved, eliminating the need for redundant WMS calls. There are several ways to set up WMS caching for GeoServer. GeoWebCache is the simplest method, as it comes bundled with GeoServer. (See the section on <a href="../../geowebcache/">GeoWebCache</a> for more details.) Another option is <a href="http://tilecache.org">TileCache</a>.</p>
+<p>You can also use a more generic non-spatial caching system, such as <a href="http://www.opensymphony.com/oscache/">OSCache</a> (an embedded cache service) or <a href="http://www.squid-cache.org">Squid</a> (a web cache proxy).</p>
+<p>Caching is also possible for WFS layers, in a very limited fashion. For DataStores that don't have a quick way to determine feature counts (e.g. shapefiles), enabling caching can prevent querying a store twice during a single request. To enable caching, set the Java system property <code>org.geoserver.wfs.getfeature.cachelimit</code> to a positive integer. Any data sets that are smaller than the cache limit will be cached for the duration of a request, which will prevent the dataset from being queried a second time for the feature count. Note that this may adversely affect some types of DataStores, as it bypasses any feature count optimizations that may exist.</p>
+<h2 id="welcome-page-selectors">Welcome page selectors</h2>
+<p>The workspace and layer selectors might take a lot of time to fill up against large catalogs. Because of this, GeoServer tries to limit the time taken to fill them (by default, 5 seconds), and the number of items in them (by default, <code>1000</code>), and will fall back on simple text fields if the time limit is reached.</p>
+<p>In some situations, that won't be enough and the page might get stuck anyways. The following properties can be used to tweak the behavior:</p>
+<ul>
+<li><code>GeoServerHomePage.selectionMode</code> : can be set to <code>text</code> to always use simple text fields, <code>dropdown</code> to always use dropdowns, or <code>auto</code> to use the default automatic behavior.</li>
+<li><code>GeoServerHomePage.selectionTimeout</code> : the time limit in milliseconds, defaults to <code>5000</code>.</li>
+<li><code>GeoServerHomePage.selectionMaxItems</code> : the maximum number of items to show in the dropdowns, defaults to <code>1000</code>.</li>
+</ul>
+<p>When using <code>text</code> selection mode the page description is static, no longer offering of available workspace and layers.</p>
+<p><img alt="" src="../images/selector_text.png" />
+<em>Welcome page text selection mode</em></p>
+<h2 id="disable-the-geoserver-web-administration-interface">Disable the GeoServer web administration interface</h2>
+<p>In some circumstances, you might want to completely disable the web administration interface. There are two ways of doing this:</p>
+<ul>
+<li>Set the Java system property <code>GEOSERVER_CONSOLE_DISABLED</code> to true by adding <code>-DGEOSERVER_CONSOLE_DISABLED=true</code> to your container's JVM options</li>
+<li>Remove all of the <strong><code>gs-web*-.jar</code></strong> files from <strong><code>WEB-INF/lib</code></strong></li>
+</ul>
+<h2 id="disable-the-auto-complete-on-web-administration-interface-login">Disable the Auto-complete on web administration interface login</h2>
+<p>To disable the Auto Complete on Web Admin login form:</p>
+<ul>
+<li>Set the Java system property <code>geoserver.login.autocomplete</code> to off by adding <code>-Dgeoserver.login.autocomplete=off</code> to your container's JVM options</li>
+<li>If the browser has already cached the credentials, please consider clearing the cache or form data after setting the JVM option.</li>
+</ul>
+<h2 id="disable-anonymous-access-to-the-layer-preview-page">Disable anonymous access to the layer preview page</h2>
+<p>In some circumstances, you might want to provide access to the layer preview page to authenticated users only. The solution is based on adding a new <strong>filter chain</strong> with a rule matching the path of the layer preview page to GeoServer's <a href="../../security/auth/chain/">Authentication chain</a>. Here are the steps to reproduce:</p>
+<ul>
+<li>Under <strong>Security</strong> -&gt; <strong>Authentication</strong> -&gt; <strong>Filter Chains</strong>, add a new HTML chain</li>
+<li>Set the new chain's name to <code>webLayerPreview</code> (or likewise)</li>
+<li>As Ant pattern, enter the path of the layer preview page, which is <strong><code>/web/wicket/bookmarkable/org.geoserver.web.demo.MapPreviewPage</code></strong> (since it's an Ant pattern, the path could as well be written shorter with wildcards: <strong><code>/web/**/org.geoserver.web.demo.MapPreviewPage</code></strong>)</li>
+<li>Check option <strong>Allow creation of an HTTP session for storing the authentication token</strong></li>
+<li>Under <strong>Chain filters</strong>, add filters <code>rememberme</code> and <code>form</code> (in that order) to the <strong>Selected</strong> list on the right side</li>
+<li>Close the dialog by clicking the <strong>Close</strong> button; the new HTML chain has been added to the list of chains as the last entry</li>
+<li>Since all chains are processed in turn from top to bottom, in order to have any effect, the new <code>webLayerPreview</code> chain must be positioned <strong>before</strong> the <code>web</code> chain (which matches paths <strong><code>/web/**,/gwc/rest/web/**,/</code></strong>)</li>
+<li>Use the <strong>Position</strong> arrows on the left side of the list to move the newly added chain upwards accordingly</li>
+<li>Save the changes you've made by clicking the <strong>Save</strong> button at the bottom of the page</li>
+</ul>
+<p>With that in place, unauthenticated users now just get forwarded to the login page when they click the layer preview menu item link.</p>
+<p>The above procedure could as well be applied to other pages of the web administration interface that one needs to remove anonymous access for. For example:</p>
+<ul>
+<li><strong>Demos</strong> -&gt; <strong>Demo requests</strong> (path: <strong><code>/web/wicket/bookmarkable/org.geoserver.web.demo.DemoRequestsPage</code></strong>)</li>
+<li><strong>Demos</strong> -&gt; <strong>WCS request builder</strong> (path: <strong><code>/web/wicket/bookmarkable/org.geoserver.wcs.web.demo.WCSRequestBuilder</code></strong>)</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Although disabling anonymous access to the layer preview page <strong>MAY</strong> prevent some unauthenticated users from accessing data with some simple clicks, this is <strong>NOT</strong> a security feature. In particular, since other more sophisticated users, having the ability to build OGC requests, <strong>MAY</strong> still access critical data through GeoServer's services, this is <strong>NOT</strong> a replacement for a well-designed security concept based on data-level or service-level security.</p>
+</div>
+<h2 id="x-frame-options-policy">X-Frame-Options Policy</h2>
+<p>In order to prevent clickjacking attacks GeoServer defaults to setting the X-Frame-Options HTTP header to SAMEORIGIN. This prevents GeoServer from being embedded into an iFrame, which prevents certain kinds of security vulnerabilities. See the <a href="https://www.owasp.org/index.php/Clickjacking_Defense_Cheat_Sheet">OWASP Clickjacking entry</a> for details.</p>
+<p>If you wish to change this behavior you can do so through the following properties:</p>
+<ul>
+<li><code>geoserver.xframe.shouldSetPolicy</code>: controls whether the X-Frame-Options filter should be set at all. Default is true.</li>
+<li><code>geoserver.xframe.policy</code>: controls what the set the X-Frame-Options header to. Default is <code>SAMEORIGIN</code> valid options are <code>DENY</code>, <code>SAMEORIGIN</code> and <code>ALLOW-FROM</code> [uri]</li>
+</ul>
+<p>These properties can be set either via Java system property, command line argument (-D), environment variable or web.xml init parameter.</p>
+<h2 id="x-content-type-options-policy">X-Content-Type-Options Policy</h2>
+<p>In order to mitigate MIME confusion attacks (which often results in Cross-Site Scripting), GeoServer defaults to setting the <code>X-Content-Type-Options: nosniff</code> HTTP header. See the <a href="https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Headers_Cheat_Sheet.html#x-content-type-options">OWASP X-Content-Type-Options entry</a> for details.</p>
+<p>If you wish to change this behavior you can do so through the following property:</p>
+<ul>
+<li><code>geoserver.xContentType.shouldSetPolicy</code>: controls whether the X-Content-Type-Options header should be set. Default is true.</li>
+</ul>
+<p>This property can be set either via Java system property, command line argument (-D), environment variable or web.xml init parameter.</p>
+<h2 id="ows-serviceexception-xml-mimetype">OWS ServiceException XML mimeType</h2>
+<p>By default, OWS Service Exception XML responses have content-type set to <code>application/xml</code>.</p>
+<p>In case you want it set to <code>text/xml</code> instead, you need to setup the Java System properties:</p>
+<ul>
+<li><code>-Dows10.exception.xml.responsetype=text/xml</code> for OWS 1.0.0 version</li>
+<li><code>-Dows11.exception.xml.responsetype=text/xml</code> for OWS 1.1.0 version</li>
+</ul>
+<h2 id="production_config_external_entities">External Entities Resolution</h2>
+<p>When processing XML documents from service requests (POST requests, and GET requests with FILTER and SLD_BODY parameters) XML entity resolution is used to obtain any referenced documents. This is most commonly seen when the XML request provides the location of an XSD schema location for validation).</p>
+<p>GeoServer provides a number of facilities to control external entity resolution:</p>
+<ul>
+<li>
+<p>By default <code>tp</code> and <code>ps</code> entity resolution is unrestricted, with access to local <code>le</code> references prevented.</p>
+</li>
+<li>
+<p>To restrict <code>tp</code> and <code>ps</code> entity resolution:</p>
+<div class="language-text highlight"><pre><span></span><code>-DENTITY_RESOLUTION_ALLOWLIST
+</code></pre></div>
+<p>The built-in allow list includes w3c, ogc, and inspire schema locations:</p>
+<div class="language-text highlight"><pre><span></span><code>www.w3.org|schemas.opengis.net|www.opengis.net|inspire.ec.europa.eu/schemas
+</code></pre></div>
+<p>In addition the proxy base url is included, if available from global settings.</p>
+<p>Access to local <code>le</code> references remains restricted.</p>
+</li>
+<li>
+<p>To allow additional external entity <code>tp</code> and <code>ps</code> locations use a comma or bar separated list:</p>
+<div class="language-text highlight"><pre><span></span><code>-DENTITY_RESOLUTION_ALLOWLIST=server1|server2|server3/schemas
+</code></pre></div>
+</li>
+<li>
+<p>To turn off all restrictions (allowing <code>http</code>, <code>https</code>, and <code>file</code> references) use the global setting <a href="../../configuration/globalsettings/#config_globalsettings_external_entities">Unrestricted XML External Entity Resolution</a>.</p>
+<p>This setting prevents <code>ENTITY_RESOLUTION_ALLOWLIST</code> from being used.</p>
+</li>
+</ul>
+<h2 id="session-management">Session Management</h2>
+<p>GeoServer defaults to managing user sessions using cookies with the <code>HttpOnly</code> flag set to prevent attackers from using cross-site scripting (XSS) attacks to steal a user's session token. You can configure the session behavior by modifying the <strong><code>web.xml</code></strong> file of your GeoServer instance.</p>
+<p>It is strongly recommended that production environments also set the <code>Secure</code> flag on session cookies. This can be enabled by uncommenting the following in the <strong><code>web.xml</code></strong> file if the web interface is only being accessed through HTTPS but the flag may need to be set by a proxy server if the web interface needs to support both HTTP and HTTPS.</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;secure&gt;</span>true<span class="nt">&lt;/secure&gt;</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Copyright and theme information -->
+<div class="md-copyright">
+  
+  <span class="md-copyright__highlight">
+    Copyright &copy; 2023 Open Source Geospatial Foundation
+  </span>
+  
+  
+  &mdash; Made by the
+  <a
+          href="https://geonetwork-opensource.org/"
+          target="_blank" rel="noopener"
+  >GeoNetwork Community</a>,
+  built with
+  <a
+          href="https://squidfunk.github.io/mkdocs-material/"
+          target="_blank" rel="noopener"
+  >
+    Material for MkDocs
+  </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/geoserver" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://geoserver.org/" target="_blank" rel="noopener" title="GeoServer Home" class="md-social__link">
+      <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="193.34px" height="193.34px" viewBox="0 0 193.34 193.34" enable-background="new 0 0 193.34 193.34"
+	 xml:space="preserve">
+<g>
+	<g>
+		<path fill="#0092C8" d="M152.666,78.305L114.58,40.218c-5.069-5.066-11.759-7.597-18.418-7.597
+			c-6.651,0-13.338,2.536-18.396,7.597L39.677,78.305c-5.058,5.053-7.597,11.73-7.595,18.381
+			c-0.002,6.658,2.526,13.357,7.598,18.429l38.085,38.086c5.058,5.06,11.745,7.598,18.401,7.597h0.012
+			c6.651,0,13.336-2.535,18.401-7.597l38.084-38.086c5.065-5.066,7.599-11.76,7.596-18.414
+			C160.263,90.049,157.724,83.363,152.666,78.305"/>
+	</g>
+	<g>
+		<defs>
+			<path id="SVGID_1_" d="M80,42.457L41.912,80.543c-8.89,8.89-8.89,23.442,0,32.337L80,150.965c8.892,8.894,23.45,8.895,32.342,0
+				l38.086-38.085c8.897-8.896,8.894-23.447,0.001-32.337l-38.088-38.086c-4.447-4.45-10.309-6.672-16.169-6.672
+				C90.31,35.785,84.446,38.009,80,42.457"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  overflow="visible"/>
+		</clipPath>
+		
+			<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-1.1152" y1="578.5859" x2="0.5991" y2="578.5859" gradientTransform="matrix(62.1889 -26.3976 -26.3976 -62.1889 15385.8525 36072.457)">
+			<stop  offset="0" style="stop-color:#0092C8"/>
+			<stop  offset="1" style="stop-color:#00AFDD"/>
+		</linearGradient>
+		<polygon clip-path="url(#SVGID_2_)" fill="url(#SVGID_3_)" points="-11.605,54.728 140.042,-9.643 203.951,140.918 
+			52.304,205.288 		"/>
+	</g>
+	<g>
+		<defs>
+			<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="-31.977" y="-31.433" width="256.283" height="256.283">
+				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+			</filter>
+		</defs>
+		<mask maskUnits="userSpaceOnUse" x="-31.977" y="-31.433" width="256.283" height="256.283" id="SVGID_4_">
+			<g filter="url(#Adobe_OpacityMaskFilter)">
+				<rect x="32.071" y="32.618" width="128.185" height="128.179"/>
+				<g enable-background="new    ">
+					<path fill="#FFFFFF" d="M74.216,116.232c10.716-7.749-7.75-15.5-12.309-17.778c-4.558-2.279,0-6.838,4.787-8.89
+						c4.789-2.051,3.177,13.009,8.89,7.294c5.471-5.47-9.345-11.852,3.305-19.491c12.653-7.635-5.584-5.582-5.584-12.65
+						c0-7.067,7.979-7.977,7.979-13.449c0-3.58-6.162-4.171-10.424-4.154l-31.189,31.19c-0.694,0.693-1.335,1.418-1.933,2.168
+						c0.148,5.851,7.16,6.814,11.175,6.814c5.016,0,7.751,7.751,2.737,12.765c-5.014,5.016-5.387,13.595-2.114,16.866
+						c2.203,2.206,1.443,6.312,0.708,8.771l5.916,5.912C57.781,126.397,64.845,123.012,74.216,116.232"/>
+					<path fill="#FFFFFF" d="M93.543,41.044c8.619-1.109,0.641,5.976,4.737,7.768c3.704,1.618,13.599-3.339,14.686-10.062
+						c-4.831-4.083-10.832-6.132-16.809-6.13c-2.662,0-5.327,0.412-7.891,1.224C87.793,37.293,88.174,41.737,93.543,41.044"/>
+					<path fill="#FFFFFF" d="M114.599,89.498c-1.434-5.905-15.203-8.056-21.801-3.249c-9.726,7.087-11.281,20.726-3.728,21.498
+						c7.554,0.773,14.438,8.093,10.643,15.337c-3.793,7.244,4.584,24.899,13.775,12.095c9.192-12.803,4.615-15.301,5.34-22.352
+						c0.72-7.048,9.363-15.99,7.246-18.594C123.952,91.629,115.722,94.123,114.599,89.498"/>
+					<path fill="#FFFFFF" d="M83.665,157.613c3.879,2.117,8.191,3.182,12.494,3.182h0.012c6.651,0,13.338-2.534,18.402-7.597
+						l3.215-3.213C112.307,148.96,93.251,154.596,83.665,157.613"/>
+					<path fill="#FFFFFF" d="M138.319,107.358c-10.275,3.558-17.391,15.021-11.461,16.601c5.588,1.488,11.523-2.986,15.498,1.456
+						l10.302-10.302C150.673,111.063,147.48,104.188,138.319,107.358"/>
+					<path fill="#FFFFFF" d="M105.108,65.492c2.338-0.313,0.499-2.935-0.828-3.516c-1.327-0.582-5.552-0.283-3.988,1.63
+						C101.474,65.052,102.773,65.807,105.108,65.492"/>
+					<path fill="#FFFFFF" d="M154.772,96.18c-0.018-1.368-5.071-2.765-6.405-2.646c-1.329,0.125-1.774,2.366,1.97,3.283
+						C153.161,97.507,154.789,97.547,154.772,96.18"/>
+					<path fill="#FFFFFF" d="M110.593,54.962c-0.564,4.5,3.939,6.19,1.688,8.44c-2.251,2.25-15.5,7.035-12.382,8.44
+						c8.325,3.748-5.78,3.222,0,9.003c2.871,2.87,11.933-2.198,10.974-5.628c-0.27-0.97,2.503-4.625,4.721-2.698
+						c1.917,1.666,7.844,3.504,7.844,13.321c0,5.226,4.501,10.323,9.103,9.075c3.82-1.037,4.46-5.837,2.088-7.598
+						c-3.03-2.249,5.093-4.964,13.362,3.959c3.815,4.115,10.121-0.905,11.415-1.175V90.1c-1.125-4.326-3.373-8.424-6.745-11.798
+						l-31.506-31.502C115.353,47.403,110.823,53.121,110.593,54.962"/>
+				</g>
+			</g>
+		</mask>
+		<g mask="url(#SVGID_4_)">
+			<g>
+				<defs>
+					<rect id="SVGID_5_" x="32.075" y="32.622" width="128.178" height="128.176"/>
+				</defs>
+				<clipPath id="SVGID_6_">
+					<use xlink:href="#SVGID_5_"  overflow="visible"/>
+				</clipPath>
+				<g clip-path="url(#SVGID_6_)">
+					<defs>
+						<path id="SVGID_7_" d="M96.157,32.621c-6.656-0.003-13.34,2.536-18.4,7.597L39.67,78.303
+							c-4.984,4.983-7.527,11.542-7.595,18.098v0.569c0.068,6.564,2.597,13.144,7.597,18.141l38.084,38.087
+							c5.06,5.063,11.746,7.603,18.402,7.6h0.007c6.653,0,13.341-2.535,18.405-7.6l38.084-38.087
+							c5.068-5.065,7.599-11.756,7.598-18.412c0.001-6.651-2.533-13.335-7.592-18.395l-38.09-38.087
+							c-5.062-5.066-11.749-7.597-18.401-7.597H96.157z"/>
+					</defs>
+					<clipPath id="SVGID_8_">
+						<use xlink:href="#SVGID_7_"  overflow="visible"/>
+					</clipPath>
+					
+						<linearGradient id="SVGID_9_" gradientUnits="userSpaceOnUse" x1="-1.2285" y1="578.752" x2="0.4859" y2="578.752" gradientTransform="matrix(43.2909 -44.829 -44.829 -43.2909 26057.1094 25134.7637)">
+						<stop  offset="0" style="stop-color:#8CC63F"/>
+						<stop  offset="0.6137" style="stop-color:#C9E39F"/>
+						<stop  offset="1" style="stop-color:#F1F6DE"/>
+					</linearGradient>
+					<polygon clip-path="url(#SVGID_8_)" fill="url(#SVGID_9_)" points="-31.977,98.946 93.928,-31.433 224.306,94.472 
+						98.401,224.851 					"/>
+				</g>
+			</g>
+		</g>
+		<g opacity="0.25">
+			<g>
+				<defs>
+					<rect id="SVGID_10_" x="32.082" y="32.622" width="128.177" height="128.176"/>
+				</defs>
+				<clipPath id="SVGID_11_">
+					<use xlink:href="#SVGID_10_"  overflow="visible"/>
+				</clipPath>
+				<g clip-path="url(#SVGID_11_)">
+					<defs>
+						<rect id="SVGID_12_" x="32.082" y="32.622" width="128.177" height="128.176"/>
+					</defs>
+					<clipPath id="SVGID_13_">
+						<use xlink:href="#SVGID_12_"  overflow="visible"/>
+					</clipPath>
+					<path clip-path="url(#SVGID_13_)" fill="#0092C8" d="M96.166,160.795c-6.657,0.004-13.344-2.536-18.401-7.595l-38.084-38.087
+						c-5.075-5.07-7.602-11.767-7.599-18.429c-0.003-6.651,2.538-13.328,7.595-18.378L77.765,40.22
+						c5.057-5.062,11.744-7.6,18.399-7.598c6.654-0.003,13.349,2.531,18.416,7.598l38.085,38.086
+						c5.06,5.058,7.6,11.743,7.594,18.396c0.005,6.654-2.533,13.347-7.594,18.411L114.58,153.2
+						c-5.065,5.066-11.755,7.598-18.408,7.595H96.166z M44.148,82.775c-3.826,3.827-5.741,8.853-5.743,13.909
+						c0.002,5.081,1.912,10.125,5.745,13.958l38.086,38.085c3.828,3.829,8.863,5.741,13.929,5.744
+						c5.07-0.003,10.106-1.912,13.941-5.744l38.084-38.085c3.832-3.833,5.741-8.873,5.745-13.941
+						c-0.003-5.067-1.914-10.098-5.742-13.927l-38.087-38.084c-3.835-3.834-8.873-5.743-13.943-5.746
+						c-5.067,0.001-10.1,1.917-13.928,5.746L44.148,82.775z"/>
+				</g>
+			</g>
+		</g>
+		<g opacity="0.15">
+			<g>
+				<defs>
+					<rect id="SVGID_14_" x="32.082" y="32.621" width="124.887" height="87.036"/>
+				</defs>
+				<clipPath id="SVGID_15_">
+					<use xlink:href="#SVGID_14_"  overflow="visible"/>
+				</clipPath>
+				<g clip-path="url(#SVGID_15_)">
+					<defs>
+						<rect id="SVGID_16_" x="32.082" y="32.621" width="124.887" height="87.036"/>
+					</defs>
+					<clipPath id="SVGID_17_">
+						<use xlink:href="#SVGID_16_"  overflow="visible"/>
+					</clipPath>
+					<path clip-path="url(#SVGID_17_)" fill="#FFFFFF" d="M156.97,84.014c-1.14-2.049-2.57-3.976-4.304-5.71L114.58,40.22
+						c-5.069-5.069-11.759-7.599-18.417-7.597c-6.652-0.001-13.339,2.534-18.397,7.597L39.677,78.304
+						c-5.057,5.055-7.597,11.73-7.595,18.381c-0.002,6.657,2.526,13.358,7.598,18.428l4.54,4.544
+						C52.275,107.132,91.137,54.294,156.97,84.014"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.view", "content.action.edit", "content.code.copy", "content.tabs.link", "navigation.tabs", "navigation.tracking", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "announce.dismiss"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "2.24"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+    
+  </body>
+</html>

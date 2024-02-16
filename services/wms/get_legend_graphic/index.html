@@ -1,0 +1,1668 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Designed for interoperability to publishes data from any major spatial data source using open standards.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.geoserver.org/services/wms/get_legend_graphic/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/geoserver_mark.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
+    
+    
+      
+        <title>GetLegendGraphic {: #get_legend_graphic } - GeoServer</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f2e4d321.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#get_legend_graphic" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://geoserver.org/" title="GeoServer" class="md-header__button md-logo" aria-label="GeoServer" data-md-component="logo">
+      
+  <img src="../../../assets/images/geoserver_mark.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GeoServer
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              GetLegendGraphic {: #get_legend_graphic }
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/geoserver/geoserver" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    geoserver
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  User Manual
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../introduction/" class="md-tabs__link">
+          
+  
+    
+  
+  Introduction
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../installation/" class="md-tabs__link">
+          
+  
+    
+  
+  Installation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../gettingstarted/" class="md-tabs__link">
+          
+  
+    
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../webadmin/" class="md-tabs__link">
+          
+  
+    
+  
+  Web Admin
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../data/" class="md-tabs__link">
+          
+  
+    
+  
+  Data
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../styling/" class="md-tabs__link">
+          
+  
+    
+  
+  Styling
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://geoserver.org/" title="GeoServer" class="md-nav__button md-logo" aria-label="GeoServer" data-md-component="logo">
+      
+  <img src="../../../assets/images/geoserver_mark.png" alt="logo">
+
+    </a>
+    GeoServer
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/geoserver/geoserver" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    geoserver
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Manual
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../introduction/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../installation/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gettingstarted/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../webadmin/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Web Admin
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../data/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Data
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../styling/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Styling
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#get_legend_graphic_options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controlling legend appearance with LEGEND_OPTIONS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controlling-legend-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controlling legend layout
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raster-legends-explained" class="md-nav__link">
+    <span class="md-ellipsis">
+      Raster Legends Explained
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Raster Legends Explained">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whats-a-raster-legend" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's a raster legend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raster-legends-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Raster legends' types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colormap-type-is-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      ColorMap type is VALUES
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colormap-type-is-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      ColorMap type is CLASSES
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colormap-type-is-ramp" class="md-nav__link">
+    <span class="md-ellipsis">
+      ColorMap type is RAMP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-various-control-parameters-and-how-to-set-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      The various control parameters and how to set them
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cql-expressions-and-env" class="md-nav__link">
+    <span class="md-ellipsis">
+      CQL Expressions and ENV
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content-dependent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Content dependent legends
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-output-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON Output Format
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON Output Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filters-and-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filters and Expressions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symbolizers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Symbolizers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vendor-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vendor Options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/geoserver/geoserver/edit/main/docs/en/user/docs/services/wms/get_legend_graphic/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/geoserver/geoserver/raw/main/docs/en/user/docs/services/wms/get_legend_graphic/index.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
+  
+
+
+<h1 id="get_legend_graphic">GetLegendGraphic</h1>
+<p>This chapter describes whether to use the GetLegendGraphics request. The SLD Specifications 1.0.0 gives a good description about GetLegendGraphic requests:</p>
+<p><code>The GetLegendGraphic operation itself is optional for an SLD-enabled WMS. It provides a general mechanism for acquiring legend symbols, beyond the LegendURL reference of WMS Capabilities. Servers supporting the GetLegendGraphic call might code LegendURL references as GetLegendGraphic for interface consistency. Vendor-specific parameters may be added to GetLegendGraphic requests and all of the usual OGC-interface options and rules apply. No XML-POST method for GetLegendGraphic is presently defined</code>.</p>
+<p>Here is an example invocation:</p>
+<div class="language-text highlight"><pre><span></span><code>http://localhost:8080/geoserver/wms?REQUEST=GetLegendGraphic&amp;VERSION=1.0.0&amp;FORMAT=image/png&amp;WIDTH=20&amp;HEIGHT=20&amp;LAYER=topp:states
+</code></pre></div>
+<p>which would produce four 20x20 icons that graphically represent the rules of the default style of the topp:states layer.</p>
+<p><img alt="" src="img/samplelegend.png" />
+<em>Sample legend</em></p>
+<p>The following table lists the whole set of GetLegendGraphic parameters that can be used.</p>
+<hr />
+<p><strong>Parameter</strong>   <strong>Required</strong>   <strong>Description</strong></p>
+<p><em>REQUEST</em>       Required       Value must be "GetLegendGraphic".</p>
+<p><em>LAYER</em>         Required       Layer for which to produce legend graphic.</p>
+<p><em>STYLE</em>         Optional       Style of layer for which to produce legend graphic. If not present, the default style is selected. The style may be any valid style available for a layer, including non-SLD internally-defined styles.</p>
+<p><em>FEATURETYPE</em>   Optional       Feature type for which to produce the legend graphic. This is not needed if the layer has only a single feature type.</p>
+<p><em>RULE</em>          Optional       Rule of style to produce legend graphic for, if applicable. In the case that a style has multiple rules but no specific rule is selected, then the map server is obligated to produce a graphic that is representative of all of the rules of the style.</p>
+<p><em>SCALE</em>         Optional       In the case that a RULE is not specified for a style, this parameter may assist the server in selecting a more appropriate representative graphic by eliminating internal rules that are out-of-scope. This value is a standardized scale denominator, defined in Section 10.2. Specifying the scale will also make the symbolizers using Unit Of Measure resize according to the specified scale.</p>
+<p><em>SLD</em>           Optional       This parameter specifies a reference to an external SLD document. It works in the same way as the SLD= parameter of the WMS GetMap operation.</p>
+<p><em>SLD_BODY</em>      Optional       This parameter allows an SLD document to be included directly in an HTTP-GET request. It works in the same way as the SLD_BODY= parameter of the WMS GetMap operation.</p>
+<p><em>FORMAT</em>        Required       This gives the MIME type of the file format in which to return the legend graphic. Allowed values are the same as for the FORMAT= parameter of the WMS GetMap request.</p>
+<p><em>WIDTH</em>         Optional       This gives a hint for the width of the returned graphic in pixels. Vector-graphics can use this value as a hint for the level of detail to include.</p>
+<p><em>HEIGHT</em>        Optional       This gives a hint for the height of the returned graphic in pixels.</p>
+<p><em>EXCEPTIONS</em>    Optional       This gives the MIME type of the format in which to return exceptions. Allowed values are the same as for the EXCEPTIONS= parameter of the WMS GetMap request.</p>
+<p><em>LANGUAGE</em>      Optional       Allows setting labels language for style titles and rules titles; needs a correctly localized SLD to work properly; if labels are not available in the requested language, the default text will be used; look at <a href="../../../styling/sld/language/">i18N in SLD</a> for further details.</p>
+<hr />
+<h2 id="get_legend_graphic_options">Controlling legend appearance with LEGEND_OPTIONS</h2>
+<p>GeoServer allows finer control over the legend appearance via the vendor parameter <code>LEGEND_OPTIONS</code>. The general format of <code>LEGEND_OPTIONS</code> is the same as <code>FORMAT_OPTIONS</code>, that is:</p>
+<div class="language-text highlight"><pre><span></span><code>...&amp;LEGEND_OPTIONS=key1:v1;key2:v2;...;keyn:vn
+</code></pre></div>
+<p>Here is a description of the various parameters that can be used in <code>LEGEND_OPTIONS</code>:</p>
+<blockquote>
+<ul>
+<li><strong>fontName (string)</strong> the name of the font to be used when generating rule titles. The font must be available on the server</li>
+<li><strong>fontStyle (string)</strong> can be set to italic or bold to control the text style. Other combinations are not allowed right now but we could implement that as well.</li>
+<li><strong>fontSize (integer)</strong> allows us to set the Font size for the various text elements. Notice that default size is 12.</li>
+<li><strong>fontColor (hex)</strong> allows us to set the color for the text of rules and labels (see above for recommendation on how to create values). Values are expressed in <code>0xRRGGBB</code> format</li>
+<li><strong>fontAntiAliasing (true/false)</strong> when true enables antialiasing for rule titles</li>
+<li><strong>bgColor (hex)</strong> background color for the generated legend, values are expressed in <code>0xRRGGBB</code> format</li>
+<li><strong>dpi (integer)</strong> sets the DPI for the current request, in the same way as it is supported by GetMap. Setting a DPI larger than 91 (the default) makes all fonts, symbols and line widths grow without changing the current scale, making it possible to get a high resolution version of the legend suitable for inclusion in printouts</li>
+<li><strong>forceLabels</strong> "on" means labels will always be drawn, even if only one rule is available. "off" means labels will never be drawn, even if multiple rules are available. Off by default.</li>
+<li><strong>forceTitles</strong> "off" means layer titles will not be drawn for layer groups. On by default.</li>
+<li><strong>labelMargin</strong> margin (in pixels) to use between icons and labels.</li>
+<li><strong>layout</strong> sets icons layout to be <strong>vertical</strong> (default) or <strong>horizontal</strong>.</li>
+<li><strong>columnheight</strong> enables <strong>multicolumn</strong> layout when layout is <strong>vertical</strong>. Each column height is limited by the columnheight value (in pixels).</li>
+<li><strong>rowwidth</strong> enables <strong>multirow</strong> layout when layout is <strong>horizontal</strong>. Each row width is limited by the rowwidth value (in pixels).</li>
+<li><strong>columns</strong> enables <strong>multicolumn</strong> layout when layout is <strong>vertical</strong>. The value is the maximum columns number of legend. The rows used are equal to the next greater integer of <total of icons>/<number of columns>.</li>
+<li><strong>rows</strong> enables <strong>multirow</strong> layout when layout is <strong>horizontal</strong>. The value is the maximum rows number of legend. The columns used are equal to the next greater integer of <total of icons>/<number of rows>.</li>
+<li><strong>grouplayout</strong> Orientation of groups of layer, possible values are <strong>horizontal</strong> and <strong>vertical</strong> (default if not specified).</li>
+<li><strong>countMatched</strong> When set to true, adds at the end of each label the number of features matching that rule in the current map. Requires extra parameters, see details in the <a href="./#content-dependent">dedicated section</a>.</li>
+<li><strong>hideEmptyRules</strong> When set to true hides rules that are not matching any feature.</li>
+<li><strong>wrap</strong> When set to true word wraps long legend labels, leading to taller legends but less wide ones.</li>
+<li><strong>wrap_limit</strong> when set, it wraps the legend label with the specified number of pixels.</li>
+</ul>
+</blockquote>
+<p>Here is a sample request sporting most the options:</p>
+<div class="language-text highlight"><pre><span></span><code>http://localhost:8080/geoserver/wms?REQUEST=GetLegendGraphic&amp;VERSION=1.0.0&amp;FORMAT=image/png&amp;WIDTH=20&amp;HEIGHT=20&amp;LAYER=topp:states&amp;legend_options=fontName:Times%20New%20Roman;fontAntiAliasing:true;fontColor:0x000033;fontSize:14;bgColor:0xFFFFEE;dpi:180
+</code></pre></div>
+<p><img alt="" src="img/legendoptions.png" />
+<em>Using LEGEND_OPTIONS to control the output</em></p>
+<h2 id="controlling-legend-layout">Controlling legend layout</h2>
+<p>A set of LEGEND_OPTIONS keys are used to control icons layout in the produced legend images. In particular, a <strong>vertical</strong> or <strong>horizontal</strong> layout can be chosen.</p>
+<p>Multi column or multi row layouts are possible, and are controlled by the columnheight / rowwidth options (to limit each column / row size) or by the columns / rows options (to fix the # of columns / rows to be used).</p>
+<p>Both columnheight / columns and rowwidth / rows can be used to limit the whole size of the produced image (some icons are skipped if they do not fit into the given limits).</p>
+<p>In addition, orientation of legends in a layergroup can be configured using the grouplayout option.</p>
+<h2 id="raster-legends-explained">Raster Legends Explained</h2>
+<p>This chapter aims to briefly describe the work that I have performed in order to support legends for raster data that draw information taken from the various bits of the SLD 1.0 RasterSymbolizer element. Recall, that up to now there was no way to create legends for raster data, therefore we have tried to fill the gap by providing an implementation of the getLegendGraphic request that would work with the ColorMap element of the SLD 1.0 RasterSymbolizer. Notice that some "debug" info about the style, like colormap type and band used are printed out as well.</p>
+<h3 id="whats-a-raster-legend">What's a raster legend</h3>
+<p>Here below I have drawn the structure of a typical legend, where some elements of interests are parameterized.</p>
+<p><img alt="" src="img/rasterlegend1.png" />
+<em>The structure of a typical legend</em></p>
+<p>Take as an instance one of the SLD files attached to this page, each row in the above table draws its essence from the ColorMapEntry element as shown here below:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;ColorMapEntry</span><span class="w"> </span><span class="na">color=</span><span class="s">&quot;#732600&quot;</span><span class="w"> </span><span class="na">quantity=</span><span class="s">&quot;9888&quot;</span><span class="w"> </span><span class="na">opacity=</span><span class="s">&quot;1.0&quot;</span><span class="w"> </span><span class="na">label=</span><span class="s">&quot;&lt;-70 mm&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>The producer for the raster legend will make use of this elements in order to build the legend, with this in mind, notice that:</p>
+<blockquote>
+<ul>
+<li>the width of the Color element is driven by the requested width for the GetLegendGraphic request</li>
+<li>the width and height of label and rules is computed accordingly to the used Font and Font size for the prepared text (<strong>no new line management for the moment</strong>)</li>
+<li>the height of the Color element is driven by the requested width for the GetLegendGraphic request, but notice that for ramps we expand this a little since the goal is to turn the various Color elements into a single long strip</li>
+<li>the height of each row is set to the maximum height of the single elements</li>
+<li>the width of each row is set to the sum of the width of the various elements plus the various paddings</li>
+<li><strong>dx,dy</strong> the spaces between elements and rows are set to the 15% of the requested width and height. Notice that <strong>dy</strong> is ignored for the colormaps of type <strong>ramp</strong> since they must create a continuous color strip.</li>
+<li><strong>absoluteMargins</strong> true/false, used to change the Unit of Measure of <strong>dx</strong> from percentage (when false) to a fixed number of pixels (when true).</li>
+<li><strong>mx,my</strong> the margins from the border of the legends are set to the 1.5% of the total size of the legend</li>
+</ul>
+</blockquote>
+<p>In conclusion, here below I am adding an image of a sample legend with all the various options at work. The request that generated it is the following:</p>
+<div class="language-text highlight"><pre><span></span><code>http://localhost:8081/geoserver/wms?REQUEST=GetLegendGraphic&amp;VERSION=1.0.0&amp;FORMAT=image/png&amp;WIDTH=100&amp;HEIGHT=20&amp;LAYER=it.geosolutions:di08031_da&amp;LEGEND_OPTIONS=forceRule:True;dx:0.2;dy:0.2;mx:0.2;my:0.2;fontStyle:bold;borderColor:0000ff;border:true;fontColor:ff0000;fontSize:18
+</code></pre></div>
+<p>Do not worry if it seems like something written in ancient dead language, I am going to explain the various params here below.</p>
+<p><img alt="" src="img/rasterlegend2.png" />
+<em>Example of a raster legend</em></p>
+<h3 id="raster-legends-types">Raster legends' types</h3>
+<p>As you may know (well, actually you might not since I never wrote any real docs about the RasterSymbolizer work I did) GeoServer supports three types of ColorMaps:</p>
+<blockquote>
+<ul>
+<li><strong>ramp</strong> this is what SLD 1.0 dictates, which means a linear interpolation weighted on values between the colors of the various ColorMapEntries.</li>
+<li><strong>values</strong> this is an extension that allows link quantities to colors as specified by the ColorMapEntries quantities. Values not specified are translated into transparent pixels.</li>
+<li><strong>classes</strong> this is an extension that allows pure classifications based on intervals created from the ColorMapEntries quantities. Values not specified are translated into transparent pixels.</li>
+</ul>
+</blockquote>
+<p>Here below I am going to list various examples that use the attached styles on a rainfall floating point geotiff.</p>
+<h3 id="colormap-type-is-values">ColorMap type is VALUES</h3>
+<p>Refer to the SLD rainfall.sld in attachment.</p>
+<p><img alt="" src="img/rasterlegend3.png" />
+<em>Raster legend - VALUES type</em></p>
+<h3 id="colormap-type-is-classes">ColorMap type is CLASSES</h3>
+<p>Refer to the SLD rainfall_classes.sld in attachment.</p>
+<p><img alt="" src="img/rasterlegend4.png" />
+<em>Raster legend - CLASSES type</em></p>
+<h3 id="colormap-type-is-ramp">ColorMap type is RAMP</h3>
+<p>Refer to the SLD rainfall_classes.sld in attachment. Notice that the first legend shows the default border behavior while the second has been forced to draw a border for the breakpoint color of the colormap entry quantity described by the rendered text. Notice that each color element has a part that show the fixed color from the colormap entry it depicts (the lowest part of it, the one that has been outlined by the border in the second legend below) while the upper part of the element has a gradient that connects each element to the previous one to point out the fact that we are using linear interpolation.</p>
+<p><img alt="" src="img/rasterlegend5.png" />
+<em>Raster legend - RAMP type</em></p>
+<h3 id="the-various-control-parameters-and-how-to-set-them">The various control parameters and how to set them</h3>
+<p>I am now going to briefly explain the various parameters that we can use to control the layout and content of the legend. A request that puts all the various options is shown here:</p>
+<div class="language-text highlight"><pre><span></span><code>http://localhost:8081/geoserver/wms?REQUEST=GetLegendGraphic&amp;VERSION=1.0.0&amp;FORMAT=image/png&amp;WIDTH=100&amp;HEIGHT=20&amp;LAYER=it.geosolutions:di08031_da&amp;LEGEND_OPTIONS=forceRule:True;dx:0.2;dy:0.2;mx:0.2;my:0.2;fontStyle:bold;borderColor:0000ff;border:true;fontColor:ff0000;fontSize:18
+</code></pre></div>
+<p>Let's now examine all the interesting elements, one by one. Notice that I am not going to discuss the mechanics of the GetLegendGraphic operation, for that you may want to refer to the SLD 1.0 spec, my goal is to briefly discuss the LEGEND_OPTIONS parameter.</p>
+<blockquote>
+<ul>
+<li><strong>forceRule (boolean)</strong> by default rules for a ColorMapEntry are not drawn to keep the legend small and compact, unless there are no labels at all. You can change this behaviour by setting this parameter to true.</li>
+<li><strong>dx,dy,mx,my (double)</strong> can be used to set the margin and the buffers between elements</li>
+<li><strong>border (boolean)</strong> activates or deactivates the border on the color elements in order to make the separations clearer. Notice that I decided to <strong>always</strong> have a line that would split the various color elements for the ramp type of colormap.</li>
+<li><strong>borderColor (hex)</strong> allows us to set the color for the border in 0xRRGGBB format</li>
+</ul>
+</blockquote>
+<h3 id="cql-expressions-and-env">CQL Expressions and ENV</h3>
+<p>If CQL expressions are used in ColorMapEntry attributes (see <a href="../../../styling/sld/reference/rastersymbolizer/#sld_reference_rastersymbolizer_colormap_cql">here</a>) to create a dynamic color map taking values from ENV, the same ENV parameters used for GetMap can be given to GetLegendGraphic to get the desired legend entries.</p>
+<h3 id="content-dependent">Content dependent legends</h3>
+<p>GeoServer allows building content dependent legend, that is, legends whose contents depend on the currently displayed map. In order to support it the GetLegendGraphic call needs the following extra parameters:</p>
+<blockquote>
+<ul>
+<li>BBOX</li>
+<li>SRS or CRS (depending on the WMS version, SRS for 1.1.1 and CRS for 1.3.0)</li>
+<li>SRCWIDTH and SRCHEIGHT, the size of the reference map (width and height already have a different meaning in GetLegendGraphic)</li>
+</ul>
+</blockquote>
+<p>Other parameters can also be added to better match the GetMap request, for example, it is recommended to mirror filtering vendor parameters such as, for example, CQL_FILTER,FILTER,FEATUREID,TIME,ELEVATION.</p>
+<p>Content dependent evaluation is enabled via the following LEGEND_OPTIONS parameters:</p>
+<blockquote>
+<ul>
+<li>countMatched: adds the number of features matching the particular rule at the end of the rule label (requires visible labels to work). Applicable only to vector layers.</li>
+<li>hideEmptyRules: hides rules that are not matching any feature. Applicable only if countMatched is true.</li>
+</ul>
+</blockquote>
+<p>For example, let's assume the following layout is added to GeoServer (<code>legend.xml</code> to be placed in <code>GEOSERVER_DATA_DIR/layouts</code>):</p>
+<div class="language-text highlight"><pre><span></span><code>&lt;layout&gt;
+    &lt;decoration type=&quot;legend&quot; affinity=&quot;top,right&quot; offset=&quot;0,0&quot; size=&quot;auto&quot;/&gt;
+&lt;/layout&gt;
+</code></pre></div>
+<p>This will make a legend appear in the GetMap response. The following preview request uses the layout to embed a legend and activates feature counting in it:</p>
+<div class="language-text highlight"><pre><span></span><code>http://localhost:8080/geoserver/topp/wms?service=WMS&amp;version=1.1.0&amp;request=GetMap&amp;layers=topp:states&amp;styles=&amp;bbox=-124.73142200000001,24.955967,-66.969849,49.371735&amp;width=768&amp;height=330&amp;srs=EPSG:4326&amp;format=application/openlayers&amp;format_options=layout:legend&amp;legend_options=countMatched:true;fontAntiAliasing:true
+</code></pre></div>
+<p>The result will look as follows:</p>
+<p><img alt="" src="img/states-all.png" />
+<em>Embedded legend, full map</em></p>
+<p><img alt="" src="img/states-four.png" />
+<em>Embedded legend, four states</em></p>
+<p><img alt="" src="img/states-one.png" />
+<em>Embedded legend, single state</em></p>
+<p><img alt="" src="img/states-one-hide-empty.png" />
+<em>Embedded legend, single state, hide empty rules</em></p>
+<p>The same can be achieved using a stand-alone GetLegendGraphic request:</p>
+<div class="language-text highlight"><pre><span></span><code>http://localhost:8080/geoserver/topp/wms?service=WMS&amp;version=1.1.0&amp;request=GetLegendGraphic&amp;width=20&amp;height=20&amp;layer=topp:states&amp;bbox=-124.73142200000001,24.955967,-66.969849,49.371735&amp;srcwidth=768&amp;srcheight=330&amp;srs=EPSG:4326&amp;format=image/png&amp;legend_options=countMatched:true;fontAntiAliasing:true
+</code></pre></div>
+<p><img alt="" src="img/legend-all.png" />
+<em>Direct legend request</em></p>
+<p>Or hide the empty rules using a stand-alone GetLegendGraphic request:</p>
+<div class="language-text highlight"><pre><span></span><code>http://localhost:8080/geoserver/topp/wms?service=WMS&amp;version=1.1.0&amp;request=GetLegendGraphic&amp;width=20&amp;height=20&amp;layer=topp:states&amp;bbox=-101.0028076171875,31.025390625,-96.7840576171875,32.838134765625&amp;srcwidth=768&amp;srcheight=330&amp;srs=EPSG:4326&amp;format=image/png&amp;legend_options=countMatched:true;fontAntiAliasing:true;hideEmptyRules:true
+</code></pre></div>
+<p><img alt="" src="img/legend-not-empty.png" />
+<em>Direct legend request</em></p>
+<h2 id="json-output-format">JSON Output Format</h2>
+<p>Since version 2.15.0 it has been possible to use <strong>application/json</strong> as an output format in GetLegendGraphic requests. This allows a JSON aware client to receive a JSON representation of the legend graphic to use for its own rendering requirements.</p>
+<p>A simple http request can be used:</p>
+<div class="language-text highlight"><pre><span></span><code>http://localhost:9000/geoserver/wms?service=WMS&amp;version=1.1.0&amp;request=GetLegendGraphic&amp;layer=topp:states&amp;format=application/json
+</code></pre></div>
+<p>Which returns a JSON response:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span><span class="s2">&quot;Legend&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="s2">&quot;layerName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;states&quot;</span><span class="p">,</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="s2">&quot;title&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;USA Population&quot;</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="s2">&quot;rules&quot;</span><span class="o">:</span><span class="w">   </span><span class="p">[</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="s2">&quot;title&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt; 2M&quot;</span><span class="p">,</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="s2">&quot;filter&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;[PERSONS &lt; &#39;2000000&#39;]&quot;</span><span class="p">,</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">      </span><span class="s2">&quot;symbolizers&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">&quot;Polygon&quot;</span><span class="o">:</span><span class="w">       </span><span class="p">{</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="s2">&quot;fill&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#4DFF4D&quot;</span><span class="p">,</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="s2">&quot;fill-opacity&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0.7&quot;</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">      </span><span class="p">}}]</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">      </span><span class="s2">&quot;title&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2M - 4M&quot;</span><span class="p">,</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">      </span><span class="s2">&quot;filter&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;[PERSONS BETWEEN &#39;2000000&#39; AND &#39;4000000&#39;]&quot;</span><span class="p">,</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">      </span><span class="s2">&quot;symbolizers&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">&quot;Polygon&quot;</span><span class="o">:</span><span class="w">       </span><span class="p">{</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">        </span><span class="s2">&quot;fill&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#FF4D4D&quot;</span><span class="p">,</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">        </span><span class="s2">&quot;fill-opacity&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0.7&quot;</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">      </span><span class="p">}}]</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">      </span><span class="s2">&quot;title&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&gt; 4M&quot;</span><span class="p">,</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">      </span><span class="s2">&quot;filter&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;[PERSONS &gt; &#39;4000000&#39;]&quot;</span><span class="p">,</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">      </span><span class="s2">&quot;symbolizers&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">&quot;Polygon&quot;</span><span class="o">:</span><span class="w">       </span><span class="p">{</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">        </span><span class="s2">&quot;fill&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#4D4DFF&quot;</span><span class="p">,</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">        </span><span class="s2">&quot;fill-opacity&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0.7&quot;</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">      </span><span class="p">}}]</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">      </span><span class="s2">&quot;title&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Boundary&quot;</span><span class="p">,</span>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">      </span><span class="s2">&quot;symbolizers&quot;</span><span class="o">:</span><span class="w">       </span><span class="p">[</span>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">        </span><span class="p">{</span><span class="s2">&quot;Line&quot;</span><span class="o">:</span><span class="w">         </span><span class="p">{</span>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="w">          </span><span class="s2">&quot;stroke&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#000000&quot;</span><span class="p">,</span>
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">          </span><span class="s2">&quot;stroke-width&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0.2&quot;</span><span class="p">,</span>
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="w">          </span><span class="s2">&quot;stroke-opacity&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">          </span><span class="s2">&quot;stroke-linecap&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;butt&quot;</span><span class="p">,</span>
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="w">          </span><span class="s2">&quot;stroke-linejoin&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;miter&quot;</span>
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="w">        </span><span class="p">}},</span>
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="w">        </span><span class="p">{</span><span class="s2">&quot;Text&quot;</span><span class="o">:</span><span class="w">         </span><span class="p">{</span>
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="w">          </span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;[STATE_ABBR]&quot;</span><span class="p">,</span>
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="w">          </span><span class="s2">&quot;fonts&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w">          </span><span class="p">{</span>
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="w">            </span><span class="s2">&quot;font-family&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Times New Roman&quot;</span><span class="p">],</span>
+</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="w">            </span><span class="s2">&quot;font-style&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Normal&quot;</span><span class="p">,</span>
+</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="w">            </span><span class="s2">&quot;font-weight&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;normal&quot;</span><span class="p">,</span>
+</span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="w">            </span><span class="s2">&quot;font-size&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;14&quot;</span>
+</span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="w">          </span><span class="p">}],</span>
+</span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="w">          </span><span class="s2">&quot;label-placement&quot;</span><span class="o">:</span><span class="w">           </span><span class="p">{</span>
+</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a><span class="w">            </span><span class="s2">&quot;x-anchor&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0.5&quot;</span><span class="p">,</span>
+</span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="w">            </span><span class="s2">&quot;y-anchor&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0.5&quot;</span><span class="p">,</span>
+</span><span id="__span-1-50"><a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="w">            </span><span class="s2">&quot;rotation&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0.0&quot;</span>
+</span><span id="__span-1-51"><a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a><span class="w">          </span><span class="p">}</span>
+</span><span id="__span-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a><span class="w">        </span><span class="p">}}</span>
+</span><span id="__span-1-53"><a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="w">      </span><span class="p">]</span>
+</span><span id="__span-1-54"><a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-55"><a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a><span class="w">  </span><span class="p">]</span>
+</span><span id="__span-1-56"><a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a><span class="p">}]}</span>
+</span></code></pre></div>
+<p>This JSON contains an array of Legends (one for each layer requested) and each legend contains some metadata about the legend and an array of <code>rule</code> objects for each rule within the feature type of the style. Each <code>rule</code> contains the metadata associated with the rule, any <code>filter</code> element and an array of <code>symbolizer</code> objects.</p>
+<h3 id="filters-and-expressions">Filters and Expressions</h3>
+<p>Filters are encoded using <a href="../../../filter/ecql_reference/">ECQL</a>, a rule with an ElseFilter has an element "ElseFilter" set to the value "true". Expressions are also encoded in ECQL (wrapped in []) when encountered in the style.</p>
+<h3 id="symbolizers">Symbolizers</h3>
+<ul>
+<li>
+<p>PointSymbolizer</p>
+<p>A point symbolizer will be represented as a series of elements containing metadata and an array of <code>graphics</code> symbols (see <a href="../../../styling/sld/reference/pointsymbolizer/#sld_reference_graphic">here</a>) , these can be well known <code>marks</code> or external graphics. The point symbolizer also provides an "URL" element which allows a client to make a request back to GeoServer to fetch a PNG image of the point symbol.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span><span class="s2">&quot;Point&quot;</span><span class="o">:</span><span class="w">     </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="s2">&quot;title&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;title&quot;</span><span class="p">,</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="s2">&quot;abstract&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;abstract&quot;</span><span class="p">,</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="s2">&quot;url&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:9000/geoserver/kml/icon/capitals?0.0.0=&quot;</span><span class="p">,</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="s2">&quot;size&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;6&quot;</span><span class="p">,</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="s2">&quot;opacity&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="s2">&quot;rotation&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0.0&quot;</span><span class="p">,</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="s2">&quot;graphics&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w">      </span><span class="p">{</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">      </span><span class="s2">&quot;mark&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;circle&quot;</span><span class="p">,</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">      </span><span class="s2">&quot;fill&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#FFFFFF&quot;</span><span class="p">,</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">      </span><span class="s2">&quot;fill-opacity&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">      </span><span class="s2">&quot;stroke&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#000000&quot;</span><span class="p">,</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">      </span><span class="s2">&quot;stroke-width&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">      </span><span class="s2">&quot;stroke-opacity&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">      </span><span class="s2">&quot;stroke-linecap&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;butt&quot;</span><span class="p">,</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">      </span><span class="s2">&quot;stroke-linejoin&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;miter&quot;</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="p">}]}}</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>LineSymbolizer</p>
+<p>A line symbolizer is represented as a list of metadata elements and the <code class="interpreted-text" role="ref">stroke
+parameters &lt;sld_reference_linesymbolizer_css&gt;</code>, it is possible for there to be a <a href="../../../styling/sld/reference/linesymbolizer/#sld_reference_linesymbolizer_graphicstroke">graphic-stroke</a> element too.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span><span class="s2">&quot;Line&quot;</span><span class="o">:</span><span class="w">     </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="s2">&quot;stroke&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#AA3333&quot;</span><span class="p">,</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="s2">&quot;stroke-width&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="s2">&quot;stroke-opacity&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="s2">&quot;stroke-linecap&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;butt&quot;</span><span class="p">,</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="s2">&quot;stroke-linejoin&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;miter&quot;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">}}</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="p">{</span><span class="s2">&quot;Line&quot;</span><span class="o">:</span><span class="w">       </span><span class="p">{</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="s2">&quot;graphic-stroke&quot;</span><span class="o">:</span><span class="w">         </span><span class="p">{</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">      </span><span class="s2">&quot;url&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;http://local-test:8080/geoserver/kml/icon/Default Styler&quot;</span><span class="p">,</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">      </span><span class="s2">&quot;size&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;6&quot;</span><span class="p">,</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">      </span><span class="s2">&quot;opacity&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0.4&quot;</span><span class="p">,</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">      </span><span class="s2">&quot;rotation&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;[(rotation*-1)]&quot;</span><span class="p">,</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">      </span><span class="s2">&quot;graphics&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w">          </span><span class="p">{</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">        </span><span class="s2">&quot;mark&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;square&quot;</span><span class="p">,</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">        </span><span class="s2">&quot;fill&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#FFFF00&quot;</span><span class="p">,</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">        </span><span class="s2">&quot;fill-opacity&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">      </span><span class="p">}]</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">    </span><span class="s2">&quot;stroke-opacity&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">    </span><span class="s2">&quot;stroke-linecap&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;butt&quot;</span><span class="p">,</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">    </span><span class="s2">&quot;stroke-linejoin&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;miter&quot;</span><span class="p">,</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">    </span><span class="s2">&quot;perpendicular-offset&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;10&quot;</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">  </span><span class="p">}}</span><span class="w">  </span>
+</span></code></pre></div>
+</li>
+<li>
+<p>PolygonSymbolizer</p>
+<p>A polygon symbolizer contains <code class="interpreted-text" role="ref">stroke
+parameters &lt;sld_reference_linesymbolizer_css&gt;</code> and <code class="interpreted-text" role="ref">fill 
+parameters &lt;sld_reference_fill&gt;</code>.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span><span class="s2">&quot;Polygon&quot;</span><span class="o">:</span><span class="w">       </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="s2">&quot;stroke&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#000000&quot;</span><span class="p">,</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="s2">&quot;stroke-width&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0.5&quot;</span><span class="p">,</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="s2">&quot;stroke-opacity&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="s2">&quot;stroke-linecap&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;butt&quot;</span><span class="p">,</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="s2">&quot;stroke-linejoin&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;miter&quot;</span><span class="p">,</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="s2">&quot;fill&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#0099CC&quot;</span><span class="p">,</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="s2">&quot;fill-opacity&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="p">}}</span>
+</span></code></pre></div>
+<p>Or a graphic stroke and/or a graphic fill (as described above).</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span><span class="s2">&quot;Polygon&quot;</span><span class="o">:</span><span class="w">       </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="s2">&quot;graphic-stroke&quot;</span><span class="o">:</span><span class="w">         </span><span class="p">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="s2">&quot;url&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;http://local-test:8080/geoserver/kml/icon/Default Styler&quot;</span><span class="p">,</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="s2">&quot;size&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;6&quot;</span><span class="p">,</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="s2">&quot;opacity&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0.4&quot;</span><span class="p">,</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="s2">&quot;rotation&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;[(rotation*-1)]&quot;</span><span class="p">,</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="s2">&quot;graphics&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w">          </span><span class="p">{</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">      </span><span class="s2">&quot;mark&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;square&quot;</span><span class="p">,</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">      </span><span class="s2">&quot;fill&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#FFFF00&quot;</span><span class="p">,</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">      </span><span class="s2">&quot;fill-opacity&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="p">}]</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">  </span><span class="s2">&quot;stroke-opacity&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">  </span><span class="s2">&quot;stroke-linecap&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;butt&quot;</span><span class="p">,</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">  </span><span class="s2">&quot;stroke-linejoin&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;miter&quot;</span><span class="p">,</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">  </span><span class="s2">&quot;graphic-fill&quot;</span><span class="o">:</span><span class="w">         </span><span class="p">{</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">    </span><span class="s2">&quot;url&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;http://local-test:8080/geoserver/kml/icon/Default Styler&quot;</span><span class="p">,</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">    </span><span class="s2">&quot;size&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;4&quot;</span><span class="p">,</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">    </span><span class="s2">&quot;opacity&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0.4&quot;</span><span class="p">,</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">    </span><span class="s2">&quot;rotation&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;[(rotation*-1)]&quot;</span><span class="p">,</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">    </span><span class="s2">&quot;graphics&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w">          </span><span class="p">{</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">      </span><span class="s2">&quot;mark&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;circle&quot;</span><span class="p">,</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">      </span><span class="s2">&quot;fill&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#FFFFFF&quot;</span><span class="p">,</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">      </span><span class="s2">&quot;fill-opacity&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="w">    </span><span class="p">}]</span>
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">  </span><span class="p">}}}</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>RasterSymbolizer</p>
+<p>Raster symbolizers contain a <code>colormap</code> with an array of <code>entries</code>, each entry contains a <code>label</code>, <code>quantity</code> and <code>color</code> element.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span><span class="s2">&quot;Raster&quot;</span><span class="o">:</span><span class="w">   </span><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="s2">&quot;colormap&quot;</span><span class="o">:</span><span class="w">     </span><span class="p">{</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="s2">&quot;entries&quot;</span><span class="o">:</span><span class="w">       </span><span class="p">[</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">              </span><span class="p">{</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">        </span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;values&quot;</span><span class="p">,</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">        </span><span class="s2">&quot;quantity&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">        </span><span class="s2">&quot;color&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#AAFFAA&quot;</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">      </span><span class="p">},</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">              </span><span class="p">{</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">        </span><span class="s2">&quot;quantity&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1000&quot;</span><span class="p">,</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">        </span><span class="s2">&quot;color&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#00FF00&quot;</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">      </span><span class="p">},</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">              </span><span class="p">{</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">        </span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;values&quot;</span><span class="p">,</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">        </span><span class="s2">&quot;quantity&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1200&quot;</span><span class="p">,</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">        </span><span class="s2">&quot;color&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#FFFF00&quot;</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">      </span><span class="p">},</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">              </span><span class="p">{</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">        </span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;values&quot;</span><span class="p">,</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">        </span><span class="s2">&quot;quantity&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1400&quot;</span><span class="p">,</span>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">        </span><span class="s2">&quot;color&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#FF7F00&quot;</span>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">      </span><span class="p">},</span>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="w">              </span><span class="p">{</span>
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="w">        </span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;values&quot;</span><span class="p">,</span>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="w">        </span><span class="s2">&quot;quantity&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1600&quot;</span><span class="p">,</span>
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="w">        </span><span class="s2">&quot;color&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#BF7F3F&quot;</span>
+</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="w">      </span><span class="p">},</span>
+</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="w">              </span><span class="p">{</span>
+</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="w">        </span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;values&quot;</span><span class="p">,</span>
+</span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a><span class="w">        </span><span class="s2">&quot;quantity&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2000&quot;</span><span class="p">,</span>
+</span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a><span class="w">        </span><span class="s2">&quot;color&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#000000&quot;</span>
+</span><span id="__span-6-32"><a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-6-33"><a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a><span class="w">    </span><span class="p">],</span>
+</span><span id="__span-6-34"><a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a><span class="w">    </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ramp&quot;</span>
+</span><span id="__span-6-35"><a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-6-36"><a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a><span class="w">  </span><span class="s2">&quot;opacity&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span>
+</span><span id="__span-6-37"><a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a><span class="p">}}</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>TextSymbolizer</p>
+<p>A text symbolizer contains a <code>label</code> expression, followed by an array of <code>fonts</code> and a <code>label-placement</code> object containing details of how the label is placed.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span><span class="s2">&quot;Text&quot;</span><span class="o">:</span><span class="w">         </span><span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;[STATE_ABBR]&quot;</span><span class="p">,</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="s2">&quot;fonts&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w">          </span><span class="p">{</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">        </span><span class="s2">&quot;font-family&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Times New Roman&quot;</span><span class="p">],</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">        </span><span class="s2">&quot;font-style&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Normal&quot;</span><span class="p">,</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">        </span><span class="s2">&quot;font-weight&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;normal&quot;</span><span class="p">,</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">        </span><span class="s2">&quot;font-size&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;14&quot;</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="p">}],</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">    </span><span class="s2">&quot;label-placement&quot;</span><span class="o">:</span><span class="w">           </span><span class="p">{</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">        </span><span class="s2">&quot;x-anchor&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0.5&quot;</span><span class="p">,</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">        </span><span class="s2">&quot;y-anchor&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0.5&quot;</span><span class="p">,</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">        </span><span class="s2">&quot;rotation&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0.0&quot;</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="p">}}</span>
+</span></code></pre></div>
+</li>
+</ul>
+<h3 id="vendor-options">Vendor Options</h3>
+<p>In any case where one or more vendor options is included in the symbolizer there will be a <code>vendor-options</code> element included in the output. This object will include one line for each vendor option.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="s2">&quot;vendor-options&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="s2">&quot;labelAllGroup&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;true&quot;</span><span class="p">,</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="s2">&quot;spaceAround&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;10&quot;</span><span class="p">,</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="s2">&quot;followLine&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;true&quot;</span><span class="p">,</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span><span class="s2">&quot;autoWrap&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;50&quot;</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="p">}</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Copyright and theme information -->
+<div class="md-copyright">
+  
+  <span class="md-copyright__highlight">
+    Copyright &copy; 2023 Open Source Geospatial Foundation
+  </span>
+  
+  
+  &mdash; Made by the
+  <a
+          href="https://geonetwork-opensource.org/"
+          target="_blank" rel="noopener"
+  >GeoNetwork Community</a>,
+  built with
+  <a
+          href="https://squidfunk.github.io/mkdocs-material/"
+          target="_blank" rel="noopener"
+  >
+    Material for MkDocs
+  </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/geoserver" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://geoserver.org/" target="_blank" rel="noopener" title="GeoServer Home" class="md-social__link">
+      <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="193.34px" height="193.34px" viewBox="0 0 193.34 193.34" enable-background="new 0 0 193.34 193.34"
+	 xml:space="preserve">
+<g>
+	<g>
+		<path fill="#0092C8" d="M152.666,78.305L114.58,40.218c-5.069-5.066-11.759-7.597-18.418-7.597
+			c-6.651,0-13.338,2.536-18.396,7.597L39.677,78.305c-5.058,5.053-7.597,11.73-7.595,18.381
+			c-0.002,6.658,2.526,13.357,7.598,18.429l38.085,38.086c5.058,5.06,11.745,7.598,18.401,7.597h0.012
+			c6.651,0,13.336-2.535,18.401-7.597l38.084-38.086c5.065-5.066,7.599-11.76,7.596-18.414
+			C160.263,90.049,157.724,83.363,152.666,78.305"/>
+	</g>
+	<g>
+		<defs>
+			<path id="SVGID_1_" d="M80,42.457L41.912,80.543c-8.89,8.89-8.89,23.442,0,32.337L80,150.965c8.892,8.894,23.45,8.895,32.342,0
+				l38.086-38.085c8.897-8.896,8.894-23.447,0.001-32.337l-38.088-38.086c-4.447-4.45-10.309-6.672-16.169-6.672
+				C90.31,35.785,84.446,38.009,80,42.457"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  overflow="visible"/>
+		</clipPath>
+		
+			<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-1.1152" y1="578.5859" x2="0.5991" y2="578.5859" gradientTransform="matrix(62.1889 -26.3976 -26.3976 -62.1889 15385.8525 36072.457)">
+			<stop  offset="0" style="stop-color:#0092C8"/>
+			<stop  offset="1" style="stop-color:#00AFDD"/>
+		</linearGradient>
+		<polygon clip-path="url(#SVGID_2_)" fill="url(#SVGID_3_)" points="-11.605,54.728 140.042,-9.643 203.951,140.918 
+			52.304,205.288 		"/>
+	</g>
+	<g>
+		<defs>
+			<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="-31.977" y="-31.433" width="256.283" height="256.283">
+				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+			</filter>
+		</defs>
+		<mask maskUnits="userSpaceOnUse" x="-31.977" y="-31.433" width="256.283" height="256.283" id="SVGID_4_">
+			<g filter="url(#Adobe_OpacityMaskFilter)">
+				<rect x="32.071" y="32.618" width="128.185" height="128.179"/>
+				<g enable-background="new    ">
+					<path fill="#FFFFFF" d="M74.216,116.232c10.716-7.749-7.75-15.5-12.309-17.778c-4.558-2.279,0-6.838,4.787-8.89
+						c4.789-2.051,3.177,13.009,8.89,7.294c5.471-5.47-9.345-11.852,3.305-19.491c12.653-7.635-5.584-5.582-5.584-12.65
+						c0-7.067,7.979-7.977,7.979-13.449c0-3.58-6.162-4.171-10.424-4.154l-31.189,31.19c-0.694,0.693-1.335,1.418-1.933,2.168
+						c0.148,5.851,7.16,6.814,11.175,6.814c5.016,0,7.751,7.751,2.737,12.765c-5.014,5.016-5.387,13.595-2.114,16.866
+						c2.203,2.206,1.443,6.312,0.708,8.771l5.916,5.912C57.781,126.397,64.845,123.012,74.216,116.232"/>
+					<path fill="#FFFFFF" d="M93.543,41.044c8.619-1.109,0.641,5.976,4.737,7.768c3.704,1.618,13.599-3.339,14.686-10.062
+						c-4.831-4.083-10.832-6.132-16.809-6.13c-2.662,0-5.327,0.412-7.891,1.224C87.793,37.293,88.174,41.737,93.543,41.044"/>
+					<path fill="#FFFFFF" d="M114.599,89.498c-1.434-5.905-15.203-8.056-21.801-3.249c-9.726,7.087-11.281,20.726-3.728,21.498
+						c7.554,0.773,14.438,8.093,10.643,15.337c-3.793,7.244,4.584,24.899,13.775,12.095c9.192-12.803,4.615-15.301,5.34-22.352
+						c0.72-7.048,9.363-15.99,7.246-18.594C123.952,91.629,115.722,94.123,114.599,89.498"/>
+					<path fill="#FFFFFF" d="M83.665,157.613c3.879,2.117,8.191,3.182,12.494,3.182h0.012c6.651,0,13.338-2.534,18.402-7.597
+						l3.215-3.213C112.307,148.96,93.251,154.596,83.665,157.613"/>
+					<path fill="#FFFFFF" d="M138.319,107.358c-10.275,3.558-17.391,15.021-11.461,16.601c5.588,1.488,11.523-2.986,15.498,1.456
+						l10.302-10.302C150.673,111.063,147.48,104.188,138.319,107.358"/>
+					<path fill="#FFFFFF" d="M105.108,65.492c2.338-0.313,0.499-2.935-0.828-3.516c-1.327-0.582-5.552-0.283-3.988,1.63
+						C101.474,65.052,102.773,65.807,105.108,65.492"/>
+					<path fill="#FFFFFF" d="M154.772,96.18c-0.018-1.368-5.071-2.765-6.405-2.646c-1.329,0.125-1.774,2.366,1.97,3.283
+						C153.161,97.507,154.789,97.547,154.772,96.18"/>
+					<path fill="#FFFFFF" d="M110.593,54.962c-0.564,4.5,3.939,6.19,1.688,8.44c-2.251,2.25-15.5,7.035-12.382,8.44
+						c8.325,3.748-5.78,3.222,0,9.003c2.871,2.87,11.933-2.198,10.974-5.628c-0.27-0.97,2.503-4.625,4.721-2.698
+						c1.917,1.666,7.844,3.504,7.844,13.321c0,5.226,4.501,10.323,9.103,9.075c3.82-1.037,4.46-5.837,2.088-7.598
+						c-3.03-2.249,5.093-4.964,13.362,3.959c3.815,4.115,10.121-0.905,11.415-1.175V90.1c-1.125-4.326-3.373-8.424-6.745-11.798
+						l-31.506-31.502C115.353,47.403,110.823,53.121,110.593,54.962"/>
+				</g>
+			</g>
+		</mask>
+		<g mask="url(#SVGID_4_)">
+			<g>
+				<defs>
+					<rect id="SVGID_5_" x="32.075" y="32.622" width="128.178" height="128.176"/>
+				</defs>
+				<clipPath id="SVGID_6_">
+					<use xlink:href="#SVGID_5_"  overflow="visible"/>
+				</clipPath>
+				<g clip-path="url(#SVGID_6_)">
+					<defs>
+						<path id="SVGID_7_" d="M96.157,32.621c-6.656-0.003-13.34,2.536-18.4,7.597L39.67,78.303
+							c-4.984,4.983-7.527,11.542-7.595,18.098v0.569c0.068,6.564,2.597,13.144,7.597,18.141l38.084,38.087
+							c5.06,5.063,11.746,7.603,18.402,7.6h0.007c6.653,0,13.341-2.535,18.405-7.6l38.084-38.087
+							c5.068-5.065,7.599-11.756,7.598-18.412c0.001-6.651-2.533-13.335-7.592-18.395l-38.09-38.087
+							c-5.062-5.066-11.749-7.597-18.401-7.597H96.157z"/>
+					</defs>
+					<clipPath id="SVGID_8_">
+						<use xlink:href="#SVGID_7_"  overflow="visible"/>
+					</clipPath>
+					
+						<linearGradient id="SVGID_9_" gradientUnits="userSpaceOnUse" x1="-1.2285" y1="578.752" x2="0.4859" y2="578.752" gradientTransform="matrix(43.2909 -44.829 -44.829 -43.2909 26057.1094 25134.7637)">
+						<stop  offset="0" style="stop-color:#8CC63F"/>
+						<stop  offset="0.6137" style="stop-color:#C9E39F"/>
+						<stop  offset="1" style="stop-color:#F1F6DE"/>
+					</linearGradient>
+					<polygon clip-path="url(#SVGID_8_)" fill="url(#SVGID_9_)" points="-31.977,98.946 93.928,-31.433 224.306,94.472 
+						98.401,224.851 					"/>
+				</g>
+			</g>
+		</g>
+		<g opacity="0.25">
+			<g>
+				<defs>
+					<rect id="SVGID_10_" x="32.082" y="32.622" width="128.177" height="128.176"/>
+				</defs>
+				<clipPath id="SVGID_11_">
+					<use xlink:href="#SVGID_10_"  overflow="visible"/>
+				</clipPath>
+				<g clip-path="url(#SVGID_11_)">
+					<defs>
+						<rect id="SVGID_12_" x="32.082" y="32.622" width="128.177" height="128.176"/>
+					</defs>
+					<clipPath id="SVGID_13_">
+						<use xlink:href="#SVGID_12_"  overflow="visible"/>
+					</clipPath>
+					<path clip-path="url(#SVGID_13_)" fill="#0092C8" d="M96.166,160.795c-6.657,0.004-13.344-2.536-18.401-7.595l-38.084-38.087
+						c-5.075-5.07-7.602-11.767-7.599-18.429c-0.003-6.651,2.538-13.328,7.595-18.378L77.765,40.22
+						c5.057-5.062,11.744-7.6,18.399-7.598c6.654-0.003,13.349,2.531,18.416,7.598l38.085,38.086
+						c5.06,5.058,7.6,11.743,7.594,18.396c0.005,6.654-2.533,13.347-7.594,18.411L114.58,153.2
+						c-5.065,5.066-11.755,7.598-18.408,7.595H96.166z M44.148,82.775c-3.826,3.827-5.741,8.853-5.743,13.909
+						c0.002,5.081,1.912,10.125,5.745,13.958l38.086,38.085c3.828,3.829,8.863,5.741,13.929,5.744
+						c5.07-0.003,10.106-1.912,13.941-5.744l38.084-38.085c3.832-3.833,5.741-8.873,5.745-13.941
+						c-0.003-5.067-1.914-10.098-5.742-13.927l-38.087-38.084c-3.835-3.834-8.873-5.743-13.943-5.746
+						c-5.067,0.001-10.1,1.917-13.928,5.746L44.148,82.775z"/>
+				</g>
+			</g>
+		</g>
+		<g opacity="0.15">
+			<g>
+				<defs>
+					<rect id="SVGID_14_" x="32.082" y="32.621" width="124.887" height="87.036"/>
+				</defs>
+				<clipPath id="SVGID_15_">
+					<use xlink:href="#SVGID_14_"  overflow="visible"/>
+				</clipPath>
+				<g clip-path="url(#SVGID_15_)">
+					<defs>
+						<rect id="SVGID_16_" x="32.082" y="32.621" width="124.887" height="87.036"/>
+					</defs>
+					<clipPath id="SVGID_17_">
+						<use xlink:href="#SVGID_16_"  overflow="visible"/>
+					</clipPath>
+					<path clip-path="url(#SVGID_17_)" fill="#FFFFFF" d="M156.97,84.014c-1.14-2.049-2.57-3.976-4.304-5.71L114.58,40.22
+						c-5.069-5.069-11.759-7.599-18.417-7.597c-6.652-0.001-13.339,2.534-18.397,7.597L39.677,78.304
+						c-5.057,5.055-7.597,11.73-7.595,18.381c-0.002,6.657,2.526,13.358,7.598,18.428l4.54,4.544
+						C52.275,107.132,91.137,54.294,156.97,84.014"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.view", "content.action.edit", "content.code.copy", "content.tabs.link", "navigation.tabs", "navigation.tracking", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "2.24"}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+    
+  </body>
+</html>

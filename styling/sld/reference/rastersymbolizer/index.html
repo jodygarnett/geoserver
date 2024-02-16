@@ -24,7 +24,7 @@
     
     
       
-        <title>RasterSymbolizer - GeoServer</title>
+        <title>RasterSymbolizer {: #sld_reference_rastersymbolizer } - GeoServer</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rastersymbolizer" class="md-skip">
+        <a href="#sld_reference_rastersymbolizer" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              RasterSymbolizer
+              RasterSymbolizer {: #sld_reference_rastersymbolizer }
             
           </span>
         </div>
@@ -814,7 +814,7 @@
         
   
   <span class="md-ellipsis">
-    Styles
+    Styles {: #styling_webadmin }
   </span>
   
 
@@ -907,7 +907,7 @@
         
   
   <span class="md-ellipsis">
-    Introduction to SLD
+    Introduction to SLD {: #sld_intro }
   </span>
   
 
@@ -928,7 +928,7 @@
         
   
   <span class="md-ellipsis">
-    Working with SLD
+    Working with SLD {: #sld_working }
   </span>
   
 
@@ -1086,7 +1086,7 @@
         
   
   <span class="md-ellipsis">
-    StyledLayerDescriptor
+    StyledLayerDescriptor {: #sld_reference_sld }
   </span>
   
 
@@ -1107,7 +1107,7 @@
         
   
   <span class="md-ellipsis">
-    Layers
+    Layers {: #sld_reference_layers }
   </span>
   
 
@@ -1128,7 +1128,7 @@
         
   
   <span class="md-ellipsis">
-    Styles
+    Styles {: #sld_reference_styles }
   </span>
   
 
@@ -1149,7 +1149,7 @@
         
   
   <span class="md-ellipsis">
-    Rules
+    Rules {: #sld_reference_rules }
   </span>
   
 
@@ -1170,7 +1170,7 @@
         
   
   <span class="md-ellipsis">
-    Filters
+    Filters {: #sld_reference_filters }
   </span>
   
 
@@ -1191,7 +1191,7 @@
         
   
   <span class="md-ellipsis">
-    PointSymbolizer
+    PointSymbolizer {: #sld_reference_pointsymbolizer }
   </span>
   
 
@@ -1212,7 +1212,7 @@
         
   
   <span class="md-ellipsis">
-    LineSymbolizer
+    LineSymbolizer {: #sld_reference_linesymbolizer }
   </span>
   
 
@@ -1233,7 +1233,7 @@
         
   
   <span class="md-ellipsis">
-    PolygonSymbolizer
+    PolygonSymbolizer {: #sld_reference_polygonsymbolizer }
   </span>
   
 
@@ -1254,7 +1254,7 @@
         
   
   <span class="md-ellipsis">
-    TextSymbolizer
+    TextSymbolizer {: #sld_reference_textsymbolizer }
   </span>
   
 
@@ -1275,7 +1275,7 @@
         
   
   <span class="md-ellipsis">
-    Labeling
+    Labeling {: #sld_reference_labeling }
   </span>
   
 
@@ -1305,7 +1305,7 @@
           
   
   <span class="md-ellipsis">
-    RasterSymbolizer
+    RasterSymbolizer {: #sld_reference_rastersymbolizer }
   </span>
   
 
@@ -1316,7 +1316,7 @@
         
   
   <span class="md-ellipsis">
-    RasterSymbolizer
+    RasterSymbolizer {: #sld_reference_rastersymbolizer }
   </span>
   
 
@@ -1615,7 +1615,7 @@
         
   
   <span class="md-ellipsis">
-    i18N in SLD
+    i18N in SLD {: #sld_language }
   </span>
   
 
@@ -1644,7 +1644,7 @@
         
   
   <span class="md-ellipsis">
-    Generating SLD styles with QGIS
+    Generating SLD styles with QGIS {: #qgis }
   </span>
   
 
@@ -2096,7 +2096,7 @@
   
 
 
-<h1 id="rastersymbolizer">RasterSymbolizer</h1>
+<h1 id="sld_reference_rastersymbolizer">RasterSymbolizer</h1>
 <p>GeoServer supports the ability to display raster data in addition to vector data.</p>
 <p>Raster data is not merely a picture, rather it can be thought of as a grid of georeferenced information, much like a graphic is a grid of visual information (with combination of reds, greens, and blues). Unlike graphics, which only contain visual data, each point/pixel in a raster grid can have many different attributes (bands), with possibly none of them having an inherently visual component.</p>
 <p>With the above in mind, one needs to choose how to visualize the data, and this, like in all other cases, is done by using an SLD. The analogy to vector data is evident in the naming of the tags used. Vectors, consisting of points, line, and polygons, are styled by using the <code>&lt;PointSymbolizer&gt;</code>, <code>&lt;LineSymbolizer&gt;</code>, and <code>&lt;PolygonSymbolizer&gt;</code> tags. It is therefore not very surprising that raster data is styled with the tag <RasterSymbolizer>.</p>
@@ -2198,7 +2198,7 @@
 <blockquote>
 <p><a href="http://localhost:8080/geoserver/wms?REQUEST=GetMap&amp;VERSION=1.0.0&amp;">http://localhost:8080/geoserver/wms?REQUEST=GetMap&amp;VERSION=1.0.0&amp;</a>...&amp;ENV=low:10;medium:100;high:500</p>
 </blockquote>
-<p>For a complete reference of CQL capabilities, see <a href="../../../filter/ecql_reference.md">here</a></p>
+<p>For a complete reference of CQL capabilities, see <a href="../../../../filter/ecql_reference/">here</a></p>
 <h3 id="channelselection">ChannelSelection</h3>
 <p>The <code>&lt;ChannelSelection&gt;</code> element specifies how dataset bands are mapped to image color channels. Named dataset bands may be mapped to red, green and blue channels, or a single named band may be mapped to a grayscale channel.</p>
 <p>The following example maps source channels 1, 2 and 3 to the red, green, and blue color channels.</p>
@@ -2501,7 +2501,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../labeling/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Labeling">
+          <a href="../labeling/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Labeling {: #sld_reference_labeling }">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2511,20 +2511,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Labeling
+                Labeling {: #sld_reference_labeling }
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../extensions/" class="md-footer__link md-footer__link--next" aria-label="Next: SLD Extensions in GeoServer">
+          <a href="../../extensions/" class="md-footer__link md-footer__link--next" aria-label="Next: SLD Extensions in GeoServer {: #sld_extensions }">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                SLD Extensions in GeoServer
+                SLD Extensions in GeoServer {: #sld_extensions }
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -1,0 +1,2287 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Designed for interoperability to publishes data from any major spatial data source using open standards.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.geoserver.org/extensions/printing/configuration/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/geoserver_mark.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
+    
+    
+      
+        <title>Configuration - GeoServer</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f2e4d321.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#configuration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://geoserver.org/" title="GeoServer" class="md-header__button md-logo" aria-label="GeoServer" data-md-component="logo">
+      
+  <img src="../../../assets/images/geoserver_mark.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GeoServer
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Configuration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/geoserver/geoserver" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    geoserver
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  User Manual
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../introduction/" class="md-tabs__link">
+          
+  
+    
+  
+  Introduction
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../installation/" class="md-tabs__link">
+          
+  
+    
+  
+  Installation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../gettingstarted/" class="md-tabs__link">
+          
+  
+    
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../webadmin/" class="md-tabs__link">
+          
+  
+    
+  
+  Web Admin
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../data/" class="md-tabs__link">
+          
+  
+    
+  
+  Data
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../styling/" class="md-tabs__link">
+          
+  
+    
+  
+  Styling
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://geoserver.org/" title="GeoServer" class="md-nav__button md-logo" aria-label="GeoServer" data-md-component="logo">
+      
+  <img src="../../../assets/images/geoserver_mark.png" alt="logo">
+
+    </a>
+    GeoServer
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/geoserver/geoserver" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    geoserver
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Manual
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../introduction/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../installation/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../gettingstarted/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../webadmin/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Web Admin
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../data/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Data
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../styling/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Styling
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      General structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dpi-and-pdf-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      DPI and PDF Dimensions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Maps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Layouts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-filename" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output filename
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broken-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Broken images
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#x-forwarded-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      X Forwarded For
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keys
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonts-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonts definition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#host-whitelist-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Host whitelist definition
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Host whitelist definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allowing-every-local-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      Allowing every local services:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#allowing-by-dns-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      Allowing by DNS name:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#allowing-by-ip-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      Allowing by IP address:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metadata-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metadata definition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#page-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Page definition
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Page definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#skip-rendering-of-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skip Rendering Of Pages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extra-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extra Pages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#block-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Block definition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      Text block
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Text block">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#html-in-text-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTML In Text Blocks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      Image block
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Image block">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-colored-box-icons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simple colored box icons
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base64" class="md-nav__link">
+    <span class="md-ellipsis">
+      Base64
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#images-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      Images content
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#columns-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      Columns block
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      Map block
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scalebar-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scalebar block
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scalebar block">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-intervals-in-scalebarblock" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom intervals in ScalebarBlock
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attributes-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attributes block
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Attributes block">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#group-rendering-in-attribute-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Group Rendering In Attribute Blocks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#legends-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      Legends block
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Legends block">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#legend-fitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Legend fitting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multipage-legends" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multipage legends
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-an-horizontal-layout-for-legends" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating an horizontal layout for legends
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reorder-legends-block-in-columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reorder legends block in columns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dont-break-legend-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      Don't break legend items
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-images-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic images page
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/geoserver/geoserver/edit/main/docs/en/user/docs/extensions/printing/configuration.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/geoserver/geoserver/raw/main/docs/en/user/docs/extensions/printing/configuration.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
+  
+
+
+<h1 id="configuration">Configuration</h1>
+<p>The server side uses a <a href="http://www.yaml.org/">YAML</a> configuration file that defines the page layouts and allowed values. This file is usually called config.yaml.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Warranty disclaimer and license</p>
+<p>The authors provide these documents "AS-IS", without warranty of any kind either expressed or implied.</p>
+<p>Document under <a href="http://creativecommons.org/licenses/by-sa/2.5/">Creative Common License Attribution-Share Alike 2.5 Generic</a>.</p>
+<p>Authors: MapFish developers.</p>
+</div>
+<h2 id="general-structure">General structure</h2>
+<p>Here is the general structure:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">dpis</span><span class="p">:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">254</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">190</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="p p-Indicator">{</span><span class="nv">...</span><span class="p p-Indicator">}</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="l l-Scalar l-Scalar-Plain">?maxSvgWidth</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2048</span><span class="w"> </span><span class="c1"># set the maximum dimensions to 2048 points, this is useful when using MapServer and a maximum dimension is there</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="l l-Scalar l-Scalar-Plain">?maxSvgHeight</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2048</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="l l-Scalar l-Scalar-Plain">?integerSvg</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># the library in MapServer &lt;= 5.6 does not support floating point values in the SVG coordinate space, set this to true if using a WMS that does not support floating point values in SVG coordinates</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="l l-Scalar l-Scalar-Plain">?ignoreCapabilities</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># assume client is correct and do not load capabilities.  This is not recommended to be used unless you it fails when false (false is default)</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="l l-Scalar l-Scalar-Plain">?disableLayersMerging</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># WMS layers with mergable parameters will be merged by default. Set this to true to disable attempts to merge.</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="l l-Scalar l-Scalar-Plain">?maxPrintTimeBeforeWarningInSeconds</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span><span class="w"> </span><span class="c1"># if print jobs take longer than this then a warning in the logs will be written along with the spec.</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="l l-Scalar l-Scalar-Plain">?printTimeoutMinutes</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w"> </span><span class="c1"># The maximum time to allow a print job to take before cancelling the print job.  The default is 5 (minutes)</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="l l-Scalar l-Scalar-Plain">?formats</span><span class="p p-Indicator">:</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pdf</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">png</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="p p-Indicator">{</span><span class="nv">...</span><span class="p p-Indicator">}</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="nt">scales</span><span class="p">:</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">25000</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50000</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">  </span><span class="p p-Indicator">{</span><span class="nv">...</span><span class="p p-Indicator">}</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="nt">hosts</span><span class="p">:</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">HOST_WHITELIST_DEFINITION</span><span class="p p-Indicator">}</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">  </span><span class="p p-Indicator">{</span><span class="nv">...</span><span class="p p-Indicator">}</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="l l-Scalar l-Scalar-Plain">?localHostForward</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="c1"># For request on map.example.com we build an http request on localhost with the header Host=map.example.com, this is to don&#39;t pass throw the proxy.</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="p p-Indicator">?</span><span class="w">  </span><span class="nt">from</span><span class="p">:</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="p p-Indicator">?</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">map.example.com</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="p p-Indicator">?</span><span class="w">  </span><span class="nt">https2http</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"> </span><span class="c1"># For above hosts on request on https we build a request on http</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="l l-Scalar l-Scalar-Plain">?headers</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;Cookie&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;Referer&#39;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># The header that will be copyed to the tiles http requests</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="l l-Scalar l-Scalar-Plain">?keys</span><span class="p p-Indicator">:</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="p p-Indicator">?</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!key</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="p p-Indicator">?</span><span class="w">    </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="kt">!dnsMatch</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="p p-Indicator">?</span><span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">maps.google.com</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="p p-Indicator">?</span><span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="p p-Indicator">?</span><span class="w">    </span><span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="kt">!dnsMatch</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="p p-Indicator">?</span><span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="p p-Indicator">?</span><span class="w">    </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1234456</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="p p-Indicator">?</span><span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gmd-xyz</span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="l l-Scalar l-Scalar-Plain">?fonts</span><span class="p p-Indicator">:</span>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="p p-Indicator">?</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">PATH</span><span class="p p-Indicator">}</span>
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="l l-Scalar l-Scalar-Plain">?globalParallelFetches</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="l l-Scalar l-Scalar-Plain">?perHostParallelFetches</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="l l-Scalar l-Scalar-Plain">?tilecacheMerging</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a><span class="l l-Scalar l-Scalar-Plain">?connectionTimeout</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30000           MF_V1.2</span>
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="l l-Scalar l-Scalar-Plain">?socketTimeout</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">180000              MF_V1.2</span>
+</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a><span class="l l-Scalar l-Scalar-Plain">?outputFilename</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Mapfish-print      MF_V1.2</span>
+</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a><span class="l l-Scalar l-Scalar-Plain">?disableScaleLocking</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a><span class="l l-Scalar l-Scalar-Plain">?brokenUrlPlaceholder</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default      MF_V2.0</span>
+</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a><span class="l l-Scalar l-Scalar-Plain">?proxyBaseUrl</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://mapfishprint.org  MF_V2.0</span>
+</span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a><span class="l l-Scalar l-Scalar-Plain">?tmsDefaultOriginX</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0f   MF_V2.0</span>
+</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a><span class="l l-Scalar l-Scalar-Plain">?tmsDefaultOriginY</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0f   MF_V2.0</span>
+</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>
+</span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a><span class="l l-Scalar l-Scalar-Plain">?security</span><span class="p p-Indicator">:</span>
+</span><span id="__span-0-62"><a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a><span class="p p-Indicator">?</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!basicAuth</span>
+</span><span id="__span-0-63"><a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a><span class="p p-Indicator">?</span><span class="w">      </span><span class="nt">matcher</span><span class="p">:</span><span class="w"> </span><span class="kt">!dnsMatch</span>
+</span><span id="__span-0-64"><a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a><span class="p p-Indicator">?</span><span class="w">        </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">www.camptocamp.com</span>
+</span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a><span class="p p-Indicator">?</span><span class="w">        </span><span class="nt">post</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">443</span>
+</span><span id="__span-0-66"><a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a><span class="p p-Indicator">?</span><span class="w">      </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xyz</span>
+</span><span id="__span-0-67"><a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a><span class="p p-Indicator">?</span><span class="w">      </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">zyx</span>
+</span><span id="__span-0-68"><a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a><span class="p p-Indicator">?</span><span class="w">      </span><span class="nt">preemptive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-0-69"><a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a><span class="p p-Indicator">?</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!basicAuth</span>
+</span><span id="__span-0-70"><a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a><span class="p p-Indicator">?</span><span class="w">    </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abc</span>
+</span><span id="__span-0-71"><a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a><span class="p p-Indicator">?</span><span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bca</span>
+</span><span id="__span-0-72"><a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a>
+</span><span id="__span-0-73"><a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a><span class="nt">layouts</span><span class="p">:</span>
+</span><span id="__span-0-74"><a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a><span class="w">   </span><span class="p p-Indicator">{</span><span class="nv">LAYOUT_NAME</span><span class="p p-Indicator">}:</span>
+</span><span id="__span-0-75"><a id="__codelineno-0-75" name="__codelineno-0-75" href="#__codelineno-0-75"></a><span class="p p-Indicator">?</span><span class="w">   </span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Mapfish-print.pdf  MF_V1.2</span>
+</span><span id="__span-0-76"><a id="__codelineno-0-76" name="__codelineno-0-76" href="#__codelineno-0-76"></a><span class="p p-Indicator">?</span><span class="w">   </span><span class="nt">metaData</span><span class="p">:</span>
+</span><span id="__span-0-77"><a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="p p-Indicator">{</span><span class="nv">METADATA_DEFINITION</span><span class="p p-Indicator">}</span>
+</span><span id="__span-0-78"><a id="__codelineno-0-78" name="__codelineno-0-78" href="#__codelineno-0-78"></a><span class="p p-Indicator">?</span><span class="w">   </span><span class="nt">titlePage</span><span class="p">:</span>
+</span><span id="__span-0-79"><a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="p p-Indicator">{</span><span class="nv">PAGE_DEFINITION</span><span class="p p-Indicator">}</span>
+</span><span id="__span-0-80"><a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a><span class="w">    </span><span class="nt">mainPage</span><span class="p">:</span>
+</span><span id="__span-0-81"><a id="__codelineno-0-81" name="__codelineno-0-81" href="#__codelineno-0-81"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span><span id="__span-0-82"><a id="__codelineno-0-82" name="__codelineno-0-82" href="#__codelineno-0-82"></a><span class="w">      </span><span class="p p-Indicator">{</span><span class="nv">PAGE_DEFINITION</span><span class="p p-Indicator">}</span>
+</span><span id="__span-0-83"><a id="__codelineno-0-83" name="__codelineno-0-83" href="#__codelineno-0-83"></a><span class="p p-Indicator">?</span><span class="w">   </span><span class="nt">lastPage</span><span class="p">:</span>
+</span><span id="__span-0-84"><a id="__codelineno-0-84" name="__codelineno-0-84" href="#__codelineno-0-84"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="p p-Indicator">{</span><span class="nv">PAGE_DEFINITION</span><span class="p p-Indicator">}</span>
+</span><span id="__span-0-85"><a id="__codelineno-0-85" name="__codelineno-0-85" href="#__codelineno-0-85"></a><span class="w">  </span><span class="p p-Indicator">{</span><span class="nv">...</span><span class="p p-Indicator">}</span>
+</span></code></pre></div>
+<p>Optional parts are shown with a question mark in the left margin. The question marks must not be put in the configuration file. Their default values is shown.</p>
+<p>Note: Sets of values like DPI can be entered in one of two forms:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">dpi</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="nv">...</span><span class="p p-Indicator">]</span>
+</span></code></pre></div>
+<p>or</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">dpis</span><span class="p">:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">254</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">190</span>
+</span></code></pre></div>
+<h3 id="dpi-and-pdf-dimensions">DPI and PDF Dimensions</h3>
+<p>A chosen DPI value from the above configuration is used in WMS GetMap requests as an added format_options (GeoServer) or map_resolution (MapServer) parameter. This is used for symbol/label-rescaling suitable for high resolution printouts, see <a href="https://docs.geoserver.org/stable/en/user/services/wms/vendor.html">Geoserver format_options specification</a> (Geoserver 2.1) and <a href="http://mapserver.org/development/rfc/ms-rfc-55.html">MapServer defresolution keyword</a> (MapServer 5.6) for more information.</p>
+<p>In general, PDF dimensions and positions are specified in points. 72 points == 1 inch == 25.4 mm.</p>
+<h3 id="getting-maps">Getting Maps</h3>
+<p>The list of {HOST_WHITELIST_DEFINITION} defines the allowed URLs for getting maps. Its format will be defined in <a href="configuration.html#host-whitelist-definition">the next sub-section</a>.</p>
+<p>The formats element lists the values formats that the server permits.</p>
+<ul>
+<li>If omitted only 'pdf' is permitted.</li>
+<li>If the single element '*' (quotes are required) is present then all formats that the server can produce can be requested.</li>
+</ul>
+<p>The formats the server can produce depends to a large degree on how the Java is configured.</p>
+<p>PDF is supported on all systems but for image output formats JAI and ImageIO is used which means both must be on the server for them to be available. You can get the list of supported formats by running the standalone client with the <code>--clientConfig</code> flag enabled (you will need to supply a yaml config file as well). If you are using the servlet then do a get info request to see the list of formats (with the '*' as the outputFormats parameter in the config file).</p>
+<p>"globalParallelFetches" and "perHostParallelFetches" are used to tune the parallel loading of the map tiles/images. If you want to disable the parallel loading, set "globalParallelFetches" to 1.</p>
+<p>New versions of tilecache added the support for merging multiple layers in a single WMS request. If you want to use this functionality, set the "tilecacheMerging" attribute to true.</p>
+<p>"connectionTimeout" and "socketTimeout" can be used to tune the timeouts for reading tiles from map servers.</p>
+<p>"proxyBaseUrl" the optional url of the proxy between mapfish-print and the internet. This is the url base that will be in the info.json response. On occasion the url or port of the web server containing mapfish-print is not the server that is public to the internet and the requests are proxied to the mapfish-print webserver. In this case it is important for the info.json request to return the public URL instead of the url of the webserver.</p>
+<p>"tmsDefaultOriginX" By default this is null. If non-null then TmsMapReader will use this as the origin x value if null then the origin will be derived from the maxExtent parameter.</p>
+<p>"tmsDefaultOriginY" By default this is null. If non-null then TmsMapReader will use this as the origin y value if null then the origin will be derived from the maxExtent parameter.</p>
+<h3 id="layouts">Layouts</h3>
+<p>You can have as many layouts as you want. Their name must be unique and will be used on the client side.</p>
+<p>A layout can have a "titlePage" that will be added at the beginning of the generated document. It cannot contain any map.</p>
+<p>The "mainPage" section is mandatory and will be used once for each page requested. The details of a {PAGE_DEFINITION} section can be found <a href="configuration.html#page-definition">in another sub-section of this document</a>.</p>
+<p>A layout "lastPage", will be added for the end of the document, and cannot contain any map.</p>
+<p>If you want to let the user rotate the map (for a given layout), you have to set the "rotate" field to "true" in the corresponding "mainPage" section.</p>
+<h3 id="output-filename">Output filename</h3>
+<p>If the 'outputFilename' parameter is defined in the main body then that name will be used by the MapPrintServlet when sending the pdf to the client. It will be the name of the file that the client downloads. If the 'outputFilename' parameter is defined in a layout then that value will override the default name. In both cases the <code>.pdf</code> suffic is optional; if not present the server will append <code>.pdf</code> to the name.</p>
+<p>In all cases the <code>on</code> request can override the filename defined in the configuration file by posting a 'outputFilename' attribute in the posted JSON. If the outputFilename has \${date}, \${time} or \${dateTime} in it, it will be replaced with the current date using the related DateFormat.get*Instance().format() method. If a pattern is provided it will be passed to SimpleDataFormat for processing. A few examples follow:</p>
+<ul>
+<li>outputFilename: "host-\${yyyyMMdd}.pdf" # results in host-20111213.pdf</li>
+<li>outputFilename: "host-\${date}" # results in host-Dec_13_2011.pdf (actual output depends on local of server)</li>
+<li>outputFilename: "host-\${dateTime}" # results in host-Dec_13_2011_1:10:50_PM.pdf (actual output depends on local of server)</li>
+<li>outputFilename: "host-\${time}.pdf" # results in host-1:11:14_PM.pdf (actual output depends on local of server)</li>
+<li>outputFilename: "host-\${yyMMdd-hhmmss}"# results in host-111213-011154.pdf (actual output depends on local of server)</li>
+</ul>
+<p>"disableScaleLocking" allows you to bypass the choosing of scale from the available factors, and simply use the suggested value produced inside MapBlock.java.</p>
+<h3 id="broken-images">Broken images</h3>
+<p>"brokenUrlPlaceholder" the placeholder image to use in the case of a broken url. By default, when a url request fails, an error is thrown and the pdf process terminates. However if this parameter is set then instead a placeholder image is returned.</p>
+<p>Non-null values are:</p>
+<ul>
+<li>"default" - use the system default image.</li>
+<li>"throw" - throw an exception.</li>
+<li><url> - obtain the image from the supplied url. If this url is broken then an exception will be thrown. This can be anytype of valid url from a file url to https url.</li>
+</ul>
+<h2 id="security">Security</h2>
+<p>Both Keys and Security are options for accessing protected services. Keys are currently for Google maps premium accounts and Security is for other types and is more general Currently only BasicAuth is supported but other strategies can easily be added</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">security</span><span class="p">:</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!basicAuth</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">        </span><span class="nt">matcher</span><span class="p">:</span><span class="w"> </span><span class="kt">!dnsMatch</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">          </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">www.camptocamp.com</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">          </span><span class="nt">post</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">443</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xyz</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">zyx</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">        </span><span class="nt">preemptive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!basicAuth</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">      </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abc</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">      </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cba</span>
+</span></code></pre></div>
+<p>The above example has 2 security configuration. Each option is tested (in order) to see if it can be used for the given URI and if it applies it is used to configure requests for the URI. In the above example the first configuration will be used if the URI matches the hostmatcher provided if not then the second configuration will be applied. The last configuration has no host matcher so it is applied to all URIs.</p>
+<p>A basicAuth security configuration consists of 4 options</p>
+<ul>
+<li>matcher - a host matcher for determining which requests need the security to be applied</li>
+<li>username - username for basicauth</li>
+<li>password - password for basicauth</li>
+<li>preemptive - optional, but for cases where the credentials need to be sent without the challenge</li>
+</ul>
+<h3 id="x-forwarded-for">X Forwarded For</h3>
+<p>Added <code>addForwardedFor</code> optional flag (<code>true</code> / <code>false</code>) to enable by IP security.</p>
+<p>When the option is <code>true</code>, every request to WMS services have an <code>X-Forwarded-For</code> header with the client IP / name, so that IP based security rules are correctly applied by the underlying service.</p>
+<h2 id="keys">Keys</h2>
+<p>Google maps currently requires a private key to be used (we only support users Google maps premium accounts).</p>
+<p>The keys section allows a key to be mapped to hosts. The hosts are identified with host matchers that are described in the <configuration.html#host-whitelist-definition> sub-section.</p>
+<p>In addition a domain hostmatcher can be used to select a key based on the domain of the local server. This can be useful if the same configuration is used in a test environment and a production environment with differing domains. For example mapfish.org and mapfish.net.</p>
+<p>Finally google maps (for example) requires a client id as well that is associated with the private key. There for in the case of google premium services a legal key would be:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">keys</span><span class="p">:</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!key</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yxcvyxvcyxvyx</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gme-xxxcs</span>
+</span></code></pre></div>
+<p>Thanks to the hosts and domain matcher it is possible to have a key for google maps and (for future proofing) a different key for a different service.</p>
+<h2 id="fonts-definition">Fonts definition</h2>
+<p>The "fonts" section is optional. It contains the path of the fonts you want to use. The entries can point to files (TTF, OTF, TTC, AFM, PFM) or directories. Don't point to directories containing too many files since it will slow down the start time. By default, PDF gives you access to the following fonts (Cp1252 encoding only):</p>
+<ul>
+<li>Courrier (-Bold, -Oblique, -BoldOblique)</li>
+<li>Helvetica (-Bold, -Oblique, -BoldOblique)</li>
+<li>Times (-Roman, -Bold, -Oblique, -BoldOblique)</li>
+<li>Symbol</li>
+<li>ZapfDingbats</li>
+</ul>
+<h2 id="host-whitelist-definition">Host whitelist definition</h2>
+<p>In this section, you can put as many entries as you want, even for the same type of filter. If at least one matches, the Map server can be used.</p>
+<p>This section is not for defining which client can request maps. It is just here to avoid having the print module used as a proxy to access documents from computers behind firewalls.</p>
+<p>There are 3 ways to whitelist a host.</p>
+<h3 id="allowing-every-local-services">Allowing every local services:</h3>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!localMatch</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">dummy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span></code></pre></div>
+<p>The "dummy" parameter is ignored, but mandatory to avoid a limitation in the YAML format.</p>
+<h3 id="allowing-by-dns-name">Allowing by DNS name:</h3>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!dnsMatch</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">labs.metacarta.com</span>
+</span></code></pre></div>
+<h3 id="allowing-by-ip-address">Allowing by IP address:</h3>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!ipMatch</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">www.camptocamp.org</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p p-Indicator">?</span><span class="w">   </span><span class="nt">mask</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">255.255.255.255</span>
+</span></code></pre></div>
+<p>The "ip" parameter can be a DNS name that will be resolved or directly an IP address.</p>
+<p>All the methods accept the following optional parameters:</p>
+<ul>
+<li>port: to limit to a certain TCP port</li>
+<li>pathRegexp: a regexp that must match the path part of the URL (before the '?').</li>
+</ul>
+<h2 id="metadata-definition">Metadata definition</h2>
+<p>Allow to add some metadata to the generated PDF. They are visible in acroread in the File-&gt;Properties menu.</p>
+<p>The structure is like that:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">metaData</span><span class="p">:</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">author</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">subject</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">keywords</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">creator</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">supportLegacyReader</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span></code></pre></div>
+<p>All fields are optional and can use global variables, as defined in the <a href="configuration.html#block-definition">Block definition</a> chapter. Page specific variables are not accessible.</p>
+<h2 id="page-definition">Page definition</h2>
+<p>The structure is like that:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">pageSize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A4</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">landscape</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">marginLeft</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">40</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">marginRight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">40</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">marginTop</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">marginBottom</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">backgroundPdf</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">template.pdf</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">header</span><span class="p">:</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w w-Error">  </span><span class="nt">height</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">  </span><span class="nt">items</span><span class="p">:</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">BLOCK_DEFINITION</span><span class="p p-Indicator">}</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">    </span><span class="p p-Indicator">{</span><span class="nv">...</span><span class="p p-Indicator">}</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="nt">items</span><span class="p">:</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">BLOCK_DEFINITION</span><span class="p p-Indicator">}</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">  </span><span class="p p-Indicator">{</span><span class="nv">...</span><span class="p p-Indicator">}</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">footer</span><span class="p">:</span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w w-Error">  </span><span class="nt">height</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50</span>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="w">  </span><span class="nt">items</span><span class="p">:</span>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">BLOCK_DEFINITION</span><span class="p p-Indicator">}</span>
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="w">    </span><span class="p p-Indicator">{</span><span class="nv">...</span><span class="p p-Indicator">}</span>
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">includeTitlePage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">includeLastPage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">includeExtraPage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span></code></pre></div>
+<p>With the "condition" we can completely hide a page, same behavior than in block.</p>
+<p>If "backgroundPdf" is specified, the first page of the given PDF file will be added as background of every page.</p>
+<p>The "header" and "footer" sections are optional. If the "items" that are in the main section are too big, more pages are generated. The header and footer will be drawn on those pages as well.</p>
+<p>Here is a short list of supported <strong>pageSizes</strong>:</p>
+<hr />
+<p>name     width   height</p>
+<hr />
+<p>LETTER   612     792</p>
+<p>LEGAL    612     1008</p>
+<p>A4       595     842</p>
+<p>A3       842     1191</p>
+<hr />
+<p>The complete list can be found in <a href="http://api.itextpdf.com/itext/com/itextpdf/text/PageSize.html">http://api.itextpdf.com/itext/com/itextpdf/text/PageSize.html</a>. If you want to use a custom page size, you can set <strong>pageSize</strong> to the width and the height separated by a space.</p>
+<h3 id="skip-rendering-of-pages">Skip Rendering Of Pages</h3>
+<p>New flag params to skip rendering of particular pages have been implemented:</p>
+<ul>
+<li><code>ge</code></li>
+<li><code>ge</code></li>
+<li><code>ge</code></li>
+</ul>
+<p>They are all defaulted to true.</p>
+<h3 id="extra-pages">Extra Pages</h3>
+<p>Additional Pages are supported in many different places. They can be rendered due to legends overflowing on multiple pages, or by the dynamic images functionality.</p>
+<p>Where additional pages can be generated, the generating block will be spread among all the created pages (for example, the legend block will put legends on different pages, if configured to do so). If you want to put additional blocks on additional page, you can specify the <code>ge</code> flag on the desired blocks. Only first level blocks are considered.</p>
+<p>In addition to that, an explicit <code>ge</code> block can be used in <strong><code>config.yaml</code></strong> to add a custom page between other pages. The <code>On</code> property specify the exact position for rendering (<code>beforeMainPage</code>, <code>ge</code> or <code>ge</code>).</p>
+<h2 id="block-definition">Block definition</h2>
+<p>The next sub-sections document the possible types of blocks.</p>
+<p>In general, text values or URLs can contain values taken from the <strong>spec</strong> structure coming with the client's request. A syntax similar to shell is used: <code>\${variableName}</code>. If the current page is a <strong>titlePage</strong>, only the root values are taken. If it's a <strong>mainPage</strong>, the service will first look in the current <strong>page</strong> section then in the root values. Here is how to use this functionality:</p>
+<div class="language-text highlight"><pre><span></span><code>text: &#39;The value of mapTitle is: ${mapTitle}&#39;
+</code></pre></div>
+<p>Some virtual variables can be used:</p>
+<ul>
+<li>\${pageNum}: The current page number.</li>
+<li>\${pageTot}: The total number of pages. Can be used only in text blocks.</li>
+<li>\${now}: The current date and time as defined by the machine's locale.</li>
+<li>\${now FORMAT}: The current date and time as defined by the FORMAT string. The syntax is here: <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/text/SimpleDateFormat.html">http://java.sun.com/j2se/1.5.0/docs/api/java/text/SimpleDateFormat.html</a>.</li>
+<li>\${configDir}: The absolute path to the directory of the configuration file.</li>
+<li>\${format PRINTF VAR}: Format the value of VAR using the provided <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Formatter.html#syntax">PRINTF format</a> (for example: %,d).</li>
+</ul>
+<p>All the blocks can have a condition attribute that takes a spec attribute name. If the attribute name exists and is not equal to "false" or "0", the block is drawn. Otherwise, it is ignored. An exclamation mark may precede the condition to invert it, exclamation mark is part of yaml syntax, than the expression should be in quotes.</p>
+<p>Example: show text block only if in the spec the attribute name "showText" is given, is not equal to "false" and not equal to "0":</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!text</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;mytext&#39;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">showText</span>
+</span></code></pre></div>
+<h2 id="text-block">Text block</h2>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!text</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">font</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Helvetica</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">fontSize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">12</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">fontEncoding</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Cp1252</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">fontColor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">spacingAfter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">align</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">left</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">vertAlign</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">middle</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">backgroundColor</span><span class="p">:</span><span class="w"> </span><span class="c1">#FFFFFF</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w w-Error">  </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Blahblah&#39;</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">asHTML</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span></code></pre></div>
+<p>Typical "fontEncoding" values are:</p>
+<ul>
+<li>Cp1250</li>
+<li>Cp1252</li>
+<li>Cp1257</li>
+<li>Identity-H (horizontal UTF-8)</li>
+<li>Identity-V (vertical UTF-8)</li>
+<li>MacRoman</li>
+</ul>
+<p>The "font" must refer to a standard PDF font or a <a href="configuration.html#fonts-definition">declared font</a>.</p>
+<h3 id="html-in-text-blocks">HTML In Text Blocks</h3>
+<p>The new configuration property <code>ML</code> (to be used in <strong><code>config.yaml</code></strong> text blocks) allows to automatically render the included text as HTML (when true), instead of simple text. HTML tags are interpreted and styled.</p>
+<h2 id="image-block">Image block</h2>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!image</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="nt">maxWidth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">200</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="nt">maxHeight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">spacingAfter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">align</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">left</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">vertAlign</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">middle</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w w-Error">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://trac.mapfish.org/trac/mapfish/chrome/site/img/mapfish.png</span>
+</span></code></pre></div>
+<p>Supported formats are PNG, GIF, Jpeg, Jpeg2000, BMP, WMF (vector), SVG and TIFF.</p>
+<p>The original aspect ratio will be respected. The url can contain "\${}" variables.</p>
+<h3 id="simple-colored-box-icons">Simple colored box icons</h3>
+<p>This enhancement adds the feature of drawing a simple colored box, instead of an icon into a legend item.</p>
+<p>To draw a colored box, include a color: #hexvalue property in the printing spec, instead of an icon: url property.</p>
+<h3 id="base64">Base64</h3>
+<p>We added support for Base64 encoded images uris to PDFUtils so that embedded images can be included for styling vector points (for example).</p>
+<p>Example url:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data:image/png;base64,&lt;encoded image&gt;</span>
+</span></code></pre></div>
+<h3 id="images-content">Images content</h3>
+<p>This enhancement allow you add SVG content inside the specification of the print. You need to add a name into the image to manage:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!columns</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">580</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="nt">height</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">271</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">absoluteX:70</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">absoluteY:400</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">    </span><span class="nt">items</span><span class="p">:</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!image</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chart1</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">        </span><span class="nt">maxWidth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">580</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">        </span><span class="nt">maxHeight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">271</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">        </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;${rotation}&#39;</span>
+</span></code></pre></div>
+<p>Spec:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p p-Indicator">{</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nv">...</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nv">chart1</span><span class="p p-Indicator">:{</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="nt">  content</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&lt;svg&gt;SVG</span><span class="nv"> </span><span class="s">content&lt;/svg&gt;&#39;</span><span class="w"> </span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="p p-Indicator">},</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="nv">...</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="p p-Indicator">}</span>
+</span></code></pre></div>
+<p>then, the content its rendered inside the print page with the layout configuration.</p>
+<h2 id="columns-block">Columns block</h2>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!columns</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">config</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">TABLE_CONFIG</span><span class="p p-Indicator">}</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">widths</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">25</span><span class="p p-Indicator">,</span><span class="nv">25</span><span class="p p-Indicator">,</span><span class="nv">25</span><span class="p p-Indicator">,</span><span class="nv">25</span><span class="p p-Indicator">]</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">backgroundColor</span><span class="p">:</span><span class="w"> </span><span class="c1">#FFFFFF</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">absoluteX</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">absoluteY</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">PAGE_WIDTH</span><span class="p p-Indicator">}</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">spacingAfter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">nbColumns</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w w-Error">  </span><span class="nt">items</span><span class="p">:</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">BLOCK_DEFINITION</span><span class="p p-Indicator">}</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="w">    </span><span class="p p-Indicator">{</span><span class="nv">...</span><span class="p p-Indicator">}</span>
+</span></code></pre></div>
+<p>Can be called <strong>!table</strong> as well.</p>
+<p>By default, the width of the columns will be equal.</p>
+<p>Each item will be in its own column.</p>
+<p>If the <strong>absoluteX</strong>, <strong>absoluteY</strong> and <strong>width</strong> are given, the columns block will be floating on top of the page at the specified position.</p>
+<p>The <strong>widths</strong> attribute can be used to change the width of the columns (by default, they have the same width). It must contain one integer for each column. The width of a given column is <code>tableWidth*columnWeight/sum(columnWeight)</code>.</p>
+<p>Every block type is allowed except for <strong>map</strong> if the column has an absolute position.</p>
+<p>Look at &lt;<a href="http://trac.mapfish.org/trac/mapfish/wiki/PrintModuleServer#Tableconfiguration">http://trac.mapfish.org/trac/mapfish/wiki/PrintModuleServer#Tableconfiguration</a> to know how to specify the <strong>config</strong> field.</p>
+<h2 id="map-block">Map block</h2>
+<p>Allowed only within a <strong>mainPage</strong>.</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!map</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span><span class="nt">height</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">map</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">spacingAfter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">align</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">left</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">vertAlign</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">middle</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">absoluteX</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">absoluteY</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">overviewMap</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">backgroundColor</span><span class="p">:</span><span class="w"> </span><span class="c1">#FFFFFF</span>
+</span></code></pre></div>
+<p><strong>width</strong> and <strong>height</strong> are mandatory. You can use variable substitution in this part, but if you do so, the browser won't receive the map size when it calls <strong>info.json</strong>. You'll have to <strong>override mapfish.widgets.print.Base.configReceived</strong> and set the map width and height of your layouts.</p>
+<p>If the <strong>absoluteX</strong> and <strong>absoluteY</strong> are given, the map block will be floating on top of the page at the specified position.</p>
+<p>The <strong>name</strong> is what will be displayed in the Acrobat's reader layer panel. The map layers will be displayed bellow it.</p>
+<p>If <strong>overviewMap</strong> is specified, the map will be an overview of the extent augmented by the given factor. There are few cases to consider with map overviews:</p>
+<ol>
+<li>If there is no overview overrides and no OL.Control.MapOverview, then all the layers will figure in the PDF map overview.</li>
+<li>If there are overview overrides, the OL map overview control is ignored.</li>
+<li>If there are no overview overrides and there is an OL.Control.MapOverview (takes the first one), then the layers defined in the control are taken into account. By default it is the current base layer.</li>
+</ol>
+<h2 id="scalebar-block">Scalebar block</h2>
+<p>Display a scalebar.</p>
+<p>Allowed only within a <strong>mainPage</strong>.</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!scalebar</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">  </span><span class="nt">maxSize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">150</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">line</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">intervals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">subIntervals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">units</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">m</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">barSize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">lineWidth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">barDirection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">up</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">textDirection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">up</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">labelDistance</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">font</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Helvetica</span>
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">fontSize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">12</span>
+</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">fontColor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
+</span><span id="__span-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="c1">#000000</span>
+</span><span id="__span-18-16"><a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">barBgColor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</span><span id="__span-18-17"><a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">spacingAfter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-18-18"><a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">align</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">left</span>
+</span><span id="__span-18-19"><a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">vertAlign</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">middle</span>
+</span><span id="__span-18-20"><a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">backgroundColor</span><span class="p">:</span><span class="w"> </span><span class="c1">#FFFFFF</span>
+</span><span id="__span-18-21"><a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">lockUnits</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-18-22"><a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">preferredIntervals</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="nv">5</span><span class="p p-Indicator">,</span><span class="nv">10</span><span class="p p-Indicator">]</span>
+</span><span id="__span-18-23"><a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">preferredIntervalFractions</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
+</span></code></pre></div>
+<p>The scalebar, will adapt its width up to <code>ze</code> (includes the labels) in order to have a multiple of 1, 2 or 5 values at each graduation. For example:</p>
+<ul>
+<li>0, 1, 2, ...</li>
+<li>0, 2, 4, ...</li>
+<li>0, 5, 10, ...</li>
+<li>0, 10, 20, ...</li>
+</ul>
+<p>The <code>ze</code> is the thickness of the bar or the height of the tick marks on the line. The <code>th</code> is for the thickness of the lines (or bar border).</p>
+<p>Units can be any of:</p>
+<ul>
+<li>m (mm, cm, m or km)</li>
+<li>ft (in, ft, yd, mi)</li>
+<li>degrees (min, sec, °)</li>
+</ul>
+<p>If the value is too big or too small, the module will switch to one of the unit in parenthesis (the same unit is used for every intervals). If this behaviour is not desired, the lockUnits parameter will force the declared unit (or map unit if no unit is declared) to be used for the scalebar.</p>
+<p>The number of <code>ls</code> can be set to anything &gt;=2. Labels are drawn only at main intervals. If there is no space to display a label at a certain interval, this label won't be displayed. If <code>ls</code> are enabled, their number will depend on the length of an interval.</p>
+<p>The type can be:</p>
+<ul>
+<li>line: A simple line with graduations</li>
+<li>bar: A thick bar with a suite of color and barBgColor blocks.</li>
+<li>bar_sub: Like bar, but with little lines for labels.</li>
+</ul>
+<p><img alt="image" src="../images/scalebarTypes.png" /></p>
+<p>The bar and/or text orientation can be set to "up", "down", "left" or "right".</p>
+<p>The <code>gn</code> attribute is for placing the whole scalebar withing the surrounding column or page. The <code>gn</code> attribute is used only when placed in a column.</p>
+<p>Labels are always centered on the graduation, at a distance specified by labelDistance.</p>
+<h3 id="custom-intervals-in-scalebarblock">Custom intervals in ScalebarBlock</h3>
+<p>With this improvement we added two new configuration parameters to <code>!scalebar</code> blocks that allow to customize the scalebar preferred bar lengths.</p>
+<p>Now this set can be customized using the <code>ls</code> property. This property is an array with the new (integer) allowed lengths. By default these were chosen in the <code>1</code>,<code>2</code>,<code>5</code>,<code>10</code> set.</p>
+<p>Another property, <code>ns</code>, can be specified to also use fractional intervals. By default only <code>0.0</code> is used, and thus only integer lengths are allowed.</p>
+<p>Example:</p>
+<div class="language-text highlight"><pre><span></span><code>.. code-block:: yaml
+</code></pre></div>
+<blockquote>
+<p>preferredIntervals: [1,3,5,10] preferredIntervalFractions: [0.2,0.5]</p>
+</blockquote>
+<h2 id="attributes-block">Attributes block</h2>
+<p>Allows to display a table of the displayed feature's attributes.</p>
+<p>Allowed only within a <em>mainPage</em>.</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!attributes</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">results</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">tableConfig</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">TABLE_CONFIG</span><span class="p p-Indicator">}</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w w-Error">  </span><span class="nt">columnDefs</span><span class="p">:</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">    </span><span class="p p-Indicator">{</span><span class="nv">COLUMN_NAME</span><span class="p p-Indicator">}:</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="p p-Indicator">?</span><span class="w">             </span><span class="nt">columnWeight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0        MF_V1.2</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w w-Error">      </span><span class="nt">header</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">BLOCK_DEFINITION</span><span class="p p-Indicator">}</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">      </span><span class="nt">cell</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">BLOCK_DEFINITION</span><span class="p p-Indicator">}</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w w-Error">    </span><span class="p p-Indicator">{</span><span class="nv">...</span><span class="p p-Indicator">}</span>
+</span></code></pre></div>
+<p>Look <a href="configuration.html#table-configuration">here</a> for how to specify the <em>tableConfig</em> field.</p>
+<p>The <em>columnWeigth</em> (MF_V1.2 only) allows to define a weight for the column width. If you specify it for one column, you have to specify it for all of them. The width of a given column is tableWidth*columnWeight/sum(columnWeight).</p>
+<p>The <strong>source</strong> value defines the name of the entry in the root of the client's <strong>spec</strong>. For example, it would look like that:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="p p-Indicator">{</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">  </span><span class="nv">...</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">  </span><span class="nv">pages</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span><span class="p p-Indicator">{</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">      </span><span class="nv">...</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">      </span><span class="nv">results</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="nt">        data</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">          </span><span class="p p-Indicator">{</span><span class="nv">id</span><span class="p p-Indicator">:</span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="nt"> name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;blah&#39;</span><span class="p p-Indicator">,</span><span class="nt"> icon</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;icon_pan&#39;</span><span class="p p-Indicator">},</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">          </span><span class="nv">...</span>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">        </span><span class="p p-Indicator">],</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="nt">        columns</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;id&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;name&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;icon&#39;</span><span class="p p-Indicator">]</span>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="w">      </span><span class="p p-Indicator">}</span>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="w">    </span><span class="p p-Indicator">}</span>
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="w">  </span><span class="p p-Indicator">]</span>
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="w">  </span><span class="nv">...</span>
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="p p-Indicator">}</span>
+</span></code></pre></div>
+<p>With this spec you would have to define 3 columnDefs with the names <strong>id</strong>, <strong>name</strong> and <strong>icon</strong>. Each cell definition blocks have access to all the values of the current row.</p>
+<p>The spec part is filled automatically by the 2 MapFish widgets when their <a href="http://www.mapfish.org/apidoc/trunk/files/mapfish/widgets/print/Base-js.html#mapfish.widgets.print.Base.grids">grids</a> parameter is set.</p>
+<p>Here is a crazy example of columnDef that will show the name of the icon and it's bitmap side-by-side inside a single column:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nt">columnDefs</span><span class="p">:</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">  </span><span class="nt">icon</span><span class="p">:</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">    </span><span class="nt">header</span><span class="p">:</span><span class="w"> </span><span class="kt">!text</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">      </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Symbol</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">      </span><span class="nt">backgroundColor</span><span class="p">:</span><span class="w"> </span><span class="c1">#A0A0A0</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">    </span><span class="nt">cell</span><span class="p">:</span><span class="w"> </span><span class="kt">!columns</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">      </span><span class="nt">items</span><span class="p">:</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!text</span>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">          </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;${icon}&#39;</span>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!image</span>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="w">          </span><span class="nt">align</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">center</span>
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="w">          </span><span class="nt">maxWidth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">15</span>
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="w">          </span><span class="nt">maxHeight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">15</span>
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="w">          </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;http://www.mapfish.org/svn/mapfish/trunk/MapFish/client/mfbase/mapfish/img/${icon}.png&#39;</span>
+</span></code></pre></div>
+<p>A more complex example can be found in SVN: <a href="https://github.com/mapfish/mapfish-print-v2/tree/main/samples/config.yaml">config.yaml</a> <a href="https://github.com/mapfish/mapfish-print-v2/tree/main/samples/spec.json">spec.json</a></p>
+<p>The print widgets are able to fill the spec for you based on a dictionary of <strong>Ext.grid.GridPanel</strong>. Just pass them through the grids parameter.</p>
+<h3 id="group-rendering-in-attribute-blocks">Group Rendering In Attribute Blocks</h3>
+<p>Attribute blocks now support grouping, by a specific attribute. Rows should be sorted by that attribute for grouping to work (no automatic sort is accomplished by the printing library).</p>
+<p>To identify the grouping attribute, use the <code>By</code> property.</p>
+<p>Each group can be prefixed by a title, using the <code>le</code> property. You can specify any block in the <code>le</code> property, to render any kind of content as a title.</p>
+<p>You can also skip table header using the <code>er</code> flag (true by default).</p>
+<p>Finally you can force a page break before any new group, using the <code>ge</code> flag.</p>
+<h2 id="legends-block">Legends block</h2>
+<p>Display each layers along with its classes (icons and labels).</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!legends</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">backgroundColor</span><span class="p">:</span><span class="w"> </span><span class="c1">#FFFFFF</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">borders</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">horizontalAlignment</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">center</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">maxWidth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">maxHeight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">iconMaxWidth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">iconMaxHeight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8</span>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">iconPadding</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8 7 6 5</span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">textMaxWidth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8</span>
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">textMaxHeight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8</span>
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">textPadding</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8 7 6 5</span>
+</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">defaultScale</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">inline</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-22-15"><a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">classIndentation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span>
+</span><span id="__span-22-16"><a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">layerSpaceBefore</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+</span><span id="__span-22-17"><a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">layerSpace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+</span><span id="__span-22-18"><a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">classSpace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+</span><span id="__span-22-19"><a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">layerFont</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Helvetica</span>
+</span><span id="__span-22-20"><a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">layerFontSize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+</span><span id="__span-22-21"><a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">classFont</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Helvetica</span>
+</span><span id="__span-22-22"><a id="__codelineno-22-22" name="__codelineno-22-22" href="#__codelineno-22-22"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">classFontSize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8</span>
+</span><span id="__span-22-23"><a id="__codelineno-22-23" name="__codelineno-22-23" href="#__codelineno-22-23"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">fontEncoding</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Cp1252</span>
+</span><span id="__span-22-24"><a id="__codelineno-22-24" name="__codelineno-22-24" href="#__codelineno-22-24"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">columnMargin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+</span><span id="__span-22-25"><a id="__codelineno-22-25" name="__codelineno-22-25" href="#__codelineno-22-25"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">overflow</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span><span id="__span-22-26"><a id="__codelineno-22-26" name="__codelineno-22-26" href="#__codelineno-22-26"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">maxColumns</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</span><span id="__span-22-27"><a id="__codelineno-22-27" name="__codelineno-22-27" href="#__codelineno-22-27"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">reorderColumns</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span><span id="__span-22-28"><a id="__codelineno-22-28" name="__codelineno-22-28" href="#__codelineno-22-28"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">dontBreakItems</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span><span id="__span-22-29"><a id="__codelineno-22-29" name="__codelineno-22-29" href="#__codelineno-22-29"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">fitWidth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-22-30"><a id="__codelineno-22-30" name="__codelineno-22-30" href="#__codelineno-22-30"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">fitHeight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span></code></pre></div>
+<p><strong>borders</strong> is mainly for debugging purpouses and shows all borders in the legend tables. This can be either 'true' or 'false'.</p>
+<p><strong>horizontalAlignment</strong> can be left, right or center (default) and aligns all items left, right or in the center.</p>
+<p><strong>iconMaxWidth</strong>, <strong>iconMaxHeight</strong>, <strong>defaultScale</strong> with value of 0 indicate that the value will be ignored, i.e. the values are automatically set to the equivalent of Infinity, Infinity and 1 respectively. If the legends URL passed to MapFish (see <a href="http://mapfish.org/doc/print/protocol.html#print-pdf">http://mapfish.org/doc/print/protocol.html#print-pdf</a>) are obtained from a WMS GetLegendGraphic request, the width/height are only indicative (even more when a label text is included with <a href="https://docs.geoserver.org/stable/en/user/services/wms/get_legend_graphic/index.html#controlling-legend-appearance-with-legend-options">LEGEND_OPTIONS/forceLabels parameter</a>) and it would be safer, in order to preserve scale coherence between legends and map, to set <strong>iconMaxWidth</strong> and <strong>iconMaxHeight</strong> to zero.</p>
+<p><strong>textMaxWidth/Height</strong> and <strong>iconMaxWidth/Height</strong> define how wide/high the text/icon cells of a legend item can be. At this point textMaxHeight is ignored.</p>
+<p><strong>textPadding</strong> and <strong>iconPadding</strong> can be used like standard CSS padding. In the above example 8 is the padding top, 7 padding right, 6 padding bottom and 5 padding left.</p>
+<p>if <strong>inline</strong> is true icons and text are rendered on the same line, BUT multicolumn is still enabled.</p>
+<p>if <strong>maxWidth</strong> is set the whole legend gets a maximum width, just like other blocks. Note that <strong>maxWidth</strong> does not have any impact on icons size, thus icons may overflow outside the legends block.</p>
+<p>if <strong>maxHeight</strong> is set the whole legend gets a maximum height. This forces more than one column to appear if the legend is higher than the specified value. This can be used to enable the multi-column layout. 0 makes the maxHeight= max value, i.e. the equivalent of infinity.</p>
+<p>if <strong>defaultScale</strong> is non null it means that the legend image will be scaled so it doesn't take the full space. This can be overriden for individual classes in the spec JSON sent to the print module by adding an attribute called 'scale' and giving it a number. In conjunction with iconMaxWidth/Height this can be used to control average and also maximum width/height. If <strong>defaultScale</strong> equals 1, one pixel is scaled to one point (1/72 inch) in generated PDF. By default, as GeoServer legends are generated with \~90 dpi resolution (exactly 25.4/0.28), setting <strong>defaultScale</strong> value to 0.7937 (72*0.28/25.4) produces legend icons of same size as corresponding map icons. As the <a href="https://docs.geoserver.org/stable/en/user/services/wms/get_legend_graphic/index.html#controlling-legend-appearance-with-legend-options">LEGEND_OPTIONS/dpi GeoServer parameter</a> is not handled by MapFish, the resolution will necessary be \~91 dpi, which may cause visual quality difference with the map.</p>
+<p>For this to work, you need to set the <strong>layerTree</strong> config option on MF print widgets, more precisely the legends should be present in the print.pdf JSON request.</p>
+<p><strong>layerSpaceBefore</strong> is to specify the space before the second and consecutive layers.</p>
+<p><strong>layerSpace</strong> and <strong>classSpace</strong> is to specify the line space to add after layers and classes.</p>
+<p><strong>columnMaxWidth</strong> maximum width of a column in multi-column layout.</p>
+<p><strong>maxColumns</strong> allows to specify a maximum number of columns to be used. After this number is reached, a new row is created.</p>
+<p><strong>classIndentation</strong> amount of points to indent classes by.</p>
+<p><strong>layerSpaceBefore</strong> if a layer is after another one, this defines the amount of space to have before it. This will not be applied if the layer is the first item in its column in multi-column layout.</p>
+<p><strong>layerFont</strong> font of layer name legend items.</p>
+<p><strong>layerFontSize</strong> font size of layer name.</p>
+<p><strong>classFont</strong> font of class legend items.</p>
+<p><strong>classFontSize</strong> font size of class.</p>
+<p><strong>fontEncoding</strong> (see below)</p>
+<h3 id="legend-fitting">Legend fitting</h3>
+<p>Support for legend fitting (legend resized to fit a given rectangle) has been added, through 2 new config.yaml configuration properties (to be used in legend blocks).</p>
+<p>The properties are:</p>
+<ul>
+<li><code>th</code>: width of the rectangle for fitting (defaults to 0, meaning no fit)</li>
+<li><code>ht</code>: height of the rectangle for fitting (defaults to 0, meaning no fit)</li>
+</ul>
+<p>Both properties or only one of them can be specified. When only one property is set, the other dimension is calculated to mantain the original aspect ratio for the legend.</p>
+<h3 id="multipage-legends">Multipage legends</h3>
+<p>By default a LegendsBlock must be contained in a single page. To allow it to span on several pages the <code>ow</code> option can be used, setting it to true.</p>
+<p>When this option is used you also need to define <code>ns</code>, to fix the max number of columns on each page and <code>ht</code>, to fix the maximum height of each column.</p>
+<p>The LegendsBlock will be rendered on as many pages as needed to get all the items rendered with the given constraints.</p>
+<p>Please note that if more than one page is needed, the second and following pages will only contain legend columns, without any of the other element of the page where the legends block is defined.</p>
+<h3 id="creating-an-horizontal-layout-for-legends">Creating an horizontal layout for legends</h3>
+<p>Using some <code>config.yaml</code> configuration options in an unusual way it is possible to have a layout for legends that is horizontal, instead of vertical.</p>
+<p>To get this behaviour is necessary to:</p>
+<ul>
+<li>use the legend block <code>maxHeight</code> property with a very low value (e.g. 1) to force a new column for each legend item</li>
+<li>use the legend block <code>maxColumns</code> value to choose the number of columns for the legend (a new row will be forced after <code>maxColumns</code> is reached)</li>
+</ul>
+<h3 id="reorder-legends-block-in-columns">Reorder legends block in columns</h3>
+<p>When the option <code>ns</code> inside legends block it set to <code>ue</code> and more than one column is necessary for the legends block, a new algorithm computes the best distribution of the legend items inside the columns. Currently a first fit with items sorted in height descending order is used. This is not sub-optimal, but it's fast.</p>
+<p>When a legend item is rendered to another column, by default name and legend icon could finish on different columns. To fix it, please enable the <code>ms</code> option.</p>
+<h3 id="dont-break-legend-items">Don't break legend items</h3>
+<p>Set the flag <code>ms</code> to <code>ue</code> on legends block if you want to render legend and names as one table to forbid the break between different columns</p>
+<h2 id="table-configuration">Table configuration</h2>
+<p>The <a href="#columns-block">columns block</a> and the <a href="#attributes-block">attributes block</a> can take a table configuration object like that:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nt">config</span><span class="p">:</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">borderWidth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">borderWidthLeft</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">borderWidthRight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">borderWidthTop</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">borderWidthBottom</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">borderColor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">borderColorLeft</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">borderColorRight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">borderColorTop</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
+</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">borderColorBottom</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
+</span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">cells</span><span class="p">:</span>
+</span><span id="__span-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a><span class="p p-Indicator">?</span><span class="w">       </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">CELL_CONFIGURATION</span><span class="p p-Indicator">}</span>
+</span></code></pre></div>
+<p>A cell configuration looks like that:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">row</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">...</span><span class="p p-Indicator">}</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">col</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nv">...</span><span class="p p-Indicator">}</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">borderWidth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">borderWidthLeft</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">borderWidthRight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">borderWidthTop</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">borderWidthBottom</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">borderColor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">borderColorLeft</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
+</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">borderColorRight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
+</span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">borderColorTop</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
+</span><span id="__span-24-12"><a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">borderColorBottom</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
+</span><span id="__span-24-13"><a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">padding</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-24-14"><a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">paddingLeft</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-24-15"><a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">paddingRight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-24-16"><a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">paddingTop</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-24-17"><a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">paddingBottom</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-24-18"><a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">backgroundColor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">white</span>
+</span><span id="__span-24-19"><a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">align</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LEFT</span>
+</span><span id="__span-24-20"><a id="__codelineno-24-20" name="__codelineno-24-20" href="#__codelineno-24-20"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">vertAlign</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TOP</span>
+</span></code></pre></div>
+<p>The stuff configured at table level is for the table border, not every cell.</p>
+<p>The <strong>cells</strong> list defines overrides for some cells. The cells an override is applied to is defined by the <strong>row</strong> and <strong>col</strong> attribute. Those attributes can have several formats:</p>
+<ul>
+<li><strong>0</strong>: apply only to row or column 0 (the first)</li>
+<li><strong>0-10</strong>: applies only the row or columns from 0 to 10</li>
+<li>or you can use any regular expression</li>
+</ul>
+<p>Every matching overrides is applied in order and will override the values defined in the previous ones.</p>
+<p>For example, if you want to draw an attribute block like that:</p>
+<p><img alt="image" src="../images/tableConfig.png" /></p>
+<p>You define that:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!attributes</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">  </span><span class="nt">tableConfig</span><span class="p">:</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">    </span><span class="nt">borderWidth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">    </span><span class="nt">cells</span><span class="p">:</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">      </span><span class="c1"># match every cell (default cell formatting)</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">borderWidthBottom</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="w">        </span><span class="nt">borderWidthLeft</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span>
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="w">        </span><span class="nt">padding</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="w">        </span><span class="nt">paddingTop</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="w">      </span><span class="c1"># match every even cell (yellowish background)</span>
+</span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">row</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;\d*[02468]&#39;</span>
+</span><span id="__span-25-12"><a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a><span class="w">        </span><span class="nt">backgroundColor</span><span class="p">:</span><span class="w"> </span><span class="c1">#FFFFCC</span>
+</span><span id="__span-25-13"><a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a><span class="w">      </span><span class="c1"># for the header</span>
+</span><span id="__span-25-14"><a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">row</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-25-15"><a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a><span class="w">        </span><span class="nt">borderWidthBottom</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</span><span id="__span-25-16"><a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a><span class="w">        </span><span class="nt">backgroundColor</span><span class="p">:</span><span class="w"> </span><span class="c1">#FA0002</span>
+</span><span id="__span-25-17"><a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a><span class="w">        </span><span class="nt">align</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">center</span>
+</span><span id="__span-25-18"><a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a><span class="w">  </span><span class="p p-Indicator">{</span><span class="nv">...</span><span class="p p-Indicator">}</span>
+</span></code></pre></div>
+<h2 id="dynamic-images-page">Dynamic images page</h2>
+<p>New layout to let you print a different number of pages dinamically.</p>
+<p>You need to put it in <strong><code>config.yaml</code></strong>:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nt">dynamicImagesPage</span><span class="p">:</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">      </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">      </span><span class="nt">pageSize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">595 842</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">      </span><span class="nt">landscape</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">items:[...]</span>
+</span></code></pre></div>
+<p>and when you called to the print servlet, you'll need to add this property to the spec:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="l l-Scalar l-Scalar-Plain">imagesPages:[</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">{firstPageConfiguration},</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">{secondPageConfiguration}</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="l l-Scalar l-Scalar-Plain">]</span>
+</span></code></pre></div>
+<p>then it's render one page for each item found in the imagesPages property.</p>
+<p>Also, you cant select the pages placement inside the document with the property <code>On</code>:</p>
+<ul>
+<li><code>ge</code>: It's rendered after the last page. It's the default option active.</li>
+<li><code>ge</code>: It's rendered just before last page (between main page and last page layouts)</li>
+<li><code>ge</code>: It's rendered before main page (between first page and main page)</li>
+</ul>
+<p>The first use of this layout it's add a dynamic number of pages with differents images with svg content generated dynamicaly (using also the images content enhancement). This is an example of use with two dynammic images by page:</p>
+<p>Example <strong><code>config.yaml</code></strong>:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nn">...</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="w"> </span><span class="nt">dynamicImagesPage</span><span class="p">:</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="w">   </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="w">   </span><span class="nt">pageSize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">595 842</span>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="w">   </span><span class="nt">landscape</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="w">   </span><span class="nt">items</span><span class="p">:</span>
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!columns</span>
+</span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a><span class="w">       </span><span class="nt">absoluteX</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span>
+</span><span id="__span-28-9"><a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a><span class="w">       </span><span class="nt">absoluteY</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">812</span>
+</span><span id="__span-28-10"><a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a><span class="w">       </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">535</span>
+</span><span id="__span-28-11"><a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a><span class="w">       </span><span class="nt">height</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+</span><span id="__span-28-12"><a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a><span class="w">       </span><span class="nt">items</span><span class="p">:</span>
+</span><span id="__span-28-13"><a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a><span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!image</span>
+</span><span id="__span-28-14"><a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a><span class="w">           </span><span class="nt">maxWidth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">535</span>
+</span><span id="__span-28-15"><a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a><span class="w">           </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;${configDir}/print_header.png&#39;</span>
+</span><span id="__span-28-16"><a id="__codelineno-28-16" name="__codelineno-28-16" href="#__codelineno-28-16"></a><span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!columns</span>
+</span><span id="__span-28-17"><a id="__codelineno-28-17" name="__codelineno-28-17" href="#__codelineno-28-17"></a><span class="w">       </span><span class="nt">absoluteX</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span id="__span-28-18"><a id="__codelineno-28-18" name="__codelineno-28-18" href="#__codelineno-28-18"></a><span class="w">       </span><span class="nt">absoluteY</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">750</span>
+</span><span id="__span-28-19"><a id="__codelineno-28-19" name="__codelineno-28-19" href="#__codelineno-28-19"></a><span class="w">       </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">595</span>
+</span><span id="__span-28-20"><a id="__codelineno-28-20" name="__codelineno-28-20" href="#__codelineno-28-20"></a><span class="w">       </span><span class="nt">widths</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">595</span><span class="p p-Indicator">]</span>
+</span><span id="__span-28-21"><a id="__codelineno-28-21" name="__codelineno-28-21" href="#__codelineno-28-21"></a><span class="w">       </span><span class="nt">items</span><span class="p">:</span>
+</span><span id="__span-28-22"><a id="__codelineno-28-22" name="__codelineno-28-22" href="#__codelineno-28-22"></a><span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!text</span>
+</span><span id="__span-28-23"><a id="__codelineno-28-23" name="__codelineno-28-23" href="#__codelineno-28-23"></a><span class="w">           </span><span class="nt">align</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">center</span>
+</span><span id="__span-28-24"><a id="__codelineno-28-24" name="__codelineno-28-24" href="#__codelineno-28-24"></a><span class="w">           </span><span class="nt">vertAlign</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">middle</span>
+</span><span id="__span-28-25"><a id="__codelineno-28-25" name="__codelineno-28-25" href="#__codelineno-28-25"></a><span class="w">           </span><span class="nt">fontSize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">14</span>
+</span><span id="__span-28-26"><a id="__codelineno-28-26" name="__codelineno-28-26" href="#__codelineno-28-26"></a><span class="w">           </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;${meteorologicalPagesTitle}&#39;</span>
+</span><span id="__span-28-27"><a id="__codelineno-28-27" name="__codelineno-28-27" href="#__codelineno-28-27"></a><span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!columns</span>
+</span><span id="__span-28-28"><a id="__codelineno-28-28" name="__codelineno-28-28" href="#__codelineno-28-28"></a><span class="w">       </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">580</span>
+</span><span id="__span-28-29"><a id="__codelineno-28-29" name="__codelineno-28-29" href="#__codelineno-28-29"></a><span class="w">       </span><span class="nt">height</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">271</span>
+</span><span id="__span-28-30"><a id="__codelineno-28-30" name="__codelineno-28-30" href="#__codelineno-28-30"></a><span class="w">       </span><span class="l l-Scalar l-Scalar-Plain">absoluteX:70</span>
+</span><span id="__span-28-31"><a id="__codelineno-28-31" name="__codelineno-28-31" href="#__codelineno-28-31"></a><span class="w">       </span><span class="l l-Scalar l-Scalar-Plain">absoluteY:697</span>
+</span><span id="__span-28-32"><a id="__codelineno-28-32" name="__codelineno-28-32" href="#__codelineno-28-32"></a><span class="w">       </span><span class="nt">items</span><span class="p">:</span>
+</span><span id="__span-28-33"><a id="__codelineno-28-33" name="__codelineno-28-33" href="#__codelineno-28-33"></a><span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!image</span>
+</span><span id="__span-28-34"><a id="__codelineno-28-34" name="__codelineno-28-34" href="#__codelineno-28-34"></a><span class="w">           </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chart1</span>
+</span><span id="__span-28-35"><a id="__codelineno-28-35" name="__codelineno-28-35" href="#__codelineno-28-35"></a><span class="w">           </span><span class="nt">maxWidth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">580</span>
+</span><span id="__span-28-36"><a id="__codelineno-28-36" name="__codelineno-28-36" href="#__codelineno-28-36"></a><span class="w">           </span><span class="nt">maxHeight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">271</span>
+</span><span id="__span-28-37"><a id="__codelineno-28-37" name="__codelineno-28-37" href="#__codelineno-28-37"></a><span class="w">           </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;${rotation}&#39;</span>
+</span><span id="__span-28-38"><a id="__codelineno-28-38" name="__codelineno-28-38" href="#__codelineno-28-38"></a><span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!columns</span>
+</span><span id="__span-28-39"><a id="__codelineno-28-39" name="__codelineno-28-39" href="#__codelineno-28-39"></a><span class="w">       </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">580</span>
+</span><span id="__span-28-40"><a id="__codelineno-28-40" name="__codelineno-28-40" href="#__codelineno-28-40"></a><span class="w">       </span><span class="nt">height</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">271</span>
+</span><span id="__span-28-41"><a id="__codelineno-28-41" name="__codelineno-28-41" href="#__codelineno-28-41"></a><span class="w">       </span><span class="l l-Scalar l-Scalar-Plain">absoluteX:70</span>
+</span><span id="__span-28-42"><a id="__codelineno-28-42" name="__codelineno-28-42" href="#__codelineno-28-42"></a><span class="w">       </span><span class="l l-Scalar l-Scalar-Plain">absoluteY:400</span>
+</span><span id="__span-28-43"><a id="__codelineno-28-43" name="__codelineno-28-43" href="#__codelineno-28-43"></a><span class="w">       </span><span class="nt">items</span><span class="p">:</span>
+</span><span id="__span-28-44"><a id="__codelineno-28-44" name="__codelineno-28-44" href="#__codelineno-28-44"></a><span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!image</span>
+</span><span id="__span-28-45"><a id="__codelineno-28-45" name="__codelineno-28-45" href="#__codelineno-28-45"></a><span class="w">           </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chart2</span>
+</span><span id="__span-28-46"><a id="__codelineno-28-46" name="__codelineno-28-46" href="#__codelineno-28-46"></a><span class="w">           </span><span class="nt">maxWidth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">580</span>
+</span><span id="__span-28-47"><a id="__codelineno-28-47" name="__codelineno-28-47" href="#__codelineno-28-47"></a><span class="w">           </span><span class="nt">maxHeight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">271</span>
+</span><span id="__span-28-48"><a id="__codelineno-28-48" name="__codelineno-28-48" href="#__codelineno-28-48"></a><span class="w">           </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;${rotation}&#39;</span>
+</span></code></pre></div>
+<p>spec:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="p p-Indicator">{</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="nv">...</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="nv">imagePages</span><span class="p p-Indicator">:[</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="w">    </span><span class="nv">images</span><span class="p p-Indicator">:{</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="w">        </span><span class="nv">chart1</span><span class="p p-Indicator">:{</span>
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="nt">             content</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&lt;svg&gt;SVG</span><span class="nv"> </span><span class="s">content&lt;/svg&gt;&#39;</span>
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="w">        </span><span class="p p-Indicator">},</span>
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="w">        </span><span class="nv">chart2</span><span class="p p-Indicator">:{</span>
+</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="nt">             content</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&lt;svg&gt;SVG</span><span class="nv"> </span><span class="s">content&lt;/svg&gt;&#39;</span>
+</span><span id="__span-29-10"><a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a><span class="w">        </span><span class="p p-Indicator">}</span>
+</span><span id="__span-29-11"><a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a><span class="w">    </span><span class="p p-Indicator">}</span>
+</span><span id="__span-29-12"><a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a><span class="p p-Indicator">],</span>
+</span><span id="__span-29-13"><a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a><span class="nv">...</span>
+</span><span id="__span-29-14"><a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a><span class="p p-Indicator">}</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Copyright and theme information -->
+<div class="md-copyright">
+  
+  <span class="md-copyright__highlight">
+    Copyright &copy; 2023 Open Source Geospatial Foundation
+  </span>
+  
+  
+  &mdash; Made by the
+  <a
+          href="https://geonetwork-opensource.org/"
+          target="_blank" rel="noopener"
+  >GeoNetwork Community</a>,
+  built with
+  <a
+          href="https://squidfunk.github.io/mkdocs-material/"
+          target="_blank" rel="noopener"
+  >
+    Material for MkDocs
+  </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/geoserver" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://geoserver.org/" target="_blank" rel="noopener" title="GeoServer Home" class="md-social__link">
+      <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="193.34px" height="193.34px" viewBox="0 0 193.34 193.34" enable-background="new 0 0 193.34 193.34"
+	 xml:space="preserve">
+<g>
+	<g>
+		<path fill="#0092C8" d="M152.666,78.305L114.58,40.218c-5.069-5.066-11.759-7.597-18.418-7.597
+			c-6.651,0-13.338,2.536-18.396,7.597L39.677,78.305c-5.058,5.053-7.597,11.73-7.595,18.381
+			c-0.002,6.658,2.526,13.357,7.598,18.429l38.085,38.086c5.058,5.06,11.745,7.598,18.401,7.597h0.012
+			c6.651,0,13.336-2.535,18.401-7.597l38.084-38.086c5.065-5.066,7.599-11.76,7.596-18.414
+			C160.263,90.049,157.724,83.363,152.666,78.305"/>
+	</g>
+	<g>
+		<defs>
+			<path id="SVGID_1_" d="M80,42.457L41.912,80.543c-8.89,8.89-8.89,23.442,0,32.337L80,150.965c8.892,8.894,23.45,8.895,32.342,0
+				l38.086-38.085c8.897-8.896,8.894-23.447,0.001-32.337l-38.088-38.086c-4.447-4.45-10.309-6.672-16.169-6.672
+				C90.31,35.785,84.446,38.009,80,42.457"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  overflow="visible"/>
+		</clipPath>
+		
+			<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-1.1152" y1="578.5859" x2="0.5991" y2="578.5859" gradientTransform="matrix(62.1889 -26.3976 -26.3976 -62.1889 15385.8525 36072.457)">
+			<stop  offset="0" style="stop-color:#0092C8"/>
+			<stop  offset="1" style="stop-color:#00AFDD"/>
+		</linearGradient>
+		<polygon clip-path="url(#SVGID_2_)" fill="url(#SVGID_3_)" points="-11.605,54.728 140.042,-9.643 203.951,140.918 
+			52.304,205.288 		"/>
+	</g>
+	<g>
+		<defs>
+			<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="-31.977" y="-31.433" width="256.283" height="256.283">
+				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+			</filter>
+		</defs>
+		<mask maskUnits="userSpaceOnUse" x="-31.977" y="-31.433" width="256.283" height="256.283" id="SVGID_4_">
+			<g filter="url(#Adobe_OpacityMaskFilter)">
+				<rect x="32.071" y="32.618" width="128.185" height="128.179"/>
+				<g enable-background="new    ">
+					<path fill="#FFFFFF" d="M74.216,116.232c10.716-7.749-7.75-15.5-12.309-17.778c-4.558-2.279,0-6.838,4.787-8.89
+						c4.789-2.051,3.177,13.009,8.89,7.294c5.471-5.47-9.345-11.852,3.305-19.491c12.653-7.635-5.584-5.582-5.584-12.65
+						c0-7.067,7.979-7.977,7.979-13.449c0-3.58-6.162-4.171-10.424-4.154l-31.189,31.19c-0.694,0.693-1.335,1.418-1.933,2.168
+						c0.148,5.851,7.16,6.814,11.175,6.814c5.016,0,7.751,7.751,2.737,12.765c-5.014,5.016-5.387,13.595-2.114,16.866
+						c2.203,2.206,1.443,6.312,0.708,8.771l5.916,5.912C57.781,126.397,64.845,123.012,74.216,116.232"/>
+					<path fill="#FFFFFF" d="M93.543,41.044c8.619-1.109,0.641,5.976,4.737,7.768c3.704,1.618,13.599-3.339,14.686-10.062
+						c-4.831-4.083-10.832-6.132-16.809-6.13c-2.662,0-5.327,0.412-7.891,1.224C87.793,37.293,88.174,41.737,93.543,41.044"/>
+					<path fill="#FFFFFF" d="M114.599,89.498c-1.434-5.905-15.203-8.056-21.801-3.249c-9.726,7.087-11.281,20.726-3.728,21.498
+						c7.554,0.773,14.438,8.093,10.643,15.337c-3.793,7.244,4.584,24.899,13.775,12.095c9.192-12.803,4.615-15.301,5.34-22.352
+						c0.72-7.048,9.363-15.99,7.246-18.594C123.952,91.629,115.722,94.123,114.599,89.498"/>
+					<path fill="#FFFFFF" d="M83.665,157.613c3.879,2.117,8.191,3.182,12.494,3.182h0.012c6.651,0,13.338-2.534,18.402-7.597
+						l3.215-3.213C112.307,148.96,93.251,154.596,83.665,157.613"/>
+					<path fill="#FFFFFF" d="M138.319,107.358c-10.275,3.558-17.391,15.021-11.461,16.601c5.588,1.488,11.523-2.986,15.498,1.456
+						l10.302-10.302C150.673,111.063,147.48,104.188,138.319,107.358"/>
+					<path fill="#FFFFFF" d="M105.108,65.492c2.338-0.313,0.499-2.935-0.828-3.516c-1.327-0.582-5.552-0.283-3.988,1.63
+						C101.474,65.052,102.773,65.807,105.108,65.492"/>
+					<path fill="#FFFFFF" d="M154.772,96.18c-0.018-1.368-5.071-2.765-6.405-2.646c-1.329,0.125-1.774,2.366,1.97,3.283
+						C153.161,97.507,154.789,97.547,154.772,96.18"/>
+					<path fill="#FFFFFF" d="M110.593,54.962c-0.564,4.5,3.939,6.19,1.688,8.44c-2.251,2.25-15.5,7.035-12.382,8.44
+						c8.325,3.748-5.78,3.222,0,9.003c2.871,2.87,11.933-2.198,10.974-5.628c-0.27-0.97,2.503-4.625,4.721-2.698
+						c1.917,1.666,7.844,3.504,7.844,13.321c0,5.226,4.501,10.323,9.103,9.075c3.82-1.037,4.46-5.837,2.088-7.598
+						c-3.03-2.249,5.093-4.964,13.362,3.959c3.815,4.115,10.121-0.905,11.415-1.175V90.1c-1.125-4.326-3.373-8.424-6.745-11.798
+						l-31.506-31.502C115.353,47.403,110.823,53.121,110.593,54.962"/>
+				</g>
+			</g>
+		</mask>
+		<g mask="url(#SVGID_4_)">
+			<g>
+				<defs>
+					<rect id="SVGID_5_" x="32.075" y="32.622" width="128.178" height="128.176"/>
+				</defs>
+				<clipPath id="SVGID_6_">
+					<use xlink:href="#SVGID_5_"  overflow="visible"/>
+				</clipPath>
+				<g clip-path="url(#SVGID_6_)">
+					<defs>
+						<path id="SVGID_7_" d="M96.157,32.621c-6.656-0.003-13.34,2.536-18.4,7.597L39.67,78.303
+							c-4.984,4.983-7.527,11.542-7.595,18.098v0.569c0.068,6.564,2.597,13.144,7.597,18.141l38.084,38.087
+							c5.06,5.063,11.746,7.603,18.402,7.6h0.007c6.653,0,13.341-2.535,18.405-7.6l38.084-38.087
+							c5.068-5.065,7.599-11.756,7.598-18.412c0.001-6.651-2.533-13.335-7.592-18.395l-38.09-38.087
+							c-5.062-5.066-11.749-7.597-18.401-7.597H96.157z"/>
+					</defs>
+					<clipPath id="SVGID_8_">
+						<use xlink:href="#SVGID_7_"  overflow="visible"/>
+					</clipPath>
+					
+						<linearGradient id="SVGID_9_" gradientUnits="userSpaceOnUse" x1="-1.2285" y1="578.752" x2="0.4859" y2="578.752" gradientTransform="matrix(43.2909 -44.829 -44.829 -43.2909 26057.1094 25134.7637)">
+						<stop  offset="0" style="stop-color:#8CC63F"/>
+						<stop  offset="0.6137" style="stop-color:#C9E39F"/>
+						<stop  offset="1" style="stop-color:#F1F6DE"/>
+					</linearGradient>
+					<polygon clip-path="url(#SVGID_8_)" fill="url(#SVGID_9_)" points="-31.977,98.946 93.928,-31.433 224.306,94.472 
+						98.401,224.851 					"/>
+				</g>
+			</g>
+		</g>
+		<g opacity="0.25">
+			<g>
+				<defs>
+					<rect id="SVGID_10_" x="32.082" y="32.622" width="128.177" height="128.176"/>
+				</defs>
+				<clipPath id="SVGID_11_">
+					<use xlink:href="#SVGID_10_"  overflow="visible"/>
+				</clipPath>
+				<g clip-path="url(#SVGID_11_)">
+					<defs>
+						<rect id="SVGID_12_" x="32.082" y="32.622" width="128.177" height="128.176"/>
+					</defs>
+					<clipPath id="SVGID_13_">
+						<use xlink:href="#SVGID_12_"  overflow="visible"/>
+					</clipPath>
+					<path clip-path="url(#SVGID_13_)" fill="#0092C8" d="M96.166,160.795c-6.657,0.004-13.344-2.536-18.401-7.595l-38.084-38.087
+						c-5.075-5.07-7.602-11.767-7.599-18.429c-0.003-6.651,2.538-13.328,7.595-18.378L77.765,40.22
+						c5.057-5.062,11.744-7.6,18.399-7.598c6.654-0.003,13.349,2.531,18.416,7.598l38.085,38.086
+						c5.06,5.058,7.6,11.743,7.594,18.396c0.005,6.654-2.533,13.347-7.594,18.411L114.58,153.2
+						c-5.065,5.066-11.755,7.598-18.408,7.595H96.166z M44.148,82.775c-3.826,3.827-5.741,8.853-5.743,13.909
+						c0.002,5.081,1.912,10.125,5.745,13.958l38.086,38.085c3.828,3.829,8.863,5.741,13.929,5.744
+						c5.07-0.003,10.106-1.912,13.941-5.744l38.084-38.085c3.832-3.833,5.741-8.873,5.745-13.941
+						c-0.003-5.067-1.914-10.098-5.742-13.927l-38.087-38.084c-3.835-3.834-8.873-5.743-13.943-5.746
+						c-5.067,0.001-10.1,1.917-13.928,5.746L44.148,82.775z"/>
+				</g>
+			</g>
+		</g>
+		<g opacity="0.15">
+			<g>
+				<defs>
+					<rect id="SVGID_14_" x="32.082" y="32.621" width="124.887" height="87.036"/>
+				</defs>
+				<clipPath id="SVGID_15_">
+					<use xlink:href="#SVGID_14_"  overflow="visible"/>
+				</clipPath>
+				<g clip-path="url(#SVGID_15_)">
+					<defs>
+						<rect id="SVGID_16_" x="32.082" y="32.621" width="124.887" height="87.036"/>
+					</defs>
+					<clipPath id="SVGID_17_">
+						<use xlink:href="#SVGID_16_"  overflow="visible"/>
+					</clipPath>
+					<path clip-path="url(#SVGID_17_)" fill="#FFFFFF" d="M156.97,84.014c-1.14-2.049-2.57-3.976-4.304-5.71L114.58,40.22
+						c-5.069-5.069-11.759-7.599-18.417-7.597c-6.652-0.001-13.339,2.534-18.397,7.597L39.677,78.304
+						c-5.057,5.055-7.597,11.73-7.595,18.381c-0.002,6.657,2.526,13.358,7.598,18.428l4.54,4.544
+						C52.275,107.132,91.137,54.294,156.97,84.014"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.view", "content.action.edit", "content.code.copy", "content.tabs.link", "navigation.tabs", "navigation.tracking", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "2.24"}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+    
+  </body>
+</html>

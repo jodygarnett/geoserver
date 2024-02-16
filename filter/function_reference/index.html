@@ -1,0 +1,1441 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Designed for interoperability to publishes data from any major spatial data source using open standards.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.geoserver.org/filter/function_reference/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/geoserver_mark.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
+    
+    
+      
+        <title>Filter Function Reference {: #filter_function_reference } - GeoServer</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f2e4d321.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#filter_function_reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://geoserver.org/" title="GeoServer" class="md-header__button md-logo" aria-label="GeoServer" data-md-component="logo">
+      
+  <img src="../../assets/images/geoserver_mark.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GeoServer
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Filter Function Reference {: #filter_function_reference }
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/geoserver/geoserver" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    geoserver
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  User Manual
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../introduction/" class="md-tabs__link">
+          
+  
+    
+  
+  Introduction
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../installation/" class="md-tabs__link">
+          
+  
+    
+  
+  Installation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../gettingstarted/" class="md-tabs__link">
+          
+  
+    
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../webadmin/" class="md-tabs__link">
+          
+  
+    
+  
+  Web Admin
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../data/" class="md-tabs__link">
+          
+  
+    
+  
+  Data
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../styling/" class="md-tabs__link">
+          
+  
+    
+  
+  Styling
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://geoserver.org/" title="GeoServer" class="md-nav__button md-logo" aria-label="GeoServer" data-md-component="logo">
+      
+  <img src="../../assets/images/geoserver_mark.png" alt="logo">
+
+    </a>
+    GeoServer
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/geoserver/geoserver" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    geoserver
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Manual
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../introduction/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../installation/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../gettingstarted/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../webadmin/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Web Admin
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../data/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Data
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../styling/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Styling
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#function-argument-type-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function argument type reference
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparison functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment function
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spatial-relationship-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spatial Relationship functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geometric-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Geometric functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#math-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Math functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      String functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parsing-and-formatting-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parsing and formatting functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#temporal-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temporal functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformation-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformation functions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/geoserver/geoserver/edit/main/docs/en/user/docs/filter/function_reference.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/geoserver/geoserver/raw/main/docs/en/user/docs/filter/function_reference.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
+  
+
+
+<h1 id="filter_function_reference">Filter Function Reference</h1>
+<p>This reference describes all filter functions that can be used in WFS/WMS filtering or in SLD expressions.</p>
+<p>The list of functions available on a GeoServer instance can be determined by browsing to <a href="http://localhost:8080/geoserver/wfs?request=GetCapabilities">http://localhost:8080/geoserver/wfs?request=GetCapabilities</a> and searching for <code>ogc:Function_Names</code> (WFS 1.0.0), <code>ogc:FunctionNames</code> (WFS 1.1.0), or <code>fes:Functions</code> (WFS 2.0.0) in the returned XML. If a function is described in the Capabilities document but is not in this reference, then it might mean that the function cannot be used for filtering, or that it is new and has not been documented. Ask for details on the user mailing list.</p>
+<p>Unless otherwise specified, none of the filter functions in this reference are understood natively by the data stores, and thus expressions using them will be evaluated in-memory.</p>
+<h2 id="function-argument-type-reference">Function argument type reference</h2>
+<hr />
+<p><strong>Type</strong>       <strong>Description</strong></p>
+<p>Double         Floating point number, 8 bytes, IEEE 754. Ranges from 4.94065645841246544e-324d to 1.79769313486231570e+308d</p>
+<p>Float          Floating point number, 4 bytes, IEEE 754. Ranges from 1.40129846432481707e-45 to 3.40282346638528860e+38. Smaller range and less accurate than Double.</p>
+<p>Integer        Integer number, ranging from -2,147,483,648 to 2,147,483,647</p>
+<p>Long           Integer number, ranging from -9,223,372,036,854,775,808 to +9,223,372,036,854,775,807</p>
+<p>Number         A numeric value of any type</p>
+<p>Object         A value of any type</p>
+<p>String         A sequence of characters</p>
+<p>Timestamp      Date and time information</p>
+<hr />
+<h2 id="comparison-functions">Comparison functions</h2>
+<hr />
+<p><strong>Name</strong>                                       <strong>Arguments</strong>                                        <strong>Description</strong></p>
+<p>between                                        <code>num</code>:Number, <code>low</code>:Number, <code>high</code>:Number            returns true if <code>low</code> &lt;= <code>num</code> &lt;= <code>high</code></p>
+<p>equalTo                                        <code>a</code>:Object, <code>b</code>:Object                               Can be used to compare for equality two numbers, two strings, two dates, and so on</p>
+<p>greaterEqualThan                               <code>x</code>:Object, <code>y</code>:Object                               Returns true if <code>x</code> &gt;= <code>y</code>. Parameters can be either numbers or strings (in the second case lexicographic ordering is used)</p>
+<p>greaterThan                                    <code>x</code>:Object, <code>y</code>:Object                               Returns true if <code>x</code> &gt; <code>y</code>. Parameters can be either numbers or strings (in the second case lexicographic ordering is used)</p>
+<p>in2, in3, in4, in5, in6, in7, in8, in9, in10   <code>candidate</code>:Object, <code>v1</code>:Object, ..., <code>v9</code>:Object   Returns true if <code>candidate</code> is equal to one of the <code>v1</code>, ..., <code>v9</code> values. Use the function name matching the number of arguments specified.</p>
+<p>in                                             <code>candidate</code>:Object, <code>v1</code>:Object, <code>v2</code>:Object, ...   Works exactly the same as the in2, ..., in10 functions described above, but takes any number of values as input.</p>
+<p>isLike                                         <code>string</code>:String, <code>pattern</code>:String                    Returns true if the string matches the specified pattern. For the full syntax of the pattern specification see the <a href="http://java.sun.com/javase/6/docs/api/java/util/regex/Pattern.html">Java Pattern class javadocs</a></p>
+<p>isNull                                         <code>obj</code>:Object                                         Returns true the passed parameter is <code>null</code>, false otherwise</p>
+<p>lessThan                                       <code>x</code>:Object, <code>y</code>:Object                               Returns true if <code>x</code> &lt; <code>y</code>. Parameters can be either numbers or strings (in the second case lexicographic ordering is used</p>
+<p>lessEqualThan                                  <code>x</code>:Object, <code>y</code>:Object                               Returns true if <code>x</code> &lt;= <code>y</code>. Parameters can be either numbers or strings (in the second case lexicographic ordering is used</p>
+<p>not                                            <code>bool</code>:Boolean                                       Returns the negation of <code>bool</code></p>
+<p>notEqualTo                                     <code>x</code>:Object, <code>y</code>:Object                               Returns true if <code>x</code> and <code>y</code> are equal, false otherwise</p>
+<hr />
+<h2 id="control-functions">Control functions</h2>
+<hr />
+<p><strong>Name</strong>       <strong>Arguments</strong>                                  <strong>Description</strong></p>
+<p>if_then_else   <code>condition</code>:Boolean, <code>x</code>:Object, <code>y</code>: Object   Returns <code>x</code> if the condition is true, <code>y</code> otherwise</p>
+<hr />
+<h2 id="environment-function">Environment function</h2>
+<p>This function returns the value of environment variables defined in various contexts. WMS GetMap automatically defines some variables <a href="../../styling/sld/extensions/substitution/">SLD rendering</a>, while others can be provided using the <code>env</code> request parameter. Example usage in e.g. a dynamic symbolizer:</p>
+<p><code>${env('size', 20)}</code></p>
+<p>Example usage in a default Symbolizer:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;PointSymbolizer</span><span class="w"> </span><span class="na">uom=</span><span class="s">&quot;http://www.opengeospatial.org/se/units/metre&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&lt;Graphic&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>...
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&lt;Size&gt;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">      </span><span class="nt">&lt;ogc:Function</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;env&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="nt">&lt;ogc:Literal&gt;</span>size<span class="nt">&lt;/ogc:Literal&gt;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="nt">&lt;ogc:Literal&gt;</span>20<span class="nt">&lt;/ogc:Literal&gt;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">      </span><span class="nt">&lt;/ogc:Function&gt;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">&lt;/Size&gt;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nt">&lt;/Graphic&gt;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="nt">&lt;/PointSymbolizer&gt;</span>
+</span></code></pre></div>
+<hr />
+<p><strong>Name</strong>       <strong>Arguments</strong>       <strong>Description</strong></p>
+<p>env            <code>variable</code>:String   Returns the value of the environment variable <code>variable</code>.</p>
+<hr />
+<h2 id="feature-functions">Feature functions</h2>
+<hr />
+<p><strong>Name</strong>         <strong>Arguments</strong>                          <strong>Description</strong></p>
+<p>id               <code>feature</code>:Feature                      returns the identifier of the feature</p>
+<p>PropertyExists   <code>f</code>:Feature, <code>propertyName</code>:String     Returns <code>true</code> if <code>f</code> has a property named <code>propertyName</code></p>
+<p>property         <code>f</code>:Feature, <code>propertyName</code>:String     Returns the value of the property <code>propertyName</code>. Allows property names to be computed or specified by <a href="../../styling/sld/extensions/substitution/">Variable substitution in SLD</a>.</p>
+<p>mapGet           <code>f</code>:Feature, <code>map</code>:Map, <code>key</code>:String   Get the value of the map <code>map</code> related to the specified <code>key</code>.</p>
+<hr />
+<h2 id="spatial-relationship-functions">Spatial Relationship functions</h2>
+<p>For more information about the precise meaning of the spatial relationships consult the <a href="http://www.opengeospatial.org/standards/sfs">OGC Simple Feature Specification for SQL</a></p>
+<hr />
+<p><strong>Name</strong>               <strong>Arguments</strong>                                     <strong>Description</strong></p>
+<p>contains               <code>a</code>:Geometry, <code>b</code>:Geometry                        Returns true if the geometry <code>a</code> contains <code>b</code></p>
+<p>crosses                <code>a</code>:Geometry, <code>b</code>:Geometry                        Returns true if <code>a</code> crosses <code>b</code></p>
+<p>disjoint               <code>a</code>:Geometry, <code>b</code>:Geometry                        Returns true if the two geometries are disjoint, false otherwise</p>
+<p>equalsExact            <code>a</code>:Geometry, <code>b</code>:Geometry                        Returns true if the two geometries are exactly equal, same coordinates in the same order</p>
+<p>equalsExactTolerance   <code>a</code>:Geometry, <code>b</code>:Geometry, <code>tol</code>:Double          Returns true if the two geometries are exactly equal, same coordinates in the same order, allowing for a <code>tol</code> distance in the corresponding points</p>
+<p>intersects             <code>a</code>:Geometry, <code>b</code>:Geometry                        Returns true if <code>a</code> intersects <code>b</code></p>
+<p>isWithinDistance       <code>a</code>: Geometry, <code>b</code>:Geometry, <code>distance</code>: Double   Returns true if the distance between <code>a</code> and <code>b</code> is less than <code>distance</code> (measured as an euclidean distance)</p>
+<p>overlaps               <code>a</code>: Geometry, <code>b</code>:Geometry                       Returns true <code>a</code> overlaps with <code>b</code></p>
+<p>relate                 <code>a</code>: Geometry, <code>b</code>:Geometry                       Returns the DE-9IM intersection matrix for <code>a</code> and <code>b</code></p>
+<p>relatePattern          <code>a</code>: Geometry, <code>b</code>:Geometry, <code>pattern</code>:String     Returns true if the DE-9IM intersection matrix for <code>a</code> and <code>b</code> matches the specified pattern</p>
+<p>touches                <code>a</code>: Geometry, <code>b</code>: Geometry                      Returns true if <code>a</code> touches <code>b</code> according to the SQL simple feature specification rules</p>
+<p>within                 <code>a</code>: Geometry, <code>b</code>:Geometry                       Returns true is fully contained inside <code>b</code></p>
+<hr />
+<h2 id="geometric-functions">Geometric functions</h2>
+<hr />
+<p><strong>Name</strong>             <strong>Arguments</strong>                                                <strong>Description</strong></p>
+<p>area                 <code>geometry</code>:Geometry                                          The area of the specified geometry. Works in a Cartesian plane, the result will be in the same unit of measure as the geometry coordinates (which also means the results won't make any sense for geographic data)</p>
+<p>boundary             <code>geometry</code>:Geometry                                          Returns the boundary of a geometry</p>
+<p>boundaryDimension    <code>geometry</code>:Geometry                                          Returns the number of dimensions of the geometry boundary</p>
+<p>buffer               <code>geometry</code>:Geometry, <code>distance</code>:Double                       Returns the buffered area around the geometry using the specified distance</p>
+<p>bufferWithSegments   <code>geometry</code>:Geometry, <code>distance</code>:Double, <code>segments</code>:Integer   Returns the buffered area around the geometry using the specified distance and using the specified number of segments to represent a quadrant of a circle.</p>
+<p>centroid             <code>geometry</code>:Geometry                                          Returns the centroid of the geometry. Can be often used as a label point for polygons, though there is no guarantee it will actually lie inside the geometry</p>
+<p>convexHull           <code>geometry</code>:Geometry                                          Returns the convex hull of the specified geometry</p>
+<p>difference           <code>a</code>:Geometry, <code>b</code>:Geometry                                   Returns all the points that sit in <code>a</code> but not in <code>b</code></p>
+<p>dimension            <code>a</code>:Geometry                                                 Returns the dimension of the specified geometry</p>
+<p>distance             <code>a</code>:Geometry, <code>b</code>:Geometry                                   Returns the euclidean distance between the two geometries</p>
+<p>endAngle             <code>line</code>:LineString                                            Returns the angle of the end segment of the linestring</p>
+<p>endPoint             <code>line</code>:LineString                                            Returns the end point of the linestring</p>
+<p>envelope             <code>geometry</code>:geometry                                          Returns the polygon representing the envelope of the geometry, that is, the minimum rectangle with sides parallels to the axis containing it</p>
+<p>exteriorRing         <code>poly</code>:Polygon                                               Returns the exterior ring of the specified polygon</p>
+<p>geometryType         <code>geometry</code>:Geometry                                          Returns the type of the geometry as a string. May be <code>Point</code>, <code>MultiPoint</code>, <code>LineString</code>, <code>LinearRing</code>, <code>MultiLineString</code>, <code>Polygon</code>, <code>MultiPolygon</code>, <code>GeometryCollection</code></p>
+<p>geomFromWKT          <code>wkt</code>:String                                                 Returns the <code>Geometry</code> represented in the Well Known Text format contained in the <code>wkt</code> parameter</p>
+<p>geomLength           <code>geometry</code>:Geometry                                          Returns the length/perimeter of this geometry (computed in Cartesian space)</p>
+<p>getGeometryN         <code>collection</code>:GeometryCollection, <code>n</code>:Integer                 Returns the n-th geometry inside the collection</p>
+<p>getX                 <code>p</code>:Point                                                    Returns the <code>x</code> ordinate of <code>p</code></p>
+<p>getY                 <code>p</code>:Point                                                    Returns the <code>y</code> ordinate of <code>p</code></p>
+<p>getZ                 <code>p</code>:Point                                                    Returns the <code>z</code> ordinate of <code>p</code></p>
+<p>interiorPoint        <code>geometry</code>:Geometry                                          Returns a point that is either interior to the geometry, when possible, or sitting on its boundary, otherwise</p>
+<p>interiorRingN        <code>polyg</code>:Polygon, <code>n</code>:Integer                                 Returns the n-th interior ring of the polygon</p>
+<p>intersection         <code>a</code>:Geometry, <code>b</code>:Geometry                                   Returns the intersection between <code>a</code> and <code>b</code>. The intersection result can be anything including a geometry collection of heterogeneous, if the result is empty, it will be represented by an empty collection.</p>
+<p>isClosed             <code>line</code>: LineString                                           Returns true if <code>line</code> forms a closed ring, that is, if the first and last coordinates are equal</p>
+<p>isEmpty              <code>geometry</code>:Geometry                                          Returns true if the geometry does not contain any point (typical case, an empty geometry collection)</p>
+<p>isometric            <code>geometry</code>:Geometry, <code>extrusion</code>:Double                      Returns a MultiPolygon containing the isometric extrusions of all components of the input geometry. The extrusion distance is <code>extrusion</code>, expressed in the same unit as the geometry coordinates. Can be used to get a pseudo-3d effect in a map</p>
+<p>isRing               <code>line</code>:LineString                                            Returns true if the <code>line</code> is actually a closed ring (equivalent to <code>isRing(line) and isSimple(line)</code>)</p>
+<p>isSimple             <code>line</code>:LineString                                            Returns true if the geometry self intersects only at boundary points</p>
+<p>isValid              <code>geometry</code>: Geometry                                         Returns true if the geometry is topologically valid (rings are closed, holes are inside the hull, and so on)</p>
+<p>numGeometries        <code>collection</code>: GeometryCollection                             Returns the number of geometries contained in the geometry collection</p>
+<p>numInteriorRing      <code>poly</code>: Polygon                                              Returns the number of interior rings (holes) inside the specified polygon</p>
+<p>numPoint             <code>geometry</code>: Geometry                                         Returns the number of points (vertexes) contained in <code>geometry</code></p>
+<p>offset               <code>geometry</code>: Geometry, <code>offsetX</code>:Double, <code>offsetY</code>:Double     Offsets all points in a geometry by the specified X and Y offsets. Offsets are working in the same coordinate system as the geometry own coordinates.</p>
+<p>pointN               <code>geometry</code>: Geometry, <code>n</code>:Integer                            Returns the n-th point inside the specified geometry</p>
+<p>startAngle           <code>line</code>: LineString                                           Returns the angle of the starting segment of the input linestring</p>
+<p>startPoint           <code>line</code>: LineString                                           Returns the starting point of the input linestring</p>
+<p>symDifference        <code>a</code>: Geometry, <code>b</code>:Geometry                                  Returns the symmetrical difference between <code>a</code> and <code>b</code> (all points that are inside <code>a</code> or <code>b</code>, but not both)</p>
+<p>toWKT                <code>geometry</code>: Geometry                                         Returns the WKT representation of <code>geometry</code></p>
+<p>union                <code>a</code>: Geometry, <code>b</code>:Geometry                                  Returns the union of <code>a</code> and <code>b</code> (the result may be a geometry collection)</p>
+<p>vertices             <code>geom</code>: Geometry                                             Returns a multi-point made with all the vertices of <code>geom</code></p>
+<hr />
+<h2 id="math-functions">Math functions</h2>
+<hr />
+<p><strong>Name</strong>            <strong>Arguments</strong>                                         <strong>Description</strong></p>
+<p>abs                 <code>value</code>:Integer                                       The absolute value of the specified Integer <code>value</code></p>
+<p>abs_2               <code>value</code>:Long                                          The absolute value of the specified Long <code>value</code></p>
+<p>abs_3               <code>value</code>:Float                                         The absolute value of the specified Float <code>value</code></p>
+<p>abs_4               <code>value</code>:Double                                        The absolute value of the specified Double <code>value</code></p>
+<p>acos                <code>angle</code>:Double                                        Returns the arc cosine of an <code>angle</code> in radians, in the range of 0.0 through <code>PI</code></p>
+<p>asin                <code>angle</code>:Double                                        Returns the arc sine of an <code>angle</code> in radians, in the range of <code>-PI / 2</code> through <code>PI / 2</code></p>
+<p>atan                <code>angle</code>:Double                                        Returns the arc tangent of an angle in radians, in the range of <code>-PI/2</code> through <code>PI/2</code></p>
+<p>atan2               <code>x</code>:Double, <code>y</code>:Double                                Converts a rectangular coordinate <code>(x, y)</code> to polar <strong>(r, theta)</strong> and returns <strong>theta</strong>.</p>
+<p>ceil                <code>x</code>: Double                                           Returns the smallest (closest to negative infinity) double value that is greater than or equal to <code>x</code> and is equal to a mathematical integer.</p>
+<p>cos                 <code>angle</code>: Double                                       Returns the cosine of an <code>angle</code> expressed in radians</p>
+<p>double2bool         <code>x</code>: Double                                           Returns <code>true</code> if <code>x</code> is zero, <code>false</code> otherwise</p>
+<p>exp                 <code>x</code>: Double                                           Returns Euler's number <strong>e</strong> raised to the power of <code>x</code></p>
+<p>floor               <code>x</code>: Double                                           Returns the largest (closest to positive infinity) value that is less than or equal to <code>x</code> and is equal to a mathematical integer</p>
+<p>IEEERemainder       <code>x</code>: Double, <code>y</code>:Double                               Computes the remainder of <code>x</code> divided by <code>y</code> as prescribed by the IEEE 754 standard</p>
+<p>int2bbool           <code>x</code>: Integer                                          Returns true if <code>x</code> is zero, false otherwise</p>
+<p>int2ddouble         <code>x</code>: Integer                                          Converts <code>x</code> to a Double</p>
+<p>log                 <code>x</code>: Integer                                          Returns the natural logarithm (base <code>e</code>) of <code>x</code></p>
+<p>max, max_3, max_4   <code>x1</code>: Double, <code>x2</code>:Double, <code>x3</code>:Double, <code>x4</code>:Double   Returns the maximum between <code>x1</code>, ..., <code>x4</code></p>
+<p>min, min_3, min_4   <code>x1</code>: Double, <code>x2</code>:Double, <code>x3</code>:Double, <code>x4</code>:Double   Returns the minimum between <code>x1</code>, ..., <code>x4</code></p>
+<p>pi                  None                                                  Returns an approximation of <code>pi</code>, the ratio of the circumference of a circle to its diameter</p>
+<p>pow                 <code>base</code>:Double, <code>exponent</code>:Double                      Returns the value of <code>base</code> raised to the power of <code>exponent</code></p>
+<p>random              None                                                  Returns a Double value with a positive sign, greater than or equal to <code>0.0</code> and less than <code>1.0</code>. Returned values are chosen pseudo-randomly with (approximately) uniform distribution from that range.</p>
+<p>rint                <code>x</code>:Double                                            Returns the Double value that is closest in value to the argument and is equal to a mathematical integer. If two double values that are mathematical integers are equally close, the result is the integer value that is even.</p>
+<p>round_2             <code>x</code>:Double                                            Same as <code>round</code>, but returns a Long</p>
+<p>round               <code>x</code>:Double                                            Returns the closest Integer to <code>x</code>. The result is rounded to an integer by adding &frac12;, taking the floor of the result, and casting the result to type Integer. In other words, the result is equal to the value of the expression <code>(int)floor(a + 0.5)</code></p>
+<p>roundDouble         <code>x</code>:Double                                            Returns the closest Long to <code>x</code></p>
+<p>sin                 <code>angle</code>: Double                                       Returns the sine of an <code>angle</code> expressed in radians</p>
+<p>tan                 <code>angle</code>:Double                                        Returns the trigonometric tangent of <code>angle</code> expressed in radians</p>
+<p>toDegrees           <code>angle</code>:Double                                        Converts an angle expressed in radians into degrees</p>
+<p>toRadians           <code>angle</code>:Double                                        Converts an angle expressed in radians into degrees</p>
+<hr />
+<h2 id="string-functions">String functions</h2>
+<p>String functions generally will accept any type of value for <code>String</code> arguments. Non-string values will be converted into a string representation automatically.</p>
+<hr />
+<p><strong>Name</strong>              <strong>Arguments</strong>                                                                <strong>Description</strong></p>
+<p>Concatenate           <code>s1</code>:String, <code>s2</code>:String, ...                                               Concatenates any number of strings. Non-string arguments are allowed.</p>
+<p>strAbbreviate         <code>sentence</code>:String, <code>lower</code>:Integer, <code>upper</code>:Integer, <code>append</code>:String         Abbreviates the sentence at first space beyond <code>lower</code> (or at <code>upper</code> if no space). Appends <code>append</code> if string is abbreviated.</p>
+<p>strCapitalize         <code>sentence</code>:String                                                            Fully capitalizes the sentence. For example, "HoW aRe YOU?" will be turned into "How Are You?"</p>
+<p>strConcat             <code>a</code>:String, <code>b</code>:String                                                       Concatenates the two strings into one</p>
+<p>strDefaultIfBlank     <code>str</code>:String, <code>default</code>:String                                               returns <code>default</code> if <code>str</code> is empty, blank or null</p>
+<p>strEndsWith           <code>string</code>:String, <code>suffix</code>:String                                             Returns true if <code>string</code> ends with <code>suffix</code></p>
+<p>strEqualsIgnoreCase   <code>a</code>:String, <code>b</code>:String                                                       Returns true if the two strings are equal ignoring case considerations</p>
+<p>strIndexOf            <code>string</code>:String, <code>substring</code>:String                                          Returns the index within this string of the first occurrence of the specified substring, or <code>-1</code> if not found</p>
+<p>strLastIndexOf        <code>string</code>:String, <code>substring</code>:String                                          Returns the index within this string of the last occurrence of the specified substring, or <code>-1</code> if not found</p>
+<p>strLength             <code>string</code>:String                                                              Returns the string length</p>
+<p>strMatches            <code>string</code>:String, <code>pattern</code>:String                                            Returns true if the string matches the specified regular expression. For the full syntax of the pattern specification see the <a href="http://java.sun.com/javase/6/docs/api/java/util/regex/Pattern.html">Java Pattern class javadocs</a></p>
+<p>strReplace            <code>string</code>:String, <code>pattern</code>:String, <code>replacement</code>:String, <code>global</code>: boolean   Returns the string with the pattern replaced with the given replacement text. If the <code>global</code> argument is <code>true</code> then all occurrences of the pattern will be replaced, otherwise only the first. For the full syntax of the pattern specification see the <a href="http://java.sun.com/javase/6/docs/api/java/util/regex/Pattern.html">Java Pattern class javadocs</a></p>
+<p>strStartsWith         <code>string</code>:String, <code>prefix</code>:String                                             Returns true if <code>string</code> starts with <code>prefix</code></p>
+<p>strStripAccents       <code>string</code>:String                                                              Removes diacritics (\~= accents) from a string. The case will not be altered.</p>
+<p>strSubstring          <code>string</code>:String, <code>begin</code>:Integer, <code>end</code>:Integer                              Returns a new string that is a substring of this string. The substring begins at the specified <code>begin</code> and extends to the character at index <code>endIndex - 1</code> (indexes are zero-based).</p>
+<p>strSubstringStart     <code>string</code>:String, <code>begin</code>:Integer                                             Returns a new string that is a substring of this string. The substring begins at the specified <code>begin</code> and extends to the last character of the string</p>
+<p>strToLowerCase        <code>string</code>:String                                                              Returns the lower case version of the string</p>
+<p>strToUpperCase        <code>string</code>:String                                                              Returns the upper case version of the string</p>
+<p>strTrim               <code>string</code>:String                                                              Returns a copy of the string, with leading and trailing blank-space omitted</p>
+<hr />
+<h2 id="parsing-and-formatting-functions">Parsing and formatting functions</h2>
+<hr />
+<p><strong>Name</strong>       <strong>Arguments</strong>                                       <strong>Description</strong></p>
+<p>dateFormat     <code>format</code>:String, <code>date</code>:Timestamp                   Formats the specified date according to the provided format. The format syntax can be found in the <a href="http://java.sun.com/javase/6/docs/api/java/text/SimpleDateFormat.html">Java SimpleDateFormat javadocs</a></p>
+<p>dateParse      <code>format</code>:String, <code>dateString</code>:String                Parses a date from a <code>dateString</code> formatted according to the <code>format</code> specification. The format syntax can be found in the <a href="http://java.sun.com/javase/6/docs/api/java/text/SimpleDateFormat.html">Java SimpleDateFormat javadocs</a></p>
+<p>numberFormat   <code>format</code>:String, <code>number</code>:Double, <code>locale</code>:String   Formats the number according to the specified <code>format</code> using the default locale or the one provided as an optional argument. The format syntax can be found in the <a href="http://java.sun.com/javase/6/docs/api/java/text/DecimalFormat.html">Java DecimalFormat javadocs</a></p>
+<p>parseBoolean   <code>boolean</code>:String                                    Parses a string into a boolean. The empty string, <code>f</code>, <code>0.0</code> and <code>0</code> are considered false, everything else is considered true.</p>
+<p>parseDouble    <code>number</code>:String                                     Parses a string into a double. The number can be expressed in normal or scientific form.</p>
+<p>parseInt       <code>number</code>:String                                     Parses a string into an integer.</p>
+<p>parseLong      <code>number</code>:String                                     Parses a string into a long integer</p>
+<hr />
+<h2 id="temporal-functions">Temporal functions</h2>
+<hr />
+<p><strong>Name</strong>         <strong>Arguments</strong>                            <strong>Description</strong></p>
+<p>dateDifference   <code>a</code>:Date, <code>b</code>:Date, <code>timeUnits</code>:String   Computes the difference between two date (as a-b) and return a result in a specific time units. <code>timeUnits</code> is optional, representing the desired time units result. Default as milliseconds. Possible values are <code>s</code> (seconds), <code>m</code> (minutes), <code>h</code> (hours), <code>d</code> (days).</p>
+<p>now              None                                     Returns the current time as a Date</p>
+<hr />
+<h2 id="transformation-functions">Transformation functions</h2>
+<p>Transformation functions transform values from one data space into another. These functions provide a concise way to compute styling parameters from feature attribute values. See also <a href="../../styling/sld/tipstricks/transformation-func/">Styling using Transformation Functions</a>.</p>
+<p>+-------------+----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| <strong>Name</strong>    | <strong>Arguments</strong>                                      | <strong>Description</strong>                                                                                                                                                                                                                                                                                                                                                                                                    |
++-------------+----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Recode      | <code>lookupValue</code>:Object,                              | Transforms a <code>lookupValue</code> from a set of discrete data values into another set of values. Any number of <code>data</code>/<code>value</code> pairs may be specified.                                                                                                                                                                                                                                                                     |
+|             |                                                    |                                                                                                                                                                                                                                                                                                                                                                                                                    |
+|             | <code>data</code>:Object, <code>value</code>:Object, ...                |                                                                                                                                                                                                                                                                                                                                                                                                                    |
++-------------+----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Categorize  | <code>lookupValue</code>:Object, <code>value</code>:Object,              | Transforms a continuous-valued attribute value into a set of discrete values. <code>lookupValue</code> and <code>value</code> must be an orderable type (typically numeric). The initial <code>value</code> is required. Any number of additional <code>threshold</code>/<code>value</code> pairs may be specified. <code>belongsTo</code> is optional, with the value <code>succeeding</code> or <code>preceding</code>. It defines which interval to use when the lookup value equals a threshold value. |
+|             |                                                    |                                                                                                                                                                                                                                                                                                                                                                                                                    |
+|             | <code>threshold</code>:Object, ... <code>value</code>:Object,           |                                                                                                                                                                                                                                                                                                                                                                                                                    |
+|             |                                                    |                                                                                                                                                                                                                                                                                                                                                                                                                    |
+|             | <code>belongsTo</code> : String                               |                                                                                                                                                                                                                                                                                                                                                                                                                    |
++-------------+----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Interpolate | <code>lookupValue</code>:Numeric,                             | Transforms a continuous-valued attribute value into another continuous range of values. Any number of <code>data</code>/<code>value</code> pairs may be specified. <code>mode</code> is optional, with the value <code>linear</code>, <code>cosine</code> or <code>cubic</code>. It defines the interpolation algorithm to use. <code>method</code> is optional, with the value <code>numeric</code> or <code>color</code>. It defines whether the target values are numeric or RGB color specifications.             |
+|             |                                                    |                                                                                                                                                                                                                                                                                                                                                                                                                    |
+|             | <code>data</code>:Numeric, <code>value</code>:Numeric <em>or</em> #RRGGBB, ... |                                                                                                                                                                                                                                                                                                                                                                                                                    |
+|             |                                                    |                                                                                                                                                                                                                                                                                                                                                                                                                    |
+|             | <code>mode</code>:String, <code>method</code>:String                     |                                                                                                                                                                                                                                                                                                                                                                                                                    |
++-------------+----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Copyright and theme information -->
+<div class="md-copyright">
+  
+  <span class="md-copyright__highlight">
+    Copyright &copy; 2023 Open Source Geospatial Foundation
+  </span>
+  
+  
+  &mdash; Made by the
+  <a
+          href="https://geonetwork-opensource.org/"
+          target="_blank" rel="noopener"
+  >GeoNetwork Community</a>,
+  built with
+  <a
+          href="https://squidfunk.github.io/mkdocs-material/"
+          target="_blank" rel="noopener"
+  >
+    Material for MkDocs
+  </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/geoserver" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://geoserver.org/" target="_blank" rel="noopener" title="GeoServer Home" class="md-social__link">
+      <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="193.34px" height="193.34px" viewBox="0 0 193.34 193.34" enable-background="new 0 0 193.34 193.34"
+	 xml:space="preserve">
+<g>
+	<g>
+		<path fill="#0092C8" d="M152.666,78.305L114.58,40.218c-5.069-5.066-11.759-7.597-18.418-7.597
+			c-6.651,0-13.338,2.536-18.396,7.597L39.677,78.305c-5.058,5.053-7.597,11.73-7.595,18.381
+			c-0.002,6.658,2.526,13.357,7.598,18.429l38.085,38.086c5.058,5.06,11.745,7.598,18.401,7.597h0.012
+			c6.651,0,13.336-2.535,18.401-7.597l38.084-38.086c5.065-5.066,7.599-11.76,7.596-18.414
+			C160.263,90.049,157.724,83.363,152.666,78.305"/>
+	</g>
+	<g>
+		<defs>
+			<path id="SVGID_1_" d="M80,42.457L41.912,80.543c-8.89,8.89-8.89,23.442,0,32.337L80,150.965c8.892,8.894,23.45,8.895,32.342,0
+				l38.086-38.085c8.897-8.896,8.894-23.447,0.001-32.337l-38.088-38.086c-4.447-4.45-10.309-6.672-16.169-6.672
+				C90.31,35.785,84.446,38.009,80,42.457"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  overflow="visible"/>
+		</clipPath>
+		
+			<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-1.1152" y1="578.5859" x2="0.5991" y2="578.5859" gradientTransform="matrix(62.1889 -26.3976 -26.3976 -62.1889 15385.8525 36072.457)">
+			<stop  offset="0" style="stop-color:#0092C8"/>
+			<stop  offset="1" style="stop-color:#00AFDD"/>
+		</linearGradient>
+		<polygon clip-path="url(#SVGID_2_)" fill="url(#SVGID_3_)" points="-11.605,54.728 140.042,-9.643 203.951,140.918 
+			52.304,205.288 		"/>
+	</g>
+	<g>
+		<defs>
+			<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="-31.977" y="-31.433" width="256.283" height="256.283">
+				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+			</filter>
+		</defs>
+		<mask maskUnits="userSpaceOnUse" x="-31.977" y="-31.433" width="256.283" height="256.283" id="SVGID_4_">
+			<g filter="url(#Adobe_OpacityMaskFilter)">
+				<rect x="32.071" y="32.618" width="128.185" height="128.179"/>
+				<g enable-background="new    ">
+					<path fill="#FFFFFF" d="M74.216,116.232c10.716-7.749-7.75-15.5-12.309-17.778c-4.558-2.279,0-6.838,4.787-8.89
+						c4.789-2.051,3.177,13.009,8.89,7.294c5.471-5.47-9.345-11.852,3.305-19.491c12.653-7.635-5.584-5.582-5.584-12.65
+						c0-7.067,7.979-7.977,7.979-13.449c0-3.58-6.162-4.171-10.424-4.154l-31.189,31.19c-0.694,0.693-1.335,1.418-1.933,2.168
+						c0.148,5.851,7.16,6.814,11.175,6.814c5.016,0,7.751,7.751,2.737,12.765c-5.014,5.016-5.387,13.595-2.114,16.866
+						c2.203,2.206,1.443,6.312,0.708,8.771l5.916,5.912C57.781,126.397,64.845,123.012,74.216,116.232"/>
+					<path fill="#FFFFFF" d="M93.543,41.044c8.619-1.109,0.641,5.976,4.737,7.768c3.704,1.618,13.599-3.339,14.686-10.062
+						c-4.831-4.083-10.832-6.132-16.809-6.13c-2.662,0-5.327,0.412-7.891,1.224C87.793,37.293,88.174,41.737,93.543,41.044"/>
+					<path fill="#FFFFFF" d="M114.599,89.498c-1.434-5.905-15.203-8.056-21.801-3.249c-9.726,7.087-11.281,20.726-3.728,21.498
+						c7.554,0.773,14.438,8.093,10.643,15.337c-3.793,7.244,4.584,24.899,13.775,12.095c9.192-12.803,4.615-15.301,5.34-22.352
+						c0.72-7.048,9.363-15.99,7.246-18.594C123.952,91.629,115.722,94.123,114.599,89.498"/>
+					<path fill="#FFFFFF" d="M83.665,157.613c3.879,2.117,8.191,3.182,12.494,3.182h0.012c6.651,0,13.338-2.534,18.402-7.597
+						l3.215-3.213C112.307,148.96,93.251,154.596,83.665,157.613"/>
+					<path fill="#FFFFFF" d="M138.319,107.358c-10.275,3.558-17.391,15.021-11.461,16.601c5.588,1.488,11.523-2.986,15.498,1.456
+						l10.302-10.302C150.673,111.063,147.48,104.188,138.319,107.358"/>
+					<path fill="#FFFFFF" d="M105.108,65.492c2.338-0.313,0.499-2.935-0.828-3.516c-1.327-0.582-5.552-0.283-3.988,1.63
+						C101.474,65.052,102.773,65.807,105.108,65.492"/>
+					<path fill="#FFFFFF" d="M154.772,96.18c-0.018-1.368-5.071-2.765-6.405-2.646c-1.329,0.125-1.774,2.366,1.97,3.283
+						C153.161,97.507,154.789,97.547,154.772,96.18"/>
+					<path fill="#FFFFFF" d="M110.593,54.962c-0.564,4.5,3.939,6.19,1.688,8.44c-2.251,2.25-15.5,7.035-12.382,8.44
+						c8.325,3.748-5.78,3.222,0,9.003c2.871,2.87,11.933-2.198,10.974-5.628c-0.27-0.97,2.503-4.625,4.721-2.698
+						c1.917,1.666,7.844,3.504,7.844,13.321c0,5.226,4.501,10.323,9.103,9.075c3.82-1.037,4.46-5.837,2.088-7.598
+						c-3.03-2.249,5.093-4.964,13.362,3.959c3.815,4.115,10.121-0.905,11.415-1.175V90.1c-1.125-4.326-3.373-8.424-6.745-11.798
+						l-31.506-31.502C115.353,47.403,110.823,53.121,110.593,54.962"/>
+				</g>
+			</g>
+		</mask>
+		<g mask="url(#SVGID_4_)">
+			<g>
+				<defs>
+					<rect id="SVGID_5_" x="32.075" y="32.622" width="128.178" height="128.176"/>
+				</defs>
+				<clipPath id="SVGID_6_">
+					<use xlink:href="#SVGID_5_"  overflow="visible"/>
+				</clipPath>
+				<g clip-path="url(#SVGID_6_)">
+					<defs>
+						<path id="SVGID_7_" d="M96.157,32.621c-6.656-0.003-13.34,2.536-18.4,7.597L39.67,78.303
+							c-4.984,4.983-7.527,11.542-7.595,18.098v0.569c0.068,6.564,2.597,13.144,7.597,18.141l38.084,38.087
+							c5.06,5.063,11.746,7.603,18.402,7.6h0.007c6.653,0,13.341-2.535,18.405-7.6l38.084-38.087
+							c5.068-5.065,7.599-11.756,7.598-18.412c0.001-6.651-2.533-13.335-7.592-18.395l-38.09-38.087
+							c-5.062-5.066-11.749-7.597-18.401-7.597H96.157z"/>
+					</defs>
+					<clipPath id="SVGID_8_">
+						<use xlink:href="#SVGID_7_"  overflow="visible"/>
+					</clipPath>
+					
+						<linearGradient id="SVGID_9_" gradientUnits="userSpaceOnUse" x1="-1.2285" y1="578.752" x2="0.4859" y2="578.752" gradientTransform="matrix(43.2909 -44.829 -44.829 -43.2909 26057.1094 25134.7637)">
+						<stop  offset="0" style="stop-color:#8CC63F"/>
+						<stop  offset="0.6137" style="stop-color:#C9E39F"/>
+						<stop  offset="1" style="stop-color:#F1F6DE"/>
+					</linearGradient>
+					<polygon clip-path="url(#SVGID_8_)" fill="url(#SVGID_9_)" points="-31.977,98.946 93.928,-31.433 224.306,94.472 
+						98.401,224.851 					"/>
+				</g>
+			</g>
+		</g>
+		<g opacity="0.25">
+			<g>
+				<defs>
+					<rect id="SVGID_10_" x="32.082" y="32.622" width="128.177" height="128.176"/>
+				</defs>
+				<clipPath id="SVGID_11_">
+					<use xlink:href="#SVGID_10_"  overflow="visible"/>
+				</clipPath>
+				<g clip-path="url(#SVGID_11_)">
+					<defs>
+						<rect id="SVGID_12_" x="32.082" y="32.622" width="128.177" height="128.176"/>
+					</defs>
+					<clipPath id="SVGID_13_">
+						<use xlink:href="#SVGID_12_"  overflow="visible"/>
+					</clipPath>
+					<path clip-path="url(#SVGID_13_)" fill="#0092C8" d="M96.166,160.795c-6.657,0.004-13.344-2.536-18.401-7.595l-38.084-38.087
+						c-5.075-5.07-7.602-11.767-7.599-18.429c-0.003-6.651,2.538-13.328,7.595-18.378L77.765,40.22
+						c5.057-5.062,11.744-7.6,18.399-7.598c6.654-0.003,13.349,2.531,18.416,7.598l38.085,38.086
+						c5.06,5.058,7.6,11.743,7.594,18.396c0.005,6.654-2.533,13.347-7.594,18.411L114.58,153.2
+						c-5.065,5.066-11.755,7.598-18.408,7.595H96.166z M44.148,82.775c-3.826,3.827-5.741,8.853-5.743,13.909
+						c0.002,5.081,1.912,10.125,5.745,13.958l38.086,38.085c3.828,3.829,8.863,5.741,13.929,5.744
+						c5.07-0.003,10.106-1.912,13.941-5.744l38.084-38.085c3.832-3.833,5.741-8.873,5.745-13.941
+						c-0.003-5.067-1.914-10.098-5.742-13.927l-38.087-38.084c-3.835-3.834-8.873-5.743-13.943-5.746
+						c-5.067,0.001-10.1,1.917-13.928,5.746L44.148,82.775z"/>
+				</g>
+			</g>
+		</g>
+		<g opacity="0.15">
+			<g>
+				<defs>
+					<rect id="SVGID_14_" x="32.082" y="32.621" width="124.887" height="87.036"/>
+				</defs>
+				<clipPath id="SVGID_15_">
+					<use xlink:href="#SVGID_14_"  overflow="visible"/>
+				</clipPath>
+				<g clip-path="url(#SVGID_15_)">
+					<defs>
+						<rect id="SVGID_16_" x="32.082" y="32.621" width="124.887" height="87.036"/>
+					</defs>
+					<clipPath id="SVGID_17_">
+						<use xlink:href="#SVGID_16_"  overflow="visible"/>
+					</clipPath>
+					<path clip-path="url(#SVGID_17_)" fill="#FFFFFF" d="M156.97,84.014c-1.14-2.049-2.57-3.976-4.304-5.71L114.58,40.22
+						c-5.069-5.069-11.759-7.599-18.417-7.597c-6.652-0.001-13.339,2.534-18.397,7.597L39.677,78.304
+						c-5.057,5.055-7.597,11.73-7.595,18.381c-0.002,6.657,2.526,13.358,7.598,18.428l4.54,4.544
+						C52.275,107.132,91.137,54.294,156.97,84.014"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.view", "content.action.edit", "content.code.copy", "content.tabs.link", "navigation.tabs", "navigation.tracking", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "announce.dismiss"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "2.24"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+    
+  </body>
+</html>

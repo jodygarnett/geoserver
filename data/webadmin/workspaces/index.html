@@ -24,7 +24,7 @@
     
     
       
-        <title>Workspaces - GeoServer</title>
+        <title>Workspaces {: #data_webadmin_workspaces } - GeoServer</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#workspaces" class="md-skip">
+        <a href="#data_webadmin_workspaces" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Workspaces
+              Workspaces {: #data_webadmin_workspaces }
             
           </span>
         </div>
@@ -816,7 +816,7 @@
         
   
   <span class="md-ellipsis">
-    Layer Groups
+    Layer Groups {: #data_webadmin_layergroups }
   </span>
   
 
@@ -837,7 +837,7 @@
         
   
   <span class="md-ellipsis">
-    Layer Preview
+    Layer Preview {: #layerpreview }
   </span>
   
 
@@ -858,7 +858,7 @@
         
   
   <span class="md-ellipsis">
-    Layers
+    Layers {: #data_webadmin_layers }
   </span>
   
 
@@ -879,7 +879,7 @@
         
   
   <span class="md-ellipsis">
-    Stores
+    Stores {: #data_webadmin_stores }
   </span>
   
 
@@ -909,7 +909,7 @@
           
   
   <span class="md-ellipsis">
-    Workspaces
+    Workspaces {: #data_webadmin_workspaces }
   </span>
   
 
@@ -920,7 +920,7 @@
         
   
   <span class="md-ellipsis">
-    Workspaces
+    Workspaces {: #data_webadmin_workspaces }
   </span>
   
 
@@ -1603,7 +1603,7 @@
   
 
 
-<h1 id="workspaces">Workspaces</h1>
+<h1 id="data_webadmin_workspaces">Workspaces</h1>
 <p>This section describes how to view and configure workspaces. Analogous to a namespace, a workspace is a container which organizes other items. In GeoServer, a workspace is often used to group similar layers together. Layers may be referred to by their workspace name, colon, layer name (for example <code>topp:states</code>). Two different layers can have the same name as long as they belong to different workspaces (for example <code>sf:states</code> and <code>topp:states</code>).</p>
 <p><img alt="" src="../img/data_workspaces.png" />
 <em>Workspaces page</em></p>
@@ -1640,7 +1640,7 @@
 </li>
 <li>
 <p><strong>Isolated workspace</strong>: Isolated workspaces content so they are not included as part of global web services.</p>
-<p>The workspace contents will only be visible and queryable in the context of a <a href="../../configuration/virtual-services.md">Virtual Services</a> as described below <a href="../../configuration/virtual-services.md#workspace_isolated">Isolated Workspaces</a>.</p>
+<p>The workspace contents will only be visible and queryable in the context of a <a href="../../../configuration/virtual-services/">Virtual Services</a> as described below <a href="../../../configuration/virtual-services/#workspace_isolated">Isolated Workspaces</a>.</p>
 </li>
 </ul>
 <h3 id="workspace_services">Workspace Services</h3>
@@ -1650,13 +1650,13 @@
 <p>Once enabled clicking on the service link will open the settings page for the service, allowing default values for service title, abstract and other details to be supplied.</p>
 <p><img alt="" src="../img/workspace_wms_settings.png" />
 <em>Workspace WMS Settings</em></p>
-<p>Clients accessing this workspace as a <a href="../../configuration/virtual-services.md">Virtual Services</a> will use the service metadata and settings provided here.</p>
+<p>Clients accessing this workspace as a <a href="../../../configuration/virtual-services/">Virtual Services</a> will use the service metadata and settings provided here.</p>
 <h3 id="workspace_settings">Workspace Settings</h3>
 <p>Use <strong>Enabled</strong> checkbox to override the global configuration and contact information for this workspace.</p>
 <p><img alt="" src="../img/workspace_settings.png" />
 <em>Enable workspace settings to provide default contact information</em></p>
 <h4 id="contact-information">Contact Information</h4>
-<p>Clients accessing this workspace as a <a href="../../configuration/virtual-services.md">Virtual Services</a> will use the contact information provided here.</p>
+<p>Clients accessing this workspace as a <a href="../../../configuration/virtual-services/">Virtual Services</a> will use the contact information provided here.</p>
 <p>Organization contact information:</p>
 <ul>
 <li>The <strong>Welcome</strong> message is used as an introduction in the welcome page header for this workspace.</li>
@@ -1673,9 +1673,9 @@
 <p>Address contact information:</p>
 <p><img alt="" src="../img/workspace_address.png" />
 <em>Workspace address</em></p>
-<p>If this information is not provided the contact information from the global <a href="../../configuration/contact.md">Contact Information</a> page is used.</p>
+<p>If this information is not provided the contact information from the global <a href="../../../configuration/contact/">Contact Information</a> page is used.</p>
 <h4 id="service-settings">Service Settings</h4>
-<p>Other settings provide additional <a href="../../configuration/globalsettings.md">Global Settings</a> can be overridden on a workspace-by-workspace basis.</p>
+<p>Other settings provide additional <a href="../../../configuration/globalsettings/">Global Settings</a> can be overridden on a workspace-by-workspace basis.</p>
 <ul>
 <li>
 <p><strong>Include Layer Prefix in Local Workspace Capabilities</strong>: Enable this setting to force the inclusion of the workspace name as a prefix when accessing workspace contents as a virtual web service. The layer <code>ne:countries</code> is always referenced as <code>ne:countries</code> with this setting enabled.</p>
@@ -1693,12 +1693,12 @@
 </ul>
 <p><img alt="" src="../img/workspace_settings_other.png" />
 <em>Other Settings</em></p>
-<p>If this information is not provided the global settings will be used. For details on other settings see <a href="../../configuration/globalsettings.md">Global Settings</a>.</p>
+<p>If this information is not provided the global settings will be used. For details on other settings see <a href="../../../configuration/globalsettings/">Global Settings</a>.</p>
 <h3 id="workspace_security">Security</h3>
 <p>The Security tab allows to set data access rules at workspace level.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For more information on data access rules, please see the section on <a href="../../security/webadmin/data.md">Data</a>.</p>
+<p>For more information on data access rules, please see the section on <a href="../../../security/webadmin/data/">Data</a>.</p>
 </div>
 <p><img alt="" src="../img/data_workspaces_security_edit.png" /></p>
 <p>To create/edit the workspace's data access rules, check/uncheck checkboxes according to the desired role. The Grant access to any role checkbox grant each role for any access mode.</p>
@@ -1739,7 +1739,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../stores/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Stores">
+          <a href="../stores/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Stores {: #data_webadmin_stores }">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1749,20 +1749,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Stores
+                Stores {: #data_webadmin_stores }
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../vector/" class="md-footer__link md-footer__link--next" aria-label="Next: Vector data">
+          <a href="../../vector/" class="md-footer__link md-footer__link--next" aria-label="Next: Vector data {: #data_vector }">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Vector data
+                Vector data {: #data_vector }
               </div>
             </div>
             <div class="md-footer__button md-icon">

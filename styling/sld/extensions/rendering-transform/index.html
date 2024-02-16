@@ -24,7 +24,7 @@
     
     
       
-        <title>Rendering Transformations - GeoServer</title>
+        <title>Rendering Transformations {: #rendering_transform } - GeoServer</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rendering-transformations" class="md-skip">
+        <a href="#rendering_transform" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Rendering Transformations
+              Rendering Transformations {: #rendering_transform }
             
           </span>
         </div>
@@ -814,7 +814,7 @@
         
   
   <span class="md-ellipsis">
-    Styles
+    Styles {: #styling_webadmin }
   </span>
   
 
@@ -907,7 +907,7 @@
         
   
   <span class="md-ellipsis">
-    Introduction to SLD
+    Introduction to SLD {: #sld_intro }
   </span>
   
 
@@ -928,7 +928,7 @@
         
   
   <span class="md-ellipsis">
-    Working with SLD
+    Working with SLD {: #sld_working }
   </span>
   
 
@@ -1157,7 +1157,7 @@
         
   
   <span class="md-ellipsis">
-    Geometry transformations in SLD
+    Geometry transformations in SLD {: #geometry_transformations }
   </span>
   
 
@@ -1187,7 +1187,7 @@
           
   
   <span class="md-ellipsis">
-    Rendering Transformations
+    Rendering Transformations {: #rendering_transform }
   </span>
   
 
@@ -1198,7 +1198,7 @@
         
   
   <span class="md-ellipsis">
-    Rendering Transformations
+    Rendering Transformations {: #rendering_transform }
   </span>
   
 
@@ -1338,7 +1338,7 @@
         
   
   <span class="md-ellipsis">
-    Graphic symbology in GeoServer
+    Graphic symbology in GeoServer {: #pointsymbols }
   </span>
   
 
@@ -1359,7 +1359,7 @@
         
   
   <span class="md-ellipsis">
-    Variable substitution in SLD
+    Variable substitution in SLD {: #sld_variable_substitution }
   </span>
   
 
@@ -1380,7 +1380,7 @@
         
   
   <span class="md-ellipsis">
-    Specifying symbolizer sizes in ground units
+    Specifying symbolizer sizes in ground units {: #unit_of_measure }
   </span>
   
 
@@ -1401,7 +1401,7 @@
         
   
   <span class="md-ellipsis">
-    Label Obstacles
+    Label Obstacles {: #label_obstacles }
   </span>
   
 
@@ -1422,7 +1422,7 @@
         
   
   <span class="md-ellipsis">
-    Adding space around graphic fills
+    Adding space around graphic fills {: #margins }
   </span>
   
 
@@ -1443,7 +1443,7 @@
         
   
   <span class="md-ellipsis">
-    Fills with randomized symbols
+    Fills with randomized symbols {: #randomized }
   </span>
   
 
@@ -1572,7 +1572,7 @@
         
   
   <span class="md-ellipsis">
-    Rendering Selection
+    Rendering Selection {: #rendering_selection }
   </span>
   
 
@@ -1654,7 +1654,7 @@
         
   
   <span class="md-ellipsis">
-    i18N in SLD
+    i18N in SLD {: #sld_language }
   </span>
   
 
@@ -1683,7 +1683,7 @@
         
   
   <span class="md-ellipsis">
-    Generating SLD styles with QGIS
+    Generating SLD styles with QGIS {: #qgis }
   </span>
   
 
@@ -2108,7 +2108,7 @@
   
 
 
-<h1 id="rendering-transformations">Rendering Transformations</h1>
+<h1 id="rendering_transform">Rendering Transformations</h1>
 <p><strong>Rendering Transformations</strong> allow processing to be carried out on datasets within the GeoServer rendering pipeline. A typical transformation computes a derived or aggregated result from the input data, allowing various useful visualization effects to be obtained. Transformations may transform data from one format into another (i.e vector to raster or vice-versa), to provide an appropriate format for display.</p>
 <p>The following table lists examples of various kinds of rendering transformations available in GeoServer:</p>
 <hr />
@@ -2118,10 +2118,10 @@
 <p>Vector-to-Vector   <strong>PointStacker</strong> aggregates dense point data into clusters.</p>
 <hr />
 <p>Rendering transformations are invoked within SLD styles. Parameters may be supplied to control the appearance of the output. The rendered output for the layer is produced by applying the styling rules and symbolizers in the SLD to the result of transformation.</p>
-<p>Rendering transformations are implemented using the same mechanism as <a href="../../../services/wps/processes/index.md">Process Cookbook</a>. They can thus also be executed via the WPS protocol, if required. Conversely, any WPS process can be executed as a transformation, as long as the input and output are appropriate for use within an SLD.</p>
+<p>Rendering transformations are implemented using the same mechanism as <a href="../../../../services/wps/processes/">Process Cookbook</a>. They can thus also be executed via the WPS protocol, if required. Conversely, any WPS process can be executed as a transformation, as long as the input and output are appropriate for use within an SLD.</p>
 <p>This section is a general guide to rendering transformation usage in GeoServer. For details of input, parameters, and output for any particular rendering transformation, refer to its own documentation.</p>
 <h2 id="installation">Installation</h2>
-<p>Using Rendering Transformations requires the WPS extension to be installed. See <a href="../../../services/wps/install.md">Installing the WPS extension</a>.</p>
+<p>Using Rendering Transformations requires the WPS extension to be installed. See <a href="../../../../services/wps/install/">Installing the WPS extension</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The WPS service does not need to be <strong>enabled</strong> to use Rendering Transformations. To avoid unwanted consumption of server resources it may be desirable to disable the WPS service if it is not being used directly.</p>
@@ -2428,7 +2428,7 @@
 <li><code>groupingAttributes</code>: a lists of xpath pointing to the attributes defining the features' groups for which perform the filtering process.</li>
 </ul>
 <h2 id="disabling-getfeatureinfo-requests-results-transformation">Disabling GetFeatureInfo requests results transformation</h2>
-<p>By default GetFeatureInfo results are determined from the output after evaluating rendering transformation on the layer data. This behavior can be changed only for <strong>raster</strong> sources (i.e., raster-to-raster and raster-to-vector transformations). See section <a href="../../../services/wms/webadmin.md#services_webadmin_wms_featureinfo_transformation">Disabling GetFeatureInfo requests results transformation</a> to disable this behavior on a global or per virtual service basis. The WMS setting can be overridden for individual FeatureTypeStyle elements using the <code>transformFeatureInfo</code> SLD vendor option (either <code>true</code> or <code>false</code>).</p>
+<p>By default GetFeatureInfo results are determined from the output after evaluating rendering transformation on the layer data. This behavior can be changed only for <strong>raster</strong> sources (i.e., raster-to-raster and raster-to-vector transformations). See section <a href="../../../../services/wms/webadmin/#services_webadmin_wms_featureinfo_transformation">Disabling GetFeatureInfo requests results transformation</a> to disable this behavior on a global or per virtual service basis. The WMS setting can be overridden for individual FeatureTypeStyle elements using the <code>transformFeatureInfo</code> SLD vendor option (either <code>true</code> or <code>false</code>).</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;transformFeatureInfo&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/VendorOption&gt;</span>
 </span></code></pre></div>
 
@@ -2468,7 +2468,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../geometry-transformations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Geometry transformations in SLD">
+          <a href="../geometry-transformations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Geometry transformations in SLD {: #geometry_transformations }">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2478,20 +2478,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Geometry transformations in SLD
+                Geometry transformations in SLD {: #geometry_transformations }
               </div>
             </div>
           </a>
         
         
           
-          <a href="../pointsymbols/" class="md-footer__link md-footer__link--next" aria-label="Next: Graphic symbology in GeoServer">
+          <a href="../pointsymbols/" class="md-footer__link md-footer__link--next" aria-label="Next: Graphic symbology in GeoServer {: #pointsymbols }">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Graphic symbology in GeoServer
+                Graphic symbology in GeoServer {: #pointsymbols }
               </div>
             </div>
             <div class="md-footer__button md-icon">

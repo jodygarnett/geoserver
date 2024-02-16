@@ -946,7 +946,7 @@
         
   
   <span class="md-ellipsis">
-    ArcGrid
+    ArcGrid {: #data_arcgrid }
   </span>
   
 
@@ -967,7 +967,7 @@
         
   
   <span class="md-ellipsis">
-    Coverage Views
+    Coverage Views {: #coverage_views }
   </span>
   
 
@@ -988,7 +988,7 @@
         
   
   <span class="md-ellipsis">
-    GDAL Image Formats
+    GDAL Image Formats {: #data_gdal }
   </span>
   
 
@@ -1009,7 +1009,7 @@
         
   
   <span class="md-ellipsis">
-    GeoPackage
+    GeoPackage {: #data_geopkg_raster }
   </span>
   
 
@@ -1030,7 +1030,7 @@
         
   
   <span class="md-ellipsis">
-    GeoTIFF
+    GeoTIFF {: #data_geotiff }
   </span>
   
 
@@ -1051,7 +1051,7 @@
         
   
   <span class="md-ellipsis">
-    ImagePyramid
+    ImagePyramid {: #data_imagepyramid }
   </span>
   
 
@@ -1072,7 +1072,7 @@
         
   
   <span class="md-ellipsis">
-    WorldImage
+    WorldImage {: #data_worldimage }
   </span>
   
 
@@ -1093,7 +1093,7 @@
         
   
   <span class="md-ellipsis">
-    ImageMosaic
+    ImageMosaic {: #data_imagemosaic }
   </span>
   
 
@@ -1262,7 +1262,7 @@
         
   
   <span class="md-ellipsis">
-    Using the ImageMosaic extension
+    Using the ImageMosaic extension {: #data_imagemosaic_tutorial }
   </span>
   
 
@@ -1719,7 +1719,7 @@
 <p>Each individual image is commonly referred to as a <strong>granule</strong>. In recent releases of GeoServer the similarities requirements for the granules have been dropped significantly, including:</p>
 <ul>
 <li>The granules do not need to share the same coordinate reference system (see <a href="../tutorial/#multi-crs-mosaic">the multi-CRS mosaic tutorial</a>)</li>
-<li>The granules can be in different color models, with an allowance of mixing gray, RGB, RGBA and indexed color granules (it is however not possible to mix colored granules with scientific data types like as float/double). In order to benefit of mixed color models JAI-Ext support must be enabled, see <a href="../../../configuration/image_processing/index.md#JAIEXT">the JAI-EXT support documentation</a>.</li>
+<li>The granules can be in different color models, with an allowance of mixing gray, RGB, RGBA and indexed color granules (it is however not possible to mix colored granules with scientific data types like as float/double). In order to benefit of mixed color models JAI-Ext support must be enabled, see <a href="../../../../configuration/image_processing/#JAIEXT">the JAI-EXT support documentation</a>.</li>
 </ul>
 <p>In addition it is worth remarking on the fact that currently the ImageMosaic is able to handle raster data whose grid-to-world transformation is a scale and translate transformation, hence no rotation or skew.</p>
 <h2 id="index-and-configuration-file-creation">Index and configuration file creation</h2>
@@ -1749,7 +1749,7 @@
 <p>SuggestedSPI             Y            Suggested plugin for reading the image files.</p>
 <p>SuggestedFormat          N            Suggested GridFormat for reading the image files.</p>
 <p>Envelope2D               N            Envelope for the mosaic formatted as <code>LLX,LLY URX,URY</code> (notice the space between the lower left and upper right coordinate pairs).</p>
-<p>CheckAuxiliaryMetadata   N            This parameter allows to specify whether the ImageMosaic plugin should check for the presence of a GDAL aux.xml file beside each granule file. For most common use cases, you don't need to set or specify this parameter. Being disabled by Default, ImageMosaic won't look for an ancillary file for each granule being initialized in the GranuleCatalog. This avoid useless checks, especially when dealing with thousand of granules. You should set that parameter to <code>true</code> when you want to instruct the ImageMosaic to look for a GDAL generated aux.xml file containing PAM (Persistent Auxiliary Metadata) for each granule, to be attached to the Granule info (GranuleDescriptor). This is specially useful when you have setup a <a href="../../../community/colormap/index.md">Dynamic ColorMap rendering transformation</a> which dynamically set a color map based on the statistics collected into the granule's GDAL PAM being previously generated with a gdalinfo -stats parameter.</p>
+<p>CheckAuxiliaryMetadata   N            This parameter allows to specify whether the ImageMosaic plugin should check for the presence of a GDAL aux.xml file beside each granule file. For most common use cases, you don't need to set or specify this parameter. Being disabled by Default, ImageMosaic won't look for an ancillary file for each granule being initialized in the GranuleCatalog. This avoid useless checks, especially when dealing with thousand of granules. You should set that parameter to <code>true</code> when you want to instruct the ImageMosaic to look for a GDAL generated aux.xml file containing PAM (Persistent Auxiliary Metadata) for each granule, to be attached to the Granule info (GranuleDescriptor). This is specially useful when you have setup a <a href="../../../../community/colormap/">Dynamic ColorMap rendering transformation</a> which dynamically set a color map based on the statistics collected into the granule's GDAL PAM being previously generated with a gdalinfo -stats parameter.</p>
 <p>LevelsNum                Y            Represents the number of reduced resolution layers that we currently have for the granules of this mosaic.</p>
 <hr />
 <p>A sample configuration file follows:</p>
@@ -1789,7 +1789,7 @@ LevelsNum=1
 |                       |            | -   H2: <code>org.geotools.data.h2.H2DataStoreFactory</code>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |                       |            | -   SQLServer: <code>org.geotools.data.sqlserver.SQLServerDataStoreFactory</code>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 |                       |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-|                       |            | <a href="../../../tutorials/tomcat-jndi/tomcat-jndi.md">JNDI</a> can also be used with any of these stores. If JNDI is used, the DataStoreFactory name will differ from the above.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|                       |            | <a href="../../../../tutorials/tomcat-jndi/tomcat-jndi/">JNDI</a> can also be used with any of these stores. If JNDI is used, the DataStoreFactory name will differ from the above.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 +-----------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Connection parameters | Y          | The connection parameters used by the specified SPI. The list of these connection parameters can be found in the GeoTools documentation on the relevant store:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 |                       |            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
@@ -1954,7 +1954,7 @@ AbsolutePath=false
 +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | BackgroundValues                | Sets the value of the mosaic background. Depending on the nature of the mosaic it is wise to set a value for the "nodata" area (usually -9999). This value is repeated on all the mosaic bands.                                                                                                                                                                                                                 |
 +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Filter                          | Sets the default mosaic filter. It should be a valid <a href="../../../tutorials/cql/cql_tutorial.md">ECQL query</a> to be used by default if no <code>cql_filter</code> is specified (instead of Filter.INCLUDE). This filter will be applied against the mosaic index, and may include any attributes exposed by the index store. If the <code>cql_filter</code> is specified in the request it will be overridden.                             |
+| Filter                          | Sets the default mosaic filter. It should be a valid <a href="../../../../tutorials/cql/cql_tutorial/">ECQL query</a> to be used by default if no <code>cql_filter</code> is specified (instead of Filter.INCLUDE). This filter will be applied against the mosaic index, and may include any attributes exposed by the index store. If the <code>cql_filter</code> is specified in the request it will be overridden.                             |
 |                                 |                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |                                 | ::: note                                                                                                                                                                                                                                                                                                                                                                                                          |
 |                                 | ::: title                                                                                                                                                                                                                                                                                                                                                                                                         |
@@ -2040,7 +2040,7 @@ AbsolutePath=false
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: ImageMosaic">
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: ImageMosaic {: #data_imagemosaic }">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2050,20 +2050,20 @@ AbsolutePath=false
                 Previous
               </span>
               <div class="md-ellipsis">
-                ImageMosaic
+                ImageMosaic {: #data_imagemosaic }
               </div>
             </div>
           </a>
         
         
           
-          <a href="../tutorial/" class="md-footer__link md-footer__link--next" aria-label="Next: Using the ImageMosaic extension">
+          <a href="../tutorial/" class="md-footer__link md-footer__link--next" aria-label="Next: Using the ImageMosaic extension {: #data_imagemosaic_tutorial }">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Using the ImageMosaic extension
+                Using the ImageMosaic extension {: #data_imagemosaic_tutorial }
               </div>
             </div>
             <div class="md-footer__button md-icon">

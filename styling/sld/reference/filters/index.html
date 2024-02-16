@@ -24,7 +24,7 @@
     
     
       
-        <title>Filters - GeoServer</title>
+        <title>Filters {: #sld_reference_filters } - GeoServer</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#filters" class="md-skip">
+        <a href="#sld_reference_filters" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Filters
+              Filters {: #sld_reference_filters }
             
           </span>
         </div>
@@ -814,7 +814,7 @@
         
   
   <span class="md-ellipsis">
-    Styles
+    Styles {: #styling_webadmin }
   </span>
   
 
@@ -907,7 +907,7 @@
         
   
   <span class="md-ellipsis">
-    Introduction to SLD
+    Introduction to SLD {: #sld_intro }
   </span>
   
 
@@ -928,7 +928,7 @@
         
   
   <span class="md-ellipsis">
-    Working with SLD
+    Working with SLD {: #sld_working }
   </span>
   
 
@@ -1086,7 +1086,7 @@
         
   
   <span class="md-ellipsis">
-    StyledLayerDescriptor
+    StyledLayerDescriptor {: #sld_reference_sld }
   </span>
   
 
@@ -1107,7 +1107,7 @@
         
   
   <span class="md-ellipsis">
-    Layers
+    Layers {: #sld_reference_layers }
   </span>
   
 
@@ -1128,7 +1128,7 @@
         
   
   <span class="md-ellipsis">
-    Styles
+    Styles {: #sld_reference_styles }
   </span>
   
 
@@ -1149,7 +1149,7 @@
         
   
   <span class="md-ellipsis">
-    Rules
+    Rules {: #sld_reference_rules }
   </span>
   
 
@@ -1179,7 +1179,7 @@
           
   
   <span class="md-ellipsis">
-    Filters
+    Filters {: #sld_reference_filters }
   </span>
   
 
@@ -1190,7 +1190,7 @@
         
   
   <span class="md-ellipsis">
-    Filters
+    Filters {: #sld_reference_filters }
   </span>
   
 
@@ -1312,7 +1312,7 @@
         
   
   <span class="md-ellipsis">
-    PointSymbolizer
+    PointSymbolizer {: #sld_reference_pointsymbolizer }
   </span>
   
 
@@ -1333,7 +1333,7 @@
         
   
   <span class="md-ellipsis">
-    LineSymbolizer
+    LineSymbolizer {: #sld_reference_linesymbolizer }
   </span>
   
 
@@ -1354,7 +1354,7 @@
         
   
   <span class="md-ellipsis">
-    PolygonSymbolizer
+    PolygonSymbolizer {: #sld_reference_polygonsymbolizer }
   </span>
   
 
@@ -1375,7 +1375,7 @@
         
   
   <span class="md-ellipsis">
-    TextSymbolizer
+    TextSymbolizer {: #sld_reference_textsymbolizer }
   </span>
   
 
@@ -1396,7 +1396,7 @@
         
   
   <span class="md-ellipsis">
-    Labeling
+    Labeling {: #sld_reference_labeling }
   </span>
   
 
@@ -1417,7 +1417,7 @@
         
   
   <span class="md-ellipsis">
-    RasterSymbolizer
+    RasterSymbolizer {: #sld_reference_rastersymbolizer }
   </span>
   
 
@@ -1570,7 +1570,7 @@
         
   
   <span class="md-ellipsis">
-    i18N in SLD
+    i18N in SLD {: #sld_language }
   </span>
   
 
@@ -1599,7 +1599,7 @@
         
   
   <span class="md-ellipsis">
-    Generating SLD styles with QGIS
+    Generating SLD styles with QGIS {: #qgis }
   </span>
   
 
@@ -2006,8 +2006,8 @@
   
 
 
-<h1 id="filters">Filters</h1>
-<p>A <em>filter</em> is the mechanism in SLD for specifying conditions. They are similar in functionality to the SQL "WHERE" clause. Filters are used within <a href="../rules/">Rules</a> to determine which styles should be applied to which features in a data set. The filter language used by SLD follows the <a href="http://www.opengeospatial.org/standards/filter">OGC Filter Encoding standard</a>. It is described in detail in the <a href="../../../filter/filter_reference.md">Filter Encoding Reference</a>.</p>
+<h1 id="sld_reference_filters">Filters</h1>
+<p>A <em>filter</em> is the mechanism in SLD for specifying conditions. They are similar in functionality to the SQL "WHERE" clause. Filters are used within <a href="../rules/">Rules</a> to determine which styles should be applied to which features in a data set. The filter language used by SLD follows the <a href="http://www.opengeospatial.org/standards/filter">OGC Filter Encoding standard</a>. It is described in detail in the <a href="../../../../filter/filter_reference/">Filter Encoding Reference</a>.</p>
 <p>A filter condition is specified by using a <strong>comparison operator</strong> or a <strong>spatial operator</strong>, or two or more of these combined by <strong>logical operators</strong>. The operators are usually used to compare properties of the features being filtered to other properties or to literal data.</p>
 <h2 id="comparison-operators">Comparison operators</h2>
 <p>Comparison operators are used to specify conditions on the non-spatial attributes of a feature. The following <strong>binary comparison operators</strong> are available:</p>
@@ -2164,7 +2164,7 @@
 </ul>
 </blockquote>
 <p><strong>Functions</strong></p>
-<p>The <code>&lt;Function&gt;</code> element specifies a filter function to be evaluated. The <code>name</code> attribute gives the function name. The element contains a sequence of zero or more filter expressions providing the function arguments. See the <a href="../../../filter/function_reference.md">Filter Function Reference</a> for details of the functions provided by GeoServer.</p>
+<p>The <code>&lt;Function&gt;</code> element specifies a filter function to be evaluated. The <code>name</code> attribute gives the function name. The element contains a sequence of zero or more filter expressions providing the function arguments. See the <a href="../../../../filter/function_reference/">Filter Function Reference</a> for details of the functions provided by GeoServer.</p>
 <p><strong>Feature Property Values</strong></p>
 <p>The <code>&lt;PropertyName&gt;</code> element allows referring to the value of a given feature attribute. It contains a string specifying the attribute name.</p>
 <p><strong>Literals</strong></p>
@@ -2206,7 +2206,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../rules/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Rules">
+          <a href="../rules/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Rules {: #sld_reference_rules }">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2216,20 +2216,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Rules
+                Rules {: #sld_reference_rules }
               </div>
             </div>
           </a>
         
         
           
-          <a href="../pointsymbolizer/" class="md-footer__link md-footer__link--next" aria-label="Next: PointSymbolizer">
+          <a href="../pointsymbolizer/" class="md-footer__link md-footer__link--next" aria-label="Next: PointSymbolizer {: #sld_reference_pointsymbolizer }">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                PointSymbolizer
+                PointSymbolizer {: #sld_reference_pointsymbolizer }
               </div>
             </div>
             <div class="md-footer__button md-icon">

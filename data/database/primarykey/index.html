@@ -24,7 +24,7 @@
     
     
       
-        <title>Controlling feature ID generation in spatial databases - GeoServer</title>
+        <title>Controlling feature ID generation in spatial databases {: #primarykey } - GeoServer</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#controlling-feature-id-generation-in-spatial-databases" class="md-skip">
+        <a href="#primarykey" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Controlling feature ID generation in spatial databases
+              Controlling feature ID generation in spatial databases {: #primarykey }
             
           </span>
         </div>
@@ -1017,7 +1017,7 @@
         
   
   <span class="md-ellipsis">
-    Database Connection Pooling
+    Database Connection Pooling {: #connection_pooling }
   </span>
   
 
@@ -1038,7 +1038,7 @@
         
   
   <span class="md-ellipsis">
-    Db2
+    Db2 {: #data_Db2 }
   </span>
   
 
@@ -1059,7 +1059,7 @@
         
   
   <span class="md-ellipsis">
-    H2
+    H2 {: #data_h2 }
   </span>
   
 
@@ -1080,7 +1080,7 @@
         
   
   <span class="md-ellipsis">
-    JNDI
+    JNDI {: #data_jndi }
   </span>
   
 
@@ -1101,7 +1101,7 @@
         
   
   <span class="md-ellipsis">
-    MySQL
+    MySQL {: #data_mysql }
   </span>
   
 
@@ -1122,7 +1122,7 @@
         
   
   <span class="md-ellipsis">
-    Oracle
+    Oracle {: #data_oracle }
   </span>
   
 
@@ -1143,7 +1143,7 @@
         
   
   <span class="md-ellipsis">
-    PostGIS
+    PostGIS {: #data_postgis }
   </span>
   
 
@@ -1173,7 +1173,7 @@
           
   
   <span class="md-ellipsis">
-    Controlling feature ID generation in spatial databases
+    Controlling feature ID generation in spatial databases {: #primarykey }
   </span>
   
 
@@ -1184,7 +1184,7 @@
         
   
   <span class="md-ellipsis">
-    Controlling feature ID generation in spatial databases
+    Controlling feature ID generation in spatial databases {: #primarykey }
   </span>
   
 
@@ -1252,7 +1252,7 @@
         
   
   <span class="md-ellipsis">
-    Microsoft SQL Server and SQL Azure
+    Microsoft SQL Server and SQL Azure {: #data_sqlserver }
   </span>
   
 
@@ -1273,7 +1273,7 @@
         
   
   <span class="md-ellipsis">
-    Custom SQL session start/stop scripts
+    Custom SQL session start/stop scripts {: #data_sqlsession }
   </span>
   
 
@@ -1294,7 +1294,7 @@
         
   
   <span class="md-ellipsis">
-    SQL Views
+    SQL Views {: #sql_views }
   </span>
   
 
@@ -1615,7 +1615,7 @@
   
 
 
-<h1 id="controlling-feature-id-generation-in-spatial-databases">Controlling feature ID generation in spatial databases</h1>
+<h1 id="primarykey">Controlling feature ID generation in spatial databases</h1>
 <h2 id="introduction">Introduction</h2>
 <p>All spatial database data stores (PostGIS, Oracle, MySQL and so on) normally derive the feature ID from the table primary key and assume certain conventions on how to locate the next value for the key in case a new feature needs to be generated (WFS insert operation).</p>
 <p>Common conventions rely on finding auto-increment columns (PostGIS) or finding a sequence that is named after a specific convention such as <code>&lt;table&gt;_&lt;column&gt;_SEQUENCE</code> (Oracle case).</p>
@@ -1714,7 +1714,7 @@ CREATE UNIQUE INDEX gt_pk_metadata_table_idx01 ON gt_pk_metadata (table_schema, 
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../postgis/" class="md-footer__link md-footer__link--prev" aria-label="Previous: PostGIS">
+          <a href="../postgis/" class="md-footer__link md-footer__link--prev" aria-label="Previous: PostGIS {: #data_postgis }">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1724,20 +1724,20 @@ CREATE UNIQUE INDEX gt_pk_metadata_table_idx01 ON gt_pk_metadata (table_schema, 
                 Previous
               </span>
               <div class="md-ellipsis">
-                PostGIS
+                PostGIS {: #data_postgis }
               </div>
             </div>
           </a>
         
         
           
-          <a href="../sqlserver/" class="md-footer__link md-footer__link--next" aria-label="Next: Microsoft SQL Server and SQL Azure">
+          <a href="../sqlserver/" class="md-footer__link md-footer__link--next" aria-label="Next: Microsoft SQL Server and SQL Azure {: #data_sqlserver }">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Microsoft SQL Server and SQL Azure
+                Microsoft SQL Server and SQL Azure {: #data_sqlserver }
               </div>
             </div>
             <div class="md-footer__button md-icon">
