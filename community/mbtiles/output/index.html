@@ -2634,6 +2634,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mbtiles-wps-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      MBTiles WPS Process
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3853,6 +3862,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mbtiles-wps-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      MBTiles WPS Process
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3886,7 +3904,35 @@
 
 <h1 id="mbtiles-output-format">MBTiles Output Format</h1>
 <h2 id="mbtiles-wms-output-format">MBTiles WMS Output Format</h2>
-<p>Any WMS <code>GetMap &lt;../../services/wms/reference.rst#wms_getmap&gt;`_ request can be returned in the form of a Geopackage by specifying</code>format=mbtiles<code>as output format (see `WMS output formats &lt;../../services/wms/outputformats.rst&gt;`_). \ The returned result will be an MBTiles file with a single tile layer.   The following additional parameters can be passed on using `format_options &lt;../../services/wms/vendor.rst#format_options&gt;`_:   *</code>tileset_name<code>: name to be used for tileset in mbtiles file (default is name of layer(s)).   *</code>min_zoom<code>,</code>max_zoom<code>,</code>min_column<code>,</code>max_column<code>,</code>min_row<code>,</code>max_row<code>: set the minimum and maximum zoom level, column, and rows   *</code>gridset<code>: name of gridset to use (otherwise default for CRS is used)  .. warning:: The GetMap request won't be subject to any execution time limit, a client can thus make request that will takes very long times to execute by providing a high max_zoom value.    MBTiles WPS Process ---------------------- It is possible to generate an</code>mbtiles<code>file by calling the WPS process</code>gs:MBTiles<code>. This process requires the following parameters:    *</code>layername<code>: Name of the input layer.   *</code>format<code>: format of the final images composing the file.   *</code>minZoom<code>,</code>maxZoom<code>,</code>minColumn<code>,</code>maxColumn<code>,</code>minRow<code>,</code>maxRow<code>: *(Optional)* set the minimum and maximum zoom level, column, and rows.   *</code>boundingbox<code>: *(Optional)* Bounding box of the final mbtiles. If CRS is not set, the layer native one is used.   *</code>filename<code>: *(Optional)* name of the mbtiles file created.   *</code>bgColor<code>: *(Optional)* value associated to the background colour.   *</code>transparency<code>: *(Optional)* parameter indicating if the transparency must be present.   *</code>stylename<code>,</code>stylepath<code>,</code>stylebody``: <em>(Optional)</em> style to associate to the layer. Only one of these 3 parameters can be used.</p>
+<p>Any WMS <a href="../../../services/wms/reference/#wms_getmap">GetMap</a> request can be returned in the form of a Geopackage by specifying <code>format=mbtiles</code> as output format (see <a href="../../../services/wms/outputformats/">WMS output formats</a>). The returned result will be an MBTiles file with a single tile layer.</p>
+<dl>
+<dt>The following additional parameters can be passed on using <a href="../../../services/wms/vendor/#format_options">format_options</a>:</dt>
+<dd>
+<ul>
+<li><code>tileset_name</code>: name to be used for tileset in mbtiles file (default is name of layer(s)).</li>
+<li><code>min_zoom</code>, <code>max_zoom</code>, <code>min_column</code>, <code>max_column</code>, <code>min_row</code>, <code>max_row</code>: set the minimum and maximum zoom level, column, and rows</li>
+<li><code>gridset</code>: name of gridset to use (otherwise default for CRS is used)</li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The GetMap request won't be subject to any execution time limit, a client can thus make request that will takes very long times to execute by providing a high max_zoom value.</p>
+</div>
+<h2 id="mbtiles-wps-process">MBTiles WPS Process</h2>
+<p>It is possible to generate an <code>mbtiles</code> file by calling the WPS process <code>gs:MBTiles</code>. This process requires the following parameters:</p>
+<blockquote>
+<ul>
+<li><code>layername</code>: Name of the input layer.</li>
+<li><code>format</code> : format of the final images composing the file.</li>
+<li><code>minZoom</code>, <code>maxZoom</code>, <code>minColumn</code>, <code>maxColumn</code>, <code>minRow</code>, <code>maxRow</code>: <em>(Optional)</em> set the minimum and maximum zoom level, column, and rows.</li>
+<li><code>boundingbox</code>: <em>(Optional)</em> Bounding box of the final mbtiles. If CRS is not set, the layer native one is used.</li>
+<li><code>filename</code>: <em>(Optional)</em> name of the mbtiles file created.</li>
+<li><code>bgColor</code>: <em>(Optional)</em> value associated to the background colour.</li>
+<li><code>transparency</code>: <em>(Optional)</em> parameter indicating if the transparency must be present.</li>
+<li><code>stylename</code>, <code>stylepath</code>, <code>stylebody</code>: <em>(Optional)</em> style to associate to the layer. Only one of these 3 parameters can be used.</li>
+</ul>
+</blockquote>
 <p>The process returns an URL containing the path of the generated file.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>

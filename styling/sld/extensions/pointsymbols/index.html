@@ -2576,16 +2576,16 @@
 <p>Graphic symbology is supported via the SLD <code>&lt;Graphic&gt;</code> element. This element can appear in several contexts in SLD:</p>
 <ul>
 <li>in a <a href="../../reference/pointsymbolizer/">PointSymbolizer</a>, to display symbols at points</li>
-<li>in the <code>&lt;Stroke&gt;/&lt;GraphicStroke&gt;</code> element of a <code>LineSymbolizer &lt;../reference/linesymbolizer.rst&gt;`_ and</code>olygonSymbolizer &lt;../reference/polygonsymbolizer.rst&gt;`_, to display repeated symbols along lines and polygon boundaries.</li>
-<li>in the <code>&lt;Stroke&gt;/&lt;GraphicFill&gt;</code> element of a <code>LineSymbolizer &lt;../reference/linesymbolizer.rst&gt;`_ and</code>olygonSymbolizer &lt;../reference/polygonsymbolizer.rst&gt;`_, to fill lines and polygon boundaries with tiled symbols.</li>
+<li>in the <code>&lt;Stroke&gt;/&lt;GraphicStroke&gt;</code> element of a <a href="../../reference/linesymbolizer/">LineSymbolizer</a> and <a href="../../reference/polygonsymbolizer/">PolygonSymbolizer</a>, to display repeated symbols along lines and polygon boundaries.</li>
+<li>in the <code>&lt;Stroke&gt;/&lt;GraphicFill&gt;</code> element of a <a href="../../reference/linesymbolizer/">LineSymbolizer</a> and <a href="../../reference/polygonsymbolizer/">PolygonSymbolizer</a>, to fill lines and polygon boundaries with tiled symbols.</li>
 <li>in the <code>&lt;Fill&gt;/&lt;GraphicFill&gt;</code> element of a <a href="../../reference/polygonsymbolizer/">PolygonSymbolizer</a>, to fill polygons with tiled symbols (stippling).</li>
 <li>in a <a href="../../reference/textsymbolizer/">TextSymbolizer</a> to display a graphic behind or instead of text labels (this is a GeoServer extension).</li>
 </ul>
 <p><code>&lt;Graphic&gt;</code> contains either a <code>&lt;Mark&gt;</code> or an <code>&lt;ExternalGraphic&gt;</code> element. <strong>Marks</strong> are pure vector symbols whose geometry is predefined but with stroke and fill defined in the SLD itself. <strong>External Graphics</strong> are external files (such as PNG images or SVG graphics) that contain the shape and color information defining how to render a symbol.</p>
-<p>In standard SLD the <code>&lt;Mark&gt;</code> and <code>&lt;ExternalGraphic&gt;</code> names are fixed strings. GeoServer extends this by providing <code>dynamic symbolizers</code> which allow computing symbol names on a per-feature basis by embedding CQL expressions in them.</p>
+<p>In standard SLD the <code>&lt;Mark&gt;</code> and <code>&lt;ExternalGraphic&gt;</code> names are fixed strings. GeoServer extends this by providing <code>dynamic symbolizers</code>, which allow computing symbol names on a per-feature basis by embedding CQL expressions in them.</p>
 <h2 id="marks">Marks</h2>
 <p>GeoServer supports the standard SLD <code>&lt;Mark&gt;</code> symbols, a user-expandable set of extended symbols, and also TrueType Font glyphs. The symbol names are specified in the <code>&lt;WellKnownName&gt;</code> element.</p>
-<p>See also the <code>PointSymbolizer &lt;../reference/pointsymbolizer.rst&gt;`_ reference for further details, as well as the examples in the</code>oints &lt;../cookbook/points.rst&gt;`_ Cookbook section.</p>
+<p>See also the <a href="../../reference/pointsymbolizer/">PointSymbolizer</a> reference for further details, as well as the examples in the <a href="../../cookbook/points/">Points</a> Cookbook section.</p>
 <h3 id="standard-symbols">Standard symbols</h3>
 <p>The SLD specification mandates the support of the following symbols:</p>
 <hr />
@@ -2717,37 +2717,37 @@
 </span></code></pre></div>
 <p>In this example an SVG graphic is being used, so the size is specified explicitly.</p>
 <h3 id="svg-parameters">SVG Parameters</h3>
-<p>GeoServer can handle SVG images in which parts of the SVG-attributes are named parameters, as outlined the <code>SVG Parameters 1.0 specification &lt;https://www.w3.org/TR/SVGParamPrimer/&gt;`__. This capability is also supported by</code>GIS &lt;<a href="http://qgis.org">http://qgis.org</a>&gt;`__.</p>
+<p>GeoServer can handle SVG images in which parts of the SVG-attributes are named parameters, as outlined the <a href="https://www.w3.org/TR/SVGParamPrimer/">SVG Parameters 1.0 specification</a>. This capability is also supported by <a href="http://qgis.org">QGIS</a>.</p>
 <p>SVG Parameters are represented in a file like: <a href="https://github.com/qgis/QGIS/blob/master/images/svg/symbol/poi_peak.svg">poi_peak.svg</a> as:</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;svg</span><span class="w"> </span><span class="na">enable-background=</span><span class="s">&quot;new 0 0 580 580&quot;</span><span class="w"> </span><span class="na">height=</span><span class="s">&quot;580&quot;</span><span class="w"> </span><span class="na">viewBox=</span><span class="s">&quot;0 0 580 580&quot;</span><span class="w"> </span><span class="na">width=</span><span class="s">&quot;580&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://www.w3.org/2000/svg&quot;</span><span class="nt">&gt;</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">&lt;path</span><span class="w"> </span><span class="na">d=</span><span class="s">&quot;m290.565 67.281l-255.498 442.534-1.087 1.885 511.229.393 2.18.002z&quot;</span><span class="w"> </span><span class="na">fill=</span><span class="s">&quot;param(fill)&quot;</span><span class="w"> </span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w"> </span><span class="na">fill-opacity=</span><span class="s">&quot;param(fill-opacity)&quot;</span><span class="w"> </span><span class="na">stroke=</span><span class="s">&quot;param(outline)&quot;</span><span class="w"> </span><span class="na">stroke-opacity=</span><span class="s">&quot;param(outline-opacity)&quot;</span><span class="w"> </span><span class="na">stroke-width=</span><span class="s">&quot;param(outline-width)&quot;</span><span class="nt">/&gt;</span>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">&lt;/svg&gt;</span>
 </span></code></pre></div>
-<p>The 'param'-constructs mean that you can define the parameters: <code>fill</code> <code>fill-opacity</code> <code>outline</code> <code>outline-opacity</code>and <code>outline-width</code>as part of an SVG URL reference, where a reference to this image with red fill would be: <code>poi_peak.svg?fill=#FF0000</code>.</p>
+<p>The 'param'-constructs mean that you can define the parameters: <code>fill</code>, <code>fill-opacity</code>, <code>outline</code>, <code>outline-opacity</code> and <code>outline-width</code> as part of an SVG URL reference, where a reference to this image with red fill would be: <code>poi_peak.svg?fill=#FF0000</code>.</p>
 <p>Note: When editng <strong><code>SVG</code></strong> files (e.g. in Inkscape) save using 'simple svg' format.</p>
 <p>Default behaviour:</p>
 <ul>
 <li>
-<p>OnlineResource <code>href</code>URI without any parameters.</p>
+<p>OnlineResource <code>href</code> URI without any parameters.</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;se:OnlineResource</span><span class="w"> </span><span class="na">xlink:href=</span><span class="s">&quot;poi_peak.svg&quot;</span><span class="w"> </span><span class="na">xlink:type=</span><span class="s">&quot;simple&quot;</span><span class="nt">/&gt;</span>
 </span></code></pre></div>
 </li>
 <li>
-<p>Displays <strong><code>poi_peak.svg</code></strong> with the default black <code>fill</code></p>
+<p>Displays <strong><code>poi_peak.svg</code></strong> with the default black <code>fill</code>.</p>
 <p><img alt="" src="../images/peak_black.png" />
 <em>SVG image with default black fill</em></p>
 </li>
 </ul>
-<p>Using <code>#ff000</code>red parameter:</p>
+<p>Using <code>#ff000</code> red parameter:</p>
 <ul>
 <li>
-<p>OnlineResource <code>href</code>URI with parameter:</p>
+<p>OnlineResource <code>href</code> URI with parameter:</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&lt;se:OnlineResource</span><span class="w"> </span><span class="na">xlink:href=</span><span class="s">&quot;poi_peak.svg?fill=#ff0000&quot;</span><span class="w"> </span><span class="na">xlink:type=</span><span class="s">&quot;simple&quot;</span><span class="nt">/&gt;</span>
 </span></code></pre></div>
 </li>
 <li>
-<p>Displays <strong><code>poi_peak.svg</code></strong> with supplied red <code>fill</code></p>
+<p>Displays <strong><code>poi_peak.svg</code></strong> with supplied red <code>fill</code>.</p>
 <p><img alt="" src="../images/peak_redfill.png" />
 <em>SVG image with fill provided by parameter</em></p>
 </li>
@@ -2755,7 +2755,7 @@
 <p>To define several parameters, the query-parameters should be url-encoded.</p>
 <ul>
 <li>
-<p>A green peak with 25% opacity: <code>?fill=#00ff00&amp;opacity=0.25</code> requires encoding both the '#' ( <code>%23</code> ) and the '&amp;' ( <code>&amp;amp;</code> ) signs:</p>
+<p>A green peak with 25% opacity: <code>?fill=#00ff00&amp;opacity=0.25</code>, requires encoding both the '#' ( <code>%23</code> ) and the '&amp;' ( <code>&amp;amp;</code> ) signs:</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">&lt;se:OnlineResource</span><span class="w"> </span><span class="na">xlink:href=</span><span class="s">&quot;poi_peak.svg?fill=%2300ff00&amp;amp;opacity=0.25&quot;</span><span class="w"> </span><span class="na">xlink:type=</span><span class="s">&quot;simple&quot;</span><span class="nt">/&gt;</span>
 </span></code></pre></div>
 </li>
@@ -2773,7 +2773,7 @@
 </span></code></pre></div>
 </li>
 <li>
-<p>OnlineResource <code>href</code>URI referencing parameters <code>fill</code> <code>outline</code>and <code>outline-width</code></p>
+<p>OnlineResource <code>href</code> URI referencing parameters <code>fill</code>, <code>outline</code> and <code>outline-width</code>:</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">&lt;se:OnlineResource</span><span class="w"> </span><span class="na">xlink:href=</span><span class="s">&quot;poi_peak.svg?fill=%23ffffff&amp;amp;outline=%23ff0000&amp;amp;outline-width=5&quot;</span><span class="w"> </span><span class="na">xlink:type=</span><span class="s">&quot;simple&quot;</span><span class="nt">/&gt;</span>
 </span></code></pre></div>
 </li>
@@ -2786,12 +2786,12 @@
 <p>The use of SVG parameters can be combinded with dynamic symbolizers (covered below) to supply SVG parameter values based on feature attribute data and expressions.</p>
 <ul>
 <li>
-<p>OnlineResource <code>href</code>URI referencing SVG Parameter with dynamic CQL expression:</p>
+<p>OnlineResource <code>href</code> URI referencing SVG Parameter with dynamic CQL expression:</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">&lt;se:OnlineResource</span><span class="w"> </span><span class="na">xlink:href=</span><span class="s">&quot;poi_peak.svg?fill=${COLOR}&quot;</span><span class="w"> </span><span class="na">xlink:type=</span><span class="s">&quot;simple&quot;</span><span class="nt">/&gt;</span>
 </span></code></pre></div>
 </li>
 <li>
-<p>Display depends on the feature attribute <code>COLOR</code></p>
+<p>Display depends on the feature attribute <code>COLOR</code>.</p>
 </li>
 </ul>
 <h3 id="bulk-wkt-shapes">Bulk WKT Shapes</h3>

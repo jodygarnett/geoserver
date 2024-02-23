@@ -3060,7 +3060,7 @@
 <li>combining the two allows control of symbol spacing</li>
 </ul>
 </blockquote>
-<p>This also shows the usage of a <code>dash offset</code> which controls where rendering starts in the dash array. For example, with a dash array of <code>5 10</code> and a dash offset of <code>7</code> the renderer starts drawing the pattern 7 pixels from the beginning. It skips the 5 pixels pen-down section and 2 pixels of the pen-up section, then draws the remaining 8 pixels of pen-up, then 5 down, 10 up, and so on.</p>
+<p>This also shows the usage of a <code>dash offset</code>, which controls where rendering starts in the dash array. For example, with a dash array of <code>5 10</code> and a dash offset of <code>7</code> the renderer starts drawing the pattern 7 pixels from the beginning. It skips the 5 pixels pen-down section and 2 pixels of the pen-up section, then draws the remaining 8 pixels of pen-up, then 5 down, 10 up, and so on.</p>
 <p>The example shows how to use these features to create two synchronized sequences of dash arrays, one drawing line segments and the other symbols.</p>
 <p><img alt="" src="../../../sld/cookbook/images/line_dashdot.png" />
 <em>Alternating dash and symbol</em></p>
@@ -3237,7 +3237,7 @@
 <h3 id="details_11">Details</h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Refer to the <code>Example lines layer &lt;lines.rst#ysld_cookbook_lines_attributes&gt;`_ to see the attributes for the layer. This example has eschewed labels in order to simplify the style, but you can refer to the example</code>ptimized and styled label <lines.rst#ysld_cookbook_lines_optimizedstyledlabel>`_ to see which attributes correspond to which points.</p>
+<p>Refer to the <a href="./#ysld_cookbook_lines_attributes">Example lines layer</a> to see the attributes for the layer. This example has eschewed labels in order to simplify the style, but you can refer to the example <a href="./#ysld_cookbook_lines_optimizedstyledlabel">Optimized and styled label</a> to see which attributes correspond to which points.</p>
 </div>
 <p>There are three types of road classes in our fictional country, ranging from back roads to high-speed freeways: "highway", "secondary", and "local-road". In order to handle each case separately, there is more than one feature style, each containing a single rule. This ensures that each road type is rendered in order, as each feature style is drawn based on the order in which it appears in the YSLD.</p>
 <p>The three rules are designed as follows:</p>

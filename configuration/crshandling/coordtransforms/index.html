@@ -1954,7 +1954,7 @@
 
 
 <h1 id="coordinate-operations">Coordinate Operations</h1>
-<p>Coordinate operations are used to convert coordinates from a <code>source CRS</code>to a <code>target CRS</code></p>
+<p>Coordinate operations are used to convert coordinates from a <code>source CRS</code> to a <code>target CRS</code>.</p>
 <p>If source and target CRSs are referred to a different datum, a datum transform has to be applied. Datum transforms are not exact, they are determined empirically. For the same pair of CRS, there can be many datum transforms and versions, each one with its own domain of validity and an associated transform error. Given a CRS pair, GeoServer will automatically pick the most accurate datum transform from the EPSG database, unless a custom operation is declared.</p>
 <ul>
 <li>Coordinate operations can be queried and tested using the <a href="#reprojection-console">Reprojection Console</a>.</li>
@@ -1962,7 +1962,7 @@
 <li>See <a href="#define-a-custom-coordinate-operation">Define a custom Coordinate Operation</a> to declare new operations. Custom operations will take precedence over the EPSG ones.</li>
 </ul>
 <h2 id="reprojection-console">Reprojection Console</h2>
-<p>The reprojection console (available in <code>Demos &lt;../demos/index.rst&gt;`_) lets you quickly test coordinate operations. Use it to convert a single coordinate or WKT geometry, and to see the operation details GeoServer is using. It is also useful to learn by example when you have to</code>efine a custom Coordinate Operation`_.</p>
+<p>The reprojection console (available in <a href="../../demos/">Demos</a>) lets you quickly test coordinate operations. Use it to convert a single coordinate or WKT geometry, and to see the operation details GeoServer is using. It is also useful to learn by example when you have to <a href="#define-a-custom-coordinate-operation">Define a custom Coordinate Operation</a>.</p>
 <p>Read more about the <a href="../../demos/#demos_reprojectionconsole">Reprojection console</a>.</p>
 <h2 id="add-grid-shift-transform-files">Add Grid Shift Transform files</h2>
 <p>GeoServer supports NTv2 and NADCON grid shift transforms. Grid files are not shipped out with GeoServer. They need to be downloaded, usually from your National Mapping Agency website.</p>
@@ -2887,10 +2887,10 @@
 </table>
 <h2 id="define-a-custom-coordinate-operation">Define a custom Coordinate Operation</h2>
 <p>Custom Coordinate Operations are defined in <strong><code>epsg_operations.properties</code></strong> file. This file has to be placed into the <strong><code>user_projections</code></strong> directory, inside your data directory (create it if it doesn't exist).</p>
-<p>Each line in <strong><code>epsg_operations.properties</code></strong> will describe a coordinate operation consisting of a <code>source CRS</code> a <code>target CRS</code> and a math transform with its parameter values. Use the following syntax:</p>
+<p>Each line in <strong><code>epsg_operations.properties</code></strong> will describe a coordinate operation consisting of a <code>source CRS</code>, a <code>target CRS</code>, and a math transform with its parameter values. Use the following syntax:</p>
 <div class="language-text highlight"><pre><span></span><code>&lt;source crs code&gt;,&lt;target crs code&gt;=&lt;WKT math transform&gt;
 </code></pre></div>
-<p>Math transform is described in <code>Well-Known Text &lt;http://www.geoapi.org/3.0/javadoc/org/opengis/referencing/doc-files/WKT.html&gt;`_ syntax. Parameter names and value ranges are described in the</code>PSG Geodetic Parameter Registry &lt;<a href="http://www.epsg-registry.org/">http://www.epsg-registry.org/</a>&gt;`_.</p>
+<p>Math transform is described in <a href="http://www.geoapi.org/3.0/javadoc/org/opengis/referencing/doc-files/WKT.html">Well-Known Text</a> syntax. Parameter names and value ranges are described in the <a href="http://www.epsg-registry.org/">EPSG Geodetic Parameter Registry</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Use the <a href="#reprojection-console">Reprojection Console</a> to learn from example and to test your custom definitions.</p>

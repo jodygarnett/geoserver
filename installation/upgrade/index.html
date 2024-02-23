@@ -988,6 +988,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#geojson-encoding-geoserver-26-and-newer" class="md-nav__link">
+    <span class="md-ellipsis">
+      GeoJSON encoding (GeoServer 2.6 and newer)
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1915,6 +1924,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#geojson-encoding-geoserver-26-and-newer" class="md-nav__link">
+    <span class="md-ellipsis">
+      GeoJSON encoding (GeoServer 2.6 and newer)
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2054,7 +2072,32 @@
 </li>
 </ul>
 <h3 id="jts-type-bindings-geoserver-214-and-newer">JTS Type Bindings (GeoServer 2.14 and newer)</h3>
-<p>As of GeoServer 2.14, the output produced by <code>REST &lt;../rest/index.rst&gt;`_ featuretype and structured coverage requests using a different package name (</code>org.locationtech<code>instead of</code>com.vividsolutions<code>) for geometry type bindings, due to the upgrade to JTS (Java Topology Suite) 1.16.0. For example:  Before::      ...     &lt;attribute&gt;       &lt;name&gt;geom&lt;/name&gt;       &lt;minOccurs&gt;0&lt;/minOccurs&gt;       &lt;maxOccurs&gt;1&lt;/maxOccurs&gt;       &lt;nillable&gt;true&lt;/nillable&gt;       &lt;binding&gt;com.vividsolutions.jts.geom.Point&lt;/binding&gt;     &lt;/attribute&gt;     ...  After::      ...     &lt;attribute&gt;       &lt;name&gt;geom&lt;/name&gt;       &lt;minOccurs&gt;0&lt;/minOccurs&gt;       &lt;maxOccurs&gt;1&lt;/maxOccurs&gt;       &lt;nillable&gt;true&lt;/nillable&gt;       &lt;binding&gt;org.locationtech.jts.geom.Point&lt;/binding&gt;     &lt;/attribute&gt;     ...   Any REST clients which rely on this binding information should be updated to support the new names.  GeoJSON encoding (GeoServer 2.6 and newer) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  As of GeoServer 2.6, the GeoJSON produced by the WFS service no longer uses a non-standard encoding for the CRS. To re-enable this behavior for compatibility purposes, set</code>GEOSERVER_GEOJSON_LEGACY_CRS=true`` as a system property, context parameter, or environment variable.</p>
+<p>As of GeoServer 2.14, the output produced by <a href="../../rest/">REST</a> featuretype and structured coverage requests using a different package name (<code>org.locationtech</code> instead of <code>com.vividsolutions</code>) for geometry type bindings, due to the upgrade to JTS (Java Topology Suite) 1.16.0. For example:</p>
+<p>Before:</p>
+<div class="language-text highlight"><pre><span></span><code>...
+&lt;attribute&gt;
+  &lt;name&gt;geom&lt;/name&gt;
+  &lt;minOccurs&gt;0&lt;/minOccurs&gt;
+  &lt;maxOccurs&gt;1&lt;/maxOccurs&gt;
+  &lt;nillable&gt;true&lt;/nillable&gt;
+  &lt;binding&gt;com.vividsolutions.jts.geom.Point&lt;/binding&gt;
+&lt;/attribute&gt;
+...
+</code></pre></div>
+<p>After:</p>
+<div class="language-text highlight"><pre><span></span><code>...
+&lt;attribute&gt;
+  &lt;name&gt;geom&lt;/name&gt;
+  &lt;minOccurs&gt;0&lt;/minOccurs&gt;
+  &lt;maxOccurs&gt;1&lt;/maxOccurs&gt;
+  &lt;nillable&gt;true&lt;/nillable&gt;
+  &lt;binding&gt;org.locationtech.jts.geom.Point&lt;/binding&gt;
+&lt;/attribute&gt;
+...
+</code></pre></div>
+<p>Any REST clients which rely on this binding information should be updated to support the new names.</p>
+<h3 id="geojson-encoding-geoserver-26-and-newer">GeoJSON encoding (GeoServer 2.6 and newer)</h3>
+<p>As of GeoServer 2.6, the GeoJSON produced by the WFS service no longer uses a non-standard encoding for the CRS. To re-enable this behavior for compatibility purposes, set <code>GEOSERVER_GEOJSON_LEGACY_CRS=true</code> as a system property, context parameter, or environment variable.</p>
 
 
 

@@ -2439,8 +2439,41 @@
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;property&gt;</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;value&gt;</span>
 </span></code></pre></div>
 </blockquote>
-<p>The <code>&lt;property&gt;</code>is a string denoting the property name, while the <code>&lt;value&gt;</code>can be one of a number of different types depending on context.</p>
-<p>=========== ==================================================== Integer Numerical value. May be surrounded by quotes. Float Numerical value. May be surrounded by quotes. Text Text value. If value is ambiguous, use single quotes. Color Hexadecimal color of the form <code>'#RRGGBB'</code> Tuple A list of values in brackets. e.g. <code>[0, 1]</code>Expression CQL expression surrounded by <code>${ }</code>=========== ====================================================</p>
+<p>The <code>&lt;property&gt;</code> is a string denoting the property name, while the <code>&lt;value&gt;</code> can be one of a number of different types depending on context.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Integer</td>
+<td>Numerical value. May be surrounded by quotes.</td>
+</tr>
+<tr>
+<td>Float</td>
+<td>Numerical value. May be surrounded by quotes.</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>Text value. If value is ambiguous, use single quotes.</td>
+</tr>
+<tr>
+<td>Color</td>
+<td>Hexadecimal color of the form <code>'#RRGGBB'</code>.</td>
+</tr>
+<tr>
+<td>Tuple</td>
+<td>A list of values in brackets. e.g. [[0, 1]]{.title-ref}</td>
+</tr>
+<tr>
+<td>Expression</td>
+<td>CQL expression surrounded by <code>\${ }</code></td>
+</tr>
+</tbody>
+</table>
 <h3 id="mappings-and-lists">Mappings and lists</h3>
 <p>There are three types of objects in a YSLD document:</p>
 <ol>
@@ -2483,7 +2516,7 @@
 </ul>
 </blockquote>
 </blockquote>
-<p>The <code>polygon:</code>and <code>text:</code>objects (the individual symbolizers themselves) are mappings, and as such, the contents do not require dashes, only indents:</p>
+<p>The <code>polygon:</code> and <code>text:</code> objects (the individual symbolizers themselves) are mappings, and as such, the contents do not require dashes, only indents:</p>
 <blockquote>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">polygon</span><span class="p">:</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">stroke-color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#808080&#39;</span>
@@ -2580,7 +2613,7 @@
 </span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">        </span><span class="nt">fill-color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;gray&#39;</span>
 </span></code></pre></div>
 </blockquote>
-<p>In the above example the label is defined using the CQL Expression <code>NAME</code> This results in a dynamic style that generates each label on a case-by-case basis, filling in the label with the feature attribute <code>NAME</code></p>
+<p>In the above example the label is defined using the CQL Expression <code>NAME</code>. This results in a dynamic style that generates each label on a case-by-case basis, filling in the label with the feature attribute <code>NAME</code>.</p>
 <p>Reference:</p>
 <ul>
 <li><a href="http://suite.opengeo.org/docs/latest/cartography/ysld/reference/filters.html">Filter Syntax</a> (YSLD Reference)</li>
@@ -2592,7 +2625,7 @@
 <p>Variables in YSLD allow for a certain directive or block of directives to be defined by name and later reused. This can greatly simplify the styling document.</p>
 <p>The two most-common use cases for using variables are:</p>
 <ul>
-<li>To create a more-friendly name for a value (such as using myorange instead of <code>#EE8000</code></li>
+<li>To create a more-friendly name for a value (such as using myorange instead of <code>#EE8000</code>)</li>
 <li>To define a block of directives to remove redundant content and to decrease file length</li>
 </ul>
 <p>It is customary, but not required, to place all definitions at the very top of the YSLD file.</p>
@@ -2618,7 +2651,7 @@
 </span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
 </span></code></pre></div>
 </blockquote>
-<p>The syntax for using a variable block is to prepend the variable name with <code>&lt;&lt;: *</code> For example:</p>
+<p>The syntax for using a variable block is to prepend the variable name with <code>&lt;&lt;: *</code>. For example:</p>
 <blockquote>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">&lt;block&gt;</span><span class="p">:</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;directive&gt;</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;value&gt;</span>
@@ -2676,7 +2709,7 @@
 </span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">        </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">airport.svg</span>
 </span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">        </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">image/svg</span>
 </span></code></pre></div>
-<p>We use a point symbolizer to indicate we want this content drawn as a <strong>Point</strong> (line 16 in the SLD, line 5 in the YSLD). The point symbolizer declares an external graphic, which contains the URL <code>airports.svg</code>indicating the image that should be drawn (line 20 in the SLD, line 9 in the YSLD).</p>
+<p>We use a point symbolizer to indicate we want this content drawn as a <strong>Point</strong> (line 16 in the SLD, line 5 in the YSLD). The point symbolizer declares an external graphic, which contains the URL <code>airports.svg</code> indicating the image that should be drawn (line 20 in the SLD, line 9 in the YSLD).</p>
 <h2 id="tour">Tour</h2>
 <p>To confirm everything works, let's reproduce the airports style above.</p>
 <ol>
@@ -2686,7 +2719,8 @@
 <li>
 <p>Each time we edit a style, the contents of the associated SLD file are replaced. Rather than disrupt any of our existing styles we will create a new style. Click <strong>Add a new style</strong> and choose the following:</p>
 <hr />
-<p>Name:                 <code>airports0</code> * - Workspace:</p>
+<p>Name:                 <code>airports0</code></p>
+<p>Workspace:            (leave empty)</p>
 <p>Format:               <code>YSLD</code></p>
 <hr />
 </li>
@@ -2700,7 +2734,7 @@
 </blockquote>
 </li>
 <li>
-<p>Click the <strong>Layer Preview</strong> tab to preview the style. We want to preview on the airports layer, so click the name of the current layer and select <code>ne:airports</code>from the list that appears. You can use the mouse buttons to pan and scroll wheel to change scale.</p>
+<p>Click the <strong>Layer Preview</strong> tab to preview the style. We want to preview on the airports layer, so click the name of the current layer and select <code>ne:airports</code> from the list that appears. You can use the mouse buttons to pan and scroll wheel to change scale.</p>
 <p><img alt="" src="../../style/img/css_02_choose_data.png" />
 <em>Choosing the airports layer</em></p>
 <p><img alt="" src="../../style/img/css_06_preview.png" />

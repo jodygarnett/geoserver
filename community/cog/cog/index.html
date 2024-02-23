@@ -4107,7 +4107,7 @@
 
 
 <h1 id="cog-cloud-optimized-geotiff-support">COG (Cloud Optimized GeoTIFF) Support</h1>
-<p><code>COG &lt;https://github.com/cogeotiff/cog-spec/blob/master/spec.md&gt;`_ (Cloud Optimized GeoTIFF) is a regular GeoTIFF file, aimed at being hosted on a HTTP file server, whose internal organization is friendly for consumption by clients issuing</code>TTP GET range &lt;<a href="https://en.wikipedia.org/wiki/Byte_serving">https://en.wikipedia.org/wiki/Byte_serving</a>&gt;`_ requests. The COG module allows to set configuration params to connect to a Cloud GeoTIFF, as well as adding JARs to the classpath needed to support that connection.</p>
+<p><a href="https://github.com/cogeotiff/cog-spec/blob/master/spec.md">COG</a> (Cloud Optimized GeoTIFF) is a regular GeoTIFF file, aimed at being hosted on a HTTP file server, whose internal organization is friendly for consumption by clients issuing <a href="https://en.wikipedia.org/wiki/Byte_serving">HTTP GET range</a> requests. The COG module allows to set configuration params to connect to a Cloud GeoTIFF, as well as adding JARs to the classpath needed to support that connection.</p>
 <h2 id="installation">Installation</h2>
 <p>As a community module, the package needs to be downloaded from the <a href="https://build.geoserver.org/geoserver/">nightly builds</a>, picking the community folder of the corresponding GeoServer series (e.g. if working on the GeoServer main development branch nightly builds, pick the zip file form <code>main/community-latest</code>).</p>
 <p>To install the module, unpack the zip file contents into the GeoServer <code>WEB-INF/lib</code> directory and restart GeoServer.</p>
@@ -4159,25 +4159,25 @@
 <h2 id="http-client-okhttp-configuration">HTTP Client (OkHttp) configuration</h2>
 <p>HTTP client configuration (based on <a href="https://square.github.io/okhttp/">OkHttp client</a>) can be specified through Environment variables.</p>
 <hr />
-<p>Environment Variable                                                                                                                                                              Description</p>
+<p>Environment Variable                           Description</p>
 <hr />
-<p><code>IIO_HTTP_MAX_REQUESTS</code> - The maximum number of requests to execute concurrently. Above this requests queue in memory, waiting for the running calls to complete. (Default 128)   </p>
-<p><code>IIO_HTTP_MAX_REQUESTS_PER_HOST</code> - The maximum number of requests for each host to execute concurrently. (Default 5)                                                              </p>
-<p><code>IIO_HTTP_MAX_IDLE_CONNECTIONS</code> - The maximum number of idle connections. (Default 5)                                                                                             </p>
-<p><code>IIO_HTTP_KEEP_ALIVE_TIME</code> - The Keep alive time (in seconds), representing maximum time that excess idle threads will wait for new tasks before terminating. (Default 60)        </p>
+<p><code>IIO_HTTP_MAX_REQUESTS</code>            The maximum number of requests to execute concurrently. Above this requests queue in memory, waiting for the running calls to complete. (Default 128)</p>
+<p><code>IIO_HTTP_MAX_REQUESTS_PER_HOST</code>   The maximum number of requests for each host to execute concurrently. (Default 5)</p>
+<p><code>IIO_HTTP_MAX_IDLE_CONNECTIONS</code>    The maximum number of idle connections. (Default 5)</p>
+<p><code>IIO_HTTP_KEEP_ALIVE_TIME</code>         The Keep alive time (in seconds), representing maximum time that excess idle threads will wait for new tasks before terminating. (Default 60)</p>
 <hr />
 <h2 id="aws-s3-client-configuration">AWS S3 Client configuration</h2>
 <p>A single S3 Asynchronous Client will be used for the same region and alias (url schema, i.e. http, https). The following Environment Variables can be set to customize the pool for the asynchronous client for that particular alias. On the table below, replace the "\$ALIAS\$" template with HTTP or HTTPS or S3 if you are configuring properties for these schema.</p>
 <hr />
-<p>Environment Variable                                                                                                                                                                Description</p>
+<p>Environment Variable                                Description</p>
 <hr />
-<p><code>IIO_$ALIAS$_AWS_CORE_POOL_SIZE</code> - The core pool size for the S3 Client (Default 50)                                                                                                </p>
-<p><code>IIO_$ALIAS$_AWS_MAX_POOL_SIZE</code> - The maximum number of thread to allow in the pool for the S3 Client (Default 128)                                                                 </p>
-<p><code>IIO_$ALIAS$_AWS_KEEP_ALIVE_TIME</code> - The Keep alive time (in seconds), representing maximum time that excess idle threads will wait for new tasks before terminating. (Default 10)   </p>
-<p><code>IIO_$ALIAS$_AWS_USER</code> - Default user (access key ID) for AWS basic authentication credentials                                                                                      </p>
-<p><code>IIO_$ALIAS$_AWS_PASSWORD</code> - Default password (secret access key) for AWS basic authentication credentials                                                                          </p>
-<p><code>IIO_$ALIAS$_AWS_REGION</code> - Default AWS region                                                                                                                                       </p>
-<p><code>IIO_$ALIAS$_AWS_ENDPOINT</code> - Endpoint to Amazon service or any other S3-compatible service run by a third-party                                                                     </p>
+<p><code>IIO_\$ALIAS\$_AWS_CORE_POOL_SIZE</code>    The core pool size for the S3 Client (Default 50)</p>
+<p><code>IIO_\$ALIAS\$_AWS_MAX_POOL_SIZE</code>     The maximum number of thread to allow in the pool for the S3 Client (Default 128)</p>
+<p><code>IIO_\$ALIAS\$_AWS_KEEP_ALIVE_TIME</code>   The Keep alive time (in seconds), representing maximum time that excess idle threads will wait for new tasks before terminating. (Default 10)</p>
+<p><code>IIO_\$ALIAS\$_AWS_USER</code>              Default user (access key ID) for AWS basic authentication credentials</p>
+<p><code>IIO_\$ALIAS\$_AWS_PASSWORD</code>          Default password (secret access key) for AWS basic authentication credentials</p>
+<p><code>IIO_\$ALIAS\$_AWS_REGION</code>            Default AWS region</p>
+<p><code>IIO_\$ALIAS\$_AWS_ENDPOINT</code>          Endpoint to Amazon service or any other S3-compatible service run by a third-party</p>
 <hr />
 <h2 id="google-cloud-storage-configuration">Google Cloud storage configuration</h2>
 <p>The credentials to access Google Cloud cannot be provided as username and password (an authentication method that Google Cloud does not support), but need to be provided via a system variable pointing to the key file:</p>

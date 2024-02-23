@@ -2040,12 +2040,12 @@
 <p>GML3        <code>outputFormat=GML3</code>               Default option for WFS 1.1.0 and 2.0.0</p>
 <p>Shapefile   <code>outputFormat=shape-zip</code>          ZIP archive will be generated containing the shapefile (see <a href="./#wfs_outputformat_shapezip">Shapefile output</a> below).</p>
 <p>JSON        <code>outputFormat=application/json</code>   Returns a GeoJSON or a JSON output. Note <code>outputFormat=json</code> is only supported for getFeature (for backward compatibility).</p>
-<p>JSONP       <code>outputFormat=text/javascript</code>    Returns a <code>JSONP &lt;http://en.wikipedia.org/wiki/JSONP&gt;`_ in the form:</code>parseResponse(...json...)<code>. See</code>WMS vendor parameters &lt;../wms/vendor.rst&gt;<code>_ to change the callback name. Note that this format is disabled by default (See</code><a href="../../wms/global/">lobal variables affecting WMS</a>).</p>
+<p>JSONP       <code>outputFormat=text/javascript</code>    Returns a <a href="http://en.wikipedia.org/wiki/JSONP">JSONP</a> in the form: <code>parseResponse(...json...)</code>. See <a href="../../wms/vendor/">WMS vendor parameters</a> to change the callback name. Note that this format is disabled by default (See <a href="../../wms/global/">Global variables affecting WMS</a>).</p>
 <p>CSV         <code>outputFormat=csv</code>                Returns a CSV (comma-separated values) file</p>
 <hr />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Some additional output formats (such as <code>Excel &lt;../../extensions/excel.rst&gt;`_) are available with the use of an extension. The full list of output formats supported by a particular GeoServer instance can be found by performing a WFS</code>etCapabilities <reference.rst#wfs_getcap>`_ request.</p>
+<p>Some additional output formats (such as <a href="../../../extensions/excel/">Excel</a>) are available with the use of an extension. The full list of output formats supported by a particular GeoServer instance can be found by performing a WFS <a href="../reference/#wfs_getcap">GetCapabilities</a> request.</p>
 </div>
 <p>GeoServer provides the <code>format_options</code> vendor-specific parameter to specify parameters that are specific to each format. The syntax is:</p>
 <div class="language-text highlight"><pre><span></span><code>format_options=param1:value1;param2:value2;...
@@ -2117,7 +2117,7 @@ txt=wfsrequest
 </blockquote>
 </li>
 <li>
-<p><code>format_options=callback:&lt;parseResponse&gt;</code> applies only to the JSONP output format. See <code>WMS vendor parameters &lt;../wms/vendor.rst&gt;`_ to change the callback name. Note that this format is disabled by default (See</code>lobal variables affecting WMS &lt;../wms/global.rst&gt;`_).</p>
+<p><code>format_options=callback:&lt;parseResponse&gt;</code> applies only to the JSONP output format. See <a href="../../wms/vendor/">WMS vendor parameters</a> to change the callback name. Note that this format is disabled by default (See <a href="../../wms/global/">Global variables affecting WMS</a>).</p>
 </li>
 <li>
 <p><code>format_option=filename:&lt;file&gt;</code>: if a file name is provided, the name is used as the output file name. The extension <strong><code>json</code></strong> is optional, for example <code>format_options=filename:export</code> or <code>format_options=features.json</code></p>

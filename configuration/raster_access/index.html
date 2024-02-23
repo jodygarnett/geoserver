@@ -1731,33 +1731,33 @@
 <p><img alt="" src="../img/raster_access.png" />
 <em>Raster Access Settings</em></p>
 <h2 id="ImageIO_settings">Memory Use</h2>
-<p>WMS requests usually produce relatively small images whilst WCS requests may frequently deal with bigger datasets. Caching the image in memory before encoding it may be helpful when the size of the image isn't too big. For a huge image (as one produced by a big WCS request) it would be better instead caching through a temporary file with respect to caching in memory. This section allows to specify a threshold image size to let GeoServer decide whether to use a <code>MemoryCacheImageOutputStream &lt;http://docs.oracle.com/javase/1.5.0/docs/api/javax/imageio/stream/MemoryCacheImageOutputStream.html/&gt;`_ or</code>ileCacheImageOutputStream &lt;<a href="http://docs.oracle.com/javase/1.5.0/docs/api/javax/imageio/stream/FileCacheImageOutputStream.html/">http://docs.oracle.com/javase/1.5.0/docs/api/javax/imageio/stream/FileCacheImageOutputStream.html/</a>&gt;`_ when encoding the images.</p>
-<p><strong>ImageIO Cache Memory Threshold</strong>---Sets the threshold size (expressed in KiloBytes) which will make GeoServer choose between file cache vs memory based cache. If the estimated size of the image to be encoded is smaller than the threshold value, a <code>MemoryCacheImageOutputStream</code>will be used resulting into caching the image in memory. If the estimated size of the image to be encoded is greater than the threshold value, a <code>FileCacheImageOutputStream</code>will be used.</p>
+<p>WMS requests usually produce relatively small images whilst WCS requests may frequently deal with bigger datasets. Caching the image in memory before encoding it may be helpful when the size of the image isn't too big. For a huge image (as one produced by a big WCS request) it would be better instead caching through a temporary file with respect to caching in memory. This section allows to specify a threshold image size to let GeoServer decide whether to use a <a href="http://docs.oracle.com/javase/1.5.0/docs/api/javax/imageio/stream/MemoryCacheImageOutputStream.html/">MemoryCacheImageOutputStream</a> or <a href="http://docs.oracle.com/javase/1.5.0/docs/api/javax/imageio/stream/FileCacheImageOutputStream.html/">FileCacheImageOutputStream</a> when encoding the images.</p>
+<p><strong>ImageIO Cache Memory Threshold</strong>---Sets the threshold size (expressed in KiloBytes) which will make GeoServer choose between file cache vs memory based cache. If the estimated size of the image to be encoded is smaller than the threshold value, a <code>MemoryCacheImageOutputStream</code> will be used resulting into caching the image in memory. If the estimated size of the image to be encoded is greater than the threshold value, a <code>FileCacheImageOutputStream</code> will be used.</p>
 <h2 id="cpu-use">CPU Use</h2>
 <p>The imageMosaic reader may load, in parallel, different files that make up the mosaic by means of a <a href="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/concurrent/ThreadPoolExecutor.html/">ThreadPoolExecutor</a> . A global ThreadPoolExecutor instance is shared by all the readers supporting and using concurrent reads. This section of the Coverage Access Settings administration page allows configuration of the Executor parameters.</p>
 <p><strong>Core Pool Size</strong>---Sets the core pool size of the thread pool executor. A positive integer must be specified.</p>
 <p><strong>Maximum Pool Size</strong>---Sets the maximum pool size of the thread pool executor. A positive integer must be specified.</p>
-<p><strong>Keep Alive Time</strong>---Sets the time to be wait by the executor before terminating an idle thread in case there are more threads than <code>corePoolSize</code></p>
-<p><strong>Queue Type</strong>---The executor service uses a <a href="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/concurrent/BlockingQueue.html/">BlockingQueue</a> to manage submitted tasks. Using an <code>unbounded</code>queue is recommended which allows to queue all the pending requests with no limits (Unbounded). With a <code>direct</code>type, incoming requests will be rejected when there are already <code>maximumPoolSize</code>busy threads.</p>
+<p><strong>Keep Alive Time</strong>---Sets the time to be wait by the executor before terminating an idle thread in case there are more threads than <code>corePoolSize</code>.</p>
+<p><strong>Queue Type</strong>---The executor service uses a <a href="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/concurrent/BlockingQueue.html/">BlockingQueue</a> to manage submitted tasks. Using an <code>unbounded</code> queue is recommended which allows to queue all the pending requests with no limits (Unbounded). With a <code>direct</code> type, incoming requests will be rejected when there are already <code>maximumPoolSize</code> busy threads.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If a new task is submitted to the list of tasks to be executed, and less than <code>corePoolSize</code>threads are running, a new thread is created to handle the request. Incoming tasks are queued in case <code>corePoolSize</code>or more threads are running.</p>
+<p>If a new task is submitted to the list of tasks to be executed, and less than <code>corePoolSize</code> threads are running, a new thread is created to handle the request. Incoming tasks are queued in case <code>corePoolSize</code> or more threads are running.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If a request can't be queued or there are less than <code>corePoolSize</code>threads running, a new thread is created unless this would exceed <code>maximumPoolSize</code></p>
+<p>If a request can't be queued or there are less than <code>corePoolSize</code> threads running, a new thread is created unless this would exceed <code>maximumPoolSize</code>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If the pool currently has more than <code>corePoolSize</code>threads, excess threads will be terminated if they have been idle for more than the <code>keepAliveTime</code></p>
+<p>If the pool currently has more than <code>corePoolSize</code> threads, excess threads will be terminated if they have been idle for more than the <code>keepAliveTime</code>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If a new task is submitted to the list of tasks to be executed and there are more than <code>corePoolSize</code>but less than <code>maximumPoolSize</code>threads running, a new thread will be created only if the queue is full. This means that when using an <code>Unbounded</code>queue, no more threads than <code>corePoolSize</code>will be running and <code>keepAliveTime</code>has no influence.</p>
+<p>If a new task is submitted to the list of tasks to be executed and there are more than <code>corePoolSize</code> but less than <code>maximumPoolSize</code> threads running, a new thread will be created only if the queue is full. This means that when using an <code>Unbounded</code> queue, no more threads than <code>corePoolSize</code> will be running and <code>keepAliveTime</code> has no influence.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If <code>corePoolSize</code>and <code>maximumPoolSize</code>are the same, a fixed-size thread pool is used.</p>
+<p>If <code>corePoolSize</code> and <code>maximumPoolSize</code> are the same, a fixed-size thread pool is used.</p>
 </div>
 <h1 id="system-properties-configuration">System Properties Configuration</h1>
 <p>There are some additional global configuration parameters involved in raster access which can be specified through System properties.</p>

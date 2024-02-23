@@ -3046,12 +3046,12 @@
 
 
 <h1 id="geofence-wps-rules-setup">GeoFence WPS rules setup</h1>
-<p>This plugin will not change the GUI in any way. Anyway, you can now use the <code>subfield</code>field to select the processes you want to authorize.</p>
+<p>This plugin will not change the GUI in any way. Anyway, you can now use the <code>subfield</code> field to select the processes you want to authorize.</p>
 <p>For instance, with the following rules:</p>
 <p><img alt="" src="../images/geofence-wps-example.png" /></p>
-<p>you will enable all WPS processes for the <code>tasmania_cities</code>layer, but you will prevent to download it via WPS.</p>
+<p>you will enable all WPS processes for the <code>tasmania_cities</code> layer, but you will prevent to download it via WPS.</p>
 <h2 id="chained-processes">Chained processes</h2>
-<p>Please note that this plugin also considers chained WPS processes, when they are running in the same GeoServer instance. If a user is running an <code>execute</code>request containing more than one chained process, all processes will be needed to be allowed in order for the request to be run successfully.</p>
+<p>Please note that this plugin also considers chained WPS processes, when they are running in the same GeoServer instance. If a user is running an <code>execute</code> request containing more than one chained process, all processes will be needed to be allowed in order for the request to be run successfully.</p>
 <p>For instance, if the user sends a request of this kind:</p>
 <div class="language-text highlight"><pre><span></span><code>/--&gt; Proc2 --&gt; Layer A
 Proc1 --|

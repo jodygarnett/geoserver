@@ -1154,6 +1154,42 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#logging-configuration-hardening" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logging configuration hardening
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-a-service-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set a service strategy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#personalize-your-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personalize your server
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-service-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure service limits
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#set-security-for-data-modification" class="md-nav__link">
     <span class="md-ellipsis">
       Set security for data modification
@@ -1688,6 +1724,42 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#logging-configuration-hardening" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logging configuration hardening
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-a-service-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set a service strategy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#personalize-your-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personalize your server
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-service-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure service limits
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#set-security-for-data-modification" class="md-nav__link">
     <span class="md-ellipsis">
       Set security for data modification
@@ -1847,61 +1919,91 @@
 <h1 id="configuration-considerations">Configuration Considerations</h1>
 <h2 id="use-production-logging">Use production logging</h2>
 <p>Logging may visibly affect the performance of your server. High logging levels are often necessary to track down issues, but by default you should run with low levels. (You can switch the logging levels while GeoServer is running.)</p>
-<p>You can change the logging level in the <code>Logging Profile &lt;../configuration/globalsettings.rst#config_globalsettings_log_profile&gt;`_.  You will want to choose the</code>PRODUCTION<code>logging configuration, where only problems are written to the log files.  Logging configuration hardening -------------------------------  For production systems, it is advised to set</code>GEOSERVER_LOG_LOCATION<code>parameter during startup. The value may be defined as either an environment variable, java system property, or servlet context parameter.  The location set for</code>GEOSERVER_LOG_LOCATION<code>has priority, causing the value provided using the Admin Console GUI or REST API to be ignored. This approach establishes a separation of responsibility between those setting up and controlling the actual machine, and those configuring the GeoServer application.  See `Advanced log configuration &lt;../configuration/logging.rst&gt;`_ for more information.  Set a service strategy ----------------------  A service strategy is the method in which output is served to the client.  This is a balance between proper form (being absolutely sure of reporting errors with the proper OGC codes, etc.) and speed (serving output as quickly as possible).  This is a decision to be made based on the function that GeoServer is providing.  You can configure the service strategy by modifying the **`web.xml`** file of your GeoServer instance.  The possible strategies are:  .. list-table::    :widths: 20 80     * - **Strategy**      - **Description**    * -</code>SPEED<code>- Serves output right away. This is the fastest strategy, but proper OGC errors are usually omitted.    * -</code>BUFFER<code>- Stores the whole result in memory, and then serves it after the output is complete.  This ensures proper OGC error reporting, but delays the response quite a bit and can exhaust memory if the response is large.    * -</code>FILE<code>- Similar to</code>BUFFER<code>, but stores the whole result in a file instead of in memory. Slower than</code>BUFFER<code>, but ensures there won't be memory issues.    * -</code>PARTIAL-BUFFER<code>- A balance between</code>BUFFER<code>and</code>SPEED<code>, this strategy tries to buffer in memory a few KB of response, then serves the full output.  Personalize your server -----------------------  This isn't a performance consideration, but it is just as important.  In order to make GeoServer as useful as possible, you should customize the server's metadata to your organization.  It may be tempting to skip some of the configuration steps, and leave in the same keywords and abstract as the sample, but this will only confuse potential users.  Suggestions:  * Fill out the WFS, WMS, and WCS `Service Metadata &lt;../configuration/service-metadata/index.rst&gt;`_ sections (this info will be broadcast as part of the capabilities documents) * Serve your data with your own namespace (and provide a correct URI) * Remove default layers (such as</code>topp:states<code>)  Configure service limits ------------------------  Make sure clients cannot request an inordinate amount of resources from your server.  In particular:  * Set the</code>maximum amount of features &lt;../services/wfs/webadmin.rst&gt;<code>_ returned by each WFS GetFeature request (this can also be set on a per featuretype basis by modifying the</code><a href="../../data/webadmin/layers/">ayer publishing wfs settings</a>). * Set the <a href="../../services/wms/configuration/">WMS request limits</a> so that no request will consume too much memory or too much time * Set <code>WPS limits &lt;../services/wps/administration.rst&gt;`_, so no process will consume too much memory or too much time. You may also limit the</code>ize input parameters &lt;../services/wps/security.rst&gt;`_ for further control.</p>
+<p>You can change the logging level in the <a href="../../configuration/globalsettings/#config_globalsettings_log_profile">Logging Profile</a>. You will want to choose the <code>PRODUCTION</code> logging configuration, where only problems are written to the log files.</p>
+<h2 id="logging-configuration-hardening">Logging configuration hardening</h2>
+<p>For production systems, it is advised to set <code>GEOSERVER_LOG_LOCATION</code> parameter during startup. The value may be defined as either an environment variable, java system property, or servlet context parameter.</p>
+<p>The location set for <code>GEOSERVER_LOG_LOCATION</code> has priority, causing the value provided using the Admin Console GUI or REST API to be ignored. This approach establishes a separation of responsibility between those setting up and controlling the actual machine, and those configuring the GeoServer application.</p>
+<p>See <a href="../../configuration/logging/">Advanced log configuration</a> for more information.</p>
+<h2 id="set-a-service-strategy">Set a service strategy</h2>
+<p>A service strategy is the method in which output is served to the client. This is a balance between proper form (being absolutely sure of reporting errors with the proper OGC codes, etc.) and speed (serving output as quickly as possible). This is a decision to be made based on the function that GeoServer is providing. You can configure the service strategy by modifying the <strong><code>web.xml</code></strong> file of your GeoServer instance.</p>
+<p>The possible strategies are:</p>
+<hr />
+<p><strong>Strategy</strong>       <strong>Description</strong></p>
+<p><code>SPEED</code>            Serves output right away. This is the fastest strategy, but proper OGC errors are usually omitted.</p>
+<p><code>BUFFER</code>           Stores the whole result in memory, and then serves it after the output is complete. This ensures proper OGC error reporting, but delays the response quite a bit and can exhaust memory if the response is large.</p>
+<p><code>FILE</code>             Similar to <code>BUFFER</code>, but stores the whole result in a file instead of in memory. Slower than <code>BUFFER</code>, but ensures there won't be memory issues.</p>
+<p><code>PARTIAL-BUFFER</code>   A balance between <code>BUFFER</code> and <code>SPEED</code>, this strategy tries to buffer in memory a few KB of response, then serves the full output.</p>
+<hr />
+<h2 id="personalize-your-server">Personalize your server</h2>
+<p>This isn't a performance consideration, but it is just as important. In order to make GeoServer as useful as possible, you should customize the server's metadata to your organization. It may be tempting to skip some of the configuration steps, and leave in the same keywords and abstract as the sample, but this will only confuse potential users.</p>
+<p>Suggestions:</p>
+<ul>
+<li>Fill out the WFS, WMS, and WCS <a href="../../configuration/service-metadata/">Service Metadata</a> sections (this info will be broadcast as part of the capabilities documents)</li>
+<li>Serve your data with your own namespace (and provide a correct URI)</li>
+<li>Remove default layers (such as <code>topp:states</code>)</li>
+</ul>
+<h2 id="configure-service-limits">Configure service limits</h2>
+<p>Make sure clients cannot request an inordinate amount of resources from your server.</p>
+<p>In particular:</p>
+<ul>
+<li>Set the <a href="../../services/wfs/webadmin/">maximum amount of features</a> returned by each WFS GetFeature request (this can also be set on a per featuretype basis by modifying the <a href="../../data/webadmin/layers/">layer publishing wfs settings</a>).</li>
+<li>Set the <a href="../../services/wms/configuration/">WMS request limits</a> so that no request will consume too much memory or too much time</li>
+<li>Set <a href="../../services/wps/administration/">WPS limits</a>, so no process will consume too much memory or too much time. You may also limit the <a href="../../services/wps/security/">size input parameters</a> for further control.</li>
+</ul>
 <h2 id="set-security-for-data-modification">Set security for data modification</h2>
 <p>GeoServer includes support for WFS-T (transactions) by default, which lets users modify your data.</p>
-<p>If you don\'t want your database modified, you can turn off transactions in the <code>WFS settings &lt;../services/wfs/webadmin.rst&gt;`_. Set the **Service Level** to</code>Basic<code>. For extra security, we recommend any database access use datastore credentials providing read-only permissions. This will eliminate the possibility of a SQL injection (though GeoServer is generally not vulnerable to that sort of attack).  If you would like some users to be able to modify data, set the service level **Service Level** to</code>Transactional<code>(or</code>Complete<code>) and use</code>Service Security \&lt;../security/service.rst&gt;<code>\_ to limit access to the ````FS.Transaction</code> operation.</p>
-<p>If you would like some users to be able to modify some but not all of your data, set the <strong>Service Level</strong> to <code>Transactional</code> (or <code>Complete</code>), and use <a href="../security/layer.rst">Layer security</a> to limit write access to specific layers. Data security can be used to allow write access based on workspace, datastore, or layer security.</p>
+<p>If you don't want your database modified, you can turn off transactions in the <a href="../../services/wfs/webadmin/">WFS settings</a>. Set the <strong>Service Level</strong> to <code>Basic</code>. For extra security, we recommend any database access use datastore credentials providing read-only permissions. This will eliminate the possibility of a SQL injection (though GeoServer is generally not vulnerable to that sort of attack).</p>
+<p>If you would like some users to be able to modify data, set the service level <strong>Service Level</strong> to <code>Transactional</code> (or <code>Complete</code>) and use <a href="../../security/service/">Service Security</a> to limit access to the <code>WFS.Transaction</code> operation.</p>
+<p>If you would like some users to be able to modify some but not all of your data, set the <strong>Service Level</strong> to <code>Transactional</code> (or <code>Complete</code>), and use <a href="../../security/layer/">Layer security</a> to limit write access to specific layers. Data security can be used to allow write access based on workspace, datastore, or layer security.</p>
 <h2 id="cache-your-data">Cache your data</h2>
-<p>Server-side caching of WMS tiles is the best way to increase performance. In caching, pre-rendered tiles will be saved, eliminating the need for redundant WMS calls. There are several ways to set up WMS caching for GeoServer. GeoWebCache is the simplest method, as it comes bundled with GeoServer. (See the section on <code>GeoWebCache &lt;../geowebcache/index.rst&gt;`_ for more details.)  Another option is</code>ileCache \&lt;<a href="http://tilecache.org">http://tilecache.org</a>&gt;`__.</p>
-<p>You can also use a more generic non-spatial caching system, such as <code>OSCache &lt;http://www.opensymphony.com/oscache/&gt;`__ (an embedded cache service) or</code>quid \&lt;<a href="http://www.squid-cache.org">http://www.squid-cache.org</a>&gt;`__ (a web cache proxy).</p>
-<p>Caching is also possible for WFS layers, in a very limited fashion. For DataStores that don\'t have a quick way to determine feature counts (e.g. shapefiles), enabling caching can prevent querying a store twice during a single request. To enable caching, set the Java system property <code>org.geoserver.wfs.getfeature.cachelimit</code> to a positive integer. Any data sets that are smaller than the cache limit will be cached for the duration of a request, which will prevent the dataset from being queried a second time for the feature count. Note that this may adversely affect some types of DataStores, as it bypasses any feature count optimizations that may exist.</p>
+<p>Server-side caching of WMS tiles is the best way to increase performance. In caching, pre-rendered tiles will be saved, eliminating the need for redundant WMS calls. There are several ways to set up WMS caching for GeoServer. GeoWebCache is the simplest method, as it comes bundled with GeoServer. (See the section on <a href="../../geowebcache/">GeoWebCache</a> for more details.) Another option is <a href="http://tilecache.org">TileCache</a>.</p>
+<p>You can also use a more generic non-spatial caching system, such as <a href="http://www.opensymphony.com/oscache/">OSCache</a> (an embedded cache service) or <a href="http://www.squid-cache.org">Squid</a> (a web cache proxy).</p>
+<p>Caching is also possible for WFS layers, in a very limited fashion. For DataStores that don't have a quick way to determine feature counts (e.g. shapefiles), enabling caching can prevent querying a store twice during a single request. To enable caching, set the Java system property <code>org.geoserver.wfs.getfeature.cachelimit</code> to a positive integer. Any data sets that are smaller than the cache limit will be cached for the duration of a request, which will prevent the dataset from being queried a second time for the feature count. Note that this may adversely affect some types of DataStores, as it bypasses any feature count optimizations that may exist.</p>
 <h2 id="welcome-page-selectors">Welcome page selectors</h2>
 <p>The workspace and layer selectors might take a lot of time to fill up against large catalogs. Because of this, GeoServer tries to limit the time taken to fill them (by default, 5 seconds), and the number of items in them (by default, <code>1000</code>), and will fall back on simple text fields if the time limit is reached.</p>
-<p>In some situations, that won\'t be enough and the page might get stuck anyways. The following properties can be used to tweak the behavior:</p>
+<p>In some situations, that won't be enough and the page might get stuck anyways. The following properties can be used to tweak the behavior:</p>
 <ul>
 <li><code>GeoServerHomePage.selectionMode</code> : can be set to <code>text</code> to always use simple text fields, <code>dropdown</code> to always use dropdowns, or <code>auto</code> to use the default automatic behavior.</li>
 <li><code>GeoServerHomePage.selectionTimeout</code> : the time limit in milliseconds, defaults to <code>5000</code>.</li>
 <li><code>GeoServerHomePage.selectionMaxItems</code> : the maximum number of items to show in the dropdowns, defaults to <code>1000</code>.</li>
 </ul>
 <p>When using <code>text</code> selection mode the page description is static, no longer offering of available workspace and layers.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>![](images/selector_text.png)
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>*Welcome page text selection mode*
-</span></code></pre></div>
+<p><img alt="" src="../images/selector_text.png" />
+<em>Welcome page text selection mode</em></p>
 <h2 id="disable-the-geoserver-web-administration-interface">Disable the GeoServer web administration interface</h2>
 <p>In some circumstances, you might want to completely disable the web administration interface. There are two ways of doing this:</p>
 <ul>
-<li>Set the Java system property <code>GEOSERVER_CONSOLE_DISABLED</code> to true by adding <code>-DGEOSERVER_CONSOLE_DISABLED=true</code> to your container\'s JVM options</li>
-<li>Remove all of the <strong>`gs-web*-.jar`</strong> files from <strong>`WEB-INF/lib`</strong></li>
+<li>Set the Java system property <code>GEOSERVER_CONSOLE_DISABLED</code> to true by adding <code>-DGEOSERVER_CONSOLE_DISABLED=true</code> to your container's JVM options</li>
+<li>Remove all of the <strong><code>gs-web*-.jar</code></strong> files from <strong><code>WEB-INF/lib</code></strong></li>
 </ul>
 <h2 id="disable-the-auto-complete-on-web-administration-interface-login">Disable the Auto-complete on web administration interface login</h2>
 <p>To disable the Auto Complete on Web Admin login form:</p>
 <ul>
-<li>Set the Java system property <code>geoserver.login.autocomplete</code> to off by adding <code>-Dgeoserver.login.autocomplete=off</code> to your container\'s JVM options</li>
+<li>Set the Java system property <code>geoserver.login.autocomplete</code> to off by adding <code>-Dgeoserver.login.autocomplete=off</code> to your container's JVM options</li>
 <li>If the browser has already cached the credentials, please consider clearing the cache or form data after setting the JVM option.</li>
 </ul>
 <h2 id="disable-anonymous-access-to-the-layer-preview-page">Disable anonymous access to the layer preview page</h2>
-<p>In some circumstances, you might want to provide access to the layer preview page to authenticated users only. The solution is based on adding a new <strong>filter chain</strong> with a rule matching the path of the layer preview page to GeoServer\'s <a href="../security/auth/chain.rst">Authentication chain</a>. Here are the steps to reproduce:</p>
+<p>In some circumstances, you might want to provide access to the layer preview page to authenticated users only. The solution is based on adding a new <strong>filter chain</strong> with a rule matching the path of the layer preview page to GeoServer's <a href="../../security/auth/chain/">Authentication chain</a>. Here are the steps to reproduce:</p>
 <ul>
 <li>Under <strong>Security</strong> -&gt; <strong>Authentication</strong> -&gt; <strong>Filter Chains</strong>, add a new HTML chain</li>
-<li>Set the new chain\'s name to <code>webLayerPreview</code> (or likewise)</li>
-<li>As Ant pattern, enter the path of the layer preview page, which is <strong>`/web/wicket/bookmarkable/org.geoserver.web.demo.MapPreviewPage`</strong> (since it\'s an Ant pattern, the path could as well be written shorter with wildcards: <strong>`/web/</strong>/org.geoserver.web.demo.MapPreviewPage`**)</li>
+<li>Set the new chain's name to <code>webLayerPreview</code> (or likewise)</li>
+<li>As Ant pattern, enter the path of the layer preview page, which is <strong><code>/web/wicket/bookmarkable/org.geoserver.web.demo.MapPreviewPage</code></strong> (since it's an Ant pattern, the path could as well be written shorter with wildcards: <strong><code>/web/**/org.geoserver.web.demo.MapPreviewPage</code></strong>)</li>
 <li>Check option <strong>Allow creation of an HTTP session for storing the authentication token</strong></li>
 <li>Under <strong>Chain filters</strong>, add filters <code>rememberme</code> and <code>form</code> (in that order) to the <strong>Selected</strong> list on the right side</li>
 <li>Close the dialog by clicking the <strong>Close</strong> button; the new HTML chain has been added to the list of chains as the last entry</li>
-<li>Since all chains are processed in turn from top to bottom, in order to have any effect, the new <code>webLayerPreview</code> chain must be positioned <strong>before</strong> the <code>web</code> chain (which matches paths <strong>`/web/</strong>,/gwc/rest/web/<strong>,/`</strong>)</li>
+<li>Since all chains are processed in turn from top to bottom, in order to have any effect, the new <code>webLayerPreview</code> chain must be positioned <strong>before</strong> the <code>web</code> chain (which matches paths <strong><code>/web/**,/gwc/rest/web/**,/</code></strong>)</li>
 <li>Use the <strong>Position</strong> arrows on the left side of the list to move the newly added chain upwards accordingly</li>
-<li>Save the changes you\'ve made by clicking the <strong>Save</strong> button at the bottom of the page</li>
+<li>Save the changes you've made by clicking the <strong>Save</strong> button at the bottom of the page</li>
 </ul>
 <p>With that in place, unauthenticated users now just get forwarded to the login page when they click the layer preview menu item link.</p>
 <p>The above procedure could as well be applied to other pages of the web administration interface that one needs to remove anonymous access for. For example:</p>
 <ul>
-<li><strong>Demos</strong> -&gt; <strong>Demo requests</strong> (path: <strong>`/web/wicket/bookmarkable/org.geoserver.web.demo.DemoRequestsPage`</strong>)</li>
-<li><strong>Demos</strong> -&gt; <strong>WCS request builder</strong> (path: <strong>`/web/wicket/bookmarkable/org.geoserver.wcs.web.demo.WCSRequestBuilder`</strong>)</li>
+<li><strong>Demos</strong> -&gt; <strong>Demo requests</strong> (path: <strong><code>/web/wicket/bookmarkable/org.geoserver.web.demo.DemoRequestsPage</code></strong>)</li>
+<li><strong>Demos</strong> -&gt; <strong>WCS request builder</strong> (path: <strong><code>/web/wicket/bookmarkable/org.geoserver.wcs.web.demo.WCSRequestBuilder</code></strong>)</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Although disabling anonymous access to the layer preview page <strong>MAY</strong> prevent some unauthenticated users from accessing data with some simple clicks, this is <strong>NOT</strong> a security feature. In particular, since other more sophisticated users, having the ability to build OGC requests, <strong>MAY</strong> still access critical data through GeoServer\'s services, this is <strong>NOT</strong> a replacement for a well-designed security concept based on data-level or service-level security.</p>
+<p>Although disabling anonymous access to the layer preview page <strong>MAY</strong> prevent some unauthenticated users from accessing data with some simple clicks, this is <strong>NOT</strong> a security feature. In particular, since other more sophisticated users, having the ability to build OGC requests, <strong>MAY</strong> still access critical data through GeoServer's services, this is <strong>NOT</strong> a replacement for a well-designed security concept based on data-level or service-level security.</p>
 </div>
 <h2 id="x-frame-options-policy">X-Frame-Options Policy</h2>
 <p>In order to prevent clickjacking attacks GeoServer defaults to setting the X-Frame-Options HTTP header to SAMEORIGIN. This prevents GeoServer from being embedded into an iFrame, which prevents certain kinds of security vulnerabilities. See the <a href="https://www.owasp.org/index.php/Clickjacking_Defense_Cheat_Sheet">OWASP Clickjacking entry</a> for details.</p>
@@ -1926,7 +2028,7 @@
 <li><code>-Dows11.exception.xml.responsetype=text/xml</code> for OWS 1.1.0 version</li>
 </ul>
 <h2 id="production_config_freemarker_escaping">FreeMarker Template Auto-escaping</h2>
-<p>By default, FreeMarker\'s built-in automatic escaping functionality will be enabled to mitigate potential cross-site scripting (XSS) vulnerabilities in cases where GeoServer uses FreeMarker templates to generate HTML output and administrators are able to modify the templates and/or users have significant control over the output through service requests. When the <code>GEOSERVER_FORCE_FREEMARKER_ESCAPING</code> property is set to false, auto-escaping will delegate either to the feature\'s default behavior or other settings which allow administrators to enable/disable auto-escaping on a global or per virtual service basis. This property can be set to false either via Java system property, command line argument (-D), environment variable or web.xml init parameter.</p>
+<p>By default, FreeMarker's built-in automatic escaping functionality will be enabled to mitigate potential cross-site scripting (XSS) vulnerabilities in cases where GeoServer uses FreeMarker templates to generate HTML output and administrators are able to modify the templates and/or users have significant control over the output through service requests. When the <code>GEOSERVER_FORCE_FREEMARKER_ESCAPING</code> property is set to false, auto-escaping will delegate either to the feature's default behavior or other settings which allow administrators to enable/disable auto-escaping on a global or per virtual service basis. This property can be set to false either via Java system property, command line argument (-D), environment variable or web.xml init parameter.</p>
 <p>This setting currently applies to the WMS GetFeatureInfo HTML output format and may be applied to other applicable GeoServer functionality in the future.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1937,36 +2039,36 @@
 <p>GeoServer provides a number of facilities to control external entity resolution:</p>
 <ul>
 <li>
-<p>By default <code>http</code>and <code>https</code>entity resolution is unrestricted, with access to local <code>file</code>references prevented.</p>
+<p>By default <code>http</code> and <code>https</code> entity resolution is unrestricted, with access to local <code>file</code> references prevented.</p>
 </li>
 <li>
-<p>To restrict <code>http</code>and <code>https</code>entity resolution:</p>
+<p>To restrict <code>http</code> and <code>https</code> entity resolution:</p>
 <div class="language-text highlight"><pre><span></span><code>-DENTITY_RESOLUTION_ALLOWLIST
 </code></pre></div>
 <p>The built-in allow list includes w3c, ogc, and inspire schema locations:</p>
 <div class="language-text highlight"><pre><span></span><code>www.w3.org|schemas.opengis.net|www.opengis.net|inspire.ec.europa.eu/schemas
 </code></pre></div>
 <p>In addition the proxy base url is included, if available from global settings.</p>
-<p>Access to local <code>file</code>references remains restricted.</p>
+<p>Access to local <code>file</code> references remains restricted.</p>
 </li>
 <li>
-<p>To allow additional external entity <code>http</code>and <code>https</code>locations use a comma or bar separated list:</p>
+<p>To allow additional external entity <code>http</code> and <code>https</code> locations use a comma or bar separated list:</p>
 <div class="language-text highlight"><pre><span></span><code>-DENTITY_RESOLUTION_ALLOWLIST=server1|server2|server3/schemas
 </code></pre></div>
 </li>
 <li>
-<p>To turn off all restrictions (allowing <code>http</code>, <code>https</code>, and <code>file</code> references) use the global setting <a href="../configuration/globalsettings.rst#config_globalsettings_external_entities">Unrestricted XML External Entity Resolution</a>.</p>
+<p>To turn off all restrictions (allowing <code>http</code>, <code>https</code>, and <code>file</code> references) use the global setting <a href="../../configuration/globalsettings/#config_globalsettings_external_entities">Unrestricted XML External Entity Resolution</a>.</p>
 <p>This setting prevents <code>ENTITY_RESOLUTION_ALLOWLIST</code> from being used.</p>
 </li>
 </ul>
 <h2 id="production_config_spring_firewall">Spring Security Firewall</h2>
-<p>GeoServer defaults to using Spring Security\'s StrictHttpFirewall to help improve protection against potentially malicious requests. However, some users will need to disable the StrictHttpFirewall if the names of GeoServer resources (workspaces, layers, styles, etc.) in URL paths need to contain encoded percent, encoded period or decoded or encoded semicolon characters. The <code>GEOSERVER_USE_STRICT_FIREWALL</code> property can be set to false either via Java system property, command line argument (-D), environment variable or web.xml init parameter to use the more lenient DefaultHttpFirewall.</p>
+<p>GeoServer defaults to using Spring Security's StrictHttpFirewall to help improve protection against potentially malicious requests. However, some users will need to disable the StrictHttpFirewall if the names of GeoServer resources (workspaces, layers, styles, etc.) in URL paths need to contain encoded percent, encoded period or decoded or encoded semicolon characters. The <code>GEOSERVER_USE_STRICT_FIREWALL</code> property can be set to false either via Java system property, command line argument (-D), environment variable or web.xml init parameter to use the more lenient DefaultHttpFirewall.</p>
 <h2 id="static-web-files">Static Web Files</h2>
 <p>GeoServer by default allows administrators to serve static files by simply placing them in the <code>www``` subdirectory of the GeoServer data directory. If this feature is not being used to serve HTML/JavaScript files or is not being used at all, the ````GEOSERVER_DISABLE_STATIC_WEB_FILES```` property can be set to true to mitigate potential stored XSS issues with that directory. See the \</code>Serving Static Files \&lt;../tutorials/staticfiles.rst&gt;``_ page for more details.</p>
 <h2 id="session-management">Session Management</h2>
-<p>GeoServer defaults to managing user sessions using cookies with the <code>HttpOnly</code> flag set to prevent attackers from using cross-site scripting (XSS) attacks to steal a user's session token. You can configure the session behavior by modifying the <strong><code>web.xml</code></strong> file of your GeoServer instance.</p>
-<p>It is strongly recommended that production environments also set the <code>Secure</code> flag on session cookies. This can be enabled by uncommenting the following in the <strong><code>web.xml</code></strong> file if the web interface is only being accessed through HTTPS but the flag may need to be set by a proxy server if the web interface needs to support both HTTP and HTTPS.</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;secure&gt;</span>true<span class="nt">&lt;/secure&gt;</span>
+<p>GeoServer defaults to managing user sessions using cookies with the <code>HttpOnly</code> flag set to prevent attackers from using cross-site scripting (XSS) attacks to steal a user\'s session token. You can configure the session behavior by modifying the <strong>`web.xml`</strong> file of your GeoServer instance.</p>
+<p>It is strongly recommended that production environments also set the <code>Secure</code> flag on session cookies. This can be enabled by uncommenting the following in the <strong>`web.xml`</strong> file if the web interface is only being accessed through HTTPS but the flag may need to be set by a proxy server if the web interface needs to support both HTTP and HTTPS.</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;secure&gt;</span>true<span class="nt">&lt;/secure&gt;</span>
 </span></code></pre></div>
 
 

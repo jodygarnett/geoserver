@@ -3829,8 +3829,8 @@
 <p>To install the module, unpack the zip file contents into the GeoServer <code>WEB-INF/lib</code> directory and restart GeoServer.</p>
 <h2 id="configuring-a-mbtileslayer">Configuring a MBTilesLayer</h2>
 <p>The configuration of a new MBTilesLayer can be done by editing the geowebcache configuration file located in <strong><code>&lt;data_dir&gt;/gwc/geowebcache.xml</code></strong></p>
-<p>Locate the <code>layers</code>section of the config or add it if missing.</p>
-<p>Then define a new <code>mbTilesLayer</code>node for each new MBTilesLayer you want to add. A GWC configuration containing a configured MBTiles Layer would look like this:</p>
+<p>Locate the <code>layers</code> section of the config or add it if missing.</p>
+<p>Then define a new <code>mbTilesLayer</code> node for each new MBTilesLayer you want to add. A GWC configuration containing a configured MBTiles Layer would look like this:</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;gwcConfiguration&gt;</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="cm">&lt;!-- ... --&gt;</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&lt;layers&gt;</span>
@@ -3850,10 +3850,10 @@
 </span></code></pre></div>
 <p>A few note on the above configuration elements of an mbtilesLayer definition:</p>
 <ul>
-<li><code>tilesPath</code>(mandatory) is the path to the MBTiles file containing the tiles.</li>
-<li><code>tileSize</code>is the size of the tiles stored on the MBTiles file. When not set, it will be defaulted to 256.</li>
-<li><code>name</code>(optional) represents the name to be assigned to the layer. If not specified, the name field of the metadata table stored in the MBTiles file will be used. Make sure to define it in case the MBTiles metadata is missing it.</li>
-<li><code>metaInformation</code>with <code>title</code>and <code>description</code>are optional tags. They will be exposed in the capabilities document when available.</li>
+<li><code>tilesPath</code> (mandatory) is the path to the MBTiles file containing the tiles.</li>
+<li><code>tileSize</code> is the size of the tiles stored on the MBTiles file. When not set, it will be defaulted to 256.</li>
+<li><code>name</code> (optional) represents the name to be assigned to the layer. If not specified, the name field of the metadata table stored in the MBTiles file will be used. Make sure to define it in case the MBTiles metadata is missing it.</li>
+<li><code>metaInformation</code> with <code>title</code> and <code>description</code> are optional tags. They will be exposed in the capabilities document when available.</li>
 </ul>
 
 

@@ -2624,11 +2624,11 @@
 <p>In this event, the following defaults are used:</p>
 <ul>
 <li>0 pixels for <a href="../reference/#wms_getmap">GetMap</a> requests</li>
-<li>5 pixels for <code>GetFeatureInfo &lt;reference.rst#wms_getfeatureinfo&gt;`_ requests (a different min value can be set via the</code>org.geoserver.wms.featureinfo.minBuffer<code>system variable, e.g., add</code>-Dorg.geoserver.wms.featureinfo.minBuffer=10`` to make the min buffer be 10 pixels)</li>
+<li>5 pixels for <a href="../reference/#wms_getfeatureinfo">GetFeatureInfo</a> requests (a different min value can be set via the <code>org.geoserver.wms.featureinfo.minBuffer</code> system variable, e.g., add <code>-Dorg.geoserver.wms.featureinfo.minBuffer=10</code> to make the min buffer be 10 pixels)</li>
 </ul>
 <p>If these are not sufficiently large, the explicit parameter can be used.</p>
 <h3 id="cql_filter">cql_filter</h3>
-<p>The <code>cql_filter</code> parameter is similar to the standard <code>filter</code> parameter, but the filter is expressed using ECQL (Extended Common Query Language). ECQL provides a more compact and readable syntax compared to OGC XML filters. For full details see the <code>ECQL Reference &lt;../../filter/ecql_reference.rst&gt;`_ and</code>QL and ECQL &lt;../../tutorials/cql/cql_tutorial.rst&gt;`_ tutorial.</p>
+<p>The <code>cql_filter</code> parameter is similar to the standard <code>filter</code> parameter, but the filter is expressed using ECQL (Extended Common Query Language). ECQL provides a more compact and readable syntax compared to OGC XML filters. For full details see the <a href="../../../filter/ecql_reference/">ECQL Reference</a> and <a href="../../../tutorials/cql/cql_tutorial/">CQL and ECQL</a> tutorial.</p>
 <p>If more than one layer is specified in the <code>layers</code> parameter, then a separate filter can be specified for each layer, separated by semicolons. The syntax is:</p>
 <div class="language-text highlight"><pre><span></span><code>cql_filter=filter1;filter2...
 </code></pre></div>
@@ -2800,7 +2800,7 @@
 </ul>
 </blockquote>
 <p>or empty if the default method has to be used for the related layer.</p>
-<p>The parameter allows to override the global <em>WMS Raster Rendering Options</em> setting (see <code>WMS Settings &lt;webadmin.rst&gt;`_ for more info), as well as the layer specific *Default Interpolation Method* publishing parameter (see</code>ayers &lt;../../data/webadmin/layers.rst&gt;`_ for more info), on a layer by layer basis.</p>
+<p>The parameter allows to override the global <em>WMS Raster Rendering Options</em> setting (see <a href="../webadmin/">WMS Settings</a> for more info), as well as the layer specific <em>Default Interpolation Method</em> publishing parameter (see <a href="../../../data/webadmin/layers/">Layers</a> for more info), on a layer by layer basis.</p>
 <h3 id="clip">clip</h3>
 <p>The <code>clip</code> parameter can be used to clip WMS response using a Polygon mask represented by a valid WKT String.</p>
 <p>Here are two examples, the first one using WKT, the second using EWKT:</p>

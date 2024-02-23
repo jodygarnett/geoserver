@@ -2082,7 +2082,7 @@
 <p>This tutorial shows how to build an image pyramid with open source utilities and how to load it into GeoServer. The tutorial assumes you're running at least GeoServer 2.0.2.</p>
 <h2 id="building-a-pyramid">Building a pyramid</h2>
 <p>For this tutorial we have prepared a <a href="http://data.opengeo.org/bmreduced.tiff">sample BlueMarble TNG subset</a> in GeoTIFF form. The image is tiled and JPEG compressed, without overviews. Not exactly what you'd want to use for high performance data serving, but good for redistribution and as a starting point to build a pyramid.</p>
-<p>In order to build the pyramid we'll use the <code>gdal_retile.py &lt;http://www.gdal.org/gdal_retile.html&gt;`_ utility, part of the GDAL command line utilities and available for various operating systems (if you're using Microsoft Windows look for</code>WTools &lt;<a href="http://fwtools.maptools.org/">http://fwtools.maptools.org/</a>&gt;`_).</p>
+<p>In order to build the pyramid we'll use the <a href="http://www.gdal.org/gdal_retile.html">gdal_retile.py</a> utility, part of the GDAL command line utilities and available for various operating systems (if you're using Microsoft Windows look for <a href="http://fwtools.maptools.org/">FWTools</a>).</p>
 <p>The following commands will build a pyramid on disk:</p>
 <div class="language-text highlight"><pre><span></span><code>mkdir bmpyramid
 gdal_retile.py -v -r bilinear -levels 4 -ps 2048 2048 -co &quot;TILED=YES&quot; -co &quot;COMPRESS=JPEG&quot; -targetDir bmpyramid bmreduced.tiff
@@ -2090,21 +2090,21 @@ gdal_retile.py -v -r bilinear -levels 4 -ps 2048 2048 -co &quot;TILED=YES&quot; 
 <p>The <a href="http://www.gdal.org/gdal_retile.html">gdal_retile.py</a> user guide provides a detailed explanation for all the possible parameters, here is a description of the ones used in the command line above:</p>
 <blockquote>
 <ul>
-<li><code>-v</code> verbose output, allows the user to see each file creation scroll by, thus knowing progress is being made (a big pyramid construction can take hours)</li>
-<li><code>-r bilinear</code> use bilinear interpolation when building the lower resolution levels. This is key to get good image quality without asking GeoServer to perform expensive interpolations in memory</li>
-<li><code>-levels 4</code> the number of levels in the pyramid</li>
-<li><code>-ps 2048 2048</code> each tile in the pyramid will be a 2048x2048 GeoTIFF</li>
-<li><code>-co "TILED=YES"</code> each GeoTIFF tile in the pyramid will be inner tiled</li>
-<li><code>-co "COMPRESS=JPEG"</code> each GeoTIFF tile in the pyramid will be JPEG compressed (trades small size for higher performance, try out it without this parameter too)</li>
-<li><code>-targetDir bmpyramid</code> build the pyramid in the bmpyramid directory. The target directory must exist and be empty</li>
-<li><code>bmreduced.tiff</code> the source file</li>
+<li><code>-v</code>: verbose output, allows the user to see each file creation scroll by, thus knowing progress is being made (a big pyramid construction can take hours)</li>
+<li><code>-r bilinear</code>: use bilinear interpolation when building the lower resolution levels. This is key to get good image quality without asking GeoServer to perform expensive interpolations in memory</li>
+<li><code>-levels 4</code>: the number of levels in the pyramid</li>
+<li><code>-ps 2048 2048</code>: each tile in the pyramid will be a 2048x2048 GeoTIFF</li>
+<li><code>-co "TILED=YES"</code>: each GeoTIFF tile in the pyramid will be inner tiled</li>
+<li><code>-co "COMPRESS=JPEG"</code>: each GeoTIFF tile in the pyramid will be JPEG compressed (trades small size for higher performance, try out it without this parameter too)</li>
+<li><code>-targetDir bmpyramid</code>: build the pyramid in the bmpyramid directory. The target directory must exist and be empty</li>
+<li><code>bmreduced.tiff</code>: the source file</li>
 </ul>
 </blockquote>
-<p>This will produce a number of TIFF files in bmpyramid along with the sub-directories <code>1`,</code>,<code>`` 3</code>, and ```.</p>
+<p>This will produce a number of TIFF files in bmpyramid along with the sub-directories <code>1</code>, <code>2,</code> <code>3</code>, and <code>4</code>.</p>
 <p>Once that is done, and assuming the GeoServer image pyramid plug-in is already installed, it's possible to create the coverage store by pointing at the directory containing the pyramid and clicking save:</p>
 <p><img alt="" src="../configureStore.png" />
 <em>Configuring a image pyramid store</em></p>
-<p>When clicking save the store will look into the directory, recognize a <code>gdal_retile</code>generated structure and perform some background operations:</p>
+<p>When clicking save the store will look into the directory, recognize a <code>gdal_retile</code> generated structure and perform some background operations:</p>
 <blockquote>
 <ul>
 <li>move all tiff files in the root to a newly create directory <code>0</code></li>
@@ -2115,7 +2115,7 @@ gdal_retile.py -v -r bilinear -levels 4 -ps 2048 2048 -co &quot;TILED=YES&quot; 
 <p>Once that is done the user will be asked to choose a coverage, which will be named after the pyramid root directory:</p>
 <p><img alt="" src="../chooseLayer.png" />
 <em>Choosing the coverage for publishing</em></p>
-<p>Publish the layer, and then setup the layer parameter <code>USE_JAI_IMAGEREAD</code>to <code>false</code>to get better scalability:</p>
+<p>Publish the layer, and then setup the layer parameter <code>USE_JAI_IMAGEREAD</code> to <code>false</code> to get better scalability:</p>
 <p><img alt="" src="../layerParams.png" />
 <em>Tuning the pyramid parameters</em></p>
 <p>Submit and go to the preview, the pyramid should be ready to use:</p>

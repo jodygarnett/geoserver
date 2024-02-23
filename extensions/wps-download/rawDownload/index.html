@@ -3740,7 +3740,7 @@ AUTHORITY[&quot;EPSG&quot;,&quot;9274&quot;]]
 </code></pre></div>
 <p>Transformations between VerticalCRSs can be supported through Vertical Grid Offset files (similarly to how NTV2 Grid Shift can be used in support of 2D grid transformation).</p>
 <p>Custom Coordinate Operations are defined in <strong><code>user_projections/epsg_operations.properties</code></strong> file within the data directory (create it if it doesn't exist).</p>
-<p>Each line in <strong><code>epsg_operations.properties</code></strong> will describe a coordinate operation consisting of a <code>source CRS</code> a <code>target CRS</code> and a math transform with its parameter values. Use the following syntax:</p>
+<p>Each line in <strong><code>epsg_operations.properties</code></strong> will describe a coordinate operation consisting of a <code>source CRS</code>, a <code>target CRS</code>, and a math transform with its parameter values. Use the following syntax:</p>
 <div class="language-text highlight"><pre><span></span><code>&lt;source crs code&gt;,&lt;target crs code&gt;=&lt;WKT math transform&gt;
 </code></pre></div>
 <p>The Math Transform is a <code>Vertical Offset by Grid Interpolation</code> requiring 2 parameters:</p>

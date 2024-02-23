@@ -2002,10 +2002,10 @@
 <h2 id="cas-server-certificates">CAS server certificates</h2>
 <p>A running <a href="https://apereo.github.io/cas/5.3.x/index.html">CAS server</a> is needed.</p>
 <p>The first step is to import the server certificates into the GeoServer JVM.</p>
-<p>If you need to export the <code>CRT</code>from the CAS server, you must execute the following command on the server JVM:</p>
+<p>If you need to export the <code>CRT</code> from the CAS server, you must execute the following command on the server JVM:</p>
 <div class="language-text highlight"><pre><span></span><code>keytool -export -alias &lt;server_name&gt; -keystore &lt;cas_jvm_keystore_path&gt; -file server.crt
 </code></pre></div>
-<p>Once you have the <code>server.crt</code>file, the procedure to import the certificate into the JVM is the following one:</p>
+<p>Once you have the <code>server.crt</code> file, the procedure to import the certificate into the JVM is the following one:</p>
 <div class="language-text highlight"><pre><span></span><code>keytool -import -trustcacerts -alias &lt;server_name&gt; -file server.crt -keystore &lt;path_to_JRE_cacerts&gt;
 </code></pre></div>
 <p>Enter the keystore password and confirm the certificate to be trustable.</p>

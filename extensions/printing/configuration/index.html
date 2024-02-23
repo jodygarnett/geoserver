@@ -2342,7 +2342,7 @@
           <li class="md-nav__item">
   <a href="#dont-break-legend-items" class="md-nav__link">
     <span class="md-ellipsis">
-      Don\'t break legend items
+      Don't break legend items
     </span>
   </a>
   
@@ -3798,7 +3798,7 @@
           <li class="md-nav__item">
   <a href="#dont-break-legend-items" class="md-nav__link">
     <span class="md-ellipsis">
-      Don\'t break legend items
+      Don't break legend items
     </span>
   </a>
   
@@ -3965,7 +3965,7 @@
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">190</span>
 </span></code></pre></div>
 <h3 id="dpi-and-pdf-dimensions">DPI and PDF Dimensions</h3>
-<p>A chosen DPI value from the above configuration is used in WMS GetMap requests as an added format_options (GeoServer) or map_resolution (MapServer) parameter. This is used for symbol/label-rescaling suitable for high resolution printouts, see <code>Geoserver format_options specification &lt;https://docs.geoserver.org/stable/en/user/services/wms/vendor.html&gt;`_ (Geoserver 2.1) and</code>apServer defresolution keyword &lt;<a href="http://mapserver.org/development/rfc/ms-rfc-55.html">http://mapserver.org/development/rfc/ms-rfc-55.html</a>&gt;`_ (MapServer 5.6) for more information.</p>
+<p>A chosen DPI value from the above configuration is used in WMS GetMap requests as an added format_options (GeoServer) or map_resolution (MapServer) parameter. This is used for symbol/label-rescaling suitable for high resolution printouts, see <a href="https://docs.geoserver.org/stable/en/user/services/wms/vendor.html">Geoserver format_options specification</a> (Geoserver 2.1) and <a href="http://mapserver.org/development/rfc/ms-rfc-55.html">MapServer defresolution keyword</a> (MapServer 5.6) for more information.</p>
 <p>In general, PDF dimensions and positions are specified in points. 72 points == 1 inch == 25.4 mm.</p>
 <h3 id="getting-maps">Getting Maps</h3>
 <p>The list of {HOST_WHITELIST_DEFINITION} defines the allowed URLs for getting maps. Its format will be defined in <a href="configuration.html#host-whitelist-definition">the next sub-section</a>.</p>
@@ -3975,7 +3975,7 @@
 <li>If the single element '*' (quotes are required) is present then all formats that the server can produce can be requested.</li>
 </ul>
 <p>The formats the server can produce depends to a large degree on how the Java is configured.</p>
-<p>PDF is supported on all systems but for image output formats JAI and ImageIO is used which means both must be on the server for them to be available. You can get the list of supported formats by running the standalone client with the <code>--clientConfig</code>flag enabled (you will need to supply a yaml config file as well). If you are using the servlet then do a get info request to see the list of formats (with the '*' as the outputFormats parameter in the config file).</p>
+<p>PDF is supported on all systems but for image output formats JAI and ImageIO is used which means both must be on the server for them to be available. You can get the list of supported formats by running the standalone client with the <code>--clientConfig</code> flag enabled (you will need to supply a yaml config file as well). If you are using the servlet then do a get info request to see the list of formats (with the '*' as the outputFormats parameter in the config file).</p>
 <p>"globalParallelFetches" and "perHostParallelFetches" are used to tune the parallel loading of the map tiles/images. If you want to disable the parallel loading, set "globalParallelFetches" to 1.</p>
 <p>New versions of tilecache added the support for merging multiple layers in a single WMS request. If you want to use this functionality, set the "tilecacheMerging" attribute to true.</p>
 <p>"connectionTimeout" and "socketTimeout" can be used to tune the timeouts for reading tiles from map servers.</p>
@@ -3989,8 +3989,8 @@
 <p>A layout "lastPage", will be added for the end of the document, and cannot contain any map.</p>
 <p>If you want to let the user rotate the map (for a given layout), you have to set the "rotate" field to "true" in the corresponding "mainPage" section.</p>
 <h3 id="output-filename">Output filename</h3>
-<p>If the 'outputFilename' parameter is defined in the main body then that name will be used by the MapPrintServlet when sending the pdf to the client. It will be the name of the file that the client downloads. If the 'outputFilename' parameter is defined in a layout then that value will override the default name. In both cases the <code>.pdf</code>suffic is optional; if not present the server will append <code>.pdf</code>to the name.</p>
-<p>In all cases the <code>json</code>request can override the filename defined in the configuration file by posting a 'outputFilename' attribute in the posted JSON. If the outputFilename has \${date}, \${time} or \${dateTime} in it, it will be replaced with the current date using the related DateFormat.get*Instance().format() method. If a pattern is provided it will be passed to SimpleDataFormat for processing. A few examples follow:</p>
+<p>If the 'outputFilename' parameter is defined in the main body then that name will be used by the MapPrintServlet when sending the pdf to the client. It will be the name of the file that the client downloads. If the 'outputFilename' parameter is defined in a layout then that value will override the default name. In both cases the <code>.pdf</code> suffic is optional; if not present the server will append <code>.pdf</code> to the name.</p>
+<p>In all cases the <code>json</code> request can override the filename defined in the configuration file by posting a 'outputFilename' attribute in the posted JSON. If the outputFilename has \${date}, \${time} or \${dateTime} in it, it will be replaced with the current date using the related DateFormat.get*Instance().format() method. If a pattern is provided it will be passed to SimpleDataFormat for processing. A few examples follow:</p>
 <ul>
 <li>outputFilename: "host-\${yyyyMMdd}.pdf" # results in host-20111213.pdf</li>
 <li>outputFilename: "host-\${date}" # results in host-Dec_13_2011.pdf (actual output depends on local of server)</li>
@@ -4131,15 +4131,18 @@
 <h3 id="skip-rendering-of-pages">Skip Rendering Of Pages</h3>
 <p>New flag params to skip rendering of particular pages have been implemented:</p>
 <ul>
-<li><code>includeTitlePage</code><em> <code>includeLastPage</code></em> <code>includeExtraPage</code> They are all defaulted to true.</li>
+<li><code>includeTitlePage</code></li>
+<li><code>includeLastPage</code></li>
+<li><code>includeExtraPage</code></li>
 </ul>
+<p>They are all defaulted to true.</p>
 <h3 id="extra-pages">Extra Pages</h3>
 <p>Additional Pages are supported in many different places. They can be rendered due to legends overflowing on multiple pages, or by the dynamic images functionality.</p>
-<p>Where additional pages can be generated, the generating block will be spread among all the created pages (for example, the legend block will put legends on different pages, if configured to do so). If you want to put additional blocks on additional page, you can specify the <code>renderOnExtraPage</code>flag on the desired blocks. Only first level blocks are considered.</p>
-<p>In addition to that, an explicit <code>extraPage</code>block can be used in <strong><code>config.yaml</code></strong> to add a custom page between other pages. The <code>renderOn</code>property specify the exact position for rendering (<code>beforeMainPage</code>, <code>beforeLastPage</code>or <code>afterLastPage</code>.</p>
+<p>Where additional pages can be generated, the generating block will be spread among all the created pages (for example, the legend block will put legends on different pages, if configured to do so). If you want to put additional blocks on additional page, you can specify the <code>renderOnExtraPage</code> flag on the desired blocks. Only first level blocks are considered.</p>
+<p>In addition to that, an explicit <code>extraPage</code> block can be used in <strong><code>config.yaml</code></strong> to add a custom page between other pages. The <code>renderOn</code> property specify the exact position for rendering (<code>beforeMainPage</code>, <code>beforeLastPage</code> or <code>afterLastPage</code>).</p>
 <h2 id="block-definition">Block definition</h2>
 <p>The next sub-sections document the possible types of blocks.</p>
-<p>In general, text values or URLs can contain values taken from the <strong>spec</strong> structure coming with the client's request. A syntax similar to shell is used: <code>${variableName}</code> If the current page is a <strong>titlePage</strong>, only the root values are taken. If it's a <strong>mainPage</strong>, the service will first look in the current <strong>page</strong> section then in the root values. Here is how to use this functionality:</p>
+<p>In general, text values or URLs can contain values taken from the <strong>spec</strong> structure coming with the client's request. A syntax similar to shell is used: <code>\${variableName}</code>. If the current page is a <strong>titlePage</strong>, only the root values are taken. If it's a <strong>mainPage</strong>, the service will first look in the current <strong>page</strong> section then in the root values. Here is how to use this functionality:</p>
 <div class="language-text highlight"><pre><span></span><code>text: &#39;The value of mapTitle is: ${mapTitle}&#39;
 </code></pre></div>
 <p>Some virtual variables can be used:</p>
@@ -4181,7 +4184,7 @@
 </ul>
 <p>The "font" must refer to a standard PDF font or a <a href="configuration.html#fonts-definition">declared font</a>.</p>
 <h3 id="html-in-text-blocks">HTML In Text Blocks</h3>
-<p>The new configuration property <code>asHTML</code>(to be used in <strong><code>config.yaml</code></strong> text blocks) allows to automatically render the included text as HTML (when true), instead of simple text. HTML tags are interpreted and styled.</p>
+<p>The new configuration property <code>asHTML</code> (to be used in <strong><code>config.yaml</code></strong> text blocks) allows to automatically render the included text as HTML (when true), instead of simple text. HTML tags are interpreted and styled.</p>
 <h2 id="image-block">Image block</h2>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!image</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="nt">maxWidth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">200</span>
@@ -4243,7 +4246,7 @@
 <p>By default, the width of the columns will be equal.</p>
 <p>Each item will be in its own column.</p>
 <p>If the <strong>absoluteX</strong>, <strong>absoluteY</strong> and <strong>width</strong> are given, the columns block will be floating on top of the page at the specified position.</p>
-<p>The <strong>widths</strong> attribute can be used to change the width of the columns (by default, they have the same width). It must contain one integer for each column. The width of a given column is <code>tableWidth*columnWeight/sum(columnWeight)</code></p>
+<p>The <strong>widths</strong> attribute can be used to change the width of the columns (by default, they have the same width). It must contain one integer for each column. The width of a given column is <code>tableWidth*columnWeight/sum(columnWeight)</code>.</p>
 <p>Every block type is allowed except for <strong>map</strong> if the column has an absolute position.</p>
 <p>Look at &lt;<a href="http://trac.mapfish.org/trac/mapfish/wiki/PrintModuleServer#Tableconfiguration">http://trac.mapfish.org/trac/mapfish/wiki/PrintModuleServer#Tableconfiguration</a> to know how to specify the <strong>config</strong> field.</p>
 <h2 id="map-block">Map block</h2>
@@ -4296,14 +4299,14 @@
 </span><span id="__span-18-22"><a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">preferredIntervals</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="nv">5</span><span class="p p-Indicator">,</span><span class="nv">10</span><span class="p p-Indicator">]</span>
 </span><span id="__span-18-23"><a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">preferredIntervalFractions</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
 </span></code></pre></div>
-<p>The scalebar, will adapt its width up to <code>maxSize</code>(includes the labels) in order to have a multiple of 1, 2 or 5 values at each graduation. For example:</p>
+<p>The scalebar, will adapt its width up to <code>maxSize</code> (includes the labels) in order to have a multiple of 1, 2 or 5 values at each graduation. For example:</p>
 <ul>
 <li>0, 1, 2, ...</li>
 <li>0, 2, 4, ...</li>
 <li>0, 5, 10, ...</li>
 <li>0, 10, 20, ...</li>
 </ul>
-<p>The <code>barSize</code>is the thickness of the bar or the height of the tick marks on the line. The <code>lineWith</code>is for the thickness of the lines (or bar border).</p>
+<p>The <code>barSize</code> is the thickness of the bar or the height of the tick marks on the line. The <code>lineWith</code> is for the thickness of the lines (or bar border).</p>
 <p>Units can be any of:</p>
 <ul>
 <li>m (mm, cm, m or km)</li>
@@ -4311,7 +4314,7 @@
 <li>degrees (min, sec, °)</li>
 </ul>
 <p>If the value is too big or too small, the module will switch to one of the unit in parenthesis (the same unit is used for every intervals). If this behaviour is not desired, the lockUnits parameter will force the declared unit (or map unit if no unit is declared) to be used for the scalebar.</p>
-<p>The number of <code>intervals</code>can be set to anything &gt;=2. Labels are drawn only at main intervals. If there is no space to display a label at a certain interval, this label won't be displayed. If <code>subIntervals</code>are enabled, their number will depend on the length of an interval.</p>
+<p>The number of <code>intervals</code> can be set to anything &gt;=2. Labels are drawn only at main intervals. If there is no space to display a label at a certain interval, this label won't be displayed. If <code>subIntervals</code> are enabled, their number will depend on the length of an interval.</p>
 <p>The type can be:</p>
 <ul>
 <li>line: A simple line with graduations</li>
@@ -4320,12 +4323,12 @@
 </ul>
 <p><img alt="image" src="../images/scalebarTypes.png" /></p>
 <p>The bar and/or text orientation can be set to "up", "down", "left" or "right".</p>
-<p>The <code>align</code>attribute is for placing the whole scalebar withing the surrounding column or page. The <code>vertAlign</code>attribute is used only when placed in a column.</p>
+<p>The <code>align</code> attribute is for placing the whole scalebar withing the surrounding column or page. The <code>vertAlign</code> attribute is used only when placed in a column.</p>
 <p>Labels are always centered on the graduation, at a distance specified by labelDistance.</p>
 <h3 id="custom-intervals-in-scalebarblock">Custom intervals in ScalebarBlock</h3>
-<p>With this improvement we added two new configuration parameters to <code>!scalebar</code>blocks that allow to customize the scalebar preferred bar lengths.</p>
-<p>Now this set can be customized using the <code>preferredIntervals</code>property. This property is an array with the new (integer) allowed lengths. By default these were chosen in the <code>1`, ````,\`5</code>,`10` set.</p>
-<p>Another property, <code>preferredIntervalFractions</code> can be specified to also use fractional intervals. By default only <code>0.0</code>is used, and thus only integer lengths are allowed.</p>
+<p>With this improvement we added two new configuration parameters to <code>!scalebar</code> blocks that allow to customize the scalebar preferred bar lengths.</p>
+<p>Now this set can be customized using the <code>preferredIntervals</code> property. This property is an array with the new (integer) allowed lengths. By default these were chosen in the <code>1</code>,<code>2</code>,<code>5</code>,<code>10</code> set.</p>
+<p>Another property, <code>preferredIntervalFractions</code>, can be specified to also use fractional intervals. By default only <code>0.0</code> is used, and thus only integer lengths are allowed.</p>
 <p>Example:</p>
 <div class="language-text highlight"><pre><span></span><code>.. code-block:: yaml
 </code></pre></div>
@@ -4333,7 +4336,7 @@
 <p>preferredIntervals: [1,3,5,10] preferredIntervalFractions: [0.2,0.5]</p>
 </blockquote>
 <h2 id="attributes-block">Attributes block</h2>
-<p>Allows to display a table of the displayed feature\'s attributes.</p>
+<p>Allows to display a table of the displayed feature's attributes.</p>
 <p>Allowed only within a <em>mainPage</em>.</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!attributes</span>
 </span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">results</span>
@@ -4347,7 +4350,7 @@
 </span></code></pre></div>
 <p>Look <a href="configuration.html#table-configuration">here</a> for how to specify the <em>tableConfig</em> field.</p>
 <p>The <em>columnWeigth</em> (MF_V1.2 only) allows to define a weight for the column width. If you specify it for one column, you have to specify it for all of them. The width of a given column is tableWidth*columnWeight/sum(columnWeight).</p>
-<p>The <strong>source</strong> value defines the name of the entry in the root of the client\'s <strong>spec</strong>. For example, it would look like that:</p>
+<p>The <strong>source</strong> value defines the name of the entry in the root of the client's <strong>spec</strong>. For example, it would look like that:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="p p-Indicator">{</span>
 </span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">  </span><span class="nv">...</span>
 </span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">  </span><span class="nv">pages</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span>
@@ -4367,7 +4370,7 @@
 </span></code></pre></div>
 <p>With this spec you would have to define 3 columnDefs with the names <strong>id</strong>, <strong>name</strong> and <strong>icon</strong>. Each cell definition blocks have access to all the values of the current row.</p>
 <p>The spec part is filled automatically by the 2 MapFish widgets when their <a href="http://www.mapfish.org/apidoc/trunk/files/mapfish/widgets/print/Base-js.html#mapfish.widgets.print.Base.grids">grids</a> parameter is set.</p>
-<p>Here is a crazy example of columnDef that will show the name of the icon and it\'s bitmap side-by-side inside a single column:</p>
+<p>Here is a crazy example of columnDef that will show the name of the icon and it's bitmap side-by-side inside a single column:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nt">columnDefs</span><span class="p">:</span>
 </span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">  </span><span class="nt">icon</span><span class="p">:</span>
 </span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">    </span><span class="nt">header</span><span class="p">:</span><span class="w"> </span><span class="kt">!text</span>
@@ -4383,14 +4386,14 @@
 </span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="w">          </span><span class="nt">maxHeight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">15</span>
 </span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="w">          </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;http://www.mapfish.org/svn/mapfish/trunk/MapFish/client/mfbase/mapfish/img/${icon}.png&#39;</span>
 </span></code></pre></div>
-<p>A more complex example can be found in SVN: <code>config.yaml &lt;https://github.com/mapfish/mapfish-print-v2/tree/main/samples/config.yaml&gt;`_</code>pec.json \&lt;<a href="https://github.com/mapfish/mapfish-print-v2/tree/main/samples/spec.json">https://github.com/mapfish/mapfish-print-v2/tree/main/samples/spec.json</a>&gt;`_</p>
+<p>A more complex example can be found in SVN: <a href="https://github.com/mapfish/mapfish-print-v2/tree/main/samples/config.yaml">config.yaml</a> <a href="https://github.com/mapfish/mapfish-print-v2/tree/main/samples/spec.json">spec.json</a></p>
 <p>The print widgets are able to fill the spec for you based on a dictionary of <strong>Ext.grid.GridPanel</strong>. Just pass them through the grids parameter.</p>
 <h3 id="group-rendering-in-attribute-blocks">Group Rendering In Attribute Blocks</h3>
 <p>Attribute blocks now support grouping, by a specific attribute. Rows should be sorted by that attribute for grouping to work (no automatic sort is accomplished by the printing library).</p>
-<p>To identify the grouping attribute, use the <code>groupBy</code>property.</p>
-<p>Each group can be prefixed by a title, using the <code>groupTitle</code>property. You can specify any block in the <code>groupTitle</code>property, to render any kind of content as a title.</p>
-<p>You can also skip table header using the <code>includeHeader</code>flag (true by default).</p>
-<p>Finally you can force a page break before any new group, using the <code>groupOnNewPage</code>flag.</p>
+<p>To identify the grouping attribute, use the <code>groupBy</code> property.</p>
+<p>Each group can be prefixed by a title, using the <code>groupTitle</code> property. You can specify any block in the <code>groupTitle</code> property, to render any kind of content as a title.</p>
+<p>You can also skip table header using the <code>includeHeader</code> flag (true by default).</p>
+<p>Finally you can force a page break before any new group, using the <code>groupOnNewPage</code> flag.</p>
 <h2 id="legends-block">Legends block</h2>
 <p>Display each layers along with its classes (icons and labels).</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!legends</span>
@@ -4424,7 +4427,7 @@
 </span><span id="__span-22-29"><a id="__codelineno-22-29" name="__codelineno-22-29" href="#__codelineno-22-29"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">fitWidth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
 </span><span id="__span-22-30"><a id="__codelineno-22-30" name="__codelineno-22-30" href="#__codelineno-22-30"></a><span class="p p-Indicator">?</span><span class="w">         </span><span class="nt">fitHeight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
 </span></code></pre></div>
-<p><strong>borders</strong> is mainly for debugging purpouses and shows all borders in the legend tables. This can be either \'true\' or \'false\'.</p>
+<p><strong>borders</strong> is mainly for debugging purpouses and shows all borders in the legend tables. This can be either 'true' or 'false'.</p>
 <p><strong>horizontalAlignment</strong> can be left, right or center (default) and aligns all items left, right or in the center.</p>
 <p><strong>iconMaxWidth</strong>, <strong>iconMaxHeight</strong>, <strong>defaultScale</strong> with value of 0 indicate that the value will be ignored, i.e. the values are automatically set to the equivalent of Infinity, Infinity and 1 respectively. If the legends URL passed to MapFish (see <a href="http://mapfish.org/doc/print/protocol.html#print-pdf">http://mapfish.org/doc/print/protocol.html#print-pdf</a>) are obtained from a WMS GetLegendGraphic request, the width/height are only indicative (even more when a label text is included with <a href="https://docs.geoserver.org/stable/en/user/services/wms/get_legend_graphic/index.html#controlling-legend-appearance-with-legend-options">LEGEND_OPTIONS/forceLabels parameter</a>) and it would be safer, in order to preserve scale coherence between legends and map, to set <strong>iconMaxWidth</strong> and <strong>iconMaxHeight</strong> to zero.</p>
 <p><strong>textMaxWidth/Height</strong> and <strong>iconMaxWidth/Height</strong> define how wide/high the text/icon cells of a legend item can be. At this point textMaxHeight is ignored.</p>
@@ -4432,7 +4435,7 @@
 <p>if <strong>inline</strong> is true icons and text are rendered on the same line, BUT multicolumn is still enabled.</p>
 <p>if <strong>maxWidth</strong> is set the whole legend gets a maximum width, just like other blocks. Note that <strong>maxWidth</strong> does not have any impact on icons size, thus icons may overflow outside the legends block.</p>
 <p>if <strong>maxHeight</strong> is set the whole legend gets a maximum height. This forces more than one column to appear if the legend is higher than the specified value. This can be used to enable the multi-column layout. 0 makes the maxHeight= max value, i.e. the equivalent of infinity.</p>
-<p>if <strong>defaultScale</strong> is non null it means that the legend image will be scaled so it doesn\'t take the full space. This can be overriden for individual classes in the spec JSON sent to the print module by adding an attribute called \'scale\' and giving it a number. In conjunction with iconMaxWidth/Height this can be used to control average and also maximum width/height. If <strong>defaultScale</strong> equals 1, one pixel is scaled to one point (1/72 inch) in generated PDF. By default, as GeoServer legends are generated with \~90 dpi resolution (exactly 25.4/0.28), setting <strong>defaultScale</strong> value to 0.7937 (72*0.28/25.4) produces legend icons of same size as corresponding map icons. As the <a href="https://docs.geoserver.org/stable/en/user/services/wms/get_legend_graphic/index.html#controlling-legend-appearance-with-legend-options">LEGEND_OPTIONS/dpi GeoServer parameter</a> is not handled by MapFish, the resolution will necessary be \~91 dpi, which may cause visual quality difference with the map.</p>
+<p>if <strong>defaultScale</strong> is non null it means that the legend image will be scaled so it doesn't take the full space. This can be overriden for individual classes in the spec JSON sent to the print module by adding an attribute called 'scale' and giving it a number. In conjunction with iconMaxWidth/Height this can be used to control average and also maximum width/height. If <strong>defaultScale</strong> equals 1, one pixel is scaled to one point (1/72 inch) in generated PDF. By default, as GeoServer legends are generated with \~90 dpi resolution (exactly 25.4/0.28), setting <strong>defaultScale</strong> value to 0.7937 (72*0.28/25.4) produces legend icons of same size as corresponding map icons. As the <a href="https://docs.geoserver.org/stable/en/user/services/wms/get_legend_graphic/index.html#controlling-legend-appearance-with-legend-options">LEGEND_OPTIONS/dpi GeoServer parameter</a> is not handled by MapFish, the resolution will necessary be \~91 dpi, which may cause visual quality difference with the map.</p>
 <p>For this to work, you need to set the <strong>layerTree</strong> config option on MF print widgets, more precisely the legends should be present in the print.pdf JSON request.</p>
 <p><strong>layerSpaceBefore</strong> is to specify the space before the second and consecutive layers.</p>
 <p><strong>layerSpace</strong> and <strong>classSpace</strong> is to specify the line space to add after layers and classes.</p>
@@ -4449,13 +4452,13 @@
 <p>Support for legend fitting (legend resized to fit a given rectangle) has been added, through 2 new config.yaml configuration properties (to be used in legend blocks).</p>
 <p>The properties are:</p>
 <ul>
-<li><code>fitWidth</code> width of the rectangle for fitting (defaults to 0, meaning no fit)</li>
-<li><code>fitHeight</code> height of the rectangle for fitting (defaults to 0, meaning no fit)</li>
+<li><code>fitWidth</code>: width of the rectangle for fitting (defaults to 0, meaning no fit)</li>
+<li><code>fitHeight</code>: height of the rectangle for fitting (defaults to 0, meaning no fit)</li>
 </ul>
 <p>Both properties or only one of them can be specified. When only one property is set, the other dimension is calculated to mantain the original aspect ratio for the legend.</p>
 <h3 id="multipage-legends">Multipage legends</h3>
-<p>By default a LegendsBlock must be contained in a single page. To allow it to span on several pages the <code>overflow</code>option can be used, setting it to true.</p>
-<p>When this option is used you also need to define <code>maxColumns</code> to fix the max number of columns on each page and <code>maxHeight</code> to fix the maximum height of each column.</p>
+<p>By default a LegendsBlock must be contained in a single page. To allow it to span on several pages the <code>overflow</code> option can be used, setting it to true.</p>
+<p>When this option is used you also need to define <code>maxColumns</code>, to fix the max number of columns on each page and <code>maxHeight</code>, to fix the maximum height of each column.</p>
 <p>The LegendsBlock will be rendered on as many pages as needed to get all the items rendered with the given constraints.</p>
 <p>Please note that if more than one page is needed, the second and following pages will only contain legend columns, without any of the other element of the page where the legends block is defined.</p>
 <h3 id="creating-an-horizontal-layout-for-legends">Creating an horizontal layout for legends</h3>
@@ -4466,12 +4469,12 @@
 <li>use the legend block <code>maxColumns</code> value to choose the number of columns for the legend (a new row will be forced after <code>maxColumns</code> is reached)</li>
 </ul>
 <h3 id="reorder-legends-block-in-columns">Reorder legends block in columns</h3>
-<p>When the option <code>reorderColumns</code>inside legends block it set to <code>true</code>and more than one column is necessary for the legends block, a new algorithm computes the best distribution of the legend items inside the columns. Currently a first fit with items sorted in height descending order is used. This is not sub-optimal, but it\'s fast.</p>
-<p>When a legend item is rendered to another column, by default name and legend icon could finish on different columns. To fix it, please enable the <code>dontBreakItems</code>option.</p>
-<h3 id="dont-break-legend-items">Don\'t break legend items</h3>
-<p>Set the flag <code>dontBreakItems</code>to <code>true</code>on legends block if you want to render legend and names as one table to forbid the break between different columns</p>
+<p>When the option <code>reorderColumns</code> inside legends block it set to <code>true</code> and more than one column is necessary for the legends block, a new algorithm computes the best distribution of the legend items inside the columns. Currently a first fit with items sorted in height descending order is used. This is not sub-optimal, but it's fast.</p>
+<p>When a legend item is rendered to another column, by default name and legend icon could finish on different columns. To fix it, please enable the <code>dontBreakItems</code> option.</p>
+<h3 id="dont-break-legend-items">Don't break legend items</h3>
+<p>Set the flag <code>dontBreakItems</code> to <code>true</code> on legends block if you want to render legend and names as one table to forbid the break between different columns</p>
 <h2 id="table-configuration">Table configuration</h2>
-<p>The <code>columns block &lt;#columns-block&gt;`_ and the</code>ttributes block \&lt;#attributes-block&gt;`_ can take a table configuration object like that:</p>
+<p>The <a href="#columns-block">columns block</a> and the <a href="#attributes-block">attributes block</a> can take a table configuration object like that:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nt">config</span><span class="p">:</span>
 </span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">borderWidth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
 </span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="p p-Indicator">?</span><span class="w">     </span><span class="nt">borderWidthLeft</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
@@ -4540,28 +4543,28 @@
 </span></code></pre></div>
 <h2 id="dynamic-images-page">Dynamic images page</h2>
 <p>New layout to let you print a different number of pages dinamically.</p>
-<p>You need to put it in <strong>`config.yaml`</strong>:</p>
+<p>You need to put it in <strong><code>config.yaml</code></strong>:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nt">dynamicImagesPage</span><span class="p">:</span>
 </span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">      </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">      </span><span class="nt">pageSize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">595 842</span>
 </span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">      </span><span class="nt">landscape</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 </span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">items:[...]</span>
 </span></code></pre></div>
-<p>and when you called to the print servlet, you\'ll need to add this property to the spec:</p>
+<p>and when you called to the print servlet, you'll need to add this property to the spec:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="l l-Scalar l-Scalar-Plain">imagesPages:[</span>
 </span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">{firstPageConfiguration},</span>
 </span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">{secondPageConfiguration}</span>
 </span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="l l-Scalar l-Scalar-Plain">]</span>
 </span></code></pre></div>
-<p>then it\'s render one page for each item found in the imagesPages property.</p>
-<p>Also, you cant select the pages placement inside the document with the property <code>renderOn</code></p>
+<p>then it's render one page for each item found in the imagesPages property.</p>
+<p>Also, you cant select the pages placement inside the document with the property <code>renderOn</code>:</p>
 <ul>
-<li><code>afterLastPage</code> It\'s rendered after the last page. It\'s the default option active.</li>
-<li><code>beforeLastPage</code> It\'s rendered just before last page (between main page and last page layouts)</li>
-<li><code>beforeMainPage</code> It\'s rendered before main page (between first page and main page)</li>
+<li><code>afterLastPage</code>: It's rendered after the last page. It's the default option active.</li>
+<li><code>beforeLastPage</code>: It's rendered just before last page (between main page and last page layouts)</li>
+<li><code>beforeMainPage</code>: It's rendered before main page (between first page and main page)</li>
 </ul>
-<p>The first use of this layout it\'s add a dynamic number of pages with differents images with svg content generated dynamicaly (using also the images content enhancement). This is an example of use with two dynammic images by page:</p>
-<p>Example <strong>`config.yaml`</strong>:</p>
+<p>The first use of this layout it's add a dynamic number of pages with differents images with svg content generated dynamicaly (using also the images content enhancement). This is an example of use with two dynammic images by page:</p>
+<p>Example <strong><code>config.yaml</code></strong>:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nn">...</span>
 </span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="w"> </span><span class="nt">dynamicImagesPage</span><span class="p">:</span>
 </span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="w">   </span><span class="nt">rotation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>

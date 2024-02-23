@@ -3376,17 +3376,18 @@
 
 
 <h1 id="user-guide">User Guide</h1>
-<p>To add metadata to a layer follow the steps in <code>Adding metadata to Layer`_ . When the metadata is repeated in multiple layers it is easier to create a template and reuse the data in the template for all the layers. See</code>emplates`_ .</p>
+<p>To add metadata to a layer follow the steps in <a href="#adding-metadata-to-layer">Adding metadata to Layer</a> . When the metadata is repeated in multiple layers it is easier to create a template and reuse the data in the template for all the layers. See <a href="#templates">Templates</a> .</p>
 <h2 id="adding-metadata-to-layer">Adding metadata to Layer</h2>
 <h3 id="manually-adding-metadata">Manually adding metadata</h3>
 <p>Open the layer: navigate to <strong>Layers &rarr; Choose the layer &rarr; Metadata tab</strong>.</p>
 <p>The metadata fields are available in the panel <strong>Metadata fields</strong>.</p>
 <p><img alt="" src="../images/basic-gui.png" /></p>
 <h3 id="import-from-geonetwork">Import from geonetwork</h3>
-<p>See <a href="../advanced/">Advanced Configuration</a>. Choose a geonetwork from the drop downbox, add the UUID from the metadata record and click <code>Import</code> All the content of the fields that are mapped in the geonetwork mapping configuration will be deleted. All templates will be unlinked. The content will be replaced with the content from geonetwork.</p>
+<p>See <a href="../advanced/">Advanced Configuration</a>. Choose a geonetwork from the drop downbox, add the UUID from the metadata record and click <code>Import</code>. All the content of the fields that are mapped in the geonetwork mapping configuration will be deleted. All templates will be unlinked. The content will be replaced with the content from geonetwork.</p>
 <h3 id="link-with-metadata-template">Link with metadata template</h3>
 <p>A metadata template can contain the content for metadata fields used in multiple layers. By defining these fields in a template you create one source for the content making it easier to maintain.</p>
-<p>To link a layer with template navigate to <strong>Layers &rarr; Choose the layer &rarr; Metadata tab</strong> in the <strong>Link with Template</strong> panel choose a template from the dropdown and click <code>Link with template</code> The values from the template will added to the metadata of the layer. How this is done depents on the type of the field.</p>
+<p>To link a layer with template navigate to <strong>Layers &rarr; Choose the layer &rarr; Metadata tab</strong> in the <strong>Link with Template</strong> panel choose a template from the dropdown and click <code>Link with template</code></p>
+<p>The values from the template will added to the metadata of the layer. How this is done depents on the type of the field.</p>
 <dl>
 <dt>The field is not a list</dt>
 <dd>
@@ -3399,19 +3400,19 @@
 </dl>
 <p>When multiple templates are linked with a layer the priority of the template will determine which values are added. If a field is present in both templates the value of the template with the highest priority will be picked. The priority is determined by the <a href="#template-order">template order</a></p>
 <h3 id="copy-from-other-layer">Copy from other Layer</h3>
-<p>Choose another layer from the drop downbox click <code>Copy</code> Content will be replaced with any metadata content from the other layer, except for UUID's, which will be ignored.</p>
+<p>Choose another layer from the drop downbox click <code>Copy</code>. Content will be replaced with any metadata content from the other layer, except for UUID's, which will be ignored.</p>
 <h2 id="templates">Templates</h2>
-<p>Templates can be created, edited, deleted and ordered in <strong>Metadata &rarr; Templates</strong> . All changes to the templates will also update the linked layers when the templates are saved by clicking the <code>Save</code>button in the overview page. Templates that are linked to a layer cannot be removed and a warning message will appear.</p>
+<p>Templates can be created, edited, deleted and ordered in <strong>Metadata &rarr; Templates</strong> . All changes to the templates will also update the linked layers when the templates are saved by clicking the <code>Save</code> button in the overview page. Templates that are linked to a layer cannot be removed and a warning message will appear.</p>
 <p><img alt="" src="../images/templatesconfig.png" /></p>
 <h3 id="create-template">Create template</h3>
-<p>Use the <code>Add new</code>action to create a new template and choose a name for the template. The name is required and must be unique.</p>
+<p>Use the <code>Add new</code> action to create a new template and choose a name for the template. The name is required and must be unique.</p>
 <h3 id="edit-template">Edit template</h3>
-<p>Click on a template name to open the template and edit the values. Click <code>Save</code>to go back to the overview page, this will also recalculate the values in all linked layers.</p>
+<p>Click on a template name to open the template and edit the values. Click <code>Save</code> to go back to the overview page, this will also recalculate the values in all linked layers.</p>
 <h3 id="delete-template">Delete template</h3>
-<p>Select the templates that needs to be removed and click delete, the selected rows will be removed from the table. Save the changes by clicking the <code>Save</code>button.</p>
+<p>Select the templates that needs to be removed and click delete, the selected rows will be removed from the table. Save the changes by clicking the <code>Save</code> button.</p>
 <h3 id="template-order">Template order</h3>
 <p>The templates have an order. The templates at the top of the list have a higher priority than the templates at the bottom. When a field has a value in multiple templates and the layer is linked with those templates the priority will determine which value is displayed in the metadata UI. The value defined in the template with the highest priority will be displayed.</p>
-<p>Change the order of the templates with the arrow keys in the priority column and save the changes by clicking <code>Save</code>button, this will also recalculate the values in all linked layers that may be affected.</p>
+<p>Change the order of the templates with the arrow keys in the priority column and save the changes by clicking <code>Save</code> button, this will also recalculate the values in all linked layers that may be affected.</p>
 <h2 id="bulk-operations">Bulk Operations</h2>
 <p><img alt="" src="../images/bulk.png" /></p>
 <p>This page provides a number of bulk operations mostly used for maintenance and migrations.</p>

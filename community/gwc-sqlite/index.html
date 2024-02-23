@@ -3927,7 +3927,7 @@
 <h1 id="gwc-sqlite-plugin">GWC SQLite Plugin</h1>
 <p>This plugin provides integration with GWC SQLite based blob stores. At the moment only one blob store of this type is available, the MBTiles blob store.</p>
 <h2 id="mbtiles-blob-store">MBTiles Blob Store</h2>
-<p>This blob store allow us to store tiles using the <code>MBTiles &lt;https://github.com/mapbox/mbtiles-spec/blob/master/1.1/spec.md&gt;`_ specification (version 1.1) which defines a schema for storing tiles in an</code>QLite &lt;<a href="https://www.sqlite.org/">https://www.sqlite.org/</a>&gt;`_ database with some restrictions regarding tiles formats and projections.</p>
+<p>This blob store allow us to store tiles using the <a href="https://github.com/mapbox/mbtiles-spec/blob/master/1.1/spec.md">MBTiles</a> specification (version 1.1) which defines a schema for storing tiles in an <a href="https://www.sqlite.org/">SQLite</a> database with some restrictions regarding tiles formats and projections.</p>
 <p>MBTiles specification only supports JPEG and PNG formats and projection EPSG:3857 is assumed. The implemented blob store will read and write MBTiles files compliant with the specification but will also be able to write and read MBTiles files that use others formats and projections.</p>
 <p>Using the MBTiles blob store will bring several benefits at the cost of some performance loss. The MBTiles storage uses a significantly smaller number of files, which results in easier data handling (e.g., backups, moving tiles between environments). In some cases the stored data will be more compact reducing the size of the data on disk.</p>
 <p>When compared to the file blob store this store has two limitations:</p>

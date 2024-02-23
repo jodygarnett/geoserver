@@ -2437,7 +2437,7 @@
 <li>Rename an attribute.</li>
 <li>Add a description of the attribute, which will be visible wherever the feature type is described.</li>
 <li>Change the nillability of the attribute, for example, making the attribute mandatory even if it's not in the data source, and vice-versa.</li>
-<li>Change the type of the attribute using the <code>Type</code>column. The most common types are available in a drop-down on editing, but it's possible to indicate any valid Java class, as long as GeoServer has a converter that goes from the value produced by the <strong>Source</strong> expression to the target type (new converters can be plugged in with some Java programming).</li>
+<li>Change the type of the attribute using the <code>Type</code> column. The most common types are available in a drop-down on editing, but it's possible to indicate any valid Java class, as long as GeoServer has a converter that goes from the value produced by the <strong>Source</strong> expression to the target type (new converters can be plugged in with some Java programming).</li>
 <li>Reset the table to the native settings, using the <strong>Reset customization</strong> link.</li>
 </ul>
 <p>Some of the feature type edits might result in the layer not being editable anymore, for example, by removing an attribute that is marked as mandatory in the data source.</p>
@@ -2499,7 +2499,7 @@
 <li><strong>Additional styles</strong>---Other styles that can be associated with this layer. Some clients (and the GeoServer Layer Preview) will present those as styling alternatives for that layer to the user.</li>
 <li><strong>Default rendering buffer</strong>---Default value of the <code>buffer</code> GetMap/GetFeatureInfo vendor parameter. See the <a href="../../../services/wms/vendor/">WMS vendor parameters</a> for more details.</li>
 <li><strong>Default WMS path</strong>---Location of the layer in the WMS capabilities layer tree. Useful for building non-opaque layer groups</li>
-<li><strong>Default Interpolation Method</strong>---Allows to specify a default resampling (interpolation) method for this layer. The available options are <em>Nearest neighbor</em>, <em>Bilinear</em>, <em>Bicubic</em>, or <em>Use service default</em>, which means that no layer specific configuration will be created (the default interpolation method selected in the WMS service configuration page will be used, see <code>Raster Rendering Options &lt;../../services/wms/webadmin.rst#services_webadmin_wms_raster_options&gt;`_ for details). Can be overridden by the</code>nterpolations vendor parameter &lt;../../services/wms/vendor.rst#wms_vendor_parameter_interpolations&gt;`_.</li>
+<li><strong>Default Interpolation Method</strong>---Allows to specify a default resampling (interpolation) method for this layer. The available options are <em>Nearest neighbor</em>, <em>Bilinear</em>, <em>Bicubic</em>, or <em>Use service default</em>, which means that no layer specific configuration will be created (the default interpolation method selected in the WMS service configuration page will be used, see <a href="../../../services/wms/webadmin/#services_webadmin_wms_raster_options">Raster Rendering Options</a> for details). Can be overridden by the <a href="../../../services/wms/vendor/#wms_vendor_parameter_interpolations">interpolations vendor parameter</a>.</li>
 </ul>
 <h3 id="wms-attribution">WMS Attribution</h3>
 <p>Sets publishing information about data providers.</p>

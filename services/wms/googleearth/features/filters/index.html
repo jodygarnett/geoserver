@@ -1664,6 +1664,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cql-filter" class="md-nav__link">
     <span class="md-ellipsis">
       CQL Filter
@@ -2501,6 +2510,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cql-filter" class="md-nav__link">
     <span class="md-ellipsis">
       CQL Filter
@@ -2541,7 +2559,13 @@
 
 
 <h1 id="filters">Filters</h1>
-<p>Though not specific to Google Earth, GeoServer has the ability to filter data returned from the <code>Web Map Service (WMS) &lt;../../index.rst&gt;`_. The KML Reflector will pass through any WMS</code>filter<code>or</code>cql_filter<code>parameter to GeoServer to constrain the response.   .. note:: Filters are basically a translation of a SQL "WHERE" statement into web form.  Though limited to a single table, this allows users to do logical filters like "AND" and "OR" to make very complex queries, leveraging numerical and string comparisons, geometric operations ("bbox", "touches", "intersects", "disjoint"), "LIKE" statements, nulls, and more.  Filter ------  There simplest filter is very easy to include. It is called the</code>featureid`` filter, and it lets you filter to a single feature by its ID. The syntax is:</p>
+<p>Though not specific to Google Earth, GeoServer has the ability to filter data returned from the <a href="../../../">Web Map Service (WMS)</a>. The KML Reflector will pass through any WMS <code>filter</code> or <code>cql_filter</code> parameter to GeoServer to constrain the response.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Filters are basically a translation of a SQL "WHERE" statement into web form. Though limited to a single table, this allows users to do logical filters like "AND" and "OR" to make very complex queries, leveraging numerical and string comparisons, geometric operations ("bbox", "touches", "intersects", "disjoint"), "LIKE" statements, nulls, and more.</p>
+</div>
+<h2 id="filter">Filter</h2>
+<p>There simplest filter is very easy to include. It is called the <code>featureid</code> filter, and it lets you filter to a single feature by its ID. The syntax is:</p>
 <div class="language-text highlight"><pre><span></span><code>featureid=&lt;feature&gt;
 </code></pre></div>
 <p>where <feature> is the feature and its ID. An example would be:</p>

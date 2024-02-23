@@ -2728,6 +2728,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ncwms-extension-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      ncWMS extension configuration
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3839,6 +3848,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ncwms-extension-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      ncWMS extension configuration
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4024,31 +4042,39 @@
 <li>Getting a time series as JPG: <a href="http://localhost:8080/geoserver/wms?SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetTimeSeries&amp;FORMAT=image%2Fjpeg&amp;TIME=2008-10-31T00:00:00.000Z/2008-11-01T00:00:00.000Z&amp;QUERY_LAYERS=watertemp&amp;STYLES&amp;LAYERS=watertemp&amp;INFO_FORMAT=image%2Fjpg&amp;FEATURE_COUNT=50&amp;X=50&amp;Y=50&amp;SRS=EPSG%3A4326&amp;WIDTH=101&amp;HEIGHT=101&amp;BBOX=3.724365234375%2C40.81420898437501%2C5.943603515625%2C43.03344726562501">http://localhost:8080/geoserver/wms?SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetTimeSeries&amp;FORMAT=image%2Fjpeg&amp;TIME=2008-10-31T00:00:00.000Z/2008-11-01T00:00:00.000Z&amp;QUERY_LAYERS=watertemp&amp;STYLES&amp;LAYERS=watertemp&amp;INFO_FORMAT=image%2Fjpg&amp;FEATURE_COUNT=50&amp;X=50&amp;Y=50&amp;SRS=EPSG%3A4326&amp;WIDTH=101&amp;HEIGHT=101&amp;BBOX=3.724365234375%2C40.81420898437501%2C5.943603515625%2C43.03344726562501</a></li>
 </ul>
 </blockquote>
-<p>The INFO_FORMAT accepts the following values: <code>image/png</code> <code>image/jpg</code>and <code>text/csv</code> The TIME parameter accepts a time range as defined for other operations in the WMS standard (see Annex D of the 06-042 Web Map Server Implementation Specification). Examples:</p>
+<p>The INFO_FORMAT accepts the following values: <code>image/png</code>, <code>image/jpg</code> and <code>text/csv</code></p>
+<p>The TIME parameter accepts a time range as defined for other operations in the WMS standard (see Annex D of the 06-042 Web Map Server Implementation Specification). Examples:</p>
 <blockquote>
 <ul>
-<li><code>TIME=2008-10-31T00:00:00.000Z/2008-11-01T00:00:00.000Z</code> * <code>TIME=2008-10-31T00:00:00.000Z/2008-10-31T00:00:00.000Z</code></li>
+<li><code>TIME=2008-10-31T00:00:00.000Z/2008-11-01T00:00:00.000Z</code></li>
+<li><code>TIME=2008-10-31T00:00:00.000Z/2008-10-31T00:00:00.000Z</code></li>
 </ul>
 </blockquote>
 <p>Since GeoServer 2.17, TIME parameter also supports 2 additional syntax even if not expressly supported by ncWMS specification:</p>
 <blockquote>
 <ol>
 <li>A List of Times:<ul>
-<li>Example: <code>TIME=2014-01,2015-01,2016-01,2017-01,2018-01</code> * Example: <code>TIME=2017-01-01T00:00:00Z,2017-02-01T00:00:00Z,2017-01-03T00:00:00Z</code></li>
+<li>Example: <code>TIME=2014-01,2015-01,2016-01,2017-01,2018-01</code></li>
+<li>Example: <code>TIME=2017-01-01T00:00:00Z,2017-02-01T00:00:00Z,2017-01-03T00:00:00Z</code></li>
+</ul>
+</li>
+<li>A periodic time within a range:<ul>
+<li>Example: <code>TIME=2015-01/2019-01/P1Y</code></li>
 </ul>
 </li>
 </ol>
-<h1 id="a-periodic-time-within-a-range">. A periodic time within a range:</h1>
 <blockquote>
-<ul>
-<li>
-<p>Example: <code>TIME=2015-01/2019-01/P1Y</code> .. note:</p>
+<p>::: note
+::: title
+Note
+:::</p>
 <ul>
 <li>
 <p>Shortened time specifications in a list are parsed as time ranges by GeoServer. Therefore, a Time like 2014-01 will represent the whole month of January 2014, so a time range: 2014-01-01T00:00:00/2014-01-31T23:59:59.</p>
 </li>
 <li>
 <p>Months and Years expressed through a Period specification (as an instance P2M, P1Y) are considered made of 30 days and 365.25 days respectively. Therefore a periodic interval like 2000-04/2000-12/P1M will be parsed as the list of time instants starting from April 2000 through December 2000 with a period of 30 days:</p>
+<blockquote>
 <ul>
 <li>Apr 01 00:00:00 2000</li>
 <li>May 01 00:00:00 2000</li>
@@ -4060,10 +4086,10 @@
 <li>Oct <strong>28</strong> 00:00:00 2000</li>
 <li>Nov <strong>27</strong> 00:00:00 2000</li>
 <li>Dec <strong>27</strong> 00:00:00 2000</li>
-<li>Therefore if your original dataset has an entry for the first day of each month, this request will only return 2 values: Apr 01 and May 01. In that case, you might consider enabling nearest match on Layer's time dimension.</li>
+<li>Therefore if your original dataset has an entry for the first day of each month, this request will only return 2 values: Apr 01 and May 01. In that case, you might consider enabling nearest match on Layer's time dimension.
+:::</li>
 </ul>
-</li>
-</ul>
+</blockquote>
 </li>
 </ul>
 </blockquote>

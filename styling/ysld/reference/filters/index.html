@@ -2351,7 +2351,7 @@
 <p>where <code>&lt;expression&gt;</code> is any valid CQL/ECQL filter.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Be aware that filters are applied to <code>rules &lt;rules.rst&gt;`_ and so appear inside them, but outside of any</code>ymbolizers <symbolizers/index.rst>`_.</p>
+<p>Be aware that filters are applied to <a href="../rules/">rules</a> and so appear inside them, but outside of any <a href="../symbolizers/">symbolizers</a>.</p>
 </div>
 <h2 id="types-of-filters">Types of filters</h2>
 <p>As mentioned above, the filter can be any valid construction made with CQL/ECQL (Extended/Contextual Query Language).</p>
@@ -2391,7 +2391,8 @@
 <p>These operators are not case sensitive, but are shown here in all caps for legibility and consistency.</p>
 </div>
 <h3 id="spatial-filters">Spatial filters</h3>
-<p>Filters can be spatial in nature. Any valid spatial construction in <code>WKT (Well Known Text) &lt;http://en.wikipedia.org/wiki/Well-known_text&gt;`_ can be used. Spatial filters include</code>INTERSECTS<code>,</code>DISJOINT<code>,</code>CONTAINS<code>,</code>WITHIN<code>,</code>TOUCHES<code>,</code>CROSSES<code>,</code>EQUALS<code>,</code>DWITHIN<code>, and</code>BBOX<code>.</code>NOT<code>can be added to negate the condition.  For more details about these spatial filters and their syntax, please see the</code>GeoServer ECQL reference &lt;../../../geoserver/filter/ecql_reference.html&gt;<code>_ or</code><a href="http://udig.github.io/docs/user/concepts/Constraint%20Query%20Language.html">Dig CQL reference</a>.</p>
+<p>Filters can be spatial in nature. Any valid spatial construction in <a href="http://en.wikipedia.org/wiki/Well-known_text">WKT (Well Known Text)</a> can be used. Spatial filters include <code>INTERSECTS</code>, <code>DISJOINT</code>, <code>CONTAINS</code>, <code>WITHIN</code>, <code>TOUCHES</code>, <code>CROSSES</code>, <code>EQUALS</code>, <code>DWITHIN</code>, and <code>BBOX</code>. <code>NOT</code> can be added to negate the condition.</p>
+<p>For more details about these spatial filters and their syntax, please see the <a href="../../../geoserver/filter/ecql_reference.html">GeoServer ECQL reference</a> or <a href="http://udig.github.io/docs/user/concepts/Constraint%20Query%20Language.html">uDig CQL reference</a>.</p>
 <h3 id="compound-statements">Compound statements</h3>
 <p>The filter can be a combination of statements. A common case is testing if the value of an attribute is greater than one value but less than another.</p>
 <p>The syntax for creating compound statements is to use standard Boolean notation such as <code>AND</code>, <code>OR</code>, and <code>NOT</code> along with relevant parentheses.</p>

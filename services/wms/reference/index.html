@@ -2437,7 +2437,7 @@ request=GetMap
 <p>GML 3        <code>info_format=application/vnd.ogc.gml/3.1.1</code>   Works for both Simple and Complex Features (see <code class="interpreted-text" role="ref">app-schema.complex-features</code>)</p>
 <p>HTML         <code>info_format=text/html</code>                       Uses HTML templates that are defined on the server. See <a href="../../../tutorials/GetFeatureInfo/html/">HTML output format</a> for information on how to template HTML output.</p>
 <p>JSON         <code>info_format=application/json</code>                Simple JSON representation. See <a href="../../../tutorials/GetFeatureInfo/geojson/">GeoJSON output format</a> for information on how to template JSON output.</p>
-<p>JSONP        <code>info_format=text/javascript</code>                 Returns JSONP in the form: <code>parseResponse(...json...)</code>. See <code>WMS vendor parameters &lt;vendor.rst&gt;`_ to change the callback name. Note that this format is disabled by default (See</code>lobal variables affecting WMS <global.rst>`_).</p>
+<p>JSONP        <code>info_format=text/javascript</code>                 Returns JSONP in the form: <code>parseResponse(...json...)</code>. See <a href="../vendor/">WMS vendor parameters</a> to change the callback name. Note that this format is disabled by default (See <a href="../global/">Global variables affecting WMS</a>).</p>
 <hr />
 <p>GeoServer provides the following vendor-specific parameters for the GetFeatureInfo operation. They are fully documented in the <a href="../vendor/">WMS vendor parameters</a> section.</p>
 <hr />
@@ -2551,7 +2551,7 @@ request=GetFeatureInfo
 <p>TEXT         <code>output_format=text/xml</code>                      Same as default.</p>
 <p>GML 2        <code>output_format=application/vnd.ogc.wms_xml</code>   The default format.</p>
 <p>JSON         <code>output_format=application/json</code>              Simple JSON representation.</p>
-<p>JSONP        <code>output_format=text/javascript</code>               Return JSONP in the form: paddingOutput(...jsonp...). See <code>WMS vendor parameters &lt;vendor.rst&gt;`_ to change the callback name.  Note that this format is disabled by default (See</code>lobal variables affecting WMS <global.rst>`_).</p>
+<p>JSONP        <code>output_format=text/javascript</code>               Return JSONP in the form: paddingOutput(...jsonp...). See <a href="../vendor/">WMS vendor parameters</a> to change the callback name. Note that this format is disabled by default (See <a href="../global/">Global variables affecting WMS</a>).</p>
 <hr />
 <p>An example request in XML (default) format on a layer is: :</p>
 <blockquote>
@@ -2605,9 +2605,9 @@ request=GetFeatureInfo
 <p>XML          <code>EXCEPTIONS=application/vnd.ogc.se_xml</code>       XML output. (The default format)</p>
 <p>INIMAGE      <code>EXCEPTIONS=application/vnd.ogc.se_inimage</code>   Generates an image</p>
 <p>BLANK        <code>EXCEPTIONS=application/vnd.ogc.se_blank</code>     Generates a blank image</p>
-<p>PARTIALMAP   <code>EXCEPTIONS=application/vnd.gs.wms_partial</code>   This is a GeoServer vendor parameter and only applicable for GetMap requests. Returns everything that was rendered at the time the rendering process threw an exception. Can be used with the <code>WMS Configuration Limits &lt;configuration.rst#wms_configuration_limits&gt;`_ to return a partial image even if the request is terminated for exceeding one of these limits. It also works with the</code>timeout`<code>\`vendor parameter \&lt;vendor.rst\&gt;</code>_.</p>
+<p>PARTIALMAP   <code>EXCEPTIONS=application/vnd.gs.wms_partial</code>   This is a GeoServer vendor parameter and only applicable for GetMap requests. Returns everything that was rendered at the time the rendering process threw an exception. Can be used with the <a href="../configuration/#wms_configuration_limits">WMS Configuration Limits</a> to return a partial image even if the request is terminated for exceeding one of these limits. It also works with the <code>timeout</code> <a href="../vendor/">vendor parameter</a>.</p>
 <p>JSON         <code>EXCEPTIONS=application/json</code>                 Simple JSON representation.</p>
-<p>JSONP        <code>EXCEPTIONS=text/javascript</code>                  Return JSONP in the form: paddingOutput(...jsonp...). See <code>WMS vendor parameters &lt;vendor.rst&gt;`_ to change the callback name. Note that this format is disabled by default (See</code>lobal variables affecting WMS \&lt;global.rst&gt;`_).</p>
+<p>JSONP        <code>EXCEPTIONS=text/javascript</code>                  Return JSONP in the form: paddingOutput(...jsonp...). See <a href="../vendor/">WMS vendor parameters</a> to change the callback name. Note that this format is disabled by default (See <a href="../global/">Global variables affecting WMS</a>).</p>
 <hr />
 
 

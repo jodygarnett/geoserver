@@ -3166,7 +3166,7 @@
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl &quot;http://localhost:8080/geoserver/wfs?service=wfs&amp;version=2.0.0&amp;request=GetFeature&amp;typeNames=ws:layername&amp;outputFormat=geopkg&quot; \
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>-o wfs.gpkg
 </span></code></pre></div>
-<p>You can use <code>geopkg</code> <code>geopackage</code> or <code>gpkg</code>as the output format in the request. Use <code>1.0.0</code> <code>1.1.0</code> or <code>2.0.0</code>as <code>version=</code> to specify which WFS version to use.</p>
+<p>You can use <code>geopkg</code>, <code>geopackage</code>, or <code>gpkg</code> as the output format in the request. Use <code>1.0.0</code>, <code>1.1.0</code>, or <code>2.0.0</code> as <code>version=</code> to specify which WFS version to use.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>GeoPackages always have the ordinates in X,Y (<code>EAST_NORTH</code>) format.</p>
@@ -3181,7 +3181,7 @@
 <p>Some container environments recommend use of a network share for their <code>java.io.tmpdir</code> location. This approach is not compatible with SQLite database driver which requires a local disk location and file lock.</p>
 <p>To override the temporary file location used for GeoPackage output format file generation use property <code>-Dgeopackage.wfs.tempdir=&lt;path location&gt;</code> to provide an alternate path.</p>
 <h2 id="wms">WMS</h2>
-<p>Add <code>&amp;format=geopkg</code> to your request. The result will be a GeoPackage (MIME type <code>application/geopackage+sqlite3</code> containing the requested tiles.</p>
+<p>Add <code>&amp;format=geopkg</code> to your request. The result will be a GeoPackage (MIME type <code>application/geopackage+sqlite3</code>) containing the requested tiles.</p>
 <p>Using WMS 1.1.0 to access tiled image geopkg:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl &quot;http://localhost:8080/geoserver/wms?service=WMS&amp;version=1.1.0&amp;request=GetMap&amp;layers=ws:layername&amp;bbox=-123.43670607166865%2C48.3956835%2C-123.2539813%2C48.5128362547052&amp;width=1536&amp;height=984&amp;srs=EPSG%3A4326&amp;styles=&amp;format=geopkg&quot; \
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>-o wms.gpkg
@@ -3198,49 +3198,53 @@
 <h3 id="wms-format-options">WMS Format options</h3>
 <p>You can also add format options (<code>format_options=param1:value1;param2:value2;...</code>) to the request. With all default values, you will get a GeoPackage with PNG tiles of multiple resolutions. There will be a little more than 255 total tiles - all occupying the area in the request's bbox.</p>
 <dl>
-<dt>+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+</dt>
-<dt>| Parameter    | Description                                                                                                                                   |</dt>
-<dt>+==============+===============================================================================================================================================+</dt>
-<dt>| min_zoom     | Grid Zoom level for tiles to start.                                                                                                           |</dt>
-<dt>|              |                                                                                                                                               |</dt>
-<dt>|              | default: zoom level based on a single tile covering the bbox area.                                                                            |</dt>
-<dt>+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+</dt>
-<dt>| max_zoom     | Grid Zoom level for tiles to end.                                                                                                             |</dt>
-<dt>|              |                                                                                                                                               |</dt>
-<dt>|              | default: zoom where there's &gt;255 tiles in total in the geopkg (could be a bit more)                                                         |</dt>
-<dt>+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+</dt>
-<dt>| num_zooms    | Number of zoom levels in the geopkg.                                                                                                          |</dt>
-<dt>|              |                                                                                                                                               |</dt>
-<dt>|              | If present then <code>max_zoom = min_zoom + num_zooms</code> * - format                                                                                 |</dt>
-<dt>+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+</dt>
-<dt>| tileset_name | Name of tile set ("layer") used in the geopkg.                                                                                              |</dt>
-<dt>|              |                                                                                                                                               |</dt>
-<dt>|              | default: based on the layer names given in the request ('_' separated)                                                                     |</dt>
-<dt>+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+</dt>
-<dt>| min_column   | First column number (from the gridset) to use.                                                                                                |</dt>
-<dt>|              |                                                                                                                                               |</dt>
-<dt>|              | default: use request bbox to determine which tiles to produce                                                                                 |</dt>
-<dt>+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+</dt>
-<dt>| max_column   | Last column number (from the gridset) to use.                                                                                                 |</dt>
-<dt>|              |                                                                                                                                               |</dt>
-<dt>|              | default: use request bbox to determine which tiles to produce                                                                                 |</dt>
-<dt>+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+</dt>
-<dt>| min_row      | First row number (from the gridset) to use.                                                                                                   |</dt>
-<dt>|              |                                                                                                                                               |</dt>
-<dt>|              | default: use request bbox to determine which tiles to produce                                                                                 |</dt>
-<dt>+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+</dt>
-<dt>| max_row      | Last row number (from the gridset) to use.                                                                                                    |</dt>
-<dt>|              |                                                                                                                                               |</dt>
-<dt>|              | default: use request bbox to determine which tiles to produce                                                                                 |</dt>
-<dt>+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+</dt>
-<dt>| gridset      | Name of the gridset (from GWC GridSetBroker) to uses.                                                                                         |</dt>
-<dt>|              |                                                                                                                                               |</dt>
-<dt>|              | default: find based on request SRS                                                                                                            |</dt>
-<dt>+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+</dt>
-<dt>| flipy        | Do NOT set.                                                                                                                                   |</dt>
-<dt>|              |                                                                                                                                               |</dt>
-<dt>|              | default: TRUE (required for GeoPackage - <code>The tile coordinate (0,0) always refers to the tile in the upper left corner of the tile matrix...</code> |</dt>
-<dt>+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+</dt>
+<dt>+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+</dt>
+<dt>| Parameter    | Description                                                                                                                                                 |</dt>
+<dt>+==============+=============================================================================================================================================================+</dt>
+<dt>| min_zoom     | Grid Zoom level for tiles to start.                                                                                                                         |</dt>
+<dt>|              |                                                                                                                                                             |</dt>
+<dt>|              | default: zoom level based on a single tile covering the bbox area.                                                                                          |</dt>
+<dt>+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+</dt>
+<dt>| max_zoom     | Grid Zoom level for tiles to end.                                                                                                                           |</dt>
+<dt>|              |                                                                                                                                                             |</dt>
+<dt>|              | default: zoom where there's &gt;255 tiles in total in the geopkg (could be a bit more)                                                                       |</dt>
+<dt>+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+</dt>
+<dt>| num_zooms    | Number of zoom levels in the geopkg.                                                                                                                        |</dt>
+<dt>|              |                                                                                                                                                             |</dt>
+<dt>|              | If present then <code>max_zoom = min_zoom + num_zooms</code>                                                                                               |</dt>
+<dt>+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+</dt>
+<dt>| format       | Format for the image tiles in the geopkg.                                                                                                                   |</dt>
+<dt>|              |                                                                                                                                                             |</dt>
+<dt>|              | default: PNG                                                                                                                                                |</dt>
+<dt>+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+</dt>
+<dt>| tileset_name | Name of tile set ("layer") used in the geopkg.                                                                                                            |</dt>
+<dt>|              |                                                                                                                                                             |</dt>
+<dt>|              | default: based on the layer names given in the request ('_' separated)                                                                                   |</dt>
+<dt>+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+</dt>
+<dt>| min_column   | First column number (from the gridset) to use.                                                                                                              |</dt>
+<dt>|              |                                                                                                                                                             |</dt>
+<dt>|              | default: use request bbox to determine which tiles to produce                                                                                               |</dt>
+<dt>+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+</dt>
+<dt>| max_column   | Last column number (from the gridset) to use.                                                                                                               |</dt>
+<dt>|              |                                                                                                                                                             |</dt>
+<dt>|              | default: use request bbox to determine which tiles to produce                                                                                               |</dt>
+<dt>+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+</dt>
+<dt>| min_row      | First row number (from the gridset) to use.                                                                                                                 |</dt>
+<dt>|              |                                                                                                                                                             |</dt>
+<dt>|              | default: use request bbox to determine which tiles to produce                                                                                               |</dt>
+<dt>+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+</dt>
+<dt>| max_row      | Last row number (from the gridset) to use.                                                                                                                  |</dt>
+<dt>|              |                                                                                                                                                             |</dt>
+<dt>|              | default: use request bbox to determine which tiles to produce                                                                                               |</dt>
+<dt>+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+</dt>
+<dt>| gridset      | Name of the gridset (from GWC GridSetBroker) to uses.                                                                                                       |</dt>
+<dt>|              |                                                                                                                                                             |</dt>
+<dt>|              | default: find based on request SRS                                                                                                                          |</dt>
+<dt>+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+</dt>
+<dt>| flipy        | Do NOT set.                                                                                                                                                 |</dt>
+<dt>|              |                                                                                                                                                             |</dt>
+<dt>|              | default: TRUE (required for GeoPackage - <code>The tile coordinate (0,0) always refers to the tile in the upper left corner of the tile matrix\...</code>) |</dt>
+<dt>+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+</dt>
 <dd>
 <p>Format Options</p>
 </dd>

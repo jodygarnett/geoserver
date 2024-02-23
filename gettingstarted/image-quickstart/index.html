@@ -1930,7 +1930,7 @@
 <li><strong><code>SR_50M.tif</code></strong></li>
 <li><strong><code>SR_50M.VERSION.txt</code></strong></li>
 </ul>
-<p>This forms a world (the <code>tfw</code>file) plus image (the <strong><code>tif</code></strong> file).</p>
+<p>This forms a world (the <code>tfw</code> file) plus image (the <strong><code>tif</code></strong> file).</p>
 </li>
 <li>
 <p>Move these files into your GeoServer Data Directory <strong><code>data/ne</code></strong> folder.</p>
@@ -1958,7 +1958,8 @@
 <li>
 <p>You will be prompted to enter a workspace <strong>Name</strong> and <strong>Namespace URI</strong>.</p>
 <hr />
-<p>Name:                 <code>tutorial</code> * - Namespace URI</p>
+<p>Name:                 <code>tutorial</code></p>
+<p>Namespace URI         <code>http://localhost:8080/geoserver/tutorial</code></p>
 <hr />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2000,7 +2001,8 @@
 <p>Begin by configuring the <strong>Basic Store Info</strong>.</p>
 <hr />
 <p>workspace             <code>tutorial</code></p>
-<p>Data Source Name      <code>ShadedRelief</code> * - Description</p>
+<p>Data Source Name      <code>ShadedRelief</code></p>
+<p>Description           <code>Grayscale shaded relief of land areas.</code></p>
 <hr />
 <p>This information is internal to GeoServer and is not used as part of the web service protocols. We recommend keeping the <strong>Data Source Name</strong> simple as they will be used to form folders in the data directory (so keep any operating system restrictions on character use in mind).</p>
 <p><img alt="" src="images/layer_basic.png" />
@@ -2048,7 +2050,9 @@
 <li>
 <p>Locate <strong>Basic Resource Info</strong> and define the layer:</p>
 <hr />
-<p>Name                  <code>shaded</code> * - Title</p>
+<p>Name                  <code>shaded</code></p>
+<p>Title                 <code>Shaded Relief</code></p>
+<p>Abstract              <code>Grayscale shaded relief of land areas.</code></p>
 <hr />
 <p>The naming of a layer is important, and while GeoServer does not offer restrictions many of the individual protocols will only work with very simple names.</p>
 <p><img alt="" src="images/layer_basic.png" />
@@ -2061,7 +2065,9 @@
 <p>In this case select <code>Force declared</code> to prefer the GeoServer internal EPSG database definition of WGS84 over the <strong><code>prj</code></strong> file provided alongside the same image.</p>
 </div>
 <hr />
-<p>Native SRS            <code>EPSG:4326</code> * - Declaired SRS</p>
+<p>Native SRS            <code>EPSG:4326</code></p>
+<p>Declaired SRS         <code>EPSG:4326</code></p>
+<p>SRS Handling          <code>Force declared</code></p>
 <hr />
 <p><img alt="" src="images/layer_crs.png" />
 <em>Coordinate Reference Systems</em></p>
@@ -2098,7 +2104,7 @@
 <p>Navigate to the <strong>Data &gt; Layer Preview</strong> page and find the <code>tutorial:shaded</code> layer.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Use the <strong>Search</strong> field with <code>tutorial</code>as shown to limit the number of layers to page through.</p>
+<p>Use the <strong>Search</strong> field with <code>tutorial</code> as shown to limit the number of layers to page through.</p>
 </div>
 </li>
 <li>

@@ -3111,13 +3111,13 @@
 <ul>
 <li>Visit the GeoServer <a href="https://geoserver.org/download">download</a> page and navigate to the download page for the version of GeoServer your are using. The <strong>metadata</strong> download is listed under extensions. The file name is called <strong><code>geoserver-*-metadata-plugin.zip</code></strong>, where <code>*</code> matches the version number of GeoServer you are using.</li>
 <li>Extract this file and place the JARs in <strong><code>WEB-INF/lib</code></strong>.</li>
-<li>Perform any configuration required by your servlet container, and then restart. On startup, Metadata module will create a configuration directory <code>metadata</code> in the GeoServer Data Directory. The module will scan all <code>yaml &lt;https://yaml.org/&gt;`__ files in the</code>metadata`` directory.</li>
+<li>Perform any configuration required by your servlet container, and then restart. On startup, Metadata module will create a configuration directory <code>metadata</code> in the GeoServer Data Directory. The module will scan all <a href="https://yaml.org/">yaml</a> files in the <code>metadata</code> directory.</li>
 </ul>
 <h2 id="basic-configuration">Basic configuration</h2>
 <p>By default the metadata module will add an extra tab to the edit layer page. Open the layer: navigate to <strong>Layers &rarr; Choose the layer &rarr; Metadata tab</strong>.</p>
 <p><img alt="" src="../images/empty-default.png" />
 <em>The initial UI. Note the </em><em>Metadata fields</em><em> panel is still empty</em></p>
-<p>The content of the <strong>Metadata fields</strong> is configured by placing one or multiple <code>yaml &lt;https://yaml.org/&gt;`__ files describing the UI components in the metadata configuration folder, see</code>NSPIRE metadata configuration using metadata and CSW &lt;../../tutorials/metadata/index.rst&gt;`_ for a real life example.</p>
+<p>The content of the <strong>Metadata fields</strong> is configured by placing one or multiple <a href="https://yaml.org/">yaml</a> files describing the UI components in the metadata configuration folder, see <a href="../../../tutorials/metadata/">INSPIRE metadata configuration using metadata and CSW</a> for a real life example.</p>
 <p>Example UI configuration:</p>
 <div class="language-YAML highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">attributes</span><span class="p">:</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">metadata-identifier</span>

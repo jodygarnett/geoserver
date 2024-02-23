@@ -4034,7 +4034,7 @@ Name=modisvi</p>
 <p>The previous indexer refers to a time dimension and the related time column in the index's schema that will get populated by extracting the time value from the filename (the 8 digits, representing YEAR, MONTH, DAY) using the regex specified in the timeregex.properties file. An example of sample file for this collection as stored on the S3 bucket is 2018.01.01.tif so the time regex will reflect that. Note the 3 groups of digits and the 'format' of the date.</p>
 <p>regex=[0-9]{4}.[0-9]{2}.[0-9]{2},format=yyyy.MM.dd</p>
 <h3 id="datastoreproperties">datastore.properties:</h3>
-<p>Due to the amount of available datasets, storing the ImageMosaic index on a DBMS is recommended, i.e. a PostGIS DB. See <code>**</code>atastore.properties<a href="../../../data/raster/imagemosaic/configuration/#mosaic_datastore_properties">**</a> section of the ImageMosaic documentation for more info. Make sure that a DB with the name reported in the datastore is available</p>
+<p>Due to the amount of available datasets, storing the ImageMosaic index on a DBMS is recommended, i.e. a PostGIS DB. See <code>**`datastore.properties</code>** &lt;../../data/raster/imagemosaic/configuration.rst#mosaic_datastore_properties&gt;`_ section of the ImageMosaic documentation for more info. Make sure that a DB with the name reported in the datastore is available</p>
 <p>user=postgres
 port=5432
 passwd=postgres
@@ -4062,7 +4062,7 @@ Connection\ timeout=20</p>
 <li>An existing GeoServer instance is running on port 8080 of localhost.</li>
 <li>A workspace named "test" exists on that GeoServer.</li>
 <li>REST credentials are user=admin password=geoserver.</li>
-<li>A default aws region is defined on JAVA System Property, using the flag <code>-Diio.https.aws.region=us-west-2</code></li>
+<li>A default aws region is defined on JAVA System Property, using the flag <code>-Diio.https.aws.region=us-west-2</code>.</li>
 </ul>
 <p>Make sure to update the incoming URLs accordingly, based on your actual installation.</p>
 <p><strong>Create an empty ImageMosaic without configuring it</strong></p>

@@ -1489,6 +1489,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#catalog-mode" class="md-nav__link">
     <span class="md-ellipsis">
       Catalog Mode
@@ -1815,6 +1824,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#catalog-mode" class="md-nav__link">
     <span class="md-ellipsis">
       Catalog Mode
@@ -1938,7 +1956,33 @@
 <p class="admonition-title">Note</p>
 <p>Layer security and <a href="../service/">Service Security</a> cannot be combined. For example, it is not possible to specify access to a specific OWS service, only for one specific layer.</p>
 </div>
-<p>Providing access to layers is linked to <code>roles &lt;usergrouprole/roles.rst&gt;`_. Layers and roles are linked in a file called</code>layers.properties<code>, which is located in the</code>security<code>directory in your GeoServer data directory. The file contains the rules that control access to workspaces and layers.  .. note:: The default layers security configuration in GeoServer allows any anonymous user to read data from any layer but only allows admin users to edit data.  Rules -----  The syntax for a layer security rule can follow three different patterns (</code>[]<code>denotes optional parameters)::    globalLayerGroup.permission=role[,role2,...]   workspace.layer.permission=role[,role2,...]   workspace.workspaceLayerGroup.permission=role[,role2,...]  The parameters include:  *</code>globalLayerGroup<code>— Name of a global layer group (one without workspace associated to it). *</code>workspace<code>— Name of the workspace. The wildcard</code><em><code>` is used to indicate all workspaces.*</code>layer<code>--- Name of a resource (featuretype/coverage/etc\...). The wildcard</code></em><code>is used to indicate all layers. *</code>workspaceLayerGroup<code>--- Name of a workspace specific layer group. *</code>permission`--- Type of access permission/mode.</p>
+<p>Providing access to layers is linked to <a href="../usergrouprole/roles/">roles</a>. Layers and roles are linked in a file called <code>layers.properties</code>, which is located in the <code>security</code> directory in your GeoServer data directory. The file contains the rules that control access to workspaces and layers.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default layers security configuration in GeoServer allows any anonymous user to read data from any layer but only allows admin users to edit data.</p>
+</div>
+<h2 id="rules">Rules</h2>
+<p>The syntax for a layer security rule can follow three different patterns (<code>[]</code> denotes optional parameters):</p>
+<div class="language-text highlight"><pre><span></span><code>globalLayerGroup.permission=role[,role2,...]
+workspace.layer.permission=role[,role2,...]
+workspace.workspaceLayerGroup.permission=role[,role2,...]
+</code></pre></div>
+<p>The parameters include:</p>
+<ul>
+<li>
+<p><code>globalLayerGroup</code>--- Name of a global layer group (one without workspace associated to it).</p>
+</li>
+<li>
+<p><code>workspace</code>--- Name of the workspace. The wildcard <code>*</code> is used to indicate all workspaces.</p>
+</li>
+<li>
+<p><code>layer</code>--- Name of a resource (featuretype/coverage/etc...). The wildcard <code>*</code> is used to indicate all layers.</p>
+</li>
+<li>
+<p><code>workspaceLayerGroup</code>--- Name of a workspace specific layer group.</p>
+</li>
+<li>
+<p><code>permission</code>--- Type of access permission/mode.</p>
 <blockquote>
 <ul>
 <li><code>r</code>---Read access</li>
@@ -1947,8 +1991,10 @@
 </ul>
 <p>See <a href="./#access_mode">Access modes</a> for more details.</p>
 </blockquote>
-<ul>
-<li><code>role[,role2,...]</code> is the name(s) of predefined roles. The wildcard <code>*</code> is used to indicate the permission is applied to all users, including anonymous users.</li>
+</li>
+<li>
+<p><code>role[,role2,...]</code> is the name(s) of predefined roles. The wildcard <code>*</code> is used to indicate the permission is applied to all users, including anonymous users.</p>
+</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

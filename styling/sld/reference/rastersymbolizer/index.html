@@ -2873,14 +2873,12 @@
 <p>Support for this element has not been implemented yet.</p>
 </div>
 <p>Sometimes raster data is comprised of multiple image sets. Take, for example, a <a href="http://apod.nasa.gov/apod/ap001127.html">satellite view of the Earth at night</a> . As all of the Earth can't be in nighttime at once, a composite of multiple images are taken. These images are georeferenced, and pieced together to make the finished product. That said, it is possible that two images from the same dataset could overlap slightly, and the OverlapBehavior element is designed to determine how this is handled. There are four types of OverlapBehavior:</p>
-<blockquote>
 <ul>
 <li>AVERAGE</li>
 <li>RANDOM</li>
 <li>LATEST_ON_TOP</li>
 <li>EARLIEST_ON_TOP</li>
 </ul>
-</blockquote>
 <p><strong>AVERAGE</strong> takes each overlapping point and displays their average value. <strong>RANDOM</strong> determines which image gets displayed according to chance (which can sometimes result in a crisper image). <strong>LATEST_ON_TOP</strong> and <strong>EARLIEST_ON_TOP</strong> sets the determining factor to be the internal timestamp on each image in the dataset. None of these elements have any parameters, and are all called in the same way:</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nt">&lt;OverlapBehavior&gt;</span>
 </span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">    </span><span class="nt">&lt;AVERAGE</span><span class="w"> </span><span class="nt">/&gt;</span>

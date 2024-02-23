@@ -2532,13 +2532,13 @@
 </ul>
 </li>
 <li>
-<p>Change the URL with <code>?pretty=true</code>for human readable XML.</p>
+<p>Change the URL with <code>?pretty=true</code> for human readable XML.</p>
 <ul>
 <li><view-source:http://localhost:8080/geoserver/rest/styles/states.sld?pretty=true></li>
 </ul>
 </li>
 <li>
-<p>Change the URL with <code>yaml</code>to convert to YSLD.</p>
+<p>Change the URL with <code>yaml</code> to convert to YSLD.</p>
 <ul>
 <li><view-source:http://localhost:8080/geoserver/rest/styles/states.yaml></li>
 </ul>
@@ -2879,7 +2879,7 @@
 <ol>
 <li>
 <p>SLD Mark and ExternalGraphic provide an opportunity for dynamic symbolization.</p>
-<p>This is accomplished by embedding a small CQL expression in the string passed to symbol or url. This sub-expression is isolated with <code>${ }</code>as shown:</p>
+<p>This is accomplished by embedding a small CQL expression in the string passed to symbol or url. This sub-expression is isolated with <code>\${ }</code> as shown:</p>
 <blockquote>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">point</span><span class="p">:</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="nt">symbols</span><span class="p">:</span>
@@ -2946,7 +2946,8 @@
         anchor: [0.5, 1]
         offset: [0 ${&#39;-12&#39; + SCALERANK}]
         halo:
-          fill-color: ``lightgray``                radius: 2
+          fill-color: `lightgray`
+          radius: 2
           opacity: 0.7
         priority: ${`0` - LABELRANK}
         x-maxDisplacement: 90
@@ -2983,9 +2984,9 @@
 <li>
 <p>The color-map <strong>type</strong> property dictates how the values are used to generate a resulting color.</p>
 <ul>
-<li><code>ramp</code>is used for quantitative data, providing a smooth interpolation between the provided color values.</li>
-<li><code>intervals</code>provides categorization for quantitative data, assigning each range of values a solid color.</li>
-<li><code>values</code>is used for qualitative data, each value is required to have a <strong>color-map</strong> entry or it will not be displayed.</li>
+<li><code>ramp</code> is used for quantitative data, providing a smooth interpolation between the provided color values.</li>
+<li><code>intervals</code> provides categorization for quantitative data, assigning each range of values a solid color.</li>
+<li><code>values</code> is used for qualitative data, each value is required to have a <strong>color-map</strong> entry or it will not be displayed.</li>
 </ul>
 </li>
 <li>

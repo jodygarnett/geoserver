@@ -4038,11 +4038,12 @@
 <li>Obtain an Access Token from the underlying IDP</li>
 <li>Attach the access token to your HTTP request headers</li>
 </ol>
-<p><code>Authorization: Bearer &lt;token&gt;</code> The Access Token (JWT) is validated;</p>
+<p><code>Authorization: Bearer &lt;token&gt;</code></p>
+<p>The Access Token (JWT) is validated;</p>
 <ol>
 <li>The Access Token is used to get the "userinfo" endpoint. The underlying IDP will verify the token (i.e. signature and expiry)</li>
-<li>The Audience of the Token is checked that it contains the GeoServer configured Client Id. This make sure an Access Token for another application is not being inappropriately reused in GeoServer (cf. <code>AudienceAccessTokenValidator.java</code>.</li>
-<li>The Subject of the <code>userinfo</code>and Access Token are verified to be about the same person. The OpenID specification recommends checking this (cf. <code>SubjectTokenValidator.java</code>.</li>
+<li>The Audience of the Token is checked that it contains the GeoServer configured Client Id. This make sure an Access Token for another application is not being inappropriately reused in GeoServer (cf. <code>AudienceAccessTokenValidator.java</code>).</li>
+<li>The Subject of the <code>userinfo</code> and Access Token are verified to be about the same person. The OpenID specification recommends checking this (cf. <code>SubjectTokenValidator.java</code>).</li>
 </ol>
 <p>For KeyCloak, consider using the "userinfo endpoint" role source and configure Keycloak to put groups in the "userinfo."</p>
 <p>For Azure AD, configure Azure to allow access to the MS Graph API (memberOf) and use the "Microsoft Graph API (Azure AD)" role source.</p>
@@ -4058,7 +4059,7 @@
 <li>Press "Add permission"</li>
 <li>On the API Permission screen, press the "Grant admin consent for ..." text</li>
 </ol>
-<p>This has been tested with KeyCloak (with groups in the <code>userinfo</code>endpoint response), and with MS Azure AD (with the groups from the GraphAPI). This should work with other IDPs - however, make sure that the Subject and Audience token verification works with their tokens.</p>
+<p>This has been tested with KeyCloak (with groups in the <code>userinfo</code> endpoint response), and with MS Azure AD (with the groups from the GraphAPI). This should work with other IDPs - however, make sure that the Subject and Audience token verification works with their tokens.</p>
 <p>If you do not need Bearer Token functionality, it is recommended to turn this off.</p>
 <h2 id="proof-key-of-code-exchange-pkce">Proof Key of Code Exchange (PKCE)</h2>
 <p>The OpenID Connect plugin allows the use of Proof Key of Code Exchange (PKCE).</p>

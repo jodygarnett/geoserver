@@ -1952,7 +1952,8 @@
 <li>
 <p>You will be prompted to enter a workspace <strong>Name</strong> and <strong>Namespace URI</strong>.</p>
 <hr />
-<p>Name:                 <code>tutorial</code> * - Namespace URI</p>
+<p>Name:                 <code>tutorial</code></p>
+<p>Namespace URI         <code>http://localhost:8080/geoserver/tutorial</code></p>
 <hr />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1996,7 +1997,8 @@
 <p>Begin by configuring the <strong>Basic Store Info</strong>.</p>
 <hr />
 <p>workspace             <code>tutorial</code></p>
-<p>Data Source Name      <code>NaturalEarth</code> * - Description</p>
+<p>Data Source Name      <code>NaturalEarth</code></p>
+<p>Description           <code>GeoPackage of NaturalEarth data</code></p>
 <hr />
 <p>This information is internal to GeoServer and is not used as part of the web service protocols. We recommend keeping the <strong>Data Source Name</strong> simple as they will be used to form folders in the data directory (so keep any operating system restrictions on character use in mind).</p>
 <p><img alt="" src="images/basic.png" />
@@ -2013,7 +2015,8 @@
 <li>
 <p>The <strong>Connection Parameters</strong> for our geopackage are:</p>
 <hr />
-<p>database              <code>file:data/ne/natural_earth.gpkg</code> * - read_only</p>
+<p>database              <code>file:data/ne/natural_earth.gpkg</code></p>
+<p>read_only             checked</p>
 <hr />
 <p>The use of <strong>read_only</strong> above indicates that we will not be writing to this GeoPackage, allowing GeoServer to avoid managing write locks when accessing this content for greater performance.</p>
 <p><img alt="" src="images/connection.png" />
@@ -2050,7 +2053,9 @@
 <li>
 <p>Locate <strong>Basic Resource Info</strong> and define the layer:</p>
 <hr />
-<p>Name                  <code>countries</code> * - Title</p>
+<p>Name                  <code>countries</code></p>
+<p>Title                 <code>countries</code></p>
+<p>Abstract              <code>Sovereign states</code></p>
 <hr />
 <p>The naming of a layer is important, and while GeoServer does not offer restrictions many of the individual protocols will only work with very simple names.</p>
 <p><img alt="" src="images/layer_basic.png" />
@@ -2059,7 +2064,9 @@
 <li>
 <p>Double check the <strong>Coordiante Reference Systems</strong> information is correct.</p>
 <hr />
-<p>Native SRS            <code>EPSG:4326</code> * - Declaired SRS</p>
+<p>Native SRS            <code>EPSG:4326</code></p>
+<p>Declaired SRS         <code>EPSG:4326</code></p>
+<p>SRS Handling          <code>Force declared</code></p>
 <hr />
 <p><img alt="" src="images/layer_crs.png" />
 <em>Coordinate Reference Systems</em></p>
@@ -2092,7 +2099,7 @@
 <p>Navigate to the <strong>Data &gt; Layer Preview</strong> page and find the <code>tutorial:countries</code> layer.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Use the <strong>Search</strong> field with <code>tutorial</code>as shown to limit the number of layers to page through.</p>
+<p>Use the <strong>Search</strong> field with <code>tutorial</code> as shown to limit the number of layers to page through.</p>
 </div>
 <p><img alt="" src="images/preview.png" />
 <em>Layer Preview</em></p>

@@ -1389,6 +1389,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#add-new-xml-usergroup-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add new XML user/group service
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#add-new-jdbc-usergroup-service" class="md-nav__link">
     <span class="md-ellipsis">
       Add new JDBC user/group service
@@ -1445,6 +1454,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security_webadmin_roleservices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Role services
+    </span>
+  </a>
   
 </li>
       
@@ -2042,6 +2060,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#add-new-xml-usergroup-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add new XML user/group service
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#add-new-jdbc-usergroup-service" class="md-nav__link">
     <span class="md-ellipsis">
       Add new JDBC user/group service
@@ -2098,6 +2125,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security_webadmin_roleservices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Role services
+    </span>
+  </a>
   
 </li>
       
@@ -2184,33 +2220,31 @@
 
 
 <h1 id="users-groups-roles">Users, Groups, Roles</h1>
-<p>This section provides the configuration options for <code>User/group services &lt;../usergrouprole/usergroupservices.rst&gt;`_ and</code>ole services &lt;../usergrouprole/roleservices.rst&gt;`_. In addition, users, groups, and roles themselves and can be added, edited, or removed. A great deal of configuration can be accomplished in this section and related pages.</p>
+<p>This section provides the configuration options for <a href="../../usergrouprole/usergroupservices/">User/group services</a> and <a href="../../usergrouprole/roleservices/">Role services</a>. In addition, users, groups, and roles themselves and can be added, edited, or removed. A great deal of configuration can be accomplished in this section and related pages.</p>
 <h2 id="security_webadmin_usergroupservices">User Group Services</h2>
-<dl>
-<dt>In this menu, user/group services can be added, removed, or edited. By default, there is one user/group service in GeoServer, which is <code>XML-based &lt;../usergrouprole/usergroupservices.rst#security_rolesystem_usergroupxml&gt;`_. It is encrypted with</code>eak PBE &lt;../passwd.rst#security_passwd_encryption&gt;<code>_ and uses the default</code><a href="../../passwd/#security_passwd_policy">password policy</a>. It is also possible to have a user/group service based on <code>DBC &lt;../usergrouprole/usergroupservices.rst#security_rolesystem_usergroupjdbc&gt;`_, with or without JNDI.  .. code-block:: raw_markdown     ![](images/ugr_usergroup.png)    *User/group services*   Clicking an existing user/group service will enable editing, while clicking the **Add new** link will configure a new user/group service.  There are three tabs for configuration:  Settings, Users, and Groups.  .. note:: When creating a new user/group service, the form filled out initially can be found under the Settings tab.    Add new XML user/group service ------------------------------  To add a new XML user/group service, click the **Add new** link. XML is the default option. The following figure shows the configuration options for an XML user/group service.  .. code-block:: raw_markdown     ![](images/ugr_ugxmlsettings.png)    *Adding an XML user/group service*   .. list-table::     :widths: 40 60     :header-rows: 1     * - Option      - Description    * - Name      - The name of the user/group service    * - Password encryption      - Sets the type of `Password encryption &lt;../passwd.rst#security_passwd_encryption&gt;`_. Options are **Plain text**, **Weak PBE**, **Strong PBE**, and **Digest**.    * - Password policy      - Sets the</code>password policy &lt;../passwd.rst#security_passwd_policy&gt;<code>_. Options are any active password policies as set in the</code><a href="../passwords/">asswords</a> section.</dt>
-<dd>
-<ul>
-<li>
-<ul>
-<li>XML filename</li>
-<li>Name of the file that will contain the user and group information. Default is <strong><code>users.xml</code></strong> in the <code>security/usergroup/&lt;name_of_usergroupservice&gt;</code> directory.</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>Enable schema validation</li>
-<li>If selected, forces schema validation to occur every time the XML file is read. This option is useful when editing the XML file by hand.</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>File reload interval</li>
-<li>Defines the frequency (in milliseconds) in which GeoServer will check for changes to the XML file. If the file is found to have been modified, GeoServer will recreate the user/group database based on the current state of the file. This value is meant to be set in cases where the XML file contents might change "out of process" and not directly through the web admin interface. The value is specified in milliseconds. A value of 0 disables any checking of the file.</li>
-</ul>
-</li>
-</ul>
-</dd>
-</dl>
+<p>In this menu, user/group services can be added, removed, or edited. By default, there is one user/group service in GeoServer, which is <a href="../../usergrouprole/usergroupservices/#security_rolesystem_usergroupxml">XML-based</a>. It is encrypted with <a href="../../passwd/#security_passwd_encryption">Weak PBE</a> and uses the default <a href="../../passwd/#security_passwd_policy">password policy</a>. It is also possible to have a user/group service based on <a href="../../usergrouprole/usergroupservices/#security_rolesystem_usergroupjdbc">JDBC</a>, with or without JNDI.</p>
+<p><img alt="" src="../images/ugr_usergroup.png" />
+<em>User/group services</em></p>
+<p>Clicking an existing user/group service will enable editing, while clicking the <strong>Add new</strong> link will configure a new user/group service.</p>
+<p>There are three tabs for configuration: Settings, Users, and Groups.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When creating a new user/group service, the form filled out initially can be found under the Settings tab.</p>
+</div>
+<h2 id="add-new-xml-usergroup-service">Add new XML user/group service</h2>
+<p>To add a new XML user/group service, click the <strong>Add new</strong> link. XML is the default option. The following figure shows the configuration options for an XML user/group service.</p>
+<p><img alt="" src="../images/ugr_ugxmlsettings.png" />
+<em>Adding an XML user/group service</em></p>
+<hr />
+<p>Option                       Description</p>
+<hr />
+<p>Name                         The name of the user/group service</p>
+<p>Password encryption          Sets the type of <a href="../../passwd/#security_passwd_encryption">Password encryption</a>. Options are <strong>Plain text</strong>, <strong>Weak PBE</strong>, <strong>Strong PBE</strong>, and <strong>Digest</strong>.</p>
+<p>Password policy              Sets the <a href="../../passwd/#security_passwd_policy">password policy</a>. Options are any active password policies as set in the <a href="../passwords/">Passwords</a> section.</p>
+<p>XML filename                 Name of the file that will contain the user and group information. Default is <strong><code>users.xml</code></strong> in the <code>security/usergroup/&lt;name_of_usergroupservice&gt;</code> directory.</p>
+<p>Enable schema validation     If selected, forces schema validation to occur every time the XML file is read. This option is useful when editing the XML file by hand.</p>
+<p>File reload interval         Defines the frequency (in milliseconds) in which GeoServer will check for changes to the XML file. If the file is found to have been modified, GeoServer will recreate the user/group database based on the current state of the file. This value is meant to be set in cases where the XML file contents might change "out of process" and not directly through the web admin interface. The value is specified in milliseconds. A value of 0 disables any checking of the file.</p>
+<hr />
 <h2 id="add-new-jdbc-usergroup-service">Add new JDBC user/group service</h2>
 <p>To add a new JDBC user/group service, click the <strong>Add new</strong> link, and then the <strong>JDBC</strong> option at the top of the following form. The following figure shows the configuration options for a JDBC user/group service.</p>
 <p><img alt="" src="../images/ugr_ugjdbcsettings.png" />
@@ -2323,8 +2357,8 @@
 <h3 id="security_webadmin_groups">Remove User</h3>
 <p>There are two related buttons that are responsible for removing users: <strong>Remove Selected</strong>, and <strong>Remove Selected and remove role associations</strong>.</p>
 <ul>
-<li><strong>Remove Selected</strong> removes user from <code>users.xml &lt;https://github.com/geoserver/geoserver/blob/main/data/release/security/usergroup/default/users.xml&gt;`_ and leave untouched</code>oles.xml &lt;<a href="https://github.com/geoserver/geoserver/blob/main/data/release/security/role/default/roles.xml">https://github.com/geoserver/geoserver/blob/main/data/release/security/role/default/roles.xml</a>&gt;`_.</li>
-<li><strong>Remove Selected and remove role associations</strong> removes user from <code>users.xml &lt;https://github.com/geoserver/geoserver/blob/main/data/release/security/usergroup/default/users.xml&gt;`_ and also removes user and associated role to user from</code>oles.xml &lt;<a href="https://github.com/geoserver/geoserver/blob/main/data/release/security/role/default/roles.xml">https://github.com/geoserver/geoserver/blob/main/data/release/security/role/default/roles.xml</a>&gt;`_.</li>
+<li><strong>Remove Selected</strong> removes user from <a href="https://github.com/geoserver/geoserver/blob/main/data/release/security/usergroup/default/users.xml">users.xml</a> and leave untouched <a href="https://github.com/geoserver/geoserver/blob/main/data/release/security/role/default/roles.xml">roles.xml</a>.</li>
+<li><strong>Remove Selected and remove role associations</strong> removes user from <a href="https://github.com/geoserver/geoserver/blob/main/data/release/security/usergroup/default/users.xml">users.xml</a> and also removes user and associated role to user from <a href="https://github.com/geoserver/geoserver/blob/main/data/release/security/role/default/roles.xml">roles.xml</a>.</li>
 </ul>
 <p><img alt="" src="../images/ugr_ugusers.png" />
 <em>Users tab</em></p>
@@ -2339,7 +2373,9 @@
 <p>Role list                    Full list of roles, including a list of roles to which the group is associated. Association can be toggled here via the arrow buttons.</p>
 <p>Add a new role               Shortcut to adding a new role</p>
 <hr />
-<p>In this menu, user/group services can be added, removed, or edited. By default, there is one user/group service in GeoServer, which is <code>XML-based &lt;../usergrouprole/usergroupservices.rst#security_rolesystem_usergroupxml&gt;`_. It is encrypted with</code>eak PBE &lt;../passwd.rst#security_passwd_encryption&gt;<code>_ and uses the default</code><a href="../../passwd/#security_passwd_policy">password policy</a>. It is also possible to have a user/group service based on <code>DBC &lt;../usergrouprole/usergroupservices.rst#security_rolesystem_usergroupjdbc&gt;`_ with or without JNDI.  .. _security_webadmin_roleservices:  Role services -------------  In this menu, role services can be added, removed, or edited. By default, the active role service in GeoServer is</code>XML-based &lt;../usergrouprole/roleservices.rst#security_rolesystem_rolexml&gt;<code>_, but it is also possible to have a role service based on</code><a href="../../usergrouprole/roleservices/#security_rolesystem_rolejdbc">DBC</a>, with or without JNDI.</p>
+<p>In this menu, user/group services can be added, removed, or edited. By default, there is one user/group service in GeoServer, which is <a href="../../usergrouprole/usergroupservices/#security_rolesystem_usergroupxml">XML-based</a>. It is encrypted with <a href="../../passwd/#security_passwd_encryption">Weak PBE</a> and uses the default <a href="../../passwd/#security_passwd_policy">password policy</a>. It is also possible to have a user/group service based on <a href="../../usergrouprole/usergroupservices/#security_rolesystem_usergroupjdbc">JDBC</a> with or without JNDI.</p>
+<h2 id="security_webadmin_roleservices">Role services</h2>
+<p>In this menu, role services can be added, removed, or edited. By default, the active role service in GeoServer is <a href="../../usergrouprole/roleservices/#security_rolesystem_rolexml">XML-based</a>, but it is also possible to have a role service based on <a href="../../usergrouprole/roleservices/#security_rolesystem_rolejdbc">JDBC</a>, with or without JNDI.</p>
 <p>The Administrator role is called <code>ROLE_ADMINISTRATOR</code>.</p>
 <p><img alt="" src="../images/ugr_roleservices.png" />
 <em>Role services</em></p>

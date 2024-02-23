@@ -2126,9 +2126,9 @@
 
 <h1 id="geoserver-processes">GeoServer processes</h1>
 <p>GeoServer WPS includes a few processes created especially for use with GeoServer. These are usually GeoServer-specific functions, such as bounds and reprojection. They use an internal connection to the GeoServer WFS/WCS, not part of the WPS specification, for reading and writing data.</p>
-<p>As with the "geo" processes, the names and definitions of these processes are subject to change, so they have not been included here. For a full list of GeoServer-specific processes, please see the GeoServer <code>WPS capabilities document &lt;../operations.rst#wps_getcaps&gt;`_ (or browse with the</code>PS Request Builder &lt;../requestbuilder.rst&gt;`_.)</p>
+<p>As with the "geo" processes, the names and definitions of these processes are subject to change, so they have not been included here. For a full list of GeoServer-specific processes, please see the GeoServer <a href="../../operations/#wps_getcaps">WPS capabilities document</a> (or browse with the <a href="../../requestbuilder/">WPS Request Builder</a>.)</p>
 <h2 id="aggregation-process">Aggregation process</h2>
-<p>The aggregation process is used to perform common aggregation functions (sum, average, count) on vector data. The available outputs formats for this process are <code>text/xml</code>and <code>application/json</code></p>
+<p>The aggregation process is used to perform common aggregation functions (sum, average, count) on vector data. The available outputs formats for this process are <code>text/xml</code> and <code>application/json</code>.</p>
 <p>The process parameters are described in the table bellow:</p>
 <hr />
 <p><strong>Parameter</strong>            <strong>Description</strong>                                                                                                                                                               <strong>Mandatory</strong>   <strong>Multiple</strong></p>
@@ -2138,11 +2138,11 @@
 <p><code>singlePass</code>             If TRUE computes all aggregation values in a single pass. This will defeat DBMS-specific optimizations. If a group by attribute is provided this parameter will be ignored.   yes             no</p>
 <p><code>groupByAttributes</code>      Group by attribute.                                                                                                                                                           no              yes</p>
 <hr />
-<p>Follow some examples of the invocation of this process using GeoServer shipped <code>topp:states</code>layer.</p>
+<p>Follow some examples of the invocation of this process using GeoServer shipped <code>topp:states</code> layer.</p>
 <p>The examples can be tested with CURL:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Content-type: xml&#39;</span><span class="w"> </span>-XPOST<span class="w"> </span>-d@<span class="s1">&#39;wps-request.xml&#39;</span><span class="w"> </span>http://localhost:8080/geoserver/wps
 </span></code></pre></div>
-<p>where <code>wps-request.xml</code>is the file that contains the request.</p>
+<p>where <code>wps-request.xml</code> is the file that contains the request.</p>
 <h3 id="aggregate-example">Aggregate Example</h3>
 <p>Counts the total number of states, sum all the number of persons, computes the average number of persons per state and give the maximum and minimum number of persons in a state.</p>
 <p>Request:</p>
@@ -2219,13 +2219,13 @@
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="p">]</span>
 </span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>The value of <code>AggregationResults</code>attribute should be read in a tabular way. The group by attributes come first in the order they appear in <code>GroupByAttributes</code>attribute. After comes the result of the aggregation functions in the order they appear in the <code>AggregationFunctions</code>attribute. In this case there is no group by attributes so the result only contains a row with the aggregation functions results. This is very similar to the result of an SQL query.</p>
+<p>The value of <code>AggregationResults</code> attribute should be read in a tabular way. The group by attributes come first in the order they appear in <code>GroupByAttributes</code> attribute. After comes the result of the aggregation functions in the order they appear in the <code>AggregationFunctions</code> attribute. In this case there is no group by attributes so the result only contains a row with the aggregation functions results. This is very similar to the result of an SQL query.</p>
 <p>This result should be interpreted like this:</p>
 <hr />
 <p><strong>Max</strong>        <strong>Min</strong>        <strong>Average</strong>         <strong>Sum</strong>        <strong>Count</strong></p>
 <p>29760021       453588         5038397.020408163   246881454      49</p>
 <hr />
-<p>To obtain the result in the XML format the request <code>wps:ResponseForm</code>element needs to be changed to:</p>
+<p>To obtain the result in the XML format the request <code>wps:ResponseForm</code> element needs to be changed to:</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;wps:ResponseForm&gt;</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&lt;wps:RawDataOutput</span><span class="w"> </span><span class="na">mimeType=</span><span class="s">&quot;text/xml&quot;</span><span class="nt">&gt;</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&lt;ows:Identifier&gt;</span>result<span class="nt">&lt;/ows:Identifier&gt;</span>
@@ -2314,7 +2314,7 @@
 </span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">  </span><span class="p">]</span>
 </span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>Since there is a group by attribute the result contains a row for each different value of the group by attribute. Very similar to the result of an SQL query. If there is more that one group by attribute (which is not the case) their values will be in the order they appear in the <code>GroupByAttributes</code>attribute.</p>
+<p>Since there is a group by attribute the result contains a row for each different value of the group by attribute. Very similar to the result of an SQL query. If there is more that one group by attribute (which is not the case) their values will be in the order they appear in the <code>GroupByAttributes</code> attribute.</p>
 <p>This result should be interpreted like this:</p>
 <hr />
 <p><strong>Sub Region</strong>           <strong>Average</strong>             <strong>count</strong></p>

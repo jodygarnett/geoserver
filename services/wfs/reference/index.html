@@ -2430,7 +2430,7 @@ http://example.com/geoserver/wfs?
 <p>In practice, few clients support this operation.</p>
 <h3 id="wfs_wfst">Transaction</h3>
 <p>The <strong>Transaction</strong> operation can create, modify, and delete features published by a WFS. Each transaction will consist of zero or more Insert, Update, and Delete elements, with each transaction element performed in order. Every GeoServer transaction is <em>atomic</em>, meaning that if any of the elements fail, the transaction is abandoned, and the data is unaltered. A WFS server that supports <strong>transactions</strong> is sometimes known as a WFS-T server. <strong>GeoServer fully supports transactions.</strong></p>
-<p>More information on the syntax of transactions can be found in the <code>WFS specification &lt;http://www.opengeospatial.org/standards/wfs&gt;`_ and in the</code>eoServer sample requests &lt;../../configuration/demos/index.rst&gt;`_.</p>
+<p>More information on the syntax of transactions can be found in the <a href="http://www.opengeospatial.org/standards/wfs">WFS specification</a> and in the <a href="../../../configuration/demos/">GeoServer sample requests</a>.</p>
 <h3 id="getgmlobject">GetGMLObject</h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2567,7 +2567,7 @@ http://example.com/geoserver/wfs?
 <hr />
 <p>XML        <code>exceptions=text/xml</code>           <em>(default)</em> XML output</p>
 <p>JSON       <code>exceptions=application/json</code>   Simple JSON</p>
-<p>JSONP      <code>exceptions=text/javascript</code>    Return a JSONP in the form: parseResponse(...jsonp...). See <code>WMS vendor parameters &lt;../wms/vendor.rst&gt;`_ to change the callback name. Note that this format is disabled by default (See</code>lobal variables affecting WMS &lt;../wms/global.rst&gt;`_).</p>
+<p>JSONP      <code>exceptions=text/javascript</code>    Return a JSONP in the form: parseResponse(...jsonp...). See <a href="../../wms/vendor/">WMS vendor parameters</a> to change the callback name. Note that this format is disabled by default (See <a href="../../wms/global/">Global variables affecting WMS</a>).</p>
 <hr />
 
 

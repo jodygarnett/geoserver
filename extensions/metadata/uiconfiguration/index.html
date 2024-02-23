@@ -2758,6 +2758,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#derivedfrom" class="md-nav__link">
+    <span class="md-ellipsis">
+      derivedFrom
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#typename" class="md-nav__link">
     <span class="md-ellipsis">
       typename
@@ -3349,6 +3358,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#derivedfrom" class="md-nav__link">
+    <span class="md-ellipsis">
+      derivedFrom
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#typename" class="md-nav__link">
     <span class="md-ellipsis">
       typename
@@ -3555,7 +3573,7 @@
 <li><a href="#occurrence">occurrence</a></li>
 <li><a href="#condition">condition</a></li>
 <li><a href="#tab">tab</a></li>
-<li><a href="">values</a> (specific field types)</li>
+<li><a href="#values">values</a> (specific field types)</li>
 <li><a href="#derivedfrom">derivedFrom</a> (specific field types)</li>
 <li><a href="#typename">typename</a> (specific field types)</li>
 </ul>
@@ -3611,19 +3629,21 @@
 |              |          | &gt; -   REPEAT           |
 +--------------+----------+------------------------+</p>
 <h3 id="condition">condition</h3>
-<p>Conditional attributes are attributes that are only visible for some layers. A typical example are attributes only present for raster or vector layers. The condition is specified in <code>CQL &lt;cql_tutorial&gt;`_ which is evaluated against the layer's</code>esourceInfo <csw_features>`_ object.</p>
+<p>Conditional attributes are attributes that are only visible for some layers. A typical example are attributes only present for raster or vector layers. The condition is specified in <a href="cql_tutorial">CQL</a> which is evaluated against the layer's <a href="csw_features">ResourceInfo</a> object.</p>
 <p>For example:</p>
 <div class="language-YAML highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">equalTo(typeOf(&quot;.&quot;), &#39;FeatureTypeInfo&#39;)</span>
 </span></code></pre></div>
 <h3 id="tab">tab</h3>
-<p>Optionally, attributes may be displayed on separate tabs. All tabs must be listed under <code>tabs</code>in the main configuration. Then this property is used to assign each attribute to one or more tab (separated by comma), so that the custom metadata panel is divided in tabs:</p>
+<p>Optionally, attributes may be displayed on separate tabs. All tabs must be listed under <code>tabs</code> in the main configuration. Then this property is used to assign each attribute to one or more tab (separated by comma), so that the custom metadata panel is divided in tabs:</p>
 <blockquote>
 <p><img alt="" src="../images/metadata-tabs.png" /></p>
 </blockquote>
 <h3 id="values">values</h3>
-<p>The choices in a <code>DROPDOWN`_,</code>UGGESTBOX<code>_ or `` REQUIREBOX</code><em> can be set using the <code>`values</code>attribute in the yaml.  This is useful for small list, for larger list it can be better to list the choices in a separate .csv file.  derivedFrom ^^^^^^^^^^^ Only used in the<code>DERIVED</code></em> field. The attribute <code>derivedFrom</code> contains the key for the parent on which the <a href="#derived">DERIVED</a> field depends. Follow the link for more information on the <a href="#derived">DERIVED</a> field.</p>
+<p>The choices in a <a href="#dropdown">DROPDOWN</a>, <a href="#suggestbox">SUGGESTBOX</a> or <a href="#requirebox">REQUIREBOX</a> can be set using the <code>values</code> attribute in the yaml. This is useful for small list, for larger list it can be better to list the choices in a separate .csv file.</p>
+<h3 id="derivedfrom">derivedFrom</h3>
+<p>Only used in the <a href="#derived">DERIVED</a> field. The attribute <code>derivedFrom</code> contains the key for the parent on which the <a href="#derived">DERIVED</a> field depends. Follow the link for more information on the <a href="#derived">DERIVED</a> field.</p>
 <h3 id="typename">typename</h3>
-<p>The <code>typename</code> is a required attribute for <code>COMPLEX`_ fields. It contains the key pointing to the definition of the</code>OMPLEX<code>_ field. A special</code>typename<code></code>featureAttribute`is reserved for the <a href="#feature-catalog-generation">Feature Catalog Generation</a> and should not be used.</p>
+<p>The <code>typename</code> is a required attribute for <a href="#complex">COMPLEX</a> fields. It contains the key pointing to the definition of the <a href="#complex">COMPLEX</a> field. A special <code>typename</code> <code>featureAttribute</code> is reserved for the <a href="#feature-catalog-generation">Feature Catalog Generation</a> and should not be used.</p>
 <h2 id="field-types">Field Types</h2>
 <blockquote>
 <ul>
@@ -3800,7 +3820,7 @@
 </span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">            </span><span class="nt">fieldType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NUMBER</span>
 </span></code></pre></div>
 <h2 id="feature-catalog-generation">Feature Catalog Generation</h2>
-<p>To create a feature catalog for a vector layer, a complex structure is needed to describe all the attributes. A lot of this information is already present in the GeoServer feature type or the database. Metadata supports automatically generating a new structure in the metadata from the information at hands that can be customised afterwards. To create support for this feature in your configuration, define a repeatable <a href="#complex">COMPLEX</a> field with built-in <code>fieldType</code> <code>featureAttribute</code>.</p>
+<p>To create a feature catalog for a vector layer, a complex structure is needed to describe all the attributes. A lot of this information is already present in the GeoServer feature type or the database. Metadata supports automatically generating a new structure in the metadata from the information at hands that can be customised afterwards. To create support for this feature in your configuration, define a repeatable <a href="#complex">COMPLEX</a> field with built-in <code>fieldType</code> <code>featureAttribute</code> .</p>
 <p>In the example the featureCatalog object has two attributes. A unique identifier of the type <a href="#uuid">UUID</a> and the feature attribute field.</p>
 <p><img alt="" src="../images/fa01.png" />
 <em>e.g. Empty Feature attribute field</em></p>
@@ -3833,7 +3853,8 @@
 <p><img alt="" src="../images/fa03.png" />
 <em>e.g. Feature attribute with generate domain</em></p>
 <h2 id="internationalization-support">Internationalization support</h2>
-<p>All metadata field labels that appear in the <strong>Metadata fields</strong> can be internationalized. This is performed by creating an internationalization (i18n) file named metadata.properties. Create an entry for each key in the gui configuration following this pattern: <code>PREFIX.attribute-key</code> e.g.</p>
+<p>All metadata field labels that appear in the <strong>Metadata fields</strong> can be internationalized. This is performed by creating an internationalization (i18n) file named metadata.properties. Create an entry for each key in the gui configuration following this pattern: <code>PREFIX.attribute-key</code></p>
+<p>e.g.</p>
 <p><code>metadata.properties</code></p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>metadata.generated.form.metadata-identifier=Unique identifier for the metadata
 </span></code></pre></div>

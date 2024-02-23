@@ -1588,6 +1588,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descriptions
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2509,6 +2518,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descriptions
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2543,7 +2561,12 @@
 <h1 id="customizing-placemarks">Customizing Placemarks</h1>
 <p>KML output can leverage some powerful visualization abilities in Google Earth. <strong>Titles</strong> can be displayed on top of the features. <strong>Descriptions</strong> (custom HTML shown when clicking on a feature) can be added to customize the views of the attribute data. In addition, using Google Earth's time slider, <strong>time</strong>-based animations can be created. Finally, <strong>height</strong> of features can be set, as opposed to the default ground overlay. All of these can be accomplished by creating Freemarker templates. Freemarker templates are text files (with limited HTML code), saved in the <a href="../../../../../datadirectory/">GeoServer data directory</a>, that utilize variables that link to specific attributes in the data.</p>
 <h2 id="titles">Titles</h2>
-<p>Specifying labels via a template involves creating a special text file called <code>title.ftl</code> and placing it into the featuretypes directory inside the <code>GeoServer data directory &lt;../../../../datadirectory/index.rst&gt;`_ for the dataset to be labeled. For instance, to create a template to label the</code>states<code>layer by state name, one would create the file:</code>\&lt;data_dir&gt;/workspaces/topp/states_shapefile/states/title.ftl<code>. The content of the file would be::     ${STATE_NAME.value}  .. warning:  Add SS:  Using a Freemarker template to display the value of STATE_NAME  Descriptions ------------  When working with KML, each feature is linked to a description, accessible when the feature is clicked on. By default, GeoServer creates a list of all the attributes and values for the particular feature.  .. warning:  Add SS:  Default description for a feature  It is possible to modify this default behavior. Much like with featuretype titles, which are edited by creating a</code>title.ftl<code>template, specifying descriptions via a template involves creating a special text file called</code>description.ftl<code>and placing it into the featuretypes directory inside the</code>GeoServer data directory \&lt;../../../../datadirectory/index.rst&gt;<code>\_ for the dataset to be labeled. For instance, a sample description template would be saved here: ````\&lt;data_dir\&gt;/workspaces/topp/states_shapefile/states/description.ftl</code>`. The content of the file could be:</p>
+<p>Specifying labels via a template involves creating a special text file called <code>title.ftl</code> and placing it into the featuretypes directory inside the <a href="../../../../../datadirectory/">GeoServer data directory</a> for the dataset to be labeled. For instance, to create a template to label the <code>states</code> layer by state name, one would create the file: <code>&lt;data_dir&gt;/workspaces/topp/states_shapefile/states/title.ftl</code>. The content of the file would be:</p>
+<div class="language-text highlight"><pre><span></span><code>${STATE_NAME.value}
+</code></pre></div>
+<h2 id="descriptions">Descriptions</h2>
+<p>When working with KML, each feature is linked to a description, accessible when the feature is clicked on. By default, GeoServer creates a list of all the attributes and values for the particular feature.</p>
+<p>It is possible to modify this default behavior. Much like with featuretype titles, which are edited by creating a <code>title.ftl</code> template, specifying descriptions via a template involves creating a special text file called <code>description.ftl</code> and placing it into the featuretypes directory inside the <a href="../../../../../datadirectory/">GeoServer data directory</a> for the dataset to be labeled. For instance, a sample description template would be saved here: <code>&lt;data_dir&gt;/workspaces/topp/states_shapefile/states/description.ftl</code>. The content of the file could be:</p>
 <div class="language-text highlight"><pre><span></span><code>This is the state of ${STATE_NAME.value}.
 </code></pre></div>
 <p>The resulting description will look like this:</p>

@@ -1444,6 +1444,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#labeling_repeat" class="md-nav__link">
+    <span class="md-ellipsis">
+      repeat
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#labeling_max_angle_delta" class="md-nav__link">
+    <span class="md-ellipsis">
+      maxAngleDelta
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#labeling_autowrap" class="md-nav__link">
     <span class="md-ellipsis">
       autoWrap
@@ -2672,6 +2690,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#labeling_repeat" class="md-nav__link">
+    <span class="md-ellipsis">
+      repeat
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#labeling_max_angle_delta" class="md-nav__link">
+    <span class="md-ellipsis">
+      maxAngleDelta
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#labeling_autowrap" class="md-nav__link">
     <span class="md-ellipsis">
       autoWrap
@@ -2928,7 +2964,7 @@
 <p><img alt="" src="../img/lp_2.png" /></p>
 <p><em>PerpendicularOffset = 10</em></p>
 <h2 id="composing-labels-from-multiple-attributes">Composing labels from multiple attributes</h2>
-<p>The <code>&lt;Label&gt;</code> element in <code>&lt;TextSymbolizer&gt;</code>allows mixed content. This means its content can be a mixture of plain text and <a href="../pointsymbolizer/#sld_reference_parameter_expressions">Filter Expressions</a>. The mix gets interepreted as a concatenation. You can leverage this to create complex labels out of multiple attributes.</p>
+<p>The <code>&lt;Label&gt;</code> element in <code>&lt;TextSymbolizer&gt;</code> allows mixed content. This means its content can be a mixture of plain text and <a href="../pointsymbolizer/#sld_reference_parameter_expressions">Filter Expressions</a>. The mix gets interepreted as a concatenation. You can leverage this to create complex labels out of multiple attributes.</p>
 <p>For example, if you want both a state name and its abbreviation to appear in a label, you can do the following:</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&lt;Label&gt;</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&lt;ogc:PropertyName&gt;</span>STATE_NAME<span class="nt">&lt;/ogc:PropertyName&gt;</span><span class="w"> </span>(<span class="nt">&lt;ogc:PropertyName&gt;</span>STATE_ABBR<span class="nt">&lt;/ogc:PropertyName&gt;</span>)
@@ -3031,24 +3067,32 @@ New York    |   8,107,916
 <h3 id="labeling_max_displacement">maxDisplacement</h3>
 <p>The <code>maxDisplacement</code> option controls the displacement of the label along a line, around a point and inside a polygon.</p>
 <p>For lines, normally GeoServer labels a line at its center point only. If this label conflicts with another one it may not be displayed at all. When this option is enabled the labeller will attempt to avoid conflic by using an alternate location within <strong>maxDisplacement</strong> pixels along the line from the pre-computed label point.</p>
-<p>If used in conjunction with <code>repeat &lt;labeling.rst#labeling_repeat&gt;`_, the value for</code>maxDisplacement<code>should always be **lower** than the value for</code>repeat<code>.  For points this causes the renderer to start circling around the point in search of a empty stop to place the label, step by step increasing the size of the circle until the max displacement is reached. The same happens for polygons, around the polygon labelling point (normally the centroid).  .. code-block:: xml    &lt;VendorOption name="maxDisplacement"&gt;10&lt;/VendorOption&gt;   .. _labeling_repeat:  repeat ^^^^^^  The</code>repeat<code>option determines how often GeoServer displays labels along a line.  Normally GeoServer labels each line only once, regardless of length.  Specifying a positive value for this option makes the labeller attempt to draw the label every **repeat** pixels. For long or complex lines (such as contour lines) this makes labeling more informative.  .. code-block:: xml    &lt;VendorOption name="repeat"&gt;100&lt;/VendorOption&gt;   .. _labeling_max_angle_delta:  maxAngleDelta ^^^^^^^^^^^^^  When used in conjunction with</code>followLine \&lt;labeling.rst#labeling_follow_line&gt;<code>\_, the ````maxAngleDelta</code>` option sets the maximum angle, in degrees, between two subsequent characters in a curved label. Large angles create either visually disconnected words or overlapping characters. It is advised not to use angles larger than 30.</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;maxAngleDelta&quot;</span><span class="nt">&gt;</span>15<span class="nt">&lt;/VendorOption&gt;</span>
+<p>If used in conjunction with <a href="./#labeling_repeat">repeat</a>, the value for <code>maxDisplacement</code> should always be <strong>lower</strong> than the value for <code>repeat</code>.</p>
+<p>For points this causes the renderer to start circling around the point in search of a empty stop to place the label, step by step increasing the size of the circle until the max displacement is reached. The same happens for polygons, around the polygon labelling point (normally the centroid).</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;maxDisplacement&quot;</span><span class="nt">&gt;</span>10<span class="nt">&lt;/VendorOption&gt;</span><span class="w"> </span>
+</span></code></pre></div>
+<h3 id="labeling_repeat">repeat</h3>
+<p>The <code>repeat</code> option determines how often GeoServer displays labels along a line. Normally GeoServer labels each line only once, regardless of length. Specifying a positive value for this option makes the labeller attempt to draw the label every <strong>repeat</strong> pixels. For long or complex lines (such as contour lines) this makes labeling more informative.</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;repeat&quot;</span><span class="nt">&gt;</span>100<span class="nt">&lt;/VendorOption&gt;</span>
+</span></code></pre></div>
+<h3 id="labeling_max_angle_delta">maxAngleDelta</h3>
+<p>When used in conjunction with <a href="./#labeling_follow_line">followLine</a>, the <code>maxAngleDelta</code> option sets the maximum angle, in degrees, between two subsequent characters in a curved label. Large angles create either visually disconnected words or overlapping characters. It is advised not to use angles larger than 30.</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;maxAngleDelta&quot;</span><span class="nt">&gt;</span>15<span class="nt">&lt;/VendorOption&gt;</span>
 </span></code></pre></div>
 <h3 id="labeling_autowrap">autoWrap</h3>
 <p>The <code>autoWrap</code> option wraps labels when they exceed the given width (in pixels). The size should be wide enough to accommodate the longest word, otherwise single words will be split over multiple lines.</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;autoWrap&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/VendorOption&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;autoWrap&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/VendorOption&gt;</span>
 </span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>![](img/label_autoWrap.png)
-</span></code></pre></div>
+<p><img alt="" src="../img/label_autoWrap.png" /></p>
 <p><em>Labeling with autoWrap enabled</em></p>
 <h3 id="labeling_force_left_to_right">forceLeftToRight</h3>
 <p>The renderer tries to draw labels along lines so that the text is upright, for maximum legibility. This means a label may not follow the line orientation, but instead may be rotated 180° to display the text the right way up. In some cases altering the orientation of the label is not desired; for example, if the label is a directional arrow showing the orientation of the line.</p>
 <p>The <code>forceLeftToRight</code> option can be set to <code>false</code> to disable label flipping, making the label always follow the inherent orientation of the line being labelled:</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;forceLeftToRight&quot;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/VendorOption&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;forceLeftToRight&quot;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/VendorOption&gt;</span>
 </span></code></pre></div>
 <h3 id="labeling_conflict_resolution">conflictResolution</h3>
 <p>By default labels are subject to <strong>conflict resolution</strong>, meaning the renderer will not allow any label to overlap with a label that has been already drawn. Setting the <code>conflictResolution</code> option to <code>false</code> causes this label to bypass conflict resolution. This means the label will be drawn even if it overlaps with other labels, and other labels drawn after it may overlap it.</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;conflictResolution&quot;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/VendorOption&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;conflictResolution&quot;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/VendorOption&gt;</span>
 </span></code></pre></div>
 <h3 id="labeling_goodness_of_fit">goodnessOfFit</h3>
 <p>GeoServer will remove labels if they are a particularly bad fit for the geometry they are labeling.</p>
@@ -3059,11 +3103,11 @@ New York    |   8,107,916
 <p>Polygon               The label is sampled approximately at every letter. The distance from these points to the polygon is determined and each sample votes based on how close it is to the polygon. (see LabelCacheDefault#goodnessOfFit())</p>
 <hr />
 <p>The default value is 0.5, but it can be modified using:</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;goodnessOfFit&quot;</span><span class="nt">&gt;</span>0.3<span class="nt">&lt;/VendorOption&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;goodnessOfFit&quot;</span><span class="nt">&gt;</span>0.3<span class="nt">&lt;/VendorOption&gt;</span>
 </span></code></pre></div>
 <h3 id="polygonalign">polygonAlign</h3>
 <p>GeoServer normally tries to place labels horizontally within a polygon, and gives up if the label position is busy or if the label does not fit enough in the polygon. This option allows GeoServer to try alternate rotations for the labels.</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;polygonAlign&quot;</span><span class="nt">&gt;</span>mbr<span class="nt">&lt;/VendorOption&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;polygonAlign&quot;</span><span class="nt">&gt;</span>mbr<span class="nt">&lt;/VendorOption&gt;</span>
 </span></code></pre></div>
 <hr />
 <p><strong>Option</strong>            <strong>Description</strong></p>
@@ -3073,7 +3117,7 @@ New York    |   8,107,916
 <hr />
 <h3 id="labeling_graphic_resize">graphic-resize</h3>
 <p>When a <code>&lt;Graphic&gt;</code> is specified for a label by default it is displayed at its native size and aspect ratio. The <code>graphic-resize</code> option instructs the renderer to magnify or stretch the graphic to fully contain the text of the label. If this option is used the <code>graphic-margin</code> option may also be specified.</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;graphic-resize&quot;</span><span class="nt">&gt;</span>stretch<span class="nt">&lt;/VendorOption&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;graphic-resize&quot;</span><span class="nt">&gt;</span>stretch<span class="nt">&lt;/VendorOption&gt;</span>
 </span></code></pre></div>
 <hr />
 <p><strong>Option</strong>            <strong>Description</strong></p>
@@ -3083,55 +3127,49 @@ New York    |   8,107,916
 <hr />
 <div class="admonition cssclass">
 <p class="admonition-title">no-border</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>![](img/label_graphic-resize_none.png)
-</span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>![](img/label_graphic-resize_stretch.png)
-</span></code></pre></div>
+<p><img alt="" src="../img/label_graphic-resize_none.png" /></p>
+<p><img alt="" src="../img/label_graphic-resize_stretch.png" /></p>
 </div>
-<p><em>Labeling with a Graphic Mark \"square\" - L) at native size; R) with \"graphic-resize\"=stretch and \"graphic-margin\"=3</em></p>
+<p><em>Labeling with a Graphic Mark "square" - L) at native size; R) with "graphic-resize"=stretch and "graphic-margin"=3</em></p>
 <h3 id="labeling_graphic_margin">graphic-margin</h3>
 <p>The <code>graphic-margin</code> options specifies a margin (in pixels) to use around the label text when the <code>graphic-resize</code> option is specified.</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;graphic-margin&quot;</span><span class="nt">&gt;</span>margin<span class="nt">&lt;/VendorOption&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;graphic-margin&quot;</span><span class="nt">&gt;</span>margin<span class="nt">&lt;/VendorOption&gt;</span>
 </span></code></pre></div>
 <h3 id="partials">partials</h3>
-<p>The <code>partials</code> options instructs the renderer to render labels that cross the map extent, which are normally not painted since there is no guarantee that a map put on the side of the current one (tiled rendering) will contain the other half of the label. By enabling \"partials\" the style editor takes responsibility for the other half being there (maybe because the label points have been placed by hand and are assured not to conflict with each other, at all zoom levels).</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;partials&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/VendorOption&gt;</span>
+<p>The <code>partials</code> options instructs the renderer to render labels that cross the map extent, which are normally not painted since there is no guarantee that a map put on the side of the current one (tiled rendering) will contain the other half of the label. By enabling "partials" the style editor takes responsibility for the other half being there (maybe because the label points have been placed by hand and are assured not to conflict with each other, at all zoom levels).</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;partials&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/VendorOption&gt;</span>
 </span></code></pre></div>
 <h3 id="labeling_underline_text">underlineText</h3>
 <p>The <code>underlineText</code> option instruct the renderer to underline labels. The underline will work like a typical word processor text underline. The thickness and position of the underline will be defined by the font and color will be the same as the text. Spaces will also be underlined.</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;underlineText&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/VendorOption&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;underlineText&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/VendorOption&gt;</span>
 </span></code></pre></div>
 <p>Some underlines examples:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>![](img/label_underlines.png)
-</span></code></pre></div>
+<p><img alt="" src="../img/label_underlines.png" /></p>
 <h3 id="labeling_strikethrough_text">strikethroughText</h3>
 <p>The <code>strikethroughText</code> option instruct the renderer to strikethrough labels. The strikethrough will work like a typical word processor text strikethrough. The thickness and position of the line will be defined by the font and color will be the same as the text. Spaces will also be stroken.</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;strikethroughText&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/VendorOption&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;strikethroughText&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/VendorOption&gt;</span>
 </span></code></pre></div>
 <p>Some strikethrough examples:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>![](img/label_strikethrough.png)
-</span></code></pre></div>
+<p><img alt="" src="../img/label_strikethrough.png" /></p>
 <h3 id="charspacing">charSpacing</h3>
 <p>The <code>charSpacing</code> option controls the amount of space between characters, a positive value increases it, a negative value shrinks it (and will eventually make characters overlap). The value is specified in pixels.</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;charSpacing&quot;</span><span class="nt">&gt;</span>3<span class="nt">&lt;/VendorOption&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;charSpacing&quot;</span><span class="nt">&gt;</span>3<span class="nt">&lt;/VendorOption&gt;</span>
 </span></code></pre></div>
 <p>Example of adding 3 extra pixels of space between chars on road names:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>![](img/charSpacing.png)
-</span></code></pre></div>
+<p><img alt="" src="../img/charSpacing.png" /></p>
 <h3 id="wordspacing">wordSpacing</h3>
 <p>The <code>wordSpacing</code> option controls the amount of space between words, for this option only positive values (or zero) are accepted. The value is specified in pixels.</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;wordSpacing&quot;</span><span class="nt">&gt;</span>5<span class="nt">&lt;/VendorOption&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;wordSpacing&quot;</span><span class="nt">&gt;</span>5<span class="nt">&lt;/VendorOption&gt;</span>
 </span></code></pre></div>
 <p>Example of adding 5 extra pixels of space between words on road names:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>![](img/wordSpacing.png)
-</span></code></pre></div>
+<p><img alt="" src="../img/wordSpacing.png" /></p>
 <h3 id="displacementmode">displacementMode</h3>
 <p>Comma separated list of label displacement directions for point/polygon labels (used along with maxDisplacement). The indicated directions will be tried in turn. Valid values are cardinal directions abbreviations, in particular, <code>N, W, E, S, NW, NE, SW, SE</code>.</p>
-<p>The following example sets the typical \"diagonal displacement\" typically used for points:</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;displacementMode&quot;</span><span class="nt">&gt;</span>NE,<span class="w"> </span>NW,<span class="w"> </span>SW,<span class="w"> </span>SE<span class="nt">&lt;/VendorOption&gt;</span>
+<p>The following example sets the typical "diagonal displacement" typically used for points:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;displacementMode&quot;</span><span class="nt">&gt;</span>NE,<span class="w"> </span>NW,<span class="w"> </span>SW,<span class="w"> </span>SE<span class="nt">&lt;/VendorOption&gt;</span>
 </span></code></pre></div>
 <p>While this one allows displacement only in the vertical direction:</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;displacementMode&quot;</span><span class="nt">&gt;</span>N,<span class="w"> </span>S<span class="nt">&lt;/VendorOption&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;displacementMode&quot;</span><span class="nt">&gt;</span>N,<span class="w"> </span>S<span class="nt">&lt;/VendorOption&gt;</span>
 </span></code></pre></div>
 
 

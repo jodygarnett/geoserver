@@ -2417,9 +2417,11 @@
 <p>Navigate to <strong>Styles</strong>.</p>
 </li>
 <li>
-<p>Create a new style <code>polygon_example</code></p>
+<p>Create a new style <code>polygon_example</code>.</p>
 <hr />
-<p>Name:                 <code>polygon_example</code> * - Workspace:</p>
+<p>Name:                 <code>polygon_example</code></p>
+<p>Workspace:            <code>No workspace</code></p>
+<p>Format:               <code>CSS</code></p>
 <hr />
 <p><img alt="image" src="../../style/img/polygon_02_create.png" /></p>
 </li>
@@ -2509,7 +2511,7 @@
 <p>We have two options for configuring a <strong>fill</strong> with a repeating graphic:</p>
 <p>Using <strong>url</strong> to reference to an external graphic. Used in conjunction with <strong>fill-mime</strong> property.</p>
 <p>Use of <strong>symbol</strong> to access a predefined shape. SLD provides several well-known shapes (circle, square, triangle, arrow, cross, star, and x). GeoServer provides additional shapes specifically for use as fill patterns.</p>
-<p>Update <code>polygon_example</code>with the following built-in symbol as a repeating fill pattern:</p>
+<p>Update <code>polygon_example</code> with the following built-in symbol as a repeating fill pattern:</p>
 <div class="language-css highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">   </span><span class="k">fill</span><span class="p">:</span><span class="w"> </span><span class="nf">symbol</span><span class="p">(</span><span class="kc">square</span><span class="p">);</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">}</span>
@@ -2952,7 +2954,7 @@
 </li>
 <li>
 <p>This CSS makes use of cascading to avoid repeating the <strong>stroke</strong> and <strong>stroke-width</strong> information multiple times.</p>
-<p>As an example the <code>mapcolor9=2</code>rule, combined with the <code>*</code> rule results in the following collection of properties:</p>
+<p>As an example the <code>mapcolor9=2</code> rule, combined with the <code>*</code> rule results in the following collection of properties:</p>
 <div class="language-css highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="o">[</span><span class="nt">mapcolor9</span><span class="o">=</span><span class="nt">2</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span><span class="k">fill</span><span class="p">:</span><span class="w"> </span><span class="mh">#ffffb3</span><span class="p">;</span>
 </span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">  </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="kc">gray</span><span class="p">;</span>

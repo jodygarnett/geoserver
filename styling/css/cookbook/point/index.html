@@ -1584,13 +1584,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#attribute-based-point" class="md-nav__link">
+  <a href="#point-with-rotated-label" class="md-nav__link">
     <span class="md-ellipsis">
-      Attribute-based point
+      Point with rotated label
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Attribute-based point">
+    <nav class="md-nav" aria-label="Point with rotated label">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1617,13 +1617,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#zoom-based-point" class="md-nav__link">
+  <a href="#attribute-based-point" class="md-nav__link">
     <span class="md-ellipsis">
-      Zoom-based point
+      Attribute-based point
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Zoom-based point">
+    <nav class="md-nav" aria-label="Attribute-based point">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1637,6 +1637,39 @@
         
           <li class="md-nav__item">
   <a href="#details_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zoom-based-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zoom-based point
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Zoom-based point">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details_9" class="md-nav__link">
     <span class="md-ellipsis">
       Details
     </span>
@@ -2706,13 +2739,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#attribute-based-point" class="md-nav__link">
+  <a href="#point-with-rotated-label" class="md-nav__link">
     <span class="md-ellipsis">
-      Attribute-based point
+      Point with rotated label
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Attribute-based point">
+    <nav class="md-nav" aria-label="Point with rotated label">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2739,13 +2772,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#zoom-based-point" class="md-nav__link">
+  <a href="#attribute-based-point" class="md-nav__link">
     <span class="md-ellipsis">
-      Zoom-based point
+      Attribute-based point
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Zoom-based point">
+    <nav class="md-nav" aria-label="Attribute-based point">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2759,6 +2792,39 @@
         
           <li class="md-nav__item">
   <a href="#details_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zoom-based-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zoom-based point
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Zoom-based point">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details_9" class="md-nav__link">
     <span class="md-ellipsis">
       Details
     </span>
@@ -2936,14 +3002,37 @@
 </span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="p">}</span>
 </span></code></pre></div>
 <h3 id="details_6">Details</h3>
-<p>This example expands on <code>Point with default label &lt;point.rst#css_cookbook_points_pointwithdefaultlabel&gt;`_ and specifies the font attributes, in particular, the text is Aria, bold, 12px wide. Moreover, the label is moved on top of the point, by specifying an anchor of</code>0.5 0<code>, which sets the point to be centered (0.5) horizontally axis and bottom aligned (0.0) vertically with the label, and an offset which moves the label 5 pixels up vertically.  The result is a centered bold label placed slightly above each point.   Point with rotated label ------------------------  This example builds on the previous example, `Point with styled label &lt;point.rst#css_cookbook_points_pointwithstyledlabel&gt;`_, by rotating the label by 45 degrees, positioning the labels farther away from the points, and changing the color of the label to purple.  .. code-block:: raw_markdown     ![](../../sld/cookbook/images/point_pointwithrotatedlabel.png)    *Point with rotated label*   Code ~~~~  .. code-block:: scss    :linenos:      * {        mark: symbol(circle);       mark-size: 6px;       label: [name];       font-fill: #990099;       font-family: Arial;       font-size: 12;       font-weight: bold;       label-anchor: 0.5 0;       label-offset: 0 25;       label-rotation: -45;       :mark {         fill: red;       }     }  Details ~~~~~~~  This example is similar to the</code>Point with styled label \&lt;point.rst#css_cookbook_points_pointwithstyledlabel&gt;<code>\_, but there are three important differences. \*\*Line 10\*\* specifies 25 pixels of vertical displacement. \*\*Line 11\*\* specifies a rotation of \"-45\" or 45 degrees counter-clockwise. (Rotation values increase clockwise, which is why the value is negative.) Finally, \*\*line 5\*\* sets the font color to be a shade of purple (````#99099</code>`).</p>
+<p>This example expands on <a href="./#css_cookbook_points_pointwithdefaultlabel">Point with default label</a> and specifies the font attributes, in particular, the text is Aria, bold, 12px wide. Moreover, the label is moved on top of the point, by specifying an anchor of <code>0.5 0</code>, which sets the point to be centered (0.5) horizontally axis and bottom aligned (0.0) vertically with the label, and an offset which moves the label 5 pixels up vertically.</p>
+<p>The result is a centered bold label placed slightly above each point.</p>
+<h2 id="point-with-rotated-label">Point with rotated label</h2>
+<p>This example builds on the previous example, <a href="./#css_cookbook_points_pointwithstyledlabel">Point with styled label</a>, by rotating the label by 45 degrees, positioning the labels farther away from the points, and changing the color of the label to purple.</p>
+<p><img alt="" src="../../../sld/cookbook/images/point_pointwithrotatedlabel.png" />
+<em>Point with rotated label</em></p>
+<h3 id="code_7">Code</h3>
+<div class="language-scss highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">mark</span><span class="nd">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">circle</span><span class="o">);</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="nt">mark-size</span><span class="nd">:</span><span class="w"> </span><span class="nt">6px</span><span class="o">;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="nt">label</span><span class="nd">:</span><span class="w"> </span><span class="o">[</span><span class="nt">name</span><span class="o">];</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="nt">font-fill</span><span class="nd">:</span><span class="w"> </span><span class="nn">#990099</span><span class="o">;</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="nt">font-family</span><span class="nd">:</span><span class="w"> </span><span class="nt">Arial</span><span class="o">;</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="nt">font-size</span><span class="nd">:</span><span class="w"> </span><span class="nt">12</span><span class="o">;</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">  </span><span class="nt">font-weight</span><span class="nd">:</span><span class="w"> </span><span class="nt">bold</span><span class="o">;</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">  </span><span class="nt">label-anchor</span><span class="nd">:</span><span class="w"> </span><span class="nt">0</span><span class="nc">.5</span><span class="w"> </span><span class="nt">0</span><span class="o">;</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">  </span><span class="nt">label-offset</span><span class="nd">:</span><span class="w"> </span><span class="nt">0</span><span class="w"> </span><span class="nt">25</span><span class="o">;</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">  </span><span class="nt">label-rotation</span><span class="nd">:</span><span class="w"> </span><span class="nt">-45</span><span class="o">;</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">  </span><span class="nd">:mark</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">    </span><span class="nt">fill</span><span class="nd">:</span><span class="w"> </span><span class="nt">red</span><span class="o">;</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="details_7">Details</h3>
+<p>This example is similar to the <a href="./#css_cookbook_points_pointwithstyledlabel">Point with styled label</a>, but there are three important differences. <strong>Line 10</strong> specifies 25 pixels of vertical displacement. <strong>Line 11</strong> specifies a rotation of "-45" or 45 degrees counter-clockwise. (Rotation values increase clockwise, which is why the value is negative.) Finally, <strong>line 5</strong> sets the font color to be a shade of purple (<code>#99099</code>).</p>
 <p>Note that the displacement takes effect before the rotation during rendering, so in this example, the 25 pixel vertical displacement is itself rotated 45 degrees.</p>
 <h2 id="attribute-based-point">Attribute-based point</h2>
-<p>This example alters the size of the symbol based on the value of the population (\"pop\") attribute.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>![](../../sld/cookbook/images/point_attributebasedpoint.png)
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>*Attribute-based point*
-</span></code></pre></div>
-<h3 id="code_7">Code</h3>
+<p>This example alters the size of the symbol based on the value of the population ("pop") attribute.</p>
+<p><img alt="" src="../../../sld/cookbook/images/point_attributebasedpoint.png" />
+<em>Attribute-based point</em></p>
+<h3 id="code_8">Code</h3>
 <div class="language-scss highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">mark</span><span class="nd">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">circle</span><span class="o">);</span>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nd">:mark</span><span class="w"> </span><span class="p">{</span>
@@ -2960,53 +3049,50 @@
 </span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="p">}</span>
 </span></code></pre></div>
-<h3 id="details_7">Details</h3>
+<h3 id="details_8">Details</h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Refer to the <code>Example points layer &lt;point.rst#css_cookbook_points_attributes&gt;`_ to see the attributes for this data.  This example has eschewed labels in order to simplify the style, but you can refer to the example</code>oint with styled label \&lt;point.rst#css_cookbook_points_pointwithstyledlabel&gt;`_ to see which attributes correspond to which points.</p>
+<p>Refer to the <a href="./#css_cookbook_points_attributes">Example points layer</a> to see the attributes for this data. This example has eschewed labels in order to simplify the style, but you can refer to the example <a href="./#css_cookbook_points_pointwithstyledlabel">Point with styled label</a> to see which attributes correspond to which points.</p>
 </div>
 <p>This style shows how the basic mark setup (red circle, default size) can be overridden via cascading/nesting, changing the size depending on the pop attribute value, with smaller values yielding a smaller circle, and larger values yielding a larger circle.</p>
 <p>The three rules are designed as follows:</p>
 <hr />
-<p><strong>Rule order</strong>   <strong>Rule name</strong>         <strong>Population</strong> (\"pop\")   <strong>Size</strong></p>
+<p><strong>Rule order</strong>   <strong>Rule name</strong>         <strong>Population</strong> ("pop")   <strong>Size</strong></p>
 <p>1                SmallPop              Less than 50,000           8</p>
 <p>2                MediumPop             50,000 to 100,000          12</p>
 <p>3                LargePop              Greater than 100,000       16</p>
 <hr />
-<p>The result of this style is that cities with larger populations have larger points. In particular, the rule at <strong>Line 6</strong> matches all features whose \"pop\" attribute is less than 50000, the rule at <strong>Line 9</strong> matches all features whose \"pop\" attribute is between 50000 and 100000 (mind the space between the two predicates, it is equivalent to and AND, if we had used a comma it would have been an OR instead), while the rule at <strong>Line 12</strong> matches all features with more than 100000 inhabitants.</p>
+<p>The result of this style is that cities with larger populations have larger points. In particular, the rule at <strong>Line 6</strong> matches all features whose "pop" attribute is less than 50000, the rule at <strong>Line 9</strong> matches all features whose "pop" attribute is between 50000 and 100000 (mind the space between the two predicates, it is equivalent to and AND, if we had used a comma it would have been an OR instead), while the rule at <strong>Line 12</strong> matches all features with more than 100000 inhabitants.</p>
 <h2 id="zoom-based-point">Zoom-based point</h2>
 <p>This example alters the style of the points at different zoom levels.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>![](../../sld/cookbook/images/point_zoombasedpointlarge.png)
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>*Zoom-based point: Zoomed in*
+<p><img alt="" src="../../../sld/cookbook/images/point_zoombasedpointlarge.png" />
+<em>Zoom-based point: Zoomed in</em></p>
+<p><img alt="" src="../../../sld/cookbook/images/point_zoombasedpointmedium.png" />
+<em>Zoom-based point: Partially zoomed</em></p>
+<p><img alt="" src="../../../sld/cookbook/images/point_zoombasedpointsmall.png" />
+<em>Zoom-based point: Zoomed out</em></p>
+<h3 id="code_9">Code</h3>
+<div class="language-scss highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="nt">mark</span><span class="nd">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">circle</span><span class="o">);</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p">}</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nd">:mark</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">  </span><span class="nt">fill</span><span class="nd">:</span><span class="w"> </span><span class="nn">#CC3300</span><span class="o">;</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="p">}</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="o">[@</span><span class="nt">sd</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">16M</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">  </span><span class="nt">mark-size</span><span class="nd">:</span><span class="w"> </span><span class="nt">12</span><span class="o">;</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="p">}</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="o">[@</span><span class="nt">sd</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">16M</span><span class="o">]</span><span class="w"> </span><span class="o">[@</span><span class="nt">sd</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">32M</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">  </span><span class="nt">mark-size</span><span class="nd">:</span><span class="w"> </span><span class="nt">8</span><span class="o">;</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="p">}</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="o">[@</span><span class="nt">sd</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">32M</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">  </span><span class="nt">mark-size</span><span class="nd">:</span><span class="w"> </span><span class="nt">4</span><span class="o">;</span>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="p">}</span>
 </span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>![](../../sld/cookbook/images/point_zoombasedpointmedium.png)
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>*Zoom-based point: Partially zoomed*
-</span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>![](../../sld/cookbook/images/point_zoombasedpointsmall.png)
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>*Zoom-based point: Zoomed out*
-</span></code></pre></div>
-<h3 id="code_8">Code</h3>
-<div class="language-scss highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="nt">mark</span><span class="nd">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">circle</span><span class="o">);</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="p">}</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="nd">:mark</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">  </span><span class="nt">fill</span><span class="nd">:</span><span class="w"> </span><span class="nn">#CC3300</span><span class="o">;</span>
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="p">}</span>
-</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
-</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="o">[@</span><span class="nt">sd</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">16M</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">  </span><span class="nt">mark-size</span><span class="nd">:</span><span class="w"> </span><span class="nt">12</span><span class="o">;</span>
-</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="p">}</span>
-</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>
-</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="o">[@</span><span class="nt">sd</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">16M</span><span class="o">]</span><span class="w"> </span><span class="o">[@</span><span class="nt">sd</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">32M</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">  </span><span class="nt">mark-size</span><span class="nd">:</span><span class="w"> </span><span class="nt">8</span><span class="o">;</span>
-</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="p">}</span>
-</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>
-</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="o">[@</span><span class="nt">sd</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">32M</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">  </span><span class="nt">mark-size</span><span class="nd">:</span><span class="w"> </span><span class="nt">4</span><span class="o">;</span>
-</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="p">}</span>
-</span></code></pre></div>
-<h3 id="details_8">Details</h3>
+<h3 id="details_9">Details</h3>
 <p>It is often desirable to make shapes larger at higher zoom levels when creating a natural-looking map. This example styles the points to vary in size based on the zoom level (or more accurately, scale denominator). Scale denominators refer to the scale of the map. A scale denominator of 10,000 means the map has a scale of 1:10,000 in the units of the map projection.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -3020,24 +3106,24 @@
 <p>3                 Small             Greater than 1:32,000,000      4</p>
 <hr />
 <p>The order of these rules does not matter since the scales denominated in each rule do not overlap.</p>
-<p>The rules use the \"@sd\" pseudo-attribute, which refers to the current scale denominator, and which can be compared using the \'\&lt;\' and \'&gt;\' operators only (using any other operator or function will result in errors).</p>
+<p>The rules use the "@sd" pseudo-attribute, which refers to the current scale denominator, and which can be compared using the '&lt;' and '&gt;' operators only (using any other operator or function will result in errors).</p>
 <p>The result of this style is that points are drawn larger as one zooms in and smaller as one zooms out.</p>
 <p>While this example uses on purpose cascading to show a different possible setup, the same style could be written as:</p>
-<div class="language-scss highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="nt">mark</span><span class="nd">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">circle</span><span class="o">);</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="nd">:mark</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="nt">fill</span><span class="nd">:</span><span class="w"> </span><span class="nn">#CC3300</span><span class="o">;</span>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">  </span><span class="p">}</span><span class="o">;</span>
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">  </span><span class="o">[@</span><span class="nt">sd</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">16M</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">    </span><span class="nt">mark-size</span><span class="nd">:</span><span class="w"> </span><span class="nt">12</span><span class="o">;</span>
-</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">  </span><span class="p">}</span><span class="o">;</span>
-</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">  </span><span class="o">[@</span><span class="nt">sd</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">16M</span><span class="o">]</span><span class="w"> </span><span class="o">[@</span><span class="nt">sd</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">32M</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">    </span><span class="nt">mark-size</span><span class="nd">:</span><span class="w"> </span><span class="nt">8</span><span class="o">;</span>
-</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">  </span><span class="p">}</span><span class="o">;</span>
-</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">  </span><span class="o">[@</span><span class="nt">sd</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">32M</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">    </span><span class="nt">mark-size</span><span class="nd">:</span><span class="w"> </span><span class="nt">4</span><span class="o">;</span>
-</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="p">}</span>
+<div class="language-scss highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">mark</span><span class="nd">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">circle</span><span class="o">);</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nd">:mark</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="nt">fill</span><span class="nd">:</span><span class="w"> </span><span class="nn">#CC3300</span><span class="o">;</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">  </span><span class="p">}</span><span class="o">;</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">  </span><span class="o">[@</span><span class="nt">sd</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">16M</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">    </span><span class="nt">mark-size</span><span class="nd">:</span><span class="w"> </span><span class="nt">12</span><span class="o">;</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">  </span><span class="p">}</span><span class="o">;</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">  </span><span class="o">[@</span><span class="nt">sd</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">16M</span><span class="o">]</span><span class="w"> </span><span class="o">[@</span><span class="nt">sd</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">32M</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">    </span><span class="nt">mark-size</span><span class="nd">:</span><span class="w"> </span><span class="nt">8</span><span class="o">;</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">  </span><span class="p">}</span><span class="o">;</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">  </span><span class="o">[@</span><span class="nt">sd</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">32M</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">    </span><span class="nt">mark-size</span><span class="nd">:</span><span class="w"> </span><span class="nt">4</span><span class="o">;</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="p">}</span>
 </span></code></pre></div>
 
 

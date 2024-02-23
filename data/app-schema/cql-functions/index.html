@@ -2658,14 +2658,14 @@
 </dl>
 <h2 id="datetime-formatting">Date/time formatting</h2>
 <h3 id="formatdatetimezone">FormatDateTimezone</h3>
-<p>A function to format a date/time using a <code>SimpleDateFormat pattern &lt;https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html&gt;`_ in a</code>ime zone supported by Java \&lt;<a href="http://joda-time.sourceforge.net/timezones.html">http://joda-time.sourceforge.net/timezones.html</a>&gt;<code>\_. This function improves on ````dateFormat</code>`, which formats date/time in the server time zone and can produce unintended results. Note that the term \"date\" is derived from a Java class name; this class represents a date/time, not just a single day.</p>
+<p>A function to format a date/time using a <a href="https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat pattern</a> in a <a href="http://joda-time.sourceforge.net/timezones.html">time zone supported by Java</a>. This function improves on <code>dateFormat</code>, which formats date/time in the server time zone and can produce unintended results. Note that the term "date" is derived from a Java class name; this class represents a date/time, not just a single day.</p>
 <p><strong>Syntax</strong>:</p>
 <div class="language-text highlight"><pre><span></span><code>FormatDateTimezone(pattern, date, timezone)
 </code></pre></div>
 <dl>
 <dt>pattern</dt>
 <dd>
-<p>formatting pattern supported by <code>SimpleDateFormat &lt;http://docs.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html&gt;`_, for example</code>\'yyyy-MM-dd\'<code>. Use two single quotes to include a literal single quote in a CQL string literal, for example</code>\'yyyy-MM-dd\'\'T\'\'HH<img alt="🇲🇲" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f1f2-1f1f2.svg" title=":mm:" />ss\'\'Z\'\'\'``.</p>
+<p>formatting pattern supported by <a href="http://docs.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>, for example <code>'yyyy-MM-dd'</code>. Use two single quotes to include a literal single quote in a CQL string literal, for example <code>'yyyy-MM-dd''T''HH:mm:ss''Z'''</code>.</p>
 </dd>
 <dt>date</dt>
 <dd>

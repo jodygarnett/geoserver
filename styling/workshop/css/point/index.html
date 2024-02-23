@@ -2370,7 +2370,9 @@
 <li>
 <p>Click <strong>Add a new style</strong> and choose the following:</p>
 <hr />
-<p>Name:                 <code>point_example</code> * - Workspace:</p>
+<p>Name:                 <code>point_example</code></p>
+<p>Workspace:            <code>No workspace</code></p>
+<p>Format:               <code>CSS</code></p>
 <hr />
 </li>
 <li>
@@ -2708,7 +2710,7 @@
 <ul>
 <li><strong>SCALERANK</strong>: we have already used this attribute to control the level of detail displayed</li>
 <li><strong>LABELRANK</strong>: hint used for conflict resolution, allowing important cities such as capitals to be labeled even when they are close to a larger neighbor.</li>
-<li><strong>FEATURECLA</strong>: used to indicate different types of cities. We will check for <code>Admin-0 capital</code>cities.</li>
+<li><strong>FEATURECLA</strong>: used to indicate different types of cities. We will check for <code>Admin-0 capital</code> cities.</li>
 </ul>
 <p>The first thing we will do is calculate the <strong>mark-size</strong> using a quick expression:</p>
 <div class="language-text highlight"><pre><span></span><code>[10-(SCALERANK/2)]
@@ -2876,7 +2878,7 @@
 </li>
 <li>
 <p>GeoServer recognizes this limitation of SLD Mark and ExternalGraphic and provides an opportunity for dynamic symbolization.</p>
-<p>This is accomplished by embedding a small CQL expression in the string passed to symbol or url. This sub-expression is isolated with <code>${ }</code>as shown:</p>
+<p>This is accomplished by embedding a small CQL expression in the string passed to symbol or url. This sub-expression is isolated with <code>\${ }</code> as shown:</p>
 <div class="language-css highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">   </span><span class="n">mark</span><span class="p">:</span><span class="w"> </span><span class="nf">symbol</span><span class="p">(</span>
 </span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">     </span><span class="s2">&quot;${if_then_else(equalTo(FEATURECLA,&#39;Admin-0 capital&#39;),&#39;star&#39;,&#39;circle&#39;)}&quot;</span>

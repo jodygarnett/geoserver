@@ -2223,7 +2223,7 @@
 </blockquote>
 <h3 id="oracle_loose_bbox">Using loose bounding box</h3>
 <p>When the <code>Loose bbox</code> option is set, only the bounding box of database geometries is used in spatial queries. This results in a significant performance gain. The downside is that some geometries may be reported as intersecting a BBOX when they actually do not.</p>
-<p>If the primary use of the database is through the <code>Web Map Service (WMS) &lt;../../services/wms/index.rst&gt;`_ this flag can be set safely, since querying more geometries does not have any visible effect. However, if using the</code>eb Feature Service (WFS) &lt;../../services/wfs/index.rst&gt;`_ and making use of BBOX filtering capabilities, this flag should not be set.</p>
+<p>If the primary use of the database is through the <a href="../../../services/wms/">Web Map Service (WMS)</a> this flag can be set safely, since querying more geometries does not have any visible effect. However, if using the <a href="../../../services/wfs/">Web Feature Service (WFS)</a> and making use of BBOX filtering capabilities, this flag should not be set.</p>
 <h3 id="using-the-geometry-metadata-table">Using the geometry metadata table</h3>
 <p>The Oracle data store by default looks at the <code>MDSYS.USER_SDO*</code> and <code>MDSYS.ALL_SDO*</code> views to determine the geometry type and native SRID of each geometry column. Those views are automatically populated with information about the geometry columns stored in tables that the current user owns (for the <code>MDSYS.USER_SDO*</code> views) or can otherwise access (for the <code>MDSYS.ALL_SDO*</code> views).</p>
 <p>There are a few issues with this strategy:</p>

@@ -2387,7 +2387,9 @@
 <li>
 <p>Click <strong>Add a new style</strong> and choose the following:</p>
 <hr />
-<p>Name:                 <code>image_example</code> * - Workspace:</p>
+<p>Name:                 <code>image_example</code></p>
+<p>Workspace:            <code>No workspace</code></p>
+<p>Format:               <code>YSLD</code></p>
 <hr />
 </li>
 <li>
@@ -2429,7 +2431,9 @@
 <li>
 <p>Click <strong>Add a new style</strong> and choose the following:</p>
 <hr />
-<p>Name:                 <code>raster_example</code> * - Workspace:</p>
+<p>Name:                 <code>raster_example</code></p>
+<p>Workspace:            <code>No workspace</code></p>
+<p>Format:               <code>YSLD</code></p>
 <hr />
 </li>
 <li>
@@ -2472,7 +2476,7 @@
 </div>
 <ol>
 <li>
-<p>Apply the following YAML to our <code>usgs:DEM</code>layer:</p>
+<p>Apply the following YAML to our <code>usgs:DEM</code> layer:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">symbolizers</span><span class="p">:</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">raster</span><span class="p">:</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">opacity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
@@ -2623,9 +2627,9 @@
 <li>
 <p>The color-map <strong>type</strong> property dictates how the values are used to generate a resulting color.</p>
 <ul>
-<li><code>ramp</code>is used for quantitative data, providing a smooth interpolation between the provided color values.</li>
-<li><code>intervals</code>provides categorization for quantitative data, assigning each range of values a solid color.</li>
-<li><code>values</code>is used for qualitative data, each value is required to have a <strong>color-map</strong> entry or it will not be displayed.</li>
+<li><code>ramp</code> is used for quantitative data, providing a smooth interpolation between the provided color values.</li>
+<li><code>intervals</code> provides categorization for quantitative data, assigning each range of values a solid color.</li>
+<li><code>values</code> is used for qualitative data, each value is required to have a <strong>color-map</strong> entry or it will not be displayed.</li>
 </ul>
 </li>
 <li>
@@ -2644,7 +2648,7 @@
 </div>
 <p>Image processing can be used to enhance the output to highlight small details or to balance images from different sensors allowing them to be compared.</p>
 <ol>
-<li>The <strong>contrast-enhancement</strong> property is used to turn on a range of post processing effects. Settings are provided for <code>normalize</code>or <code>histogram</code>or <code>none</code></li>
+<li>The <strong>contrast-enhancement</strong> property is used to turn on a range of post processing effects. Settings are provided for <code>normalize</code> or <code>histogram</code> or <code>none</code>;</li>
 </ol>
 <blockquote>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">symbolizers</span><span class="p">:</span>

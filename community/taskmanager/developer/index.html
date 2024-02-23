@@ -4180,7 +4180,7 @@
 <li><code>URI</code></li>
 <li><code>SQL</code> (protects against ';' hacking)</li>
 </ul>
-<p>External Parameter Types (members of <code>ExtTypes</code> spring bean): * <code>dbName</code>: <code>database name &lt;user#databases&gt;`__ \*</code>tableName<code>: table name (parameter must depend on parameter of</code>dbName<code>type) \*</code>extGeoserver<code>: `external geoserver &lt;user#external-geoservers&gt;`__ \*</code>internalLayer<code>: layer from geoserver catalog \*</code>name<code>: name qualified with namespace from geoserver catalog \*</code>fileService<code>:</code>file service \&lt;user#file-services&gt;<code>\_\_ \* ````file````: reference to file (parameter must dpend of parameter of ````fileService</code>` type)</p>
+<p>External Parameter Types (members of <code>ExtTypes</code> spring bean): * <code>dbName</code>: <a href="user#databases">database name</a> * <code>tableName</code>: table name (parameter must depend on parameter of <code>dbName</code> type) * <code>extGeoserver</code>: <a href="user#external-geoservers">external geoserver</a> * <code>internalLayer</code>: layer from geoserver catalog * <code>name</code>: name qualified with namespace from geoserver catalog * <code>fileService</code>: <a href="user#file-services">file service</a> * <code>file</code>: reference to file (parameter must dpend of parameter of <code>fileService</code> type)</p>
 <p>Defining a new Parameter Type:</p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cm">/**</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="cm"> * </span>

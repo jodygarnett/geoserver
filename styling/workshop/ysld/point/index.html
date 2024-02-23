@@ -2369,7 +2369,9 @@
 <li>
 <p>Click <strong>Add a new style</strong> and choose the following:</p>
 <hr />
-<p>Name:                 <code>point_example</code> * - Workspace:</p>
+<p>Name:                 <code>point_example</code></p>
+<p>Workspace:            <code>No workspace</code></p>
+<p>Format:               <code>YSLD</code></p>
 <hr />
 </li>
 <li>
@@ -2700,7 +2702,7 @@
 <p><img alt="image" src="../../style/img/point_04_scale.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This YSLD makes use of a <strong>define</strong> to avoid repeating the point symbolizer content multiple times. As an example the <code>scale: [min, '4000000.0']</code>rule, combined with the <code>define:</code>results in the following collection of properties:</p>
+<p>This YSLD makes use of a <strong>define</strong> to avoid repeating the point symbolizer content multiple times. As an example the [scale: [min, '4000000.0']]{.title-ref} rule, combined with the <code>define:</code> results in the following collection of properties:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">scale</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">min</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;4000000.0&#39;</span><span class="p p-Indicator">]</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="nt">symbolizers</span><span class="p">:</span>
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">point</span><span class="p">:</span>
@@ -2786,7 +2788,7 @@
 </li>
 <li>
 <p>We will use <strong>displacement</strong> and <strong>anchor</strong> to position the label above each symbol.</p>
-<p>Add the following two lines to the <code>label</code>define:</p>
+<p>Add the following two lines to the <code>label</code> define:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nt">define</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;label</span>
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAME}</span>
 </span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">  </span><span class="nt">fill-color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;black&#39;</span>
@@ -2802,7 +2804,7 @@
 </li>
 <li>
 <p>A little bit of work with vendor specific parameters will prevent our labels from colliding with each symbol, while giving the rendering engine some flexibility in how far it is allowed to relocate a label.</p>
-<p>Add the following vendor options to the <code>label</code>define:</p>
+<p>Add the following vendor options to the <code>label</code> define:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">define</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;label</span>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAME}</span>
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">  </span><span class="nt">fill-color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;black&#39;</span>
@@ -2816,7 +2818,7 @@
 </span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">  </span><span class="nt">x-maxDisplacement</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">90</span>
 </span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">  </span><span class="nt">x-spaceAround</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 </span></code></pre></div>
-<p>Add the following vendor option to the <code>point</code>define:</p>
+<p>Add the following vendor option to the <code>point</code> define:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nt">define</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;point</span>
 </span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6</span>
 </span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">  </span><span class="nt">symbols</span><span class="p">:</span>
@@ -2836,7 +2838,7 @@
 <ul>
 <li><strong>SCALERANK</strong>: we have already used this attribute to control the level of detail displayed</li>
 <li><strong>LABELRANK</strong>: hint used for conflict resolution, allowing important cities such as capitals to be labeled even when they are close to a larger neighbor.</li>
-<li><strong>FEATURECLA</strong>: used to indicate different types of cities. We will check for <code>Admin-0 capital</code>cities.</li>
+<li><strong>FEATURECLA</strong>: used to indicate different types of cities. We will check for <code>Admin-0 capital</code> cities.</li>
 </ul>
 <p>The first thing we will do is calculate the point <strong>size</strong> using a quick expression:</p>
 <div class="language-text highlight"><pre><span></span><code>${10-(SCALERANK/2)}
@@ -3051,7 +3053,7 @@
 </li>
 <li>
 <p>GeoServer recognizes this limitation of SLD Mark and ExternalGraphic and provides an opportunity for dynamic symbolization.</p>
-<p>This is accomplished by embedding a small CQL expression in the string passed to symbol or url. This sub-expression is isolated with <code>${ }</code>as shown:</p>
+<p>This is accomplished by embedding a small CQL expression in the string passed to symbol or url. This sub-expression is isolated with <code>\${ }</code> as shown:</p>
 <blockquote>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">point</span><span class="p">:</span>
 </span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">    </span><span class="nt">symbols</span><span class="p">:</span>

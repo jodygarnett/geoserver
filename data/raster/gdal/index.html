@@ -2283,7 +2283,7 @@
 
 
 <h1 id="gdal-image-formats">GDAL Image Formats</h1>
-<p>GeoServer can leverage the <code>ImageI/O-Ext &lt;https://github.com/geosolutions-it/imageio-ext/wiki&gt;`__ GDAL libraries to read selected coverage formats.</code>DAL &lt;<a href="http://www.gdal.org">http://www.gdal.org</a>&gt;`__ is able to read many formats, but for the moment GeoServer supports only a few general interest formats and those that can be legally redistributed and operated in an open source server.</p>
+<p>GeoServer can leverage the <a href="https://github.com/geosolutions-it/imageio-ext/wiki">ImageI/O-Ext</a> GDAL libraries to read selected coverage formats. <a href="http://www.gdal.org">GDAL</a> is able to read many formats, but for the moment GeoServer supports only a few general interest formats and those that can be legally redistributed and operated in an open source server.</p>
 <p>The following image formats can be read by GeoServer using GDAL:</p>
 <ul>
 <li>DTED, Military Elevation Data (.dt0, .dt1, .dt2): <a href="http://www.gdal.org/frmt_dted.html">http://www.gdal.org/frmt_dted.html</a></li>
@@ -2426,7 +2426,7 @@ export GDAL_DATA=/&lt;path_to_gdal_install&gt;/share/gdal
 <em>No Footprint VS FootprintBehavior = Transparent</em></p>
 <h3 id="external-footprints-data-directory">External Footprints data directory</h3>
 <p>As noted above, the footprint file should be placed in the same directory as the raster file. However in some cases this may not be possible. For example, the folder containing the raster data may be read only.</p>
-<p>As an alternative, footprint files can be located in a common directory, the <strong>footprints data directory</strong>. The subdirectories and file names under that directory must match the original raster path and file names. The footprints data directory is specified as a Java System Property or an Environment Variable, by setting the <code>FOOTPRINTS_DATA_DIR</code>property/variable to the directory to be used as base folder.</p>
+<p>As an alternative, footprint files can be located in a common directory, the <strong>footprints data directory</strong>. The subdirectories and file names under that directory must match the original raster path and file names. The footprints data directory is specified as a Java System Property or an Environment Variable, by setting the <code>FOOTPRINTS_DATA_DIR</code> property/variable to the directory to be used as base folder.</p>
 <h4 id="example">Example</h4>
 <p>Suppose you have 3 raster files with the following paths:</p>
 <ul>

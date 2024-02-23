@@ -1975,6 +1975,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#monitoring-threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitoring threads
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dns-cache-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNS cache configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DNS cache configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-determine-the-filter-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to determine the filter path
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#samples" class="md-nav__link">
     <span class="md-ellipsis">
       Samples
@@ -3321,6 +3354,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#monitoring-threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitoring threads
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dns-cache-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNS cache configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DNS cache configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-determine-the-filter-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to determine the filter path
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#samples" class="md-nav__link">
     <span class="md-ellipsis">
       Samples
@@ -3434,7 +3500,26 @@
 <p>The monitor passes request information through post processors which enrich the request information with DNS lookup, Location using IP database etc. It is possible to disable these post processors if some enrichments are not required with <code>ignorePostProcessors</code> property of the <code>monitor.properties</code> file.</p>
 <p>This parameter takes comma separated names of known post processors. The valid values are <code>reverseDNS,geoIp,layerNameNormalizer</code></p>
 <h2 id="request_filters">Request Filters</h2>
-<p>By default not all requests are monitored. Those requests excluded include any web admin requests or any <code>Monitor Query API &lt;query.rst&gt;`_ requests. These exclusions are configured in the</code>filter.properties<code>file::      /rest/monitor/**    /web/**   These default filters can be changed or extended to filter more types of  requests. For example to filter out all WFS requests the following entry is added::     /wfs  Monitoring threads ------------------ You can choose the number of post processor threads by configuring the</code>postProcessorThreads<code>property in the</code>monitor.properties<code>file.  The default is 2.  DNS cache configuration ----------------------- The reverseDNS post processor caches its result.  You can modify the cache configuration by configuring the</code>dnsCacheConfiguration<code>property in the</code>monitor.properties<code>file. The default policy is</code>expireAfterWrite=15m,maximumSize=1000<code>.  Consult the `guava cache builder documentation &lt;https://guava.dev/releases/32.0.0-jre/api/docs/com/google/common/cache/CacheBuilderSpec.html&gt;`_ for all possibilities.  How to determine the filter path ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  The contents of</code>filter.properties<code>are a series of ant-style patterns that  are applied to the *path* of the request. Consider the following request::     http://localhost:8080/geoserver/wms?request=getcapabilities  The path of the above request is</code>/wms<code>. In the following request::     http://localhost:8080/geoserver/rest/workspaces/topp/datastores.xml  The path is</code>/rest/workspaces/topp/datastores.xml<code>.  In general, the path used in filters is comprised of the portion of the URL after</code>/geoserver<code>(including the preceding</code>/<code>) and before the query string</code>?``:</p>
+<p>By default not all requests are monitored. Those requests excluded include any web admin requests or any <a href="../query/">Monitor Query API</a> requests. These exclusions are configured in the <code>filter.properties</code> file:</p>
+<div class="language-text highlight"><pre><span></span><code>/rest/monitor/**
+/web/**
+</code></pre></div>
+<p>These default filters can be changed or extended to filter more types of requests. For example to filter out all WFS requests the following entry is added:</p>
+<div class="language-text highlight"><pre><span></span><code>/wfs
+</code></pre></div>
+<h2 id="monitoring-threads">Monitoring threads</h2>
+<p>You can choose the number of post processor threads by configuring the <code>postProcessorThreads</code> property in the <code>monitor.properties</code> file. The default is 2.</p>
+<h2 id="dns-cache-configuration">DNS cache configuration</h2>
+<p>The reverseDNS post processor caches its result. You can modify the cache configuration by configuring the <code>dnsCacheConfiguration</code> property in the <code>monitor.properties</code> file. The default policy is <code>expireAfterWrite=15m,maximumSize=1000</code> . Consult the <a href="https://guava.dev/releases/32.0.0-jre/api/docs/com/google/common/cache/CacheBuilderSpec.html">guava cache builder documentation</a> for all possibilities.</p>
+<h3 id="how-to-determine-the-filter-path">How to determine the filter path</h3>
+<p>The contents of <code>filter.properties</code> are a series of ant-style patterns that are applied to the <em>path</em> of the request. Consider the following request:</p>
+<div class="language-text highlight"><pre><span></span><code>http://localhost:8080/geoserver/wms?request=getcapabilities
+</code></pre></div>
+<p>The path of the above request is <code>/wms</code>. In the following request:</p>
+<div class="language-text highlight"><pre><span></span><code>http://localhost:8080/geoserver/rest/workspaces/topp/datastores.xml
+</code></pre></div>
+<p>The path is <code>/rest/workspaces/topp/datastores.xml</code>.</p>
+<p>In general, the path used in filters is comprised of the portion of the URL after <code>/geoserver</code> (including the preceding <code>/</code>) and before the query string <code>?</code>:</p>
 <div class="language-text highlight"><pre><span></span><code>http://&lt;host&gt;:&lt;port&gt;/geoserver/&lt;path&gt;?&lt;queryString&gt;
 </code></pre></div>
 <div class="admonition note">

@@ -2006,7 +2006,7 @@ member: uid=bob,ou=people,dc=acme,dc=com
 <p class="admonition-title">Note</p>
 <p>When the LDAP server doesn't allow searching in an anonymous context, the bindBeforeGroupSearch option should be enabled to avoid errors.</p>
 </div>
-<p>In the case of using a <code>user/group service &lt;../usergrouprole/usergroupservices.rst&gt;`_, the user/group service is queried for the user following authentication, and the role assignment is performed by both the user/group service and the active</code>ole service &lt;../usergrouprole/roleservices.rst&gt;`_. When using this option, any password defined for the user in the user/group service database is ignored.</p>
+<p>In the case of using a <a href="../../usergrouprole/usergroupservices/">user/group service</a>, the user/group service is queried for the user following authentication, and the role assignment is performed by both the user/group service and the active <a href="../../usergrouprole/roleservices/">role service</a>. When using this option, any password defined for the user in the user/group service database is ignored.</p>
 <h3 id="security_auth_provider_ldap_secure">Secure LDAP connections</h3>
 <p>There are two ways to create a secure LDAP connection with the server. The first is to directly specify a secure connection by using the <strong>ldaps</strong> protocol as part of the <em>Server URL</em>. This typically requires changing the connection port to <strong>port 636</strong> rather than 389.</p>
 <p>The second method involves using <strong>STARTTLS</strong> (Transport Layer Security) to negotiate a secure connection over a non-secure one. The negotiation takes place over the non-secure URL using the "ldap" protocol on port 389. To use this option, the <em>Use TLS</em> flag must be set.</p>

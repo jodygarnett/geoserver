@@ -1735,6 +1735,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#extended-wms-and-wmts-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extended WMS and WMTS configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#extended-wms-and-wmts-capabilities" class="md-nav__link">
     <span class="md-ellipsis">
       Extended WMS and WMTS Capabilities
@@ -3033,6 +3042,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#extended-wms-and-wmts-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extended WMS and WMTS configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#extended-wms-and-wmts-capabilities" class="md-nav__link">
     <span class="md-ellipsis">
       Extended WMS and WMTS Capabilities
@@ -3100,7 +3118,14 @@
 
 
 <h1 id="using-the-inspire-extension">Using the INSPIRE extension</h1>
-<p>When the INSPIRE extension has been properly installed, the <code>WMS settings &lt;../../services/wms/webadmin.rst&gt;`_,</code>FS settings &lt;../../services/wfs/webadmin.rst&gt;<code>_ and</code><a href="../../../services/wcs/webadmin/">WCS settings</a> sections of the <code>eb administration interface &lt;../../webadmin/index.rst&gt;`_ will show an extra INSPIRE configuration section. If the data directory has not been configured with INSPIRE parameters before, this section will just contain a check box to enable the creation of an INSPIRE ExtendedCapabilities element.  .. code-block:: raw_markdown     ![](images/noinspire.png) .. note:: If you do not see this content in the service configuration pages, the INSPIRE extension may not be installed properly.  Reread the section on `Installing the INSPIRE extension &lt;installing.rst&gt;`_ and verify that the correct file was saved to the correct directory.  Extended WMS and WMTS configuration -----------------------------------  INSPIRE-specific configuration is accessed on the main</code>WMS settings &lt;../../services/wms/webadmin.rst&gt;<code>_ or WMTS settings page in the</code><a href="../../../webadmin/">eb administration interface</a>. This is accessed by clicking on the <strong>WMS</strong> or <strong>WMTS</strong> link on the sidebar.</p>
+<p>When the INSPIRE extension has been properly installed, the <a href="../../../services/wms/webadmin/">WMS settings</a>, <a href="../../../services/wfs/webadmin/">WFS settings</a> and <a href="../../../services/wcs/webadmin/">WCS settings</a> sections of the <a href="../../../webadmin/">Web administration interface</a> will show an extra INSPIRE configuration section. If the data directory has not been configured with INSPIRE parameters before, this section will just contain a check box to enable the creation of an INSPIRE ExtendedCapabilities element.</p>
+<p><img alt="" src="../images/noinspire.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you do not see this content in the service configuration pages, the INSPIRE extension may not be installed properly. Reread the section on <a href="../installing/">Installing the INSPIRE extension</a> and verify that the correct file was saved to the correct directory.</p>
+</div>
+<h2 id="extended-wms-and-wmts-configuration">Extended WMS and WMTS configuration</h2>
+<p>INSPIRE-specific configuration is accessed on the main <a href="../../../services/wms/webadmin/">WMS settings</a> or WMTS settings page in the <a href="../../../webadmin/">Web administration interface</a>. This is accessed by clicking on the <strong>WMS</strong> or <strong>WMTS</strong> link on the sidebar.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You must be logged in as an administrator to edit WMS or WMTS configuration.</p>
@@ -3162,7 +3187,7 @@
 </code></pre></div>
 <p>ISNPIRE recommends that every layer offered by a INSPIRE WMTS should use the InspireCRS84Quad grid set which is already configured in GeoServer, but is up to the user to select it when publishing a INSPIRE WMTS layer.</p>
 <h2 id="extended-wfs-and-wcs-configuration">Extended WFS and WCS configuration</h2>
-<p>INSPIRE-specific configuration is accessed on the main <code>WFS settings &lt;../../services/wfs/webadmin.rst&gt;`_ and</code>CS settings &lt;../../services/wcs/webadmin.rst&gt;<code>_ pages in the `Web administration interface &lt;../../webadmin/index.rst&gt;</code>_. These are accessed by clicking on the <strong>WFS</strong> and <strong>WCS</strong> links on the sidebar respectively.</p>
+<p>INSPIRE-specific configuration is accessed on the main <a href="../../../services/wfs/webadmin/">WFS settings</a> and <a href="../../../services/wcs/webadmin/">WCS settings</a> pages in the <a href="../../../webadmin/">Web administration interface</a>. These are accessed by clicking on the <strong>WFS</strong> and <strong>WCS</strong> links on the sidebar respectively.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You must be logged in as an administrator to edit WFS configuration.</p>
@@ -3234,8 +3259,8 @@
 </code></pre></div>
 <p>The spatial data identifiers section is mandatory, but cannot be filled by default, it is your duty to provide at least one spatial dataset identifier (see the INSPIRE download service technical guidelines for more information).</p>
 <h2 id="internationalization-support">Internationalization support</h2>
-<p>GeoServer offers the ability to configure GetCapabilities response in multiple languages. Content in different languages can be requested by using the request parameter <code>Language</code> e.g. <code>Language=eng</code> At the time of writing, the following services support the parameter: WFS 2.0, WMS 1.1 and 1.3, WCS 2.0.</p>
-<p>At the time of writing the <code>INSPIRE Schemas &lt;https://inspire.ec.europa.eu/schemas/common/1.0/common.xsd&gt;`_ only allow 23 choices for **DefaultLanguage**. The GeoServer INSPIRE extension allows some other languages to be chosen. If you choose one of these your capabilities document won't be Schema valid but, as discussed in</code>ssue 7388 &lt;<a href="https://osgeo-org.atlassian.net/browse/GEOS-7388">https://osgeo-org.atlassian.net/browse/GEOS-7388</a>&gt;`_, the INSPIRE Schemas seem to be at fault.</p>
+<p>GeoServer offers the ability to configure GetCapabilities response in multiple languages. Content in different languages can be requested by using the request parameter <code>Language</code>, e.g. <code>Language=eng</code>. At the time of writing, the following services support the parameter: WFS 2.0, WMS 1.1 and 1.3, WCS 2.0.</p>
+<p>At the time of writing the <a href="https://inspire.ec.europa.eu/schemas/common/1.0/common.xsd">INSPIRE Schemas</a> only allow 23 choices for <strong>DefaultLanguage</strong>. The GeoServer INSPIRE extension allows some other languages to be chosen. If you choose one of these your capabilities document won't be Schema valid but, as discussed in <a href="https://osgeo-org.atlassian.net/browse/GEOS-7388">issue 7388</a>, the INSPIRE Schemas seem to be at fault.</p>
 <p>The language list available from the UI is define in a classpath file named <code>available_languages.properties</code> with the following content:</p>
 <div class="language-text highlight"><pre><span></span><code>bul=bg
 cze=cs

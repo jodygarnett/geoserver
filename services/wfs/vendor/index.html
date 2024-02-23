@@ -1225,6 +1225,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Namespace filter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getfeature-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      GetFeature Request
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cql-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      CQL filters
+    </span>
+  </a>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2013,6 +2037,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Namespace filter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getfeature-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      GetFeature Request
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cql-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      CQL filters
+    </span>
+  </a>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2106,8 +2154,27 @@
 </span></code></pre></div>
 <h3 id="getcapabilities-request">GetCapabilities Request</h3>
 <h2 id="namespace-filter">Namespace filter</h2>
-<p>WFS <code>GetCapabilities &lt;reference.rst#wfs_getcap&gt;`_ requests may be filtered to return only those layers that correspond to a particular namespace by adding the</code>\&lt;namespace&gt;<code>parameter to the request.  .. note:: This parameter only affects GetCapabilities requests.  To apply this filter, add the following code to your request:  ::     namespace=&lt;namespace&gt;  Although providing an invalid namespace will not result in any errors, the GetCapabilities document returned will not contain any layer information.  .. warning:: Using this parameter may result your GetCapabilities document becoming invalid, as the WFS specification requires the document to return at least one layer.  .. note:: This filter is related to `Virtual Services &lt;../../configuration/virtual-services.rst&gt;`_.  GetFeature Request ------------------  CQL filters ^^^^^^^^^^^  In WFS</code>GetFeature \&lt;reference.rst#wfs_getfeature&gt;<code>\_ GET requests, the ````cql_filter</code>` parameter can be used to specify a filter in ECQL (Extended Common Query Language) format. ECQL provides a more compact and readable syntax compared to OGC XML filters.</p>
-<p>For full details see the <code>ECQL Reference &lt;../../filter/ecql_reference.rst&gt;`_ and</code>QL and ECQL \&lt;../../tutorials/cql/cql_tutorial.rst&gt;`_ tutorial.</p>
+<p>WFS <a href="../reference/#wfs_getcap">GetCapabilities</a> requests may be filtered to return only those layers that correspond to a particular namespace by adding the <code>&lt;namespace&gt;</code> parameter to the request.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This parameter only affects GetCapabilities requests.</p>
+</div>
+<p>To apply this filter, add the following code to your request:</p>
+<div class="language-text highlight"><pre><span></span><code>namespace=&lt;namespace&gt;
+</code></pre></div>
+<p>Although providing an invalid namespace will not result in any errors, the GetCapabilities document returned will not contain any layer information.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Using this parameter may result your GetCapabilities document becoming invalid, as the WFS specification requires the document to return at least one layer.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This filter is related to <a href="../../../configuration/virtual-services/">Virtual Services</a>.</p>
+</div>
+<h3 id="getfeature-request">GetFeature Request</h3>
+<h2 id="cql-filters">CQL filters</h2>
+<p>In WFS <a href="../reference/#wfs_getfeature">GetFeature</a> GET requests, the <code>cql_filter</code> parameter can be used to specify a filter in ECQL (Extended Common Query Language) format. ECQL provides a more compact and readable syntax compared to OGC XML filters.</p>
+<p>For full details see the <a href="../../../filter/ecql_reference/">ECQL Reference</a> and <a href="../../../tutorials/cql/cql_tutorial/">CQL and ECQL</a> tutorial.</p>
 <p>The following example illustrates a GET request OGC filter:</p>
 <div class="language-text highlight"><pre><span></span><code>filter=%3CFilter%20xmlns:gml=%22http://www.opengis.net/gml%22%3E%3CIntersects%3E%3CPropertyName%3Ethe_geom%3C/PropertyName%3E%3Cgml:Point%20srsName=%224326%22%3E%3Cgml:coordinates%3E-74.817265,40.5296504%3C/gml:coordinates%3E%3C/gml:Point%3E%3C/Intersects%3E%3C/Filter%3E
 </code></pre></div>
@@ -2122,11 +2189,11 @@
 <ul>
 <li><code>callback</code> (default is <code>parseResponse</code>) - specifies the callback function name for the JSONP response format</li>
 <li><code>id_policy</code> (default is <code>true</code>) - Specifies id generation for the JSON output format. To include feature id in the output, use an attribute name, or use <code>format_options=id_policy:true</code> for feature id generation. To avoid the use of feature id completely use <code>format_options=id_policy:false</code>.</li>
-<li><code>filename</code> (default is <strong>`features`</strong> or generated from feature type name)- provide a <code>Content-Disposition</code> header indicating the attachment filename (used as a suggestion by browsers saving content to disk using <strong>*Save-As</strong>*). For example <code>format_options=filename:content.txt</code>.</li>
-<li><code>csvseparator</code> (default is <code>`,</code>` )- Specifies a separator that can be used in output csv file</li>
+<li><code>filename</code> (default is <strong><code>features</code></strong> or generated from feature type name)- provide a <code>Content-Disposition</code> header indicating the attachment filename (used as a suggestion by browsers saving content to disk using <strong><em>Save-As</em></strong>). For example <code>format_options=filename:content.txt</code>.</li>
+<li><code>csvseparator</code> (default is <code>`</code>, ``` )- Specifies a separator that can be used in output csv file</li>
 </ul>
 <h2 id="reprojection">Reprojection</h2>
-<p>As WFS 1.1.0 and 2.0.0 both support data reprojection, GeoServer can store the data in one projection and return GML in another projection. While not part of the specification, GeoServer supports this using WFS 1.0.0 as well. When submitting a WFS <a href="reference.rst#wfs_getfeature">GetFeature</a> GET request, you can add this parameter to specify the reprojection SRS as follows:</p>
+<p>As WFS 1.1.0 and 2.0.0 both support data reprojection, GeoServer can store the data in one projection and return GML in another projection. While not part of the specification, GeoServer supports this using WFS 1.0.0 as well. When submitting a WFS <a href="../reference/#wfs_getfeature">GetFeature</a> GET request, you can add this parameter to specify the reprojection SRS as follows:</p>
 <div class="language-text highlight"><pre><span></span><code>srsName=&lt;srsName&gt;
 </code></pre></div>
 <p>The code for the projection is represented by <code>&lt;srsName&gt;</code>, for example <code>EPSG:4326</code>. For POST requests, you can add the same code to the <code>Query</code> element.</p>

@@ -2962,6 +2962,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Settings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cf-standard-names-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      CF Standard names support
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3010,7 +3028,138 @@
 <li>NetCDF output will be produced only when input coverages come from a StructuredGridCoverage2D reader (this allows to query the GranuleSource to get the list of granules in order to setup dimensions slices for each sub-coverage).</li>
 </ul>
 <h2 id="netcdf-4">NetCDF-4</h2>
-<p>NetCDF-4 output is supported but requires native libraries (see <code>Installing required NetCDF-4 Native libraries &lt;nc4.rst&gt;`_). NetCDF-4 adds support for compression. Use</code>format=application/x-netcdf4<code>to request NetCDF-4 output.  Settings --------  NetCDF output settings can be configured for each raster layer. The similar section in the *Global Settings* page configures the default settings used for newly created raster layers.  .. code-block:: raw_markdown     ![](netcdfoutpanel.png) * Variable Name (optional)     * Sets the NetCDF variable name.     * Does not change the layer name, which can be configured in the Data tab. * Variable Unit of Measure (optional)     * Sets the NetCDF</code>uom<code>attribute. * Data Packing     * Lossy compression by storing data in reduced precision.     * One of *NONE*, *BYTE*, *SHORT*, or *INT*. * NetCDF-4 Compression Level     * Lossless compression.     * Level is an integer from 0 (no compression, fastest) to 9 (most compression, slowest). * NetCDF-4 Chunk Shuffling     * Lossless byte reordering to improve compression. * Copy Variable Attributes from NetCDF/GRIB Source     * Most attributes are copied from the source NetCDF/GRIB variable.     * Some attributes such as</code>coordinates<code>and</code>missing_value<code>are skipped as these may no longer be valid.     * For an ImageMosaic, one granule is chosen as the source. * Copy Global Attributes from NetCDF/GRIB Source     * Attributes are copied from the source NetCDF/GRIB global attributes.     * For an ImageMosaic, one granule is chosen as the source. * Variable Attributes     * Values are encoded as integers or doubles if possible, otherwise strings.     * Values set here overwrite attributes set elsewhere, such as those copied from a source NetCDF/GRIB variable. * Global Attributes     * Values are encoded as integers or doubles if possible, otherwise strings. * Scalar Variables Copied from NetCDF/GRIB Source     * Source specifies the name of the source variable in a NetCDF file or the</code>toolsUI<code>view of a GRIB file; only scalar source variables are supported.     * Output specifies the name of the variable in the output NetCDF file.     * If only one of Source or Output is given, the other is taken as the same.     * Dimension is either blank to simply copy the source scalar from one granule, or the name of one output NetCDF dimension to cause values to be copied from multiple granules (such as those from an ImageMosaic over a non-spatial dimension) into a one-dimensional variable. The example above copies a single value from multiple</code>reftime<code>scalars into</code>forecast_reference_time<code>dimensioned by</code>time<code>in an ImageMosaic over time.     * For an ImageMosaic, one granule is chosen as the source for variable attributes.  CF Standard names support -------------------------  Note that the output name can also be chosen from the list of CF Standard names. Check `CF standard names &lt;http://cfconventions.org/standard-names.html&gt;`_ page for more info on it.  Once you click on the dropdown, you may choose from the set of available standard names.  .. code-block:: raw_markdown     ![](cfnames.png)    *NetCDF CF Standard names list*   Note that once you specify the standard name, the unit will be automatically configured, using the canonical unit associated with that standard name.  .. code-block:: raw_markdown     ![](cfunit.png)    *NetCDF CF Standard names and canonical unit*   The list of standard names is populated by taking the entries from a standard name table xml. At time of writing, a valid example is available `Here &lt;http://cfconventions.org/Data/cf-standard-names/27/src/cf-standard-name-table.xml&gt;`_  You have three ways to provide it to GeoServer.  #. Add a</code>-DNETCDF_STANDARD_TABLE=/path/to/the/table/tablename.xml<code>property to the startup script. #. Put that xml file within the</code>NETCDF_DATA_DIR<code>which is the folder where all NetCDF auxiliary files are located. (`More info &lt;http://geoserver.geo-solutions.it/multidim/en/mosaic_config/netcdf_mosaic.html#customizing-netcdf-ancillary-files-location&gt;`_) #. Put that xml file within the</code>GEOSERVER_DATA_DIR``.</p>
+<p>NetCDF-4 output is supported but requires native libraries (see <a href="nc4/">Installing required NetCDF-4 Native libraries</a>). NetCDF-4 adds support for compression. Use <code>format=application/x-netcdf4</code> to request NetCDF-4 output.</p>
+<h2 id="settings">Settings</h2>
+<p>NetCDF output settings can be configured for each raster layer. The similar section in the <em>Global Settings</em> page configures the default settings used for newly created raster layers.</p>
+<p><img alt="" src="netcdfoutpanel.png" /></p>
+<ul>
+<li>
+<dl>
+<dt>Variable Name (optional)</dt>
+<dd>
+<ul>
+<li>Sets the NetCDF variable name.</li>
+<li>Does not change the layer name, which can be configured in the Data tab.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>
+<dl>
+<dt>Variable Unit of Measure (optional)</dt>
+<dd>
+<ul>
+<li>Sets the NetCDF <code>uom</code> attribute.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>
+<dl>
+<dt>Data Packing</dt>
+<dd>
+<ul>
+<li>Lossy compression by storing data in reduced precision.</li>
+<li>One of <em>NONE</em>, <em>BYTE</em>, <em>SHORT</em>, or <em>INT</em>.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>
+<dl>
+<dt>NetCDF-4 Compression Level</dt>
+<dd>
+<ul>
+<li>Lossless compression.</li>
+<li>Level is an integer from 0 (no compression, fastest) to 9 (most compression, slowest).</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>
+<dl>
+<dt>NetCDF-4 Chunk Shuffling</dt>
+<dd>
+<ul>
+<li>Lossless byte reordering to improve compression.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>
+<dl>
+<dt>Copy Variable Attributes from NetCDF/GRIB Source</dt>
+<dd>
+<ul>
+<li>Most attributes are copied from the source NetCDF/GRIB variable.</li>
+<li>Some attributes such as <code>coordinates</code> and <code>missing_value</code> are skipped as these may no longer be valid.</li>
+<li>For an ImageMosaic, one granule is chosen as the source.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>
+<dl>
+<dt>Copy Global Attributes from NetCDF/GRIB Source</dt>
+<dd>
+<ul>
+<li>Attributes are copied from the source NetCDF/GRIB global attributes.</li>
+<li>For an ImageMosaic, one granule is chosen as the source.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>
+<dl>
+<dt>Variable Attributes</dt>
+<dd>
+<ul>
+<li>Values are encoded as integers or doubles if possible, otherwise strings.</li>
+<li>Values set here overwrite attributes set elsewhere, such as those copied from a source NetCDF/GRIB variable.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>
+<dl>
+<dt>Global Attributes</dt>
+<dd>
+<ul>
+<li>Values are encoded as integers or doubles if possible, otherwise strings.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>
+<dl>
+<dt>Scalar Variables Copied from NetCDF/GRIB Source</dt>
+<dd>
+<ul>
+<li>Source specifies the name of the source variable in a NetCDF file or the <code>toolsUI</code> view of a GRIB file; only scalar source variables are supported.</li>
+<li>Output specifies the name of the variable in the output NetCDF file.</li>
+<li>If only one of Source or Output is given, the other is taken as the same.</li>
+<li>Dimension is either blank to simply copy the source scalar from one granule, or the name of one output NetCDF dimension to cause values to be copied from multiple granules (such as those from an ImageMosaic over a non-spatial dimension) into a one-dimensional variable. The example above copies a single value from multiple <code>reftime</code> scalars into <code>forecast_reference_time</code> dimensioned by <code>time</code> in an ImageMosaic over time.</li>
+<li>For an ImageMosaic, one granule is chosen as the source for variable attributes.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<h2 id="cf-standard-names-support">CF Standard names support</h2>
+<p>Note that the output name can also be chosen from the list of CF Standard names. Check <a href="http://cfconventions.org/standard-names.html">CF standard names</a> page for more info on it.</p>
+<p>Once you click on the dropdown, you may choose from the set of available standard names.</p>
+<p><img alt="" src="cfnames.png" />
+<em>NetCDF CF Standard names list</em></p>
+<p>Note that once you specify the standard name, the unit will be automatically configured, using the canonical unit associated with that standard name.</p>
+<p><img alt="" src="cfunit.png" />
+<em>NetCDF CF Standard names and canonical unit</em></p>
+<p>The list of standard names is populated by taking the entries from a standard name table xml. At time of writing, a valid example is available <a href="http://cfconventions.org/Data/cf-standard-names/27/src/cf-standard-name-table.xml">Here</a></p>
+<p>You have three ways to provide it to GeoServer.</p>
+<ol>
+<li>Add a <code>-DNETCDF_STANDARD_TABLE=/path/to/the/table/tablename.xml</code> property to the startup script.</li>
+<li>Put that xml file within the <code>NETCDF_DATA_DIR</code> which is the folder where all NetCDF auxiliary files are located. (<a href="http://geoserver.geo-solutions.it/multidim/en/mosaic_config/netcdf_mosaic.html#customizing-netcdf-ancillary-files-location">More info</a>)</li>
+<li>Put that xml file within the <code>GEOSERVER_DATA_DIR</code>.</li>
+</ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Note that for the 2<sup>nd</sup> and 3<sup>rd</sup> case, file name must be <strong>cf-standard-name-table.xml</strong>.</p>

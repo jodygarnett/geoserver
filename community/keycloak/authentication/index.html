@@ -3891,11 +3891,11 @@
 <p><strong>As the Keycloak Admin:</strong></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In this example the Keycloak service runs on port <code>8080</code>while GeoServer runs on port <code>8181</code></p>
+<p>In this example the Keycloak service runs on port <code>8080</code> while GeoServer runs on port <code>8181</code></p>
 </div>
 <ol>
 <li>
-<p>Create a <code>new client &lt;http://www.keycloak.org/docs/3.3/authorization_services/topics/resource-server/create-client.html&gt;`_ for GeoServer named</code>eoserver-client`.</p>
+<p>Create a <a href="http://www.keycloak.org/docs/3.3/authorization_services/topics/resource-server/create-client.html">new client</a> for GeoServer named <code>geoserver-client</code>.</p>
 <blockquote>
 <p><img alt="" src="../images/keycloak_client001.png" /></p>
 </blockquote>
@@ -3915,17 +3915,17 @@
 </code></pre></div>
 </li>
 <li>
-<p>Set the <code>access-type</code>of client as appropriate. If your GeoServer instance is depending on another service for authentication (eg: NGINX auth plugin) then you should probably select <em>bearer-only</em>. Otherwise, you should select <em>confidential</em>.</p>
+<p>Set the <code>access-type</code> of client as appropriate. If your GeoServer instance is depending on another service for authentication (eg: NGINX auth plugin) then you should probably select <em>bearer-only</em>. Otherwise, you should select <em>confidential</em>.</p>
 <blockquote>
 <p><img alt="" src="../images/keycloak_client003.png" /></p>
 </blockquote>
 </li>
 <li>
-<p>Add the <em>ADMINISTRATOR</em> and <em>AUTHENTICATED</em> <code>client-role &lt;http://www.keycloak.org/docs/2.5/server_admin/topics/roles/client-roles.html&gt;`_ to the</code>eoserver-client` in Keycloak.</p>
+<p>Add the <em>ADMINISTRATOR</em> and <em>AUTHENTICATED</em> <a href="http://www.keycloak.org/docs/2.5/server_admin/topics/roles/client-roles.html">client-role</a> to the <code>geoserver-client</code> in Keycloak.</p>
 <blockquote>
 <p><img alt="" src="../images/keycloak_client004.png" /></p>
 </blockquote>
-<p>In this phase you will need to map GeoServer Roles to the <code>geoserver-client</code>ones in Keycloak.</p>
+<p>In this phase you will need to map GeoServer Roles to the <code>geoserver-client</code> ones in Keycloak.</p>
 <blockquote>
 <p><img alt="" src="../images/keycloak_client005.png" /></p>
 </blockquote>
@@ -3935,19 +3935,19 @@
 </blockquote>
 </li>
 </ol>
-<p>5. Obtain the <code>installation-configuration &lt;http://www.keycloak.org/docs/3.2/server_admin/topics/clients/installation.html&gt;`_ for the</code>eoserver-client` in JSON, and provide this to the GeoServer Admin for the next steps.</p>
+<p>5. Obtain the <a href="http://www.keycloak.org/docs/3.2/server_admin/topics/clients/installation.html">installation-configuration</a> for the <code>geoserver-client</code> in JSON, and provide this to the GeoServer Admin for the next steps.</p>
 <blockquote>
 <p><img alt="" src="../images/keycloak_client007.png" /></p>
 </blockquote>
 <p><strong>As the GeoServer Admin:</strong></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In this example the Keycloak service runs on port <code>8080</code>while GeoServer runs on port <code>8181</code></p>
+<p>In this example the Keycloak service runs on port <code>8080</code> while GeoServer runs on port <code>8181</code></p>
 </div>
 <ol>
 <li>
-<p>Under the Authentication UI, add a new <code>authentication-filter</code> Select <code>Keycloak</code>from the list of provided options, and name your new filter <em>keycloak_adapter</em>. Paste the installation-configuration from the Keycloak-server in the text area provided.</p>
-<p>If not present, be sure to add the following options before clicking <code>Save</code></p>
+<p>Under the Authentication UI, add a new <code>authentication-filter</code>. Select <code>Keycloak</code> from the list of provided options, and name your new filter <em>keycloak_adapter</em>. Paste the installation-configuration from the Keycloak-server in the text area provided.</p>
+<p>If not present, be sure to add the following options before clicking <code>Save</code>:</p>
 <blockquote>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&quot;use-resource-role-mappings&quot;: true
 </span></code></pre></div>
@@ -3957,7 +3957,7 @@
 <p>The <strong>Role Source</strong> drop down enable the selection of the desired role source for the user being authenticated through keycloak. If none is selected by default the <code>Active Role Service</code> will be used.</p>
 </li>
 <li>
-<p>Add the <code>keycloak_adapter</code>to the <em>web</em> <code>filter-chain</code>if you want to protect the Admin GUI, as an instance. If you have checked <strong>Enable redirect to Keycloak Login page</strong> on the filter configuration to be redirected every time to Keycloak, then remove all of the others <code>chain filters</code>(basic, form, rememberme, anonymous).</p>
+<p>Add the <code>keycloak_adapter</code> to the <em>web</em> <code>filter-chain</code> if you want to protect the Admin GUI, as an instance. If you have checked <strong>Enable redirect to Keycloak Login page</strong> on the filter configuration to be redirected every time to Keycloak, then remove all of the others <code>chain filters</code> (basic, form, rememberme, anonymous).</p>
 <blockquote>
 <p><img alt="" src="../images/keycloak_adapter002.png" /></p>
 </blockquote>
@@ -3965,10 +3965,10 @@
 </ol>
 <p>3. Once done navigate to the GeoServer UI. If at filter configuration time the checkbox <code>Enable redirect to Keycloak Login page</code> was kept unchecked and the keycloak filter cohexists on the /web chain with the form and anonymous filter you will see a keycloak login button that allows the user to reach the keycloak login page.</p>
 <p><img alt="" src="../images/keycloak_login.png" /></p>
-<p>Otherwise the user will be directly redirected to the Keycloak <code>login-page</code> and after logging-in redirected back to the actual GeoServer UI page.</p>
+<p>Otherwise the user will be directly redirected to the Keycloak <code>login-page</code>, and after logging-in redirected back to the actual GeoServer UI page.</p>
 <blockquote>
 <p><img alt="" src="../images/keycloak_adapter003.png" /></p>
-<p>You should verify that the message <code>logged in as &lt;USERNAME&gt;</code>is posted in the top right corner before continuing.</p>
+<p>You should verify that the message <code>logged in as &lt;USERNAME&gt;</code> is posted in the top right corner before continuing.</p>
 <p><img alt="" src="../images/keycloak_adapter004.png" /></p>
 </blockquote>
 <div class="admonition warning">

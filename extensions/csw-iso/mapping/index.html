@@ -2636,6 +2636,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#feature-catalogs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature Catalogs
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3035,6 +3044,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#feature-catalogs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature Catalogs
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3068,8 +3086,31 @@
 
 <h1 id="csw-iso-metadata-profile-mapping-file">CSW ISO Metadata Profile Mapping File</h1>
 <h2 id="general">General</h2>
+<p>See <a href="../../../services/csw/features/#csw_mapping_file">Mapping Files</a> for basic information on the CSW mapping file. The ISO Metadata mapping can be found in the file <code>csw/MD_Metadata.properties</code> inside the data directory.</p>
+<p>Below is an example of an ISO Metadata Profile Mapping File:</p>
+<div class="language-text highlight"><pre><span></span><code>@fileIdentifier.CharacterString=id
+identificationInfo.MD_DataIdentification.citation.CI_Citation.title.CharacterString=title
+identificationInfo.MD_DataIdentification.citation.CI_Citation.alternateTitle.CharacterString=list(description,alias,strConcat(&#39;##&#39;,title)) 
+identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.keyword.CharacterString=keywords 
+identificationInfo.MD_DataIdentification.abstract.CharacterString=abstract
+$dateStamp.Date= if_then_else ( isNull(&quot;metadata.date&quot;) , &#39;Unknown&#39;, &quot;metadata.date&quot;)
+hierarchyLevel.MD_ScopeCode.@codeListValue=&#39;http://purl.org/dc/dcmitype/Dataset&#39;
+$contact.CI_ResponsibleParty.individualName.CharacterString=
+identificationInfo.MD_DataIdentification.resourceConstraints[0].MD_LegalConstraints.accessConstraints.MD_RestrictionCode=
+identificationInfo.MD_DataIdentification.resourceConstraints[1].MD_SecurityConstraints.classification.MD_ClassificationCode=
+identificationInfo.MD_DataIdentification.citation.CI_Citation.date%.CI_Date.date.Date=lapply(&quot;metadata.citation-date&quot;, if_then_else(isNull(&quot;.&quot;), &quot;Expression/NIL&quot;, dateFormat(&#39;YYYY-MM-dd&#39;, &quot;.&quot;)))
+identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.keyword.CharacterString=list(keywords, if_then_else(equalTo(typeOf(&quot;.&quot;), &#39;FeatureTypeInfo&#39;), &#39;vector&#39;, &#39;raster&#39;))
+</code></pre></div>
+<p>The full path of each field must be specified (separated with dots). XML attributes are specified with the <code>@</code> symbol, similar to the usual XML X-path notation. To avoid confusion with the identifier-symbol at the beginning of a mapping line, use <code>@</code> (for an attribute that is not an identifier) or <code>@@</code> (for an attribute that is also the identifier) - see the feature catatalog mapping file for an example.</p>
+<p>The <code>%</code> symbol denotes where a multi-valued mapping should be split in to multiple tags. Multiple <code>%</code> symbols may be used for multi-dimensional mappings - see the feature catatalog mapping file below for an example.</p>
+<p>Indexes with square brackets can be used to avoid merging tags that shouldn't be merged, as demonstrated above for <code>resourceConstraints</code>.</p>
+<p>To keep the result XSD compliant, the parameters <code>dateStamp.Date</code> and <code>contact.CI_ResponsibleParty.individualName.CharacterString</code> must be preceded by a <code>$</code> sign to make sure that they are always included even when using property selection.</p>
+<p>The <code>lapply</code> function can be used to apply expressions to items of lists, which can be handy with multidimensional fields.</p>
+<p>The <code>typeOf</code> function (exclusive to CSW-ISO module) returns the type of the catalog item that is being processed (<code>LayerGroupInfo</code>, <code>FeatureTypeInfo</code>, <code>CoverageInfo</code>,...), which can be handy if you for example need to handle vector layers differently to raster layers.</p>
+<p>For more information on the ISO Metadata standard, please see the <a href="http://www.opengeospatial.org/standards/specifications/catalog">OGC Implementation Specification 07-045</a>.</p>
+<h2 id="feature-catalogs">Feature Catalogs</h2>
 <dl>
-<dt>See <code>Mapping Files &lt;../../services/csw/features.rst#csw_mapping_file&gt;`_ for basic information on the CSW mapping file. The ISO Metadata mapping can be found in the file</code>csw/MD_Metadata.properties<code>inside the data directory.  Below is an example of an ISO Metadata Profile Mapping File::    @fileIdentifier.CharacterString=id   identificationInfo.MD_DataIdentification.citation.CI_Citation.title.CharacterString=title   identificationInfo.MD_DataIdentification.citation.CI_Citation.alternateTitle.CharacterString=list(description,alias,strConcat('##',title))    identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.keyword.CharacterString=keywords    identificationInfo.MD_DataIdentification.abstract.CharacterString=abstract   $dateStamp.Date= if_then_else ( isNull("metadata.date") , 'Unknown', "metadata.date")   hierarchyLevel.MD_ScopeCode.@codeListValue='http://purl.org/dc/dcmitype/Dataset'   $contact.CI_ResponsibleParty.individualName.CharacterString=   identificationInfo.MD_DataIdentification.resourceConstraints[0].MD_LegalConstraints.accessConstraints.MD_RestrictionCode=   identificationInfo.MD_DataIdentification.resourceConstraints[1].MD_SecurityConstraints.classification.MD_ClassificationCode=   identificationInfo.MD_DataIdentification.citation.CI_Citation.date%.CI_Date.date.Date=lapply("metadata.citation-date", if_then_else(isNull("."), "Expression/NIL", dateFormat('YYYY-MM-dd', ".")))   identificationInfo.MD_DataIdentification.descriptiveKeywords.MD_Keywords.keyword.CharacterString=list(keywords, if_then_else(equalTo(typeOf("."), 'FeatureTypeInfo'), 'vector', 'raster'))  The full path of each field must be specified (separated with dots). XML attributes are specified with the</code>@<code>symbol, similar to the usual XML X-path notation. To avoid confusion with the identifier-symbol at the beginning of a mapping line, use</code>@<code>(for an attribute that is not an identifier) or</code>@@<code>(for an attribute that is also the identifier) - see the feature catatalog mapping file for an example.  The</code>%<code>symbol denotes where a multi-valued mapping should be split in to multiple tags. Multiple</code>%<code>symbols may be used for multi-dimensional mappings - see the feature catatalog mapping file below for an example.  Indexes with square brackets can be used to avoid merging tags that shouldn't be merged, as demonstrated above for</code>resourceConstraints<code>.  To keep the result XSD compliant, the parameters</code>dateStamp.Date<code>and</code>contact.CI_ResponsibleParty.individualName.CharacterString<code>must be preceded by a</code>\$<code>sign to make sure that they are always included even when using property selection.  The</code>lapply<code>function can be used to apply expressions to items of lists, which can be handy with multidimensional fields.  The</code>typeOf<code>function (exclusive to CSW-ISO module) returns the type of the catalog item that is being processed (</code>LayerGroupInfo<code>,</code>FeatureTypeInfo<code>,</code>CoverageInfo<code>,...), which can be handy if you for example need to handle vector layers differently to raster layers.  For more information on the ISO Metadata standard, please see the `OGC Implementation Specification 07-045 &lt;http://www.opengeospatial.org/standards/specifications/catalog&gt;`_.   Feature Catalogs ~~~~~~~~~~~~~~~~  Within the ISO Metadata Profile, there is also support for</code>Feature Catalogues`` that contain information about vector layer type metadata. As specified by the ISO Metadata standard these are exposed in separate records. For this purpose we have a separate mapping file::</dt>
+<dt>Within the ISO Metadata Profile, there is also support for <code>Feature Catalogues</code> that contain information about vector layer type metadata. As specified by the ISO Metadata standard these are exposed in separate records. For this purpose we have a separate mapping file::</dt>
 <dd>
 <p>@@uuid="metadata.custom.feature-catalog/feature-catalog-uidentifier" @id="metadata.custom.feature-catalog/feature-catalog-identifier" \$featureType.FC_FeatureType.typeName.LocalName=concatenate("name", 'Type') \$featureType.FC_FeatureType.isAbstract.Boolean='false' \$featureType.FC_FeatureType.featureCatalogue.@uuidref="metadata.custom.feature-catalog/feature-catalog-identifier" featureType.FC_FeatureType.definition.CharacterString="metadata.custom.feature-catalog/feature-type/feature-type-definition" featureType.FC_FeatureType.carrierOfCharacteristics%.FC_FeatureAttribute.memberName.LocalName="metadata.custom.feature-catalog/feature-type/feature-attribute/name" featureType.FC_FeatureType.carrierOfCharacteristics%.FC_FeatureAttribute.valueType.TypeName.aName.CharacterString="metadata.custom.feature-catalog/feature-type/feature-attribute/type" featureType.FC_FeatureType.carrierOfCharacteristics%.FC_FeatureAttribute.length.CharacterString="metadata.custom.feature-catalog/feature-type/feature-attribute/length" featureType.FC_FeatureType.carrierOfCharacteristics%.FC_FeatureAttribute.definition.CharacterString="metadata.custom.feature-catalog/feature-type/feature-attribute/definition" featureType.FC_FeatureType.carrierOfCharacteristics%.FC_FeatureAttribute.cardinality.Multiplicity.range.MultiplicityRange.lower.Integer="metadata.custom.feature-catalog/feature-type/feature-attribute/min-occurrence" featureType.FC_FeatureType.carrierOfCharacteristics%.FC_FeatureAttribute.cardinality.Multiplicity.range.MultiplicityRange.upper.UnlimitedInteger="metadata.custom.feature-catalog/feature-type/feature-attribute/max-occurrence" featureType.FC_FeatureType.carrierOfCharacteristics%.FC_FeatureAttribute.cardinality.Multiplicity.range.MultiplicityRange.upper.UnlimitedInteger.@isInfinite=false featureType.FC_FeatureType.carrierOfCharacteristics%.FC_FeatureAttribute.listedValue%.FC_ListedValue.label.CharacterString="metadata.custom.feature-catalog/feature-type/feature-attribute/domain/value" featureType.FC_FeatureType.carrierOfCharacteristics%.FC_FeatureAttribute.listedValue%.FC_ListedValue.definition.CharacterString="metadata.custom.feature-catalog/feature-type/feature-attribute/domain/definition" featureType.FC_FeatureType.carrierOfCharacteristics%.FC_FeatureAttribute.listedValue%.FC_ListedValue.code.CharacterString="metadata.custom.feature-catalog/feature-type/feature-attribute/domain/code"</p>
 </dd>

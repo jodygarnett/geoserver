@@ -2094,7 +2094,7 @@
 
 
 <h1 id="inspire-metadata-configuration-using-metadata-and-csw">INSPIRE metadata configuration using metadata and CSW</h1>
-<p>The INSPIRE directive requires exposure of fairly complex metadata schemes based on the ISO Metadata Profile. This exposure is supported by the built-in <code>Catalog Services for the Web (CSW) &lt;../../services/csw/index.rst&gt;`_ service (can be harvested by GeoNetwork), while the</code>etadata &lt;../../extensions/metadata/index.rst&gt;`_ community module allows adding any amount of customized metadata fields to layers that may be required for your particular case.</p>
+<p>The INSPIRE directive requires exposure of fairly complex metadata schemes based on the ISO Metadata Profile. This exposure is supported by the built-in <a href="../../services/csw/">Catalog Services for the Web (CSW)</a> service (can be harvested by GeoNetwork), while the <a href="../../extensions/metadata/">Metadata</a> community module allows adding any amount of customized metadata fields to layers that may be required for your particular case.</p>
 <p>Creating all the needed configuration files in both modules can be a tedious task. Therefore we have added this example configuration.</p>
 <h2 id="metadata-configuration">Metadata configuration</h2>
 <p>Place the following files in the <code>metadata</code> folder:</p>
@@ -2116,10 +2116,10 @@
 <p>Map Feature Catalogue attributes to xml <a href="files/FC_FeatureCatalogue.properties">FC_FeatureCatalogue.properties</a></p>
 <p>Map Record attributes to xml <a href="files/Record.properties">Record.properties</a></p>
 <p>You may now see your custom metadata exposed by the built-in CSW service:</p>
-<p>e.g. <code>https://my.host/geoserver/csw?service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;typeNames=gmd:MD_Metadata&amp;resultType=results&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd</code></p>
+<p>e.g. <code>https://my.host/geoserver/csw?service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;typeNames=gmd:MD_Metadata&amp;resultType=results&amp;elementSetName=full&amp;outputSchema=http://www.isotc211.org/2005/gmd</code>.</p>
 <h2 id="geonetwork-configuration">GeoNetwork configuration</h2>
 <p>Create a GeoNetwork CSW harvester that points to your to Geoserver's CSW endpoint:</p>
-<p>e.g. <code>https://my.host/geoserver/csw?Service=CSW&amp;Request=Getcapabilities</code></p>
+<p>e.g. <code>https://my.host/geoserver/csw?Service=CSW&amp;Request=Getcapabilities</code>.</p>
 <p>You may now start harvesting!</p>
 
 

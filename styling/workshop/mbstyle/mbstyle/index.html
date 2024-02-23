@@ -2450,7 +2450,7 @@
 <ol>
 <li>Object, a collection of key-value pairs. All JSON documents are JSON objects.</li>
 <li>Array, a collection of values.</li>
-<li>Value, the value in a key-value pair, or an entry in an array. Values can be objects, arrays, strings, numbers, <code>true</code> <code>false</code> or <code>null</code></li>
+<li>Value, the value in a key-value pair, or an entry in an array. Values can be objects, arrays, strings, numbers, <code>true</code>, <code>false</code>, or <code>null</code>.</li>
 </ol>
 <table>
 <thead>
@@ -2478,11 +2478,11 @@
 </tr>
 <tr>
 <td>Boolean</td>
-<td><code>true</code>or <code>false</code></td>
+<td><code>true</code> or <code>false</code>.</td>
 </tr>
 <tr>
 <td>Null</td>
-<td><code>null</code> Represents an undefined or unset value.</td>
+<td><code>null</code>. Represents an undefined or unset value.</td>
 </tr>
 </tbody>
 </table>
@@ -2491,15 +2491,32 @@
 <h4 id="root-level-properties">Root-level Properties</h4>
 <p>Root level properties of a Mapbox style specify the map's layers, tile sources and other resources, and default values for the initial camera position when not specified elsewhere.</p>
 <p>The following root-level properties are required for all MBStyles. Additional root-level properties which are supported but not required can be found in the spec.</p>
-<p>+-----------+-----------------------------------------------------------------------------------------+
-| <code>version</code> | &gt; The version of the Mapbox Style specification to use. Must be set to <code>8</code>. |
-+-----------+-----------------------------------------------------------------------------------------+
-| <code>name</code>    | &gt; The name of the style.                                                                |
-+-----------+-----------------------------------------------------------------------------------------+
-| <code>sources</code> | &gt; An object defining the source data. Not used by GeoServer.                            |
-+-----------+-----------------------------------------------------------------------------------------+
-| <code>layers</code>  | &gt; An array of layer style objects                                                       |
-+-----------+-----------------------------------------------------------------------------------------+</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>version</code></td>
+<td>The version of the Mapbox Style specification to use. Must be set to <code>8</code>.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>The name of the style.</td>
+</tr>
+<tr>
+<td><code>sources</code></td>
+<td>An object defining the source data. Not used by GeoServer.</td>
+</tr>
+<tr>
+<td><code>layers</code></td>
+<td>An array of layer style objects</td>
+</tr>
+</tbody>
+</table>
 <p>For example: :</p>
 <div class="language-text highlight"><pre><span></span><code>{
     &quot;version&quot;: 8,
@@ -2584,7 +2601,7 @@
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span><span class="p">]</span>
 </span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>We use a point symbolizer to indicate we want this content drawn as a <strong>Point</strong> (line 16 in the SLD, line 8 in the MBStyle). The point symbolizer declares an external graphic, which contains the URL <code>airports.svg</code>indicating the image that should be drawn (line 20 in the SLD, line 10 in the MBStyle).</p>
+<p>We use a point symbolizer to indicate we want this content drawn as a <strong>Point</strong> (line 16 in the SLD, line 8 in the MBStyle). The point symbolizer declares an external graphic, which contains the URL <code>airports.svg</code> indicating the image that should be drawn (line 20 in the SLD, line 10 in the MBStyle).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Rather than refer to many diffferent icons separately, MBStyles use a single sprite-sheet containing all the necessary icons for the style. This is defined by the <code>sprite</code> property at the top-level of the style.</p>
@@ -2598,7 +2615,8 @@
 <li>
 <p>Each time we edit a style, the contents of the associated SLD file are replaced. Rather than disrupt any of our existing styles we will create a new style. Click <strong>Add a new style</strong> and choose the following:</p>
 <hr />
-<p>Name:                 <code>airports0</code> * - Workspace:</p>
+<p>Name:                 <code>airports0</code></p>
+<p>Workspace:            (leave empty)</p>
 <p>Format:               <code>MBStyle</code></p>
 <hr />
 </li>
@@ -2612,7 +2630,7 @@
 </blockquote>
 </li>
 <li>
-<p>Click the <strong>Layer Preview</strong> tab to preview the style. We want to preview on the airports layer, so click the name of the current layer and select <code>ne:airports</code>from the list that appears. You can use the mouse buttons to pan and scroll wheel to change scale.</p>
+<p>Click the <strong>Layer Preview</strong> tab to preview the style. We want to preview on the airports layer, so click the name of the current layer and select <code>ne:airports</code> from the list that appears. You can use the mouse buttons to pan and scroll wheel to change scale.</p>
 <p><img alt="" src="../../style/img/css_02_choose_data.png" />
 <em>Choosing the airports layer</em></p>
 <p><img alt="" src="../../style/img/css_06_preview.png" />

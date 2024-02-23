@@ -2215,13 +2215,13 @@
 
 
 <h1 id="axis-ordering">Axis ordering</h1>
-<p>The definition of a spatial reference system includes an indication of the axis order used to interpret the coordinates. There are a number of projected spatial reference systems defined in <code>north/east</code>order in the formal <code>EPSG</code> definition, but are interpreted as being in <code>east/north</code> order by earlier versions of the <code>WFS</code> protocol.</p>
+<p>The definition of a spatial reference system includes an indication of the axis order used to interpret the coordinates. There are a number of projected spatial reference systems defined in <code>north/east</code> order in the formal <code>EPSG</code> definition, but are interpreted as being in <code>east/north</code> order by earlier versions of the <code>WFS</code> protocol.</p>
 <ul>
 <li><code>WFS 1.0.0</code>: Provides geographic coordinates in <code>east/north</code> and may not be trusted to respect the EPSG definition axis order.</li>
 <li><code>WFS 1.1.0</code>: Respects the axis order defined by the EPSG definition.</li>
 <li><code>WFS 2.0.0</code>: Respects the axis order defined by the EPSG definition.</li>
 </ul>
-<p>Forcing content into <code>east/north</code> order was intended to be easier for developers where computer displays are defined with an <code>x/y</code>order. However this decision has introduced no end of confusion, and was corrected in later versions of <code>WFS</code>.</p>
+<p>Forcing content into <code>east/north</code> order was intended to be easier for developers where computer displays are defined with an <code>x/y</code> order. However this decision has introduced no end of confusion, and was corrected in later versions of <code>WFS</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Some spatial reference systems, for example polar stereographic, do not have an <code>east</code> or <code>west</code> as they have a pole in the middle of the axis.</p>
@@ -2239,15 +2239,15 @@
 <p>To compare the spatial reference system definition for <code>EPSG:4326</code>:</p>
 <ol>
 <li>
-<p>Navigate <strong>Demos &rarr; SRS List</strong> page and search for <code>4326</code></p>
+<p>Navigate <strong>Demos &rarr; SRS List</strong> page and search for <code>4326</code>.</p>
 </li>
 <li>
-<p>Compare the formal <code>EPSG</code>definition of <code>WGS84</code></p>
+<p>Compare the formal <code>EPSG</code> definition of <code>WGS84</code>:</p>
 <p><img alt="" src="../img/wgs84-epsg-description.png" />
 <em>WGS84 EPSG definition</em></p>
 </li>
 <li>
-<p>With the internal definition of <code>WGS84</code></p>
+<p>With the internal definition of <code>WGS84</code>:</p>
 <p><img alt="" src="../img/wgs84-internal-description.png" />
 <em>WGS84 Internal definition</em></p>
 </li>
@@ -2256,8 +2256,8 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The formal <code>EPSG</code> definition provides the axis-order used to interpret coordinate values. GeoServer uses an internal representation that does not always respect the <code>EPSG</code> provided axis order.</p>
-<p>In the example above <code>EPSG:4326</code> is defined with a <code>north/east</code>axis order, while the internal representation has <code>east/north</code> order.</p>
-<p>The startup option <code>-Dorg.geotools.referencing.forceXY=true</code> is used to configure GeoServer to prefer an internal representation in <code>east/north</code>axis order. We recommend the default value of <code>true</code> to match a wide range of clients that make this assumption.</p>
+<p>In the example above <code>EPSG:4326</code> is defined with a <code>north/east</code> axis order, while the internal representation has <code>east/north</code> order.</p>
+<p>The startup option <code>-Dorg.geotools.referencing.forceXY=true</code> is used to configure GeoServer to prefer an internal representation in <code>east/north</code> axis order. We recommend the default value of <code>true</code> to match a wide range of clients that make this assumption.</p>
 </div>
 <h2 id="layer-axis-order">Layer Axis Order</h2>
 <p>The default data directory includes the following dataset illustrating this challenge:</p>
@@ -2281,13 +2281,13 @@
 </li>
 <li>
 <p>Locate <strong>Native SRS</strong> and click on the <strong>GCS_WGS_1984</strong> link to show how GeoServer interpreted the <strong><code>PRJ</code></strong> file above.</p>
-<p>The <strong><code>PRJ</code></strong> did not provide an axis-order and GeoSever has filled in an assumption. This describing the data in <code>x/y</code>order which matches our data and we could use it unmodified.</p>
+<p>The <strong><code>PRJ</code></strong> did not provide an axis-order and GeoSever has filled in an assumption. This describing the data in <code>x/y</code> order which matches our data and we could use it unmodified.</p>
 <p><img alt="" src="../img/native_srs.png" />
 <em>Native SRS for topp:states</em></p>
 </li>
 <li>
 <p>Locate <strong>Declared SRS</strong> and click on <strong>EPSG:WGS 84...</strong> link to see the definition used to publish this content.</p>
-<p>This is the internal definition of <code>EPSG:4326</code> as shown in the SRSList above, which also describes the data in <code>x/y</code>order matching our data. This definition provides slightly more readable names along with additional <code>AUTHORITY</code> information that may be helpful to client applications.</p>
+<p>This is the internal definition of <code>EPSG:4326</code> as shown in the SRSList above, which also describes the data in <code>x/y</code> order matching our data. This definition provides slightly more readable names along with additional <code>AUTHORITY</code> information that may be helpful to client applications.</p>
 <p><img alt="" src="../img/declared_srs.png" />
 <em>Declared SRS for topp:states</em></p>
 </li>
@@ -2308,7 +2308,7 @@
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">&lt;LatLongBoundingBox</span><span class="w"> </span><span class="na">minx=</span><span class="s">&quot;-124.731422&quot;</span><span class="w"> </span><span class="na">miny=</span><span class="s">&quot;24.955967&quot;</span><span class="w"> </span><span class="na">maxx=</span><span class="s">&quot;-66.969849&quot;</span><span class="w"> </span><span class="na">maxy=</span><span class="s">&quot;49.371735&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nt">&lt;/FeatureType&gt;</span><span class="w"> </span>
 </span></code></pre></div>
-<p>WFS 1.0 describes the latitude / longitude bounds with the understanding that you will associate <code>minx</code>and <code>maxx</code>with longitude, and also <code>miny</code>and <code>maxy</code>with latitude.</p>
+<p>WFS 1.0 describes the latitude / longitude bounds with the understanding that you will associate <code>minx</code> and <code>maxx</code> with longitude, and also <code>miny</code> and <code>maxy</code> with latitude.</p>
 <p>WFS 1.0 <em>GetFeature</em> request defaults to GML2 output, and the default <code>EPSG:4326</code> spatial reference system used to publish the layer:</p>
 <ul>
 <li>
@@ -2456,7 +2456,7 @@
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <code>srsName</code>and <code>posList</code>coordinate order are consistent.</p>
+<p>The <code>srsName</code> and <code>posList</code> coordinate order are consistent.</p>
 <p>This approach can be used to force x/y order.</p>
 </div>
 </li>
@@ -2502,7 +2502,7 @@
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <code>srsName</code>and <code>posList</code>coordinate order are consistent.</p>
+<p>The <code>srsName</code> and <code>posList</code> coordinate order are consistent.</p>
 <p>This approach can be used to force x/y order.</p>
 </div>
 </li>
@@ -2536,7 +2536,7 @@
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <code>srsName</code>and <code>posList</code>coordinate order are consistent.</p>
+<p>The <code>srsName</code> and <code>posList</code> coordinate order are consistent.</p>
 <p>This approach can be used to force x/y order.</p>
 </div>
 </li>
@@ -2554,7 +2554,7 @@
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <code>srsName</code>and <code>posList</code>coordinate order are consistent.</p>
+<p>The <code>srsName</code> and <code>posList</code> coordinate order are consistent.</p>
 <p>This approach can be used to force x/y order.</p>
 </div>
 </li>
@@ -2684,7 +2684,7 @@
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <code>srsName</code>and <code>posList</code>coordinate order are consistent.</p>
+<p>The <code>srsName</code> and <code>posList</code> coordinate order are consistent.</p>
 <p>This approach can be used to force x/y order.</p>
 </div>
 </li>
@@ -2728,7 +2728,7 @@
 </span></code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This combination is inconsistent between <code>srsName</code>and <code>posList</code>coordinate order and may confuse applications expecting a valid GML3 document.</p>
+<p>This combination is inconsistent between <code>srsName</code> and <code>posList</code> coordinate order and may confuse applications expecting a valid GML3 document.</p>
 <p>This approach can be used to force x/y order.</p>
 </div>
 </li>
@@ -2770,7 +2770,7 @@
 </span></code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This combination is inconsistent between <code>srsName</code>and <code>posList</code>coordinate order and may confuse applications expecting a valid GML3 document.</p>
+<p>This combination is inconsistent between <code>srsName</code> and <code>posList</code> coordinate order and may confuse applications expecting a valid GML3 document.</p>
 <p>This approach can be used to force x/y order.</p>
 </div>
 </li>

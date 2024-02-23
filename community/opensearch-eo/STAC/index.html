@@ -4044,8 +4044,8 @@
 </ul>
 <p>Specifically for the JSON output:</p>
 <ul>
-<li><code>$GEOSERVER_DATA_DIR/templates/ogc/stac/v1/collections.json</code>is the <a href="https://raw.githubusercontent.com/geoserver/geoserver/main/src/community/oseo/oseo-stac/src/main/resources/org/geoserver/ogcapi/v1/stac/collections.json">collections template</a></li>
-<li><code>$GEOSERVER_DATA_DIR/templates/ogc/stac/v1/items.json</code>is the <a href="https://raw.githubusercontent.com/geoserver/geoserver/main/src/community/oseo/oseo-stac/src/main/resources/org/geoserver/ogcapi/v1/stac/items.json">items template</a></li>
+<li><code>\$GEOSERVER_DATA_DIR/templates/ogc/stac/v1/collections.json</code> is the <a href="https://raw.githubusercontent.com/geoserver/geoserver/main/src/community/oseo/oseo-stac/src/main/resources/org/geoserver/ogcapi/v1/stac/collections.json">collections template</a></li>
+<li><code>\$GEOSERVER_DATA_DIR/templates/ogc/stac/v1/items.json</code> is the <a href="https://raw.githubusercontent.com/geoserver/geoserver/main/src/community/oseo/oseo-stac/src/main/resources/org/geoserver/ogcapi/v1/stac/items.json">items template</a></li>
 </ul>
 <p>The JSON templates in the case of STAC also drive database querying, the exposed STAC properties are back-mapped into database properties by interpreting the template. It is advised to keep property mapping as simple as possible to allow usage of native SQL queries and indexes while accessing the database through the STAC API.</p>
 <p>For both items and collections, collection specific templates can also be provided, which would contain directives and mappings unique to that collection. A collection specific template can be placed in the same templates directory as above, using the naming convention <code>items-&lt;COLLECTION_ID&gt;.json</code> or <code>collections-&lt;COLLECTION_ID&gt;.json</code>, where <code>&lt;COLLECTION_ID&gt;</code> is the collection identifier. For example, if the collection is named <code>SENTINEL2</code>:</p>
@@ -4065,14 +4065,14 @@
 <li>If an attribute is excluded, e.g. <code>-properties.nestedObj</code>, but one of more of the nested attributes is included, e.g. <code>properties.nestedObject.attribute</code>, then <code>nestedObject</code> will appear in the output with the included attributes only.</li>
 </ul>
 <h2 id="datacube-extension-support">Datacube Extension Support</h2>
-<p>Support for the <code>STAC Datacube Extension &lt;https://github.com/stac-extensions/datacube&gt;`_ "cube_dimensions" elements is available in HTML and JSON templates via the</code>oSummaries<code>function.</code>eoSummaries`supports presenting the following collection-wide summary statistics:</p>
+<p>Support for the <a href="https://github.com/stac-extensions/datacube">STAC Datacube Extension</a> "cube_dimensions" elements is available in HTML and JSON templates via the <code>eoSummaries</code> function. <code>eoSummaries</code> supports presenting the following collection-wide summary statistics:</p>
 <ul>
 <li>min - The minimum value of the field in the collection</li>
 <li>max - The maximum value of the field in the collection</li>
 <li>distinct - An array of distinct values of the field in the collection</li>
 <li>bounds - Minimum and maximum dimension values of the spatial bounding box of the collection (either x or y, presented as a two value array or xmin, xmax, ymin, ymax presented as individual dimension values)</li>
 </ul>
-<p><code>eoSummaries</code>has three arguments:</p>
+<p><code>eoSummaries</code> has three arguments:</p>
 <ul>
 <li>
 <p>aggregate - The type of summary statistic. One of "min", "max", "distinct", or "bounds".</p>

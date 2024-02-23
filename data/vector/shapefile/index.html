@@ -1912,7 +1912,7 @@
 <p>While GeoServer has robust support for the shapefile format, it is not the recommended format of choice in a production environment. Databases such as PostGIS are more suitable in production and offer better performance and scalability. See the section on <a href="../../../production/">Running in a production environment</a> for more information.</p>
 </div>
 <h2 id="adding-a-shapefile">Adding a shapefile</h2>
-<p>A shapefile is actually a collection of files (with the extensions: <code>.shp</code>, <code>.dbf</code>, <code>.shx</code>, <code>.prj</code>, and sometimes others). All of these files need to be present in the same directory in order for GeoServer to accurately read them. As with all formats, adding a shapefile to GeoServer involves adding a new store to the existing <code>Stores &lt;../webadmin/stores.rst&gt;`_  through the</code>eb administration interface &lt;../../webadmin/index.rst&gt;`_.</p>
+<p>A shapefile is actually a collection of files (with the extensions: <code>.shp</code>, <code>.dbf</code>, <code>.shx</code>, <code>.prj</code>, and sometimes others). All of these files need to be present in the same directory in order for GeoServer to accurately read them. As with all formats, adding a shapefile to GeoServer involves adding a new store to the existing <a href="../../webadmin/stores/">Stores</a> through the <a href="../../../webadmin/">Web administration interface</a>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The <code>.prj</code> file, while not mandatory, is strongly recommended when working with GeoServer as it contains valuable projection info. GeoServer may not be able to load your shapefile without it!</p>

@@ -2392,12 +2392,13 @@
 <p>Navigate to the <strong>CSS Styles</strong> page.</p>
 </li>
 <li>
-<p>Click <strong>Choose a different layer</strong> and select <code>ne:roads</code>from the list.</p>
+<p>Click <strong>Choose a different layer</strong> and select <code>ne:roads</code> from the list.</p>
 </li>
 <li>
 <p>Click <strong>Create a new style</strong> and choose the following:</p>
 <hr />
-<p>Workspace for new layer:   <code>No workspace</code> * - New style name:</p>
+<p>Workspace for new layer:   <code>No workspace</code></p>
+<p>New style name:            <code>line_example</code></p>
 <hr />
 </li>
 <li>
@@ -2464,7 +2465,7 @@
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The GeoServer rendering engine is quite sophisticated and allows the use of units of measure (such as <code>m` or</code>t`). While we are using pixels in this example, real world units will be converted using the current scale.</p>
+<p>The GeoServer rendering engine is quite sophisticated and allows the use of units of measure (such as <code>m</code> or <code>ft</code>). While we are using pixels in this example, real world units will be converted using the current scale.</p>
 </div>
 <h2 id="z-index">Z-Index</h2>
 <p>The next exercise shows how to work around a limitation when using multiple strokes to render a line.</p>
@@ -2522,7 +2523,7 @@
 <p><img alt="image" src="../../style/img/line_label_1.png" /></p>
 </li>
 <li>
-<p>We have used an expression to calculate a property value for label. The <strong>label</strong> property is generated dynamically from the <code>name</code>attribute. Expressions are supplied within square brackets, making use of Constraint Query Language (CQL) syntax.</p>
+<p>We have used an expression to calculate a property value for label. The <strong>label</strong> property is generated dynamically from the <code>name</code> attribute. Expressions are supplied within square brackets, making use of Constraint Query Language (CQL) syntax.</p>
 <div class="language-css highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="n">label</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">name</span><span class="p">];</span>
@@ -2540,7 +2541,7 @@
 </span></code></pre></div>
 </li>
 <li>
-<p>The <strong>font-fill</strong> property is set to <code>black</code>provides the label color.</p>
+<p>The <strong>font-fill</strong> property is set to <code>black</code> provides the label color.</p>
 <div class="language-css highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="n">label</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">name</span><span class="p">];</span>
@@ -2599,10 +2600,10 @@
 </li>
 </ol>
 <h2 id="scale">Scale</h2>
-<p>This section explores the use of attribute selectors and the <code>@scale</code>selector together to simplify the road dataset for display.</p>
+<p>This section explores the use of attribute selectors and the <code>@scale</code> selector together to simplify the road dataset for display.</p>
 <ol>
 <li>
-<p>Replace the <code>line_example</code>CSS definition with:</p>
+<p>Replace the <code>line_example</code> CSS definition with:</p>
 <div class="language-css highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="o">[</span><span class="nt">scalerank</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">4</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="p">}</span>
@@ -2671,7 +2672,7 @@
 <li>Selectors separated by blank-space are combined CQL Filter AND</li>
 <li>Selectors separated by a comma are combined using CQL Filter OR</li>
 </ul>
-<p>Our first rule <code>[@scale &lt; 9000000] [scalerank &gt; 7]</code>checks that the scale is less than 9M AND scalerank is greater than 7.</p>
+<p>Our first rule [[@scale &lt; 9000000] [scalerank &gt; 7]]{.title-ref} checks that the scale is less than 9M AND scalerank is greater than 7.</p>
 <p><img alt="image" src="../../style/img/line_06_adjust.png" /></p>
 </li>
 </ol>
@@ -2687,7 +2688,7 @@
 <p>Options can be used to enable some quite useful effects, while still providing a style that can be used by other applications.</p>
 <ol>
 <li>
-<p>Update <code>line_example</code>with the following:</p>
+<p>Update <code>line_example</code> with the following:</p>
 <div class="language-css highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="mh">#ededff</span><span class="p">;</span>
 </span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">  </span><span class="k">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>

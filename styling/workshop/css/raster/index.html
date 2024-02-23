@@ -2379,7 +2379,7 @@
 </ul>
 <p>The exercise makes use of the <code>usgs:dem</code> and <code>ne:ne1</code> layers.</p>
 <h2 id="image">Image</h2>
-<p>The <strong>raster-channels</strong> is the <strong>key property</strong> for display of images and raster data. The value <code>auto</code>is recommended, allowing the image format to select the appropriate red, green and blue channels for display.</p>
+<p>The <strong>raster-channels</strong> is the <strong>key property</strong> for display of images and raster data. The value <code>auto</code> is recommended, allowing the image format to select the appropriate red, green and blue channels for display.</p>
 <ol>
 <li>
 <p>Navigate to the <strong>Styles</strong> page.</p>
@@ -2387,7 +2387,9 @@
 <li>
 <p>Click <strong>Add a new style</strong> and choose the following:</p>
 <hr />
-<p>Name:                 <code>image_example</code> * - Workspace:</p>
+<p>Name:                 <code>image_example</code></p>
+<p>Workspace:            <code>No workspace</code></p>
+<p>Format:               <code>CSS</code></p>
 <hr />
 </li>
 <li>
@@ -2423,11 +2425,13 @@
 <li>
 <p>Click <strong>Add a new style</strong> and choose the following:</p>
 <hr />
-<p>Name:                 <code>raster_example</code> * - Workspace:</p>
+<p>Name:                 <code>raster_example</code></p>
+<p>Workspace:            <code>No workspace</code></p>
+<p>Format:               <code>CSS</code></p>
 <hr />
 </li>
 <li>
-<p>When we use the <strong>raster-channels</strong> property set to <code>auto</code>the rendering engine will select our single band of raster content, and do its best to map these values into a grayscale image. Replace the content of the style with:</p>
+<p>When we use the <strong>raster-channels</strong> property set to <code>auto</code> the rendering engine will select our single band of raster content, and do its best to map these values into a grayscale image. Replace the content of the style with:</p>
 <div class="language-css highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="n">raster-channels</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span>
@@ -2455,7 +2459,7 @@
 <p>For qualitative data (such as land use) or simply to use color, we need a different approach:</p>
 <ol>
 <li>
-<p>Apply the following CSS to our <code>usgs:DEM</code>layer:</p>
+<p>Apply the following CSS to our <code>usgs:DEM</code> layer:</p>
 <div class="language-css highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="n">raster-channels</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="n">raster-color-map</span><span class="p">:</span><span class="w"> </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#9080DB</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
@@ -2591,9 +2595,9 @@
 <li>
 <p>The <strong>raster-color-map-type</strong> property dictates how the values are used to generate a resulting color.</p>
 <ul>
-<li><code>ramp</code>is used for quantitative data, providing a smooth interpolation between the provided color values.</li>
-<li><code>intervals</code>provides categorization for quantitative data, assigning each range of values a solid color.</li>
-<li><code>values</code>is used for qualitative data, each value is required to have a <strong>color-map-entry</strong> or it will not be displayed.</li>
+<li><code>ramp</code> is used for quantitative data, providing a smooth interpolation between the provided color values.</li>
+<li><code>intervals</code> provides categorization for quantitative data, assigning each range of values a solid color.</li>
+<li><code>values</code> is used for qualitative data, each value is required to have a <strong>color-map-entry</strong> or it will not be displayed.</li>
 </ul>
 </li>
 <li>
@@ -2635,7 +2639,7 @@
 <p>Image processing can be used to enhance the output to highlight small details or to balance images from different sensors allowing them to be compared.</p>
 <ol>
 <li>
-<p>The <strong>raster-contrast-enhancement</strong> property is used to turn on a range of post processing effects. Settings are provided for <code>normalize</code>or <code>histogram</code>or <code>none</code></p>
+<p>The <strong>raster-contrast-enhancement</strong> property is used to turn on a range of post processing effects. Settings are provided for <code>normalize</code> or <code>histogram</code> or <code>none</code>;</p>
 <div class="language-css highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="n">raster-channels</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="n">raster-contrast-enhancement</span><span class="p">:</span><span class="w"> </span><span class="n">normalize</span><span class="p">;</span>

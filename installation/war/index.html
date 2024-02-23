@@ -900,6 +900,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uninstallation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uninstallation
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1818,6 +1836,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uninstallation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uninstallation
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1850,7 +1886,7 @@
 
 
 <h1 id="web-archive">Web archive</h1>
-<p>GeoServer is packaged as a standalone servlet for use with existing application servers such as <code>Apache Tomcat &lt;http://tomcat.apache.org/&gt;`_ and</code>etty &lt;<a href="http://eclipse.org/jetty/">http://eclipse.org/jetty/</a>&gt;`_.</p>
+<p>GeoServer is packaged as a standalone servlet for use with existing application servers such as <a href="http://tomcat.apache.org/">Apache Tomcat</a> and <a href="http://eclipse.org/jetty/">Jetty</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>GeoServer has been mostly tested using Tomcat, and so is the recommended application server. GeoServer requires a newer version of Tomcat (7.0.65 or later) that implements Servlet 3 and annotation processing. Other application servers have been known to work, but are not guaranteed.</p>
@@ -1858,7 +1894,7 @@
 <h2 id="installation">Installation</h2>
 <ol>
 <li>
-<p>Make sure you have a Java Runtime Environment (JRE) installed on your system. GeoServer requires a <strong>Java 11</strong> or <strong>Java 17</strong> environment,available from <code>OpenJDK &lt;https://openjdk.java.net&gt;`__,</code>doptium &lt;<a href="https://adoptium.net">https://adoptium.net</a>&gt;`__, or provided by your OS distribution.</p>
+<p>Make sure you have a Java Runtime Environment (JRE) installed on your system. GeoServer requires a <strong>Java 11</strong> or <strong>Java 17</strong> environment,available from <a href="https://openjdk.java.net">OpenJDK</a>, <a href="https://adoptium.net">Adoptium</a>, or provided by your OS distribution.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For more information about Java and GeoServer compatibility, please see the section on <a href="../../production/java/">Java Considerations</a>.</p>
@@ -1942,7 +1978,18 @@ Apache Tomcat/7.0.67
 </code></pre></div>
 <h2 id="running">Running</h2>
 <p>Use your container application's method of starting and stopping webapps to run GeoServer.</p>
-<p>To access the <code>Web administration interface &lt;../webadmin/index.rst&gt;`_, open a browser and navigate to</code><a href="http://SERVER/geoserver">http://SERVER/geoserver</a><code>. For example, with Tomcat running on port 8080 on localhost, the URL would be</code><a href="http://localhost:8080/geoserver">http://localhost:8080/geoserver</a><code>.  If you see the GeoServer Welcome page, then GeoServer is successfully installed.  .. code-block:: raw_markdown     ![](images/success.png)    *GeoServer Welcome Page*   Update ------  Update regularly at least the container application! And repeat the hardening process.  There are a lot of geoserver installations visible with outdated Tomcat versions.  Uninstallation --------------  #. Stop the container application.  #. Remove the GeoServer webapp from the container application's</code>webapps`<code>directory. This will usually include the \*\*\`geoserver.war</code>** file as well as a <strong>`geoserver`</strong> directory.</p>
+<p>To access the <a href="../../webadmin/">Web administration interface</a>, open a browser and navigate to <code>http://SERVER/geoserver</code> . For example, with Tomcat running on port 8080 on localhost, the URL would be <code>http://localhost:8080/geoserver</code>.</p>
+<p>If you see the GeoServer Welcome page, then GeoServer is successfully installed.</p>
+<p><img alt="" src="../images/success.png" />
+<em>GeoServer Welcome Page</em></p>
+<h2 id="update">Update</h2>
+<p>Update regularly at least the container application! And repeat the hardening process.</p>
+<p>There are a lot of geoserver installations visible with outdated Tomcat versions.</p>
+<h2 id="uninstallation">Uninstallation</h2>
+<ol>
+<li>Stop the container application.</li>
+<li>Remove the GeoServer webapp from the container application's <code>webapps</code> directory. This will usually include the <strong><code>geoserver.war</code></strong> file as well as a <strong><code>geoserver</code></strong> directory.</li>
+</ol>
 
 
 

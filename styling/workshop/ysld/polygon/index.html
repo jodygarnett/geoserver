@@ -2417,9 +2417,11 @@
 <p>Navigate to <strong>Styles</strong>.</p>
 </li>
 <li>
-<p>Create a new style <code>polygon_example</code></p>
+<p>Create a new style <code>polygon_example</code>.</p>
 <hr />
-<p>Name:                 <code>polygon_example</code> * - Workspace:</p>
+<p>Name:                 <code>polygon_example</code></p>
+<p>Workspace:            <code>No workspace</code></p>
+<p>Format:               <code>YSLD</code></p>
 <hr />
 </li>
 <li>
@@ -2513,7 +2515,7 @@
 <p>We have two options for configuring a <strong>fill-graphic</strong> with a repeating graphic:</p>
 <p>Using <strong>external</strong> to reference to an external graphic.</p>
 <p>Use of <strong>mark</strong> to access a predefined shape. SLD provides several well-known shapes (circle, square, triangle, arrow, cross, star, and x). GeoServer provides additional shapes specifically for use as fill patterns.</p>
-<p>Update <code>polygon_example</code>with the following built-in symbol as a repeating fill pattern:</p>
+<p>Update <code>polygon_example</code> with the following built-in symbol as a repeating fill pattern:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">symbolizers</span><span class="p">:</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">polygon</span><span class="p">:</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">fill-graphic</span><span class="p">:</span>
@@ -2992,7 +2994,7 @@
 </li>
 <li>
 <p>This YSLD makes use of a <strong>define</strong> to avoid repeating the <strong>stroke-color</strong> and <strong>stroke-width</strong> information multiple times.</p>
-<p>As an example the <code>${mapcolor9 = '2'}</code>rule, combined with the <code>define:</code>results in the following collection of properties:</p>
+<p>As an example the <code>\${mapcolor9 = '2'}</code> rule, combined with the <code>define:</code> results in the following collection of properties:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">filter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${mapcolor9 = &#39;2&#39;}</span>
 </span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">scale</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">min</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">max</span><span class="p p-Indicator">]</span>
 </span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="nt">symbolizers</span><span class="p">:</span>

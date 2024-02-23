@@ -1367,6 +1367,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#direct-access-to-kml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direct access to KML
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-network-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding a Network Link
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2282,6 +2300,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#direct-access-to-kml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direct access to KML
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-network-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding a Network Link
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2319,7 +2355,39 @@
 <p>If you are using GeoServer locally, the GEOSERVER_URL is usually <code>http://localhost:8080/geoserver</code></p>
 </div>
 <h2 id="viewing-a-layer">Viewing a layer</h2>
-<p>Once GeoServer is installed and running, open up a web browser and go to the web admin console (<a href="../../../../webadmin/">Web administration interface</a>). Navigate to the <code>Layer Preview &lt;../../../data/webadmin/layerpreview.rst&gt;`_ by clicking on the Layer Preview link at the bottom of the left sidebar. You will be presented with a list of the currently configured layers in your GeoServer instance. Find the row that says</code>topp:states<code>. To the right of the layer click on the link that says **KML**.      .. code-block:: raw_markdown        ![](../../../data/webadmin/img/preview_list.png)       *The Map Preview page*   If Google Earth is correctly installed on your computer, you will see a dialog asking how to open the file. Select **Open with Google Earth**.     .. code-block:: raw_markdown        ![](openingkml.png)       *Open with Google Earth*   When Google Earth is finished loading the result will be similar to below.     .. code-block:: raw_markdown        ![](googleearth.jpg)       *The topp:states layer rendered in Google Earth*    Direct access to KML --------------------  All of the configured FeatureTypes are available to be output as KML (and thus loaded into Google Earth). The URL structure for KMLs is::     http://GEOSERVER_URL/wms/kml?layers=&lt;layername&gt;  For example, the topp:states layer URL is::     http://GEOSERVER_URL/wms/kml?layers=topp:states   Adding a Network Link ---------------------  An alternative to serving KML directly into Google Earth is to use a Network Link. A Network Link allows for better integration into Google Earth. For example, using a Network Link enables the user to refresh the data within Google Earth, without having to retype a URL, or click on links in the GeoServer Map Preview again.   To add a Network Link, pull down the **Add** menu, and go to **Network Link**. The **New Network Link** dialog box will appear.  Name your layer in the **Name** field. (This will show up in **My Places** on the main Google Earth screen.) Set **Link** to::     http://GEOSERVER_URL/wms/kml?layers=topp:states  (Don't forget to replace the GEOSERVER_URL.)  Click **OK**. You can now save this layer in your **My Places**.     .. code-block:: raw_markdown        ![](networklink.png)       *Adding a network link*   Check out the sections on</code>Tutorials <tutorials/index.rst><code>_ and the</code><a href="../kmlstyling/">ML Styling</a> for more information.</p>
+<p>Once GeoServer is installed and running, open up a web browser and go to the web admin console (<a href="../../../../webadmin/">Web administration interface</a>). Navigate to the <a href="../../../../data/webadmin/layerpreview/">Layer Preview</a> by clicking on the Layer Preview link at the bottom of the left sidebar. You will be presented with a list of the currently configured layers in your GeoServer instance. Find the row that says <code>topp:states</code>. To the right of the layer click on the link that says <strong>KML</strong>.</p>
+<blockquote>
+<p><img alt="" src="../../../../data/webadmin/img/preview_list.png" />
+<em>The Map Preview page</em></p>
+</blockquote>
+<p>If Google Earth is correctly installed on your computer, you will see a dialog asking how to open the file. Select <strong>Open with Google Earth</strong>.</p>
+<blockquote>
+<p><img alt="" src="../openingkml.png" />
+<em>Open with Google Earth</em></p>
+</blockquote>
+<p>When Google Earth is finished loading the result will be similar to below.</p>
+<blockquote>
+<p><img alt="" src="../googleearth.jpg" />
+<em>The topp:states layer rendered in Google Earth</em></p>
+</blockquote>
+<h2 id="direct-access-to-kml">Direct access to KML</h2>
+<p>All of the configured FeatureTypes are available to be output as KML (and thus loaded into Google Earth). The URL structure for KMLs is:</p>
+<div class="language-text highlight"><pre><span></span><code>http://GEOSERVER_URL/wms/kml?layers=&lt;layername&gt;
+</code></pre></div>
+<p>For example, the topp:states layer URL is:</p>
+<div class="language-text highlight"><pre><span></span><code>http://GEOSERVER_URL/wms/kml?layers=topp:states
+</code></pre></div>
+<h2 id="adding-a-network-link">Adding a Network Link</h2>
+<p>An alternative to serving KML directly into Google Earth is to use a Network Link. A Network Link allows for better integration into Google Earth. For example, using a Network Link enables the user to refresh the data within Google Earth, without having to retype a URL, or click on links in the GeoServer Map Preview again.</p>
+<p>To add a Network Link, pull down the <strong>Add</strong> menu, and go to <strong>Network Link</strong>. The <strong>New Network Link</strong> dialog box will appear. Name your layer in the <strong>Name</strong> field. (This will show up in <strong>My Places</strong> on the main Google Earth screen.) Set <strong>Link</strong> to:</p>
+<div class="language-text highlight"><pre><span></span><code>http://GEOSERVER_URL/wms/kml?layers=topp:states
+</code></pre></div>
+<p>(Don't forget to replace the GEOSERVER_URL.) Click <strong>OK</strong>. You can now save this layer in your <strong>My Places</strong>.</p>
+<blockquote>
+<p><img alt="" src="../networklink.png" />
+<em>Adding a network link</em></p>
+</blockquote>
+<p>Check out the sections on <a href="../tutorials/">Tutorials</a> and the <a href="../kmlstyling/">KML Styling</a> for more information.</p>
 
 
 

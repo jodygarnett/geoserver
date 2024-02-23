@@ -2173,7 +2173,7 @@
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="nt">&lt;/roleRegistry&gt;</span>
 </span></code></pre></div>
 <p>This configuration contains two roles named <code>ADMIN</code> and <code>GROUP_ADMIN</code>. The role <code>ADMIN</code> is assigned to the <code>admin</code> user. Since the <code>ADMIN</code> role is mapped to the system role <code>ROLE_ADMINISTRATOR</code>, the role calculation assigns both roles to the <code>admin</code> user.</p>
-<p>For further information, please refer to <code>configuring a role service &lt;../webadmin/ugr.rst#security_webadmin_roleservices&gt;`_ in the</code>eb administration interface &lt;../../webadmin/index.rst&gt;`_.</p>
+<p>For further information, please refer to <a href="../../webadmin/ugr/#security_webadmin_roleservices">configuring a role service</a> in the <a href="../../../webadmin/">Web administration interface</a>.</p>
 <h2 id="security_rolesystem_rolej2ee">J2EE role service</h2>
 <p>The J2EE role service parses roles from the <code>WEB-INF/web.xml</code> file. As a consequence, this service is a read only role service. Roles are extracted from the following XML elements:</p>
 <h3 id="security-role"><code>&lt;security-role&gt;</code></h3>
@@ -2270,7 +2270,41 @@
 <dl>
 <dd>Table: group_roles</dd>
 </dl>
-<p>The <code>roles</code> table is the primary table and contains the list of roles. Roles in GeoServer support inheritance, so a role may optionally have a link to a parent role. The <code>role_props</code> table maps additional properties to a role. (See the section on <code>Roles &lt;roles.rst&gt;`_ for more details.)  The</code>user_roles<code>table maps users to the roles they are assigned.  Similarly, the</code>group_roles<code>table maps which groups have been assigned to which roles.   The default GeoServer security configuration is:  .. list-table:: Table: roles    :widths: 15 15     :header-rows: 1     * - name      - parent    * - *Empty*      - *Empty*   .. list-table:: Table: role_props    :widths: 15 15 15    :header-rows: 1     * - rolename      - propname      - propvalue    * - *Empty*      - *Empty*      - *Empty*  .. list-table:: Table: user_roles    :widths: 15 15     :header-rows: 1     * - username      - rolename    * - *Empty*      - *Empty*  .. list-table:: Table: group_roles    :widths: 15 15     :header-rows: 1     * - groupname      - rolename    * - *Empty*      - *Empty*  For further information, please refer to</code>configuring a role service &lt;../webadmin/ugr.rst#security_webadmin_roleservices&gt;<code>_ in the</code><a href="../../../webadmin/">eb administration interface</a>.</p>
+<p>The <code>roles</code> table is the primary table and contains the list of roles. Roles in GeoServer support inheritance, so a role may optionally have a link to a parent role. The <code>role_props</code> table maps additional properties to a role. (See the section on <a href="../roles/">Roles</a> for more details.) The <code>user_roles</code> table maps users to the roles they are assigned. Similarly, the <code>group_roles</code> table maps which groups have been assigned to which roles.</p>
+<p>The default GeoServer security configuration is:</p>
+<hr />
+<p>name                                parent</p>
+<hr />
+<p><em>Empty</em>                             <em>Empty</em></p>
+<hr />
+<dl>
+<dd>Table: roles</dd>
+</dl>
+<hr />
+<p>rolename                propname                propvalue</p>
+<hr />
+<p><em>Empty</em>                 <em>Empty</em>                 <em>Empty</em></p>
+<hr />
+<dl>
+<dd>Table: role_props</dd>
+</dl>
+<hr />
+<p>username                            rolename</p>
+<hr />
+<p><em>Empty</em>                             <em>Empty</em></p>
+<hr />
+<dl>
+<dd>Table: user_roles</dd>
+</dl>
+<hr />
+<p>groupname                           rolename</p>
+<hr />
+<p><em>Empty</em>                             <em>Empty</em></p>
+<hr />
+<dl>
+<dd>Table: group_roles</dd>
+</dl>
+<p>For further information, please refer to <a href="../../webadmin/ugr/#security_webadmin_roleservices">configuring a role service</a> in the <a href="../../../webadmin/">Web administration interface</a>.</p>
 <h2 id="ldap-role-service">LDAP role service</h2>
 <p>The LDAP role service is a read only role service that maps groups from an LDAP repository to GeoServer roles.</p>
 <p>Groups are extracted from a specific LDAP node, configured as the <code>Groups search base</code>. A role is mapped for every matching group. The role will have a name that is built taking the Group common name (cn attribute), transformed to upper case and with a <code>ROLE_</code> prefix applied.</p>
@@ -2296,7 +2330,7 @@
 </span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="nt">&lt;/org.geoserver.security.ldap.LDAPRoleServiceConfig&gt;</span>
 </span></code></pre></div>
 </blockquote>
-<p>For further information, please refer to <code>configuring a role service &lt;../webadmin/ugr.rst#security_webadmin_roleservices&gt;`_ in the</code>eb administration interface &lt;../../webadmin/index.rst&gt;`_.</p>
+<p>For further information, please refer to <a href="../../webadmin/ugr/#security_webadmin_roleservices">configuring a role service</a> in the <a href="../../../webadmin/">Web administration interface</a>.</p>
 <h2 id="rest-role-service">REST role service</h2>
 <p>The REST role service is a read only role service that maps groups and associated users to roles from a remote REST web service.</p>
 <p>The REST service <strong>must</strong> support JSON encoding.</p>
