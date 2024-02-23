@@ -3013,11 +3013,6 @@
 
 <h1 id="netcdf-output-format">NetCDF Output Format</h1>
 <p>This plugin adds the ability to encode WCS 2.0.1 multidimensional output as a NetCDF file using the Unidata NetCDF Java library.</p>
-<div class="grid cards">
-<ul>
-<li><a href="nc4/">Installing required NetCDF-4 Native libraries</a></li>
-</ul>
-</div>
 <h2 id="getting-a-netcdf-output-file">Getting a NetCDF output file</h2>
 <p>Request NetCDF output by specifying <code>format=application/x-netcdf</code> in a <code>GetCoverage</code> request:</p>
 <div class="language-text highlight"><pre><span></span><code>http://localhost:8080/geoserver/wcs?service=WCS&amp;version=2.0.1&amp;request=GetCoverage&amp;coverageid=it.geosolutions__V&amp;format=application/x-netcdf...
