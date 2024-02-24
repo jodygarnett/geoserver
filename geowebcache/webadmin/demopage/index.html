@@ -2257,17 +2257,44 @@
 <p>You can configure seeding processes via the <a href="../../../webadmin/">Web administration interface</a>. See the <a href="../layers/">Tile Layers</a> page for more information.</p>
 <p>It is also possible to configure seeding process via the <a href="./">Demo page</a>. The page contains a link next to each layer entitled <strong>Seed this layer</strong>. This link will trigger authentication with the GeoServer configuration. Use the same username and password that you would use to log on to the <a href="../../../webadmin/">Web administration interface</a>. After a successful logon, a new page shows up with seeding options.</p>
 <p>The seeding options page contains various parameters for configuring the way that the layer is seeded.</p>
-<hr />
-<p>Option                       Description</p>
-<hr />
-<p><code>Number of threads to use</code>   Possible values are between <strong>1</strong> and <strong>16</strong>.</p>
-<p><code>Type of operation</code>          Sets the operation. There are three possible values: <strong>Seed</strong> (creates tiles, but does not overwrite existing ones), <strong>Reseed</strong> (like Seed, but overwrites existing tiles) and <strong>Truncate</strong> (deletes all tiles within the given parameters)</p>
-<p><code>SRS</code>                        Specifies the projection to use when creating tiles (default values are <strong>EPSG:4326</strong> and <strong>EPSG:900913</strong>)</p>
-<p><code>Format</code>                     Sets the image format of the tiles. Can be <strong>application/vnd.google-earth.kml+xml</strong> (Google Earth KML), <strong>image/gif</strong> (GIF), <strong>image/jpeg</strong> (JPEG), <strong>image/png</strong> (24 bit PNG), and <strong>image/png8</strong> (8 bit PNG)</p>
-<p><code>Zoom start</code>                 Sets the minimum zoom level. Lower values indicate map views that are more zoomed out. When seeding, GeoWebCache will only create tiles for those zoom levels inclusive of this value and <code>Zoom stop</code>.</p>
-<p><code>Zoom stop</code>                  Sets the maximum zoom level. Higher values indicate map views that are more zoomed in. When seeding, GeoWebCache will only create tiles for those zoom levels inclusive of this value and <code>Zoom start</code>.</p>
-<p><code>Bounding box</code>               <em>(optional)</em> Allows seeding to occur over a specified extent, instead of the full extent of the layer. This is useful if your layer contains data over a large area, but the application will only request tiles from a subset of that area. The four boxes correspond to <strong>Xmin</strong>, <strong>Ymin</strong>, <strong>Xmax</strong>, and <strong>Ymax</strong>.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Number of threads to use</code></td>
+<td>Possible values are between <strong>1</strong> and <strong>16</strong>.</td>
+</tr>
+<tr>
+<td><code>Type of operation</code></td>
+<td>Sets the operation. There are three possible values: <strong>Seed</strong> (creates tiles, but does not overwrite existing ones), <strong>Reseed</strong> (like Seed, but overwrites existing tiles) and <strong>Truncate</strong> (deletes all tiles within the given parameters)</td>
+</tr>
+<tr>
+<td><code>SRS</code></td>
+<td>Specifies the projection to use when creating tiles (default values are <strong>EPSG:4326</strong> and <strong>EPSG:900913</strong>)</td>
+</tr>
+<tr>
+<td><code>Format</code></td>
+<td>Sets the image format of the tiles. Can be <strong>application/vnd.google-earth.kml+xml</strong> (Google Earth KML), <strong>image/gif</strong> (GIF), <strong>image/jpeg</strong> (JPEG), <strong>image/png</strong> (24 bit PNG), and <strong>image/png8</strong> (8 bit PNG)</td>
+</tr>
+<tr>
+<td><code>Zoom start</code></td>
+<td>Sets the minimum zoom level. Lower values indicate map views that are more zoomed out. When seeding, GeoWebCache will only create tiles for those zoom levels inclusive of this value and <code>Zoom stop</code>.</td>
+</tr>
+<tr>
+<td><code>Zoom stop</code></td>
+<td>Sets the maximum zoom level. Higher values indicate map views that are more zoomed in. When seeding, GeoWebCache will only create tiles for those zoom levels inclusive of this value and <code>Zoom start</code>.</td>
+</tr>
+<tr>
+<td><code>Bounding box</code></td>
+<td><em>(optional)</em> Allows seeding to occur over a specified extent, instead of the full extent of the layer. This is useful if your layer contains data over a large area, but the application will only request tiles from a subset of that area. The four boxes correspond to <strong>Xmin</strong>, <strong>Ymin</strong>, <strong>Xmax</strong>, and <strong>Ymax</strong>.</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Currently there is no progress bar to inform you of the time required to perform the operation, nor is there any intelligent handling of disk space. In short, the process may take a <em>very</em> long time, and the cache may fill up your disk. You may wish to set a <a href="../../using/#gwc_diskquota">Disk quota</a> before running a seed job.</p>

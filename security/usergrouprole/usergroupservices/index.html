@@ -1989,78 +1989,176 @@
 <p>For further information, please refer to <a href="../../webadmin/ugr/#security_webadmin_usergroupservices">configuring a user/group service</a> in the <a href="../../../webadmin/">Web administration interface</a>.</p>
 <h2 id="security_rolesystem_usergroupjdbc">JDBC user/group service</h2>
 <p>The JDBC user/group service persists the user/group database via JDBC, managing the user information in multiple tables. The user/group database schema is as follows:</p>
-<hr />
-<p>Field             Type              Null              Key</p>
-<hr />
-<p>name              varchar(128)      NO                PRI</p>
-<p>password          varchar(254)      YES               </p>
-<p>enabled           char(1)           NO                </p>
-<hr />
-<dl>
-<dd>Table: users</dd>
-</dl>
-<hr />
-<p>Field             Type              Null              Key</p>
-<hr />
-<p>username          varchar(128)      NO                PRI</p>
-<p>propname          varchar(64)       NO                PRI</p>
-<p>propvalue         varchar(2048)     YES               </p>
-<hr />
-<dl>
-<dd>Table: user_props</dd>
-</dl>
-<hr />
-<p>Field             Type              Null              Key</p>
-<hr />
-<p>name              varchar(128)      NO                PRI</p>
-<p>enabled           char(1)           NO                </p>
-<hr />
-<dl>
-<dd>Table: groups</dd>
-</dl>
-<hr />
-<p>Field             Type              Null              Key</p>
-<hr />
-<p>groupname         varchar(128)      NO                PRI</p>
-<p>username          varchar(128)      NO                PRI</p>
-<hr />
-<dl>
-<dd>Table: group_members</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Null</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>varchar(128)</td>
+<td>NO</td>
+<td>PRI</td>
+</tr>
+<tr>
+<td>password</td>
+<td>varchar(254)</td>
+<td>YES</td>
+<td></td>
+</tr>
+<tr>
+<td>enabled</td>
+<td>char(1)</td>
+<td>NO</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Null</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>username</td>
+<td>varchar(128)</td>
+<td>NO</td>
+<td>PRI</td>
+</tr>
+<tr>
+<td>propname</td>
+<td>varchar(64)</td>
+<td>NO</td>
+<td>PRI</td>
+</tr>
+<tr>
+<td>propvalue</td>
+<td>varchar(2048)</td>
+<td>YES</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Null</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>varchar(128)</td>
+<td>NO</td>
+<td>PRI</td>
+</tr>
+<tr>
+<td>enabled</td>
+<td>char(1)</td>
+<td>NO</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Null</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>groupname</td>
+<td>varchar(128)</td>
+<td>NO</td>
+<td>PRI</td>
+</tr>
+<tr>
+<td>username</td>
+<td>varchar(128)</td>
+<td>NO</td>
+<td>PRI</td>
+</tr>
+</tbody>
+</table>
 <p>The <code>users</code> table is the primary table and contains the list of users with associated passwords. The <code>user_props</code> table maps additional properties to a user. (See <a href="../usergroups/">Users and Groups</a> for more details.) The <code>groups</code> table lists all available groups, and the <code>group_members</code> table maps which users belong to which groups.</p>
 <p>The default GeoServer security configuration is:</p>
-<hr />
-<p>name                    password                enabled</p>
-<hr />
-<p><em>Empty</em>                 <em>Empty</em>                 <em>Empty</em></p>
-<hr />
-<dl>
-<dd>Table: users</dd>
-</dl>
-<hr />
-<p>username                propname                propvalue</p>
-<hr />
-<p><em>Empty</em>                 <em>Empty</em>                 <em>Empty</em></p>
-<hr />
-<dl>
-<dd>Table: user_props</dd>
-</dl>
-<hr />
-<p>name                                enabled</p>
-<hr />
-<p><em>Empty</em>                             <em>Empty</em></p>
-<hr />
-<dl>
-<dd>Table: groups</dd>
-</dl>
-<hr />
-<p>groupname                           username</p>
-<hr />
-<p><em>Empty</em>                             <em>Empty</em></p>
-<hr />
-<dl>
-<dd>Table: group_members</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>password</th>
+<th>enabled</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Empty</em></td>
+<td><em>Empty</em></td>
+<td><em>Empty</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>username</th>
+<th>propname</th>
+<th>propvalue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Empty</em></td>
+<td><em>Empty</em></td>
+<td><em>Empty</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>enabled</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Empty</em></td>
+<td><em>Empty</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>groupname</th>
+<th>username</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Empty</em></td>
+<td><em>Empty</em></td>
+</tr>
+</tbody>
+</table>
 <p>For further information, please refer to <a href="../../webadmin/ugr/#security_webadmin_usergroupservices">configuring a user/group service</a> in the <a href="../../../webadmin/">Web administration interface</a>.</p>
 <h2 id="security_rolesystem_usergroupldap">LDAP user/group service</h2>
 <p>The LDAP user/group service is a read only user/group service that maps users and groups from an LDAP repository to GeoServer users and groups.</p>

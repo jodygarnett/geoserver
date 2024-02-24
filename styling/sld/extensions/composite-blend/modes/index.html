@@ -2891,24 +2891,24 @@
 <p>Alpha compositing controls how two images are merged together by using the alpha levels of the two. No color mixing is being performed, only pure binary selection (either one or the other).</p>
 <p>Color blending modes mix the colors of source and destination in various ways. Each pixel in the result will be some sort of combination between the source and destination pixels.</p>
 <p>The following page shows the full list of available modes. (See the <a href="../syntax/">syntax</a> page for more details.) To aid in comprehension, two source and two destination images will be used to show visually how each mode works:</p>
-<p>+-----------------------------------+-----------------------------------+
-| Source 1                          | Source 2                          |
-+===================================+===================================+
-| <img alt="" src="../images/map.png" />               | <img alt="" src="../images/map2.png" />              |
-+-----------------------------------+-----------------------------------+</p>
-<p>+-----------------------------------+-----------------------------------+
-| Destination 1                     | Destination 2                     |
-+===================================+===================================+
-| <img alt="" src="../images/bkg.png" />               | <img alt="" src="../images/bkg2.png" />              |
-+-----------------------------------+-----------------------------------+</p>
+<p>+---------------------+----------------------+
+| Source 1            | Source 2             |
++=====================+======================+
+| <img alt="" src="../images/map.png" /> | <img alt="" src="../images/map2.png" /> |
++---------------------+----------------------+</p>
+<p>+---------------------+----------------------+
+| Destination 1       | Destination 2        |
++=====================+======================+
+| <img alt="" src="../images/bkg.png" /> | <img alt="" src="../images/bkg2.png" /> |
++---------------------+----------------------+</p>
 <h2 id="alpha-compositing-modes">Alpha compositing modes</h2>
 <h3 id="copy">copy</h3>
 <p>Only the source will be present in the output.</p>
-<p>+-----------------------------------+-----------------------------------+
-| Example 1                         | Example 2                         |
-+===================================+===================================+
-| <img alt="" src="../images/blend1-copy.png" />       | <img alt="" src="../images/blend2-copy.png" />       |
-+-----------------------------------+-----------------------------------+</p>
+<p>+-----------------------------+-----------------------------+
+| Example 1                   | Example 2                   |
++=============================+=============================+
+| <img alt="" src="../images/blend1-copy.png" /> | <img alt="" src="../images/blend2-copy.png" /> |
++-----------------------------+-----------------------------+</p>
 <h3 id="destination">destination</h3>
 <p>Only the destination will be present in the output</p>
 <p>+------------------------------------+------------------------------------+
@@ -2932,11 +2932,11 @@
 +-----------------------------------------+-----------------------------------------+</p>
 <h3 id="source-in">source-in</h3>
 <p>The source is visible only when overlapping some non-transparent pixel of the destination. This allows the background map to act as a mask for the layer/feature being drawn. Opposite of <em>destination-in</em>.</p>
-<p>+-----------------------------------+-----------------------------------+
-| Example 1                         | Example 2                         |
-+===================================+===================================+
-| <img alt="" src="../images/blend1-source-in.png" />  | <img alt="" src="../images/blend2-source-in.png" />  |
-+-----------------------------------+-----------------------------------+</p>
+<p>+----------------------------------+----------------------------------+
+| Example 1                        | Example 2                        |
++==================================+==================================+
+| <img alt="" src="../images/blend1-source-in.png" /> | <img alt="" src="../images/blend2-source-in.png" /> |
++----------------------------------+----------------------------------+</p>
 <h3 id="destination-in">destination-in</h3>
 <p>The destination is retained only when overlapping some non transparent pixel in the source. This allows the layer/feature to be drawn to act as a mask for the background map. Opposite of <em>source-in</em>.</p>
 <p>+---------------------------------------+---------------------------------------+
@@ -2974,48 +2974,48 @@
 +-----------------------------------------+-----------------------------------------+</p>
 <h3 id="xor">xor</h3>
 <p>"Exclusive Or" mode. Each pixel is rendered only if either the source or the destination is not blank, but not both.</p>
-<p>+-----------------------------------+-----------------------------------+
-| Example 1                         | Example 2                         |
-+===================================+===================================+
-| <img alt="" src="../images/blend1-xor.png" />        | <img alt="" src="../images/blend2-xor.png" />        |
-+-----------------------------------+-----------------------------------+</p>
+<p>+----------------------------+----------------------------+
+| Example 1                  | Example 2                  |
++============================+============================+
+| <img alt="" src="../images/blend1-xor.png" /> | <img alt="" src="../images/blend2-xor.png" /> |
++----------------------------+----------------------------+</p>
 <h2 id="color-blending-modes">Color blending modes</h2>
 <h3 id="multiply">multiply</h3>
 <p>The source color is multiplied by the destination color and replaces the destination. The resulting color is always at least as dark as either the source or destination color. Multiplying any color with black results in black. Multiplying any color with white preserves the original color.</p>
-<p>+-----------------------------------+-----------------------------------+
-| Example 1                         | Example 2                         |
-+===================================+===================================+
-| <img alt="" src="../images/blend1-multiply.png" />   | <img alt="" src="../images/blend2-multiply.png" />   |
-+-----------------------------------+-----------------------------------+</p>
+<p>+---------------------------------+---------------------------------+
+| Example 1                       | Example 2                       |
++=================================+=================================+
+| <img alt="" src="../images/blend1-multiply.png" /> | <img alt="" src="../images/blend2-multiply.png" /> |
++---------------------------------+---------------------------------+</p>
 <h3 id="screen">screen</h3>
 <p>Multiplies the complements of the source and destination color values, then complements the result. The end result color is always at least as light as either of the two constituent colors. Screening any color with white produces white; screening with black leaves the original color unchanged.</p>
 <p>The effect is similar to projecting multiple photographic slides simultaneously onto a single screen.</p>
-<p>+-----------------------------------+-----------------------------------+
-| Example 1                         | Example 2                         |
-+===================================+===================================+
-| <img alt="" src="../images/blend1-screen.png" />     | <img alt="" src="../images/blend2-screen.png" />     |
-+-----------------------------------+-----------------------------------+</p>
+<p>+-------------------------------+-------------------------------+
+| Example 1                     | Example 2                     |
++===============================+===============================+
+| <img alt="" src="../images/blend1-screen.png" /> | <img alt="" src="../images/blend2-screen.png" /> |
++-------------------------------+-------------------------------+</p>
 <h3 id="overlay">overlay</h3>
 <p>Multiplies (screens) the colors depending on the destination color value. Source colors overlay the destination while preserving its highlights and shadows. The backdrop color is not replaced but is mixed with the source color to reflect the lightness or darkness of the backdrop.</p>
-<p>+-----------------------------------+-----------------------------------+
-| Example 1                         | Example 2                         |
-+===================================+===================================+
-| <img alt="" src="../images/blend1-overlay.png" />    | <img alt="" src="../images/blend2-overlay.png" />    |
-+-----------------------------------+-----------------------------------+</p>
+<p>+--------------------------------+--------------------------------+
+| Example 1                      | Example 2                      |
++================================+================================+
+| <img alt="" src="../images/blend1-overlay.png" /> | <img alt="" src="../images/blend2-overlay.png" /> |
++--------------------------------+--------------------------------+</p>
 <h3 id="darken">darken</h3>
 <p>Selects the darker of the destination and source colors. The destination is replaced with the source only where the source is darker.</p>
-<p>+-----------------------------------+-----------------------------------+
-| Example 1                         | Example 2                         |
-+===================================+===================================+
-| <img alt="" src="../images/blend1-darken.png" />     | <img alt="" src="../images/blend2-darken.png" />     |
-+-----------------------------------+-----------------------------------+</p>
+<p>+-------------------------------+-------------------------------+
+| Example 1                     | Example 2                     |
++===============================+===============================+
+| <img alt="" src="../images/blend1-darken.png" /> | <img alt="" src="../images/blend2-darken.png" /> |
++-------------------------------+-------------------------------+</p>
 <h3 id="lighten">lighten</h3>
 <p>Selects the lighter of the destination and source colors. The destination is replaced with the source only where the source is lighter.</p>
-<p>+-----------------------------------+-----------------------------------+
-| Example 1                         | Example 2                         |
-+===================================+===================================+
-| <img alt="" src="../images/blend1-lighten.png" />    | <img alt="" src="../images/blend2-lighten.png" />    |
-+-----------------------------------+-----------------------------------+</p>
+<p>+--------------------------------+--------------------------------+
+| Example 1                      | Example 2                      |
++================================+================================+
+| <img alt="" src="../images/blend1-lighten.png" /> | <img alt="" src="../images/blend2-lighten.png" /> |
++--------------------------------+--------------------------------+</p>
 <h3 id="color-dodge">color-dodge</h3>
 <p>Brightens the destination color to reflect the source color. Drawing with black produces no changes.</p>
 <p>+------------------------------------+------------------------------------+
@@ -3053,11 +3053,11 @@
 +-----------------------------------+-----------------------------------+</p>
 <h3 id="exclusion">exclusion</h3>
 <p>Produces an effect similar to that of <em>difference</em> but lower in contrast. White inverts the destination color; black produces no change.</p>
-<p>+-----------------------------------+-----------------------------------+
-| Example 1                         | Example 2                         |
-+===================================+===================================+
-| <img alt="" src="../images/blend1-exclusion.png" />  | <img alt="" src="../images/blend2-exclusion.png" />  |
-+-----------------------------------+-----------------------------------+</p>
+<p>+----------------------------------+----------------------------------+
+| Example 1                        | Example 2                        |
++==================================+==================================+
+| <img alt="" src="../images/blend1-exclusion.png" /> | <img alt="" src="../images/blend2-exclusion.png" /> |
++----------------------------------+----------------------------------+</p>
 
 
 

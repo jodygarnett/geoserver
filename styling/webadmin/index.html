@@ -1965,14 +1965,32 @@
 <p><img alt="" src="img/styles_editor_tabs.png" />
 <em>Style Editor tabs</em></p>
 <p>At the bottom of the Style Editor page is a number of options:</p>
-<hr />
-<p>Option            Description</p>
-<hr />
-<p><strong>Validate</strong>      Will test the current style for correctness according to the <strong>Format</strong> option selected. For SLD styles, it will check compliance against the SLD schema. Mind, the parser might be able to read and work with a formally incorrect style.</p>
-<p><strong>Save</strong>          Makes the changes to the style and returns to the Styles page</p>
-<p><strong>Apply</strong>         Makes the changes to the style and remain on the Style Editor page. This is useful to update the <a href="./#styling_webadmin_edit_preview">Layer Preview</a> tab.</p>
-<p><strong>Cancel</strong>        Cancels all changes to the style and returns to the Styles page</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Validate</strong></td>
+<td>Will test the current style for correctness according to the <strong>Format</strong> option selected. For SLD styles, it will check compliance against the SLD schema. Mind, the parser might be able to read and work with a formally incorrect style.</td>
+</tr>
+<tr>
+<td><strong>Save</strong></td>
+<td>Makes the changes to the style and returns to the Styles page</td>
+</tr>
+<tr>
+<td><strong>Apply</strong></td>
+<td>Makes the changes to the style and remain on the Style Editor page. This is useful to update the <a href="./#styling_webadmin_edit_preview">Layer Preview</a> tab.</td>
+</tr>
+<tr>
+<td><strong>Cancel</strong></td>
+<td>Cancels all changes to the style and returns to the Styles page</td>
+</tr>
+</tbody>
+</table>
 <p><img alt="" src="img/styles_editor_validate_buttons.png" />
 <em>Style Editor options</em></p>
 <h3 id="styling_webadmin_edit_definition">Style definition</h3>
@@ -1980,20 +1998,56 @@
 <p><img alt="" src="img/styles_editor.png" />
 <em>Style editor</em></p>
 <p>The style editor supports line numbering, automatic indentation, and real-time syntax highlighting. You can also increase or decrease the font size of the editor.</p>
-<hr />
-<p>Button                                      Description</p>
-<hr />
-<p><img alt="image" src="img/styles_editor_undo.png" />        Undo</p>
-<p><img alt="image" src="img/styles_editor_redo.png" />        Redo</p>
-<p><img alt="image" src="img/styles_editor_goto.png" />        Go to line</p>
-<p><img alt="image" src="img/styles_editor_find.png" />        Find in style text (CTRL-F)</p>
-<p><img alt="image" src="img/styles_editor_find_next.png" />   Find next occurrence in style text (CTRL-G/Cmd-G)</p>
-<p><img alt="image" src="img/styles_editor_replace.png" />     Find and replace in style text (CTRL-SHIFT-F/Cmd-Option-F). First enter the search term, press ENTER, then type the replace term and press ENTER again. It is also possible to run "replace all" using CTRL-SHIFT-R/Cmd-Shift-Option-F.</p>
-<p><img alt="image" src="img/styles_editor_reformat.png" />    Auto-format the editor contents</p>
-<p><img alt="image" src="img/styles_editor_fontsize.png" />    Change the font size in the editor</p>
-<p><img alt="image" src="img/styles_editor_image.png" />       Insert image into style (choose existing or upload)</p>
-<p><img alt="image" src="img/styles_editor_height.png" />      Change height of style editor (disabled in full screen mode)</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Button</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="image" src="img/styles_editor_undo.png" /></td>
+<td>Undo</td>
+</tr>
+<tr>
+<td><img alt="image" src="img/styles_editor_redo.png" /></td>
+<td>Redo</td>
+</tr>
+<tr>
+<td><img alt="image" src="img/styles_editor_goto.png" /></td>
+<td>Go to line</td>
+</tr>
+<tr>
+<td><img alt="image" src="img/styles_editor_find.png" /></td>
+<td>Find in style text (CTRL-F)</td>
+</tr>
+<tr>
+<td><img alt="image" src="img/styles_editor_find_next.png" /></td>
+<td>Find next occurrence in style text (CTRL-G/Cmd-G)</td>
+</tr>
+<tr>
+<td><img alt="image" src="img/styles_editor_replace.png" /></td>
+<td>Find and replace in style text (CTRL-SHIFT-F/Cmd-Option-F). First enter the search term, press ENTER, then type the replace term and press ENTER again. It is also possible to run "replace all" using CTRL-SHIFT-R/Cmd-Shift-Option-F.</td>
+</tr>
+<tr>
+<td><img alt="image" src="img/styles_editor_reformat.png" /></td>
+<td>Auto-format the editor contents</td>
+</tr>
+<tr>
+<td><img alt="image" src="img/styles_editor_fontsize.png" /></td>
+<td>Change the font size in the editor</td>
+</tr>
+<tr>
+<td><img alt="image" src="img/styles_editor_image.png" /></td>
+<td>Insert image into style (choose existing or upload)</td>
+</tr>
+<tr>
+<td><img alt="image" src="img/styles_editor_height.png" /></td>
+<td>Change height of style editor (disabled in full screen mode)</td>
+</tr>
+</tbody>
+</table>
 <p>During editing and especially after editing is complete, you will want to check validation of the syntax. This can be done by clicking the <strong>Validate</strong> button at the bottom.</p>
 <p>If no errors are found, you will see this message:</p>
 <p><img alt="" src="img/styles_editor_noerrors.png" />
@@ -2004,53 +2058,134 @@
 <h3 id="styling_webadmin_edit_data">Style Editor: Data tab</h3>
 <p>The Data tab includes basic style information, the ability to generate a style, and legend details.</p>
 <p>The <strong>Style Data</strong> area has mandatory basic style information:</p>
-<hr />
-<p>Option            Description</p>
-<hr />
-<p><strong>Name</strong>          Name of the style</p>
-<p><strong>Workspace</strong>     Workspace in which the style is contained. Styles can be inside workspaces, but can also be "global" (no workspace).</p>
-<p><strong>Format</strong>        Format of the style. Options are <strong>SLD</strong>, <strong>CSS</strong>, and <strong>YSLD</strong>, <strong>MBStyle</strong> depending on availability.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td>Name of the style</td>
+</tr>
+<tr>
+<td><strong>Workspace</strong></td>
+<td>Workspace in which the style is contained. Styles can be inside workspaces, but can also be "global" (no workspace).</td>
+</tr>
+<tr>
+<td><strong>Format</strong></td>
+<td>Format of the style. Options are <strong>SLD</strong>, <strong>CSS</strong>, and <strong>YSLD</strong>, <strong>MBStyle</strong> depending on availability.</td>
+</tr>
+</tbody>
+</table>
 <p><img alt="" src="img/styles_editor_data_styledata.png" />
 <em>Style Data area</em></p>
 <p>The <strong>Style Content</strong> area allows you to generate a style, copy an existing style, or upload an existing style:</p>
-<hr />
-<p>Option                         Description</p>
-<hr />
-<p><strong>Generate a default style</strong>   Selects a generic style based on geometry. Options are <strong>Point</strong>, <strong>Line</strong>, <strong>Polygon</strong>, <strong>Raster</strong>, and <strong>Generic</strong>. Click <strong>Generate</strong> when selected.</p>
-<p><strong>Copy from existing style</strong>   Selects an existing style in GeoServer and copy its contents to this style. Any style in GeoServer is available as an option. Not all styles will work with all layers. Click <strong>Copy</strong> when selected.</p>
-<p><strong>Upload a style file</strong>        Selects a plain text file on your local system to add as the style. Click <strong>Upload</strong> when selected.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Generate a default style</strong></td>
+<td>Selects a generic style based on geometry. Options are <strong>Point</strong>, <strong>Line</strong>, <strong>Polygon</strong>, <strong>Raster</strong>, and <strong>Generic</strong>. Click <strong>Generate</strong> when selected.</td>
+</tr>
+<tr>
+<td><strong>Copy from existing style</strong></td>
+<td>Selects an existing style in GeoServer and copy its contents to this style. Any style in GeoServer is available as an option. Not all styles will work with all layers. Click <strong>Copy</strong> when selected.</td>
+</tr>
+<tr>
+<td><strong>Upload a style file</strong></td>
+<td>Selects a plain text file on your local system to add as the style. Click <strong>Upload</strong> when selected.</td>
+</tr>
+</tbody>
+</table>
 <p><img alt="" src="img/styles_editor_data_stylecontent.png" />
 <em>Style Content area</em></p>
 <p>The <strong>Legend</strong> area allows you to add, modify, or delete a custom style, and preview the legend for the style. By default GeoServer will generate a legend based on your style file, but this can be customized here:</p>
-<hr />
-<p>Option                                Description</p>
-<hr />
-<p><strong>Add legend</strong>                        Allows you to use a custom legend</p>
-<p><strong>Online Resource</strong>                   Path to the custom legend graphic to use. Can be a URL or a local path (relative to the style file path). See <a href="../../datadirectory/structure/">Structure of the data directory</a> for a description of the styles directory.</p>
-<p><strong>Auto-detect image size and type</strong>   Populates the <strong>Width</strong>, <strong>Height</strong>, and <strong>Format</strong> options for the <strong>Online Resource</strong></p>
-<p><strong>Width</strong>                             Width of the custom legend graphic</p>
-<p><strong>Height</strong>                            Height of the custom legend graphic</p>
-<p><strong>Format</strong>                            Mime type of the custom legend graphic</p>
-<p><strong>Discard legend</strong>                    Will remove the settings for the custom legend graphic and will instead use the default generated legend.</p>
-<p><strong>Preview legend</strong>                    Previews the legend based on the current settings</p>
-<p><strong>Choose Image</strong>                      Insert image into style (choose existing or upload)</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Add legend</strong></td>
+<td>Allows you to use a custom legend</td>
+</tr>
+<tr>
+<td><strong>Online Resource</strong></td>
+<td>Path to the custom legend graphic to use. Can be a URL or a local path (relative to the style file path). See <a href="../../datadirectory/structure/">Structure of the data directory</a> for a description of the styles directory.</td>
+</tr>
+<tr>
+<td><strong>Auto-detect image size and type</strong></td>
+<td>Populates the <strong>Width</strong>, <strong>Height</strong>, and <strong>Format</strong> options for the <strong>Online Resource</strong></td>
+</tr>
+<tr>
+<td><strong>Width</strong></td>
+<td>Width of the custom legend graphic</td>
+</tr>
+<tr>
+<td><strong>Height</strong></td>
+<td>Height of the custom legend graphic</td>
+</tr>
+<tr>
+<td><strong>Format</strong></td>
+<td>Mime type of the custom legend graphic</td>
+</tr>
+<tr>
+<td><strong>Discard legend</strong></td>
+<td>Will remove the settings for the custom legend graphic and will instead use the default generated legend.</td>
+</tr>
+<tr>
+<td><strong>Preview legend</strong></td>
+<td>Previews the legend based on the current settings</td>
+</tr>
+<tr>
+<td><strong>Choose Image</strong></td>
+<td>Insert image into style (choose existing or upload)</td>
+</tr>
+</tbody>
+</table>
 <p><img alt="" src="img/styles_editor_data_legend.png" />
 <em>Legend area</em></p>
 <p><img alt="" src="img/styles_editor_data_chooseimage.png" />
 <em>Choose Image Dialog</em></p>
 <h3 id="styling_webadmin_edit_publishing">Style Editor: Publishing tab</h3>
 <p>The Publishing tab displays a list of all layers on the server, with the purpose of showing which layers are associated with the current style. Layers can set a single default style and have any number of additional styles. If this style is set to be either of these options for a layer, it will be shown with a check box in the table.</p>
-<hr />
-<p>Option            Description</p>
-<hr />
-<p><strong>Workspace</strong>     Workspace of the layer</p>
-<p><strong>Layer</strong>         Name of the layer</p>
-<p><strong>Default</strong>       Shows whether the style being edited is the default for a given layer</p>
-<p><strong>Associated</strong>    Shows whether the style being edited is an additional style for a given layer</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Workspace</strong></td>
+<td>Workspace of the layer</td>
+</tr>
+<tr>
+<td><strong>Layer</strong></td>
+<td>Name of the layer</td>
+</tr>
+<tr>
+<td><strong>Default</strong></td>
+<td>Shows whether the style being edited is the default for a given layer</td>
+</tr>
+<tr>
+<td><strong>Associated</strong></td>
+<td>Shows whether the style being edited is an additional style for a given layer</td>
+</tr>
+</tbody>
+</table>
 <p><img alt="" src="img/styles_editor_data_publishing.png" />
 <em>Publishing tab</em></p>
 <h3 id="styling_webadmin_edit_preview">Style Editor: Layer Preview tab</h3>
@@ -2061,16 +2196,40 @@
 <h3 id="styling_webadmin_edit_attributes">Style Editor: Layer Attributes tab</h3>
 <p>Most styles utilize the specific values of certain attributes of the associated layer in order to create more detailed and useful styles. (For example: styling all large cities different from small cities based on a particular attribute.)</p>
 <p>The Layer Attributes tab will display a list of attributes for the given associated layer. GeoServer tries to identify which layer should be shown (for example, a layer for which this style is the default), but if the layer being previewed is not the desired one, click the layer name above the table and select a layer.</p>
-<hr />
-<p>Option             Description</p>
-<hr />
-<p><strong>name</strong>           Name of the attribute</p>
-<p><strong>type</strong>           Type of the attribute. Can be a numeric (such as "Long"), a string ("String"), or a geometry (such as "Point").</p>
-<p><strong>sample</strong>         Sample value of the attribute taken from the data</p>
-<p><strong>min</strong>            Minimum value of the attribute in the data set, if applicable</p>
-<p><strong>max</strong>            Minimum value of the attribute in the data set, if applicable</p>
-<p><strong>computeStats</strong>   Click <strong>Compute</strong> to calculate the <strong>min</strong> and <strong>max</strong> values for that attribute, if applicable</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>name</strong></td>
+<td>Name of the attribute</td>
+</tr>
+<tr>
+<td><strong>type</strong></td>
+<td>Type of the attribute. Can be a numeric (such as "Long"), a string ("String"), or a geometry (such as "Point").</td>
+</tr>
+<tr>
+<td><strong>sample</strong></td>
+<td>Sample value of the attribute taken from the data</td>
+</tr>
+<tr>
+<td><strong>min</strong></td>
+<td>Minimum value of the attribute in the data set, if applicable</td>
+</tr>
+<tr>
+<td><strong>max</strong></td>
+<td>Minimum value of the attribute in the data set, if applicable</td>
+</tr>
+<tr>
+<td><strong>computeStats</strong></td>
+<td>Click <strong>Compute</strong> to calculate the <strong>min</strong> and <strong>max</strong> values for that attribute, if applicable</td>
+</tr>
+</tbody>
+</table>
 <p><img alt="" src="img/styles_editor_data_layerattributes.png" />
 <em>Layer Attributes tab</em></p>
 <h3 id="style-editor-full-screen-side-by-side-mode">Style Editor: full screen side by side mode</h3>

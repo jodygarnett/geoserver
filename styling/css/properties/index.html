@@ -2254,153 +2254,735 @@
 <h1 id="property-listing">Property listing</h1>
 <p>This page lists the supported rendering properties. See <a href="../valuetypes/">CSS value types</a> for more information about the value types for each.</p>
 <h2 id="css_properties_point">Point symbology</h2>
-<hr />
-<p>Property                Type                                                      Meaning                                                                                                                                                                                                                                                         Accepts Expression?</p>
-<hr />
-<p><code>mark</code>                  url, symbol                                               The image or well-known shape to render for points                                                                                                                                                                                                              yes</p>
-<p><code>mark-composite</code>        string                                                    The composite mode to be used and the optional opacity separated with a comma. See the <a href="../../sld/extensions/composite-blend/modes/">full list of available modes</a>.                                                                                             no</p>
-<p><code>mark-mime</code>             string (<a href="http://en.wikipedia.org/wiki/MIME">MIME Type</a>)   The type of the image referenced by a url()                                                                                                                                                                                                                     No, defaults to 'image/jpeg'</p>
-<p><code>mark-geometry</code>         expression                                                An expression to use for the geometry when rendering features                                                                                                                                                                                                   yes</p>
-<p><code>mark-size</code>             length                                                    The width to assume for the provided image. The height will be adjusted to preserve the source aspect ratio.                                                                                                                                                    yes</p>
-<p><code>mark-rotation</code>         angle                                                     A rotation to be applied (clockwise) to the mark image.                                                                                                                                                                                                         yes</p>
-<p><code>z-index</code>               integer                                                   Controls the z ordering of output                                                                                                                                                                                                                               no</p>
-<p><code>mark-label-obstacle</code>   boolean                                                   If true the point symbol will be considered an obstacle for labels, no label will overlap it                                                                                                                                                                    no</p>
-<p><code>mark-anchor</code>           expression                                                The part of the mark to place over the point or middle of the polygon. This takes 2 values - x y where x=0 is the left edge of the label, x=1 is the right edge. y=0 is the bottom edge of the label, y=1 is the top edge. Specify 0.5 0.5 to centre a label.   yes</p>
-<p><code>mark-offset</code>           expression                                                This is for fine-tuning mark-anchor. x and y values specify pixel offsets to adjust the mark position.                                                                                                                                                          yes</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Meaning</th>
+<th>Accepts Expression?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mark</code></td>
+<td>url, symbol</td>
+<td>The image or well-known shape to render for points</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>mark-composite</code></td>
+<td>string</td>
+<td>The composite mode to be used and the optional opacity separated with a comma. See the <a href="../../sld/extensions/composite-blend/modes/">full list of available modes</a>.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>mark-mime</code></td>
+<td>string (<a href="http://en.wikipedia.org/wiki/MIME">MIME Type</a>)</td>
+<td>The type of the image referenced by a url()</td>
+<td>No, defaults to 'image/jpeg'</td>
+</tr>
+<tr>
+<td><code>mark-geometry</code></td>
+<td>expression</td>
+<td>An expression to use for the geometry when rendering features</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>mark-size</code></td>
+<td>length</td>
+<td>The width to assume for the provided image. The height will be adjusted to preserve the source aspect ratio.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>mark-rotation</code></td>
+<td>angle</td>
+<td>A rotation to be applied (clockwise) to the mark image.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>z-index</code></td>
+<td>integer</td>
+<td>Controls the z ordering of output</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>mark-label-obstacle</code></td>
+<td>boolean</td>
+<td>If true the point symbol will be considered an obstacle for labels, no label will overlap it</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>mark-anchor</code></td>
+<td>expression</td>
+<td>The part of the mark to place over the point or middle of the polygon. This takes 2 values - x y where x=0 is the left edge of the label, x=1 is the right edge. y=0 is the bottom edge of the label, y=1 is the top edge. Specify 0.5 0.5 to centre a label.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>mark-offset</code></td>
+<td>expression</td>
+<td>This is for fine-tuning mark-anchor. x and y values specify pixel offsets to adjust the mark position.</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
 <h2 id="css_properties_line">Line symbology</h2>
-<hr />
-<p>Property                  Type                                                      Meaning                                                                                                                                                                                                                                                     Accepts Expression?</p>
-<hr />
-<p><code>stroke</code>                  color, url, symbol                                        The color, graphic, or well-known shape to use to stroke lines or outlines                                                                                                                                                                                  yes</p>
-<p><code>stroke-composite</code>        string                                                    The composite mode to be used and the optional opacity separated with a comma. See the <a href="../../sld/extensions/composite-blend/modes/">full list of available modes</a>.                                                                                         no</p>
-<p><code>stroke-geometry</code>         expression                                                An expression to use for the geometry when rendering features.                                                                                                                                                                                              yes</p>
-<p><code>stroke-offset</code>           expression                                                Draws a parallel line using the specified distance, positive values offset left, negative right.                                                                                                                                                            yes</p>
-<p><code>stroke-mime</code>             string (<a href="http://en.wikipedia.org/wiki/MIME">MIME Type</a>)   The type of the image referenced by a url()                                                                                                                                                                                                                 No, defaults to 'image/jpeg'</p>
-<p><code>stroke-opacity</code>          percentage                                                A value in the range of 0 (fully transparent) to 1.0 (fully opaque)                                                                                                                                                                                         yes</p>
-<p><code>stroke-width</code>            length                                                    The width to use for stroking the line.                                                                                                                                                                                                                     yes</p>
-<p><code>stroke-size</code>             length                                                    An image or symbol used for the stroke pattern will be stretched or squashed to this size before rendering. If this value differs from the stroke-width, the graphic will be repeated or clipped as needed.                                                 yes</p>
-<p><code>stroke-rotation</code>         angle                                                     A rotation to be applied (clockwise) to the stroke image. See also the stroke- repeat property.                                                                                                                                                             yes</p>
-<p><code>stroke-linecap</code>          keyword: butt, square, round                              The style to apply to the ends of lines drawn                                                                                                                                                                                                               yes</p>
-<p><code>stroke-linejoin</code>         keyword: miter, round, bevel                              The style to apply to the "elbows" where segments of multi-line features meet.                                                                                                                                                                            yes</p>
-<p><code>stroke-dasharray</code>        list of lengths                                           The lengths of segments to use in a dashed line.                                                                                                                                                                                                            no</p>
-<p><code>stroke-dashoffset</code>       length                                                    How far to offset the dash pattern from the ends of the lines.                                                                                                                                                                                              yes|</p>
-<p><code>stroke-repeat</code>           keyword: repeat, stipple                                  How to use the provided graphic to paint the line. If repeat, then the graphic is repeatedly painted along the length of the line (rotated appropriately to match the line's direction). If stipple, then the line is treated as a polygon to be filled.   yes</p>
-<p><code>z-index</code>                 integer                                                   Controls the z ordering of output                                                                                                                                                                                                                           no</p>
-<p><code>stroke-label-obstacle</code>   boolean                                                   If true the line will be considered an obstacle for labels, no label will overlap it                                                                                                                                                                        no</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Meaning</th>
+<th>Accepts Expression?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>stroke</code></td>
+<td>color, url, symbol</td>
+<td>The color, graphic, or well-known shape to use to stroke lines or outlines</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>stroke-composite</code></td>
+<td>string</td>
+<td>The composite mode to be used and the optional opacity separated with a comma. See the <a href="../../sld/extensions/composite-blend/modes/">full list of available modes</a>.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>stroke-geometry</code></td>
+<td>expression</td>
+<td>An expression to use for the geometry when rendering features.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>stroke-offset</code></td>
+<td>expression</td>
+<td>Draws a parallel line using the specified distance, positive values offset left, negative right.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>stroke-mime</code></td>
+<td>string (<a href="http://en.wikipedia.org/wiki/MIME">MIME Type</a>)</td>
+<td>The type of the image referenced by a url()</td>
+<td>No, defaults to 'image/jpeg'</td>
+</tr>
+<tr>
+<td><code>stroke-opacity</code></td>
+<td>percentage</td>
+<td>A value in the range of 0 (fully transparent) to 1.0 (fully opaque)</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>stroke-width</code></td>
+<td>length</td>
+<td>The width to use for stroking the line.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>stroke-size</code></td>
+<td>length</td>
+<td>An image or symbol used for the stroke pattern will be stretched or squashed to this size before rendering. If this value differs from the stroke-width, the graphic will be repeated or clipped as needed.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>stroke-rotation</code></td>
+<td>angle</td>
+<td>A rotation to be applied (clockwise) to the stroke image. See also the stroke- repeat property.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>stroke-linecap</code></td>
+<td>keyword: butt, square, round</td>
+<td>The style to apply to the ends of lines drawn</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>stroke-linejoin</code></td>
+<td>keyword: miter, round, bevel</td>
+<td>The style to apply to the "elbows" where segments of multi-line features meet.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>stroke-dasharray</code></td>
+<td>list of lengths</td>
+<td>The lengths of segments to use in a dashed line.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>stroke-dashoffset</code></td>
+<td>length</td>
+<td>How far to offset the dash pattern from the ends of the lines.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>stroke-repeat</code></td>
+<td>keyword: repeat, stipple</td>
+<td>How to use the provided graphic to paint the line. If repeat, then the graphic is repeatedly painted along the length of the line (rotated appropriately to match the line's direction). If stipple, then the line is treated as a polygon to be filled.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>z-index</code></td>
+<td>integer</td>
+<td>Controls the z ordering of output</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>stroke-label-obstacle</code></td>
+<td>boolean</td>
+<td>If true the line will be considered an obstacle for labels, no label will overlap it</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
 <h2 id="css_properties_polygon">Polygon symbology</h2>
-<hr />
-<p>Property                Type                                                      Meaning                                                                                                                                                                                                                                                                                                Accepts Expression?</p>
-<hr />
-<p><code>fill</code>                  color, url, symbol                                        The color, graphic, or well-known shape to use to stroke lines or outlines                                                                                                                                                                                                                             yes</p>
-<p><code>fill-composite</code>        string                                                    The composite mode to be used and the optional opacity separated with a comma. See the <a href="../../sld/extensions/composite-blend/modes/">full list of available modes</a>.                                                                                                                                    no</p>
-<p><code>fill-geometry</code>         expression                                                An expression to use for the geometry when rendering features.                                                                                                                                                                                                                                         yes</p>
-<p><code>fill-mime</code>             string (<a href="http://en.wikipedia.org/wiki/MIME">MIME Type</a>)   The type of the image referenced by a url()                                                                                                                                                                                                                                                            No, defaults to 'image/jpeg'</p>
-<p><code>fill-opacity</code>          percentage                                                A value in the range of 0 (fully transparent) to 1.0 (fully opaque)                                                                                                                                                                                                                                    yes</p>
-<p><code>fill-size</code>             length                                                    The width to assume for the image or graphic provided.                                                                                                                                                                                                                                                 yes</p>
-<p><code>fill-rotation</code>         angle                                                     A rotation to be applied (clockwise) to the fill image.                                                                                                                                                                                                                                                yes</p>
-<p><code>z-index</code>               integer                                                   Controls the z ordering of output                                                                                                                                                                                                                                                                      no</p>
-<p><code>fill-label-obstacle</code>   boolean                                                   If true the polygon will be considered an obstacle for labels, no label will overlap it                                                                                                                                                                                                                no</p>
-<p><code>graphic-margin</code>        List of lengths                                           A list of 1 to 4 values, specifying the space between repeated graphics in a texture paint. One value is uniform spacing in all directions, two values are considered top/bottom and right/left, three values are considered top, right/left, bottom, four values are read as top,right,bottom,left.   no</p>
-<p><code>random</code>                none,grid,free                                            Activates random distribution of symbols in a texture fill tile. See <a href="../../sld/extensions/randomized/">Fills with randomized symbols</a> for details. Defaults to "none"                                                                                                                               no</p>
-<p><code>random-seed</code>           integer number                                            The seed for the random generator. Defaults to 0                                                                                                                                                                                                                                                       no</p>
-<p><code>random-rotation</code>       none/free                                                 When set to "free" activates random rotation of the symbol in addition to random distribution. Defaults to "none"                                                                                                                                                                                  no</p>
-<p><code>random-symbol-count</code>   positive integer number                                   Number of symbols to be placed in the texture fill tile. May not be respected due to location conflicts (no two symbols are allowed to overlap). Defaults to 16.                                                                                                                                       no</p>
-<p><code>random-tile-size</code>      positive integer number                                   Size of the texture paint tile that will be filled with the random symbols. Defaults to 256.                                                                                                                                                                                                           no</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Meaning</th>
+<th>Accepts Expression?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fill</code></td>
+<td>color, url, symbol</td>
+<td>The color, graphic, or well-known shape to use to stroke lines or outlines</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>fill-composite</code></td>
+<td>string</td>
+<td>The composite mode to be used and the optional opacity separated with a comma. See the <a href="../../sld/extensions/composite-blend/modes/">full list of available modes</a>.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>fill-geometry</code></td>
+<td>expression</td>
+<td>An expression to use for the geometry when rendering features.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>fill-mime</code></td>
+<td>string (<a href="http://en.wikipedia.org/wiki/MIME">MIME Type</a>)</td>
+<td>The type of the image referenced by a url()</td>
+<td>No, defaults to 'image/jpeg'</td>
+</tr>
+<tr>
+<td><code>fill-opacity</code></td>
+<td>percentage</td>
+<td>A value in the range of 0 (fully transparent) to 1.0 (fully opaque)</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>fill-size</code></td>
+<td>length</td>
+<td>The width to assume for the image or graphic provided.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>fill-rotation</code></td>
+<td>angle</td>
+<td>A rotation to be applied (clockwise) to the fill image.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>z-index</code></td>
+<td>integer</td>
+<td>Controls the z ordering of output</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>fill-label-obstacle</code></td>
+<td>boolean</td>
+<td>If true the polygon will be considered an obstacle for labels, no label will overlap it</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>graphic-margin</code></td>
+<td>List of lengths</td>
+<td>A list of 1 to 4 values, specifying the space between repeated graphics in a texture paint. One value is uniform spacing in all directions, two values are considered top/bottom and right/left, three values are considered top, right/left, bottom, four values are read as top,right,bottom,left.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>random</code></td>
+<td>none,grid,free</td>
+<td>Activates random distribution of symbols in a texture fill tile. See <a href="../../sld/extensions/randomized/">Fills with randomized symbols</a> for details. Defaults to "none"</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>random-seed</code></td>
+<td>integer number</td>
+<td>The seed for the random generator. Defaults to 0</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>random-rotation</code></td>
+<td>none/free</td>
+<td>When set to "free" activates random rotation of the symbol in addition to random distribution. Defaults to "none"</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>random-symbol-count</code></td>
+<td>positive integer number</td>
+<td>Number of symbols to be placed in the texture fill tile. May not be respected due to location conflicts (no two symbols are allowed to overlap). Defaults to 16.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>random-tile-size</code></td>
+<td>positive integer number</td>
+<td>Size of the texture paint tile that will be filled with the random symbols. Defaults to 256.</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
 <h2 id="css_properties_text1">Text symbology (labelling) - part 1</h2>
-<hr />
-<p>Property                   Type                                                      Meaning                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   Accepts Expression?</p>
-<hr />
-<p><code>label</code>                    string                                                    The text to display as labels for features                                                                                                                                                                                                                                                                                                                                                                                                                                                                yes</p>
-<p><code>label-geometry</code>           expression                                                An expression to use for the geometry when rendering features.                                                                                                                                                                                                                                                                                                                                                                                                                                            yes</p>
-<p><code>label-anchor</code>             expression                                                The part of the label to place over the point or middle of the polygon. This takes 2 values - x y where x=0 is the left edge of the label, x=1 is the right edge. y=0 is the bottom edge of the label, y=1 is the top edge. Specify 0.5 0.5 to centre a label.                                                                                                                                                                                                                                            yes</p>
-<p><code>label-offset</code>             expression                                                This is for fine-tuning label-anchor. x and y values specify pixels to adjust the label position. For lines, a single value will make the label be parallel to the line, at the given distance, while two values will force a point style placement, with the label painted horizontally at the center of the line (plus the given offsets)                                                                                                                                                               yes</p>
-<p><code>label-rotation</code>           expression                                                Clockwise rotation of label in degrees.                                                                                                                                                                                                                                                                                                                                                                                                                                                                   yes</p>
-<p><code>label-z-index</code>            expression                                                Used to determine which labels are drawn on top of other labels. Lower z-indexes are drawn on top.                                                                                                                                                                                                                                                                                                                                                                                                        yes</p>
-<p><code>shield</code>                   mark, symbol                                              A graphic to display behind the label, such as a highway shield.                                                                                                                                                                                                                                                                                                                                                                                                                                          yes</p>
-<p><code>shield-mime</code>              string (<a href="http://en.wikipedia.org/wiki/MIME">MIME Type</a>)   The type of the image referenced by a url()                                                                                                                                                                                                                                                                                                                                                                                                                                                               No, defaults to 'image/jpeg'</p>
-<p><code>shield-placement</code>         one of <code>label</code>, <code>independent</code>, defaults to <code>label</code>        Placement of the shield relative to the label. The default is <code>label</code>, meaning the shield will move along with the label and be centered with it (classic road shield). <code>independent</code> places the shield independently instead, using its own anchor and offset properties. The latter is useful to build "point and label" compositions (e.g., city labels) so that the point won't show up if the label does not (as an alternative to a mark and label setup, where the mark will always show up).   no</p>
-<p><code>shield-anchor</code>            expression                                                The part of the shield to place over the point or middle of the polygon. This takes 2 values - x y where x=0 is the left edge of the label, x=1 is the right edge. y=0 is the bottom edge of the label, y=1 is the top edge. Specify 0.5 0.5 to centre a label. This property activates only if the <code>shield-placement</code> one is set to <code>independent</code>, otherwise the shield will be centered with the label.                                                                                                 yes</p>
-<p><code>shield-offset</code>            expression                                                This is for fine-tuning shield-anchor. x and y values specify pixels to adjust the shield position. This property activates only if the <code>shield-placement</code> one is set to <code>independent</code>, otherwise the shield will be centered with the label.                                                                                                                                                                                                                                                             yes</p>
-<p><code>font-family</code>              string                                                    The name of the font or font family to use for labels                                                                                                                                                                                                                                                                                                                                                                                                                                                     yes</p>
-<p><code>font-fill</code>                fill                                                      The fill to use when rendering fonts                                                                                                                                                                                                                                                                                                                                                                                                                                                                      yes</p>
-<p><code>font-style</code>               keyword: normal, italic, oblique                          The style for the lettering                                                                                                                                                                                                                                                                                                                                                                                                                                                                               yes</p>
-<p><code>font-weight</code>              keyword: normal, bold                                     The weight for the lettering                                                                                                                                                                                                                                                                                                                                                                                                                                                                              yes</p>
-<p><code>font-size</code>                length                                                    The size for the font to display.                                                                                                                                                                                                                                                                                                                                                                                                                                                                         yes</p>
-<p><code>font-opacity</code>             percentage                                                The opacity of the text, from 0 (fully transparent) to 1.0 (fully opaque).                                                                                                                                                                                                                                                                                                                                                                                                                                yes</p>
-<p><code>halo-radius</code>              length                                                    The size of a halo to display around the lettering (to enhance readability). This is <em>required</em> to activate the halo feature.                                                                                                                                                                                                                                                                                                                                                                             yes</p>
-<p><code>halo-color</code>               color                                                     The color for the halo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    yes</p>
-<p><code>halo-opacity</code>             percentage                                                The opacity of the halo, from 0 (fully transparent) to 1.0 (fully opaque).                                                                                                                                                                                                                                                                                                                                                                                                                                yes</p>
-<p><code>label-padding</code>            length                                                    The amount of 'padding' space to provide around labels. Labels will not be rendered closer together than this threshold. This is equivalent to the <code class="interpreted-text" role="ref">spaceAround&lt;labeling_space_around&gt;</code> vendor parameter.                                                                                                                                                                                                                                                                 no</p>
-<p><code>label-group</code>              one of: <code>true</code> or <code>false</code>                                 If true, the render will treat features with the same label text as a single feature for the purpose of labelling. This is equivalent to the <code class="interpreted-text" role="ref">group&lt;labeling_group&gt;</code> vendor parameter.                                                                                                                                                                                                                                                                                      no</p>
-<p><code>label-max-displacement</code>   length                                                    If set, this is the maximum displacement that the renderer will apply to a label. Labels that need larger displacements to avoid collisions will simply be omitted. This is equivalent to the <code class="interpreted-text" role="ref">maxDisplacement&lt;labeling_max_displacement&gt;</code> vendor parameter.                                                                                                                                                                                                                no</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Meaning</th>
+<th>Accepts Expression?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>label</code></td>
+<td>string</td>
+<td>The text to display as labels for features</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>label-geometry</code></td>
+<td>expression</td>
+<td>An expression to use for the geometry when rendering features.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>label-anchor</code></td>
+<td>expression</td>
+<td>The part of the label to place over the point or middle of the polygon. This takes 2 values - x y where x=0 is the left edge of the label, x=1 is the right edge. y=0 is the bottom edge of the label, y=1 is the top edge. Specify 0.5 0.5 to centre a label.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>label-offset</code></td>
+<td>expression</td>
+<td>This is for fine-tuning label-anchor. x and y values specify pixels to adjust the label position. For lines, a single value will make the label be parallel to the line, at the given distance, while two values will force a point style placement, with the label painted horizontally at the center of the line (plus the given offsets)</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>label-rotation</code></td>
+<td>expression</td>
+<td>Clockwise rotation of label in degrees.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>label-z-index</code></td>
+<td>expression</td>
+<td>Used to determine which labels are drawn on top of other labels. Lower z-indexes are drawn on top.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>shield</code></td>
+<td>mark, symbol</td>
+<td>A graphic to display behind the label, such as a highway shield.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>shield-mime</code></td>
+<td>string (<a href="http://en.wikipedia.org/wiki/MIME">MIME Type</a>)</td>
+<td>The type of the image referenced by a url()</td>
+<td>No, defaults to 'image/jpeg'</td>
+</tr>
+<tr>
+<td><code>shield-placement</code></td>
+<td>one of <code>label</code>, <code>independent</code>, defaults to <code>label</code></td>
+<td>Placement of the shield relative to the label. The default is <code>label</code>, meaning the shield will move along with the label and be centered with it (classic road shield). <code>independent</code> places the shield independently instead, using its own anchor and offset properties. The latter is useful to build "point and label" compositions (e.g., city labels) so that the point won't show up if the label does not (as an alternative to a mark and label setup, where the mark will always show up).</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>shield-anchor</code></td>
+<td>expression</td>
+<td>The part of the shield to place over the point or middle of the polygon. This takes 2 values - x y where x=0 is the left edge of the label, x=1 is the right edge. y=0 is the bottom edge of the label, y=1 is the top edge. Specify 0.5 0.5 to centre a label. This property activates only if the <code>shield-placement</code> one is set to <code>independent</code>, otherwise the shield will be centered with the label.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>shield-offset</code></td>
+<td>expression</td>
+<td>This is for fine-tuning shield-anchor. x and y values specify pixels to adjust the shield position. This property activates only if the <code>shield-placement</code> one is set to <code>independent</code>, otherwise the shield will be centered with the label.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>font-family</code></td>
+<td>string</td>
+<td>The name of the font or font family to use for labels</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>font-fill</code></td>
+<td>fill</td>
+<td>The fill to use when rendering fonts</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>font-style</code></td>
+<td>keyword: normal, italic, oblique</td>
+<td>The style for the lettering</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>font-weight</code></td>
+<td>keyword: normal, bold</td>
+<td>The weight for the lettering</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>font-size</code></td>
+<td>length</td>
+<td>The size for the font to display.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>font-opacity</code></td>
+<td>percentage</td>
+<td>The opacity of the text, from 0 (fully transparent) to 1.0 (fully opaque).</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>halo-radius</code></td>
+<td>length</td>
+<td>The size of a halo to display around the lettering (to enhance readability). This is <em>required</em> to activate the halo feature.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>halo-color</code></td>
+<td>color</td>
+<td>The color for the halo</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>halo-opacity</code></td>
+<td>percentage</td>
+<td>The opacity of the halo, from 0 (fully transparent) to 1.0 (fully opaque).</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>label-padding</code></td>
+<td>length</td>
+<td>The amount of 'padding' space to provide around labels. Labels will not be rendered closer together than this threshold. This is equivalent to the <code class="interpreted-text" role="ref">spaceAround&lt;labeling_space_around&gt;</code> vendor parameter.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>label-group</code></td>
+<td>one of: <code>true</code> or <code>false</code></td>
+<td>If true, the render will treat features with the same label text as a single feature for the purpose of labelling. This is equivalent to the <code class="interpreted-text" role="ref">group&lt;labeling_group&gt;</code> vendor parameter.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>label-max-displacement</code></td>
+<td>length</td>
+<td>If set, this is the maximum displacement that the renderer will apply to a label. Labels that need larger displacements to avoid collisions will simply be omitted. This is equivalent to the <code class="interpreted-text" role="ref">maxDisplacement&lt;labeling_max_displacement&gt;</code> vendor parameter.</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
 <h2 id="css_properties_text2">Text symbology (labelling) - part 2</h2>
-<hr />
-<p>Property                      Type                       Meaning                                                                                                                                                                                                                                                                                                                                               Accepts Expression?</p>
-<hr />
-<p><code>label-min-group-distance</code>    length                     This is equivalent to the minGroupDistance vendor parameter in SLD.                                                                                                                                                                                                                                                                                   no</p>
-<p><code>label-repeat</code>                length                     If set, the renderer will repeat labels at this interval along a line. This is equivalent to the <code class="interpreted-text" role="ref">repeat&lt;labeling_repeat&gt;</code> vendor parameter.                                                                                                                                                                            no</p>
-<p><code>label-all-group</code>             one of <code>true</code> or <code>false</code>   when using grouping, whether to label only the longest line that could be built by merging the lines forming the group, or also the other ones. This is equivalent to the <code class="interpreted-text" role="ref">allGroup&lt;labeling_all_group&gt;</code> vendor parameter.                                                                                              no</p>
-<p><code>label-remove-overlaps</code>       one of <code>true</code> or <code>false</code>   If enabled, the renderer will remove overlapping lines within a group to avoid duplicate labels. This is equivalent to the removeOverlaps vendor parameter.                                                                                                                                                                                           no</p>
-<p><code>label-allow-overruns</code>        one of <code>true</code> or <code>false</code>   Determines whether the renderer will show labels that are longer than the lines being labelled. This is equivalent to the allowOverrun vendor parameter.                                                                                                                                                                                              no</p>
-<p><code>label-follow-line</code>           one of <code>true</code> or <code>false</code>   If enabled, the render will curve labels to follow the lines being labelled. This is equivalent to the <code class="interpreted-text" role="ref">followLine&lt;labeling_follow_line&gt;</code> vendor parameter.                                                                                                                                                             no</p>
-<p><code>label-max-angle-delta</code>       one of <code>true</code> or <code>false</code>   The maximum amount of curve allowed between two characters of a label; only applies when 'follow-line: true' is set. This is equivalent to the <code class="interpreted-text" role="ref">maxAngleDelta&lt;labeling_max_angle_delta&gt;</code> vendor parameter.                                                                                                            no</p>
-<p><code>label-auto-wrap</code>             length                     Labels will be wrapped to multiple lines if they exceed this length in pixels. This is equivalent to the <code class="interpreted-text" role="ref">autoWrap&lt;labeling_autowrap&gt;</code> vendor parameter.                                                                                                                                                                no</p>
-<p><code>label-force-ltr</code>             one of <code>true</code> or <code>false</code>   By default, the renderer will flip labels whose normal orientation would cause them to be upside-down. Set this parameter to false if you are using some icon character label like an arrow to show a line's direction. This is equivalent to the <code class="interpreted-text" role="ref">forceLeftToRight&lt;labeling_force_left_to_right&gt;</code> vendor parameter.   no</p>
-<p><code>label-conflict-resolution</code>   one of <code>true</code> or <code>false</code>   Set this to false to disable label conflict resolution, allowing overlapping labels to be rendered. This is equivalent to the <code class="interpreted-text" role="ref">conflictResolution&lt;labeling_conflict_resolution&gt;</code> vendor parameter.                                                                                                                      no</p>
-<p><code>label-fit-goodness</code>          scale                      The renderer will omit labels that fall below this "match quality" score. The scoring rules differ for each geometry type. This is equivalent to the <code class="interpreted-text" role="ref">goodnessOfFit&lt;labeling_goodness_of_fit&gt;</code> vendor parameter.                                                                                                      no</p>
-<p><code>label-priority</code>              expression                 Specifies an expression to use in determining which features to prefer if there are labelling conflicts. This is equivalent to the <code class="interpreted-text" role="ref">Priority&lt;labeling_priority&gt;</code> SLD extension.                                                                                                                                         yes</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Meaning</th>
+<th>Accepts Expression?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>label-min-group-distance</code></td>
+<td>length</td>
+<td>This is equivalent to the minGroupDistance vendor parameter in SLD.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>label-repeat</code></td>
+<td>length</td>
+<td>If set, the renderer will repeat labels at this interval along a line. This is equivalent to the <code class="interpreted-text" role="ref">repeat&lt;labeling_repeat&gt;</code> vendor parameter.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>label-all-group</code></td>
+<td>one of <code>true</code> or <code>false</code></td>
+<td>when using grouping, whether to label only the longest line that could be built by merging the lines forming the group, or also the other ones. This is equivalent to the <code class="interpreted-text" role="ref">allGroup&lt;labeling_all_group&gt;</code> vendor parameter.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>label-remove-overlaps</code></td>
+<td>one of <code>true</code> or <code>false</code></td>
+<td>If enabled, the renderer will remove overlapping lines within a group to avoid duplicate labels. This is equivalent to the removeOverlaps vendor parameter.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>label-allow-overruns</code></td>
+<td>one of <code>true</code> or <code>false</code></td>
+<td>Determines whether the renderer will show labels that are longer than the lines being labelled. This is equivalent to the allowOverrun vendor parameter.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>label-follow-line</code></td>
+<td>one of <code>true</code> or <code>false</code></td>
+<td>If enabled, the render will curve labels to follow the lines being labelled. This is equivalent to the <code class="interpreted-text" role="ref">followLine&lt;labeling_follow_line&gt;</code> vendor parameter.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>label-max-angle-delta</code></td>
+<td>one of <code>true</code> or <code>false</code></td>
+<td>The maximum amount of curve allowed between two characters of a label; only applies when 'follow-line: true' is set. This is equivalent to the <code class="interpreted-text" role="ref">maxAngleDelta&lt;labeling_max_angle_delta&gt;</code> vendor parameter.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>label-auto-wrap</code></td>
+<td>length</td>
+<td>Labels will be wrapped to multiple lines if they exceed this length in pixels. This is equivalent to the <code class="interpreted-text" role="ref">autoWrap&lt;labeling_autowrap&gt;</code> vendor parameter.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>label-force-ltr</code></td>
+<td>one of <code>true</code> or <code>false</code></td>
+<td>By default, the renderer will flip labels whose normal orientation would cause them to be upside-down. Set this parameter to false if you are using some icon character label like an arrow to show a line's direction. This is equivalent to the <code class="interpreted-text" role="ref">forceLeftToRight&lt;labeling_force_left_to_right&gt;</code> vendor parameter.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>label-conflict-resolution</code></td>
+<td>one of <code>true</code> or <code>false</code></td>
+<td>Set this to false to disable label conflict resolution, allowing overlapping labels to be rendered. This is equivalent to the <code class="interpreted-text" role="ref">conflictResolution&lt;labeling_conflict_resolution&gt;</code> vendor parameter.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>label-fit-goodness</code></td>
+<td>scale</td>
+<td>The renderer will omit labels that fall below this "match quality" score. The scoring rules differ for each geometry type. This is equivalent to the <code class="interpreted-text" role="ref">goodnessOfFit&lt;labeling_goodness_of_fit&gt;</code> vendor parameter.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>label-priority</code></td>
+<td>expression</td>
+<td>Specifies an expression to use in determining which features to prefer if there are labelling conflicts. This is equivalent to the <code class="interpreted-text" role="ref">Priority&lt;labeling_priority&gt;</code> SLD extension.</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
 <h2 id="css_properties_text3">Text symbology (labelling) - part 3</h2>
-<hr />
-<p>Property                     Type                                                  Meaning                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 Accepts Expression?</p>
-<hr />
-<p><code>shield-resize</code>              string, one of <code>none</code>, <code>stretch</code>, or <code>proportional</code>   Specifies a mode for resizing label graphics (such as highway shields) to fit the text of the label. The default mode, 'none', never modifies the label graphic. In <code>stretch</code> mode, GeoServer will resize the graphic to exactly surround the label text, possibly modifying the image's aspect ratio. In <code>proportional</code> mode, GeoServer will expand the image to be large enough to surround the text while preserving its original aspect ratio.                                                                                                                                                                                                                   none</p>
-<p><code>shield-margin</code>              list of lengths, one to four elements long.           Specifies an extra margin (in pixels) to be applied to the label text when calculating label dimensions for use with the <code>shield-resize</code> option. Similar to the <code>margin</code> shorthand property in CSS for HTML, its interpretation varies depending on how many margin values are provided: 1 = use that margin length on all sides of the label 2 = use the first for top &amp; bottom margins and the second for left &amp; right margins. 3 = use the first for the top margin, second for left &amp; right margins, third for the bottom margin. 4 = use the first for the top margin, second for the right margin, third for the bottom margin, and fourth for the left margin.   none</p>
-<p><code>label-underline-text</code>       one of <code>true</code> or <code>false</code>                              If enabled, the renderer will underline labels. This is equivalent to the <a href="../../sld/reference/labeling/#labeling_underline_text">underlineText</a> vendor parameter.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      no</p>
-<p><code>label-strikethrough-text</code>   one of <code>true</code> or <code>false</code>                              If enabled, the renderer will strikethrough labels. This is equivalent to the <a href="../../sld/reference/labeling/#labeling_strikethrough_text">strikethroughText</a> vendor parameter.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          no</p>
-<p><code>label-char-spacing</code>         an amount of pixels, can be negative                  If present, expands or shrinks the space between subsequent characters in a label according to the value specified                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      no</p>
-<p><code>label-word-spacing</code>         an amount of pixels, must be zero or positive         If present, expands the space between subsequent words in a label according to the value specified                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      no</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Meaning</th>
+<th>Accepts Expression?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>shield-resize</code></td>
+<td>string, one of <code>none</code>, <code>stretch</code>, or <code>proportional</code></td>
+<td>Specifies a mode for resizing label graphics (such as highway shields) to fit the text of the label. The default mode, 'none', never modifies the label graphic. In <code>stretch</code> mode, GeoServer will resize the graphic to exactly surround the label text, possibly modifying the image's aspect ratio. In <code>proportional</code> mode, GeoServer will expand the image to be large enough to surround the text while preserving its original aspect ratio.</td>
+<td>none</td>
+</tr>
+<tr>
+<td><code>shield-margin</code></td>
+<td>list of lengths, one to four elements long.</td>
+<td>Specifies an extra margin (in pixels) to be applied to the label text when calculating label dimensions for use with the <code>shield-resize</code> option. Similar to the <code>margin</code> shorthand property in CSS for HTML, its interpretation varies depending on how many margin values are provided: 1 = use that margin length on all sides of the label 2 = use the first for top &amp; bottom margins and the second for left &amp; right margins. 3 = use the first for the top margin, second for left &amp; right margins, third for the bottom margin. 4 = use the first for the top margin, second for the right margin, third for the bottom margin, and fourth for the left margin.</td>
+<td>none</td>
+</tr>
+<tr>
+<td><code>label-underline-text</code></td>
+<td>one of <code>true</code> or <code>false</code></td>
+<td>If enabled, the renderer will underline labels. This is equivalent to the <a href="../../sld/reference/labeling/#labeling_underline_text">underlineText</a> vendor parameter.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>label-strikethrough-text</code></td>
+<td>one of <code>true</code> or <code>false</code></td>
+<td>If enabled, the renderer will strikethrough labels. This is equivalent to the <a href="../../sld/reference/labeling/#labeling_strikethrough_text">strikethroughText</a> vendor parameter.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>label-char-spacing</code></td>
+<td>an amount of pixels, can be negative</td>
+<td>If present, expands or shrinks the space between subsequent characters in a label according to the value specified</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>label-word-spacing</code></td>
+<td>an amount of pixels, must be zero or positive</td>
+<td>If present, expands the space between subsequent words in a label according to the value specified</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
 <h2 id="css_properties_raster">Raster symbology</h2>
-<hr />
-<p>Property                        Type             Meaning                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Accepts Expression?</p>
-<hr />
-<p><code>raster-channels</code>               string           The list of raster channels to be used in the output. It can be "auto" to make the renderer choose the best course of action, or a list of band numbers, a single one will generate a gray image, three will generate an RGB one, four will generate a RGBA one. E.g., "1 3 7" to choose the first, third and seventh band of the input raster to make an RGB image                                                                                                                                                                                                                                                no</p>
-<p><code>raster-composite</code>              string           The composite mode to be used and the optional opacity separated with a comma. See the <a href="../../sld/extensions/composite-blend/modes/">full list of available modes</a>.                                                                                                                                                                                                                                                                                                                                                                                                                                                    no</p>
-<p><code>raster-geometry</code>               expression       The attribute containing the raster to be painted. Normally not needed, but it would work if you had a custom vector data source that contains a GridCoverage attribute, in order to select it                                                                                                                                                                                                                                                                                                                                                                                                                         yes</p>
-<p><code>raster-opacity</code>                floating point   A value comprised between 0 and 1, 0 meaning completely transparent, 1 meaning completely opaque. This controls the whole raster transparency.                                                                                                                                                                                                                                                                                                                                                                                                                                                                         no</p>
-<p><code>raster-contrast-enhancement</code>   string           Allows to stretch the range of data/colors in order to enhance tiny differences. Possible values are 'normalize', 'histogram' and 'none'                                                                                                                                                                                                                                                                                                                                                                                                                                                                         no</p>
-<p><code>raster-gamma</code>                  floating point   Gamma adjustment for the output raster                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 no</p>
-<p><code>raster-z-index</code>                integer          Controls the z ordering of the raster output                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           no</p>
-<p><code>raster-color-map</code>              string           Applies a color map to single banded input. The contents are a space separate list of <code>color-map-entry(color, value)</code> (opacity assumed to be 1 and label will have a null value), or <code>color-map-entry(color, value, opacity, label)</code>. The values must be provided in increasing order.                                                                                                                                                                                                                                                                                                                                 no</p>
-<p><code>raster-color-map-type</code>         string           Controls how the color map entries are interpreted, the possible values are "ramp", "intervals" and "values", with ramp being the default if no "raster-color-map-type" is provided. The default "ramp" behavior is to linearly interpolate color between the provided values, and assign the lowest color to all values below the lowest value, and the highest color to all values above the highest value. The "intervals" behavior instead assigns solid colors between values, whilst "values" only assigns colors to the specified values, every other value in the raster is not painted at all   no</p>
-<p><code>raster-color-map-extended</code>     string           Enables "extended color map" mode, which makes the color map use 65536 entries instead of 256, and thus allows for a more precise color mapping. The default is "false", which means the color map is limited to 256 entries (if more than 256 colors are used, the extended color map mode is enabled automatically). This property is ignored if the "raster-color-map" property is not provided.                                                                                                                                                                                                              no</p>
-<p><code>raster-label-fi</code>               string           Controls if and how color map entry labels are included, as attributes, in the GetFeatureInfo output. Valid values are <code>add</code>, adding the labels as extra attributes, <code>replace</code>, using the labels in place of the actual value, or <code>none</code> (the default) which does not include the labels in the output.                                                                                                                                                                                                                                                                                                                no</p>
-<p><code>raster-label-name</code>             string           If color map entry labels are included in the GetFeatureInfo output, this property controls then name of the attribute that will contain them.                                                                                                                                                                                                                                                                                                                                                                                                                                                                         no</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Meaning</th>
+<th>Accepts Expression?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>raster-channels</code></td>
+<td>string</td>
+<td>The list of raster channels to be used in the output. It can be "auto" to make the renderer choose the best course of action, or a list of band numbers, a single one will generate a gray image, three will generate an RGB one, four will generate a RGBA one. E.g., "1 3 7" to choose the first, third and seventh band of the input raster to make an RGB image</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>raster-composite</code></td>
+<td>string</td>
+<td>The composite mode to be used and the optional opacity separated with a comma. See the <a href="../../sld/extensions/composite-blend/modes/">full list of available modes</a>.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>raster-geometry</code></td>
+<td>expression</td>
+<td>The attribute containing the raster to be painted. Normally not needed, but it would work if you had a custom vector data source that contains a GridCoverage attribute, in order to select it</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>raster-opacity</code></td>
+<td>floating point</td>
+<td>A value comprised between 0 and 1, 0 meaning completely transparent, 1 meaning completely opaque. This controls the whole raster transparency.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>raster-contrast-enhancement</code></td>
+<td>string</td>
+<td>Allows to stretch the range of data/colors in order to enhance tiny differences. Possible values are 'normalize', 'histogram' and 'none'</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>raster-gamma</code></td>
+<td>floating point</td>
+<td>Gamma adjustment for the output raster</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>raster-z-index</code></td>
+<td>integer</td>
+<td>Controls the z ordering of the raster output</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>raster-color-map</code></td>
+<td>string</td>
+<td>Applies a color map to single banded input. The contents are a space separate list of <code>color-map-entry(color, value)</code> (opacity assumed to be 1 and label will have a null value), or <code>color-map-entry(color, value, opacity, label)</code>. The values must be provided in increasing order.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>raster-color-map-type</code></td>
+<td>string</td>
+<td>Controls how the color map entries are interpreted, the possible values are "ramp", "intervals" and "values", with ramp being the default if no "raster-color-map-type" is provided. The default "ramp" behavior is to linearly interpolate color between the provided values, and assign the lowest color to all values below the lowest value, and the highest color to all values above the highest value. The "intervals" behavior instead assigns solid colors between values, whilst "values" only assigns colors to the specified values, every other value in the raster is not painted at all</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>raster-color-map-extended</code></td>
+<td>string</td>
+<td>Enables "extended color map" mode, which makes the color map use 65536 entries instead of 256, and thus allows for a more precise color mapping. The default is "false", which means the color map is limited to 256 entries (if more than 256 colors are used, the extended color map mode is enabled automatically). This property is ignored if the "raster-color-map" property is not provided.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>raster-label-fi</code></td>
+<td>string</td>
+<td>Controls if and how color map entry labels are included, as attributes, in the GetFeatureInfo output. Valid values are <code>add</code>, adding the labels as extra attributes, <code>replace</code>, using the labels in place of the actual value, or <code>none</code> (the default) which does not include the labels in the output.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>raster-label-name</code></td>
+<td>string</td>
+<td>If color map entry labels are included in the GetFeatureInfo output, this property controls then name of the attribute that will contain them.</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
 <h2 id="css_properties_shared">Shared</h2>
-<hr />
-<p>Property           Type                       Meaning                                                                                                                                                                                                                                                                   Accepts Expression?</p>
-<hr />
-<p><code>composite</code>        string                     The composite mode to be used and the optional opacity separated with a comma. See the <a href="../../sld/extensions/composite-blend/modes/">full list of available modes</a>.                                                                                                       no</p>
-<p><code>composite-base</code>   one of <code>true</code> or <code>false</code>   This will tell the rendering engine to use that FeatureTypeStyle as the destination, and will compose all subsequent FeatureTypeStyle/Layers on top of it, until another base is found.                                                                                   no</p>
-<p><code>geometry</code>         expression                 An expression to use for the geometry when rendering features. This provides a geometry for all types of symbology, but can be overridden by the symbol-specific geometry properties.                                                                                     yes</p>
-<p><code>sort-by</code>          string                     A comma separated list of sorting directives, <code>att1 A|D, att2 A|D, ...</code> where <code>att?</code> are attribute names, and <code>A</code> or <code>D</code> are an optional direction specification, <code>A</code> is ascending, <code>D</code> is descending. Determines the loading, and thus painting, order of the features   no</p>
-<p><code>sort-by-group</code>    string                     Rules with the different z-index but same sort-by-group id have their features sorted as a single group. Useful to z-order across layers or across different feature groups, like roads and rails, especially when using z-index to support casing                        no</p>
-<p><code>transform</code>        function                   Applies a rendering transformation on the current level. The function syntax is <code>txName(key1:value1,key1:value2)</code>. Values can be single ones, or space separated lists.                                                                                                   no</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Meaning</th>
+<th>Accepts Expression?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>composite</code></td>
+<td>string</td>
+<td>The composite mode to be used and the optional opacity separated with a comma. See the <a href="../../sld/extensions/composite-blend/modes/">full list of available modes</a>.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>composite-base</code></td>
+<td>one of <code>true</code> or <code>false</code></td>
+<td>This will tell the rendering engine to use that FeatureTypeStyle as the destination, and will compose all subsequent FeatureTypeStyle/Layers on top of it, until another base is found.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>geometry</code></td>
+<td>expression</td>
+<td>An expression to use for the geometry when rendering features. This provides a geometry for all types of symbology, but can be overridden by the symbol-specific geometry properties.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>sort-by</code></td>
+<td>string</td>
+<td>A comma separated list of sorting directives, <code>att1 A|D, att2 A|D, ...</code> where <code>att?</code> are attribute names, and <code>A</code> or <code>D</code> are an optional direction specification, <code>A</code> is ascending, <code>D</code> is descending. Determines the loading, and thus painting, order of the features</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>sort-by-group</code></td>
+<td>string</td>
+<td>Rules with the different z-index but same sort-by-group id have their features sorted as a single group. Useful to z-order across layers or across different feature groups, like roads and rails, especially when using z-index to support casing</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>transform</code></td>
+<td>function</td>
+<td>Applies a rendering transformation on the current level. The function syntax is <code>txName(key1:value1,key1:value2)</code>. Values can be single ones, or space separated lists.</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
 <h2 id="css_properties_symbol">Symbol properties</h2>
 <p>These properties are applied only when styling built-in symbols. See <a href="../styledmarks/">Styled marks</a> for details.</p>
-<hr />
-<p>Property     Type       Meaning                                        Accepts Expression?</p>
-<hr />
-<p><code>size</code>       length     The size at which to render the symbol.        yes</p>
-<p><code>rotation</code>   angle      An angle through which to rotate the symbol.   yes</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Meaning</th>
+<th>Accepts Expression?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>size</code></td>
+<td>length</td>
+<td>The size at which to render the symbol.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>rotation</code></td>
+<td>angle</td>
+<td>An angle through which to rotate the symbol.</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
 
 
 

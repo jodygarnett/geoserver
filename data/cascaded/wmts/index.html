@@ -1948,19 +1948,60 @@
 <em>Adding an external WMTS as a store</em></p>
 <p><img alt="" src="../images/wmtsconfigure.png" />
 <em>Configuring a new external WTMS store</em></p>
-<hr />
-<p><strong>Option</strong>                       <strong>Description</strong></p>
-<p><strong>Workspace</strong>                    Name of the workspace to contain the store. This will also be the prefix of all of the layer names published from the store.</p>
-<p><strong>Data Source Name</strong>             Name of the store as known to GeoServer.</p>
-<p><strong>Description</strong>                  Description of the store.</p>
-<p><strong>Enabled</strong>                      Enables the store. If disabled, no data from the remote WMTS will be served.</p>
-<p><strong>Capabilities URL</strong>             The full URL to access the capabilities document of the remote WMTS.</p>
-<p><strong>User Name</strong>                    If the WMTS requires authentication, the user name to connect as.</p>
-<p><strong>Password</strong>                     If the WMTS requires authentication, the password to connect with.</p>
-<p><strong>HTTP header name</strong>             If the WMTS requires a custom HTTP header, the header name.</p>
-<p><strong>HTTP header value</strong>            If the WMTS requires a custom HTTP header, the header value.</p>
-<p><strong>Max concurrent connections</strong>   The maximum number of persistent connections to keep for this WMTS.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Option</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><strong>Workspace</strong></td>
+<td>Name of the workspace to contain the store. This will also be the prefix of all of the layer names published from the store.</td>
+</tr>
+<tr>
+<td><strong>Data Source Name</strong></td>
+<td>Name of the store as known to GeoServer.</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Description of the store.</td>
+</tr>
+<tr>
+<td><strong>Enabled</strong></td>
+<td>Enables the store. If disabled, no data from the remote WMTS will be served.</td>
+</tr>
+<tr>
+<td><strong>Capabilities URL</strong></td>
+<td>The full URL to access the capabilities document of the remote WMTS.</td>
+</tr>
+<tr>
+<td><strong>User Name</strong></td>
+<td>If the WMTS requires authentication, the user name to connect as.</td>
+</tr>
+<tr>
+<td><strong>Password</strong></td>
+<td>If the WMTS requires authentication, the password to connect with.</td>
+</tr>
+<tr>
+<td><strong>HTTP header name</strong></td>
+<td>If the WMTS requires a custom HTTP header, the header name.</td>
+</tr>
+<tr>
+<td><strong>HTTP header value</strong></td>
+<td>If the WMTS requires a custom HTTP header, the header value.</td>
+</tr>
+<tr>
+<td><strong>Max concurrent connections</strong></td>
+<td>The maximum number of persistent connections to keep for this WMTS.</td>
+</tr>
+</tbody>
+</table>
 <p>When finished, click <strong>Save</strong>.</p>
 <h2 id="configuring-external-wmts-layers">Configuring external WMTS layers</h2>
 <p>When properly loaded, all layers served by the external WMTS will be available to GeoServer. Before they can be served, however, they will need to be individually configured (published) as new layers. See the section on <a href="../../webadmin/layers/">Layers</a> for how to add and edit new layers. Once published, these layers will show up in the <a href="../../webadmin/layerpreview/">Layer Preview</a> and as part of the WMS capabilities document. If the WMTS layer has additional dimensions (e.g. time), related info will be reported on the WMS capabilities as well.</p>

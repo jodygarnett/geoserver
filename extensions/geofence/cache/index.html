@@ -3119,18 +3119,44 @@
 <h2 id="requests">Requests</h2>
 <h3 id="geofencerulecacheinfo"><code>/geofence/ruleCache/info</code></h3>
 <p>Retrieve information about the geofence cache status.</p>
-<hr />
-<p>Method     Action                                                                                                                                                                                              Parameters           Response</p>
-<hr />
-<p>GET        Retrieve information about the geofence cache status. Per cache (rules, admin rules and users) we retrieve the cache size, hits, misses, load successes, load failures, load times and evictions.   ---                200 OK. Text Format.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Parameters</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Retrieve information about the geofence cache status. Per cache (rules, admin rules and users) we retrieve the cache size, hits, misses, load successes, load failures, load times and evictions.</td>
+<td>---</td>
+<td>200 OK. Text Format.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="geofencerulecacheinvalidate"><code>/geofence/ruleCache/invalidate</code></h3>
 <p>Invalidate the geofence cache.</p>
-<hr />
-<p>Method     Action                                  Parameters           Response</p>
-<hr />
-<p>PUT        Invalidate (clear) the geofence cache   ---                200 OK.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Parameters</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PUT</td>
+<td>Invalidate (clear) the geofence cache</td>
+<td>---</td>
+<td>200 OK.</td>
+</tr>
+</tbody>
+</table>
 
 
 

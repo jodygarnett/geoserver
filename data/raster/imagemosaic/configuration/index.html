@@ -2218,23 +2218,82 @@
 <h3 id="primary-configuration-file">Primary configuration file</h3>
 <p>The mosaic configuration file is the primary file used to store the configuration parameters that control the ImageMosaic plugin. When created by GeoServer it is by default called <code>&lt;directory&gt;.properties</code>, where <code>&lt;directory&gt;</code> is the name of the root directory of the store. (It is not related to the store name in GeoServer.) It can have other names, as long as it does not conflict with other files such as <strong><code>datastore.properties</code></strong> or <strong><code>indexer.properties</code></strong>. This file usually does not require manual editing.</p>
 <p>The table below describes the various elements in this configuration file.</p>
-<hr />
-<p>Parameter                Mandatory?   Description</p>
-<hr />
-<p>Levels                   Y            Represents the resolutions for the various levels of the granules of this mosaic.</p>
-<p>Heterogeneous            N            Sets whether the image files are heterogeneous. Default is <code>false</code>.</p>
-<p>AbsolutePath             N            Controls whether or not the path stored inside the <code>location</code> attribute represents an absolute path or a path relative to the location of the shapefile index. Notice that a relative index ensures much more portability of the mosaic itself. Default value for this parameter is <code>false</code>, which means relative paths.</p>
-<p>Name                     N            The name to be assigned to the index. If unspecified, the index name will usually match the name of the folder containing the mosaic.</p>
-<p>TypeName                 Y            Featuretype name for this mosaic. Usually the name as <code>Name</code>.</p>
-<p>Caching                  N            Boolean value to enable caching. When set to <code>true</code>, the ImageMosaic will try to save in memory the entire contents of the index to reduce loading/query time. Set to <code>false</code> for a large granule index and/or if new granules are to be ingested (for example, when the index is on a database and we interact directly with it). Default is <code>false</code>.</p>
-<p>ExpandToRGB              N            Boolean flag to force color expansion from index color model (paletted datasets) to component color model (RGB). Default is <code>false</code>.</p>
-<p>LocationAttribute        Y            The name of the attribute path in the shapefile index. Default is <code>location</code>.</p>
-<p>SuggestedSPI             Y            Suggested plugin for reading the image files.</p>
-<p>SuggestedFormat          N            Suggested GridFormat for reading the image files.</p>
-<p>Envelope2D               N            Envelope for the mosaic formatted as <code>LLX,LLY URX,URY</code> (notice the space between the lower left and upper right coordinate pairs).</p>
-<p>CheckAuxiliaryMetadata   N            This parameter allows to specify whether the ImageMosaic plugin should check for the presence of a GDAL aux.xml file beside each granule file. For most common use cases, you don't need to set or specify this parameter. Being disabled by Default, ImageMosaic won't look for an ancillary file for each granule being initialized in the GranuleCatalog. This avoid useless checks, especially when dealing with thousand of granules. You should set that parameter to <code>true</code> when you want to instruct the ImageMosaic to look for a GDAL generated aux.xml file containing PAM (Persistent Auxiliary Metadata) for each granule, to be attached to the Granule info (GranuleDescriptor). This is specially useful when you have setup a <a href="../../../../community/colormap/">Dynamic ColorMap rendering transformation</a> which dynamically set a color map based on the statistics collected into the granule's GDAL PAM being previously generated with a gdalinfo -stats parameter.</p>
-<p>LevelsNum                Y            Represents the number of reduced resolution layers that we currently have for the granules of this mosaic.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Mandatory?</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Levels</td>
+<td>Y</td>
+<td>Represents the resolutions for the various levels of the granules of this mosaic.</td>
+</tr>
+<tr>
+<td>Heterogeneous</td>
+<td>N</td>
+<td>Sets whether the image files are heterogeneous. Default is <code>false</code>.</td>
+</tr>
+<tr>
+<td>AbsolutePath</td>
+<td>N</td>
+<td>Controls whether or not the path stored inside the <code>location</code> attribute represents an absolute path or a path relative to the location of the shapefile index. Notice that a relative index ensures much more portability of the mosaic itself. Default value for this parameter is <code>false</code>, which means relative paths.</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>N</td>
+<td>The name to be assigned to the index. If unspecified, the index name will usually match the name of the folder containing the mosaic.</td>
+</tr>
+<tr>
+<td>TypeName</td>
+<td>Y</td>
+<td>Featuretype name for this mosaic. Usually the name as <code>Name</code>.</td>
+</tr>
+<tr>
+<td>Caching</td>
+<td>N</td>
+<td>Boolean value to enable caching. When set to <code>true</code>, the ImageMosaic will try to save in memory the entire contents of the index to reduce loading/query time. Set to <code>false</code> for a large granule index and/or if new granules are to be ingested (for example, when the index is on a database and we interact directly with it). Default is <code>false</code>.</td>
+</tr>
+<tr>
+<td>ExpandToRGB</td>
+<td>N</td>
+<td>Boolean flag to force color expansion from index color model (paletted datasets) to component color model (RGB). Default is <code>false</code>.</td>
+</tr>
+<tr>
+<td>LocationAttribute</td>
+<td>Y</td>
+<td>The name of the attribute path in the shapefile index. Default is <code>location</code>.</td>
+</tr>
+<tr>
+<td>SuggestedSPI</td>
+<td>Y</td>
+<td>Suggested plugin for reading the image files.</td>
+</tr>
+<tr>
+<td>SuggestedFormat</td>
+<td>N</td>
+<td>Suggested GridFormat for reading the image files.</td>
+</tr>
+<tr>
+<td>Envelope2D</td>
+<td>N</td>
+<td>Envelope for the mosaic formatted as <code>LLX,LLY URX,URY</code> (notice the space between the lower left and upper right coordinate pairs).</td>
+</tr>
+<tr>
+<td>CheckAuxiliaryMetadata</td>
+<td>N</td>
+<td>This parameter allows to specify whether the ImageMosaic plugin should check for the presence of a GDAL aux.xml file beside each granule file. For most common use cases, you don't need to set or specify this parameter. Being disabled by Default, ImageMosaic won't look for an ancillary file for each granule being initialized in the GranuleCatalog. This avoid useless checks, especially when dealing with thousand of granules. You should set that parameter to <code>true</code> when you want to instruct the ImageMosaic to look for a GDAL generated aux.xml file containing PAM (Persistent Auxiliary Metadata) for each granule, to be attached to the Granule info (GranuleDescriptor). This is specially useful when you have setup a <a href="../../../../community/colormap/">Dynamic ColorMap rendering transformation</a> which dynamically set a color map based on the statistics collected into the granule's GDAL PAM being previously generated with a gdalinfo -stats parameter.</td>
+</tr>
+<tr>
+<td>LevelsNum</td>
+<td>Y</td>
+<td>Represents the number of reduced resolution layers that we currently have for the granules of this mosaic.</td>
+</tr>
+</tbody>
+</table>
 <p>A sample configuration file follows:</p>
 <div class="language-text highlight"><pre><span></span><code>Levels=0.4,0.4
 Heterogeneous=false
@@ -2316,31 +2375,122 @@ preparedStatements=false
 </code></pre></div>
 <h3 id="indexerproperties"><strong><code>indexer.properties</code></strong></h3>
 <p>In addition to the required envelope and location attributes, the schema for the index store may expose other custom attributes which can be used later for filtering the ImageMosaic granules on the fly during a WMS or WCS request or to diver WMS and WCS dimensions like TIME, ELEVATION and so on. This is configured by the <strong><code>indexer.properties</code></strong> file:</p>
-<hr />
-<p>Parameter                    Mandatory?   Description</p>
-<hr />
-<p>Schema                       Y            A comma-separated sequence describing the mapping between attribute and data type.</p>
-<p>PropertyCollectors           Y            A comma-separated list of PropertyCollectors. Each entry in the list includes the extractor class, the file name (within square brackets <code>[ ]</code> and not including the <code>.properties</code> suffix) containing the regular expression needed to extract the attribute value from the granule file name, and the attribute name (within parentheses <code>( )</code>). The instance of the extractor class also indicates the type of object computed by the specific collector, so a <code>TimestampFileNameExtractorSPI</code> will return <code>Timestamps</code> while a <code>DoubleFileNameExtractorSPI</code> will return <code>Double</code> numbers.</p>
-<p>TimeAttribute                N            Specifies the name of the time-variant attribute.</p>
-<p>ElevationAttribute           N            Specifies the name of the elevation attribute.</p>
-<p>AuxiliaryFile                N            Path to an auxiliary file to be used for internal purposes (For example: when dealing with NetCDF granules, it refers to the NetCDF XML ancillary file.)</p>
-<p>AbsolutePath                 N            Controls whether or not the path stored inside the <code>location</code> attribute represents an absolute path or a path relative to the location of the shapefile index. Notice that a relative index ensures better portability of the mosaic itself. Default value for this parameter is <code>false</code>, which means relative paths.</p>
-<p>Caching                      N            Boolean value to enable caching. When set to <code>true</code>, the ImageMosaic will try to save in memory the entire contents of the index to reduce loading/query time. Set to <code>false</code> for a large granule index and/or if new granules are to be ingested (for example, when the index is on a database and we interact directly with it). Default is <code>false</code>.</p>
-<p>CanBeEmpty                   N            Boolean flag used for configuring empty mosaics. When enabled the ImageMosaic will not throw an exception caused by the absence of any coverage. By default it is set to <code>false</code>.</p>
-<p>Envelope2D                   N            Envelope for the mosaic formatted as <code>LLX,LLY URX,URY</code> (notice the space between the lower left and upper right coordinate pairs).</p>
-<p>ExpandToRGB                  N            Boolean flag to force color expansion from index color model (paletted datasets) to component color model (RGB). Default is <code>false</code>.</p>
-<p>IndexingDirectories          N            Comma separated values list of paths referring to directories containing granules to be indexed. If unspecified, the IndexingDirectory will be the mosaic configuration directory. This parameter allows configuration of a mosaic in a folder which contains only configuration files, while the granules to be indexed are stored somewhere else.</p>
-<p>Name                         N            The name to be assigned to the index. If unspecified, the index name will usually match the name of the folder containing the mosaic.</p>
-<p>NoData                       N            Specifies the NoData for the mosaic. (This might be useful, as an instance, when imposing the Envelope2D. At time of ImageMosaic's initialization, a small 5x5 pixels sample read is performed by ImageMosaic on the Envelope's corner in order to retrieve granule's metadata and properties, as nodata. If Envelope2D is forced in configuration, there might be the case that this sample read will not involve any actual granule so a default noData will be set which may be different with respect to what is actually stored on granules. Specifying the desired NoData property in indexer will solve this type of issue).</p>
-<p>CoverageNameCollectorSPI     N            As described in the previous row, the Name parameter allows specification of the coverage name to be exposed by the ImageMosaic. An ImageMosaic of NetCDFs instead exposes a coverage for each supported variable found in the NetCDF, using the variable's name as the coverage name (for instance, air_temperature, wind_speed, etc.) The optional CoverageNameCollectorSPI property allows specification of a CoverageNameCollector plugin to be used to instruct the ImageMosaic on how to setup different coverageNames for granules. It should contains the full name of the implementing class plus an optional set of semicolon-separated keyValue pairs prefixed by ":". See below for an example.</p>
-<p>Recursive                    N            Boolean flag used at indexing time. When set to <code>true</code>, the indexer will look for granules by scanning any subdirectory contained in the indexing directory. If <code>false</code>, only the main folder will be analyzed. Default is <code>true</code>.</p>
-<p>UseExistingSchema            N            Boolean flag used for enabling/disabling the use of existing schemas. When enabled, the ImageMosaic will start indexing granules using the existing database schema (from <strong><code>datastore.properties</code></strong>) instead of populating it. This is useful when you already have a database with a valid mosaic schema (the_geom, location and other attributes, take a look at gdalindex) or when you do not want to rename the images to add times and dimensions (you should simply add them to the table, to AdditionalDomainAttributes and to PropertyCollectors). Default is <code>false</code>.</p>
-<p>Wildcard                     N            Wildcard used to specify which files should be scanned by the indexer. (For instance: "*.tif"). Currently, logic operators and lists aren't supported, so this field is limited to a single wildcard element with no support for AND/OR operators combinations.</p>
-<p>WrapStore                    N            By default, Postgresql identifiers can't be longer than 63 chars. Longer names will be truncated to that fixed length. When dealing with multidimensional datasets (for instance: NetCDFs, GRIBs) each variable (NetCDF) or parameter (GRIB) is indexed into a table with the same name. Therefore an atmosphere-absorption-optical-thickness-due-to-particulate-organic-matter-ambient-aerosol-particles NetCDF CF variable will be associated to a table with the same name. Postgresql will truncate that to atmosphere-absorption-optical-thickness-due-to-particulate-orga breaking the one-to-one mapping and therefore breaking the proper functioning. Setting the WrapStore flag to <code>true</code> will establish a hidden mapping between full long names and truncated table names to support proper working.</p>
-<p>MosaicCRS                    N            The "native" CRS of the mosaic, that is, the one in which footprints are collected. Useful when dealing with granules in multiple CRSs (see tutorial)</p>
-<p>AdditionalDomainAttributes   N            Comma separate list of custom dimensions to be exposed. Each custom dimension declaration can be a simple attribute name from the schema, e.g., <code>runtime</code>, a mapping from dimension name to attribute name, e.g. <code>time2(runtime)</code>, or a mapping from a range dimension name to two attributes, e.g., <code>timerange(timeStart,timeEnd)</code></p>
-<p>PropertySelection            N            Boolean value to enable/disable selection of properties from the mosaic index. Default is <code>false</code>. When enabled, the ImageMosaic will try to load in memory only the properties needed to perform mosaicking. A typical use case is using a STAC API as a mosaic index, a STAC item typically contains many complex properties, and the API might be remote, reducing the payload improves both query time and memory usage.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Mandatory?</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Schema</td>
+<td>Y</td>
+<td>A comma-separated sequence describing the mapping between attribute and data type.</td>
+</tr>
+<tr>
+<td>PropertyCollectors</td>
+<td>Y</td>
+<td>A comma-separated list of PropertyCollectors. Each entry in the list includes the extractor class, the file name (within square brackets <code>[ ]</code> and not including the <code>.properties</code> suffix) containing the regular expression needed to extract the attribute value from the granule file name, and the attribute name (within parentheses <code>( )</code>). The instance of the extractor class also indicates the type of object computed by the specific collector, so a <code>TimestampFileNameExtractorSPI</code> will return <code>Timestamps</code> while a <code>DoubleFileNameExtractorSPI</code> will return <code>Double</code> numbers.</td>
+</tr>
+<tr>
+<td>TimeAttribute</td>
+<td>N</td>
+<td>Specifies the name of the time-variant attribute.</td>
+</tr>
+<tr>
+<td>ElevationAttribute</td>
+<td>N</td>
+<td>Specifies the name of the elevation attribute.</td>
+</tr>
+<tr>
+<td>AuxiliaryFile</td>
+<td>N</td>
+<td>Path to an auxiliary file to be used for internal purposes (For example: when dealing with NetCDF granules, it refers to the NetCDF XML ancillary file.)</td>
+</tr>
+<tr>
+<td>AbsolutePath</td>
+<td>N</td>
+<td>Controls whether or not the path stored inside the <code>location</code> attribute represents an absolute path or a path relative to the location of the shapefile index. Notice that a relative index ensures better portability of the mosaic itself. Default value for this parameter is <code>false</code>, which means relative paths.</td>
+</tr>
+<tr>
+<td>Caching</td>
+<td>N</td>
+<td>Boolean value to enable caching. When set to <code>true</code>, the ImageMosaic will try to save in memory the entire contents of the index to reduce loading/query time. Set to <code>false</code> for a large granule index and/or if new granules are to be ingested (for example, when the index is on a database and we interact directly with it). Default is <code>false</code>.</td>
+</tr>
+<tr>
+<td>CanBeEmpty</td>
+<td>N</td>
+<td>Boolean flag used for configuring empty mosaics. When enabled the ImageMosaic will not throw an exception caused by the absence of any coverage. By default it is set to <code>false</code>.</td>
+</tr>
+<tr>
+<td>Envelope2D</td>
+<td>N</td>
+<td>Envelope for the mosaic formatted as <code>LLX,LLY URX,URY</code> (notice the space between the lower left and upper right coordinate pairs).</td>
+</tr>
+<tr>
+<td>ExpandToRGB</td>
+<td>N</td>
+<td>Boolean flag to force color expansion from index color model (paletted datasets) to component color model (RGB). Default is <code>false</code>.</td>
+</tr>
+<tr>
+<td>IndexingDirectories</td>
+<td>N</td>
+<td>Comma separated values list of paths referring to directories containing granules to be indexed. If unspecified, the IndexingDirectory will be the mosaic configuration directory. This parameter allows configuration of a mosaic in a folder which contains only configuration files, while the granules to be indexed are stored somewhere else.</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>N</td>
+<td>The name to be assigned to the index. If unspecified, the index name will usually match the name of the folder containing the mosaic.</td>
+</tr>
+<tr>
+<td>NoData</td>
+<td>N</td>
+<td>Specifies the NoData for the mosaic. (This might be useful, as an instance, when imposing the Envelope2D. At time of ImageMosaic's initialization, a small 5x5 pixels sample read is performed by ImageMosaic on the Envelope's corner in order to retrieve granule's metadata and properties, as nodata. If Envelope2D is forced in configuration, there might be the case that this sample read will not involve any actual granule so a default noData will be set which may be different with respect to what is actually stored on granules. Specifying the desired NoData property in indexer will solve this type of issue).</td>
+</tr>
+<tr>
+<td>CoverageNameCollectorSPI</td>
+<td>N</td>
+<td>As described in the previous row, the Name parameter allows specification of the coverage name to be exposed by the ImageMosaic. An ImageMosaic of NetCDFs instead exposes a coverage for each supported variable found in the NetCDF, using the variable's name as the coverage name (for instance, air_temperature, wind_speed, etc.) The optional CoverageNameCollectorSPI property allows specification of a CoverageNameCollector plugin to be used to instruct the ImageMosaic on how to setup different coverageNames for granules. It should contains the full name of the implementing class plus an optional set of semicolon-separated keyValue pairs prefixed by ":". See below for an example.</td>
+</tr>
+<tr>
+<td>Recursive</td>
+<td>N</td>
+<td>Boolean flag used at indexing time. When set to <code>true</code>, the indexer will look for granules by scanning any subdirectory contained in the indexing directory. If <code>false</code>, only the main folder will be analyzed. Default is <code>true</code>.</td>
+</tr>
+<tr>
+<td>UseExistingSchema</td>
+<td>N</td>
+<td>Boolean flag used for enabling/disabling the use of existing schemas. When enabled, the ImageMosaic will start indexing granules using the existing database schema (from <strong><code>datastore.properties</code></strong>) instead of populating it. This is useful when you already have a database with a valid mosaic schema (the_geom, location and other attributes, take a look at gdalindex) or when you do not want to rename the images to add times and dimensions (you should simply add them to the table, to AdditionalDomainAttributes and to PropertyCollectors). Default is <code>false</code>.</td>
+</tr>
+<tr>
+<td>Wildcard</td>
+<td>N</td>
+<td>Wildcard used to specify which files should be scanned by the indexer. (For instance: "*.tif"). Currently, logic operators and lists aren't supported, so this field is limited to a single wildcard element with no support for AND/OR operators combinations.</td>
+</tr>
+<tr>
+<td>WrapStore</td>
+<td>N</td>
+<td>By default, Postgresql identifiers can't be longer than 63 chars. Longer names will be truncated to that fixed length. When dealing with multidimensional datasets (for instance: NetCDFs, GRIBs) each variable (NetCDF) or parameter (GRIB) is indexed into a table with the same name. Therefore an atmosphere-absorption-optical-thickness-due-to-particulate-organic-matter-ambient-aerosol-particles NetCDF CF variable will be associated to a table with the same name. Postgresql will truncate that to atmosphere-absorption-optical-thickness-due-to-particulate-orga breaking the one-to-one mapping and therefore breaking the proper functioning. Setting the WrapStore flag to <code>true</code> will establish a hidden mapping between full long names and truncated table names to support proper working.</td>
+</tr>
+<tr>
+<td>MosaicCRS</td>
+<td>N</td>
+<td>The "native" CRS of the mosaic, that is, the one in which footprints are collected. Useful when dealing with granules in multiple CRSs (see tutorial)</td>
+</tr>
+<tr>
+<td>AdditionalDomainAttributes</td>
+<td>N</td>
+<td>Comma separate list of custom dimensions to be exposed. Each custom dimension declaration can be a simple attribute name from the schema, e.g., <code>runtime</code>, a mapping from dimension name to attribute name, e.g. <code>time2(runtime)</code>, or a mapping from a range dimension name to two attributes, e.g., <code>timerange(timeStart,timeEnd)</code></td>
+</tr>
+<tr>
+<td>PropertySelection</td>
+<td>N</td>
+<td>Boolean value to enable/disable selection of properties from the mosaic index. Default is <code>false</code>. When enabled, the ImageMosaic will try to load in memory only the properties needed to perform mosaicking. A typical use case is using a STAC API as a mosaic index, a STAC item typically contains many complex properties, and the API might be remote, reducing the payload improves both query time and memory usage.</td>
+</tr>
+</tbody>
+</table>
 <p>Here is a sample <strong><code>indexer.properties</code></strong> file:</p>
 <div class="language-text highlight"><pre><span></span><code>Schema=*the_geom:Polygon,location:String,ingestion:java.util.Date,elevation:Double
 PropertyCollectors=TimestampFileNameExtractorSPI[timeregex](ingestion),DoubleFileNameExtractorSPI[elevationregex](elevation)
@@ -2359,18 +2509,48 @@ AbsolutePath=false
 </div>
 <h3 id="property-collectors">Property collectors</h3>
 <p>The following table enumerates the available property collectors</p>
-<hr />
-<p>Collector SPI name                                                                                                                                             Description</p>
-<hr />
-<p>ByteFileNameExtractorSPI DoubleFileNameExtractorSPI FloatFileNameExtractorSPI IntegerFileNameExtractorSPI LongFileNameExtractorSPI ShortFileNameExtractorSPI   Extracts an number from the file name using a regular expression specified in a sidecar file, casting it to the desired type based on the SPI name (e..g, DoubleFileNameExtractorSPI extracts double precision floating points, IntegerFileNameExtractorSPI extracts 32 bit integers)</p>
-<p>TimestampFileNameExtractorSPI                                                                                                                                  Extracts a timestamp from the filename using a regular expression specified in a sidecar file</p>
-<p>StringFileNameExtractorSPI                                                                                                                                     Extracts a string from the filename using a regular expression specified in a sidecar file</p>
-<p>CurrentDateExtractorSPI                                                                                                                                        Returns the current date and time (useful to track ingestion times in a mosaic)</p>
-<p>FSDateExtractorSPI                                                                                                                                             Returns the creation date of the file being harvested</p>
-<p>DateExtractorSPI                                                                                                                                               Returns the date found in tiff file header "DateTime" (code 306)</p>
-<p>ResolutionExtractorSPI ResolutionXExtractorSPI ResolutionYExtractorSPI                                                                                         Returns the native resolution of the raster being harvested. ResolutionExtractorSPI and ResolutionXExtractorSPI return the x resolution of the raster, ResolutionYExtractorSPI returns the resolution on the Y axis instead</p>
-<p>CRSExtractorSPI                                                                                                                                                Returns the code of the raster coordinate reference system, as a string, e.g. "EPSG:4326"</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Collector SPI name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ByteFileNameExtractorSPI DoubleFileNameExtractorSPI FloatFileNameExtractorSPI IntegerFileNameExtractorSPI LongFileNameExtractorSPI ShortFileNameExtractorSPI</td>
+<td>Extracts an number from the file name using a regular expression specified in a sidecar file, casting it to the desired type based on the SPI name (e..g, DoubleFileNameExtractorSPI extracts double precision floating points, IntegerFileNameExtractorSPI extracts 32 bit integers)</td>
+</tr>
+<tr>
+<td>TimestampFileNameExtractorSPI</td>
+<td>Extracts a timestamp from the filename using a regular expression specified in a sidecar file</td>
+</tr>
+<tr>
+<td>StringFileNameExtractorSPI</td>
+<td>Extracts a string from the filename using a regular expression specified in a sidecar file</td>
+</tr>
+<tr>
+<td>CurrentDateExtractorSPI</td>
+<td>Returns the current date and time (useful to track ingestion times in a mosaic)</td>
+</tr>
+<tr>
+<td>FSDateExtractorSPI</td>
+<td>Returns the creation date of the file being harvested</td>
+</tr>
+<tr>
+<td>DateExtractorSPI</td>
+<td>Returns the date found in tiff file header "DateTime" (code 306)</td>
+</tr>
+<tr>
+<td>ResolutionExtractorSPI ResolutionXExtractorSPI ResolutionYExtractorSPI</td>
+<td>Returns the native resolution of the raster being harvested. ResolutionExtractorSPI and ResolutionXExtractorSPI return the x resolution of the raster, ResolutionYExtractorSPI returns the resolution on the Y axis instead</td>
+</tr>
+<tr>
+<td>CRSExtractorSPI</td>
+<td>Returns the code of the raster coordinate reference system, as a string, e.g. "EPSG:4326"</td>
+</tr>
+</tbody>
+</table>
 <p>The <code>PropertyCollectors</code> parameter in the example above indicates two additional <code>.properties</code> files used to populate the <code>ingestion</code> and <code>elevation</code> attributes:</p>
 <p><strong><code>timeregex.properties</code></strong>:</p>
 <div class="language-text highlight"><pre><span></span><code>regex=[0-9]{8}T[0-9]{9}Z(\?!.*[0-9]{8}T[0-9]{9}Z.*)
@@ -2413,15 +2593,36 @@ AbsolutePath=false
 <em>ImageMosaic in the list of raster data stores</em></p>
 <p><img alt="" src="../images/imagemosaicconfigure.png" />
 <em>Configuring an ImageMosaic data store</em></p>
-<hr />
-<p>Option                 Description</p>
-<hr />
-<p><strong>Workspace</strong>          Workspace for the store</p>
-<p><strong>Data Source Name</strong>   Name of the store</p>
-<p><strong>Description</strong>        Description of the store</p>
-<p><strong>Enabled</strong>            Determines whether the store is enabled. If unchecked, all layers in the store will be disabled.</p>
-<p><strong>URL</strong>                The location of the store. Can be a local directory.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Workspace</strong></td>
+<td>Workspace for the store</td>
+</tr>
+<tr>
+<td><strong>Data Source Name</strong></td>
+<td>Name of the store</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Description of the store</td>
+</tr>
+<tr>
+<td><strong>Enabled</strong></td>
+<td>Determines whether the store is enabled. If unchecked, all layers in the store will be disabled.</td>
+</tr>
+<tr>
+<td><strong>URL</strong></td>
+<td>The location of the store. Can be a local directory.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="coverage-parameters">Coverage parameters</h2>
 <p>Creation of the store is the first step to getting an ImageMosaic published in GeoServer. Most of the configuration is done when publishing the resulting coverage (layer).</p>
 <p>The Coverage Editor gives users the possibility to set a few control parameters to further control the mosaic creation process.</p>

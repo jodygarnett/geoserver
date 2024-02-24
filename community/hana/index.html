@@ -3936,16 +3936,48 @@
 <p><img alt="" src="images/hana-options.png" />
 <em>Configuring a SAP HANA data store</em></p>
 <p>The following options are relevant for SAP HANA:</p>
-<hr />
-<p><code>host</code>         The machine name or IP address to connect to.</p>
-<p><code>port</code>         The port to connect to. If set and different from 0, the parameters <code>instance</code> and <code>database</code> are ignored. If not set or 0, the <code>instance</code> parameter must be set.</p>
-<p><code>instance</code>     The instance to connect to. This parameter is ignored if a port is set. The <code>instance</code> field is at the bottom of the configuration form in case you have difficulties locating it.</p>
-<p><code>database</code>     The database to connect to. Leave empty in case of single-container databases. Set to <code>SYSTEMDB</code> to connect to the system database of a multi-container database. This parameter is ignored if a port is set.</p>
-<p><code>schema</code>       The database schema to access. If left blank, the user-specific database schema is accessed.</p>
-<p><code>user</code>         The database user used to connect to the database.</p>
-<p><code>passwd</code>       The password used to connect to the database.</p>
-<p><code>use ssl</code>      If checked the TLS/SSL cryptographic protocol is used to establish a secure connection with the database.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>host</code></td>
+<td>The machine name or IP address to connect to.</td>
+</tr>
+<tr>
+<td><code>port</code></td>
+<td>The port to connect to. If set and different from 0, the parameters <code>instance</code> and <code>database</code> are ignored. If not set or 0, the <code>instance</code> parameter must be set.</td>
+</tr>
+<tr>
+<td><code>instance</code></td>
+<td>The instance to connect to. This parameter is ignored if a port is set. The <code>instance</code> field is at the bottom of the configuration form in case you have difficulties locating it.</td>
+</tr>
+<tr>
+<td><code>database</code></td>
+<td>The database to connect to. Leave empty in case of single-container databases. Set to <code>SYSTEMDB</code> to connect to the system database of a multi-container database. This parameter is ignored if a port is set.</td>
+</tr>
+<tr>
+<td><code>schema</code></td>
+<td>The database schema to access. If left blank, the user-specific database schema is accessed.</td>
+</tr>
+<tr>
+<td><code>user</code></td>
+<td>The database user used to connect to the database.</td>
+</tr>
+<tr>
+<td><code>passwd</code></td>
+<td>The password used to connect to the database.</td>
+</tr>
+<tr>
+<td><code>use ssl</code></td>
+<td>If checked the TLS/SSL cryptographic protocol is used to establish a secure connection with the database.</td>
+</tr>
+</tbody>
+</table>
 
 
 

@@ -4075,17 +4075,60 @@
 <p>The design of the OpenSearch module is "data driven", meaning that one can materialize new search properties by just adding new columns to the product and collection tables.</p>
 <p>In particular, both tables have a "prefix based" convention linking the properties to their respective product types, and the engine will advertise for a particular product only the properties relevant to it. For example, in an optical product, the properties starting with "opt" will be listed, but not those starting with "sar".</p>
 <p>Here is a table of the product classes known out of the box:</p>
-<hr />
-<p>Name          Prefix   Namespace                          Description</p>
-<hr />
-<p>eop_generic   eop      <a href="http://www.opengis.net/eop/2.1">http://www.opengis.net/eop/2.1</a>   Base properties shared among all EO products. Never remove this class.</p>
-<p>optical       opt      <a href="http://www.opengis.net/opt/2.1">http://www.opengis.net/opt/2.1</a>   Optical products properties</p>
-<p>radar         sar      <a href="http://www.opengis.net/sar/2.1">http://www.opengis.net/sar/2.1</a>   Radar products properties</p>
-<p>Altimetric    alt      <a href="http://www.opengis.net/alt/2.1">http://www.opengis.net/alt/2.1</a>   Altimetric products properties</p>
-<p>Atmospheric   atm      <a href="http://www.opengis.net/atm/2.1">http://www.opengis.net/atm/2.1</a>   Atmospheric products properties</p>
-<p>Limb          lmb      <a href="http://www.opengis.net/lmb/2.1">http://www.opengis.net/lmb/2.1</a>   Limb products properties</p>
-<p>ssp           ssp      <a href="http://www.opengis.net/ssp/2.1">http://www.opengis.net/ssp/2.1</a>   SSP products properties</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Prefix</th>
+<th>Namespace</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>eop_generic</td>
+<td>eop</td>
+<td><a href="http://www.opengis.net/eop/2.1">http://www.opengis.net/eop/2.1</a></td>
+<td>Base properties shared among all EO products. Never remove this class.</td>
+</tr>
+<tr>
+<td>optical</td>
+<td>opt</td>
+<td><a href="http://www.opengis.net/opt/2.1">http://www.opengis.net/opt/2.1</a></td>
+<td>Optical products properties</td>
+</tr>
+<tr>
+<td>radar</td>
+<td>sar</td>
+<td><a href="http://www.opengis.net/sar/2.1">http://www.opengis.net/sar/2.1</a></td>
+<td>Radar products properties</td>
+</tr>
+<tr>
+<td>Altimetric</td>
+<td>alt</td>
+<td><a href="http://www.opengis.net/alt/2.1">http://www.opengis.net/alt/2.1</a></td>
+<td>Altimetric products properties</td>
+</tr>
+<tr>
+<td>Atmospheric</td>
+<td>atm</td>
+<td><a href="http://www.opengis.net/atm/2.1">http://www.opengis.net/atm/2.1</a></td>
+<td>Atmospheric products properties</td>
+</tr>
+<tr>
+<td>Limb</td>
+<td>lmb</td>
+<td><a href="http://www.opengis.net/lmb/2.1">http://www.opengis.net/lmb/2.1</a></td>
+<td>Limb products properties</td>
+</tr>
+<tr>
+<td>ssp</td>
+<td>ssp</td>
+<td><a href="http://www.opengis.net/ssp/2.1">http://www.opengis.net/ssp/2.1</a></td>
+<td>SSP products properties</td>
+</tr>
+</tbody>
+</table>
 <p>The various properties have different usages:</p>
 <ul>
 <li>The <em>name</em> is used in the collection to define the type of sensor (eoSensorType column)</li>

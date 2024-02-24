@@ -2235,43 +2235,115 @@
 <p>To add a new XML user/group service, click the <strong>Add new</strong> link. XML is the default option. The following figure shows the configuration options for an XML user/group service.</p>
 <p><img alt="" src="../images/ugr_ugxmlsettings.png" />
 <em>Adding an XML user/group service</em></p>
-<hr />
-<p>Option                       Description</p>
-<hr />
-<p>Name                         The name of the user/group service</p>
-<p>Password encryption          Sets the type of <a href="../../passwd/#security_passwd_encryption">Password encryption</a>. Options are <strong>Plain text</strong>, <strong>Weak PBE</strong>, <strong>Strong PBE</strong>, and <strong>Digest</strong>.</p>
-<p>Password policy              Sets the <a href="../../passwd/#security_passwd_policy">password policy</a>. Options are any active password policies as set in the <a href="../passwords/">Passwords</a> section.</p>
-<p>XML filename                 Name of the file that will contain the user and group information. Default is <strong><code>users.xml</code></strong> in the <code>security/usergroup/&lt;name_of_usergroupservice&gt;</code> directory.</p>
-<p>Enable schema validation     If selected, forces schema validation to occur every time the XML file is read. This option is useful when editing the XML file by hand.</p>
-<p>File reload interval         Defines the frequency (in milliseconds) in which GeoServer will check for changes to the XML file. If the file is found to have been modified, GeoServer will recreate the user/group database based on the current state of the file. This value is meant to be set in cases where the XML file contents might change "out of process" and not directly through the web admin interface. The value is specified in milliseconds. A value of 0 disables any checking of the file.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>The name of the user/group service</td>
+</tr>
+<tr>
+<td>Password encryption</td>
+<td>Sets the type of <a href="../../passwd/#security_passwd_encryption">Password encryption</a>. Options are <strong>Plain text</strong>, <strong>Weak PBE</strong>, <strong>Strong PBE</strong>, and <strong>Digest</strong>.</td>
+</tr>
+<tr>
+<td>Password policy</td>
+<td>Sets the <a href="../../passwd/#security_passwd_policy">password policy</a>. Options are any active password policies as set in the <a href="../passwords/">Passwords</a> section.</td>
+</tr>
+<tr>
+<td>XML filename</td>
+<td>Name of the file that will contain the user and group information. Default is <strong><code>users.xml</code></strong> in the <code>security/usergroup/&lt;name_of_usergroupservice&gt;</code> directory.</td>
+</tr>
+<tr>
+<td>Enable schema validation</td>
+<td>If selected, forces schema validation to occur every time the XML file is read. This option is useful when editing the XML file by hand.</td>
+</tr>
+<tr>
+<td>File reload interval</td>
+<td>Defines the frequency (in milliseconds) in which GeoServer will check for changes to the XML file. If the file is found to have been modified, GeoServer will recreate the user/group database based on the current state of the file. This value is meant to be set in cases where the XML file contents might change "out of process" and not directly through the web admin interface. The value is specified in milliseconds. A value of 0 disables any checking of the file.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="add-new-jdbc-usergroup-service">Add new JDBC user/group service</h2>
 <p>To add a new JDBC user/group service, click the <strong>Add new</strong> link, and then the <strong>JDBC</strong> option at the top of the following form. The following figure shows the configuration options for a JDBC user/group service.</p>
 <p><img alt="" src="../images/ugr_ugjdbcsettings.png" />
 <em>Adding a user/group service via JDBC</em></p>
-<hr />
-<p>Option                                  Description</p>
-<hr />
-<p>Name                                    Name of the JDBC user/group service in GeoServer</p>
-<p>Password encryption                     The method to used to <a href="../../passwd/#security_passwd_encryption">encrypt user passwords</a></p>
-<p>Password policy                         The <a href="../../passwd/#security_passwd_policy">policy</a> to use to enforce constraints on user passwords</p>
-<p>JNDI                                    When unchecked, specifies a direct connection to the database. When checked, specifies an existing connection located through <a href="../../../data/database/jndi/">JNDI</a>.</p>
-<p>Driver class name                       JDBC driver to use for the database connection</p>
-<p>Connection URL                          Specifies the JDBC URL to use when creating the database connection</p>
-<p>Username                                Username to use when connecting to the database</p>
-<p>Password                                Password to use when connecting to the database</p>
-<p>Create database tables                  Specifies whether to create all the necessary tables in the underlying database</p>
-<p>Data Definition Language (DDL) file     Specifies a custom DDL file to use for creating tables in the underlying database, for cases where the default DDL statements fail on the given database. If left blank, internal defaults are used.</p>
-<p>Data Manipulation Language (DML) file   Specifies a custom DML file to use for accessing tables in the underlying database, for cases where the default DML statements fail on the given database. If left blank, internal defaults are used.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Name of the JDBC user/group service in GeoServer</td>
+</tr>
+<tr>
+<td>Password encryption</td>
+<td>The method to used to <a href="../../passwd/#security_passwd_encryption">encrypt user passwords</a></td>
+</tr>
+<tr>
+<td>Password policy</td>
+<td>The <a href="../../passwd/#security_passwd_policy">policy</a> to use to enforce constraints on user passwords</td>
+</tr>
+<tr>
+<td>JNDI</td>
+<td>When unchecked, specifies a direct connection to the database. When checked, specifies an existing connection located through <a href="../../../data/database/jndi/">JNDI</a>.</td>
+</tr>
+<tr>
+<td>Driver class name</td>
+<td>JDBC driver to use for the database connection</td>
+</tr>
+<tr>
+<td>Connection URL</td>
+<td>Specifies the JDBC URL to use when creating the database connection</td>
+</tr>
+<tr>
+<td>Username</td>
+<td>Username to use when connecting to the database</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>Password to use when connecting to the database</td>
+</tr>
+<tr>
+<td>Create database tables</td>
+<td>Specifies whether to create all the necessary tables in the underlying database</td>
+</tr>
+<tr>
+<td>Data Definition Language (DDL) file</td>
+<td>Specifies a custom DDL file to use for creating tables in the underlying database, for cases where the default DDL statements fail on the given database. If left blank, internal defaults are used.</td>
+</tr>
+<tr>
+<td>Data Manipulation Language (DML) file</td>
+<td>Specifies a custom DML file to use for accessing tables in the underlying database, for cases where the default DML statements fail on the given database. If left blank, internal defaults are used.</td>
+</tr>
+</tbody>
+</table>
 <p>In addition to the parameters listed above, the following additional parameter will apply when the <a href="../../../data/database/jndi/">JNDI</a> flag is set.</p>
 <p><img alt="" src="../images/ugr_ugjdbcjndisettings.png" />
 <em>Adding a user/group service via JDBC with JNDI</em></p>
-<hr />
-<p>Option                       Description</p>
-<hr />
-<p>JNDI resource name           JNDI name used to locate the database connection.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JNDI resource name</td>
+<td>JNDI name used to locate the database connection.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="add-new-ldap-usergroup-service">Add new LDAP user/group service</h2>
 <p>To add a new LDAP user/group service, click the <strong>Add new</strong> link, and then the <strong>LDAP</strong> option at the top of the following form. The following figure shows the configuration options for a LDAP user/group service.</p>
 <p><img alt="" src="../images/ldap_group_service.png" />
@@ -2337,20 +2409,56 @@
 <h3 id="security_webadmin_users">Add user</h3>
 <p><img alt="" src="../images/ugr_newuser.png" />
 <em>Creating or editing a user</em></p>
-<hr />
-<p>Option                               Description</p>
-<hr />
-<p>User name                            The name of the user</p>
-<p>Enabled                              When selected, will enable the user to authenticate</p>
-<p>Password                             The password for this user. Existing passwords will be obscured when viewed.</p>
-<p>Confirm password                     To set or change the password enter the password twice.</p>
-<p>User properties                      Key/value pairs associated with the user. Used for associating additional information with the user.</p>
-<p>Group list                           Full list of groups, including list of groups to which the user is a member. Membership can be toggled here via the arrow buttons.</p>
-<p>Add a new group                      Shortcut to adding a new group. Also available in the Groups tab.</p>
-<p>Role list                            Full list of roles, including a list of roles to which the user is associated. Association can be toggled here via the arrow buttons.</p>
-<p>Add a new role                       Shortcut to adding a new role</p>
-<p>List of current roles for the user   List of current roles associated with the user. Click a role to enable editing.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>User name</td>
+<td>The name of the user</td>
+</tr>
+<tr>
+<td>Enabled</td>
+<td>When selected, will enable the user to authenticate</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>The password for this user. Existing passwords will be obscured when viewed.</td>
+</tr>
+<tr>
+<td>Confirm password</td>
+<td>To set or change the password enter the password twice.</td>
+</tr>
+<tr>
+<td>User properties</td>
+<td>Key/value pairs associated with the user. Used for associating additional information with the user.</td>
+</tr>
+<tr>
+<td>Group list</td>
+<td>Full list of groups, including list of groups to which the user is a member. Membership can be toggled here via the arrow buttons.</td>
+</tr>
+<tr>
+<td>Add a new group</td>
+<td>Shortcut to adding a new group. Also available in the Groups tab.</td>
+</tr>
+<tr>
+<td>Role list</td>
+<td>Full list of roles, including a list of roles to which the user is associated. Association can be toggled here via the arrow buttons.</td>
+</tr>
+<tr>
+<td>Add a new role</td>
+<td>Shortcut to adding a new role</td>
+</tr>
+<tr>
+<td>List of current roles for the user</td>
+<td>List of current roles associated with the user. Click a role to enable editing.</td>
+</tr>
+</tbody>
+</table>
 <p>The Groups tab provides configuration options for groups in this user/group service. There are options to add and remove a group, with an additional option to remove a group and the roles associated with that group.</p>
 <p><img alt="" src="../images/ugr_uggroups.png" />
 <em>Groups tab</em></p>
@@ -2365,14 +2473,32 @@
 <h3 id="add-group">Add group</h3>
 <p><img alt="" src="../images/ugr_newgroup.png" />
 <em>Creating or editing a group</em></p>
-<hr />
-<p>Option                       Description</p>
-<hr />
-<p>Group name                   The name of the group</p>
-<p>Enabled                      When selected the group will be active</p>
-<p>Role list                    Full list of roles, including a list of roles to which the group is associated. Association can be toggled here via the arrow buttons.</p>
-<p>Add a new role               Shortcut to adding a new role</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Group name</td>
+<td>The name of the group</td>
+</tr>
+<tr>
+<td>Enabled</td>
+<td>When selected the group will be active</td>
+</tr>
+<tr>
+<td>Role list</td>
+<td>Full list of roles, including a list of roles to which the group is associated. Association can be toggled here via the arrow buttons.</td>
+</tr>
+<tr>
+<td>Add a new role</td>
+<td>Shortcut to adding a new role</td>
+</tr>
+</tbody>
+</table>
 <p>In this menu, user/group services can be added, removed, or edited. By default, there is one user/group service in GeoServer, which is <a href="../../usergrouprole/usergroupservices/#security_rolesystem_usergroupxml">XML-based</a>. It is encrypted with <a href="../../passwd/#security_passwd_encryption">Weak PBE</a> and uses the default <a href="../../passwd/#security_passwd_policy">password policy</a>. It is also possible to have a user/group service based on <a href="../../usergrouprole/usergroupservices/#security_rolesystem_usergroupjdbc">JDBC</a> with or without JNDI.</p>
 <h2 id="security_webadmin_roleservices">Role services</h2>
 <p>In this menu, role services can be added, removed, or edited. By default, the active role service in GeoServer is <a href="../../usergrouprole/roleservices/#security_rolesystem_rolexml">XML-based</a>, but it is also possible to have a role service based on <a href="../../usergrouprole/roleservices/#security_rolesystem_rolejdbc">JDBC</a>, with or without JNDI.</p>
@@ -2389,65 +2515,185 @@
 <p>To add a new XML role service, click the <strong>Add new</strong> link. XML is the default option. The following figure shows the configuration options for an XML role service.</p>
 <p><img alt="" src="../images/ugr_rolexmlsettings.png" />
 <em>Adding an XML role service</em></p>
-<hr />
-<p>Option                       Description</p>
-<hr />
-<p>Name                         The name of the role service</p>
-<p>Administrator role           The name of the role that performs the administrator functions</p>
-<p>XML filename                 Name of the file that will contain the role information. Default is <strong><code>roles.xml</code></strong> in the <code>security/role/&lt;name_of_roleservice&gt;</code> directory.</p>
-<p>File reload interval         Defines the frequency (in milliseconds) in which GeoServer will check for changes to the XML file. If the file is found to have been modified, GeoServer will recreate the user/group database based on the current state of the file. This value is meant to be set in cases where the XML file contents might change "out of process" and not directly through the web admin interface. The value is specified in milliseconds. A value of 0 disables any checking of the file.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>The name of the role service</td>
+</tr>
+<tr>
+<td>Administrator role</td>
+<td>The name of the role that performs the administrator functions</td>
+</tr>
+<tr>
+<td>XML filename</td>
+<td>Name of the file that will contain the role information. Default is <strong><code>roles.xml</code></strong> in the <code>security/role/&lt;name_of_roleservice&gt;</code> directory.</td>
+</tr>
+<tr>
+<td>File reload interval</td>
+<td>Defines the frequency (in milliseconds) in which GeoServer will check for changes to the XML file. If the file is found to have been modified, GeoServer will recreate the user/group database based on the current state of the file. This value is meant to be set in cases where the XML file contents might change "out of process" and not directly through the web admin interface. The value is specified in milliseconds. A value of 0 disables any checking of the file.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="add-new-jdbc-role-service">Add new JDBC role service</h2>
 <p>To add a new XML role service, click the <strong>Add new</strong> link, and then the <strong>JDBC</strong> option at the top of the following form. The following figure shows the configuration options for a JDBC role service.</p>
 <p><img alt="" src="../images/ugr_rolejdbcsettings.png" />
 <em>Adding a role service via JDBC</em></p>
-<hr />
-<p>Option                                  Description</p>
-<hr />
-<p>Name                                    Name of the JDBC role service in GeoServer</p>
-<p>Administrator role                      The name of the role that performs the administrator function</p>
-<p>JNDI                                    When unchecked, specifies a direct connection to the database. When checked, specifies an existing connection located through <a href="../../../data/database/jndi/">JNDI</a>.</p>
-<p>Driver class name                       JDBC driver to use for the database connection</p>
-<p>Connection URL                          Specifies the JDBC URL to use when creating the database connection</p>
-<p>Username                                Username to use when connecting to the database</p>
-<p>Password                                Password to use when connecting to the database</p>
-<p>Create database tables                  Specifies whether to create all the necessary tables in the underlying database</p>
-<p>Data Definition Language (DDL) file     Specifies a custom DDL file to use for creating tables in the underlying database, for cases where the default DDL statements fail on the given database. If left blank, internal defaults are used.</p>
-<p>Data Manipulation Language (DML) file   Specifies a custom DML file to use for accessing tables in the underlying database, for cases where the default DML statements fail on the given database. If left blank, internal defaults are used.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Name of the JDBC role service in GeoServer</td>
+</tr>
+<tr>
+<td>Administrator role</td>
+<td>The name of the role that performs the administrator function</td>
+</tr>
+<tr>
+<td>JNDI</td>
+<td>When unchecked, specifies a direct connection to the database. When checked, specifies an existing connection located through <a href="../../../data/database/jndi/">JNDI</a>.</td>
+</tr>
+<tr>
+<td>Driver class name</td>
+<td>JDBC driver to use for the database connection</td>
+</tr>
+<tr>
+<td>Connection URL</td>
+<td>Specifies the JDBC URL to use when creating the database connection</td>
+</tr>
+<tr>
+<td>Username</td>
+<td>Username to use when connecting to the database</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>Password to use when connecting to the database</td>
+</tr>
+<tr>
+<td>Create database tables</td>
+<td>Specifies whether to create all the necessary tables in the underlying database</td>
+</tr>
+<tr>
+<td>Data Definition Language (DDL) file</td>
+<td>Specifies a custom DDL file to use for creating tables in the underlying database, for cases where the default DDL statements fail on the given database. If left blank, internal defaults are used.</td>
+</tr>
+<tr>
+<td>Data Manipulation Language (DML) file</td>
+<td>Specifies a custom DML file to use for accessing tables in the underlying database, for cases where the default DML statements fail on the given database. If left blank, internal defaults are used.</td>
+</tr>
+</tbody>
+</table>
 <p>In addition to the parameters listed above, the following additional parameter will apply when the <a href="../../../data/database/jndi/">JNDI</a> flag is set.</p>
 <p><img alt="" src="../images/ugr_rolejdbcjndisettings.png" />
 <em>Adding a role service via JDBC with JNDI</em></p>
-<hr />
-<p>Option                       Description</p>
-<hr />
-<p>JNDI resource name           JNDI name used to locate the database connection.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JNDI resource name</td>
+<td>JNDI name used to locate the database connection.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="add-new-ldap-role-service">Add new LDAP role service</h2>
 <p>To add a new LDAP role service, click the <strong>Add new</strong> link, and then the <strong>LDAP</strong> option at the top of the following form. The following figure shows the configuration options for a LDAP role service.</p>
 <p><img alt="" src="../images/ldap_role_empty.png" />
 <em>Adding a role service via LDAP</em></p>
-<hr />
-<p>Option                                     Description</p>
-<hr />
-<p>Name                                       Name of the LDAP role service in GeoServer</p>
-<p>Administrator role                         The name of the role that performs the administrator function</p>
-<p>Group administrator role                   The name of the role that performs the group administrator function</p>
-<p>Server URL                                 URL for the LDAP server connection. It must include the protocol, host, and port, as well as the "distinguished name" (DN) for the root of the LDAP tree.</p>
-<p>TLS                                        Enables a STARTTLS connection. (See the section on <a href="../../auth/providers/#security_auth_provider_ldap_secure">Secure LDAP connections</a>.)</p>
-<p>Group search base                          Relative name of the node in the tree to use as the base for LDAP groups. Example: <code>ou=groups</code>. The root DN specified as port of the <em>Server URL</em> is automatically appended.</p>
-<p>Group user membership search filter        Search pattern for extracting users of a LDAP group a user belongs to. This may contain some placeholder values: <code>{0}</code>, the <code>username</code> of the user, for example <code>bob</code>. <code>{1}</code>, the full DN of the user, for example <code>uid=bob,ou=users</code>. To use this placeholder, the <em>Filter used to lookup user</em> needs to be defined, so that the dn of a user can be extracted from its username.</p>
-<p>All groups search filter                   Search pattern for locating the LDAP groups to be mapped to GeoServer roles inside the <em>Group search base</em> root node</p>
-<p>Filter used to lookup user.                optional filter used to extract a user dn, to be used together with <em>Group user membership search filter</em> when the {1} placeholder is specified. This may contain a placeholder value: <code>{0}</code>, the <code>username</code> of the user, for example <code>bob</code>.</p>
-<p>Role prefix                                Prefix appended in front of role names extracted from the LDAP. If left blank, no prefix will be inserted.</p>
-<p>Convert Role To Upper Case                 If selected all role names extracted from the LDAP will be converted to upper case.</p>
-<p>Authenticate to extract roles              When checked all LDAP searches will be done in authenticated mode, using the credentials given with the <em>Username</em> and <em>Password</em> options</p>
-<p>Username                                   Username to use when connecting to the LDAP server. Only applicable when the <em>Authenticate to extract roles</em> parameter is <strong>checked</strong>.</p>
-<p>Password                                   Password to use when connecting to the LDAP server. Only applicable when the <em>Authenticate to extract roles</em> parameter is <strong>checked</strong>.</p>
-<p>Enable Hierarchical groups search          When checked all LDAP group searches will use hierarchical mode, retrieving LDAP parent groups too.</p>
-<p>Max depth for hierarchical groups search   Max depth number for hierarchical LDAP groups search, use -1 for infinite depth. Only applicable when the <em>Enable Hierarchical groups search</em> parameter is <strong>checked</strong>.</p>
-<p>Nested group search filter                 LDAP search pattern for searching parent groups. Only applicable when the <em>Enable Hierarchical groups search</em> parameter is <strong>checked</strong>.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Name of the LDAP role service in GeoServer</td>
+</tr>
+<tr>
+<td>Administrator role</td>
+<td>The name of the role that performs the administrator function</td>
+</tr>
+<tr>
+<td>Group administrator role</td>
+<td>The name of the role that performs the group administrator function</td>
+</tr>
+<tr>
+<td>Server URL</td>
+<td>URL for the LDAP server connection. It must include the protocol, host, and port, as well as the "distinguished name" (DN) for the root of the LDAP tree.</td>
+</tr>
+<tr>
+<td>TLS</td>
+<td>Enables a STARTTLS connection. (See the section on <a href="../../auth/providers/#security_auth_provider_ldap_secure">Secure LDAP connections</a>.)</td>
+</tr>
+<tr>
+<td>Group search base</td>
+<td>Relative name of the node in the tree to use as the base for LDAP groups. Example: <code>ou=groups</code>. The root DN specified as port of the <em>Server URL</em> is automatically appended.</td>
+</tr>
+<tr>
+<td>Group user membership search filter</td>
+<td>Search pattern for extracting users of a LDAP group a user belongs to. This may contain some placeholder values: <code>{0}</code>, the <code>username</code> of the user, for example <code>bob</code>. <code>{1}</code>, the full DN of the user, for example <code>uid=bob,ou=users</code>. To use this placeholder, the <em>Filter used to lookup user</em> needs to be defined, so that the dn of a user can be extracted from its username.</td>
+</tr>
+<tr>
+<td>All groups search filter</td>
+<td>Search pattern for locating the LDAP groups to be mapped to GeoServer roles inside the <em>Group search base</em> root node</td>
+</tr>
+<tr>
+<td>Filter used to lookup user.</td>
+<td>optional filter used to extract a user dn, to be used together with <em>Group user membership search filter</em> when the {1} placeholder is specified. This may contain a placeholder value: <code>{0}</code>, the <code>username</code> of the user, for example <code>bob</code>.</td>
+</tr>
+<tr>
+<td>Role prefix</td>
+<td>Prefix appended in front of role names extracted from the LDAP. If left blank, no prefix will be inserted.</td>
+</tr>
+<tr>
+<td>Convert Role To Upper Case</td>
+<td>If selected all role names extracted from the LDAP will be converted to upper case.</td>
+</tr>
+<tr>
+<td>Authenticate to extract roles</td>
+<td>When checked all LDAP searches will be done in authenticated mode, using the credentials given with the <em>Username</em> and <em>Password</em> options</td>
+</tr>
+<tr>
+<td>Username</td>
+<td>Username to use when connecting to the LDAP server. Only applicable when the <em>Authenticate to extract roles</em> parameter is <strong>checked</strong>.</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>Password to use when connecting to the LDAP server. Only applicable when the <em>Authenticate to extract roles</em> parameter is <strong>checked</strong>.</td>
+</tr>
+<tr>
+<td>Enable Hierarchical groups search</td>
+<td>When checked all LDAP group searches will use hierarchical mode, retrieving LDAP parent groups too.</td>
+</tr>
+<tr>
+<td>Max depth for hierarchical groups search</td>
+<td>Max depth number for hierarchical LDAP groups search, use -1 for infinite depth. Only applicable when the <em>Enable Hierarchical groups search</em> parameter is <strong>checked</strong>.</td>
+</tr>
+<tr>
+<td>Nested group search filter</td>
+<td>LDAP search pattern for searching parent groups. Only applicable when the <em>Enable Hierarchical groups search</em> parameter is <strong>checked</strong>.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="edit-role-service">Edit role service</h2>
 <p>Once the new role service is added (either XML or JDBC), clicking it in the list of role services will allow the additional options to be specified, such as the roles associated with the service.</p>
 <p>There are two tabs in the resulting menu: <strong>Settings</strong> and <strong>Roles</strong>. The Settings tab is identical to that found when creating the role service, while the Roles tab is described below.</p>
@@ -2457,13 +2703,28 @@
 <h3 id="security_webadmin_roles">Add role</h3>
 <p><img alt="" src="../images/ugr_newrole.png" />
 <em>Creating or editing a role</em></p>
-<hr />
-<p>Option                       Description</p>
-<hr />
-<p>Role name                    The name of role. Convention is uppercase, but is not required.</p>
-<p>Parent roles                 The role that this role inherits. See the section on <a href="../../usergrouprole/roles/">Roles</a> for more information on inheritance.</p>
-<p>Role parameters              Key/value pairs associated with the role. Used for associating additional information with the role.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Role name</td>
+<td>The name of role. Convention is uppercase, but is not required.</td>
+</tr>
+<tr>
+<td>Parent roles</td>
+<td>The role that this role inherits. See the section on <a href="../../usergrouprole/roles/">Roles</a> for more information on inheritance.</td>
+</tr>
+<tr>
+<td>Role parameters</td>
+<td>Key/value pairs associated with the role. Used for associating additional information with the role.</td>
+</tr>
+</tbody>
+</table>
 
 
 

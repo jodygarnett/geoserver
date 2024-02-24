@@ -3336,43 +3336,136 @@
 </code></pre></div>
 <h3 id="filter-parameters">Filter Parameters</h3>
 <p>All filter parameters are optional.</p>
-<hr />
-<p>Name           Type      Description</p>
-<hr />
-<p>page           number    Used for paging a list of rules. Specifies the number of the page. Leave out for no paging. If specified, <code>entries</code> should also be specified.</p>
-<p>entries        number    Used for paging a list of rules. Specifies the number of entries per page. Leave out for no paging. If specified, <code>page</code> should also be specified.</p>
-<p>userName       string    Filter rules on username (excludes all other specified usernames).</p>
-<p>userAny        0 or 1.   Specify whether rules matching any username should be included or not.</p>
-<p>roleName       string    Filter rules on rolename (excludes all other specified rolenames).</p>
-<p>roleAny        0 or 1.   Specify whether rules matching any rolename should be included or not.</p>
-<p>workspace      string    Filter rules on workspace (excludes all other specified workspaces).</p>
-<p>workspaceAny   0 or 1.   Specify whether rules matching any workspace should be included or not.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>page</td>
+<td>number</td>
+<td>Used for paging a list of rules. Specifies the number of the page. Leave out for no paging. If specified, <code>entries</code> should also be specified.</td>
+</tr>
+<tr>
+<td>entries</td>
+<td>number</td>
+<td>Used for paging a list of rules. Specifies the number of entries per page. Leave out for no paging. If specified, <code>page</code> should also be specified.</td>
+</tr>
+<tr>
+<td>userName</td>
+<td>string</td>
+<td>Filter rules on username (excludes all other specified usernames).</td>
+</tr>
+<tr>
+<td>userAny</td>
+<td>0 or 1.</td>
+<td>Specify whether rules matching any username should be included or not.</td>
+</tr>
+<tr>
+<td>roleName</td>
+<td>string</td>
+<td>Filter rules on rolename (excludes all other specified rolenames).</td>
+</tr>
+<tr>
+<td>roleAny</td>
+<td>0 or 1.</td>
+<td>Specify whether rules matching any rolename should be included or not.</td>
+</tr>
+<tr>
+<td>workspace</td>
+<td>string</td>
+<td>Filter rules on workspace (excludes all other specified workspaces).</td>
+</tr>
+<tr>
+<td>workspaceAny</td>
+<td>0 or 1.</td>
+<td>Specify whether rules matching any workspace should be included or not.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="requests">Requests</h2>
 <h3 id="geofencerestadminrules"><code>/geofence/rest/adminrules/</code></h3>
 <p>Query all adminrules or add a new adminrule.</p>
-<hr />
-<p>Method     Action                                                   Supported parameters                                                           Response</p>
-<hr />
-<p>GET        List all adminrules, with respect to any added filters   page, entries, userName, userAny, roleName, roleAny, workspace, workspaceAny   200 OK. List of adminrules in XML.</p>
-<p>POST       Add a new adminrule                                      None                                                                           201 Inserted. Created <code>ID</code> header.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Supported parameters</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>List all adminrules, with respect to any added filters</td>
+<td>page, entries, userName, userAny, roleName, roleAny, workspace, workspaceAny</td>
+<td>200 OK. List of adminrules in XML.</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Add a new adminrule</td>
+<td>None</td>
+<td>201 Inserted. Created <code>ID</code> header.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="geofencerestadminrulescount"><code>/geofence/rest/adminrules/count</code></h3>
 <p>Counts (filtered) adminrules.</p>
-<hr />
-<p>Method     Action                                                    Supported parameters                                            Response</p>
-<hr />
-<p>GET        Count all adminrules, with respect to any added filters   userName, userAny, roleName, roleAny, workspace, workspaceAny   200 OK. Rule list count in XML.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Supported parameters</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Count all adminrules, with respect to any added filters</td>
+<td>userName, userAny, roleName, roleAny, workspace, workspaceAny</td>
+<td>200 OK. Rule list count in XML.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="geofencerestadminrulesidid"><code>/geofence/rest/adminrules/id/&lt;id&gt;</code></h3>
 <p>Query, modify or delete a specific adminrule.</p>
-<hr />
-<p>Method     Action                                                       Supported parameters   Response</p>
-<hr />
-<p>GET        Read adminrule information                                   None                   200 OK. AdminRule in XML.</p>
-<p>POST       Modify the adminrule, unspecified fields remain unchanged.   None                   200 OK.</p>
-<p>DELETE     Delete the adminrule                                         None                   200 OK.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Supported parameters</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Read adminrule information</td>
+<td>None</td>
+<td>200 OK. AdminRule in XML.</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Modify the adminrule, unspecified fields remain unchanged.</td>
+<td>None</td>
+<td>200 OK.</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Delete the adminrule</td>
+<td>None</td>
+<td>200 OK.</td>
+</tr>
+</tbody>
+</table>
 
 
 

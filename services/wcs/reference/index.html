@@ -2072,12 +2072,32 @@
 <p>WCS provides a standard interface for how to request the raster source of a geospatial image. While a WMS can return an image it is generally only useful as an image. The results of a WCS can be used for complex modeling and analysis, as it often contains more information. It also allows more complex querying - clients can extract just the portion of the coverage that they need.</p>
 <h2 id="operations">Operations</h2>
 <p>WCS can perform the following operations:</p>
-<hr />
-<p><strong>Operation</strong>                           <strong>Description</strong></p>
-<p><a href="#getcapabilities">GetCapabilities</a>     Retrieves a list of the server's data, as well as valid WCS operations and parameters</p>
-<p><a href="#describecoverage">DescribeCoverage</a>   Retrieves an XML document that fully describes the request coverages.</p>
-<p><a href="#getcoverage">GetCoverage</a>             Returns a coverage in a well-known format. Like a WMS GetMap request, but with several extensions to support the retrieval of coverages.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Operation</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><a href="#getcapabilities">GetCapabilities</a></td>
+<td>Retrieves a list of the server's data, as well as valid WCS operations and parameters</td>
+</tr>
+<tr>
+<td><a href="#describecoverage">DescribeCoverage</a></td>
+<td>Retrieves an XML document that fully describes the request coverages.</td>
+</tr>
+<tr>
+<td><a href="#getcoverage">GetCoverage</a></td>
+<td>Returns a coverage in a well-known format. Like a WMS GetMap request, but with several extensions to support the retrieval of coverages.</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The following examples show the 1.1 protocol, the full specification for versions 1.0, 1.1 and 2.0 are available on the <a href="http://www.opengeospatial.org/standards/wcs">OGC website</a></p>

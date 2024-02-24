@@ -2208,14 +2208,40 @@
 
 <h1 id="wps-operations">WPS Operations</h1>
 <p>The WPS 1.0.0 standard defines three operations for the discovery and execution of geospatial processes, and GeoServer extends these with two further vendor or pseudo-operations. The operations are:</p>
-<hr />
-<p><strong>Operation</strong>                                        <strong>Description</strong></p>
-<p><a href="#getcapabilities">GetCapabilities</a>                  Retrieves details of the service offering, including service metadata and metadata describing the available processes</p>
-<p><a href="#describeprocess">DescribeProcess</a>                  Retrieves a description of a WPS process available through the service</p>
-<p><a href="#execute">Execute</a>                                  A request to perform the process with specified input values and required output data items</p>
-<p><a href="#dismiss">Dismiss</a> (vendor extension)               Used to cancel the execution of a process</p>
-<p><a href="#getexecutions">GetExecutions</a> (vendor extension)   Retrieves a list of the current Execution Statuses</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Operation</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><a href="#getcapabilities">GetCapabilities</a></td>
+<td>Retrieves details of the service offering, including service metadata and metadata describing the available processes</td>
+</tr>
+<tr>
+<td><a href="#describeprocess">DescribeProcess</a></td>
+<td>Retrieves a description of a WPS process available through the service</td>
+</tr>
+<tr>
+<td><a href="#execute">Execute</a></td>
+<td>A request to perform the process with specified input values and required output data items</td>
+</tr>
+<tr>
+<td><a href="#dismiss">Dismiss</a> (vendor extension)</td>
+<td>Used to cancel the execution of a process</td>
+</tr>
+<tr>
+<td><a href="#getexecutions">GetExecutions</a> (vendor extension)</td>
+<td>Retrieves a list of the current Execution Statuses</td>
+</tr>
+</tbody>
+</table>
 <h2 id="wps_getcaps">GetCapabilities</h2>
 <p>The <strong>GetCapabilities</strong> operation requests details of the service offering, including service metadata and metadata describing the available processes. The response is an XML document called the <strong>capabilities document</strong>.</p>
 <p>The required parameters, as in all OGC GetCapabilities requests, are <code>service=WPS</code>, <code>version=1.0.0</code> and <code>request=GetCapabilities</code>.</p>

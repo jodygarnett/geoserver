@@ -3533,55 +3533,117 @@ GET http://localhost:8080/geoserver/rest/monitor/requests.html?count=100&amp;off
 <p>The request set query accepts various parameters that control what requests are returned and how they are sorted. The available parameters are:</p>
 <h3 id="count-parameter">count Parameter</h3>
 <p>Specifies how many records should be returned.</p>
-<hr />
-<p>Syntax                       Example</p>
-<hr />
-<p><code>count=&lt;integer&gt;</code>            requests.html?count=100</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Syntax</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>count=&lt;integer&gt;</code></td>
+<td>requests.html?count=100</td>
+</tr>
+</tbody>
+</table>
 <h3 id="offset-parameter">offset Parameter</h3>
 <p>Specifies where in the result set records should be returned from.</p>
-<hr />
-<p>Syntax                       Example</p>
-<hr />
-<p><code>offset=&lt;integer&gt;</code>           requests.html?count=100&amp;offset=500</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Syntax</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>offset=&lt;integer&gt;</code></td>
+<td>requests.html?count=100&amp;offset=500</td>
+</tr>
+</tbody>
+</table>
 <h3 id="live-parameter">live Parameter</h3>
 <p>Specifies that only live (currently executing) requests be returned.</p>
-<hr />
-<p>Syntax                       Example</p>
-<hr />
-<p><code>live=&lt;yes|no|true|false&gt;</code>   requests.html?live=yes</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Syntax</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>live=&lt;yes|no|true|false&gt;</code></td>
+<td>requests.html?live=yes</td>
+</tr>
+</tbody>
+</table>
 <p>This parameter relies on a <a href="../configuration/#monitor_mode">Monitor Mode</a> being used that maintains real time request information (either <strong>live</strong> or <strong>mixed</strong>).</p>
 <h3 id="from-parameter">from Parameter</h3>
 <p>Specifies an inclusive lower bound on the timestamp for the start of a request. The timestamp can be specified to any desired precision.</p>
-<hr />
-<p>Syntax                       Example</p>
-<hr />
-<p><code>from=&lt;timestamp&gt;</code>           requests.html?from=2010-07-23T16:16:44</p>
-<div class="language-text highlight"><pre><span></span><code>                           requests.html?from=2010-07-23
-</code></pre></div>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Syntax</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>from=&lt;timestamp&gt;</code></td>
+<td>requests.html?from=2010-07-23T16:16:44</td>
+</tr>
+<tr>
+<td></td>
+<td>requests.html?from=2010-07-23</td>
+</tr>
+</tbody>
+</table>
 <h3 id="to-parameter">to Parameter</h3>
 <p>Specifies an inclusive upper bound on the timestamp for the start of a request. The timestamp can be specified to any desired precision.</p>
-<hr />
-<p>Syntax                       Example</p>
-<hr />
-<p><code>to=&lt;timestamp&gt;</code>             requests.html?to=2010-07-24T00:00:00</p>
-<div class="language-text highlight"><pre><span></span><code>                           requests.html?to=2010-07-24
-</code></pre></div>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Syntax</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>to=&lt;timestamp&gt;</code></td>
+<td>requests.html?to=2010-07-24T00:00:00</td>
+</tr>
+<tr>
+<td></td>
+<td>requests.html?to=2010-07-24</td>
+</tr>
+</tbody>
+</table>
 <h3 id="order-parameter">order Parameter</h3>
 <p>Specifies which request attribute to sort by, and optionally specifies the sort direction.</p>
-<hr />
-<p>Syntax                             Example</p>
-<hr />
-<p><code>order=&lt;attribute&gt;[;&lt;ASC|DESC&gt;]</code>   requests.html?order=path</p>
-<div class="language-text highlight"><pre><span></span><code>                                 requests.html?order=startTime;DESC
-
-                                 requests.html?order=totalTime;ASC
-</code></pre></div>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Syntax</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>order=&lt;attribute&gt;[;&lt;ASC|DESC&gt;]</code></td>
+<td>requests.html?order=path</td>
+</tr>
+<tr>
+<td></td>
+<td>requests.html?order=startTime;DESC</td>
+</tr>
+<tr>
+<td></td>
+<td>requests.html?order=totalTime;ASC</td>
+</tr>
+</tbody>
+</table>
 
 
 

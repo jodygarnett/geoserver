@@ -2370,325 +2370,317 @@
     x-inclusion: &lt;text&gt;
 </code></pre></div>
 <p>where:</p>
-<p>.. list-table::
-   :class: non-responsive
-   :header-rows: 1
-   :stub-columns: 1
-   :widths: 20 10 50 20</p>
-<ul>
-<li>
-<ul>
-<li>Property</li>
-<li>Required?</li>
-<li>Description</li>
-<li>Default value</li>
-</ul>
-</li>
-<li>
-<ul>
-<li><code>stroke-color</code></li>
-<li>No</li>
-<li>Color of line features.</li>
-<li><code>'#000000'</code> (black)</li>
-</ul>
-</li>
-<li>
-<ul>
-<li><code>stroke-width</code></li>
-<li>No</li>
-<li>Width of line features, measured in pixels.</li>
-<li><code>1</code></li>
-</ul>
-</li>
-<li>
-<ul>
-<li><code>stroke-opacity</code></li>
-<li>No</li>
-<li>Opacity of line features. Valid values are a decimal value between <code>0</code> (completely transparent) and <code>1</code> (completely opaque).</li>
-<li><code>1</code></li>
-</ul>
-</li>
-<li>
-<ul>
-<li><code>stroke-linejoin</code></li>
-<li>No</li>
-<li>How line segments are joined together. Options are <code>mitre</code> (sharp corner), <code>round</code> (round corner), and <code>bevel</code> (diagonal corner).</li>
-<li><code>mitre</code></li>
-</ul>
-</li>
-<li>
-<ul>
-<li><code>stroke-linecap</code></li>
-<li>No</li>
-<li>How line features are rendered at their ends. Options are <code>butt</code> (sharp square edge), <code>round</code> (rounded edge), and <code>square</code> (slightly elongated square edge).</li>
-<li><code>butt</code></li>
-</ul>
-</li>
-<li>
-<ul>
-<li><code>stroke-dasharray</code></li>
-<li>No</li>
-<li>A numeric list signifying length of lines and gaps, creating a dashed effect. Units are pixels, so <code>"2 3"</code> would be a repeating pattern of 2 pixels of drawn line followed by 3 pixels of blank space. If only one number is supplied, this will mean equal amounts of line and gap.</li>
-<li>No dash</li>
-</ul>
-</li>
-<li>
-<ul>
-<li><code>stroke-dashoffset</code></li>
-<li>No</li>
-<li>Number of pixels into the dasharray to offset the drawing of the dash, used to shift the location of the lines and gaps in a dash.</li>
-<li><code>0</code></li>
-</ul>
-</li>
-<li>
-<ul>
-<li><code>stroke-graphic</code></li>
-<li>No</li>
-<li>A design or pattern to be used along the stroke. Output will always be a linear repeating pattern, and as such is not tied to the value of <code>stroke-width</code>. Can either be a mark consisting of a common shape or a URL that points to a graphic. The <code>&lt;graphic_options&gt;</code> should consist of a mapping containing <code>symbols:</code> followed by an <code>external:</code> or <code>mark:</code>, with appropriate parameters as detailed in the :ref:<code>ysld_reference_symbolizers_point</code> section. Cannot be used with <code>stroke-graphic-fill</code>.</li>
-<li>N/A</li>
-</ul>
-</li>
-<li>
-<ul>
-<li><code>stroke-graphic-fill</code></li>
-<li>No</li>
-<li>A design or pattern to be used for the fill of the stroke. The area that is to be filled is tied directly to the value of <code>stroke-width</code>. Can either be a mark consisting of a common shape or a URL that points to a graphic. The <code>&lt;graphic_options&gt;</code> should consist of a mapping containing <code>symbols:</code> followed by an <code>external:</code> or <code>mark:</code>, with appropriate parameters as detailed in the :ref:<code>ysld_reference_symbolizers_point</code> section. Cannot be used with <code>stroke-graphic</code>.</li>
-<li>N/A</li>
-</ul>
-</li>
-</ul>
-<p>.. list-table::
-   :class: non-responsive
-   :header-rows: 1
-   :stub-columns: 1
-   :widths: 20 10 50 20</p>
-<ul>
-<li>
-<ul>
-<li>Property</li>
-<li>Required?</li>
-<li>Description</li>
-<li>Default value</li>
-</ul>
-</li>
-<li>
-<ul>
-<li><code>fill-color</code></li>
-<li>No</li>
-<li>Color of inside of features.</li>
-<li><code>'#808080'</code> (gray)</li>
-</ul>
-</li>
-<li>
-<ul>
-<li><code>fill-opacity</code></li>
-<li>No</li>
-<li>Opacity of the fill. Valid values are a decimal value between <code>0</code> (completely transparent) and <code>1</code> (completely opaque).</li>
-<li><code>1</code></li>
-</ul>
-</li>
-<li>
-<ul>
-<li><code>fill-graphic</code></li>
-<li>No</li>
-<li>A design or pattern to be used for the fill of the feature. Can either be a mark consisting of a common shape or a URL that points to a graphic. The <code>&lt;graphic_options&gt;</code> should consist of a mapping containing <code>symbols:</code> followed by an <code>external:</code> or <code>mark:</code>, with appropriate parameters as detailed in the :ref:<code>ysld_reference_symbolizers_point</code> section.</li>
-<li>None</li>
-</ul>
-</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>stroke-color</code></td>
+<td>No</td>
+<td>Color of line features.</td>
+<td><code>'#000000'</code> (black)</td>
+</tr>
+<tr>
+<td><code>stroke-width</code></td>
+<td>No</td>
+<td>Width of line features, measured in pixels.</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>stroke-opacity</code></td>
+<td>No</td>
+<td>Opacity of line features. Valid values are a decimal value between <code>0</code> (completely transparent) and <code>1</code> (completely opaque).</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>stroke-linejoin</code></td>
+<td>No</td>
+<td>How line segments are joined together. Options are <code>mitre</code> (sharp corner), <code>round</code> (round corner), and <code>bevel</code> (diagonal corner).</td>
+<td><code>mitre</code></td>
+</tr>
+<tr>
+<td><code>stroke-linecap</code></td>
+<td>No</td>
+<td>How line features are rendered at their ends. Options are <code>butt</code> (sharp square edge), <code>round</code> (rounded edge), and <code>square</code> (slightly elongated square edge).</td>
+<td><code>butt</code></td>
+</tr>
+<tr>
+<td><code>stroke-dasharray</code></td>
+<td>No</td>
+<td>A numeric list signifying length of lines and gaps, creating a dashed effect. Units are pixels, so <code>"2 3"</code> would be a repeating pattern of 2 pixels of drawn line followed by 3 pixels of blank space. If only one number is supplied, this will mean equal amounts of line and gap.</td>
+<td>No dash</td>
+</tr>
+<tr>
+<td><code>stroke-dashoffset</code></td>
+<td>No</td>
+<td>Number of pixels into the dasharray to offset the drawing of the dash, used to shift the location of the lines and gaps in a dash.</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>stroke-graphic</code></td>
+<td>No</td>
+<td>A design or pattern to be used along the stroke. Output will always be a linear repeating pattern, and as such is not tied to the value of <code>stroke-width</code>. Can either be a mark consisting of a common shape or a URL that points to a graphic. The <code>&lt;graphic_options&gt;</code> should consist of a mapping containing <code>symbols:</code> followed by an <code>external:</code> or <code>mark:</code>, with appropriate parameters as detailed in the <a href="./">Point symbolizer</a> section. Cannot be used with <code>stroke-graphic-fill</code>.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>stroke-graphic-fill</code></td>
+<td>No</td>
+<td>A design or pattern to be used for the fill of the stroke. The area that is to be filled is tied directly to the value of <code>stroke-width</code>. Can either be a mark consisting of a common shape or a URL that points to a graphic. The <code>&lt;graphic_options&gt;</code> should consist of a mapping containing <code>symbols:</code> followed by an <code>external:</code> or <code>mark:</code>, with appropriate parameters as detailed in the <a href="./">Point symbolizer</a> section. Cannot be used with <code>stroke-graphic</code>.</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fill-color</code></td>
+<td>No</td>
+<td>Color of inside of features.</td>
+<td><code>'#808080'</code> (gray)</td>
+</tr>
+<tr>
+<td><code>fill-opacity</code></td>
+<td>No</td>
+<td>Opacity of the fill. Valid values are a decimal value between <code>0</code> (completely transparent) and <code>1</code> (completely opaque).</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>fill-graphic</code></td>
+<td>No</td>
+<td>A design or pattern to be used for the fill of the feature. Can either be a mark consisting of a common shape or a URL that points to a graphic. The <code>&lt;graphic_options&gt;</code> should consist of a mapping containing <code>symbols:</code> followed by an <code>external:</code> or <code>mark:</code>, with appropriate parameters as detailed in the <a href="./">Point symbolizer</a> section.</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
 <p>The use of <code>fill-graphic</code> allows for the following extra options:</p>
-<p>.. list-table::
-   :class: non-responsive
-   :header-rows: 1
-   :stub-columns: 1
-   :widths: 20 10 50 20</p>
-<ul>
-<li>
-<ul>
-<li>Property</li>
-<li>Required?</li>
-<li>Description</li>
-<li>Default value</li>
-</ul>
-</li>
-<li>
-<ul>
-<li><code>x-graphic-margin</code></li>
-<li>No</li>
-<li>Used to specify margins (in pixels) around the graphic used in the fill. Possible values are a list of four (<code>top, right, bottom, left</code>), a list of three (<code>top, right and left, bottom</code>), a list of two (<code>top and bottom, right and left</code>), or a single value. </li>
-<li>N/A</li>
-</ul>
-</li>
-<li>
-<ul>
-<li><code>x-random</code></li>
-<li>No</li>
-<li>Activates random distribution of symbols. Possible values are <code>free</code> or <code>grid</code>. <code>free</code> generates a completely random distribution, and <code>grid</code> will generate a regular grid of positions, and only randomize the position of the symbol around the cell centers, providing a more even distribution.</li>
-<li>N/A</li>
-</ul>
-</li>
-<li>
-<ul>
-<li><code>x-random-tile-size</code></li>
-<li>No</li>
-<li>When used with <code>x-random</code>, determines the size of the grid (in pixels) that will contain the randomly distributed symbols.</li>
-<li><code>256</code></li>
-</ul>
-</li>
-<li>
-<ul>
-<li><code>x-random-rotation</code></li>
-<li>No</li>
-<li>When used with <code>x-random</code>, activates random symbol rotation. Possible values are <code>none</code> or <code>free</code>.</li>
-<li><code>none</code></li>
-</ul>
-</li>
-<li>
-<ul>
-<li><code>x-random-symbol-count</code></li>
-<li>No</li>
-<li>When used tih <code>x-random</code>, determines the number of symbols drawn. Increasing this number will generate a more dense distribution of symbols</li>
-<li><code>16</code></li>
-</ul>
-</li>
-<li>
-<ul>
-<li><code>x-random-seed</code></li>
-<li>No</li>
-<li>Determines the "seed" used to generate the random distribution. Changing this value will result in a different symbol distribution.</li>
-<li><code>0</code></li>
-</ul>
-</li>
-</ul>
-<p>.. todo:: Add examples using random</p>
-<hr />
-<p>Property         Required?   Description                                                                                                                                                                                                                                                                        Default value</p>
-<hr />
-<p><code>external</code>       No          Specifies an image to use to style the point.                                                                                                                                                                                                                                      N/A</p>
-<p><code>url</code>            Yes         Location of the image. Can either be an actual URL or a file path (relative to where the style file is saved in the GeoServer data directory). Should be enclosed in single quotes.                                                                                                N/A</p>
-<p><code>format</code>         Yes         Format of the image. Must be a valid MIME type (such as <code>image/png</code> for PNG, <code>image/jpeg</code> for JPG, <code>image/svg+xml</code> for SVG)                                                                                                                                                        N/A</p>
-<p><code>mark</code>           No          Specifies a regular shape to use to style the point.                                                                                                                                                                                                                               N/A</p>
-<p><code>shape</code>          No          Shape of the mark. Options are <code>square</code>, <code>circle</code>, <code>triangle</code>, <code>cross</code>, <code>x</code>, and <code>star</code>.                                                                                                                                                                                           <code>square</code></p>
-<p><code>size</code>           No          Size of the mark in pixels. If the aspect ratio of the mark is not 1:1 (square), will apply to the <em>height</em> of the graphic only, with the width scaled proportionally.                                                                                                             16</p>
-<p><code>anchor</code>         No          Specify the center of the symbol relative to the feature location. Value is an <code>[x,y]</code> tuple with decimal values from 0-1, with <code>[0,0]</code> meaning that the symbol is anchored to the top left, and <code>[1,1]</code> meaning anchored to bottom right.                                         <code>[0.5,0.5]</code></p>
-<p><code>displacement</code>   No          Specifies a distance to which to move the symbol relative to the feature. Value is an <code>[x,y]</code> tuple with values expressed in pixels, so [10,5] will displace the symbol 10 pixels to the right and 5 pixels down.                                                                <code>[0,0]</code></p>
-<p><code>opacity</code>        No          Specifies the level of transparency. Value of <code>0</code> means entirely transparent, while <code>1</code> means entirely opaque. Only affects graphics referenced by the <code>external</code> parameter; the opacity of <code>mark</code> symbols is controlled by the <code>fill-opacity</code> and <code>stroke-opacity</code> of the mark.   <code>1</code></p>
-<p><code>rotation</code>       No          Value (in degrees) or rotation of the mark. Larger values increase counter-clockwise rotation. A value of <code>180</code> will make the mark upside-down.                                                                                                                                    <code>0</code></p>
-<hr />
-<p>.. list-table::
-   :class: non-responsive
-   :header-rows: 1
-   :stub-columns: 1
-   :widths: 20 10 50 20</p>
-<ul>
-<li>
-<ul>
-<li>Property</li>
-<li>Required?</li>
-<li>Description</li>
-<li>Default value</li>
-</ul>
-</li>
-<li>
-<ul>
-<li><code>geometry</code></li>
-<li>No</li>
-<li>Specifies which attribute to use as the geometry (see :ref:<code>geometry_transformations</code>)</li>
-<li>First geometry attribute found (usually named <code>geom</code> or <code>the_geom</code>)</li>
-</ul>
-</li>
-<li>
-<ul>
-<li><code>uom</code></li>
-<li>No</li>
-<li>Unit of measure used for width calculations (see :ref:<code>unit_of_measure</code>)</li>
-<li>pixel</li>
-</ul>
-</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x-graphic-margin</code></td>
+<td>No</td>
+<td>Used to specify margins (in pixels) around the graphic used in the fill. Possible values are a list of four (<code>top, right, bottom, left</code>), a list of three (<code>top, right and left, bottom</code>), a list of two (<code>top and bottom, right and left</code>), or a single value.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>x-random</code></td>
+<td>No</td>
+<td>Activates random distribution of symbols. Possible values are <code>free</code> or <code>grid</code>. <code>free</code> generates a completely random distribution, and <code>grid</code> will generate a regular grid of positions, and only randomize the position of the symbol around the cell centers, providing a more even distribution.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>x-random-tile-size</code></td>
+<td>No</td>
+<td>When used with <code>x-random</code>, determines the size of the grid (in pixels) that will contain the randomly distributed symbols.</td>
+<td><code>256</code></td>
+</tr>
+<tr>
+<td><code>x-random-rotation</code></td>
+<td>No</td>
+<td>When used with <code>x-random</code>, activates random symbol rotation. Possible values are <code>none</code> or <code>free</code>.</td>
+<td><code>none</code></td>
+</tr>
+<tr>
+<td><code>x-random-symbol-count</code></td>
+<td>No</td>
+<td>When used tih <code>x-random</code>, determines the number of symbols drawn. Increasing this number will generate a more dense distribution of symbols</td>
+<td><code>16</code></td>
+</tr>
+<tr>
+<td><code>x-random-seed</code></td>
+<td>No</td>
+<td>Determines the "seed" used to generate the random distribution. Changing this value will result in a different symbol distribution.</td>
+<td><code>0</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Todo</p>
+<p>Add examples using random</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>external</code></td>
+<td>No</td>
+<td>Specifies an image to use to style the point.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td>Yes</td>
+<td>Location of the image. Can either be an actual URL or a file path (relative to where the style file is saved in the GeoServer data directory). Should be enclosed in single quotes.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>format</code></td>
+<td>Yes</td>
+<td>Format of the image. Must be a valid MIME type (such as <code>image/png</code> for PNG, <code>image/jpeg</code> for JPG, <code>image/svg+xml</code> for SVG)</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>mark</code></td>
+<td>No</td>
+<td>Specifies a regular shape to use to style the point.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>shape</code></td>
+<td>No</td>
+<td>Shape of the mark. Options are <code>square</code>, <code>circle</code>, <code>triangle</code>, <code>cross</code>, <code>x</code>, and <code>star</code>.</td>
+<td><code>square</code></td>
+</tr>
+<tr>
+<td><code>size</code></td>
+<td>No</td>
+<td>Size of the mark in pixels. If the aspect ratio of the mark is not 1:1 (square), will apply to the <em>height</em> of the graphic only, with the width scaled proportionally.</td>
+<td>16</td>
+</tr>
+<tr>
+<td><code>anchor</code></td>
+<td>No</td>
+<td>Specify the center of the symbol relative to the feature location. Value is an <code>[x,y]</code> tuple with decimal values from 0-1, with <code>[0,0]</code> meaning that the symbol is anchored to the top left, and <code>[1,1]</code> meaning anchored to bottom right.</td>
+<td><code>[0.5,0.5]</code></td>
+</tr>
+<tr>
+<td><code>displacement</code></td>
+<td>No</td>
+<td>Specifies a distance to which to move the symbol relative to the feature. Value is an <code>[x,y]</code> tuple with values expressed in pixels, so [10,5] will displace the symbol 10 pixels to the right and 5 pixels down.</td>
+<td><code>[0,0]</code></td>
+</tr>
+<tr>
+<td><code>opacity</code></td>
+<td>No</td>
+<td>Specifies the level of transparency. Value of <code>0</code> means entirely transparent, while <code>1</code> means entirely opaque. Only affects graphics referenced by the <code>external</code> parameter; the opacity of <code>mark</code> symbols is controlled by the <code>fill-opacity</code> and <code>stroke-opacity</code> of the mark.</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>rotation</code></td>
+<td>No</td>
+<td>Value (in degrees) or rotation of the mark. Larger values increase counter-clockwise rotation. A value of <code>180</code> will make the mark upside-down.</td>
+<td><code>0</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>geometry</code></td>
+<td>No</td>
+<td>Specifies which attribute to use as the geometry (see <a href="../../../../sld/extensions/geometry-transformations/">Geometry transformations in SLD</a>)</td>
+<td>First geometry attribute found (usually named <code>geom</code> or <code>the_geom</code>)</td>
+</tr>
+<tr>
+<td><code>uom</code></td>
+<td>No</td>
+<td>Unit of measure used for width calculations (see <a href="../../../../sld/extensions/uom/">Specifying symbolizer sizes in ground units</a>)</td>
+<td>pixel</td>
+</tr>
+</tbody>
+</table>
 <p>The following properties are equivalent to SLD "vendor options".</p>
-<p>Additional "vendor options" property for :ref:<code>label_obstacles</code>:</p>
-<p>.. list-table::
-   :class: non-responsive
-   :header-rows: 1
-   :stub-columns: 1
-   :widths: 20 10 50 20</p>
-<ul>
-<li>
-<ul>
-<li>Property</li>
-<li>Required?</li>
-<li>Description</li>
-<li>Default value</li>
-</ul>
-</li>
-<li>
-<ul>
-<li><code>x-labelObstacle</code></li>
-<li>No</li>
-<li>Marks the symbolizer as an obstacle such that labels drawn via a :ref:<code>text symbolizer &lt;ysld_reference_symbolizers_text&gt;</code> will not be drawn over top of these features. Options are <code>true</code> or <code>false</code>. Note that the bounding boxes of features are used when calculating obstacles, so unintended effects may occur when marking a line or polygon symbolizer as an obstacle.</li>
-<li><code>false</code></li>
-</ul>
-</li>
-</ul>
+<p>Additional "vendor options" property for <a href="../../../../sld/extensions/label-obstacles/">Label Obstacles</a>:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x-labelObstacle</code></td>
+<td>No</td>
+<td>Marks the symbolizer as an obstacle such that labels drawn via a <a href="../text/">text symbolizer</a> will not be drawn over top of these features. Options are <code>true</code> or <code>false</code>. Note that the bounding boxes of features are used when calculating obstacles, so unintended effects may occur when marking a line or polygon symbolizer as an obstacle.</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
 <p>Additional "vendor options" properties for <a href="../../../../sld/extensions/composite-blend/">Color compositing and color blending</a>:</p>
-<p>Additional "vendor options" properties for :ref:<code>sld-extensions_composite-blend</code>:</p>
-<p>.. list-table::
-   :class: non-responsive
-   :header-rows: 1
-   :stub-columns: 1
-   :widths: 20 10 50 20</p>
-<ul>
-<li>
-<ul>
-<li>Property</li>
-<li>Required?</li>
-<li>Description</li>
-<li>Default value</li>
-</ul>
-</li>
-<li>
-<ul>
-<li><code>x-composite</code></li>
-<li>No</li>
-<li>Allows for both alpha compositing and color blending options between symbolizers.</li>
-<li>N/A</li>
-</ul>
-</li>
-<li>
-<ul>
-<li><code>x-composite-base</code></li>
-<li>No</li>
-<li>Allows the rendering engine to use the symbolizer mapping to define a "base" buffer for subsequent compositing and blending using <code>x-composite</code>. See the section on :ref:<code>Feature Styles &lt;ysld_reference_featurestyles_composite&gt;</code> for more details.</li>
-<li><code>false</code></li>
-</ul>
-</li>
-</ul>
+<p>Additional "vendor options" properties for <a href="../../../../sld/extensions/composite-blend/">Color compositing and color blending</a>:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x-composite</code></td>
+<td>No</td>
+<td>Allows for both alpha compositing and color blending options between symbolizers.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>x-composite-base</code></td>
+<td>No</td>
+<td>Allows the rendering engine to use the symbolizer mapping to define a "base" buffer for subsequent compositing and blending using <code>x-composite</code>. See the section on <a href="../../featurestyles/#ysld_reference_featurestyles_composite">Feature Styles</a> for more details.</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
 <p>Additional "vendor options" properties for <a href="../../../../sld/extensions/rendering-selection/">Rendering Selection</a>:</p>
-<p>Additional "vendor options" properties for :ref:<code>rendering_selection</code>:</p>
-<p>.. list-table::
-   :class: non-responsive
-   :header-rows: 1
-   :stub-columns: 1
-   :widths: 20 10 50 20</p>
-<ul>
-<li>
-<ul>
-<li>Property</li>
-<li>Required?</li>
-<li>Description</li>
-<li>Default value</li>
-</ul>
-</li>
-<li>
-<ul>
-<li><code>x-inclusion</code></li>
-<li>No</li>
-<li>Define if rule should be included in style for <code>legendOnly</code> or <code>mapOnly</code>.</li>
-<li><code>normal</code></li>
-</ul>
-</li>
-</ul>
+<p>Additional "vendor options" properties for <a href="../../../../sld/extensions/rendering-selection/">Rendering Selection</a>:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x-inclusion</code></td>
+<td>No</td>
+<td>Define if rule should be included in style for <code>legendOnly</code> or <code>mapOnly</code>.</td>
+<td><code>normal</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="examples">Examples</h2>
 <h3 id="basic-point">Basic point</h3>
 <p>A point symbolizer draws a point at the center of any geometry. It is defined by an external image or a symbol, either of which can be sized and rotated. A mark is a pre-defined symbol that can be drawn at the location of a point. Similar to polygons, marks have both a fill and a stroke. This example shows a point symbolizer that draws semi-transparent red diamonds with black outlines:</p>

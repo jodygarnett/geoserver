@@ -2233,77 +2233,168 @@
 </blockquote>
 <h2 id="security_rolesystem_rolejdbc">JDBC role service</h2>
 <p>The JDBC role service persists the role database via JDBC, managing the role information in multiple tables. The role database schema is as follows:</p>
-<hr />
-<p>Field             Type              Null              Key</p>
-<hr />
-<p>name              varchar(64)       NO                PRI</p>
-<p>parent            varchar(64)       YES               </p>
-<hr />
-<dl>
-<dd>Table: roles</dd>
-</dl>
-<hr />
-<p>Field             Type              Null              Key</p>
-<hr />
-<p>rolename          varchar(64)       NO                PRI</p>
-<p>propname          varchar(64)       NO                PRI</p>
-<p>propvalue         varchar(2048)     YES               </p>
-<hr />
-<dl>
-<dd>Table: role_props</dd>
-</dl>
-<hr />
-<p>Field             Type              Null              Key</p>
-<hr />
-<p>username          varchar(128)      NO                PRI</p>
-<p>rolename          varchar(64)       NO                PRI</p>
-<hr />
-<dl>
-<dd>Table: user_roles</dd>
-</dl>
-<hr />
-<p>Field             Type              Null              Key</p>
-<hr />
-<p>groupname         varchar(128)      NO                PRI</p>
-<p>rolename          varchar(64)       NO                PRI</p>
-<hr />
-<dl>
-<dd>Table: group_roles</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Null</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>varchar(64)</td>
+<td>NO</td>
+<td>PRI</td>
+</tr>
+<tr>
+<td>parent</td>
+<td>varchar(64)</td>
+<td>YES</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Null</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rolename</td>
+<td>varchar(64)</td>
+<td>NO</td>
+<td>PRI</td>
+</tr>
+<tr>
+<td>propname</td>
+<td>varchar(64)</td>
+<td>NO</td>
+<td>PRI</td>
+</tr>
+<tr>
+<td>propvalue</td>
+<td>varchar(2048)</td>
+<td>YES</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Null</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>username</td>
+<td>varchar(128)</td>
+<td>NO</td>
+<td>PRI</td>
+</tr>
+<tr>
+<td>rolename</td>
+<td>varchar(64)</td>
+<td>NO</td>
+<td>PRI</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Null</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>groupname</td>
+<td>varchar(128)</td>
+<td>NO</td>
+<td>PRI</td>
+</tr>
+<tr>
+<td>rolename</td>
+<td>varchar(64)</td>
+<td>NO</td>
+<td>PRI</td>
+</tr>
+</tbody>
+</table>
 <p>The <code>roles</code> table is the primary table and contains the list of roles. Roles in GeoServer support inheritance, so a role may optionally have a link to a parent role. The <code>role_props</code> table maps additional properties to a role. (See the section on <a href="../roles/">Roles</a> for more details.) The <code>user_roles</code> table maps users to the roles they are assigned. Similarly, the <code>group_roles</code> table maps which groups have been assigned to which roles.</p>
 <p>The default GeoServer security configuration is:</p>
-<hr />
-<p>name                                parent</p>
-<hr />
-<p><em>Empty</em>                             <em>Empty</em></p>
-<hr />
-<dl>
-<dd>Table: roles</dd>
-</dl>
-<hr />
-<p>rolename                propname                propvalue</p>
-<hr />
-<p><em>Empty</em>                 <em>Empty</em>                 <em>Empty</em></p>
-<hr />
-<dl>
-<dd>Table: role_props</dd>
-</dl>
-<hr />
-<p>username                            rolename</p>
-<hr />
-<p><em>Empty</em>                             <em>Empty</em></p>
-<hr />
-<dl>
-<dd>Table: user_roles</dd>
-</dl>
-<hr />
-<p>groupname                           rolename</p>
-<hr />
-<p><em>Empty</em>                             <em>Empty</em></p>
-<hr />
-<dl>
-<dd>Table: group_roles</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>parent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Empty</em></td>
+<td><em>Empty</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>rolename</th>
+<th>propname</th>
+<th>propvalue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Empty</em></td>
+<td><em>Empty</em></td>
+<td><em>Empty</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>username</th>
+<th>rolename</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Empty</em></td>
+<td><em>Empty</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>groupname</th>
+<th>rolename</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Empty</em></td>
+<td><em>Empty</em></td>
+</tr>
+</tbody>
+</table>
 <p>For further information, please refer to <a href="../../webadmin/ugr/#security_webadmin_roleservices">configuring a role service</a> in the <a href="../../../webadmin/">Web administration interface</a>.</p>
 <h2 id="ldap-role-service">LDAP role service</h2>
 <p>The LDAP role service is a read only role service that maps groups from an LDAP repository to GeoServer roles.</p>
@@ -2335,21 +2426,48 @@
 <p>The REST role service is a read only role service that maps groups and associated users to roles from a remote REST web service.</p>
 <p>The REST service <strong>must</strong> support JSON encoding.</p>
 <p>Here is a listing of significant methods provided by the REST Role Service (based on the LDAP role service, which similarly has to make network calls to work):</p>
-<hr />
-<p>Method                            Mandatory</p>
-<hr />
-<p><em>getUserNamesForRole(roleName)</em>   N (implemented in LDAP, but I don't see actual users of this method besides a utility method that nobody uses)</p>
-<p><em>getRolesForUser(user)</em>           Y</p>
-<p><em>getRolesForGroup(group)</em>         N</p>
-<p><em>getRoles()</em>                      Y (used by the UI)</p>
-<p><em>getParentRole(role)</em>             N</p>
-<p><em>getAdminRole()</em>                  Y</p>
-<p><em>getGroupAdminRole()</em>             Y</p>
-<p><em>getRoleCount()</em>                  Y (does not seem to be used much, we can trivially implement it from getRoles()</p>
-<hr />
-<dl>
-<dd>Table: roles</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>getUserNamesForRole(roleName)</em></td>
+<td>N (implemented in LDAP, but I don't see actual users of this method besides a utility method that nobody uses)</td>
+</tr>
+<tr>
+<td><em>getRolesForUser(user)</em></td>
+<td>Y</td>
+</tr>
+<tr>
+<td><em>getRolesForGroup(group)</em></td>
+<td>N</td>
+</tr>
+<tr>
+<td><em>getRoles()</em></td>
+<td>Y (used by the UI)</td>
+</tr>
+<tr>
+<td><em>getParentRole(role)</em></td>
+<td>N</td>
+</tr>
+<tr>
+<td><em>getAdminRole()</em></td>
+<td>Y</td>
+</tr>
+<tr>
+<td><em>getGroupAdminRole()</em></td>
+<td>Y</td>
+</tr>
+<tr>
+<td><em>getRoleCount()</em></td>
+<td>Y (does not seem to be used much, we can trivially implement it from getRoles()</td>
+</tr>
+</tbody>
+</table>
 <h3 id="rest-apis">REST APIs</h3>
 <p>The following is an example of the REST API the role service may handle. The JSON and remote endpoints may differ; this is configurable via UI, allowing the REST role service to connect to a generic REST Service</p>
 <p>From the above we could have the following REST API to talk to</p>

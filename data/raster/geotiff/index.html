@@ -2039,14 +2039,40 @@
 <h2 id="configuring-a-geotiff-data-store">Configuring a GeoTIFF data store</h2>
 <p><img alt="" src="../images/geotiffconfigure.png" />
 <em>Configuring a GeoTIFF data store</em></p>
-<hr />
-<p><strong>Option</strong>           <strong>Description</strong></p>
-<p><code>Workspace</code>          Name of the workspace to contain the GeoTIFF store. This will also be the prefix of the raster layer created from the store.</p>
-<p><code>Data Source Name</code>   Name of the GeoTIFF as it will be known to GeoServer. This can be different from the filename. The combination of the workspace name and this name will be the full layer name (ex: world:landbase)</p>
-<p><code>Description</code>        A full free-form description of the GeoTIFF store.</p>
-<p><code>Enabled</code>            If checked, it enables the store. If unchecked (disabled), no data in the GeoTIFF will be served from GeoServer.</p>
-<p><code>URL</code>                Location of the GeoTIFF file. This can be an absolute path (such as <strong><code>file:C:\Data\landbase.tif</code></strong>) or a path relative to GeoServer's data directory (such as <strong><code>file:data/landbase.tif</code></strong>).</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Option</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>Workspace</code></td>
+<td>Name of the workspace to contain the GeoTIFF store. This will also be the prefix of the raster layer created from the store.</td>
+</tr>
+<tr>
+<td><code>Data Source Name</code></td>
+<td>Name of the GeoTIFF as it will be known to GeoServer. This can be different from the filename. The combination of the workspace name and this name will be the full layer name (ex: world:landbase)</td>
+</tr>
+<tr>
+<td><code>Description</code></td>
+<td>A full free-form description of the GeoTIFF store.</td>
+</tr>
+<tr>
+<td><code>Enabled</code></td>
+<td>If checked, it enables the store. If unchecked (disabled), no data in the GeoTIFF will be served from GeoServer.</td>
+</tr>
+<tr>
+<td><code>URL</code></td>
+<td>Location of the GeoTIFF file. This can be an absolute path (such as <strong><code>file:C:\Data\landbase.tif</code></strong>) or a path relative to GeoServer's data directory (such as <strong><code>file:data/landbase.tif</code></strong>).</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Notice that the GeoTiff plugin is able to handle internal/external overviews and internal/external masks.</p>

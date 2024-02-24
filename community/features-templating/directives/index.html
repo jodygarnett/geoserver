@@ -4503,30 +4503,120 @@
 <p>The following constitutes a summary of all the template directives and it is meant to be used for quick reference. Each directive is explained in detail in the sections below.</p>
 <h3 id="json-based-templates">JSON based templates</h3>
 <p>The following are the directives available in JSON based templates.</p>
-<hr />
-<p><strong>Usage</strong>                                                            <strong>Syntax</strong>                           <strong>Description</strong></p>
-<p>property interpolation                                               \${property}                         specify it as an attribute value (<code>"json_attribute":"${property}"</code>)</p>
-<p>cql evaluation                                                       \$\${cql}                            specify it as an element value (<code>"json_attribute":"$${cql}"</code>)</p>
-<p>setting the evaluation context for child attributes.                 \${source}.                          specify it as the first nested object in arrays (<code>{"$source":"property"}</code>) or as an attribute in objects (<code>"$source":"property"</code>)</p>
-<p>filter the array, object, attribute                                  \$filter                             specify it inside the first nested object in arrays (<code>{"$filter":"condition"}</code>) or as an attribute in objects (<code>"$filter":"condition"</code>) or in an attribute next to the attribute value separated by a <code>,</code> (<code>"attribute":"$filter{condition}, ${property}"</code>)</p>
-<p>defines options to customize the output outside of a feature scope   \$options                            specify it at the top of the JSON template as a JSON object (GeoJSON options: <code>"$options":{"flat_output":true, "separator":"."}</code>; JSON-LD options: <code>"$options":{"@context": "the context json", "encode_as_string": true, "@type":"schema:SpecialAnnouncement", "collection_name":"customCollectionName"}</code>).</p>
-<p>allows including a template into another                             \$include, \$includeFlat             specify the <code>$include</code> option as an attribute value (<code>"attribute":"$include{subProperty.json}"</code>) and the <code>$includeFlat</code> as an attribute name with the included template path as a value (<code>"$includeFlat":"included.json"</code>)</p>
-<p>allows a template to extend another template                         \$merge                              specify the <code>$merge</code> directive as an attribute name containing the path to the extended template (:code: <code>"\$merged":"base_template.json"</code>).</p>
-<p>allows null values to be encoded. default is not encoded.            \${property}! or \$\${expression}!   ! at the end of a property interpolation or cql directive (<code>"attribute":"${property}!"</code> or <code>"attribute":"$${expression}!"</code>).</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Usage</strong></td>
+<td><strong>Syntax</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td>property interpolation</td>
+<td>\${property}</td>
+<td>specify it as an attribute value (<code>"json_attribute":"${property}"</code>)</td>
+</tr>
+<tr>
+<td>cql evaluation</td>
+<td>\$\${cql}</td>
+<td>specify it as an element value (<code>"json_attribute":"$${cql}"</code>)</td>
+</tr>
+<tr>
+<td>setting the evaluation context for child attributes.</td>
+<td>\${source}.</td>
+<td>specify it as the first nested object in arrays (<code>{"$source":"property"}</code>) or as an attribute in objects (<code>"$source":"property"</code>)</td>
+</tr>
+<tr>
+<td>filter the array, object, attribute</td>
+<td>\$filter</td>
+<td>specify it inside the first nested object in arrays (<code>{"$filter":"condition"}</code>) or as an attribute in objects (<code>"$filter":"condition"</code>) or in an attribute next to the attribute value separated by a <code>,</code> (<code>"attribute":"$filter{condition}, ${property}"</code>)</td>
+</tr>
+<tr>
+<td>defines options to customize the output outside of a feature scope</td>
+<td>\$options</td>
+<td>specify it at the top of the JSON template as a JSON object (GeoJSON options: <code>"$options":{"flat_output":true, "separator":"."}</code>; JSON-LD options: <code>"$options":{"@context": "the context json", "encode_as_string": true, "@type":"schema:SpecialAnnouncement", "collection_name":"customCollectionName"}</code>).</td>
+</tr>
+<tr>
+<td>allows including a template into another</td>
+<td>\$include, \$includeFlat</td>
+<td>specify the <code>$include</code> option as an attribute value (<code>"attribute":"$include{subProperty.json}"</code>) and the <code>$includeFlat</code> as an attribute name with the included template path as a value (<code>"$includeFlat":"included.json"</code>)</td>
+</tr>
+<tr>
+<td>allows a template to extend another template</td>
+<td>\$merge</td>
+<td>specify the <code>$merge</code> directive as an attribute name containing the path to the extended template (:code: <code>"\$merged":"base_template.json"</code>).</td>
+</tr>
+<tr>
+<td>allows null values to be encoded. default is not encoded.</td>
+<td>\${property}! or \$\${expression}!</td>
+<td>! at the end of a property interpolation or cql directive (<code>"attribute":"${property}!"</code> or <code>"attribute":"$${expression}!"</code>).</td>
+</tr>
+</tbody>
+</table>
 <h3 id="xml-based-templates">XML based templates</h3>
 <p>The following are the directives available in XML based templates.</p>
-<hr />
-<p><strong>Usage</strong>                                                                                         <strong>Syntax</strong>                   <strong>Description</strong></p>
-<p>property interpolation                                                                            \${property}                 specify it either as an element value (<code>&lt;element&gt;${property}&lt;/element&gt;</code>) or as an xml attribute value (<code>&lt;element attribute:"${property}"/&gt;</code>)</p>
-<p>cql evaluation                                                                                    \$\${cql}                    specify them either as an element value (<code>&lt;element&gt;$${cql}&lt;/element&gt;</code>) or as an xml attribute value (<code>&lt;element attribute:"$${cql}"/&gt;</code>)</p>
-<p>setting the evaluation context for property interpolation and cql evaluation in child elements.   gft:source                   specify it as an xml attribute (<code>&lt;element gft:source:"property"&gt;</code>)</p>
-<p>filter the element to which is applied based on the defined condition                             gft:filter                   specify it as an XML attribute on the element to be filtered (<code>&lt;element gft:filter:"condition"&gt;</code>)</p>
-<p>marks the beginning of an XML template.                                                           gft:Template                 It has to be the root element of an XML template (<code>&lt;gft:Template&gt; Template content&lt;/gft:Template&gt;</code>)</p>
-<p>defines options to customize the output outside of a feature scope                                gft:Options                  specify it as an element at the beginning of the xml document after the <code>&lt;gft:Template&gt;</code> one (<code>&lt;gft:Options&gt;&lt;/gft:Options&gt;</code>). GML options: <code>&lt;gtf:Namespaces&gt;</code>,<code>&lt;gtf:SchemaLocation&gt;</code>. HTML options: <code>&lt;script&gt;</code>, :code: <code>&lt;script type="application/ld+json"/&gt;</code>, <code>&lt;style&gt;</code>, :code: <code>&lt;link&gt;</code>.</p>
-<p>allows including a template into another                                                          \$include, gft:includeFlat   specify the <code>$include</code> option as an element value (<code>&lt;element&gt;$include{included.xml}&lt;/element&gt;</code>) and the <code>gft:includeFlat</code> as an element having the included template as text content (<code>&lt;gft:includeFlat&gt;included.xml&lt;/gft:includeFlat&gt;</code>)</p>
-<p>allows null values to be encoded. default is not encoded.                                         \${property}!                specify it either as an element value (<code>&lt;element&gt;${property}!&lt;/element&gt;</code>) or as an xml attribute value (<code>&lt;element attribute:"${property}!"/&gt;</code>)</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Usage</strong></td>
+<td><strong>Syntax</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td>property interpolation</td>
+<td>\${property}</td>
+<td>specify it either as an element value (<code>&lt;element&gt;${property}&lt;/element&gt;</code>) or as an xml attribute value (<code>&lt;element attribute:"${property}"/&gt;</code>)</td>
+</tr>
+<tr>
+<td>cql evaluation</td>
+<td>\$\${cql}</td>
+<td>specify them either as an element value (<code>&lt;element&gt;$${cql}&lt;/element&gt;</code>) or as an xml attribute value (<code>&lt;element attribute:"$${cql}"/&gt;</code>)</td>
+</tr>
+<tr>
+<td>setting the evaluation context for property interpolation and cql evaluation in child elements.</td>
+<td>gft:source</td>
+<td>specify it as an xml attribute (<code>&lt;element gft:source:"property"&gt;</code>)</td>
+</tr>
+<tr>
+<td>filter the element to which is applied based on the defined condition</td>
+<td>gft:filter</td>
+<td>specify it as an XML attribute on the element to be filtered (<code>&lt;element gft:filter:"condition"&gt;</code>)</td>
+</tr>
+<tr>
+<td>marks the beginning of an XML template.</td>
+<td>gft:Template</td>
+<td>It has to be the root element of an XML template (<code>&lt;gft:Template&gt; Template content&lt;/gft:Template&gt;</code>)</td>
+</tr>
+<tr>
+<td>defines options to customize the output outside of a feature scope</td>
+<td>gft:Options</td>
+<td>specify it as an element at the beginning of the xml document after the <code>&lt;gft:Template&gt;</code> one (<code>&lt;gft:Options&gt;&lt;/gft:Options&gt;</code>). GML options: <code>&lt;gtf:Namespaces&gt;</code>,<code>&lt;gtf:SchemaLocation&gt;</code>. HTML options: <code>&lt;script&gt;</code>, :code: <code>&lt;script type="application/ld+json"/&gt;</code>, <code>&lt;style&gt;</code>, :code: <code>&lt;link&gt;</code>.</td>
+</tr>
+<tr>
+<td>allows including a template into another</td>
+<td>\$include, gft:includeFlat</td>
+<td>specify the <code>$include</code> option as an element value (<code>&lt;element&gt;$include{included.xml}&lt;/element&gt;</code>) and the <code>gft:includeFlat</code> as an element having the included template as text content (<code>&lt;gft:includeFlat&gt;included.xml&lt;/gft:includeFlat&gt;</code>)</td>
+</tr>
+<tr>
+<td>allows null values to be encoded. default is not encoded.</td>
+<td>\${property}!</td>
+<td>specify it either as an element value (<code>&lt;element&gt;${property}!&lt;/element&gt;</code>) or as an xml attribute value (<code>&lt;element attribute:"${property}!"/&gt;</code>)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="a-step-by-step-introduction-to-features-templating-syntax">A step by step introduction to features-templating syntax</h2>
 <p>This introduction is meant to illustrate the different directives that can be used in a template. For clarity the documentation will start with a <code>Simple Feature</code> example and then progress through a <code>Complex Feature</code> example. However all the directives that will be shown are available for both Simple and Complex Features. <code>GeoJSON</code> and <code>GML</code> examples will be used mostly. For <code>JSON-LD</code> output format the rules to define a template are the same as the <code>GeoJSON</code> template with two exceptions:</p>
 <ul>

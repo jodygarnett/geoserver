@@ -2135,15 +2135,36 @@
 <p>GeoServer ships with a delay based brute force attack prevention system.</p>
 <p><img alt="" src="../images/auth_brute_force.png" />
 <em>Brute force attack prevention settings</em></p>
-<hr />
-<p>Option                                                    Description</p>
-<hr />
-<p>Enabled                                                   Whether the brute force attack prevention is enabled. Defaults to true.</p>
-<p>Minimum delay on failed authentication (seconds)          Minimum number of seconds a failed login request will be made to wait before getting a response</p>
-<p>Maximum delay on failed authentication (seconds)          Maximum number of seconds a failed login request will be made to wait before getting a response</p>
-<p>Excluded network masks                                    Network masks identifying hosts that are excluded from brute force attack prevention. Can be empty, include specific IPs, or a list of network masks. Defaults to 127.0.0.1, the localhost.</p>
-<p>Maximum number of threads blocked on failed login delay   Limits the number of threads that get delayed on failed login, should be set to a value less than the container's available response threads.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enabled</td>
+<td>Whether the brute force attack prevention is enabled. Defaults to true.</td>
+</tr>
+<tr>
+<td>Minimum delay on failed authentication (seconds)</td>
+<td>Minimum number of seconds a failed login request will be made to wait before getting a response</td>
+</tr>
+<tr>
+<td>Maximum delay on failed authentication (seconds)</td>
+<td>Maximum number of seconds a failed login request will be made to wait before getting a response</td>
+</tr>
+<tr>
+<td>Excluded network masks</td>
+<td>Network masks identifying hosts that are excluded from brute force attack prevention. Can be empty, include specific IPs, or a list of network masks. Defaults to 127.0.0.1, the localhost.</td>
+</tr>
+<tr>
+<td>Maximum number of threads blocked on failed login delay</td>
+<td>Limits the number of threads that get delayed on failed login, should be set to a value less than the container's available response threads.</td>
+</tr>
+</tbody>
+</table>
 <p>The mechanism works as follows:</p>
 <ul>
 <li>Each failed authentication request is made to wait between min and max seconds before getting an actual response back.</li>
@@ -2174,16 +2195,40 @@
 <p>This filter allows gathering user credentials (username and password) from request headers in a flexible and configurable way.</p>
 <p><img alt="" src="../images/auth_filter_credentials_from_header.png" />
 <em>Creating a new authentication filter fetching credentials from request headers</em></p>
-<hr />
-<p>Option                              Description</p>
-<hr />
-<p>Name                                Name of the filter</p>
-<p>Username Header                     Name of the Request Header containing the username</p>
-<p>Regular Expression for Username     Regular Expression used to extract the username from the related Header. Must define a group that will match the username.</p>
-<p>Password Header                     Name of the Request Header containing the password</p>
-<p>Regular Expression for Password     Regular Expression used to extract the password from the related Header. Must define a group that will match the password.</p>
-<p>Parse Arguments as Uri Components   If checked username and password are URI decoded before being used as credentials</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Name of the filter</td>
+</tr>
+<tr>
+<td>Username Header</td>
+<td>Name of the Request Header containing the username</td>
+</tr>
+<tr>
+<td>Regular Expression for Username</td>
+<td>Regular Expression used to extract the username from the related Header. Must define a group that will match the username.</td>
+</tr>
+<tr>
+<td>Password Header</td>
+<td>Name of the Request Header containing the password</td>
+</tr>
+<tr>
+<td>Regular Expression for Password</td>
+<td>Regular Expression used to extract the password from the related Header. Must define a group that will match the password.</td>
+</tr>
+<tr>
+<td>Parse Arguments as Uri Components</td>
+<td>If checked username and password are URI decoded before being used as credentials</td>
+</tr>
+</tbody>
+</table>
 <h2 id="authentication-providers">Authentication providers</h2>
 <p>This section manages the <code>security_auth_providers</code> (adding, removing, and editing). The default authentication provider uses basic <code class="interpreted-text" role="ref">username/password authentication &lt;../auth/providers.rst#security_auth_provider_userpasswd&gt;</code>_. <a href="../../auth/providers/#security_auth_provider_jdbc">JDBC</a> and <a href="../../auth/providers/#security_auth_provider_ldap">LDAP</a> authentication can also be used.</p>
 <p>Click <strong>Add new</strong> to create a new provider. Click an existing provider to edit its parameters.</p>
@@ -2193,24 +2238,54 @@
 <p>The default new authentication provider uses a user/group service for authentication.</p>
 <p><img alt="" src="../images/auth_userpass.png" />
 <em>Creating a new authentication provider with a username and password</em></p>
-<hr />
-<p>Option                       Description</p>
-<hr />
-<p>Name                         Name of the provider</p>
-<p>User Group Service           Name of the user/group service associated with this provider. Can be any one of the active user/group services.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Name of the provider</td>
+</tr>
+<tr>
+<td>User Group Service</td>
+<td>Name of the user/group service associated with this provider. Can be any one of the active user/group services.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="jdbc-provider">JDBC provider</h3>
 <p>The configuration options for the JDBC authentication provider are illustrated below.</p>
 <p><img alt="" src="../images/auth_jdbc.png" />
 <em>Configuring the JDBC authentication provider</em></p>
-<hr />
-<p>Option                       Description</p>
-<hr />
-<p>Name                         Name of the JDBC connection in GeoServer</p>
-<p>User Group Service           Name of the user/group service to use to load user information after the user is authenticated</p>
-<p>Driver class name            JDBC driver to use for the database connection</p>
-<p>Connection URL               JDBC URL to use when creating the database connection</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Name of the JDBC connection in GeoServer</td>
+</tr>
+<tr>
+<td>User Group Service</td>
+<td>Name of the user/group service to use to load user information after the user is authenticated</td>
+</tr>
+<tr>
+<td>Driver class name</td>
+<td>JDBC driver to use for the database connection</td>
+</tr>
+<tr>
+<td>Connection URL</td>
+<td>JDBC URL to use when creating the database connection</td>
+</tr>
+</tbody>
+</table>
 <h3 id="ldap-provider">LDAP provider</h3>
 <p>The following illustration shows the configuration options for the LDAP authentication provider. The default option is to use LDAP groups for role assignment, but there is also an option to use a user/group service for role assignment. Depending on whether this option is selected, the page itself will have different options.</p>
 <p><img alt="" src="../images/auth_ldap1.png" />

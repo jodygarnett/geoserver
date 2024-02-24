@@ -1851,16 +1851,48 @@
 <p><img alt="" src="../img/resthtml.png" />
 <em>System status</em></p>
 <p>The XML and JSON representations are quite similar. For each system information metric, the following attributes will be available:</p>
-<hr />
-<p><strong>Name</strong>                     <strong>Description</strong></p>
-<p>name                         name of the metric</p>
-<p>available                    TRUE if the system information value is available</p>
-<p>description                  description of this system information</p>
-<p>unit                         unit of the system information, can be empty</p>
-<p>category                     category of this system information</p>
-<p>priority                     this value can be used to render the metrics in a predefined order</p>
-<p>identifier                   identifies the resource associated with the metric, e.g. file partition name</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td>name</td>
+<td>name of the metric</td>
+</tr>
+<tr>
+<td>available</td>
+<td>TRUE if the system information value is available</td>
+</tr>
+<tr>
+<td>description</td>
+<td>description of this system information</td>
+</tr>
+<tr>
+<td>unit</td>
+<td>unit of the system information, can be empty</td>
+</tr>
+<tr>
+<td>category</td>
+<td>category of this system information</td>
+</tr>
+<tr>
+<td>priority</td>
+<td>this value can be used to render the metrics in a predefined order</td>
+</tr>
+<tr>
+<td>identifier</td>
+<td>identifies the resource associated with the metric, e.g. file partition name</td>
+</tr>
+</tbody>
+</table>
 <p>Example of XML representation:</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;metrics&gt;</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&lt;metric&gt;</span>

@@ -1917,39 +1917,172 @@
 <p>This information is also available via the REST API to troubleshoot remote systems. The library <a href="https://github.com/oshi/oshi/">OSHI</a> is used to retrieve system-level information without depending on native libraries or DLLs, relying solely on <a href="https://github.com/java-native-access/jna/">Apache JNA</a>. Major operating systems (Linux, Windows and MacOS) are supported out of the box.</p>
 <p>Use the checkbox <strong>Enable All Statistics</strong> to start and stop the collecting and displaying system status information. Disabling is useful if GeoServer is generating a high CPU load due to system status collection.</p>
 <p>The available system information is:</p>
-<hr />
-<p><strong>Info</strong>                        <strong>Example</strong>     <strong>Description</strong></p>
-<p>Operating system                Linux Mint 18   Name of the operating system and the used version</p>
-<p>Uptime                          08:34:50        Up time of the system</p>
-<p>System average load 1 minute    0.90            System average load for the last minute</p>
-<p>System average load 5 minutes   1.12            System average load for the last five minute</p>
-<p>System average load 15 minute   0.68            System average load for the last fifteen minute</p>
-<p>Number of physical CPUs         4               Number of physical CPUs / cores available</p>
-<p>Number of logical CPUs          8               Number of logical CPUs / cores available</p>
-<p>Number of running process       316             Total number of process running in the system</p>
-<p>Number of running threads       1094            Total number of threads running in the system</p>
-<p>CPU load average                4.12 %          Average load of the CPU in the last second</p>
-<p>CPU * load                     11.43 %         Load of a specific core in the last second</p>
-<p>Used physical memory            31.58 %         Percentage of the system memory used</p>
-<p>Total physical memory           31.4 GiB        System total memory</p>
-<p>Free physical memory            21.4 GiB        System memory available for use</p>
-<p>Used swap memory                0.00%           Percentage of swap memory used</p>
-<p>Total swap memory               32.0 GiB        System total swap memory</p>
-<p>Free swap memory                32.0 GiB        Free swap memory</p>
-<p>File system usage               65.47 %         File system usage taking in account all partitions</p>
-<p>Partition * used space         54.8 %          Percentage of space used in a specific partition</p>
-<p>Partition * total space        338.9 GiB       Total space of a specific partition</p>
-<p>Partition * free space         117.0 GiB       Free space on a specific partition</p>
-<p>Network interfaces send         42.0 MiB        Data send through all the available network interfaces</p>
-<p>Network interfaces received     700.4 MiB       Data received through all the available network interfaces</p>
-<p>Network interface * send       25.0 MiB        Data send through a specific network interface</p>
-<p>Network interface * received   250.4 MiB       Data received through a specific network interface</p>
-<p>CPU temperature                 52.00 ºC        CPU temperature</p>
-<p>CPU voltage                     1.5 V           CPU voltage</p>
-<p>GeoServer CPU usage             3.5 %           Percentage of CPU used by GeoServer in the last second</p>
-<p>GeoServer threads               49              Number of threads created by GeoServer</p>
-<p>GeoServer JVM memory usage      5.83 %          Percentage of the JVM memory used by GeoServer</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Info</strong></td>
+<td><strong>Example</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td>Operating system</td>
+<td>Linux Mint 18</td>
+<td>Name of the operating system and the used version</td>
+</tr>
+<tr>
+<td>Uptime</td>
+<td>08:34:50</td>
+<td>Up time of the system</td>
+</tr>
+<tr>
+<td>System average load 1 minute</td>
+<td>0.90</td>
+<td>System average load for the last minute</td>
+</tr>
+<tr>
+<td>System average load 5 minutes</td>
+<td>1.12</td>
+<td>System average load for the last five minute</td>
+</tr>
+<tr>
+<td>System average load 15 minute</td>
+<td>0.68</td>
+<td>System average load for the last fifteen minute</td>
+</tr>
+<tr>
+<td>Number of physical CPUs</td>
+<td>4</td>
+<td>Number of physical CPUs / cores available</td>
+</tr>
+<tr>
+<td>Number of logical CPUs</td>
+<td>8</td>
+<td>Number of logical CPUs / cores available</td>
+</tr>
+<tr>
+<td>Number of running process</td>
+<td>316</td>
+<td>Total number of process running in the system</td>
+</tr>
+<tr>
+<td>Number of running threads</td>
+<td>1094</td>
+<td>Total number of threads running in the system</td>
+</tr>
+<tr>
+<td>CPU load average</td>
+<td>4.12 %</td>
+<td>Average load of the CPU in the last second</td>
+</tr>
+<tr>
+<td>CPU * load</td>
+<td>11.43 %</td>
+<td>Load of a specific core in the last second</td>
+</tr>
+<tr>
+<td>Used physical memory</td>
+<td>31.58 %</td>
+<td>Percentage of the system memory used</td>
+</tr>
+<tr>
+<td>Total physical memory</td>
+<td>31.4 GiB</td>
+<td>System total memory</td>
+</tr>
+<tr>
+<td>Free physical memory</td>
+<td>21.4 GiB</td>
+<td>System memory available for use</td>
+</tr>
+<tr>
+<td>Used swap memory</td>
+<td>0.00%</td>
+<td>Percentage of swap memory used</td>
+</tr>
+<tr>
+<td>Total swap memory</td>
+<td>32.0 GiB</td>
+<td>System total swap memory</td>
+</tr>
+<tr>
+<td>Free swap memory</td>
+<td>32.0 GiB</td>
+<td>Free swap memory</td>
+</tr>
+<tr>
+<td>File system usage</td>
+<td>65.47 %</td>
+<td>File system usage taking in account all partitions</td>
+</tr>
+<tr>
+<td>Partition * used space</td>
+<td>54.8 %</td>
+<td>Percentage of space used in a specific partition</td>
+</tr>
+<tr>
+<td>Partition * total space</td>
+<td>338.9 GiB</td>
+<td>Total space of a specific partition</td>
+</tr>
+<tr>
+<td>Partition * free space</td>
+<td>117.0 GiB</td>
+<td>Free space on a specific partition</td>
+</tr>
+<tr>
+<td>Network interfaces send</td>
+<td>42.0 MiB</td>
+<td>Data send through all the available network interfaces</td>
+</tr>
+<tr>
+<td>Network interfaces received</td>
+<td>700.4 MiB</td>
+<td>Data received through all the available network interfaces</td>
+</tr>
+<tr>
+<td>Network interface * send</td>
+<td>25.0 MiB</td>
+<td>Data send through a specific network interface</td>
+</tr>
+<tr>
+<td>Network interface * received</td>
+<td>250.4 MiB</td>
+<td>Data received through a specific network interface</td>
+</tr>
+<tr>
+<td>CPU temperature</td>
+<td>52.00 ºC</td>
+<td>CPU temperature</td>
+</tr>
+<tr>
+<td>CPU voltage</td>
+<td>1.5 V</td>
+<td>CPU voltage</td>
+</tr>
+<tr>
+<td>GeoServer CPU usage</td>
+<td>3.5 %</td>
+<td>Percentage of CPU used by GeoServer in the last second</td>
+</tr>
+<tr>
+<td>GeoServer threads</td>
+<td>49</td>
+<td>Number of threads created by GeoServer</td>
+</tr>
+<tr>
+<td>GeoServer JVM memory usage</td>
+<td>5.83 %</td>
+<td>Percentage of the JVM memory used by GeoServer</td>
+</tr>
+</tbody>
+</table>
 <p>If some information is not available the special term <code>NOT AVAILABLE</code> will appear. Values will be automatically converted to best human readable unit.</p>
 <h2 id="config_serverstatus_jvm">JVM Console</h2>
 <p>For information on the live Java Runtime Environment the <strong>JVM Console</strong> tab provides access to two useful troubleshooting tools.</p>

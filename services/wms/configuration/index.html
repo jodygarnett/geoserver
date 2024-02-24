@@ -2148,28 +2148,96 @@
 <h2 id="wms_configuration_limits">Request limits</h2>
 <p>The request limit options allow the administrator to limit the resources consumed by each WMS <code>GetMap</code> request.</p>
 <p>The following table shows the option names, a description, and the minimum GeoServer version at which the option is available (older versions will ignore it if set).</p>
-<hr />
-<p><strong>Option</strong>                           <strong>Description</strong>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <strong>Version</strong></p>
-<p><strong>Max rendering memory (KB)</strong>        Sets the maximum amount of memory a single GetMap request is allowed to use (in kilobytes). The limit is checked before request execution by estimating how much memory would be required to produce the output in the format requested. For example, for an image format the estimate is based on the size of the required rendering memory (which is determined by the image size, the pixel bit depth, and the number of active FeatureTypeStyles at the requested scale). If the estimated memory size is below the limit, the request is executed; otherwise it is cancelled.                                                                                                   1.7.5</p>
-<p><strong>Max rendering time (s)</strong>           Sets the maximum amount of time GeoServer will spend processing a request (in seconds). This time limits the "blind processing" portion of the request, that is, the time taken to read data and compute the output result (which may occur concurrently). If the execution time reaches the limit, the request is cancelled. The time required to write results back to the client is not limited by this parameter, since this is determined by the (unknown) network latency between the server and the client. For example, in the case of PNG/JPEG image generation, this option limits the data reading and rendering time, but not the time taken to write the image out.   1.7.5</p>
-<p><strong>Max rendering errors (count)</strong>     Sets the maximum amount of rendering errors tolerated by a GetMap request. By default GetMap makes a best-effort attempt to serve the result, ignoring invalid features, reprojection errors and the like. Setting a limit on the number of errors ignored can make it easier to notice issues, and conserves CPU cycles by reducing the errors which must be handled and logged                                                                                                                                                                                                                                                                                                     1.7.5</p>
-<p><strong>Max number of dimension values</strong>   Sets the maximum number of dimension (time, elevation, custom) values that a client can request in a GetMap/GetFeatureInfo request (the work to be done is usually proportional to said number of times, and the list of values is kept in memory during the processing)                                                                                                                                                                                                                                                                                                                                                                                                             2.14.0</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Option</strong></td>
+<td><strong>Description</strong></td>
+<td><strong>Version</strong></td>
+</tr>
+<tr>
+<td><strong>Max rendering memory (KB)</strong></td>
+<td>Sets the maximum amount of memory a single GetMap request is allowed to use (in kilobytes). The limit is checked before request execution by estimating how much memory would be required to produce the output in the format requested. For example, for an image format the estimate is based on the size of the required rendering memory (which is determined by the image size, the pixel bit depth, and the number of active FeatureTypeStyles at the requested scale). If the estimated memory size is below the limit, the request is executed; otherwise it is cancelled.</td>
+<td>1.7.5</td>
+</tr>
+<tr>
+<td><strong>Max rendering time (s)</strong></td>
+<td>Sets the maximum amount of time GeoServer will spend processing a request (in seconds). This time limits the "blind processing" portion of the request, that is, the time taken to read data and compute the output result (which may occur concurrently). If the execution time reaches the limit, the request is cancelled. The time required to write results back to the client is not limited by this parameter, since this is determined by the (unknown) network latency between the server and the client. For example, in the case of PNG/JPEG image generation, this option limits the data reading and rendering time, but not the time taken to write the image out.</td>
+<td>1.7.5</td>
+</tr>
+<tr>
+<td><strong>Max rendering errors (count)</strong></td>
+<td>Sets the maximum amount of rendering errors tolerated by a GetMap request. By default GetMap makes a best-effort attempt to serve the result, ignoring invalid features, reprojection errors and the like. Setting a limit on the number of errors ignored can make it easier to notice issues, and conserves CPU cycles by reducing the errors which must be handled and logged</td>
+<td>1.7.5</td>
+</tr>
+<tr>
+<td><strong>Max number of dimension values</strong></td>
+<td>Sets the maximum number of dimension (time, elevation, custom) values that a client can request in a GetMap/GetFeatureInfo request (the work to be done is usually proportional to said number of times, and the list of values is kept in memory during the processing)</td>
+<td>2.14.0</td>
+</tr>
+</tbody>
+</table>
 <p>The default value of each limit is <code>0</code>, which specifies that the limit is not applied.</p>
 <p>If any of the request limits is exceeded, the GetMap operation is cancelled and a <code>ServiceException</code> is returned to the client.</p>
 <p>When setting the above limits it is suggested that peak conditions be taken into consideration. For example, under normal circumstances a GetMap request may take less than a second. Under high load it is acceptable for it to take longer, but it's usually not desirable to allow a request to go on for 30 minutes.</p>
 <p>The following table shows examples of reasonable values for the request limits:</p>
-<hr />
-<p><strong>Option</strong>           <strong>Value</strong>   <strong>Rationale</strong></p>
-<p>maxRequestMemory     16384       16MB are sufficient to render a 2048x2048 image at 4 bytes per pixel (full color and transparency), or a 8x8 meta-tile when using GeoWebCache or TileCache. Note that the rendering process uses a separate memory buffer for each FeatureTypeStyle in an SLD, so this also affects the maximum image size. For example, if an SLD contains two FeatureTypeStyle elements in order to draw cased lines for a highway, the maximum image size will be limited to 1448x1448 (the memory requirement increases with the product of the image dimensions, so halving the memory decreases image dimensions by only about 30%)</p>
-<p>maxRenderingTime     120         A request that processes for a full two minutes is probably rendering too many features, regardless of the current server load. This may be caused by a request against a big layer using a style that does not have suitable scale dependencies</p>
-<p>maxRenderingErrors   100         Encountering 100 errors is probably the result of a request trying to reproject a big data set into a projection that is not appropriate for the output extent, resulting in many reprojection failures.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Option</strong></td>
+<td><strong>Value</strong></td>
+<td><strong>Rationale</strong></td>
+</tr>
+<tr>
+<td>maxRequestMemory</td>
+<td>16384</td>
+<td>16MB are sufficient to render a 2048x2048 image at 4 bytes per pixel (full color and transparency), or a 8x8 meta-tile when using GeoWebCache or TileCache. Note that the rendering process uses a separate memory buffer for each FeatureTypeStyle in an SLD, so this also affects the maximum image size. For example, if an SLD contains two FeatureTypeStyle elements in order to draw cased lines for a highway, the maximum image size will be limited to 1448x1448 (the memory requirement increases with the product of the image dimensions, so halving the memory decreases image dimensions by only about 30%)</td>
+</tr>
+<tr>
+<td>maxRenderingTime</td>
+<td>120</td>
+<td>A request that processes for a full two minutes is probably rendering too many features, regardless of the current server load. This may be caused by a request against a big layer using a style that does not have suitable scale dependencies</td>
+</tr>
+<tr>
+<td>maxRenderingErrors</td>
+<td>100</td>
+<td>Encountering 100 errors is probably the result of a request trying to reproject a big data set into a projection that is not appropriate for the output extent, resulting in many reprojection failures.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="layergroup-capabilities-settings">LayerGroup Capabilities Settings</h2>
-<hr />
-<p><strong>Option</strong>                                    <strong>Description</strong></p>
-<p>Default LayerGroup Style In GetCapabilities   Enable/disable the encoding of the default LayerGroup style in GetCapabilties responses for LayerGroup with mode Named Tree, Container Tree, Earth Observation Tree. Single and Opaque groups are not affected by the option and will always show the default style. By default the option is set to enabled.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Option</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td>Default LayerGroup Style In GetCapabilities</td>
+<td>Enable/disable the encoding of the default LayerGroup style in GetCapabilties responses for LayerGroup with mode Named Tree, Container Tree, Earth Observation Tree. Single and Opaque groups are not affected by the option and will always show the default style. By default the option is set to enabled.</td>
+</tr>
+</tbody>
+</table>
 
 
 

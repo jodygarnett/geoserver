@@ -2322,88 +2322,250 @@
 <p>Fill in the <em>Basic Store Info</em> used to identify the database when managing layers.</p>
 <p><img alt="" src="../images/postgis-basic-info.png" />
 <em>Adding a PostGIS database</em></p>
-<hr />
-<p>Basic Store Info       Description</p>
-<hr />
-<p><strong>Workspace</strong>          Name of the workspace to contain the database. This will also be the prefix of any layer names created from tables in the database.</p>
-<p><strong>Data Source Name</strong>   Name of the database. This can be different from the name as known to PostgreSQL/PostGIS.</p>
-<p><strong>Description</strong>        Description of the database/store.</p>
-<p><strong>Enabled</strong>            Enables the store. If disabled, no data in the database will be served.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Basic Store Info</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Workspace</strong></td>
+<td>Name of the workspace to contain the database. This will also be the prefix of any layer names created from tables in the database.</td>
+</tr>
+<tr>
+<td><strong>Data Source Name</strong></td>
+<td>Name of the database. This can be different from the name as known to PostgreSQL/PostGIS.</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Description of the database/store.</td>
+</tr>
+<tr>
+<td><strong>Enabled</strong></td>
+<td>Enables the store. If disabled, no data in the database will be served.</td>
+</tr>
+</tbody>
+</table>
 <p>Move on to the connection parameters used to connect and interact with the database.</p>
 <p><img alt="" src="../images/postgis.png" />
 <em>PostGIS connection parameters</em></p>
 <p>The <code>dbtype</code> and <code>namespace</code> connection parameters are not directly editable. The <strong>dbtype</strong> parameter is for internal use only (and only accessible via the REST API).</p>
-<hr />
-<p>Connection Parameter   Description</p>
-<hr />
-<p><strong>dbtype</strong>             Type of database. Internal value, leave this value as the default.</p>
-<p><strong>namespace</strong>          Namespace to be associated with the database. This field is altered by changing the workspace name.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Connection Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>dbtype</strong></td>
+<td>Type of database. Internal value, leave this value as the default.</td>
+</tr>
+<tr>
+<td><strong>namespace</strong></td>
+<td>Namespace to be associated with the database. This field is altered by changing the workspace name.</td>
+</tr>
+</tbody>
+</table>
 <p>Connection parameters establishing a database connection (see <a href="../connection-pooling/">Database Connection Pooling</a>):</p>
-<hr />
-<p>Connection Parameter           Description</p>
-<hr />
-<p><strong>host</strong>                       Host name where the database exists.</p>
-<p><strong>port</strong>                       Port number to connect to the above host.</p>
-<p><strong>database</strong>                   Name of the database as known on the host.</p>
-<p><strong>schema</strong>                     Schema in the above database.</p>
-<p><strong>user</strong>                       Username to connect to the database.</p>
-<p><strong>passwd</strong>                     Password associated with the above user.</p>
-<p><strong>max connections</strong>            Maximum amount of open connections to the database.</p>
-<p><strong>min connections</strong>            Minimum number of pooled connections.</p>
-<p><strong>fetch size</strong>                 Number of records read with each interaction with the database.</p>
-<p><strong>Connection timeout</strong>         Time (in seconds) the connection pool will wait before timing out.</p>
-<p><strong>validate connections</strong>       Checks the connection is alive before using it.</p>
-<p><strong>Evictor run periodicity</strong>    Number of seconds between idle object evictor runs.</p>
-<p><strong>Max connection idle time</strong>   Number of seconds a connection needs to stay idle before the evictor starts to consider closing it.</p>
-<p><strong>Evictor tests per run</strong>      Number of connections checked by the idle connection evictor for each of its runs.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Connection Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>host</strong></td>
+<td>Host name where the database exists.</td>
+</tr>
+<tr>
+<td><strong>port</strong></td>
+<td>Port number to connect to the above host.</td>
+</tr>
+<tr>
+<td><strong>database</strong></td>
+<td>Name of the database as known on the host.</td>
+</tr>
+<tr>
+<td><strong>schema</strong></td>
+<td>Schema in the above database.</td>
+</tr>
+<tr>
+<td><strong>user</strong></td>
+<td>Username to connect to the database.</td>
+</tr>
+<tr>
+<td><strong>passwd</strong></td>
+<td>Password associated with the above user.</td>
+</tr>
+<tr>
+<td><strong>max connections</strong></td>
+<td>Maximum amount of open connections to the database.</td>
+</tr>
+<tr>
+<td><strong>min connections</strong></td>
+<td>Minimum number of pooled connections.</td>
+</tr>
+<tr>
+<td><strong>fetch size</strong></td>
+<td>Number of records read with each interaction with the database.</td>
+</tr>
+<tr>
+<td><strong>Connection timeout</strong></td>
+<td>Time (in seconds) the connection pool will wait before timing out.</td>
+</tr>
+<tr>
+<td><strong>validate connections</strong></td>
+<td>Checks the connection is alive before using it.</td>
+</tr>
+<tr>
+<td><strong>Evictor run periodicity</strong></td>
+<td>Number of seconds between idle object evictor runs.</td>
+</tr>
+<tr>
+<td><strong>Max connection idle time</strong></td>
+<td>Number of seconds a connection needs to stay idle before the evictor starts to consider closing it.</td>
+</tr>
+<tr>
+<td><strong>Evictor tests per run</strong></td>
+<td>Number of connections checked by the idle connection evictor for each of its runs.</td>
+</tr>
+</tbody>
+</table>
 <p>Connection parameters managing SQL generation:</p>
-<hr />
-<p>Connection Parameter               Description</p>
-<hr />
-<p><strong>Expose primary keys</strong>            Expose primary key columns as values suitable for filtering.</p>
-<p><strong>Primary key metadata table</strong>     Provide table defining how primary keys values are generated (see <a href="../primarykey/">Controlling feature ID generation in spatial databases</a>)</p>
-<p><strong>Session startup SQL</strong>            SQL applied to connection before use (see <a href="../sqlsession/">Custom SQL session start/stop scripts</a>)</p>
-<p><strong>Session close-up SQL</strong>           SQL applied to connection after use (see <a href="../sqlsession/">Custom SQL session start/stop scripts</a>)</p>
-<p><strong>preparedStatements</strong>             Enables prepared statements for SQL generation, rather than text substitution.</p>
-<p><strong>Max open prepared statements</strong>   Number of prepared statements available.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Connection Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Expose primary keys</strong></td>
+<td>Expose primary key columns as values suitable for filtering.</td>
+</tr>
+<tr>
+<td><strong>Primary key metadata table</strong></td>
+<td>Provide table defining how primary keys values are generated (see <a href="../primarykey/">Controlling feature ID generation in spatial databases</a>)</td>
+</tr>
+<tr>
+<td><strong>Session startup SQL</strong></td>
+<td>SQL applied to connection before use (see <a href="../sqlsession/">Custom SQL session start/stop scripts</a>)</td>
+</tr>
+<tr>
+<td><strong>Session close-up SQL</strong></td>
+<td>SQL applied to connection after use (see <a href="../sqlsession/">Custom SQL session start/stop scripts</a>)</td>
+</tr>
+<tr>
+<td><strong>preparedStatements</strong></td>
+<td>Enables prepared statements for SQL generation, rather than text substitution.</td>
+</tr>
+<tr>
+<td><strong>Max open prepared statements</strong></td>
+<td>Number of prepared statements available.</td>
+</tr>
+</tbody>
+</table>
 <p>Connection parameters managing database interaction:</p>
-<hr />
-<p>Connection Parameter                             Description</p>
-<hr />
-<p><strong>Loose bbox</strong>                                   Performs only the primary filter on the bounding box. See the section on <a href="./#postgis_loose_bbox">Using loose bounding box</a> for details.</p>
-<p><strong>Estimated extends</strong>                            Use spatial index to quickly estimate bounds, rather than check every row.</p>
-<p><strong>Encode functions</strong>                             Generate supported filter functions into their SQL equivalent.</p>
-<p><strong>Support on the fly geometry simplification</strong>   Enables use of PostGIS geometry simplification</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Connection Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Loose bbox</strong></td>
+<td>Performs only the primary filter on the bounding box. See the section on <a href="./#postgis_loose_bbox">Using loose bounding box</a> for details.</td>
+</tr>
+<tr>
+<td><strong>Estimated extends</strong></td>
+<td>Use spatial index to quickly estimate bounds, rather than check every row.</td>
+</tr>
+<tr>
+<td><strong>Encode functions</strong></td>
+<td>Generate supported filter functions into their SQL equivalent.</td>
+</tr>
+<tr>
+<td><strong>Support on the fly geometry simplification</strong></td>
+<td>Enables use of PostGIS geometry simplification</td>
+</tr>
+</tbody>
+</table>
 <p>Connection parameters supporting initial database creation:</p>
-<hr />
-<p>Connection Parameter         Description</p>
-<hr />
-<p><strong>create database</strong>          Enable to define a new database on connection</p>
-<p><strong>create database params</strong>   Additional CREATE DATABASE definition, example <code>WITH TEMPLATE=postgis</code></p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Connection Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>create database</strong></td>
+<td>Enable to define a new database on connection</td>
+</tr>
+<tr>
+<td><strong>create database params</strong></td>
+<td>Additional CREATE DATABASE definition, example <code>WITH TEMPLATE=postgis</code></td>
+</tr>
+</tbody>
+</table>
 <p>When finished, click <strong>Save</strong>.</p>
 <h3 id="using-jndi">Using JNDI</h3>
 <p>GeoServer can also connect to a PostGIS database using <a href="http://java.sun.com/products/jndi/">JNDI</a> (Java Naming and Directory Interface).</p>
 <p>To begin, navigate to <strong>Stores &rarr; Add a new store &rarr; PostGIS NG (JNDI)</strong>.</p>
 <p><img alt="" src="../images/postgisjndi.png" />
 <em>Adding a PostGIS database (using JNDI)</em></p>
-<hr />
-<p>Option                  Description</p>
-<hr />
-<p><strong>Workspace</strong>           Name of the workspace to contain the store. This will also be the prefix of all of the layer names created from the store.</p>
-<p><strong>Data Source Name</strong>    Name of the database. This can be different from the name as known to PostgreSQL/PostGIS.</p>
-<p><strong>Description</strong>         Description of the database/store.</p>
-<p><strong>Enabled</strong>             Enables the store. If disabled, no data in the database will be served.</p>
-<p><strong>dbtype</strong>              Type of database. Leave this value as the default.</p>
-<p><strong>jndiReferenceName</strong>   JNDI path to the database.</p>
-<p><strong>schema</strong>              Schema for the above database.</p>
-<p><strong>namespace</strong>           Namespace to be associated with the database. This field is altered by changing the workspace name.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Workspace</strong></td>
+<td>Name of the workspace to contain the store. This will also be the prefix of all of the layer names created from the store.</td>
+</tr>
+<tr>
+<td><strong>Data Source Name</strong></td>
+<td>Name of the database. This can be different from the name as known to PostgreSQL/PostGIS.</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Description of the database/store.</td>
+</tr>
+<tr>
+<td><strong>Enabled</strong></td>
+<td>Enables the store. If disabled, no data in the database will be served.</td>
+</tr>
+<tr>
+<td><strong>dbtype</strong></td>
+<td>Type of database. Leave this value as the default.</td>
+</tr>
+<tr>
+<td><strong>jndiReferenceName</strong></td>
+<td>JNDI path to the database.</td>
+</tr>
+<tr>
+<td><strong>schema</strong></td>
+<td>Schema for the above database.</td>
+</tr>
+<tr>
+<td><strong>namespace</strong></td>
+<td>Namespace to be associated with the database. This field is altered by changing the workspace name.</td>
+</tr>
+</tbody>
+</table>
 <p>When finished, click <strong>Save</strong>.</p>
 <h2 id="configuring-postgis-layers">Configuring PostGIS layers</h2>
 <p>When properly loaded, all tables in the database will be visible to GeoServer, but they will need to be individually configured before being served by GeoServer. See the section on <a href="../../webadmin/layers/">Layers</a> for how to add and edit new layers.</p>

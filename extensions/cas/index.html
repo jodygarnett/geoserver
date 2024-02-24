@@ -3070,26 +3070,71 @@
 <blockquote>
 <p><img alt="" src="images/configuration.png" /></p>
 </blockquote>
-<hr />
-<p>Key                                     Description</p>
-<hr />
-<p>Name                                    Name of the filter</p>
-<p>CAS server URL including context root   The CAS server location (GeoServer will redirect to it, for example, in order to login, adding the necessary extra path elements)</p>
-<p>No single sign on                       If checkecd, will send the "renew=true" options to the CAS server, forcing the user to login on the server at each request (unless session creation is allowed)</p>
-<p>Participate in single sign out          Whether GeoServer should receive and handle callbacks for Single Sign Out.</p>
-<p>URL in CAS loutput page                 CAS logout page location</p>
-<p>Proxy callback URL                      The URL CAS will call back to after proxy ticket authentication</p>
-<p>Role source                             A choice of role sources for the user authenticated via CAS</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Name of the filter</td>
+</tr>
+<tr>
+<td>CAS server URL including context root</td>
+<td>The CAS server location (GeoServer will redirect to it, for example, in order to login, adding the necessary extra path elements)</td>
+</tr>
+<tr>
+<td>No single sign on</td>
+<td>If checkecd, will send the "renew=true" options to the CAS server, forcing the user to login on the server at each request (unless session creation is allowed)</td>
+</tr>
+<tr>
+<td>Participate in single sign out</td>
+<td>Whether GeoServer should receive and handle callbacks for Single Sign Out.</td>
+</tr>
+<tr>
+<td>URL in CAS loutput page</td>
+<td>CAS logout page location</td>
+</tr>
+<tr>
+<td>Proxy callback URL</td>
+<td>The URL CAS will call back to after proxy ticket authentication</td>
+</tr>
+<tr>
+<td>Role source</td>
+<td>A choice of role sources for the user authenticated via CAS</td>
+</tr>
+</tbody>
+</table>
 <p>Specifically for the <strong>role source</strong>, the following options are available:</p>
-<hr />
-<p>Source                 Description</p>
-<hr />
-<p>User group service     Locate the user in a the specified user group service, extract the roles from it.</p>
-<p>Role service           Locate user roles from the specified role service</p>
-<p>Header attribute       Look up the roles in the specified HTTP header of the CAS response</p>
-<p>Custom CAS attribute   Extract the roles from a CAS custom attribute in the <code>&lt;cas:serviceResponse&gt;</code> received from the server. The attributes must be configured, on the CAS side, via an attribute repository, and then released for publication in service configuration.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>User group service</td>
+<td>Locate the user in a the specified user group service, extract the roles from it.</td>
+</tr>
+<tr>
+<td>Role service</td>
+<td>Locate user roles from the specified role service</td>
+</tr>
+<tr>
+<td>Header attribute</td>
+<td>Look up the roles in the specified HTTP header of the CAS response</td>
+</tr>
+<tr>
+<td>Custom CAS attribute</td>
+<td>Extract the roles from a CAS custom attribute in the <code>&lt;cas:serviceResponse&gt;</code> received from the server. The attributes must be configured, on the CAS side, via an attribute repository, and then released for publication in service configuration.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="example-cas-configuration">Example CAS configuration</h2>
 <p>In order to use the CAS custom attributes the server must be configured to extract the attributes from a given attribute repository, and then allow their release in the GeoServer service configuration.</p>
 <p>For example, the following <code>cas.properties</code> file sets up a JDBC user source, as well as JDBC attribute repository (this configuration file might useful for testing purposes, but not setup for production):</p>

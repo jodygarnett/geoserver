@@ -2404,12 +2404,30 @@
   ...
 </code></pre></div>
 <p>where:</p>
-<hr />
-<p>Attribute      Required?   Description                                                                                                       Default value</p>
-<hr />
-<p><code>min</code>          Yes         The minimum scale (inclusive) for which the rule will be applied. Value is a number, either decimal or integer.   N/A</p>
-<p><code>max</code>          Yes         The maximum scale (exclusive) for which the rule will be applied. Value is a number, either decimal or integer.   N/A</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>min</code></td>
+<td>Yes</td>
+<td>The minimum scale (inclusive) for which the rule will be applied. Value is a number, either decimal or integer.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>max</code></td>
+<td>Yes</td>
+<td>The maximum scale (exclusive) for which the rule will be applied. Value is a number, either decimal or integer.</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is not possible to use an expression for any of these values.</p>
@@ -2510,12 +2528,30 @@
   ...
 </code></pre></div>
 <p>where:</p>
-<hr />
-<p>Attribute      Required?   Description                                                                       Default value</p>
-<hr />
-<p><code>min</code>          Yes         The minimum zoom level for which the rule will be applied. Value is an integer.   N/A</p>
-<p><code>max</code>          Yes         The maximum zoom level for which the rule will be applied. Value is an integer.   N/A</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>min</code></td>
+<td>Yes</td>
+<td>The minimum zoom level for which the rule will be applied. Value is an integer.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>max</code></td>
+<td>Yes</td>
+<td>The maximum zoom level for which the rule will be applied. Value is an integer.</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is not possible to use an expression for any of these values.</p>
@@ -2539,11 +2575,24 @@
   name: &lt;string&gt;
 </code></pre></div>
 <p>where:</p>
-<hr />
-<p>Property       Required?   Description                                                               Default value</p>
-<hr />
-<p><code>name</code>         No          <code>WGS84</code>, <code>WebMercator</code>, or a name of a predefined gridset in GeoServer.   <code>WebMercator</code></p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>No</td>
+<td><code>WGS84</code>, <code>WebMercator</code>, or a name of a predefined gridset in GeoServer.</td>
+<td><code>WebMercator</code></td>
+</tr>
+</tbody>
+</table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>As many web maps use "web mercator" (also known as EPSG:3857 or EPSG:900913), this is assumed to be the default if no <code>grid</code> is specified.</p>

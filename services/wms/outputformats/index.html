@@ -2058,28 +2058,117 @@
 <p class="admonition-title">Note</p>
 <p>The list of output formats supported by a GeoServer instance can be found by a WMS <a href="../reference/">GetCapabilities</a> request.</p>
 </div>
-<hr />
-<p><strong>Format</strong>            <strong>Syntax</strong>                               <strong>Notes</strong></p>
-<p>PNG                   <code>format=image/png</code>                       Default</p>
-<p>PNG8                  <code>format=image/png8</code>                      Same as PNG, but computes an optimal 256 color (8 bit) palette, so the image size is usually smaller</p>
-<p>JPEG                  <code>format=image/jpeg</code>                      </p>
-<p>JPEG-PNG              <code>format=image/vnd.jpeg-png</code>              A custom format that will decide dynamically, based on the image contents, if it's best to use a JPEG or PNG compression. The images are returned in JPEG format if fully opaque and not paletted. In order to use this format in a meaningful way the GetMap must include a "&amp;transparent=TRUE" parameter, as without it GeoServer generates opaque images with the default/requested background color, making this format always return JPEG images (or always PNG, if they are paletted). When using the layer preview to test this format, remember to add "&amp;transparent=TRUE" to the preview URL, as normally the preview generates non transparent images.</p>
-<p>JPEG-PNG8             <code>format=image/vnd.jpeg-png8</code>             Same as JPEG-PNG, but generating a paletted output if the PNG format is chosen</p>
-<p>GIF                   <code>format=image/gif</code>                       </p>
-<p>TIFF                  <code>format=image/tiff</code>                      </p>
-<p>TIFF8                 <code>format=image/tiff8</code>                     Same as TIFF, but computes an optimal 256 color (8 bit) palette, so the image size is usually smaller</p>
-<p>GeoTIFF               <code>format=image/geotiff</code>                   Same as TIFF, but includes extra GeoTIFF metadata</p>
-<p>GeoTIFF8              <code>format=image/geotiff8</code>                  Same as TIFF, but includes extra GeoTIFF metadata and computes an optimal 256 color (8 bit) palette, so the image size is usually smaller</p>
-<p>SVG                   <code>format=image/svg</code>                       </p>
-<p>PDF                   <code>format=application/pdf</code>                 </p>
-<p>GeoRSS                <code>format=rss</code>                             </p>
-<p>KML                   <code>format=kml</code>                             </p>
-<p>KMZ                   <code>format=kmz</code>                             </p>
-<p>MapML                 <code>format=text/mapml</code>                      </p>
-<p>MapML HTML Viewer     <code>text/html; subtype=mapml</code>               </p>
-<p>OpenLayers            <code>format=application/openlayers</code>          Generates an OpenLayers HTML application.</p>
-<p>UTFGrid               <code>format=application/json;type=utfgrid</code>   Generates an <a href="https://github.com/mapbox/utfgrid-spec/blob/master/1.3/utfgrid.md">UTFGrid 1.3</a> JSON response. Requires vector output, either from a vector layer, or from a raster layer turned into vectors by a rendering transformation.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Format</strong></td>
+<td><strong>Syntax</strong></td>
+<td><strong>Notes</strong></td>
+</tr>
+<tr>
+<td>PNG</td>
+<td><code>format=image/png</code></td>
+<td>Default</td>
+</tr>
+<tr>
+<td>PNG8</td>
+<td><code>format=image/png8</code></td>
+<td>Same as PNG, but computes an optimal 256 color (8 bit) palette, so the image size is usually smaller</td>
+</tr>
+<tr>
+<td>JPEG</td>
+<td><code>format=image/jpeg</code></td>
+<td></td>
+</tr>
+<tr>
+<td>JPEG-PNG</td>
+<td><code>format=image/vnd.jpeg-png</code></td>
+<td>A custom format that will decide dynamically, based on the image contents, if it's best to use a JPEG or PNG compression. The images are returned in JPEG format if fully opaque and not paletted. In order to use this format in a meaningful way the GetMap must include a "&amp;transparent=TRUE" parameter, as without it GeoServer generates opaque images with the default/requested background color, making this format always return JPEG images (or always PNG, if they are paletted). When using the layer preview to test this format, remember to add "&amp;transparent=TRUE" to the preview URL, as normally the preview generates non transparent images.</td>
+</tr>
+<tr>
+<td>JPEG-PNG8</td>
+<td><code>format=image/vnd.jpeg-png8</code></td>
+<td>Same as JPEG-PNG, but generating a paletted output if the PNG format is chosen</td>
+</tr>
+<tr>
+<td>GIF</td>
+<td><code>format=image/gif</code></td>
+<td></td>
+</tr>
+<tr>
+<td>TIFF</td>
+<td><code>format=image/tiff</code></td>
+<td></td>
+</tr>
+<tr>
+<td>TIFF8</td>
+<td><code>format=image/tiff8</code></td>
+<td>Same as TIFF, but computes an optimal 256 color (8 bit) palette, so the image size is usually smaller</td>
+</tr>
+<tr>
+<td>GeoTIFF</td>
+<td><code>format=image/geotiff</code></td>
+<td>Same as TIFF, but includes extra GeoTIFF metadata</td>
+</tr>
+<tr>
+<td>GeoTIFF8</td>
+<td><code>format=image/geotiff8</code></td>
+<td>Same as TIFF, but includes extra GeoTIFF metadata and computes an optimal 256 color (8 bit) palette, so the image size is usually smaller</td>
+</tr>
+<tr>
+<td>SVG</td>
+<td><code>format=image/svg</code></td>
+<td></td>
+</tr>
+<tr>
+<td>PDF</td>
+<td><code>format=application/pdf</code></td>
+<td></td>
+</tr>
+<tr>
+<td>GeoRSS</td>
+<td><code>format=rss</code></td>
+<td></td>
+</tr>
+<tr>
+<td>KML</td>
+<td><code>format=kml</code></td>
+<td></td>
+</tr>
+<tr>
+<td>KMZ</td>
+<td><code>format=kmz</code></td>
+<td></td>
+</tr>
+<tr>
+<td>MapML</td>
+<td><code>format=text/mapml</code></td>
+<td></td>
+</tr>
+<tr>
+<td>MapML HTML Viewer</td>
+<td><code>text/html; subtype=mapml</code></td>
+<td></td>
+</tr>
+<tr>
+<td>OpenLayers</td>
+<td><code>format=application/openlayers</code></td>
+<td>Generates an OpenLayers HTML application.</td>
+</tr>
+<tr>
+<td>UTFGrid</td>
+<td><code>format=application/json;type=utfgrid</code></td>
+<td>Generates an <a href="https://github.com/mapbox/utfgrid-spec/blob/master/1.3/utfgrid.md">UTFGrid 1.3</a> JSON response. Requires vector output, either from a vector layer, or from a raster layer turned into vectors by a rendering transformation.</td>
+</tr>
+</tbody>
+</table>
 
 
 

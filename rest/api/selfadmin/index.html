@@ -2241,12 +2241,27 @@
 <div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;newPassword&quot;</span><span class="p">:</span><span class="s2">&quot;newPassword&quot;</span><span class="w"> </span><span class="p">}</span>
 </span></code></pre></div>
 <h3 id="exceptions">Exceptions</h3>
-<hr />
-<p>Exception                                         Status code   Error string (payload)</p>
-<hr />
-<p>PUT with an invalid <code>newPassword</code> or bad params   400           <code>Missing 'newPassword'</code></p>
-<p>PUT for user not updatable                        424           <code>User service does not support changing pw</code></p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Exception</th>
+<th>Status code</th>
+<th>Error string (payload)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PUT with an invalid <code>newPassword</code> or bad params</td>
+<td>400</td>
+<td><code>Missing 'newPassword'</code></td>
+</tr>
+<tr>
+<td>PUT for user not updatable</td>
+<td>424</td>
+<td><code>User service does not support changing pw</code></td>
+</tr>
+</tbody>
+</table>
 
 
 

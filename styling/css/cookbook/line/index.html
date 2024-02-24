@@ -3070,34 +3070,147 @@
 <p>While lines can also seem to be simple shapes, having length but no width, there are many options and tricks for making lines display nicely.</p>
 <h2 id="css_cookbook_lines_attributes">Example lines layer</h2>
 <p>The <a href="../../../sld/cookbook/artifacts/sld_cookbook_line.zip">lines layer</a> used in the examples below contains road information for a fictional country. For reference, the attribute table for the points in this layer is included below.</p>
-<hr />
-<p><strong>fid</strong> (Feature ID)   <strong>name</strong> (Road name)         <strong>type</strong> (Road class)</p>
-<p>line.1                 Latway                       highway</p>
-<p>line.2                 Crescent Avenue              secondary</p>
-<p>line.3                 Forest Avenue                secondary</p>
-<p>line.4                 Longway                      highway</p>
-<p>line.5                 Saxer Avenue                 secondary</p>
-<p>line.6                 Ridge Avenue                 secondary</p>
-<p>line.7                 Holly Lane                   local-road</p>
-<p>line.8                 Mulberry Street              local-road</p>
-<p>line.9                 Nathan Lane                  local-road</p>
-<p>line.10                Central Street               local-road</p>
-<p>line.11                Lois Lane                    local-road</p>
-<p>line.12                Rocky Road                   local-road</p>
-<p>line.13                Fleet Street                 local-road</p>
-<p>line.14                Diane Court                  local-road</p>
-<p>line.15                Cedar Trail                  local-road</p>
-<p>line.16                Victory Road                 local-road</p>
-<p>line.17                Highland Road                local-road</p>
-<p>line.18                Easy Street                  local-road</p>
-<p>line.19                Hill Street                  local-road</p>
-<p>line.20                Country Road                 local-road</p>
-<p>line.21                Main Street                  local-road</p>
-<p>line.22                Jani Lane                    local-road</p>
-<p>line.23                Shinbone Alley               local-road</p>
-<p>line.24                State Street                 local-road</p>
-<p>line.25                River Road                   local-road</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>fid</strong> (Feature ID)</td>
+<td><strong>name</strong> (Road name)</td>
+<td><strong>type</strong> (Road class)</td>
+</tr>
+<tr>
+<td>line.1</td>
+<td>Latway</td>
+<td>highway</td>
+</tr>
+<tr>
+<td>line.2</td>
+<td>Crescent Avenue</td>
+<td>secondary</td>
+</tr>
+<tr>
+<td>line.3</td>
+<td>Forest Avenue</td>
+<td>secondary</td>
+</tr>
+<tr>
+<td>line.4</td>
+<td>Longway</td>
+<td>highway</td>
+</tr>
+<tr>
+<td>line.5</td>
+<td>Saxer Avenue</td>
+<td>secondary</td>
+</tr>
+<tr>
+<td>line.6</td>
+<td>Ridge Avenue</td>
+<td>secondary</td>
+</tr>
+<tr>
+<td>line.7</td>
+<td>Holly Lane</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.8</td>
+<td>Mulberry Street</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.9</td>
+<td>Nathan Lane</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.10</td>
+<td>Central Street</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.11</td>
+<td>Lois Lane</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.12</td>
+<td>Rocky Road</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.13</td>
+<td>Fleet Street</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.14</td>
+<td>Diane Court</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.15</td>
+<td>Cedar Trail</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.16</td>
+<td>Victory Road</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.17</td>
+<td>Highland Road</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.18</td>
+<td>Easy Street</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.19</td>
+<td>Hill Street</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.20</td>
+<td>Country Road</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.21</td>
+<td>Main Street</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.22</td>
+<td>Jani Lane</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.23</td>
+<td>Shinbone Alley</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.24</td>
+<td>State Street</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.25</td>
+<td>River Road</td>
+<td>local-road</td>
+</tr>
+</tbody>
+</table>
 <p><a href="../../../sld/cookbook/artifacts/sld_cookbook_line.zip">Download the lines shapefile</a></p>
 <h2 id="css_cookbook_lines_simpleline">Simple line</h2>
 <p>This example specifies lines be colored black with a thickness of 3 pixels.</p>
@@ -3328,12 +3441,42 @@
 </div>
 <p>There are three types of road classes in our fictional country, ranging from back roads to high-speed freeways: "highway", "secondary", and "local-road". In order to make sure the roads are rendered in the proper order of importance, a "z-index" attribute has been placed in each rule.</p>
 <p>The three rules are designed as follows:</p>
-<hr />
-<p><strong>Rule order</strong>   <strong>Rule name / type</strong>   <strong>Color</strong>             <strong>Size</strong></p>
-<p>1                local-road             <code>#009933</code> (green)     2</p>
-<p>2                secondary              <code>#0055CC</code> (blue)      3</p>
-<p>3                highway                <code>#FF0000</code> (red)       6</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rule order</strong></td>
+<td><strong>Rule name / type</strong></td>
+<td><strong>Color</strong></td>
+<td><strong>Size</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td>local-road</td>
+<td><code>#009933</code> (green)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>secondary</td>
+<td><code>#0055CC</code> (blue)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>3</td>
+<td>highway</td>
+<td><code>#FF0000</code> (red)</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Lines 1-5</strong> comprise the first rule, the filter matches all roads that the "type" attribute has a value of "local-road". If this condition is true for a particular line, the rule renders it dark green, 2 pixels wide. All these lines are rendered first, and thus sit at the bottom of the final map.</p>
 <p><strong>Lines 7-11</strong> match the "secondary" roads, painting them dark blue, 3 pixels wide. Given the "z-index" is 1, they are rendered after the local roads, but below the highways.</p>
 <p><strong>Lines 13-17</strong> match the "highway" roads, painting them red 6 pixels wide. These roads are pained last, thus, on top of all others.</p>
@@ -3369,12 +3512,42 @@
 <p>Determining the appropriate scale denominators (zoom levels) to use is beyond the scope of this example.</p>
 </div>
 <p>This style contains three rules. The three rules are designed as follows:</p>
-<hr />
-<p><strong>Rule order</strong>   <strong>Rule name</strong>     <strong>Scale denominator</strong>            <strong>Line width</strong></p>
-<p>1                Large             1:180,000,000 or less            6</p>
-<p>2                Medium            1:180,000,000 to 1:360,000,000   4</p>
-<p>3                Small             Greater than 1:360,000,000       2</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rule order</strong></td>
+<td><strong>Rule name</strong></td>
+<td><strong>Scale denominator</strong></td>
+<td><strong>Line width</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Large</td>
+<td>1:180,000,000 or less</td>
+<td>6</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Medium</td>
+<td>1:180,000,000 to 1:360,000,000</td>
+<td>4</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Small</td>
+<td>Greater than 1:360,000,000</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
 <p>The order of these rules does not matter since the scales denominated in each rule do not overlap.</p>
 <p>The first rule provides the stroke color used at all zoom levels, dark gray, while the other three rules cascade over it applying the different stroke widths based on the current zoom level leveraging the "@sd" pseudo attribute. The "@sd" pseudo attribute can only be compared using the "&lt;" and "&gt;" operators, using any other operator will result in errors.</p>
 <p>The result of this style is that lines are drawn with larger widths as one zooms in and smaller widths as one zooms out.</p>

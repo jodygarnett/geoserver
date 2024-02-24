@@ -2206,16 +2206,48 @@
 <p>This request only specifies that you want the reflector (wms/reflect) to return an OpenLayers application (format=application/openlayers), that you want it to display the feature "topp:states" (layers=topp:states) and that the width should be 800 pixels (width=800). However, this will not return the exact same value as above. Instead, the reflector will zoom to the bounds of the feature and return a map that is 800 pixels wide, but with the height adjusted to the aspect ratio of the feature.</p>
 <h2 id="using-the-wms-reflector">Using the WMS Reflector</h2>
 <p>To use the WMS reflector all one must do is specify <code>wms/reflect?</code> as opposed to <code>wms?</code> in a request. The only mandatory parameter to a WMS reflector call is the <strong>layers</strong> parameter. As stated above the reflector fills in sensible defaults for the rest of the parameters. The following table lists all the defaults used:</p>
-<hr />
-<p>request                             getmap</p>
-<p>service                             wms</p>
-<p>version                             1.1.1</p>
-<p>format                              image/png</p>
-<p>width                               512</p>
-<p>height                              512 if width is not specified</p>
-<p>srs                                 EPSG:4326</p>
-<p>bbox                                bounds of layer(s)</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>request</td>
+<td>getmap</td>
+</tr>
+<tr>
+<td>service</td>
+<td>wms</td>
+</tr>
+<tr>
+<td>version</td>
+<td>1.1.1</td>
+</tr>
+<tr>
+<td>format</td>
+<td>image/png</td>
+</tr>
+<tr>
+<td>width</td>
+<td>512</td>
+</tr>
+<tr>
+<td>height</td>
+<td>512 if width is not specified</td>
+</tr>
+<tr>
+<td>srs</td>
+<td>EPSG:4326</td>
+</tr>
+<tr>
+<td>bbox</td>
+<td>bounds of layer(s)</td>
+</tr>
+</tbody>
+</table>
 <p>Any of these defaults can be overridden when specifying the request. The <strong>styles</strong> parameter is derived by using the default style as configured by GeoServer for each <strong>layer</strong> specified in the layers parameter.</p>
 <p>Any parameter you send with a WMS request is also legitimate when requesting data from the reflector. Its strength is what it does with the parameters you do not specify, which is explored in the next section.</p>
 <p><strong>layers</strong>: This is the only mandatory parameter. It is a comma separated list of the layers you wish to include in your image or OpenLayers application.</p>

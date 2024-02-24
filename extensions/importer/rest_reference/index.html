@@ -4214,13 +4214,32 @@ Content-Type: application/json
 }
 </code></pre></div>
 <p>The parameters are:</p>
-<hr />
-<p>Name              Optional   Description</p>
-<hr />
-<p>targetWorkspace   Y          The target workspace to import to</p>
-<p>targetStore       Y          The target store to import to</p>
-<p>data              Y          The data to be imported</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>targetWorkspace</td>
+<td>Y</td>
+<td>The target workspace to import to</td>
+</tr>
+<tr>
+<td>targetStore</td>
+<td>Y</td>
+<td>The target store to import to</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Y</td>
+<td>The data to be imported</td>
+</tr>
+</tbody>
+</table>
 <p>The mere creation does not start the import, but it may automatically populate its tasks depending on the target. For example, by referring a directory of shapefiles to be importer, the creation will automatically fill in a task to import each of the shapefiles as a new layer.</p>
 <p>The response to the above POST request will be:</p>
 <div class="language-text highlight"><pre><span></span><code>Status: 201 Created

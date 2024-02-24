@@ -2880,35 +2880,142 @@
 <p>While lines can also seem to be simple shapes, having length but no width, there are many options and tricks for making lines display nicely.</p>
 <h2 id="ysld_cookbook_lines_attributes">Example lines layer</h2>
 <p>The <a href="../artifacts/ysld_cookbook_line.zip">lines layer</a> used in the examples below contains road information for a fictional country. For reference, the attribute table for the points in this layer is included below.</p>
-<hr />
-<p><code>fid</code> (Feature ID)    <code>name</code> (Road name)           <code>type</code> (Road class)</p>
-<hr />
-<p>line.1                Latway                       highway</p>
-<p>line.2                Crescent Avenue              secondary</p>
-<p>line.3                Forest Avenue                secondary</p>
-<p>line.4                Longway                      highway</p>
-<p>line.5                Saxer Avenue                 secondary</p>
-<p>line.6                Ridge Avenue                 secondary</p>
-<p>line.7                Holly Lane                   local-road</p>
-<p>line.8                Mulberry Street              local-road</p>
-<p>line.9                Nathan Lane                  local-road</p>
-<p>line.10               Central Street               local-road</p>
-<p>line.11               Lois Lane                    local-road</p>
-<p>line.12               Rocky Road                   local-road</p>
-<p>line.13               Fleet Street                 local-road</p>
-<p>line.14               Diane Court                  local-road</p>
-<p>line.15               Cedar Trail                  local-road</p>
-<p>line.16               Victory Road                 local-road</p>
-<p>line.17               Highland Road                local-road</p>
-<p>line.18               Easy Street                  local-road</p>
-<p>line.19               Hill Street                  local-road</p>
-<p>line.20               Country Road                 local-road</p>
-<p>line.21               Main Street                  local-road</p>
-<p>line.22               Jani Lane                    local-road</p>
-<p>line.23               Shinbone Alley               local-road</p>
-<p>line.24               State Street                 local-road</p>
-<p>line.25               River Road                   local-road</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th><code>fid</code> (Feature ID)</th>
+<th><code>name</code> (Road name)</th>
+<th><code>type</code> (Road class)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>line.1</td>
+<td>Latway</td>
+<td>highway</td>
+</tr>
+<tr>
+<td>line.2</td>
+<td>Crescent Avenue</td>
+<td>secondary</td>
+</tr>
+<tr>
+<td>line.3</td>
+<td>Forest Avenue</td>
+<td>secondary</td>
+</tr>
+<tr>
+<td>line.4</td>
+<td>Longway</td>
+<td>highway</td>
+</tr>
+<tr>
+<td>line.5</td>
+<td>Saxer Avenue</td>
+<td>secondary</td>
+</tr>
+<tr>
+<td>line.6</td>
+<td>Ridge Avenue</td>
+<td>secondary</td>
+</tr>
+<tr>
+<td>line.7</td>
+<td>Holly Lane</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.8</td>
+<td>Mulberry Street</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.9</td>
+<td>Nathan Lane</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.10</td>
+<td>Central Street</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.11</td>
+<td>Lois Lane</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.12</td>
+<td>Rocky Road</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.13</td>
+<td>Fleet Street</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.14</td>
+<td>Diane Court</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.15</td>
+<td>Cedar Trail</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.16</td>
+<td>Victory Road</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.17</td>
+<td>Highland Road</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.18</td>
+<td>Easy Street</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.19</td>
+<td>Hill Street</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.20</td>
+<td>Country Road</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.21</td>
+<td>Main Street</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.22</td>
+<td>Jani Lane</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.23</td>
+<td>Shinbone Alley</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.24</td>
+<td>State Street</td>
+<td>local-road</td>
+</tr>
+<tr>
+<td>line.25</td>
+<td>River Road</td>
+<td>local-road</td>
+</tr>
+</tbody>
+</table>
 <p><a href="../artifacts/ysld_cookbook_line.zip">Download the lines shapefile</a></p>
 <h2 id="ysld_cookbook_lines_simpleline">Simple line</h2>
 <p>This example specifies lines be colored black with a thickness of 3 pixels.</p>
@@ -3241,13 +3348,36 @@
 </div>
 <p>There are three types of road classes in our fictional country, ranging from back roads to high-speed freeways: "highway", "secondary", and "local-road". In order to handle each case separately, there is more than one feature style, each containing a single rule. This ensures that each road type is rendered in order, as each feature style is drawn based on the order in which it appears in the YSLD.</p>
 <p>The three rules are designed as follows:</p>
-<hr />
-<p>Rule order     Rule name / type      Color                 Size</p>
-<hr />
-<p>1              local-road            <code>#009933</code> (green)     2</p>
-<p>2              secondary             <code>#0055CC</code> (blue)      3</p>
-<p>3              highway               <code>#FF0000</code> (red)       6</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Rule order</th>
+<th>Rule name / type</th>
+<th>Color</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>local-road</td>
+<td><code>#009933</code> (green)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>secondary</td>
+<td><code>#0055CC</code> (blue)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>3</td>
+<td>highway</td>
+<td><code>#FF0000</code> (red)</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Lines 3-10</strong> comprise the first rule. <strong>Line 6</strong> sets the filter for this rule, such that the "type" attribute has a value of "local-road". If this condition is true for a particular line, the rule is rendered according to the line symbolizer which is on <strong>lines 8-10</strong>. <strong>Lines 9-10</strong> set the color of the line to be a dark green (<code>'#009933'</code>) and the width to be 2 pixels.</p>
 <p><strong>Lines 11-18</strong> comprise the second rule. <strong>Line 14</strong> sets the filter for this rule, such that the "type" attribute has a value of "secondary". If this condition is true for a particular line, the rule is rendered according to the line symbolizer which is on <strong>lines 16-18</strong>. <strong>Lines 17-18</strong> set the color of the line to be a dark blue (<code>'#0055CC'</code>) and the width to be 3 pixels, making the lines slightly thicker than the "local-road" lines and also a different color.</p>
 <p><strong>Lines 19-26</strong> comprise the third and final rule. <strong>Line 22</strong> sets the filter for this rule, such that the "type" attribute has a value of "primary". If this condition is true for a particular line, the rule is rendered according to the line symbolizer which is on <strong>lines 24-26</strong>. <strong>Lines 25-26</strong> set the color of the line to be a bright red (<code>'#FF0000'</code>) and the width to be 6 pixels, so that these lines are rendered on top of and thicker than the other two road classes. In this way, the "primary" roads are given priority in the map rendering.</p>
@@ -3291,13 +3421,36 @@
 <p>Determining the appropriate scale denominators (zoom levels) to use is beyond the scope of this example.</p>
 </div>
 <p>This style contains three rules. The three rules are designed as follows:</p>
-<hr />
-<p>Rule order   Rule name         Scale denominator                Line width</p>
-<hr />
-<p>1            Large             1:180,000,000 or less            6</p>
-<p>2            Medium            1:180,000,000 to 1:360,000,000   4</p>
-<p>3            Small             Greater than 1:360,000,000       2</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Rule order</th>
+<th>Rule name</th>
+<th>Scale denominator</th>
+<th>Line width</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Large</td>
+<td>1:180,000,000 or less</td>
+<td>6</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Medium</td>
+<td>1:180,000,000 to 1:360,000,000</td>
+<td>4</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Small</td>
+<td>Greater than 1:360,000,000</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
 <p>The order of these rules does not matter since the scales denominated in each rule do not overlap.</p>
 <p>The first rule (<strong>lines 5-10</strong>) is the smallest scale denominator, corresponding to when the view is "zoomed in". The scale rule is set on <strong>line 6</strong>, so that the rule will apply to any map with a scale denominator of 180,000,000 or less. <strong>Lines 9-10</strong> draw the line to be dark green (<code>'#009933'</code>) with a width of 6 pixels.</p>
 <p>The second rule (<strong>lines 11-16</strong>) is the intermediate scale denominator, corresponding to when the view is "partially zoomed". <strong>Lines 12</strong> set the scale such that the rule will apply to any map with scale denominators between 180,000,000 and 360,000,000. (The lower bound is inclusive and the upper bound is exclusive, so a zoom level of exactly 360,000,000 would <em>not</em> apply here.) Aside from the scale, the only difference between this rule and the previous is the width of the lines, which is set to 4 pixels on <strong>line 16</strong>.</p>

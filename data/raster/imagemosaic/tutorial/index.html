@@ -2350,17 +2350,44 @@
 </li>
 </ul>
 <p>The configuration parameters are as follows:</p>
-<hr />
-<p>Parameter                Value</p>
-<hr />
-<p>MaxAllowedTiles          2147483647</p>
-<p>BackgroundValues         -9999</p>
-<p>OutputTransparentColor   \"no color\"</p>
-<p>InputTransparentColor    \"no color\"</p>
-<p>AllowMultiThreading      True</p>
-<p>USE_JAI_IMAGEREAD        True</p>
-<p>SUGGESTED_TILE_SIZE      512,512</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MaxAllowedTiles</td>
+<td>2147483647</td>
+</tr>
+<tr>
+<td>BackgroundValues</td>
+<td>-9999</td>
+</tr>
+<tr>
+<td>OutputTransparentColor</td>
+<td>\"no color\"</td>
+</tr>
+<tr>
+<td>InputTransparentColor</td>
+<td>\"no color\"</td>
+</tr>
+<tr>
+<td>AllowMultiThreading</td>
+<td>True</td>
+</tr>
+<tr>
+<td>USE_JAI_IMAGEREAD</td>
+<td>True</td>
+</tr>
+<tr>
+<td>SUGGESTED_TILE_SIZE</td>
+<td>512,512</td>
+</tr>
+</tbody>
+</table>
 <h3 id="aerial-imagery">Aerial imagery</h3>
 <p>In this example we are going to create a mosaic that will serve aerial imagery, specifically RGB GeoTIFFs. Because this is visual data, in the Coverage Editor you can use the basic <code>raster</code> style, which is just a stub SLD to instruct the GeoServer raster renderer to not do anything particular in terms of color management:</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span>
@@ -2395,17 +2422,44 @@
 <p>Those ugly black areas are the result of applying the default mosaic parameters to a mosaic that does not entirely cover its bounding box. The areas within the BBOX that are not covered with data will default to a value of 0 on each band. Since this mosaic is RGB we can simply set the <code>OutputTransparentColor</code> to <code>0,0,0</code> in order to get transparent fills for the BBOX.</p>
 </div>
 <p>The various parameters can be set as follows:</p>
-<hr />
-<p>Parameter                Value</p>
-<hr />
-<p>MaxAllowedTiles          2147483647</p>
-<p>BackgroundValues         (default)</p>
-<p>OutputTransparentColor   #000000</p>
-<p>InputTransparentColor    \"no color\"</p>
-<p>AllowMultiThreading      True</p>
-<p>USE_JAI_IMAGEREAD        True</p>
-<p>SUGGESTED_TILE_SIZE      512,512</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MaxAllowedTiles</td>
+<td>2147483647</td>
+</tr>
+<tr>
+<td>BackgroundValues</td>
+<td>(default)</td>
+</tr>
+<tr>
+<td>OutputTransparentColor</td>
+<td>#000000</td>
+</tr>
+<tr>
+<td>InputTransparentColor</td>
+<td>\"no color\"</td>
+</tr>
+<tr>
+<td>AllowMultiThreading</td>
+<td>True</td>
+</tr>
+<tr>
+<td>USE_JAI_IMAGEREAD</td>
+<td>True</td>
+</tr>
+<tr>
+<td>SUGGESTED_TILE_SIZE</td>
+<td>512,512</td>
+</tr>
+</tbody>
+</table>
 <p>The result is the following:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>![](images/prato_2.png)
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>*Advanced configuration*
@@ -2419,17 +2473,44 @@
 </span></code></pre></div>
 <p>This mosaic, formed by two single granules, shows a typical case where the \"nodata\" collar areas of the granules overlap, as shown in the picture above. In this case we can use the <code>InputTransparentColor</code> parameter to make the collar areas disappear during the superimposition process --- in this case, by using an <code>InputTransparentColor</code> of <code>#FFFFFF</code>.</p>
 <p>The final configuration parameters are the following:</p>
-<hr />
-<p>Parameter                Value</p>
-<hr />
-<p>MaxAllowedTiles          2147483647</p>
-<p>BackgroundValues         (default)</p>
-<p>OutputTransparentColor   \"no color\"</p>
-<p>InputTransparentColor    #FFFFFF</p>
-<p>AllowMultiThreading      True</p>
-<p>USE_JAI_IMAGEREAD        True</p>
-<p>SUGGESTED_TILE_SIZE      512,512</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MaxAllowedTiles</td>
+<td>2147483647</td>
+</tr>
+<tr>
+<td>BackgroundValues</td>
+<td>(default)</td>
+</tr>
+<tr>
+<td>OutputTransparentColor</td>
+<td>\"no color\"</td>
+</tr>
+<tr>
+<td>InputTransparentColor</td>
+<td>#FFFFFF</td>
+</tr>
+<tr>
+<td>AllowMultiThreading</td>
+<td>True</td>
+</tr>
+<tr>
+<td>USE_JAI_IMAGEREAD</td>
+<td>True</td>
+</tr>
+<tr>
+<td>SUGGESTED_TILE_SIZE</td>
+<td>512,512</td>
+</tr>
+</tbody>
+</table>
 <p>This is the result:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>![](images/iacovella_2.png)
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>*Advanced configuration*

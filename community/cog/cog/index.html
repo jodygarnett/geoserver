@@ -4117,35 +4117,94 @@
 <p><img alt="" src="../images/cogparams.png" />
 <em>COG Connection params</em></p>
 <p>Checking the <code>Cloud Optimized GeoTIFF (COG)</code> checkbox will provide new options:</p>
-<hr />
-<p>Option                                           Description</p>
-<hr />
-<p><strong>URL</strong>                                          (prefixed by <code>cog://</code>) representing the connection URL to the COG Dataset.</p>
-<p><strong>Range Reader Settings</strong>                        Which type of Range Reader implementation. Values currently supported are HTTP, GoogleCloud, Azure, S3 the latter using an S3 Client</p>
-<p><strong>User Name / Access Key ID / Account Name</strong>     Optional user name (HTTP) or Access Key ID (S3) or Account Name (Azure) in case the COG dataset requires authentication</p>
-<p><strong>Password / Secret Access Key / Account Key</strong>   Password (HTTP) or Secret Access Key (S3) or Account Key (Azure) for the previous credential</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>URL</strong></td>
+<td>(prefixed by <code>cog://</code>) representing the connection URL to the COG Dataset.</td>
+</tr>
+<tr>
+<td><strong>Range Reader Settings</strong></td>
+<td>Which type of Range Reader implementation. Values currently supported are HTTP, GoogleCloud, Azure, S3 the latter using an S3 Client</td>
+</tr>
+<tr>
+<td><strong>User Name / Access Key ID / Account Name</strong></td>
+<td>Optional user name (HTTP) or Access Key ID (S3) or Account Name (Azure) in case the COG dataset requires authentication</td>
+</tr>
+<tr>
+<td><strong>Password / Secret Access Key / Account Key</strong></td>
+<td>Password (HTTP) or Secret Access Key (S3) or Account Key (Azure) for the previous credential</td>
+</tr>
+</tbody>
+</table>
 <h2 id="cog-imagemosaic-configuration">COG ImageMosaic Configuration</h2>
 <p>Additional configuration parameters can be specified in the ImageMosaic indexer configuration, in order to properly configure a COG based ImageMosaic.</p>
 <h3 id="indexerproperties"><strong><code>indexer.properties</code></strong></h3>
-<hr />
-<p>Parameter        Mandatory?   Description</p>
-<hr />
-<p>Cog              Y            A boolean flag (true/false) to be set (Cog=true) in order to signal that the ImageMosaic is a COG data mosaic.</p>
-<p>CogRangeReader   N            Specifies the desired RangeReader implementation performing the Range Reads requests.</p>
-<p>CogUser          N            Credential to be set whenever basic HTTP authentication is needed to access the COG Datasets or an S3 Access KeyID is required or an Azure AccountName is required</p>
-<p>CogPassword      N            Password for the above user OR Secret Access Key for the above S3 KeyId or AccountKey for the above Azure AccountName.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Mandatory?</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cog</td>
+<td>Y</td>
+<td>A boolean flag (true/false) to be set (Cog=true) in order to signal that the ImageMosaic is a COG data mosaic.</td>
+</tr>
+<tr>
+<td>CogRangeReader</td>
+<td>N</td>
+<td>Specifies the desired RangeReader implementation performing the Range Reads requests.</td>
+</tr>
+<tr>
+<td>CogUser</td>
+<td>N</td>
+<td>Credential to be set whenever basic HTTP authentication is needed to access the COG Datasets or an S3 Access KeyID is required or an Azure AccountName is required</td>
+</tr>
+<tr>
+<td>CogPassword</td>
+<td>N</td>
+<td>Password for the above user OR Secret Access Key for the above S3 KeyId or AccountKey for the above Azure AccountName.</td>
+</tr>
+</tbody>
+</table>
 <h4 id="cog_plugin_rangereader">COG RangeReader</h4>
 <p>The following table provides the values for the <code>CogRangeReader</code> based on the type of target storage:</p>
-<hr />
-<p>Storage type   Class name</p>
-<hr />
-<p>HTTP           Can be omitted, or set to <code>it.geosolutions.imageioimpl.plugins.cog.HttpRangeReader</code></p>
-<p>AWS S3         <code>it.geosolutions.imageioimpl.plugins.cog.S3RangeReader</code></p>
-<p>Google Cloud   <code>it.geosolutions.imageioimpl.plugins.cog.GSRangeReader</code></p>
-<p>Azure          <code>it.geosolutions.imageioimpl.plugins.cog.AzureRangeReader</code></p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Storage type</th>
+<th>Class name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTTP</td>
+<td>Can be omitted, or set to <code>it.geosolutions.imageioimpl.plugins.cog.HttpRangeReader</code></td>
+</tr>
+<tr>
+<td>AWS S3</td>
+<td><code>it.geosolutions.imageioimpl.plugins.cog.S3RangeReader</code></td>
+</tr>
+<tr>
+<td>Google Cloud</td>
+<td><code>it.geosolutions.imageioimpl.plugins.cog.GSRangeReader</code></td>
+</tr>
+<tr>
+<td>Azure</td>
+<td><code>it.geosolutions.imageioimpl.plugins.cog.AzureRangeReader</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="cog-global-settings">COG Global Settings</h2>
 <p>The GeoServer Global Settings page contains the default COG settings presented when setting up a new COG GeoTIFF Store.</p>
 <p><img alt="" src="../images/globalcogsettings.png" />
@@ -4158,27 +4217,72 @@
 </ul>
 <h2 id="http-client-okhttp-configuration">HTTP Client (OkHttp) configuration</h2>
 <p>HTTP client configuration (based on <a href="https://square.github.io/okhttp/">OkHttp client</a>) can be specified through Environment variables.</p>
-<hr />
-<p>Environment Variable                           Description</p>
-<hr />
-<p><code>IIO_HTTP_MAX_REQUESTS</code>            The maximum number of requests to execute concurrently. Above this requests queue in memory, waiting for the running calls to complete. (Default 128)</p>
-<p><code>IIO_HTTP_MAX_REQUESTS_PER_HOST</code>   The maximum number of requests for each host to execute concurrently. (Default 5)</p>
-<p><code>IIO_HTTP_MAX_IDLE_CONNECTIONS</code>    The maximum number of idle connections. (Default 5)</p>
-<p><code>IIO_HTTP_KEEP_ALIVE_TIME</code>         The Keep alive time (in seconds), representing maximum time that excess idle threads will wait for new tasks before terminating. (Default 60)</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Environment Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IIO_HTTP_MAX_REQUESTS</code></td>
+<td>The maximum number of requests to execute concurrently. Above this requests queue in memory, waiting for the running calls to complete. (Default 128)</td>
+</tr>
+<tr>
+<td><code>IIO_HTTP_MAX_REQUESTS_PER_HOST</code></td>
+<td>The maximum number of requests for each host to execute concurrently. (Default 5)</td>
+</tr>
+<tr>
+<td><code>IIO_HTTP_MAX_IDLE_CONNECTIONS</code></td>
+<td>The maximum number of idle connections. (Default 5)</td>
+</tr>
+<tr>
+<td><code>IIO_HTTP_KEEP_ALIVE_TIME</code></td>
+<td>The Keep alive time (in seconds), representing maximum time that excess idle threads will wait for new tasks before terminating. (Default 60)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="aws-s3-client-configuration">AWS S3 Client configuration</h2>
 <p>A single S3 Asynchronous Client will be used for the same region and alias (url schema, i.e. http, https). The following Environment Variables can be set to customize the pool for the asynchronous client for that particular alias. On the table below, replace the "\$ALIAS\$" template with HTTP or HTTPS or S3 if you are configuring properties for these schema.</p>
-<hr />
-<p>Environment Variable                                Description</p>
-<hr />
-<p><code>IIO_\$ALIAS\$_AWS_CORE_POOL_SIZE</code>    The core pool size for the S3 Client (Default 50)</p>
-<p><code>IIO_\$ALIAS\$_AWS_MAX_POOL_SIZE</code>     The maximum number of thread to allow in the pool for the S3 Client (Default 128)</p>
-<p><code>IIO_\$ALIAS\$_AWS_KEEP_ALIVE_TIME</code>   The Keep alive time (in seconds), representing maximum time that excess idle threads will wait for new tasks before terminating. (Default 10)</p>
-<p><code>IIO_\$ALIAS\$_AWS_USER</code>              Default user (access key ID) for AWS basic authentication credentials</p>
-<p><code>IIO_\$ALIAS\$_AWS_PASSWORD</code>          Default password (secret access key) for AWS basic authentication credentials</p>
-<p><code>IIO_\$ALIAS\$_AWS_REGION</code>            Default AWS region</p>
-<p><code>IIO_\$ALIAS\$_AWS_ENDPOINT</code>          Endpoint to Amazon service or any other S3-compatible service run by a third-party</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Environment Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IIO_\$ALIAS\$_AWS_CORE_POOL_SIZE</code></td>
+<td>The core pool size for the S3 Client (Default 50)</td>
+</tr>
+<tr>
+<td><code>IIO_\$ALIAS\$_AWS_MAX_POOL_SIZE</code></td>
+<td>The maximum number of thread to allow in the pool for the S3 Client (Default 128)</td>
+</tr>
+<tr>
+<td><code>IIO_\$ALIAS\$_AWS_KEEP_ALIVE_TIME</code></td>
+<td>The Keep alive time (in seconds), representing maximum time that excess idle threads will wait for new tasks before terminating. (Default 10)</td>
+</tr>
+<tr>
+<td><code>IIO_\$ALIAS\$_AWS_USER</code></td>
+<td>Default user (access key ID) for AWS basic authentication credentials</td>
+</tr>
+<tr>
+<td><code>IIO_\$ALIAS\$_AWS_PASSWORD</code></td>
+<td>Default password (secret access key) for AWS basic authentication credentials</td>
+</tr>
+<tr>
+<td><code>IIO_\$ALIAS\$_AWS_REGION</code></td>
+<td>Default AWS region</td>
+</tr>
+<tr>
+<td><code>IIO_\$ALIAS\$_AWS_ENDPOINT</code></td>
+<td>Endpoint to Amazon service or any other S3-compatible service run by a third-party</td>
+</tr>
+</tbody>
+</table>
 <h2 id="google-cloud-storage-configuration">Google Cloud storage configuration</h2>
 <p>The credentials to access Google Cloud cannot be provided as username and password (an authentication method that Google Cloud does not support), but need to be provided via a system variable pointing to the key file:</p>
 <div class="language-text highlight"><pre><span></span><code>set GOOGLE_APPLICATION_CREDENTIALS=/path/to/the/key-file.json
@@ -4186,15 +4290,36 @@ export GOOGLE_APPLICATION_CREDENTIALS
 </code></pre></div>
 <h2 id="azure-configuration">Azure configuration</h2>
 <p>A single Azure Client will be used for the same container. Account and container will be retrieved from the provided Azure URL. The following System Properties can be set to customize client properties where missing.</p>
-<hr />
-<p>System property               Description</p>
-<hr />
-<p>azure.reader.accountName      The Azure Account Name</p>
-<p>azure.reader.accountKey       The Azure Account Key for the above Account</p>
-<p>azure.reader.container        The default container for the above Account</p>
-<p>azure.reader.prefix           The optional prefix containing blobs</p>
-<p>azure.reader.maxConnections   The max number of connections supported by the underlying Azure client</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>System property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>azure.reader.accountName</td>
+<td>The Azure Account Name</td>
+</tr>
+<tr>
+<td>azure.reader.accountKey</td>
+<td>The Azure Account Key for the above Account</td>
+</tr>
+<tr>
+<td>azure.reader.container</td>
+<td>The default container for the above Account</td>
+</tr>
+<tr>
+<td>azure.reader.prefix</td>
+<td>The optional prefix containing blobs</td>
+</tr>
+<tr>
+<td>azure.reader.maxConnections</td>
+<td>The max number of connections supported by the underlying Azure client</td>
+</tr>
+</tbody>
+</table>
 <h2 id="client-configuration-system-properties">Client configuration (System Properties)</h2>
 <p>Note that all the IIO settings reported in the previous tables can also be specified using System Properties instead of Environment variables. You just need to replace UPPER CASE words with lower case words and underscores with dots. So, the value for Maximum HTTP requests can be specified by setting either a <code>IIO_HTTP_MAX_REQUESTS</code> Environment variable or a <code>iio.http.max.requests</code> Java System Property alternatively (Environment variables are checked first).</p>
 <p>By default, when accessing a COG, an initial chunk of 16 KB is read in attempt to parse the header so that the reader will have the offset and length of the available tiles. When dealing with files hosting many tiles, it is possible that the whole header won't fit in the initial chunk. In this case additional reads (chunks of the same size) will be progressively made to complete loading the header. A <code>it.geosolutions.cog.default.header.length</code> system property can be configured to set the length (in bytes) of the reading chunk. Tuning this so that the header is read with few extra requests can help improve performance. A value too large can cause memory consumption issues and will reduce efficiency, as un-necessary data will be read.</p>

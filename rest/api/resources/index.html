@@ -2286,14 +2286,42 @@
 
 <h1 id="resources">Resources</h1>
 <h2 id="resourcepathtoresource"><code>/resource&lt;/path/to/resource&gt;</code></h2>
-<hr />
-<p>Method     Action                                                                                                                                                                             Status code              Parameters</p>
-<hr />
-<p>GET        Download a resource, list contents of directory, or show formatted resource metadata.                                                                                              200                      operation (default | metadata); format (html | xml | json)</p>
-<p>HEAD       Show resource metadata in HTTP headers.                                                                                                                                            200                      </p>
-<p>PUT        Upload/move/copy a resource, create directories on the fly (overwrite if exists). For move/copy operations, place source path in body. Copying is not supported for directories.   200 (exists) 201 (new)   operation (default | copy | move)</p>
-<p>DELETE     Delete a resource (recursively if directory)                                                                                                                                       200                      </p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Download a resource, list contents of directory, or show formatted resource metadata.</td>
+<td>200</td>
+<td>operation (default</td>
+</tr>
+<tr>
+<td>HEAD</td>
+<td>Show resource metadata in HTTP headers.</td>
+<td>200</td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Upload/move/copy a resource, create directories on the fly (overwrite if exists). For move/copy operations, place source path in body. Copying is not supported for directories.</td>
+<td>200 (exists) 201 (new)</td>
+<td>operation (default</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Delete a resource (recursively if directory)</td>
+<td>200</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h3 id="exceptions">Exceptions</h3>
 <table>
 <thead>

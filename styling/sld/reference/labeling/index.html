@@ -2870,12 +2870,32 @@
 </ul>
 <h2 id="pointplacement">PointPlacement</h2>
 <p>When <code>&lt;PointPlacement&gt;</code> is used the geometry is labelled at a single <strong>label point</strong>. For lines, this point lies at the middle of the visible portion of the line. For polygons, the point is the centroid of the visible portion of the polygon. The position of the label relative to the label point can be controlled by the following sub-elements:</p>
-<hr />
-<p><strong>Element</strong>           <strong>Description</strong></p>
-<p><code>&lt;AnchorPoint&gt;</code>       Determines the placement of the label relative to the label point. Values given as decimals between 0-1.</p>
-<p><code>&lt;Displacement&gt;</code>      Offsets the label from the anchor point. Values given in pixels.</p>
-<p><code>&lt;Rotation&gt;</code>          Rotates the label clockwise by a given number of degrees.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Element</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>&lt;AnchorPoint&gt;</code></td>
+<td>Determines the placement of the label relative to the label point. Values given as decimals between 0-1.</td>
+</tr>
+<tr>
+<td><code>&lt;Displacement&gt;</code></td>
+<td>Offsets the label from the anchor point. Values given in pixels.</td>
+</tr>
+<tr>
+<td><code>&lt;Rotation&gt;</code></td>
+<td>Rotates the label clockwise by a given number of degrees.</td>
+</tr>
+</tbody>
+</table>
 <p>The best way to explain these options is with examples.</p>
 <h3 id="anchorpoint">AnchorPoint</h3>
 <p>The anchor point determines where the label is placed relative to the label point.</p>
@@ -3014,12 +3034,32 @@ New York    |   8,107,916
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;group&quot;</span><span class="nt">&gt;</span>yes<span class="nt">&lt;/VendorOption&gt;</span>
 </span></code></pre></div>
 <p>Grouping works by collecting all features with the same label text, then choosing a representative geometry for the group, according to the following rules:</p>
-<hr />
-<p><strong>Geometry</strong>   <strong>Label Point</strong></p>
-<p>Point Set      The first point inside the view rectangle is used.</p>
-<p>Line Set       Lines are joined together, clipped to the view rectangle, and the longest path is used.</p>
-<p>Polygon Set    Polygons are clipped to the view rectangle, and the largest polygon is used.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Geometry</strong></td>
+<td><strong>Label Point</strong></td>
+</tr>
+<tr>
+<td>Point Set</td>
+<td>The first point inside the view rectangle is used.</td>
+</tr>
+<tr>
+<td>Line Set</td>
+<td>Lines are joined together, clipped to the view rectangle, and the longest path is used.</td>
+</tr>
+<tr>
+<td>Polygon Set</td>
+<td>Polygons are clipped to the view rectangle, and the largest polygon is used.</td>
+</tr>
+</tbody>
+</table>
 <p>If desired the labeller can be forced to label every element in a group by specifying the <a href="./#labeling_all_group">labelAllGroup</a> option.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -3096,12 +3136,32 @@ New York    |   8,107,916
 </span></code></pre></div>
 <h3 id="labeling_goodness_of_fit">goodnessOfFit</h3>
 <p>GeoServer will remove labels if they are a particularly bad fit for the geometry they are labeling.</p>
-<hr />
-<p><strong>Geometry</strong>          <strong>Goodness of Fit Algorithm</strong></p>
-<p>Point                 Always returns 1.0 since the label is at the point</p>
-<p>Line                  Always returns 1.0 since the label is always placed on the line.</p>
-<p>Polygon               The label is sampled approximately at every letter. The distance from these points to the polygon is determined and each sample votes based on how close it is to the polygon. (see LabelCacheDefault#goodnessOfFit())</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Geometry</strong></td>
+<td><strong>Goodness of Fit Algorithm</strong></td>
+</tr>
+<tr>
+<td>Point</td>
+<td>Always returns 1.0 since the label is at the point</td>
+</tr>
+<tr>
+<td>Line</td>
+<td>Always returns 1.0 since the label is always placed on the line.</td>
+</tr>
+<tr>
+<td>Polygon</td>
+<td>The label is sampled approximately at every letter. The distance from these points to the polygon is determined and each sample votes based on how close it is to the polygon. (see LabelCacheDefault#goodnessOfFit())</td>
+</tr>
+</tbody>
+</table>
 <p>The default value is 0.5, but it can be modified using:</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;goodnessOfFit&quot;</span><span class="nt">&gt;</span>0.3<span class="nt">&lt;/VendorOption&gt;</span>
 </span></code></pre></div>
@@ -3109,22 +3169,62 @@ New York    |   8,107,916
 <p>GeoServer normally tries to place labels horizontally within a polygon, and gives up if the label position is busy or if the label does not fit enough in the polygon. This option allows GeoServer to try alternate rotations for the labels.</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;polygonAlign&quot;</span><span class="nt">&gt;</span>mbr<span class="nt">&lt;/VendorOption&gt;</span>
 </span></code></pre></div>
-<hr />
-<p><strong>Option</strong>            <strong>Description</strong></p>
-<p><code>manual</code>              The default value. Only a rotation manually specified in the <code>&lt;Rotation&gt;</code> tag will be used</p>
-<p><code>ortho</code>               If the label does not fit horizontally and the polygon is taller than wider then vertical alignment will also be tried</p>
-<p><code>mbr</code>                 If the label does not fit horizontally the minimum bounding rectangle will be computed and a label aligned to it will be tried out as well</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Option</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>manual</code></td>
+<td>The default value. Only a rotation manually specified in the <code>&lt;Rotation&gt;</code> tag will be used</td>
+</tr>
+<tr>
+<td><code>ortho</code></td>
+<td>If the label does not fit horizontally and the polygon is taller than wider then vertical alignment will also be tried</td>
+</tr>
+<tr>
+<td><code>mbr</code></td>
+<td>If the label does not fit horizontally the minimum bounding rectangle will be computed and a label aligned to it will be tried out as well</td>
+</tr>
+</tbody>
+</table>
 <h3 id="labeling_graphic_resize">graphic-resize</h3>
 <p>When a <code>&lt;Graphic&gt;</code> is specified for a label by default it is displayed at its native size and aspect ratio. The <code>graphic-resize</code> option instructs the renderer to magnify or stretch the graphic to fully contain the text of the label. If this option is used the <code>graphic-margin</code> option may also be specified.</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;graphic-resize&quot;</span><span class="nt">&gt;</span>stretch<span class="nt">&lt;/VendorOption&gt;</span>
 </span></code></pre></div>
-<hr />
-<p><strong>Option</strong>            <strong>Description</strong></p>
-<p><code>none</code>                Graphic is displayed at its native size (default)</p>
-<p><code>proportional</code>        Graphic size is increased uniformly to contain the label text</p>
-<p><code>stretch</code>             Graphic size is increased anisotropically to contain the label text</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Option</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>none</code></td>
+<td>Graphic is displayed at its native size (default)</td>
+</tr>
+<tr>
+<td><code>proportional</code></td>
+<td>Graphic size is increased uniformly to contain the label text</td>
+</tr>
+<tr>
+<td><code>stretch</code></td>
+<td>Graphic size is increased anisotropically to contain the label text</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition cssclass">
 <p class="admonition-title">no-border</p>
 <p><img alt="" src="../img/label_graphic-resize_none.png" /></p>

@@ -1990,17 +1990,44 @@
 <em>Creating a new rule</em></p>
 <p><img alt="" src="../images/data_lgrule.png" />
 <em>Editing a layer group rule</em></p>
-<hr />
-<p>Option                       Description</p>
-<hr />
-<p>Global layer group rule      If checked, switches the editor to create/edit a rule about a global layer group (and will remove the layer configuration as a result)</p>
-<p>Workspace                    Sets the allowed workspace for this rule. Options are <code>*</code> (all workspaces), or the name of each workspace.</p>
-<p>Layer and groups             Sets the allowed layer/groups for this rule. Options are <code>*</code> (all layers/groups in the chosen workspace), or the name of each layer in the above workspace. Will be disabled until the workspace is set.</p>
-<p>Access mode                  Specifies whether the rule refers to either <code>Read</code> or <code>Write</code> mode</p>
-<p>Grant access to any role     If selected, the rule will apply to all roles, with no need to specify</p>
-<p>Role list                    Full list of roles, including a list of roles to which the rule is associated. Association can be toggled here via the arrow buttons. This option is not applied if <strong>Grant access to any role</strong> is checked.</p>
-<p>Add a new role               Shortcut to adding a new role</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Global layer group rule</td>
+<td>If checked, switches the editor to create/edit a rule about a global layer group (and will remove the layer configuration as a result)</td>
+</tr>
+<tr>
+<td>Workspace</td>
+<td>Sets the allowed workspace for this rule. Options are <code>*</code> (all workspaces), or the name of each workspace.</td>
+</tr>
+<tr>
+<td>Layer and groups</td>
+<td>Sets the allowed layer/groups for this rule. Options are <code>*</code> (all layers/groups in the chosen workspace), or the name of each layer in the above workspace. Will be disabled until the workspace is set.</td>
+</tr>
+<tr>
+<td>Access mode</td>
+<td>Specifies whether the rule refers to either <code>Read</code> or <code>Write</code> mode</td>
+</tr>
+<tr>
+<td>Grant access to any role</td>
+<td>If selected, the rule will apply to all roles, with no need to specify</td>
+</tr>
+<tr>
+<td>Role list</td>
+<td>Full list of roles, including a list of roles to which the rule is associated. Association can be toggled here via the arrow buttons. This option is not applied if <strong>Grant access to any role</strong> is checked.</td>
+</tr>
+<tr>
+<td>Add a new role</td>
+<td>Shortcut to adding a new role</td>
+</tr>
+</tbody>
+</table>
 <h2 id="catalog-mode">Catalog Mode</h2>
 <p>This mode configures how GeoServer will advertise secured layers and behave when a secured layer is accessed without the necessary privileges. There are three options: <strong>HIDE</strong>, <strong>MIXED</strong>, and <strong>CHALLENGE</strong>. For further information on these options, please see the section on <a href="../../layer/">Layer security</a>.</p>
 <p><img alt="" src="../images/data_catalogmode.png" />

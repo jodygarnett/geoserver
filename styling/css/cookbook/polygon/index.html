@@ -2872,17 +2872,62 @@
 <p>Polygons are two dimensional shapes that contain both an outer edge (or "stroke") and an inside (or "fill"). A polygon can be thought of as an irregularly-shaped point and is styled in similar ways to points.</p>
 <h2 id="css_cookbook_polygons_attributes">Example polygons layer</h2>
 <p>The <a href="../../../sld/cookbook/artifacts/sld_cookbook_polygon.zip">polygons layer</a> used below contains county information for a fictional country. For reference, the attribute table for the polygons is included below.</p>
-<hr />
-<p><strong>fid</strong> (Feature ID)   <strong>name</strong> (County name)       <strong>pop</strong> (Population)</p>
-<p>polygon.1              Irony County                 412234</p>
-<p>polygon.2              Tracker County               235421</p>
-<p>polygon.3              Dracula County               135022</p>
-<p>polygon.4              Poly County                  1567879</p>
-<p>polygon.5              Bearing County               201989</p>
-<p>polygon.6              Monte Cristo County          152734</p>
-<p>polygon.7              Massive County               67123</p>
-<p>polygon.8              Rhombus County               198029</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>fid</strong> (Feature ID)</td>
+<td><strong>name</strong> (County name)</td>
+<td><strong>pop</strong> (Population)</td>
+</tr>
+<tr>
+<td>polygon.1</td>
+<td>Irony County</td>
+<td>412234</td>
+</tr>
+<tr>
+<td>polygon.2</td>
+<td>Tracker County</td>
+<td>235421</td>
+</tr>
+<tr>
+<td>polygon.3</td>
+<td>Dracula County</td>
+<td>135022</td>
+</tr>
+<tr>
+<td>polygon.4</td>
+<td>Poly County</td>
+<td>1567879</td>
+</tr>
+<tr>
+<td>polygon.5</td>
+<td>Bearing County</td>
+<td>201989</td>
+</tr>
+<tr>
+<td>polygon.6</td>
+<td>Monte Cristo County</td>
+<td>152734</td>
+</tr>
+<tr>
+<td>polygon.7</td>
+<td>Massive County</td>
+<td>67123</td>
+</tr>
+<tr>
+<td>polygon.8</td>
+<td>Rhombus County</td>
+<td>198029</td>
+</tr>
+</tbody>
+</table>
 <p><a href="../../../sld/cookbook/artifacts/sld_cookbook_polygon.zip">Download the polygons shapefile</a></p>
 <h2 id="css_cookbook_polygons_simplepolygon">Simple polygon</h2>
 <p>This example shows a polygon filled in blue.</p>
@@ -3038,12 +3083,42 @@
 </div>
 <p>Each polygon in our fictional country has a population that is represented by the population ("pop") attribute. This style contains three rules that alter the fill based on the value of "pop" attribute, with smaller values yielding a lighter color and larger values yielding a darker color.</p>
 <p>The three rules are designed as follows:</p>
-<hr />
-<p><strong>Rule order</strong>   <strong>Rule name</strong>   <strong>Population</strong> ("pop")   <strong>Color</strong></p>
-<p>1                SmallPop        Less than 200,000          <code>#66FF66</code></p>
-<p>2                MediumPop       200,000 to 500,000         <code>#33CC33</code></p>
-<p>3                LargePop        Greater than 500,000       <code>#009900</code></p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rule order</strong></td>
+<td><strong>Rule name</strong></td>
+<td><strong>Population</strong> ("pop")</td>
+<td><strong>Color</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td>SmallPop</td>
+<td>Less than 200,000</td>
+<td><code>#66FF66</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>MediumPop</td>
+<td>200,000 to 500,000</td>
+<td><code>#33CC33</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>LargePop</td>
+<td>Greater than 500,000</td>
+<td><code>#009900</code></td>
+</tr>
+</tbody>
+</table>
 <p>The order of the rules does not matter in this case, since each shape is only rendered by a single rule.</p>
 <p>The first rule fills light green all polygons whose "pop" attribute is below 200,000, the second paints medium green all poygons whose "pop" attribute is between 200,000 and 500,000, while the third rule paints dark green the remaining polygons.</p>
 <p>What's interesting in the filters is the use of the "parseLong" filter function: this function is necessary because the "pop" attribute is a string, leaving it as is we would have a string comparison, whilst the function turns it into a number, ensuring proper numeric comparisons instead.</p>
@@ -3087,12 +3162,47 @@
 <p>Determining the appropriate scale denominators (zoom levels) to use is beyond the scope of this example.</p>
 </div>
 <p>This style contains three rules, defined as follows:</p>
-<hr />
-<p><strong>Rule order</strong>   <strong>Rule name</strong>   <strong>Scale denominator</strong>            <strong>Stroke width</strong>   <strong>Label display?</strong></p>
-<p>1                Large           1:100,000,000 or less            7                  Yes</p>
-<p>2                Medium          1:100,000,000 to 1:200,000,000   4                  No</p>
-<p>3                Small           Greater than 1:200,000,000       2                  No</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rule order</strong></td>
+<td><strong>Rule name</strong></td>
+<td><strong>Scale denominator</strong></td>
+<td><strong>Stroke width</strong></td>
+<td><strong>Label display?</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Large</td>
+<td>1:100,000,000 or less</td>
+<td>7</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Medium</td>
+<td>1:100,000,000 to 1:200,000,000</td>
+<td>4</td>
+<td>No</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Small</td>
+<td>Greater than 1:200,000,000</td>
+<td>2</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
 <p>The first rule (<strong>lines 1-4</strong>) defines the attributes that are not scale dependent: dark blue fill, black outline.</p>
 <p>The second (<strong>lines 6-14</strong>) rule provides specific overrides for the higher zoom levels, asking for a large stroke (7 pixels) and a label, which is only visible at this zoom level. The label is white, bold, Arial 14 pixels, its contents are coming form the "name" attribute.</p>
 <p>The third rule (<strong>lines 16-18</strong>) specifies a stroke width of 4 pixels for medium zoom levels, whilst for low zoom levels the stroke width is set to 1 pixel by the last rule (<strong>lines 20-22</strong>).</p>

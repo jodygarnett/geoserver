@@ -2374,18 +2374,57 @@
 <h1 id="z-ordering-single-layer-example">Z ordering single layer example</h1>
 <p>The OpenStreetMap dataset uses extensively a <code>z_order</code> attribute to model the above/below relationships between elements in the real world.</p>
 <p>A <a href="../files/z_order_roads.zip">small downloadable shapefile</a> is provided that shows a small area with a rich set of different z-orders, where roads and rails go above and below each other. For reference, this is the dataset schema:</p>
-<hr />
-<p>Name           Type           Notes</p>
-<hr />
-<p>osm_id         numeric        </p>
-<p>type           string         The type of the segment, can be "mainroads", "minorroads", "railways", ...</p>
-<p>bridge         numeric        0 or 1</p>
-<p>ref            numeric        0 or 1</p>
-<p>tunnel         numeric        </p>
-<p>oneway         numeric        0 or 1</p>
-<p>z_order        numeric        </p>
-<p>class          string         </p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>osm_id</td>
+<td>numeric</td>
+<td></td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>The type of the segment, can be "mainroads", "minorroads", "railways", ...</td>
+</tr>
+<tr>
+<td>bridge</td>
+<td>numeric</td>
+<td>0 or 1</td>
+</tr>
+<tr>
+<td>ref</td>
+<td>numeric</td>
+<td>0 or 1</td>
+</tr>
+<tr>
+<td>tunnel</td>
+<td>numeric</td>
+<td></td>
+</tr>
+<tr>
+<td>oneway</td>
+<td>numeric</td>
+<td>0 or 1</td>
+</tr>
+<tr>
+<td>z_order</td>
+<td>numeric</td>
+<td></td>
+</tr>
+<tr>
+<td>class</td>
+<td>string</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p>The dataset contains several different values for z_order, in particular: -10, -7, -5, -3, -1, 0, 3, 4, 5, 7, 9, 10, 13, 14, 15, 17, 19.</p>
 <p>Here is a sample CSS style using z-ordering, but not groups, to perform the display. Road casing is achieved by multiple FeatureTypeStyle, or <code>z-index</code> values in CSS:</p>
 <div class="language-css highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">[</span><span class="nt">class</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;railways&#39;</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="nt">bridge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nt">1</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>

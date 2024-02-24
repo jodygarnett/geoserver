@@ -4100,25 +4100,72 @@
 <p>The description of a collection and product is normally made of various components, in order to expedite data creation and reduce protocol chattines, it is possible to bulk-upload all files composing the description of collections and products as a single zip file.</p>
 <h3 id="collection-components">Collection components</h3>
 <p>A collection.zip, sent as a PUT request to <code>rest/collections</code> would contain the following files:</p>
-<hr />
-<p>Name                                             Optional   Description</p>
-<hr />
-<p>collection.json                                  N          The collection attributes, matching the database structure (the prefixes are separated with a colon in this document)</p>
-<p>description.html                                 Y          The HTML description for the collection</p>
-<p>thumbnail.png, thumbnail.jpg or thumbnail.jpeg   Y          The collection thumbnail</p>
-<p>owsLinks.json                                    Y          The list of OWS links to OGC services providing access to the collection contents (typically as a time enabled layer)</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>collection.json</td>
+<td>N</td>
+<td>The collection attributes, matching the database structure (the prefixes are separated with a colon in this document)</td>
+</tr>
+<tr>
+<td>description.html</td>
+<td>Y</td>
+<td>The HTML description for the collection</td>
+</tr>
+<tr>
+<td>thumbnail.png, thumbnail.jpg or thumbnail.jpeg</td>
+<td>Y</td>
+<td>The collection thumbnail</td>
+</tr>
+<tr>
+<td>owsLinks.json</td>
+<td>Y</td>
+<td>The list of OWS links to OGC services providing access to the collection contents (typically as a time enabled layer)</td>
+</tr>
+</tbody>
+</table>
 <h3 id="product-components">Product components</h3>
 <p>A product.zip, sent as a POST request to <code>rest/collections/&lt;theCollection&gt;/products</code> would contain the following files:</p>
 <table>
 <thead>
 <tr>
-<th></th>
+<th>Name</th>
+<th>Optional</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
+<td>product.json</td>
+<td>N</td>
+<td>The product attributes, matching the database structure (the prefixes are separated with a colon in this JSON document)</td>
+</tr>
+<tr>
+<td>description.html</td>
+<td>Y</td>
+<td>The HTML description for the product</td>
+</tr>
+<tr>
+<td>thumbnail.png, thumbnail.jpg or thumbnail.jpeg</td>
+<td>Y</td>
+<td>The collection thumbnail</td>
+</tr>
+<tr>
+<td>owsLinks.json</td>
+<td>Y</td>
+<td>The list of OWS links to OGC services providing access to the product contents (typically, a specific time slice in the collection layer, but other organizations are possible too)</td>
+</tr>
+<tr>
+<td>granules.json</td>
+<td>Y</td>
+<td>The list of actual files making up the product, along with their bounding boxes, file location and eventual band name, for products splitting bands in different files. Could be a single file, a list of files split by area, or a list of files representing the various bands of a multispectral product.</td>
 </tr>
 </tbody>
 </table>
@@ -4141,12 +4188,46 @@
 <table>
 <thead>
 <tr>
-<th></th>
+<th>Attribute</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
+<td>workspace</td>
+<td>The workspace that will contain the store and layer to be published</td>
+</tr>
+<tr>
+<td>layer</td>
+<td>The name of the layer that will be created</td>
+</tr>
+<tr>
+<td>separateBands</td>
+<td>A boolean value, true if the underlying granule table has the "band" column populated with values, meaning the product bands are split among different files, false if a single product is stored in a single file</td>
+</tr>
+<tr>
+<td>heterogeneousCRS</td>
+<td>A boolean value, indicating if the products in the collection share the same CRS (false) or are expressed in different CRSses (true)</td>
+</tr>
+<tr>
+<td>timeRanges</td>
+<td>A boolean value, indicating if the products are associated to a single time (false) or have have a time range of validity (true)</td>
+</tr>
+<tr>
+<td>bands</td>
+<td>The list of bands used in this layer (to be specified only if "separateBands" is used)</td>
+</tr>
+<tr>
+<td>browseBands</td>
+<td>An array of 1 or 3 band names used to create the default display for the layer</td>
+</tr>
+<tr>
+<td>mosaicCRS</td>
+<td>The identifier of the CRS used by the mosaic (must match the granules table one)</td>
+</tr>
+<tr>
+<td>defaultLayer</td>
+<td>A flag indicating if the layer is considered the default one for the collection (thus also appearing at <code>/oseo/collection/{COLLECTION}/layer</code></td>
 </tr>
 </tbody>
 </table>
@@ -4202,14 +4283,32 @@
 <h3 id="cog-mosaic-creation">COG Mosaic creation</h3>
 <p>It's also possible to configure a layer on top of a COG ImageMosaic, provided that the <a href="../../cog/cog/">COG (Cloud Optimized GeoTIFF) Support</a> plugin has been installed in GeoServer.</p>
 <p>Additional fields for the layer configuration are:</p>
-<hr />
-<p>Attribute             Description</p>
-<hr />
-<p>cog                   Set it to true to specify the layer is made of COG datasets</p>
-<p>cogUser               (Optional) Credential to be set whenever basic HTTP authentication is needed to access the COG Datasets or an S3 Access KeyID is required</p>
-<p>cogPassword           (Optional) Password for the above user OR Secret Access Key for the above S3 KeyId.</p>
-<p>cogRangeReader        (Optional) Specify the desired RangeReader implementation. (default is HTTP based)</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cog</td>
+<td>Set it to true to specify the layer is made of COG datasets</td>
+</tr>
+<tr>
+<td>cogUser</td>
+<td>(Optional) Credential to be set whenever basic HTTP authentication is needed to access the COG Datasets or an S3 Access KeyID is required</td>
+</tr>
+<tr>
+<td>cogPassword</td>
+<td>(Optional) Password for the above user OR Secret Access Key for the above S3 KeyId.</td>
+</tr>
+<tr>
+<td>cogRangeReader</td>
+<td>(Optional) Specify the desired RangeReader implementation. (default is HTTP based)</td>
+</tr>
+</tbody>
+</table>
 <p>See <a href="../../cog/cog/#cog_plugin_rangereader">COG RangeReader</a> from the COG plugin documentation, for the list of supported RangeReader implementations.</p>
 
 

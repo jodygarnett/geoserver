@@ -2449,133 +2449,381 @@
     x-inclusion: &lt;text&gt;
 </code></pre></div>
 <p>where:</p>
-<hr />
-<p>Property                Required?   Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          Default value</p>
-<hr />
-<p><code>fill-color</code>            No          Color of inside of the label.                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <code>'#808080'</code> (gray)</p>
-<p><code>fill-opacity</code>          No          Opacity of fill of the label text. Valid values are a decimal value between <code>0</code> (completely transparent) and <code>1</code> (completely opaque).                                                                                                                                                                                                                                                                                                                                                                <code>1</code></p>
-<p><code>fill-graphic</code>          No          A design to be used for the fill of the text label. Can either be a mark consisting of a common shape or a URL that points to a graphic. The <code>&lt;graphic_options&gt;</code> should consist of a mapping containing <code>symbols:</code> followed by an <code>external:</code> or <code>mark:</code>, with appropriate parameters as detailed in the <a href="../point/">Point symbolizer</a> section.                                                                                                                                                      None</p>
-<p><code>stroke-graphic</code>        No          A design or pattern to be used along the stroke around the label text. the output will always be a linear repeating pattern, and as such is not tied to the value of <code>stroke-width</code>. Can either be a mark consisting of a common shape or a URL that points to a graphic. The <code>&lt;graphic_options&gt;</code> should consist of a mapping containing <code>symbols:</code> followed by an <code>external:</code> or <code>mark:</code>, with appropriate parameters. Cannot be used with <code>stroke-graphic-fill</code>.                                   N/A</p>
-<p><code>stroke-graphic-fill</code>   No          A design or pattern to be used for the fill of the stroke around the label text. This area that is to be filled is tied directly to the value of <code>stroke-width</code>. Can either be a mark consisting of a common shape or a URL that points to a graphic. The <code>&lt;graphic_options&gt;</code> should consist of a mapping containing <code>symbols:</code> followed by an <code>external:</code> or <code>mark:</code>, with appropriate parameters as detailed in the <a href="../point/">Point symbolizer</a> section. Cannot be used with <code>stroke-graphic</code>.   N/A</p>
-<hr />
-<hr />
-<p>Property         Required?   Description                                                                                                                                                                                                                                                                                                  Default value</p>
-<hr />
-<p><code>label</code>          Yes         Text to display. Often taken from an attribute but any valid expression that constructs a string will do.                                                                                                                                                                                                    N/A</p>
-<p><code>font-family</code>    No          Type of font to be used for the label. Options are system dependent; the full list of fonts available can be found via the GeoServer Server Status page.                                                                                                                                                     <code>serif</code></p>
-<p><code>font-size</code>      No          Size of the font.                                                                                                                                                                                                                                                                                            <code>10</code></p>
-<p><code>font-style</code>     No          Style of the font. Options are <code>normal</code>, <code>italic</code>, and <code>oblique</code>.                                                                                                                                                                                                                                            <code>normal</code></p>
-<p><code>font-weight</code>    No          Weight of the font. Options are <code>normal</code> and <code>bold</code>.                                                                                                                                                                                                                                                         <code>normal</code></p>
-<p><code>placement</code>      No          Determines whether the label is to be drawn derived from a <code>point</code> or a <code>line</code>.                                                                                                                                                                                                                              <code>point</code></p>
-<p><code>offset</code>         No          Value (in pixels) for moving the drawn label relative to the location of the feature. A positive value will shift the label in the direction of its top, while a negative value will shift the label in the direction of its bottom. Only valid for when <code>type</code> is set to <code>line</code>.                            <code>0</code></p>
-<p><code>anchor</code>         No          Specify the center of the symbol relative to the feature location (centroid for lines and polygons). Value is an <code>[x,y]</code> tuple with decimal values from 0-1, with <code>[0,0]</code> meaning that the symbol is anchored to the bottom left of the label, and <code>[1,1]</code> meaning anchored to the top right of the label.   <code>[0,0]</code></p>
-<p><code>displacement</code>   No          Specifies a distance (in pixels) to which to move the label relative to the feature. Value is an <code>[x,y]</code> tuple with values expressed in pixels, so [10,5] will displace the label 10 pixels to the right and 5 pixels up. Only valid for when <code>type</code> is set to <code>point</code>.                                    <code>[0,0]</code></p>
-<p><code>rotation</code>       No          Value (in degrees) or rotation of the label. Larger values increase counter-clockwise rotation. A value of <code>180</code> will make the label upside-down. Only valid for when <code>type</code> is set to <code>point</code>.                                                                                                              <code>0</code></p>
-<p><code>priority</code>       No          The priority used when choosing which labels to display during conflict resolution. Higher priority values take precedence over lower priority values.                                                                                                                                                       1000</p>
-<p><code>halo</code>           No          Creates a shaded area around the label for easier legibility                                                                                                                                                                                                                                                 No halo</p>
-<p><code>radius</code>         No          Size (in pixels) of the halo                                                                                                                                                                                                                                                                                 <code>1</code></p>
-<p><code>fill-color</code>     No          Color of the halo                                                                                                                                                                                                                                                                                            <code>'#808080'</code></p>
-<p><code>fill-opacity</code>   No          Specifies the level of transparency for the halo. Value of <code>0</code> means entirely transparent, while <code>1</code> means entirely opaque.                                                                                                                                                                                  <code>1</code></p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fill-color</code></td>
+<td>No</td>
+<td>Color of inside of the label.</td>
+<td><code>'#808080'</code> (gray)</td>
+</tr>
+<tr>
+<td><code>fill-opacity</code></td>
+<td>No</td>
+<td>Opacity of fill of the label text. Valid values are a decimal value between <code>0</code> (completely transparent) and <code>1</code> (completely opaque).</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>fill-graphic</code></td>
+<td>No</td>
+<td>A design to be used for the fill of the text label. Can either be a mark consisting of a common shape or a URL that points to a graphic. The <code>&lt;graphic_options&gt;</code> should consist of a mapping containing <code>symbols:</code> followed by an <code>external:</code> or <code>mark:</code>, with appropriate parameters as detailed in the <a href="../point/">Point symbolizer</a> section.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>stroke-graphic</code></td>
+<td>No</td>
+<td>A design or pattern to be used along the stroke around the label text. the output will always be a linear repeating pattern, and as such is not tied to the value of <code>stroke-width</code>. Can either be a mark consisting of a common shape or a URL that points to a graphic. The <code>&lt;graphic_options&gt;</code> should consist of a mapping containing <code>symbols:</code> followed by an <code>external:</code> or <code>mark:</code>, with appropriate parameters. Cannot be used with <code>stroke-graphic-fill</code>.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>stroke-graphic-fill</code></td>
+<td>No</td>
+<td>A design or pattern to be used for the fill of the stroke around the label text. This area that is to be filled is tied directly to the value of <code>stroke-width</code>. Can either be a mark consisting of a common shape or a URL that points to a graphic. The <code>&lt;graphic_options&gt;</code> should consist of a mapping containing <code>symbols:</code> followed by an <code>external:</code> or <code>mark:</code>, with appropriate parameters as detailed in the <a href="../point/">Point symbolizer</a> section. Cannot be used with <code>stroke-graphic</code>.</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>label</code></td>
+<td>Yes</td>
+<td>Text to display. Often taken from an attribute but any valid expression that constructs a string will do.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>font-family</code></td>
+<td>No</td>
+<td>Type of font to be used for the label. Options are system dependent; the full list of fonts available can be found via the GeoServer Server Status page.</td>
+<td><code>serif</code></td>
+</tr>
+<tr>
+<td><code>font-size</code></td>
+<td>No</td>
+<td>Size of the font.</td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td><code>font-style</code></td>
+<td>No</td>
+<td>Style of the font. Options are <code>normal</code>, <code>italic</code>, and <code>oblique</code>.</td>
+<td><code>normal</code></td>
+</tr>
+<tr>
+<td><code>font-weight</code></td>
+<td>No</td>
+<td>Weight of the font. Options are <code>normal</code> and <code>bold</code>.</td>
+<td><code>normal</code></td>
+</tr>
+<tr>
+<td><code>placement</code></td>
+<td>No</td>
+<td>Determines whether the label is to be drawn derived from a <code>point</code> or a <code>line</code>.</td>
+<td><code>point</code></td>
+</tr>
+<tr>
+<td><code>offset</code></td>
+<td>No</td>
+<td>Value (in pixels) for moving the drawn label relative to the location of the feature. A positive value will shift the label in the direction of its top, while a negative value will shift the label in the direction of its bottom. Only valid for when <code>type</code> is set to <code>line</code>.</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>anchor</code></td>
+<td>No</td>
+<td>Specify the center of the symbol relative to the feature location (centroid for lines and polygons). Value is an <code>[x,y]</code> tuple with decimal values from 0-1, with <code>[0,0]</code> meaning that the symbol is anchored to the bottom left of the label, and <code>[1,1]</code> meaning anchored to the top right of the label.</td>
+<td><code>[0,0]</code></td>
+</tr>
+<tr>
+<td><code>displacement</code></td>
+<td>No</td>
+<td>Specifies a distance (in pixels) to which to move the label relative to the feature. Value is an <code>[x,y]</code> tuple with values expressed in pixels, so [10,5] will displace the label 10 pixels to the right and 5 pixels up. Only valid for when <code>type</code> is set to <code>point</code>.</td>
+<td><code>[0,0]</code></td>
+</tr>
+<tr>
+<td><code>rotation</code></td>
+<td>No</td>
+<td>Value (in degrees) or rotation of the label. Larger values increase counter-clockwise rotation. A value of <code>180</code> will make the label upside-down. Only valid for when <code>type</code> is set to <code>point</code>.</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>priority</code></td>
+<td>No</td>
+<td>The priority used when choosing which labels to display during conflict resolution. Higher priority values take precedence over lower priority values.</td>
+<td>1000</td>
+</tr>
+<tr>
+<td><code>halo</code></td>
+<td>No</td>
+<td>Creates a shaded area around the label for easier legibility</td>
+<td>No halo</td>
+</tr>
+<tr>
+<td><code>radius</code></td>
+<td>No</td>
+<td>Size (in pixels) of the halo</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>fill-color</code></td>
+<td>No</td>
+<td>Color of the halo</td>
+<td><code>'#808080'</code></td>
+</tr>
+<tr>
+<td><code>fill-opacity</code></td>
+<td>No</td>
+<td>Specifies the level of transparency for the halo. Value of <code>0</code> means entirely transparent, while <code>1</code> means entirely opaque.</td>
+<td><code>1</code></td>
+</tr>
+</tbody>
+</table>
 <p>The following properties allow for a graphic to be displayed in addition to just a label. This is used when drawing "shields" (text over top of a graphic) such as in road signs.</p>
-<hr />
-<p>Property       Required?   Description                                                                                                                                                        Default value</p>
-<hr />
-<p><code>graphic</code>      No          Specifies whether a graphic is to be drawn for the label.                                                                                                          N/A (no graphic)</p>
-<p><code>symbols</code>      No          The details of the graphic. Consists of an <code>external:</code> or <code>mark:</code> section, with appropriate parameters as detailed in the <a href="../point/">Point symbolizer</a> section.   N/A</p>
-<p><code>size</code>         No          Size of the graphic in pixels. If the aspect ratio is not 1:1 (square), will apply to the <em>height</em> of the graphic only, with the width scaled proportionally.      <code>16</code></p>
-<p><code>opacity</code>      No          Specifies the level of transparency for the graphic. Value of <code>0</code> means entirely transparent, while <code>1</code> means entirely opaque.                                     <code>1</code></p>
-<p><code>rotation</code>     No          Value (in degrees) or rotation of the graphic. Larger values increase counter-clockwise rotation. A value of <code>180</code> will make the graphic upside-down.              <code>0</code></p>
-<hr />
-<p>.. list-table::
-   :class: non-responsive
-   :header-rows: 1
-   :stub-columns: 1
-   :widths: 20 10 50 20</p>
-<ul>
-<li>
-<ul>
-<li>Property</li>
-<li>Required?</li>
-<li>Description</li>
-<li>Default value</li>
-</ul>
-</li>
-<li>
-<ul>
-<li><code>geometry</code></li>
-<li>No</li>
-<li>Specifies which attribute to use as the geometry (see :ref:<code>geometry_transformations</code>)</li>
-<li>First geometry attribute found (usually named <code>geom</code> or <code>the_geom</code>)</li>
-</ul>
-</li>
-<li>
-<ul>
-<li><code>uom</code></li>
-<li>No</li>
-<li>Unit of measure used for width calculations (see :ref:<code>unit_of_measure</code>)</li>
-<li>pixel</li>
-</ul>
-</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>graphic</code></td>
+<td>No</td>
+<td>Specifies whether a graphic is to be drawn for the label.</td>
+<td>N/A (no graphic)</td>
+</tr>
+<tr>
+<td><code>symbols</code></td>
+<td>No</td>
+<td>The details of the graphic. Consists of an <code>external:</code> or <code>mark:</code> section, with appropriate parameters as detailed in the <a href="../point/">Point symbolizer</a> section.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>size</code></td>
+<td>No</td>
+<td>Size of the graphic in pixels. If the aspect ratio is not 1:1 (square), will apply to the <em>height</em> of the graphic only, with the width scaled proportionally.</td>
+<td><code>16</code></td>
+</tr>
+<tr>
+<td><code>opacity</code></td>
+<td>No</td>
+<td>Specifies the level of transparency for the graphic. Value of <code>0</code> means entirely transparent, while <code>1</code> means entirely opaque.</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>rotation</code></td>
+<td>No</td>
+<td>Value (in degrees) or rotation of the graphic. Larger values increase counter-clockwise rotation. A value of <code>180</code> will make the graphic upside-down.</td>
+<td><code>0</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>geometry</code></td>
+<td>No</td>
+<td>Specifies which attribute to use as the geometry (see <a href="../../../../sld/extensions/geometry-transformations/">Geometry transformations in SLD</a>)</td>
+<td>First geometry attribute found (usually named <code>geom</code> or <code>the_geom</code>)</td>
+</tr>
+<tr>
+<td><code>uom</code></td>
+<td>No</td>
+<td>Unit of measure used for width calculations (see <a href="../../../../sld/extensions/uom/">Specifying symbolizer sizes in ground units</a>)</td>
+<td>pixel</td>
+</tr>
+</tbody>
+</table>
 <p>The following properties are equivalent to SLD "vendor options".</p>
-<hr />
-<p>Property                 Required?   Description                                                                                                                                                                                                              Default value</p>
-<hr />
-<p><code>x-allowOverruns</code>        No          Allows labels on lines to move slightly beyond the beginning or end of the line.                                                                                                                                         <code>true</code></p>
-<p><code>x-autoWrap</code>             No          The number of pixels beyond which a label will be wrapped over multiple lines. Cannot use with <code>x-followLine</code>.                                                                                                           0</p>
-<p><code>x-conflictResolution</code>   No          Enables conflict resolution, meaning no two labels will be allowed to overlap. Without conflict resolution, symbolizers can overlap with other labels.                                                                   <code>true</code></p>
-<p><code>x-followLine</code>           No          On linear geometries, the label will follow the shape of the current line, as opposed to being drawn at a tangent. Will override                                                                                         <code>false</code></p>
-<p><code>x-forceLeftToRight</code>     No          Forces labels to a readable orientation, otherwise will follow the line orientation, possibly making the label look upside-down. This setting is useful when using symbol fonts to add direction markers along a line.   <code>false</code></p>
-<p><code>x-goodnessOfFit</code>        No          Percentage (expressed as a decimal between 0-1) of the label that must fit inside the geometry to permit the label to be drawn. Works only on polygon features.                                                          0.5</p>
-<p><code>x-graphic-margin</code>       No          Number of pixels between the stretched graphic and the text. Only applies when <code>x-graphic-resize</code> is set to <code>stretch</code> or <code>proportional</code>.                                                                                 0</p>
-<p><code>x-graphic-resize</code>       No          Allows for stretching the graphic underneath a label to fit the label size. Options are <code>none</code>, <code>stretch</code> or <code>proportional</code>. Used in conjunction with <code>x-graphic-margin</code>..                                               <code>none</code></p>
-<p><code>x-group</code>                No          Geometries with identical labels will be considered a single entity to be labeled. Used to control repeated labels.                                                                                                      <code>false</code></p>
-<p><code>x-labelAllGroup</code>        No          Used in conjunction with <code>x-group</code>. When <code>true</code> all items in a group are labeled. When <code>false</code>, only the largest geometry in the group is labeled. Valid for lines only.                                                 <code>false</code></p>
-<p><code>x-repeat</code>               No          Desired distance (in pixels) between labels drawn on a group. If zero, only one label will be drawn. Used in conjunction with <code>x-group</code>. Valid for lines only.                                                           0</p>
-<p><code>x-maxAngleDelta</code>        No          Maximum allowed angle (in degrees) between two characters in a curved label. Used in conjunction with <code>x-followLine</code>. Values higher than <code>30</code> may cause loss of legibility of the label.                                 22.5</p>
-<p><code>x-maxDisplacement</code>      No          Distance (in pixels) a label can be displaced from its natural position in an attempt to eliminate conflict with other labels.                                                                                           0</p>
-<p><code>x-minGroupDistance</code>     No          Minimum distance (in pixels) between two labels in the same label group. Used in conjunction with <code>displacement</code> or <code>repeat</code> to avoid having two labels too close to each other                                          No minimum distance</p>
-<p><code>x-partials</code>             No          Will display partial labels (truncated on the border of the display area).                                                                                                                                               <code>false</code></p>
-<p><code>x-polygonAlign</code>         No          Overrides manual rotation to align label rotation automatically. Valid for polygons only.                                                                                                                                <code>false</code></p>
-<p><code>x-spaceAround</code>          No          Minimum distance (in pixels) between two labels. A negative value specifies the maximum overlap between two labels.                                                                                                      0</p>
-<p><code>x-underlineText</code>        No          Instruct the renderer to underline labels.                                                                                                                                                                               <code>false</code></p>
-<p><code>x-strikethroughText</code>    No          Instruct the renderer to strikethrough labels.                                                                                                                                                                           <code>false</code></p>
-<p><code>x-charSpacing</code>          No          The option controls the amount of space between characters, a positive value increases it, a negative value shrinks it (and will eventually make characters overlap). The value is specified in pixels.                  0</p>
-<p><code>x-wordSpacing</code>          No          The option controls the amount of space between words, for this option only positive values (or zero) are accepted. The value is specified in pixels.                                                                    0</p>
-<hr />
-<p>Additional "vendor options" properties for :ref:<code>sld-extensions_composite-blend</code>:</p>
-<p>.. list-table::
-   :class: non-responsive
-   :header-rows: 1
-   :stub-columns: 1
-   :widths: 20 10 50 20</p>
-<ul>
-<li>
-<ul>
-<li>Property</li>
-<li>Required?</li>
-<li>Description</li>
-<li>Default value</li>
-</ul>
-</li>
-<li>
-<ul>
-<li><code>x-composite</code></li>
-<li>No</li>
-<li>Allows for both alpha compositing and color blending options between symbolizers.</li>
-<li>N/A</li>
-</ul>
-</li>
-<li>
-<ul>
-<li><code>x-composite-base</code></li>
-<li>No</li>
-<li>Allows the rendering engine to use the symbolizer mapping to define a "base" buffer for subsequent compositing and blending using <code>x-composite</code>. See the section on :ref:<code>Feature Styles &lt;ysld_reference_featurestyles_composite&gt;</code> for more details.</li>
-<li><code>false</code></li>
-</ul>
-</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x-allowOverruns</code></td>
+<td>No</td>
+<td>Allows labels on lines to move slightly beyond the beginning or end of the line.</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>x-autoWrap</code></td>
+<td>No</td>
+<td>The number of pixels beyond which a label will be wrapped over multiple lines. Cannot use with <code>x-followLine</code>.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>x-conflictResolution</code></td>
+<td>No</td>
+<td>Enables conflict resolution, meaning no two labels will be allowed to overlap. Without conflict resolution, symbolizers can overlap with other labels.</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>x-followLine</code></td>
+<td>No</td>
+<td>On linear geometries, the label will follow the shape of the current line, as opposed to being drawn at a tangent. Will override</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>x-forceLeftToRight</code></td>
+<td>No</td>
+<td>Forces labels to a readable orientation, otherwise will follow the line orientation, possibly making the label look upside-down. This setting is useful when using symbol fonts to add direction markers along a line.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>x-goodnessOfFit</code></td>
+<td>No</td>
+<td>Percentage (expressed as a decimal between 0-1) of the label that must fit inside the geometry to permit the label to be drawn. Works only on polygon features.</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td><code>x-graphic-margin</code></td>
+<td>No</td>
+<td>Number of pixels between the stretched graphic and the text. Only applies when <code>x-graphic-resize</code> is set to <code>stretch</code> or <code>proportional</code>.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>x-graphic-resize</code></td>
+<td>No</td>
+<td>Allows for stretching the graphic underneath a label to fit the label size. Options are <code>none</code>, <code>stretch</code> or <code>proportional</code>. Used in conjunction with <code>x-graphic-margin</code>..</td>
+<td><code>none</code></td>
+</tr>
+<tr>
+<td><code>x-group</code></td>
+<td>No</td>
+<td>Geometries with identical labels will be considered a single entity to be labeled. Used to control repeated labels.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>x-labelAllGroup</code></td>
+<td>No</td>
+<td>Used in conjunction with <code>x-group</code>. When <code>true</code> all items in a group are labeled. When <code>false</code>, only the largest geometry in the group is labeled. Valid for lines only.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>x-repeat</code></td>
+<td>No</td>
+<td>Desired distance (in pixels) between labels drawn on a group. If zero, only one label will be drawn. Used in conjunction with <code>x-group</code>. Valid for lines only.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>x-maxAngleDelta</code></td>
+<td>No</td>
+<td>Maximum allowed angle (in degrees) between two characters in a curved label. Used in conjunction with <code>x-followLine</code>. Values higher than <code>30</code> may cause loss of legibility of the label.</td>
+<td>22.5</td>
+</tr>
+<tr>
+<td><code>x-maxDisplacement</code></td>
+<td>No</td>
+<td>Distance (in pixels) a label can be displaced from its natural position in an attempt to eliminate conflict with other labels.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>x-minGroupDistance</code></td>
+<td>No</td>
+<td>Minimum distance (in pixels) between two labels in the same label group. Used in conjunction with <code>displacement</code> or <code>repeat</code> to avoid having two labels too close to each other</td>
+<td>No minimum distance</td>
+</tr>
+<tr>
+<td><code>x-partials</code></td>
+<td>No</td>
+<td>Will display partial labels (truncated on the border of the display area).</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>x-polygonAlign</code></td>
+<td>No</td>
+<td>Overrides manual rotation to align label rotation automatically. Valid for polygons only.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>x-spaceAround</code></td>
+<td>No</td>
+<td>Minimum distance (in pixels) between two labels. A negative value specifies the maximum overlap between two labels.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>x-underlineText</code></td>
+<td>No</td>
+<td>Instruct the renderer to underline labels.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>x-strikethroughText</code></td>
+<td>No</td>
+<td>Instruct the renderer to strikethrough labels.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>x-charSpacing</code></td>
+<td>No</td>
+<td>The option controls the amount of space between characters, a positive value increases it, a negative value shrinks it (and will eventually make characters overlap). The value is specified in pixels.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>x-wordSpacing</code></td>
+<td>No</td>
+<td>The option controls the amount of space between words, for this option only positive values (or zero) are accepted. The value is specified in pixels.</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>Additional "vendor options" properties for <a href="../../../../sld/extensions/composite-blend/">Color compositing and color blending</a>:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x-composite</code></td>
+<td>No</td>
+<td>Allows for both alpha compositing and color blending options between symbolizers.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>x-composite-base</code></td>
+<td>No</td>
+<td>Allows the rendering engine to use the symbolizer mapping to define a "base" buffer for subsequent compositing and blending using <code>x-composite</code>. See the section on <a href="../../featurestyles/#ysld_reference_featurestyles_composite">Feature Styles</a> for more details.</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="examples">Examples</h2>
 <h3 id="basic-label">Basic label</h3>
 <p>Text symbolizers are used to draw labels on objects. The label text is usually linked to some attribute of the layer. Font options are available in the <code>font-family</code>, <code>font-size</code>, <code>font-style</code>, and <code>font-weight</code> properties. The following example draws a label using the <code>name</code> attribute of the layer, and with a SansSerif font of size 12, gray color, bold and italic:</p>

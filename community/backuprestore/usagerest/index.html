@@ -4061,7 +4061,7 @@ Transfer-Encoding: chunked
 <p><img alt="" src="../images/usagerest001.png" /></p>
 <p><strong>Query status of Backup executions</strong></p>
 <p>Status of the operation can be queried making an HTTP GET request to the location listed in the response.</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="err">``h</span><span class="kc">tt</span><span class="err">p</span><span class="p">:</span><span class="c1">//mygeoserver/geoserver/rest/br/backup/$ID.{json/xml}``</span>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>``http://mygeoserver/geoserver/rest/br/backup/$ID.{json/xml}``
 </span></code></pre></div>
 <p>Replace <code>$ID</code> with the <strong>ID</strong> of the backup operation you'd like to inspect.</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>curl<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;admin:geoserver&quot;</span><span class="w"> </span>http://mygeoserver/geoserver/rest/br/backup/1.json
@@ -4100,7 +4100,7 @@ Transfer-Encoding: chunked
 </li>
 <li>
 <p><code>BK_PASSWORD_TOKENS</code>: A comma separated list of equal sign separated key/values to be replaced in data store passwords in an incoming backup. For example:</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="err">BK_PASSWORD_TOKENS=$</span><span class="p">{</span><span class="err">workspace</span><span class="p">:</span><span class="err">s</span><span class="kc">t</span><span class="err">ore</span><span class="mf">1.</span><span class="err">passwd.e</span><span class="kc">n</span><span class="err">cryp</span><span class="kc">te</span><span class="err">dValye</span><span class="p">}</span><span class="err">=</span><span class="kc">f</span><span class="err">oo</span><span class="p">,</span><span class="err">$</span><span class="p">{</span><span class="err">workspace</span><span class="p">:</span><span class="err">s</span><span class="kc">t</span><span class="err">ore</span><span class="mf">2.</span><span class="err">passwd.e</span><span class="kc">n</span><span class="err">cryp</span><span class="kc">te</span><span class="err">dValue</span><span class="p">}</span><span class="err">=bar</span>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>BK_PASSWORD_TOKENS=${workspace:store1.passwd.encryptedValye}=foo,${workspace:store2.passwd.encryptedValue}=bar
 </span></code></pre></div>
 </li>
 <li>
@@ -4124,19 +4124,19 @@ Transfer-Encoding: chunked
 </ol>
 <p>Also an optional <code>Filter</code> can be passed to restrict the scope of the restore operation to a list of workspaces.</p>
 <p>For example:</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">   </span><span class="nt">&quot;restore&quot;</span><span class="p">:{</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">      </span><span class="nt">&quot;archiveFile&quot;</span><span class="p">:</span><span class="s2">&quot;/home/sg/BackupAndRestore/test_rest_1.zip&quot;</span><span class="p">,</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">      </span><span class="nt">&quot;options&quot;</span><span class="p">:{</span>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">        </span><span class="nt">&quot;option&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;BK_DRY_RUN=true&quot;</span><span class="p">]</span><span class="w"> </span>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">      </span><span class="p">},</span>
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="nt">&quot;filter&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;name IN (&#39;topp&#39;,&#39;geosolutions-it&#39;)&quot;</span>
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">   </span><span class="p">}</span>
-</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="p">}</span>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>{
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>   &quot;restore&quot;:{
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>      &quot;archiveFile&quot;:&quot;/home/sg/BackupAndRestore/test_rest_1.zip&quot;,
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>      &quot;options&quot;:{
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>        &quot;option&quot;: [&quot;BK_DRY_RUN=true&quot;] 
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>      },
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>&quot;filter&quot;: &quot;name IN (&#39;topp&#39;,&#39;geosolutions-it&#39;)&quot;
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>   }
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>}
 </span></code></pre></div>
 <p>If <code>archiveFile</code> is specified, the archive specified on that path of the remote file system will be used to initiate the restore procedure. Otherwise the archive needs to be uploaded from your local system.</p>
 <p>Then make a POST HTTP request to GeoServer's REST interface endpoint for the restore procedure</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="err">curl</span><span class="w"> </span><span class="mi">-</span><span class="err">u</span><span class="w"> </span><span class="s2">&quot;admin:geoserver&quot;</span><span class="w"> </span><span class="mi">-</span><span class="err">i</span><span class="w"> </span><span class="mi">-</span><span class="err">H</span><span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="mi">-</span><span class="err">X</span><span class="w"> </span><span class="err">POST</span><span class="w"> </span><span class="mi">--</span><span class="err">da</span><span class="kc">ta</span><span class="w"> </span><span class="err">@res</span><span class="kc">t</span><span class="err">ore_pos</span><span class="kc">t</span><span class="err">.jso</span><span class="kc">n</span><span class="w"> </span><span class="err">h</span><span class="kc">tt</span><span class="err">p</span><span class="p">:</span><span class="c1">//mygeoserver/geoserver/rest/br/restore/</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>curl<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;admin:geoserver&quot;</span><span class="w"> </span>-i<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>--data<span class="w"> </span>@restore_post.json<span class="w"> </span>http://mygeoserver/geoserver/rest/br/restore/
 </span></code></pre></div>
 <p>Restore procedure will be initiated.</p>
 <p>Here is a sample response:</p>

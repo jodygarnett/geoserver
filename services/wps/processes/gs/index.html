@@ -2130,14 +2130,54 @@
 <h2 id="aggregation-process">Aggregation process</h2>
 <p>The aggregation process is used to perform common aggregation functions (sum, average, count) on vector data. The available outputs formats for this process are <code>text/xml</code> and <code>application/json</code>.</p>
 <p>The process parameters are described in the table bellow:</p>
-<hr />
-<p><strong>Parameter</strong>            <strong>Description</strong>                                                                                                                                                               <strong>Mandatory</strong>   <strong>Multiple</strong></p>
-<p><code>features</code>               Input feature collection.                                                                                                                                                     yes             no</p>
-<p><code>aggregationAttribute</code>   Attribute on which to perform aggregation.                                                                                                                                    yes             no</p>
-<p><code>function</code>               An aggregate function to compute. Functions include Count, Average, Max, Median, Min, StdDev, and Sum.                                                                        yes             yes</p>
-<p><code>singlePass</code>             If TRUE computes all aggregation values in a single pass. This will defeat DBMS-specific optimizations. If a group by attribute is provided this parameter will be ignored.   yes             no</p>
-<p><code>groupByAttributes</code>      Group by attribute.                                                                                                                                                           no              yes</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Parameter</strong></td>
+<td><strong>Description</strong></td>
+<td><strong>Mandatory</strong></td>
+<td><strong>Multiple</strong></td>
+</tr>
+<tr>
+<td><code>features</code></td>
+<td>Input feature collection.</td>
+<td>yes</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>aggregationAttribute</code></td>
+<td>Attribute on which to perform aggregation.</td>
+<td>yes</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>function</code></td>
+<td>An aggregate function to compute. Functions include Count, Average, Max, Median, Min, StdDev, and Sum.</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>singlePass</code></td>
+<td>If TRUE computes all aggregation values in a single pass. This will defeat DBMS-specific optimizations. If a group by attribute is provided this parameter will be ignored.</td>
+<td>yes</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>groupByAttributes</code></td>
+<td>Group by attribute.</td>
+<td>no</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
 <p>Follow some examples of the invocation of this process using GeoServer shipped <code>topp:states</code> layer.</p>
 <p>The examples can be tested with CURL:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;Content-type: xml&#39;</span><span class="w"> </span>-XPOST<span class="w"> </span>-d@<span class="s1">&#39;wps-request.xml&#39;</span><span class="w"> </span>http://localhost:8080/geoserver/wps
@@ -2221,10 +2261,33 @@
 </span></code></pre></div>
 <p>The value of <code>AggregationResults</code> attribute should be read in a tabular way. The group by attributes come first in the order they appear in <code>GroupByAttributes</code> attribute. After comes the result of the aggregation functions in the order they appear in the <code>AggregationFunctions</code> attribute. In this case there is no group by attributes so the result only contains a row with the aggregation functions results. This is very similar to the result of an SQL query.</p>
 <p>This result should be interpreted like this:</p>
-<hr />
-<p><strong>Max</strong>        <strong>Min</strong>        <strong>Average</strong>         <strong>Sum</strong>        <strong>Count</strong></p>
-<p>29760021       453588         5038397.020408163   246881454      49</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Max</strong></td>
+<td><strong>Min</strong></td>
+<td><strong>Average</strong></td>
+<td><strong>Sum</strong></td>
+<td><strong>Count</strong></td>
+</tr>
+<tr>
+<td>29760021</td>
+<td>453588</td>
+<td>5038397.020408163</td>
+<td>246881454</td>
+<td>49</td>
+</tr>
+</tbody>
+</table>
 <p>To obtain the result in the XML format the request <code>wps:ResponseForm</code> element needs to be changed to:</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;wps:ResponseForm&gt;</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&lt;wps:RawDataOutput</span><span class="w"> </span><span class="na">mimeType=</span><span class="s">&quot;text/xml&quot;</span><span class="nt">&gt;</span>
@@ -2316,18 +2379,67 @@
 </span></code></pre></div>
 <p>Since there is a group by attribute the result contains a row for each different value of the group by attribute. Very similar to the result of an SQL query. If there is more that one group by attribute (which is not the case) their values will be in the order they appear in the <code>GroupByAttributes</code> attribute.</p>
 <p>This result should be interpreted like this:</p>
-<hr />
-<p><strong>Sub Region</strong>           <strong>Average</strong>             <strong>count</strong></p>
-<p>N Eng                    2201157.1666666665      6</p>
-<p>W N Cen                  2522812.8571428573      7</p>
-<p>Pacific                  12489678                3</p>
-<p>Mtn                      1690408.25              8</p>
-<p>E S Cen                  3998821.25              4</p>
-<p>S Atl                    4837695.666666667       9</p>
-<p>Mid Atl                  12534095.333333334      3</p>
-<p>E N Cen                  8209477.2               5</p>
-<p>W S Cen                  6709575.75              4</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sub Region</strong></td>
+<td><strong>Average</strong></td>
+<td><strong>count</strong></td>
+</tr>
+<tr>
+<td>N Eng</td>
+<td>2201157.1666666665</td>
+<td>6</td>
+</tr>
+<tr>
+<td>W N Cen</td>
+<td>2522812.8571428573</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Pacific</td>
+<td>12489678</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Mtn</td>
+<td>1690408.25</td>
+<td>8</td>
+</tr>
+<tr>
+<td>E S Cen</td>
+<td>3998821.25</td>
+<td>4</td>
+</tr>
+<tr>
+<td>S Atl</td>
+<td>4837695.666666667</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Mid Atl</td>
+<td>12534095.333333334</td>
+<td>3</td>
+</tr>
+<tr>
+<td>E N Cen</td>
+<td>8209477.2</td>
+<td>5</td>
+</tr>
+<tr>
+<td>W S Cen</td>
+<td>6709575.75</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
 <p>The result in XML format:</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nt">&lt;AggregationResults&gt;</span>

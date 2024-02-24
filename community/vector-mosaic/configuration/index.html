@@ -3834,16 +3834,48 @@
 <em>Vector Mosaic Data Store in the list of vector data sources</em></p>
 <p><img alt="" src="../images/vector-mosaic-vector-configure.png" />
 <em>Configuring an Vector Mosaic data source</em></p>
-<hr />
-<p><strong>Option</strong>                 <strong>Description</strong></p>
-<p><code>Workspace</code>                Name of the workspace to contain the Vector Mosaic store.</p>
-<p><code>Data Source Name</code>         Name of the Vector Mosaic Store as it will be known to GeoServer.</p>
-<p><code>Description</code>              A full free-form description of the Vector Mosaic store.</p>
-<p><code>Enabled</code>                  If checked, it enables the store. If unchecked (disabled), no data in the Vector Mosaic Store will be served from GeoServer.</p>
-<p><code>delegateStoreName</code>        The data source name of the data store previously created that holds the index information about the constituent vector granules. See <a href="delegate.html">here</a> for more details about delegate store requirements.</p>
-<p><code>connectionParameterKey</code>   The delegate store has a mandatory field called "params". Params can either be a URI pointing at the granule resource location or it can be a configuration string in .properties format. (See <a href="https://en.wikipedia.org/wiki/.properties">Java Properties file</a> for more details about the format) In the latter case this optional parameter specifies which key points at the location of the granule. Accepted values are "file" and "url".</p>
-<p><code>preferredDataStoreSPI</code>    This optional parameter can serve as an optimization to speed up the lookup of granule data stores. Instead of attempting to use the mandatory delegate params field (See <a href="delegate.html">delegate requirements</a> for more details about delegate store requirements.) to look up supported data store types, the Vector Mosaic data store will use the data store SPI specified in this field to identify the correct type.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Option</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>Workspace</code></td>
+<td>Name of the workspace to contain the Vector Mosaic store.</td>
+</tr>
+<tr>
+<td><code>Data Source Name</code></td>
+<td>Name of the Vector Mosaic Store as it will be known to GeoServer.</td>
+</tr>
+<tr>
+<td><code>Description</code></td>
+<td>A full free-form description of the Vector Mosaic store.</td>
+</tr>
+<tr>
+<td><code>Enabled</code></td>
+<td>If checked, it enables the store. If unchecked (disabled), no data in the Vector Mosaic Store will be served from GeoServer.</td>
+</tr>
+<tr>
+<td><code>delegateStoreName</code></td>
+<td>The data source name of the data store previously created that holds the index information about the constituent vector granules. See <a href="delegate.html">here</a> for more details about delegate store requirements.</td>
+</tr>
+<tr>
+<td><code>connectionParameterKey</code></td>
+<td>The delegate store has a mandatory field called "params". Params can either be a URI pointing at the granule resource location or it can be a configuration string in .properties format. (See <a href="https://en.wikipedia.org/wiki/.properties">Java Properties file</a> for more details about the format) In the latter case this optional parameter specifies which key points at the location of the granule. Accepted values are "file" and "url".</td>
+</tr>
+<tr>
+<td><code>preferredDataStoreSPI</code></td>
+<td>This optional parameter can serve as an optimization to speed up the lookup of granule data stores. Instead of attempting to use the mandatory delegate params field (See <a href="delegate.html">delegate requirements</a> for more details about delegate store requirements.) to look up supported data store types, the Vector Mosaic data store will use the data store SPI specified in this field to identify the correct type.</td>
+</tr>
+</tbody>
+</table>
 
 
 

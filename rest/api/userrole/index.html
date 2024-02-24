@@ -2523,88 +2523,237 @@
 <h2 id="requests">Requests</h2>
 <h3 id="restusergroupserviceservicenameusers"><code>/rest/usergroup/[service/&lt;serviceName&gt;/]users/</code></h3>
 <p>Query all users or add a new user in a particular or the default user/group service.</p>
-<hr />
-<p>Method         Action                       Response</p>
-<hr />
-<p>GET            List all users in service.   200 OK. List of users in XML.</p>
-<p>POST           Add a new user               201 Inserted. Created <code>ID</code> header.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>List all users in service.</td>
+<td>200 OK. List of users in XML.</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Add a new user</td>
+<td>201 Inserted. Created <code>ID</code> header.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="restusergroupserviceservicenameuseruser"><code>/rest/usergroup/[service/&lt;serviceName&gt;/]user/&lt;user&gt;</code></h3>
 <p>Query, modify or delete a specific user in a particular or the default user/group service.</p>
-<hr />
-<p>Method         Action                                                  Response</p>
-<hr />
-<p>GET            Read user information                                   200 OK. User in XML.</p>
-<p>POST           Modify the user, unspecified fields remain unchanged.   200 OK.</p>
-<p>DELETE         Delete the user                                         200 OK.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Read user information</td>
+<td>200 OK. User in XML.</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Modify the user, unspecified fields remain unchanged.</td>
+<td>200 OK.</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Delete the user</td>
+<td>200 OK.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="restusergroupserviceservicenamegroups"><code>/rest/usergroup/[service/&lt;serviceName&gt;/]groups/</code></h3>
 <p>Query all groups in a particular user/group or the default service.</p>
-<hr />
-<p>Method         Action                        Response</p>
-<hr />
-<p>GET            List all groups in service.   200 OK. List of groups in XML.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>List all groups in service.</td>
+<td>200 OK. List of groups in XML.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="restusergroupserviceservicenamegroupgroup"><code>/rest/usergroup/[service/&lt;serviceName&gt;/]group/&lt;group&gt;</code></h3>
 <p>Add or delete a specific group in a particular or the default user/group service.</p>
-<hr />
-<p>Method         Action                       Response</p>
-<hr />
-<p>POST           Add the group.               200 OK.</p>
-<p>DELETE         Delete the group.            200 OK.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td>Add the group.</td>
+<td>200 OK.</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Delete the group.</td>
+<td>200 OK.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="restusergroupserviceservicenameuserusergroups"><code>/rest/usergroup/[service/&lt;serviceName&gt;/]user/&lt;user&gt;/groups</code></h3>
 <p>Query all groups associated with a user in a particular or the default user/group service.</p>
-<hr />
-<p>Method         Action                                  Response</p>
-<hr />
-<p>GET            List all groups associated with user.   200 OK. List of groups in XML.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>List all groups associated with user.</td>
+<td>200 OK. List of groups in XML.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="restusergroupserviceservicenamegroupgroupusers"><code>/rest/usergroup/[service/&lt;serviceName&gt;/]group/&lt;group&gt;/users</code></h3>
 <p>Query all users associated with a group in a particular or the default user/group service.</p>
-<hr />
-<p>Method         Action                                  Response</p>
-<hr />
-<p>GET            List all users associated with group.   200 OK. List of groups in XML.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>List all users associated with group.</td>
+<td>200 OK. List of groups in XML.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="restusergroupserviceservicenameusergroupgroup"><code>/rest/usergroup/[service/&lt;serviceName&gt;/]&lt;user&gt;/group/&lt;group&gt;</code></h3>
 <p>Associate or disassociate a specific user with a specific group in a particular or the default user/group service.</p>
-<hr />
-<p>Method         Action                                  Response</p>
-<hr />
-<p>POST           Associate the user with the group.      200 OK.</p>
-<p>DELETE         Disassociate the user from the group.   200 OK.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td>Associate the user with the group.</td>
+<td>200 OK.</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Disassociate the user from the group.</td>
+<td>200 OK.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="restrolesserviceservicename"><code>rest/roles/[service/{serviceName}/]</code></h3>
 <p>Query all roles in a particular role service or the active role service.</p>
-<hr />
-<p>Method         Action                       Response</p>
-<hr />
-<p>GET            List all roles in service.   200 OK. List of roles in XML.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>List all roles in service.</td>
+<td>200 OK. List of roles in XML.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="restrolesserviceservicenamerolerole"><code>/rest/roles/[service/&lt;serviceName&gt;/]role/&lt;role&gt;</code></h3>
 <p>Add or delete a specific role in a particular role service or the active role service.</p>
-<hr />
-<p>Method         Action                       Response</p>
-<hr />
-<p>POST           Add the role.                200 OK.</p>
-<p>DELETE         Delete the role.             200 OK.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td>Add the role.</td>
+<td>200 OK.</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Delete the role.</td>
+<td>200 OK.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="restrolesserviceservicenameservicenameuseruserroles"><code>/rest/roles/[service/&lt;serviceName&gt;/]&lt;serviceName&gt;/user/&lt;user&gt;/roles</code></h3>
 <p>Query all roles associated with a user in a particular role service or the active role service.</p>
-<hr />
-<p>Method         Action                                 Response</p>
-<hr />
-<p>GET            List all roles associated with user.   200 OK. List of roles in XML.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>List all roles associated with user.</td>
+<td>200 OK. List of roles in XML.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="restrolesserviceservicenameroleroleuseruser"><code>/rest/roles/[service/&lt;serviceName&gt;/]role/&lt;role&gt;/user/&lt;user&gt;/</code></h3>
 <p>Associate or disassociate a specific user with a specific role in a particular role service or the active role service.</p>
-<hr />
-<p>Method         Action                                 Response</p>
-<hr />
-<p>POST           Associate the user with the role.      200 OK.</p>
-<p>DELETE         Disassociate the user from the role.   200 OK.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td>Associate the user with the role.</td>
+<td>200 OK.</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Disassociate the user from the role.</td>
+<td>200 OK.</td>
+</tr>
+</tbody>
+</table>
 
 
 

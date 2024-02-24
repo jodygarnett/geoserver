@@ -1894,19 +1894,61 @@
 </ul>
 </blockquote>
 <p>They contain the elements:</p>
-<hr />
-<p><strong>Element</strong>                                            <strong>Required?</strong>   <strong>Description</strong></p>
-<p><a href="./#filter_expression">Expression</a>   Yes             The first value to compare. Often a <code>&lt;PropertyName&gt;</code>.</p>
-<p><a href="./#filter_expression">Expression</a>   Yes             The second value to compare</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Element</strong></td>
+<td><strong>Required?</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><a href="./#filter_expression">Expression</a></td>
+<td>Yes</td>
+<td>The first value to compare. Often a <code>&lt;PropertyName&gt;</code>.</td>
+</tr>
+<tr>
+<td><a href="./#filter_expression">Expression</a></td>
+<td>Yes</td>
+<td>The second value to compare</td>
+</tr>
+</tbody>
+</table>
 <p>Binary comparison operator elements may include an optional <code>matchCase</code> attribute, with the value <code>true</code> or <code>false</code>. If this attribute is <code>true</code> (the default), string comparisons are case-sensitive. If the attribute is <code>false</code> strings comparisons do not check case.</p>
 <h4 id="propertyislike-operator">PropertyIsLike operator</h4>
 <p>The <code>&lt;PropertyIsLike&gt;</code> operator matches a string property value against a text <strong>pattern</strong>. It contains the elements:</p>
-<hr />
-<p><strong>Element</strong>        <strong>Required?</strong>   <strong>Description</strong></p>
-<p><code>&lt;PropertyName&gt;</code>   Yes             Contains a string specifying the name of the property to test</p>
-<p><code>&lt;Literal&gt;</code>        Yes             Contains a pattern string to be matched</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Element</strong></td>
+<td><strong>Required?</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>&lt;PropertyName&gt;</code></td>
+<td>Yes</td>
+<td>Contains a string specifying the name of the property to test</td>
+</tr>
+<tr>
+<td><code>&lt;Literal&gt;</code></td>
+<td>Yes</td>
+<td>Contains a pattern string to be matched</td>
+</tr>
+</tbody>
+</table>
 <p>The pattern is specified by a sequence of regular characters and three special pattern characters. The pattern characters are defined by the following <em>required</em> attributes of the <code>&lt;PropertyIsLike&gt;</code> element:</p>
 <blockquote>
 <ul>
@@ -1917,18 +1959,60 @@
 </blockquote>
 <h4 id="propertyisnull-operator">PropertyIsNull operator</h4>
 <p>The <code>&lt;PropertyIsNull&gt;</code> operator tests whether a property value is null. It contains the element:</p>
-<hr />
-<p><strong>Element</strong>        <strong>Required?</strong>   <strong>Description</strong></p>
-<p><code>&lt;PropertyName&gt;</code>   Yes             contains a string specifying the name of the property to be tested</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Element</strong></td>
+<td><strong>Required?</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>&lt;PropertyName&gt;</code></td>
+<td>Yes</td>
+<td>contains a string specifying the name of the property to be tested</td>
+</tr>
+</tbody>
+</table>
 <h4 id="propertyisbetweeen-operator">PropertyIsBetweeen operator</h4>
 <p>The <code>&lt;PropertyIsBetween&gt;</code> operator tests whether an expression value lies within a range given by a lower and upper bound (inclusive). It contains the elements:</p>
-<hr />
-<p><strong>Element</strong>                                            <strong>Required?</strong>   <strong>Description</strong></p>
-<p><a href="./#filter_expression">Expression</a>   Yes             The value to test</p>
-<p><code>&lt;LowerBoundary&gt;</code>                                      Yes             Contains an <a href="./#filter_expression">Expression</a> giving the lower bound of the range</p>
-<p><code>&lt;UpperBoundary&gt;</code>                                      Yes             Contains an <a href="./#filter_expression">Expression</a> giving the upper bound of the range</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Element</strong></td>
+<td><strong>Required?</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><a href="./#filter_expression">Expression</a></td>
+<td>Yes</td>
+<td>The value to test</td>
+</tr>
+<tr>
+<td><code>&lt;LowerBoundary&gt;</code></td>
+<td>Yes</td>
+<td>Contains an <a href="./#filter_expression">Expression</a> giving the lower bound of the range</td>
+</tr>
+<tr>
+<td><code>&lt;UpperBoundary&gt;</code></td>
+<td>Yes</td>
+<td>Contains an <a href="./#filter_expression">Expression</a> giving the upper bound of the range</td>
+</tr>
+</tbody>
+</table>
 <h3 id="spatial-operators">Spatial operators</h3>
 <p>Spatial operators are used to specify conditions on the geometric attributes of a feature. The following spatial operators are available:</p>
 <h4 id="topological-operators">Topological operators</h4>
@@ -1946,11 +2030,32 @@
 </ul>
 </blockquote>
 <p>These contains the elements:</p>
-<hr />
-<p><strong>Element</strong>        <strong>Required?</strong>   <strong>Description</strong></p>
-<p><code>&lt;PropertyName&gt;</code>   Yes             Contains a string specifying the name of the geometry-valued property to be tested.</p>
-<p><em>GML Geometry</em>     Yes             A GML literal value specifying the geometry to test against</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Element</strong></td>
+<td><strong>Required?</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>&lt;PropertyName&gt;</code></td>
+<td>Yes</td>
+<td>Contains a string specifying the name of the geometry-valued property to be tested.</td>
+</tr>
+<tr>
+<td><em>GML Geometry</em></td>
+<td>Yes</td>
+<td>A GML literal value specifying the geometry to test against</td>
+</tr>
+</tbody>
+</table>
 <h4 id="distance-operators">Distance operators</h4>
 <p>These operators test distance relationships between a geometry property and a geometry literal:</p>
 <blockquote>
@@ -1960,19 +2065,65 @@
 </ul>
 </blockquote>
 <p>They contain the elements:</p>
-<hr />
-<p><strong>Element</strong>        <strong>Required?</strong>   <strong>Description</strong></p>
-<p><code>&lt;PropertyName&gt;</code>   Yes             Contains a string specifying the name of the property to be tested. If omitted, the <em>default geometry attribute</em> is assumed.</p>
-<p><em>GML Geometry</em>     Yes             A literal value specifying a geometry to compute the distance to. This may be either a geometry or an envelope in GML 3 format</p>
-<p><code>&lt;Distance&gt;</code>       Yes             Contains the numeric value for the distance tolerance. The element may include an optional <code>units</code> attribute.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Element</strong></td>
+<td><strong>Required?</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>&lt;PropertyName&gt;</code></td>
+<td>Yes</td>
+<td>Contains a string specifying the name of the property to be tested. If omitted, the <em>default geometry attribute</em> is assumed.</td>
+</tr>
+<tr>
+<td><em>GML Geometry</em></td>
+<td>Yes</td>
+<td>A literal value specifying a geometry to compute the distance to. This may be either a geometry or an envelope in GML 3 format</td>
+</tr>
+<tr>
+<td><code>&lt;Distance&gt;</code></td>
+<td>Yes</td>
+<td>Contains the numeric value for the distance tolerance. The element may include an optional <code>units</code> attribute.</td>
+</tr>
+</tbody>
+</table>
 <h4 id="bounding-box-operator">Bounding Box operator</h4>
 <p>The <code>&lt;BBOX&gt;</code> operator tests whether a geometry-valued property intersects a fixed bounding box. It contains the elements:</p>
-<hr />
-<p><strong>Element</strong>        <strong>Required?</strong>   <strong>Description</strong></p>
-<p><code>&lt;PropertyName&gt;</code>   No              Contains a string specifying the name of the property to be tested. If omitted, the <em>default geometry attribute</em> is assumed.</p>
-<p><code>&lt;gml:Box&gt;</code>        Yes             A GML Box literal value specifying the bounding box to test against</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Element</strong></td>
+<td><strong>Required?</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>&lt;PropertyName&gt;</code></td>
+<td>No</td>
+<td>Contains a string specifying the name of the property to be tested. If omitted, the <em>default geometry attribute</em> is assumed.</td>
+</tr>
+<tr>
+<td><code>&lt;gml:Box&gt;</code></td>
+<td>Yes</td>
+<td>A GML Box literal value specifying the bounding box to test against</td>
+</tr>
+</tbody>
+</table>
 <h4 id="examples">Examples</h4>
 <ul>
 <li>This filter selects features with a geometry that intersects the point (1,1).</li>
@@ -2068,14 +2219,40 @@
 <p>The <code>&lt;PropertyName&gt;</code> element refers to the value of a feature attribute. It contains a <strong>string</strong> or an <strong>XPath expression</strong> specifying the attribute name.</p>
 <h3 id="literal">Literal</h3>
 <p>The <code>&lt;Literal&gt;</code> element specifies a constant value. It contains data of one of the following types:</p>
-<hr />
-<p><strong>Type</strong>          <strong>Description</strong></p>
-<p>Numeric           A string representing a numeric value (integer or decimal).</p>
-<p>Boolean           A boolean value of <code>true</code> or <code>false</code>.</p>
-<p>String            A string value. XML-incompatible text may be included by using <strong>character entities</strong> or <code>&lt;![CDATA[</code> <code>]]&gt;</code> delimiters.</p>
-<p>Date              A string representing a date.</p>
-<p>Geometry          An element specifying a geometry in GML3 format.</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td>Numeric</td>
+<td>A string representing a numeric value (integer or decimal).</td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td>A boolean value of <code>true</code> or <code>false</code>.</td>
+</tr>
+<tr>
+<td>String</td>
+<td>A string value. XML-incompatible text may be included by using <strong>character entities</strong> or <code>&lt;![CDATA[</code> <code>]]&gt;</code> delimiters.</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>A string representing a date.</td>
+</tr>
+<tr>
+<td>Geometry</td>
+<td>An element specifying a geometry in GML3 format.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="wfs-20-namespaces">WFS 2.0 namespaces</h2>
 <p>WFS 2.0 does not depend on any one GML version and thus requires an explicit namespace and schemaLocation for GML. In a GET request, namespaces can be placed on a Filter element (that is, <code>filter=</code> the block below, URL-encoded):</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;fes:Filter</span>

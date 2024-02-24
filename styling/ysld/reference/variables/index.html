@@ -2356,13 +2356,36 @@
 <div class="language-text highlight"><pre><span></span><code>define: &amp;variable &lt;value&gt;
 </code></pre></div>
 <p>where:</p>
-<hr />
-<p>Attribute      Required?   Description                                                                         Default value</p>
-<hr />
-<p><code>define</code>       Yes         Starts the definition block.                                                        N/A</p>
-<p><code>&amp;variable</code>    Yes         The name of the variable being defined. The <code>&amp;</code> is not part of the variable name.   N/A</p>
-<p><code>&lt;value&gt;</code>      Yes         A single value, such as <code>512</code> or <code>'#DD0000'</code>                                        N/A</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>define</code></td>
+<td>Yes</td>
+<td>Starts the definition block.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>&amp;variable</code></td>
+<td>Yes</td>
+<td>The name of the variable being defined. The <code>&amp;</code> is not part of the variable name.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>&lt;value&gt;</code></td>
+<td>Yes</td>
+<td>A single value, such as <code>512</code> or <code>'#DD0000'</code></td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
 <p>The syntax for using this variable is to prepend the variable name with a <code>*</code>:</p>
 <div class="language-text highlight"><pre><span></span><code>&lt;directive&gt;: *variable
 </code></pre></div>
