@@ -2,3377 +2,3377 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>http://jodygarnett.github.io/geoserver/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/imagemap/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/backuprestore/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/backuprestore/extensions/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/backuprestore/installation/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/backuprestore/usagegui/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/backuprestore/usagerest/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/backuprestore/usecases/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/cog/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/cog/cog/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/cog/mosaic/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/cog/update/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/colormap/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/cov-json/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/dds/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/elasticsearch/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/features-templating/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/features-templating/configuration/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/features-templating/directives/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/features-templating/installing/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/features-templating/querying/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/features-templating/rest/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/flatgeobuf/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/flatgeobuf/installing/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/gdal/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/geomesa/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/geopkg/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/geopkg/installing/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/geopkg/output/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/geostyler/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/graticules/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/gsr/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/gsr/dynamicMapLayer/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/gsr/examples/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/gsr/featureLayer/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/gsr/featureTable/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/gsr/functionality/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/gsr/installing/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/gsr/usage/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/gwc-azure-blob/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/gwc-distributed/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/gwc-mbtiles/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/gwc-sqlite/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/hana/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/importer-jdbc/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/jdbcconfig/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/jdbcconfig/configuration/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/jdbcconfig/installing/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/jdbcstore/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/jdbcstore/configuration/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/jdbcstore/installing/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/jms-cluster/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/jms-cluster/installation/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/jms-cluster/activemq/JDBC/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/jms-cluster/activemq/SharedFolder/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/jms-cluster/activemq/activemqBroker/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/keycloak/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/keycloak/authentication/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/keycloak/installation/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/keycloak/keycloak_role_service/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/libdeflate/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/mbtiles/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/mbtiles/input/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/mbtiles/installing/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/mbtiles/output/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/monitor-hibernate/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/monitor-hibernate/configuration/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/monitor-hibernate/db/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/monitor-hibernate/installation/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/monitor-hibernate/upgrade/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/monitor-kafka/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/monitor-kafka/configuration/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/monitor-kafka/installation/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/monitor-kafka/usage/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/ncwms/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/netcdf-ghrsst/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/notification/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/oauth2/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/oauth2/google/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/oauth2/installing/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/oauth2/oauth2/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/oauth2/oidc/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/ogc-api/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/ogc-api/configure/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/ogc-api/testbed/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/ogc-api/coverages/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/ogc-api/features/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/ogc-api/maps/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/ogc-api/styles/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/ogc-api/tiled-features/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/ogc-api/tiles/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/ogr-store/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/opensearch-eo/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/opensearch-eo/STAC/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/opensearch-eo/automation/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/opensearch-eo/configuration/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/opensearch-eo/database/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/opensearch-eo/installation/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/opensearch-eo/intro/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/opensearch-eo/templates/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/opensearch-eo/upgrading/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/pgraster/pgraster/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/proxy-base-ext/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/proxy-base-ext/install/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/proxy-base-ext/usage/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/rat/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/rat/installing/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/rat/using/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/remote-wps/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/remote-wps/install_geoserver/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/remote-wps/install_python/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/remote-wps/install_xmpp/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/remote-wps/running_example/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/s3-geotiff/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/schemaless-features/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/schemaless-features/install/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/schemaless-features/schemaless-mongo/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/smart-data-loader/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/smart-data-loader/data-store/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/smart-data-loader/install/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/solr/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/solr/configure/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/solr/load/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/solr/optimize/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/spatialjson/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/spatialjson/attributes/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/spatialjson/development/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/spatialjson/installation/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/spatialjson/schema/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/stac-datastore/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/stac-datastore/data-store/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/stac-datastore/install/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/taskmanager/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/taskmanager/basic/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/taskmanager/developer/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/taskmanager/user/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/vector-mosaic/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/vector-mosaic/configuration/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/vector-mosaic/delegate/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/vector-mosaic/installing/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/vsi/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/web-service-auth/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/web-service-auth/configuration/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/web-service-auth/install/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/webp/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/webp/installing/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/webp/webp_processing/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/wps-longitudinal-profile/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/community/xslt/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/configuration/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/configuration/REST/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/configuration/contact/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/configuration/globalsettings/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/configuration/logging/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/configuration/raster_access/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/configuration/status/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/configuration/virtual-services/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/configuration/crshandling/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/configuration/crshandling/configurecrs/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/configuration/crshandling/coordtransforms/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/configuration/crshandling/customcrs/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/configuration/crshandling/manualepsg/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/configuration/demos/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/configuration/image_processing/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/configuration/internationalization/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/configuration/service-metadata/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/configuration/tools/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/configuration/tools/bulk/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/configuration/tools/resource/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/configuration/tools/resource/browser/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/configuration/tools/resource/examples/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/configuration/tools/resource/install/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/app-schema/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/app-schema/app-schema-resolution/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/app-schema/complex-features/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/app-schema/configuration/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/app-schema/cql-functions/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/app-schema/data-access-integration/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/app-schema/data-stores/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/app-schema/feature-chaining/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/app-schema/installation/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/app-schema/joining/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/app-schema/mapping-file/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/app-schema/mongo-tutorial/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/app-schema/polymorphism/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/app-schema/property-interpolation/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/app-schema/secondary-namespaces/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/app-schema/solr-tutorial/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/app-schema/supported-gml-versions/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/app-schema/tutorial/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/app-schema/wfs-2.0-support/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/app-schema/wfs-service-settings/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/app-schema/wms-support/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/cascaded/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/cascaded/stored_query/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/cascaded/wfs/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/cascaded/wms/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/cascaded/wmts/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/database/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/database/connection-pooling/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/database/db2/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/database/h2/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/database/jndi/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/database/mysql/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/database/oracle/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/database/postgis/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/database/primarykey/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/database/sqlserver/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/database/sqlsession/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/database/sqlview/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/raster/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/raster/arcgrid/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/raster/coverageview/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/raster/gdal/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/raster/geopkg/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/raster/geotiff/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/raster/imagepyramid/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/raster/worldimage/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/raster/imagemosaic/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/raster/imagemosaic/configuration/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/raster/imagemosaic/tutorial/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/vector/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/vector/directory/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/vector/featurepregen/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/vector/geopkg/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/vector/properties/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/vector/shapefile/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/webadmin/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/webadmin/layergroups/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/webadmin/layerpreview/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/webadmin/layers/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/webadmin/stores/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/data/webadmin/workspaces/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/datadirectory/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/datadirectory/configtemplate/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/datadirectory/location/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/datadirectory/migrating/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/datadirectory/setting/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/datadirectory/structure/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/excel/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/ogr/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/authkey/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/cas/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/controlflow/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/csw-iso/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/csw-iso/installing/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/csw-iso/mapping/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/csw-iso/tutorial/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/dxf/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/geofence/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/geofence/cache/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/geofence/configuration/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/geofence/installing/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/geofence-server/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/geofence-server/gui/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/geofence-server/installing/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/geofence-server/migration/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/geofence-server/rest-adminrule/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/geofence-server/rest-batch-op/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/geofence-server/rest/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/geofence-server/tutorial/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/geofence-wps/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/geofence-wps/gui/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/geofence-wps/installing/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/geopkg-output/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/geopkg-output/install/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/geopkg-output/usage/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/grib/grib/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/gwc-s3/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/gwc-s3/configuration/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/gwc-s3/install/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/iau/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/iau/install/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/iau/usage/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/importer/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/importer/configuring/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/importer/formats/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/importer/guireference/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/importer/installing/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/importer/rest_examples/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/importer/rest_reference/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/importer/using/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/inspire/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/inspire/installing/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/inspire/using/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/jp2k/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/libjpeg-turbo/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/mapml/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/metadata/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/metadata/advanced/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/metadata/configuration/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/metadata/uiconfiguration/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/metadata/user/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/mongodb/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/monitoring/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/monitoring/audit/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/monitoring/configuration/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/monitoring/geoip/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/monitoring/installation/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/monitoring/overview/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/monitoring/query/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/monitoring/reference/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/netcdf/netcdf/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/netcdf-out/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/netcdf-out/nc4/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/params-extractor/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/params-extractor/install/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/params-extractor/usage/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/printing/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/printing/configuration/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/printing/faq/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/printing/protocol/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/querylayer/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/sldservice/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/vectortiles/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/vectortiles/install/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/vectortiles/tutorial/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/wcs20eo/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/wmts-multidimensional/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/wmts-multidimensional/install/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/wmts-multidimensional/performance/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/wmts-multidimensional/usage/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/wps-download/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/wps-download/mapAnimationDownload/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/wps-download/rawDownload/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/extensions/wps-jdbc/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/filter/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/filter/ecql_reference/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/filter/filter_reference/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/filter/function/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/filter/function_reference/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/filter/syntax/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/geowebcache/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/geowebcache/config/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/geowebcache/responseheaders/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/geowebcache/seeding/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/geowebcache/troubleshooting/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/geowebcache/using/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/geowebcache/rest/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/geowebcache/rest/diskquota/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/geowebcache/rest/layers/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/geowebcache/rest/seed/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/geowebcache/webadmin/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/geowebcache/webadmin/blobstores/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/geowebcache/webadmin/defaults/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/geowebcache/webadmin/demopage/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/geowebcache/webadmin/diskquotas/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/geowebcache/webadmin/gridsets/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/geowebcache/webadmin/layers/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/gettingstarted/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/gettingstarted/geopkg-quickstart/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/gettingstarted/group-quickstart/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/gettingstarted/image-quickstart/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/gettingstarted/postgis-quickstart/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/gettingstarted/shapefile-quickstart/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/gettingstarted/style-quickstart/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/gettingstarted/web-admin-quickstart/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/installation/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/installation/docker/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/installation/linux/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/installation/upgrade/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/installation/war/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/installation/win_binary/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/installation/win_installer/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/introduction/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/introduction/gettinginvolved/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/introduction/history/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/introduction/license/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/introduction/overview/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/introduction/download/GPL/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/introduction/download/NOTICE/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/introduction/download/apache-1.1/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/introduction/download/apache-2.0/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/introduction/download/epl-1.0/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/production/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/production/config/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/production/container/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/production/data/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/production/identify/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/production/java/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/production/linuxscript/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/production/misc/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/production/troubleshooting/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/about/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/appschema/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/fonts/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/imagemosaic/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/layergroups/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/layers/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/security/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/stores/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/styles/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/workspaces/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/api/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/api/accesscontrol/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/api/coverages/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/api/coveragestores/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/api/datastores/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/api/details/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/api/featuretypes/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/api/fonts/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/api/global/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/api/layergroups/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/api/layers/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/api/logging/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/api/manifests/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/api/masterpassword/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/api/namespaces/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/api/reload/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/api/reset/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/api/resources/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/api/selfadmin/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/api/services/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/api/styles/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/api/templates/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/api/userrole/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/rest/api/workspaces/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/disable/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/layer/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/passwd/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/rest/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/root/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/service/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/urlchecks/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/auth/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/auth/chain/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/auth/owsrest/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/auth/providers/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/auth/web/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/tutorials/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/tutorials/activedirectory/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/tutorials/cas/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/tutorials/cert/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/tutorials/credentialsfromheaders/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/tutorials/digest/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/tutorials/httpheaderproxy/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/tutorials/j2ee/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/tutorials/ldap/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/usergrouprole/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/usergrouprole/interaction/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/usergrouprole/roles/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/usergrouprole/roleservices/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/usergrouprole/rolesource/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/usergrouprole/usergroups/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/usergrouprole/usergroupservices/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/webadmin/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/webadmin/auth/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/webadmin/csrf/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/webadmin/data/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/webadmin/filebrowse/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/webadmin/passwords/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/webadmin/services/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/webadmin/settings/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/security/webadmin/ugr/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/csw/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/csw/directdownload/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/csw/features/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/csw/installing/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wcs/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wcs/basics/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wcs/configuration/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wcs/outputformats/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wcs/reference/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wcs/requestbuilder/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wcs/vendor/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wcs/webadmin/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wfs/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wfs/axis_order/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wfs/basics/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wfs/outputformats/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wfs/reference/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wfs/schemamapping/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wfs/vendor/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wfs/webadmin/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/basics/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/configuration/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/decoration/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/global/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/nonstandardautonamespace/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/outputformats/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/reference/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/time/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/vendor/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/webadmin/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/get_legend_graphic/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/googleearth/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/googleearth/kmlstyling/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/googleearth/overview/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/googleearth/quickstart/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/googleearth/features/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/googleearth/features/customizingplacemarks/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/googleearth/features/filters/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/googleearth/features/kmlcentroids/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/googleearth/features/kmlheighttime/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/googleearth/features/kmllegends/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/googleearth/features/kmlreflector/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/googleearth/features/kmlregionation/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/googleearth/features/kmlscoring/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/googleearth/features/kmlsuperoverlays/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/googleearth/features/togglingplacemarks/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/googleearth/tutorials/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/googleearth/tutorials/superoverlaysgwc/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/googleearth/tutorials/heights/heights/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/googleearth/tutorials/kmlplacemark/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wms/googleearth/tutorials/time/time/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wmts/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wmts/webadmin/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wps/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wps/administration/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wps/hazelcast-clustering/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wps/install/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wps/operations/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wps/requestbuilder/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wps/security/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wps/processes/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wps/processes/chaining/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wps/processes/geo/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/services/wps/processes/gs/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/css/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/css/cascading/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/css/directives/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/css/filters/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/css/install/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/css/metadata/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/css/multivalueprops/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/css/nested/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/css/properties/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/css/styledmarks/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/css/transformation/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/css/tutorial/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/css/valuetypes/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/css/cookbook/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/css/cookbook/line/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/css/cookbook/point/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/css/cookbook/polygon/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/css/cookbook/raster/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/css/examples/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/css/examples/extrude/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/css/examples/kml/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/css/examples/misc/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/css/examples/randomfills/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/css/examples/transformation/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/mbstyle/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/mbstyle/installing/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/mbstyle/source/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/mbstyle/cookbook/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/mbstyle/cookbook/lines/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/mbstyle/cookbook/points/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/mbstyle/cookbook/polygons/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/mbstyle/reference/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/qgis/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/introduction/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/language/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/working/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/cookbook/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/cookbook/lines/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/cookbook/points/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/cookbook/polygons/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/cookbook/rasters/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/extensions/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/extensions/geometry-transformations/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/extensions/label-obstacles/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/extensions/margins/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/extensions/pointsymbols/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/extensions/randomized/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/extensions/rendering-selection/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/extensions/rendering-transform/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/extensions/substitution/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/extensions/uom/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/extensions/composite-blend/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/extensions/composite-blend/example/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/extensions/composite-blend/modes/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/extensions/composite-blend/syntax/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/extensions/z-order/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/extensions/z-order/example/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/extensions/z-order/syntax/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/reference/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/reference/filters/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/reference/labeling/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/reference/layers/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/reference/linesymbolizer/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/reference/pointsymbolizer/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/reference/polygonsymbolizer/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/reference/rastersymbolizer/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/reference/rules/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/reference/sld/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/reference/styles/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/reference/textsymbolizer/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/tipstricks/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/tipstricks/mixed-geometries/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/sld/tipstricks/transformation-func/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/webadmin/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/workshop/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/workshop/css/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/workshop/css/css/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/workshop/css/done/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/workshop/css/linestring/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/workshop/css/point/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/workshop/css/polygon/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/workshop/css/raster/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/workshop/design/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/workshop/design/style/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/workshop/design/symbology/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/workshop/mbstyle/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/workshop/mbstyle/done/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/workshop/mbstyle/linestring/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/workshop/mbstyle/mbstyle/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/workshop/mbstyle/point/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/workshop/mbstyle/polygon/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/workshop/mbstyle/raster/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/workshop/setup/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/workshop/setup/data/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/workshop/setup/install/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/workshop/ysld/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/workshop/ysld/done/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/workshop/ysld/linestring/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/workshop/ysld/point/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/workshop/ysld/polygon/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/workshop/ysld/raster/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/workshop/ysld/ysld/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/ysld/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/ysld/gs-extensions/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/ysld/installing/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/ysld/cookbook/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/ysld/cookbook/lines/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/ysld/cookbook/points/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/ysld/cookbook/polygons/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/ysld/cookbook/rasters/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/ysld/reference/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/ysld/reference/featurestyles/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/ysld/reference/filters/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/ysld/reference/functions/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/ysld/reference/rules/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/ysld/reference/scalezoom/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/ysld/reference/structure/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/ysld/reference/transforms/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/ysld/reference/variables/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/ysld/reference/symbolizers/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/ysld/reference/symbolizers/line/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/ysld/reference/symbolizers/point/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/ysld/reference/symbolizers/polygon/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/ysld/reference/symbolizers/raster/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/styling/ysld/reference/symbolizers/text/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/tutorials/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/tutorials/freemarker/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/tutorials/staticfiles/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/tutorials/wmsreflector/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/tutorials/GetFeatureInfo/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/tutorials/GetFeatureInfo/geojson/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/tutorials/GetFeatureInfo/html/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/tutorials/GetFeatureInfo/raster/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/tutorials/cloud-foundry/run_cf/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/tutorials/cql/cql_tutorial/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/tutorials/feature-pregeneralized/feature-pregeneralized_tutorial/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/tutorials/georss/georss/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/tutorials/imagemosaic_footprint/imagemosaic_footprint/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/tutorials/imagemosaic_timeseries/imagemosaic_time-elevationseries/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/tutorials/imagemosaic_timeseries/imagemosaic_timeseries/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/tutorials/imagepyramid/imagepyramid/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/tutorials/jboss/jboss_tutorial/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/tutorials/metadata/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/tutorials/palettedimage/palettedimage/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/tutorials/tomcat-jndi/tomcat-jndi/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/webadmin/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/webadmin/about/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://jodygarnett.github.io/geoserver/webadmin/welcome/</loc>
-         <lastmod>2024-02-24</lastmod>
+         <lastmod>2024-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
