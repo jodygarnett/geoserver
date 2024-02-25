@@ -2990,19 +2990,36 @@
 <div class="language-text highlight"><pre><span></span><code>&lt;isList&gt;true&lt;/isList&gt;
 </code></pre></div>
 <p>For example, the table below has multiple <code>POSITION</code> for each feature:</p>
-<p>+-------+-----------+
-| ID    | POSITION  |
-+=======+===========+
-| ID1.2 | &gt; 1948-05 |
-+-------+-----------+
-| ID1.2 | &gt; 1948-06 |
-+-------+-----------+
-| ID1.2 | &gt; 1948-07 |
-+-------+-----------+
-| ID1.2 | &gt; 1948-08 |
-+-------+-----------+
-| ID1.2 | &gt; 1948-09 |
-+-------+-----------+</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>POSITION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID1.2</td>
+<td>1948-05</td>
+</tr>
+<tr>
+<td>ID1.2</td>
+<td>1948-06</td>
+</tr>
+<tr>
+<td>ID1.2</td>
+<td>1948-07</td>
+</tr>
+<tr>
+<td>ID1.2</td>
+<td>1948-08</td>
+</tr>
+<tr>
+<td>ID1.2</td>
+<td>1948-09</td>
+</tr>
+</tbody>
+</table>
 <p>The configuration file uses <code>isList</code> on <code>timePositionList</code> attribute mapped to <code>POSITION</code> column:</p>
 <div class="language-text highlight"><pre><span></span><code>&lt;AttributeMapping&gt;
     &lt;targetAttribute&gt;csml:timePositionList&lt;/targetAttribute&gt;
@@ -3044,7 +3061,7 @@
 <p>The uDig manual includes a list of CQL functions:</p>
 <blockquote>
 <ul>
-<li><a href="http://udig.refractions.net/confluence/display/EN/Constraint+Query+Language">http://udig.refractions.net/confluence/display/EN/Constraint+Query+Language</a></li>
+<li><a href="http://udig.github.io/docs/user/concepts/Constraint%20Query%20Language.html">http://udig.github.io/docs/user/concepts/Constraint%20Query%20Language.html</a></li>
 </ul>
 </blockquote>
 </li>

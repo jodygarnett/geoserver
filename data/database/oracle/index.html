@@ -2174,7 +2174,7 @@
 <p class="admonition-title">Note</p>
 <p>GeoServer does not come built-in with support for Oracle; it must be installed through an extension. Proceed to <a href="./#oracle_install">Installing the Oracle extension</a> for installation details.</p>
 </div>
-<p><a href="http://www.oracle.com/technology/products/spatial/index.html">Oracle Spatial and Locator</a> are the spatial components of Oracle. <strong>Locator</strong> is provided with all Oracle versions, but has limited spatial functions. <strong>Spatial</strong> is Oracle's full-featured spatial offering, but requires a specific license to use.</p>
+<p><a href="https://www.oracle.com/database/spatial/">Oracle Spatial and Locator</a> are the spatial components of Oracle. <strong>Locator</strong> is provided with all Oracle versions, but has limited spatial functions. <strong>Spatial</strong> is Oracle's full-featured spatial offering, but requires a specific license to use.</p>
 <h2 id="oracle_install">Installing the Oracle extension</h2>
 <ol>
 <li>
@@ -2268,13 +2268,11 @@
 <h3 id="using-the-geometry-metadata-table">Using the geometry metadata table</h3>
 <p>The Oracle data store by default looks at the <code>MDSYS.USER_SDO*</code> and <code>MDSYS.ALL_SDO*</code> views to determine the geometry type and native SRID of each geometry column. Those views are automatically populated with information about the geometry columns stored in tables that the current user owns (for the <code>MDSYS.USER_SDO*</code> views) or can otherwise access (for the <code>MDSYS.ALL_SDO*</code> views).</p>
 <p>There are a few issues with this strategy:</p>
-<blockquote>
 <ul>
 <li>if the connection pool user cannot access the tables (because <a href="../sqlsession/">impersonation</a> is used) the MDSYS views will be empty, making it impossible to determine both the geometry type and the native SRID</li>
 <li>the geometry type can be specified only while building the spatial indexes, as an index constraint. However such information is often not included when creating the indexes</li>
 <li>the views are populated dynamically based on the current user. If the database has thousands of tables and users the views can become very slow</li>
 </ul>
-</blockquote>
 <p>Starting with GeoServer 2.1.4 the administrator can address the above issues by manually creating a geometry metadata table describing each geometry column. Its presence is indicated via the Oracle datastore connection parameter named <em>Geometry metadata table</em> (which may be a simple table name or a schema-qualified one). The table has the following structure (the table name is flexible, just specify the one chosen in the data store connection parameter):</p>
 <div class="language-text highlight"><pre><span></span><code>CREATE TABLE GEOMETRY_COLUMNS(
    F_TABLE_SCHEMA VARCHAR(30) NOT NULL, 

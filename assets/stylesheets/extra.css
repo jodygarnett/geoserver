@@ -1,4 +1,4 @@
-
+/* figure caption from mkdocs_translate convention */
 img + em, .browser-border + em, .browser-mockup + em {
   display: block;
   text-align: left;
@@ -10,6 +10,7 @@ img + em, .browser-border + em, .browser-mockup + em {
 }
 
 /* grid */
+/*
 .md-typeset .grid {
   column-count: 2;
   column-gap: 2em;
@@ -50,6 +51,7 @@ img + em, .browser-border + em, .browser-mockup + em {
     width: calc(100vw - 1.2rem - 1.2rem);
   }
 }
+*/
 
 /* geosever branding */
 .md-header {
@@ -98,28 +100,59 @@ img + em, .browser-border + em, .browser-mockup + em {
 
 
 
-/* definition list used to display general inputs */
-.md-typeset dl dd {
-  margin: 10px 0;
+/*
+ * definition list used to display general inputs
+ #
+ # present like tables
+ */
+
+.md-typeset dl {
+  background-color: var(--md-default-bg-color);
+  border: .05rem solid var(--md-typeset-table-color);
+  border-radius: .1rem;
+  font-size: .64rem;
+  max-width: 100%;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: max-content auto;
 }
+.md-typeset dl:not([class]) dt {
+  grid-column-start: 1;
+  border-top: .05rem solid var(--md-typeset-table-color);
+  padding: .9375em 1.25em;
+  vertical-align:top;
+  margin: 0
+}
+
+.md-typeset dl:not([class]) dd {
+  grid-column-start: 2;
+  border-top: .05rem solid var(--md-typeset-table-color);
+  vertical-align:top;
+  margin: 0
+}
+
+/*
 [dir=ltr] .md-typeset dd {
   margin-left: 0;
-}
+}*/
+/*
 .md-typeset dl dd code {
   border: 1px solid rgba(230, 230, 230, 0.7);
   padding: 8px 12px;
-}
+}*/
 
+/*
 .browser-border {
   border: 1px solid rgba(230, 230, 230, 0.7);
   border-radius: 3px;
   background: #fff;
   margin: 10px 0 5px 0;
 }
+
 .browser-mockup {
   border: 1px solid rgba(230, 230, 230, 0.7);
   border-top: 2em solid rgba(230, 230, 230, 0.7);
-  /*box-shadow: 0 0.1em 1em 0 rgba(0, 0, 0, 0.4);*/
+  //box-shadow: 0 0.1em 1em 0 rgba(0, 0, 0, 0.4);
   position: relative;
   border-radius: 3px;
   margin: 10px 0 5px 0;
@@ -166,3 +199,4 @@ img + em, .browser-border + em, .browser-mockup + em {
 .browser-mockup > * {
   display: block;
 }
+*/
