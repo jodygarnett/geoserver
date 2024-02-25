@@ -1941,12 +1941,16 @@
 <p>Run the container</p>
 <div class="admonition abstract">
 <p class="admonition-title">Release</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker run \-\-mount type=bind,src=/MY/DATADIRECTORY,target=/opt/geoserver_data -it -p8080:8080 docker.osgeo.org/geoserver: 2.24.2
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker run  -it -p8080:8080 \
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>  --mount type=bind,src=/MY/DATADIRECTORY,target=/opt/geoserver_data \
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>  docker.osgeo.org/geoserver: 2.24.2
 </span></code></pre></div>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Nightly Build</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker run \-\-mount type=bind,src=/MY/DATADIRECTORY,target=/opt/geoserver_data -it -p8080:8080 docker.osgeo.org/geoserver: 2.24.x
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker run -it -p8080:8080 \
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  --mount type=bind,src=/MY/DATADIRECTORY,target=/opt/geoserver_data \
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>  docker.osgeo.org/geoserver: 2.24.x
 </span></code></pre></div>
 </div>
 </li>
@@ -1964,17 +1968,17 @@
 <p>You can add GeoServer Extensions - the container will download them during startup.</p>
 <div class="admonition abstract">
 <p class="admonition-title">Release</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker run -it -p8080:8080 \\
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>  \-\-env INSTALL_EXTENSIONS=true \\
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>  \-\-env STABLE_EXTENSIONS=&quot;ysld,h2&quot; \\
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker run -it -p8080:8080 \
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>  --env INSTALL_EXTENSIONS=true \
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>  --env STABLE_EXTENSIONS=&quot;ysld,h2&quot; \
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>  docker.osgeo.org/geoserver: 2.24.2
 </span></code></pre></div>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Nightly Build</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>docker run -it -p8080:8080 \\
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>  \-\-env INSTALL_EXTENSIONS=true \\
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>  \-\-env STABLE_EXTENSIONS=&quot;ysld,h2&quot; \\
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>docker run -it -p8080:8080 \
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>  --env INSTALL_EXTENSIONS=true \
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>  --env STABLE_EXTENSIONS=&quot;ysld,h2&quot; \
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>  docker.osgeo.org/geoserver: 2.24.x
 </span></code></pre></div>
 </div>
@@ -1994,10 +1998,10 @@ excel        inspire         ogr-wfs       wcs2_0-eo
 <h2 id="testing-geoserver-community-modules">Testing Geoserver Community modules</h2>
 <p>Working with a Nightly build is a good way to test community modules and provide feedback to developers working on new functionality.</p>
 <p>To work with community modules you must be using the GeoServer 2.24.x nightly build that matches the community module build:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>docker run -it -p8080:8080 \\
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>  \-\-env INSTALL_EXTENSIONS=true \\
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>  \-\-env STABLE_EXTENSIONS=&quot;ysld,h2&quot; \\
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>  \-\-env COMMUNITY_EXTENSIONS=&quot;ogcapi-features,ogcapi-images,ogcapi-maps,ogcapi-styles,ogcapi-tiles&quot; \\
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>docker run -it -p8080:8080 \
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>  --env INSTALL_EXTENSIONS=true \
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>  --env STABLE_EXTENSIONS=&quot;ysld,h2&quot; \
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>  --env COMMUNITY_EXTENSIONS=&quot;ogcapi-features,ogcapi-images,ogcapi-maps,ogcapi-styles,ogcapi-tiles&quot; \
 </span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>  docker.osgeo.org/geoserver: 2.24.x
 </span></code></pre></div>
 <p>For the current list see GeoServer <a href="https://build.geoserver.org/geoserver/main/community-latest/">build server</a>.</p>

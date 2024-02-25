@@ -2026,8 +2026,8 @@
 <p>To following example requests illustrate how the elements of the various chains work.</p>
 <h3 id="first-time-visit">First time visit</h3>
 <p>This example describes the process when a user visits the home page of the web admin for the first time.</p>
-<p><img alt="" src="../images/auth_chain_web2.png" /></p>
-<p><em>Authentication chain for a first time visit from a user</em> </p>
+<p><img alt="" src="../images/auth_chain_web2.png" />
+<em>Authentication chain for a first time visit from a user</em></p>
 <p>The first filter to execute is the <em>Session</em> filter. It checks for an existing session, but finds none, so processing continues to the next filter in the chain. The <em>Logout</em> filter checks for the case of a user logging out, which also is not the case, so processing continues. The <em>Form login</em> filter checks for a form login, and also finds none. The <em>Remember Me</em> filter determines if this request can be authenticated from a previous session cookie, but in this case it cannot. The final filter to execute is the <em>Anonymous</em> filter which checks if the user specified any credentials. In this case the user has not provided any credentials, so the request is authenticated anonymously. Since no authentication is required to view the home page, the provider chain is not invoked.</p>
 <p>The last response to the request directs the user to the home page.</p>
 <h3 id="user-logs-on">User logs on</h3>
