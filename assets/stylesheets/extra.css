@@ -5,9 +5,11 @@ img + em, .browser-border + em, .browser-mockup + em {
   font-size: 0.7rem;
   font-style: normal;
 }
+/*
 .md-typeset .admonition, .md-typeset details {
   font-size: 0.75rem;
 }
+*/
 
 /* grid */
 /*

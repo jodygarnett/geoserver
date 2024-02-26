@@ -2533,46 +2533,37 @@ AbsolutePath=false
 </dd>
 </dl>
 <p>The <code>PropertyCollectors</code> parameter in the example above indicates two additional <strong><code>.properties</code></strong> files used to populate the <code>ingestion</code> and <code>elevation</code> attributes:</p>
-<ul>
-<li>
 <p><strong><code>timeregex.properties</code></strong>:</p>
 <div class="language-text highlight"><pre><span></span><code>regex=[0-9]{8}T[0-9]{9}Z(\?!.*[0-9]{8}T[0-9]{9}Z.*)
 </code></pre></div>
 <p>The above is a property file containing a regex used to extract Date and Time represented in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO-8601</a> as part of the filename. (Note the T char between digits for date and digits for time, as per ISO-8601)</p>
 <p>In case of custom format datetimes in filename, an additional <em>format</em> element should be added after the regex, preceded by a comma, defining the custom representation.</p>
-<p>Example: <code>Temperature_2017111319.tif</code></p>
 <blockquote>
+<p>Example: <code>Temperature_2017111319.tif</code></p>
 <p>an hourly Temperature file with datetime = November, 13 2017 at 7:00 PM (the last 2 digits = 19)</p>
 <p>In that case, the <strong><code>elevationregex.properties</code></strong> file should be like this:</p>
 <div class="language-text highlight"><pre><span></span><code>regex=.*([0-9]{10}).*,format=yyyyMMddHH
 </code></pre></div>
 </blockquote>
 <p>In case of reduced precision of temporal information, where there is the need to get the higher time included in that reduced value, an additional <em>,useHighTime=true</em> element should be added.</p>
-<p>Example: <code>Temperature_2017111319.tif</code></p>
 <blockquote>
+<p>Example: <code>Temperature_2017111319.tif</code></p>
 <p>an hourly Temperature file with datetime = November, 13 2017 at 19h 00m 00s 000ms You want to get the max time included in that reduced precision, which is November, 13 2017 at 19h 59m 59s 999ms</p>
 <p>In that case, the <strong><code>elevationregex.properties</code></strong> file should be like this:</p>
 <div class="language-text highlight"><pre><span></span><code>regex=.*([0-9]{10}).*,format=yyyyMMddHH,useHighTime=true
 </code></pre></div>
 </blockquote>
-<p>In case the temporal information is spread along the whole file path, an additional <em>,fullPath=true</em> element should be added.</p>
-<dl>
-<dt>Example: <code>/data/20120202/Temperature.T1800.tif</code></dt>
-<dd>
+<p>In case the temporal information is spread along the whole file path, an additional <code>*,fullPath=true*</code> element should be added.</p>
+<blockquote>
+<p>Example: <code>/data/20120202/Temperature.T1800.tif</code></p>
 <p>an hourly Temperature tif file with Year,Month and Day specified in the parent folder (20120202) and time value embedded in the name (Temperature.T1800.tif)</p>
-</dd>
-</dl>
-<div class="language-text highlight"><pre><span></span><code>In that case, the **`elevationregex.properties`** file should be like this:
-
-    regex=(?:\/)(\\d{8})(?:\/)(?:Temperature.)(T\\d{4})(?:.tif),fullPath=true
+<p>In that case, the <strong><code>elevationregex.properties</code></strong> file should be like this:</p>
+<div class="language-text highlight"><pre><span></span><code>regex=(?:\/)(\\d{8})(?:\/)(?:Temperature.)(T\\d{4})(?:.tif),fullPath=true
 </code></pre></div>
-</li>
-<li>
+</blockquote>
 <p><strong><code>elevationregex.properties</code></strong>:</p>
 <div class="language-text highlight"><pre><span></span><code>regex=(?&lt;=_)(\\d{4}\\.\\d{3})(?=_)
 </code></pre></div>
-</li>
-</ul>
 <h2 id="store-parameters">Store parameters</h2>
 <p>By default, <strong>ImageMosaic</strong> will be an option in the <strong>Raster Data Sources</strong> list when creating a new data store.</p>
 <p><img alt="" src="../images/imagemosaiccreate.png" />
