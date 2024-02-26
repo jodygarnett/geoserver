@@ -1920,56 +1920,48 @@
 <p>To begin, navigate to <strong>Stores &rarr; Add a new store &rarr; Shapefile</strong>.</p>
 <p><img alt="" src="../images/shapefile.png" />
 <em>Adding a shapefile as a store</em></p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Option</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td><strong>Workspace</strong></td>
-<td>Name of the workspace to contain the store. This will also be the prefix of the layer created from the store.</td>
-</tr>
-<tr>
-<td><strong>Data Source Name</strong></td>
-<td>Name of the shapefile as known to GeoServer. Can be different from the filename. The combination of the workspace name and this name will be the full layer name (ex: topp:states).</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Description of the shapefile/store.</td>
-</tr>
-<tr>
-<td><strong>Enabled</strong></td>
-<td>Enables the store. If unchecked, no data in the shapefile will be served.</td>
-</tr>
-<tr>
-<td><strong>URL</strong></td>
-<td>Location of the shapefile. Can be an absolute path (such as <strong><code>file:C:\Data\shapefile.shp</code></strong>) or a path relative to the data directory (such as <strong><code>file:data/shapefile.shp</code></strong>.</td>
-</tr>
-<tr>
-<td><strong>namespace</strong></td>
-<td>Namespace to be associated with the shapefile. This field is altered by changing the workspace name.</td>
-</tr>
-<tr>
-<td><strong>create spatial index</strong></td>
-<td>Enables the automatic creation of a spatial index.</td>
-</tr>
-<tr>
-<td><strong>charset</strong></td>
-<td>Character set used to decode strings from the <code>.dbf</code> file.</td>
-</tr>
-<tr>
-<td><strong>memory mapped buffer</strong> <strong>Cache and reuse memory maps</strong></td>
-<td>Enables the use of memory mapped I/O, improving caching of the file in memory. <strong>Turn off on Windows servers</strong>.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Option</strong></dt>
+<dd>
+<p><strong>Description</strong></p>
+</dd>
+<dt><strong>Workspace</strong></dt>
+<dd>
+<p>Name of the workspace to contain the store. This will also be the prefix of the layer created from the store.</p>
+</dd>
+<dt><strong>Data Source Name</strong></dt>
+<dd>
+<p>Name of the shapefile as known to GeoServer. Can be different from the filename. The combination of the workspace name and this name will be the full layer name (ex: topp:states).</p>
+</dd>
+<dt><strong>Description</strong></dt>
+<dd>
+<p>Description of the shapefile/store.</p>
+</dd>
+<dt><strong>Enabled</strong></dt>
+<dd>
+<p>Enables the store. If unchecked, no data in the shapefile will be served.</p>
+</dd>
+<dt><strong>URL</strong></dt>
+<dd>
+<p>Location of the shapefile. Can be an absolute path (such as <strong><code>file:C:\Data\shapefile.shp</code></strong>) or a path relative to the data directory (such as <strong><code>file:data/shapefile.shp</code></strong>.</p>
+</dd>
+<dt><strong>namespace</strong></dt>
+<dd>
+<p>Namespace to be associated with the shapefile. This field is altered by changing the workspace name.</p>
+</dd>
+<dt><strong>create spatial index</strong></dt>
+<dd>
+<p>Enables the automatic creation of a spatial index.</p>
+</dd>
+<dt><strong>charset</strong></dt>
+<dd>
+<p>Character set used to decode strings from the <code>.dbf</code> file.</p>
+</dd>
+<dt><strong>memory mapped bufferCache and reuse memory maps</strong></dt>
+<dd>
+<p>Enables the use of memory mapped I/O, improving caching of the file in memory. <strong>Turn off on Windows servers</strong>.</p>
+</dd>
+</dl>
 <p>When finished, click <strong>Save</strong>.</p>
 <h2 id="configuring-a-shapefile-layer">Configuring a shapefile layer</h2>
 <p>Shapefiles contain exactly one layer, which needs to be added as a new layer before it will be able to be served by GeoServer. See the section on <a href="../../webadmin/layers/">Layers</a> for how to add and edit a new layer.</p>

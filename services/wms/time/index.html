@@ -2241,74 +2241,62 @@
 </ul>
 <p>The day and intraday values are separated with a capital <code>T</code>, and the entire thing is suffixed with a <code>Z</code>, indicating <a href="http://en.wikipedia.org/wiki/Coordinated_Universal_Time">UTC</a> for the time zone. (The WMS specification does not provide for other time zones.)</p>
 <p>GeoServer will apply the <code>TIME</code> value to all temporally enabled layers in the <code>LAYERS</code> parameter of the GetMap request. Layers without a temporal component will be served normally, allowing clients to include reference information like political boundaries along with temporal data.</p>
-<table>
-<thead>
-<tr>
-<th>Description</th>
-<th>Time specification</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>December 12, 2001 at 6:00 PM</td>
-<td><code>2001-12-12T18:00:00.0Z</code></td>
-</tr>
-<tr>
-<td>May 5, 1993 at 11:34 PM</td>
-<td><code>1993-05-05T11:34:00.0Z</code></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Description</dt>
+<dd>
+<p>Time specification</p>
+</dd>
+<dt>December 12, 2001 at 6:00 PM</dt>
+<dd>
+<p><code>2001-12-12T18:00:00.0Z</code></p>
+</dd>
+<dt>May 5, 1993 at 11:34 PM</dt>
+<dd>
+<p><code>1993-05-05T11:34:00.0Z</code></p>
+</dd>
+</dl>
 <h2 id="specifying-an-absolute-interval">Specifying an absolute interval</h2>
 <p>A client may request information over a continuous interval instead of a single instant by specifying a start and end time, separated by a <code>/</code> character.</p>
 <p>In this scenario the start and end are <em>inclusive</em>; that is, samples from exactly the endpoints of the specified range will be included in the rendered tile.</p>
-<table>
-<thead>
-<tr>
-<th>Description</th>
-<th>Time specification</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>The month of September 2002</td>
-<td><code>2002-09-01T00:00:00.0Z/2002-09-30T23:59:59.999Z</code></td>
-</tr>
-<tr>
-<td>The entire day of December 25, 2010</td>
-<td><code>2010-12-25T00:00:00.0Z/2010-12-25T23:59:59.999Z</code></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Description</dt>
+<dd>
+<p>Time specification</p>
+</dd>
+<dt>The month of September 2002</dt>
+<dd>
+<p><code>2002-09-01T00:00:00.0Z/2002-09-30T23:59:59.999Z</code></p>
+</dd>
+<dt>The entire day of December 25, 2010</dt>
+<dd>
+<p><code>2010-12-25T00:00:00.0Z/2010-12-25T23:59:59.999Z</code></p>
+</dd>
+</dl>
 <h2 id="specifying-a-relative-interval">Specifying a relative interval</h2>
 <p>A client may request information over a relative time interval instead of a set time range by specifying a start or end time with an associated duration, separated by a <code>/</code> character.</p>
 <p>One end of the interval must be a time value, but the other may be a duration value as defined by the ISO 8601 standard. The special keyword <code>PRESENT</code> may be used to specify a time relative to the present server time.</p>
-<table>
-<thead>
-<tr>
-<th>Description</th>
-<th>Time specification</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>The month of September 2002</td>
-<td><code>2002-09-01T00:00:00.0Z/P1M</code></td>
-</tr>
-<tr>
-<td>The entire day of December 25, 2010</td>
-<td><code>2010-12-25T00:00:00.0Z/P1D</code></td>
-</tr>
-<tr>
-<td>The entire day preceding December 25, 2010</td>
-<td><code>P1D/2010-12-25T00:00:00.0Z</code></td>
-</tr>
-<tr>
-<td>36 hours preceding the current time</td>
-<td><code>PT36H/PRESENT</code></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Description</dt>
+<dd>
+<p>Time specification</p>
+</dd>
+<dt>The month of September 2002</dt>
+<dd>
+<p><code>2002-09-01T00:00:00.0Z/P1M</code></p>
+</dd>
+<dt>The entire day of December 25, 2010</dt>
+<dd>
+<p><code>2010-12-25T00:00:00.0Z/P1D</code></p>
+</dd>
+<dt>The entire day preceding December 25, 2010</dt>
+<dd>
+<p><code>P1D/2010-12-25T00:00:00.0Z</code></p>
+</dd>
+<dt>36 hours preceding the current time</dt>
+<dd>
+<p><code>PT36H/PRESENT</code></p>
+</dd>
+</dl>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The final example could be paired with the KML service to provide a <a href="../googleearth/">Google Earth</a> network link which is always updated with the last 36 hours of data.</p>
@@ -2320,54 +2308,46 @@
 <p class="admonition-title">Note</p>
 <p>GeoServer implements this by adding the appropriate unit, then subtracting 1 millisecond. This avoids surprising results when using an interval that aligns with the actual sampling frequency of the data - for example, if yearly data is natively stored with dates like 2001-01-01T00:00:00.0Z, 2002-01-01T00:00:00Z, etc. then a request for 2001 would include the samples for both 2001 and 2002, which wouldn't be desired.</p>
 </div>
-<table>
-<thead>
-<tr>
-<th>Description</th>
-<th>Reduced Accuracy Time</th>
-<th>Equivalent Range</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>The month of September 2002</td>
-<td><code>2002-09</code></td>
-<td><code>2002-09-01T00:00:00.0Z/2002-09-30T23:59:59.999Z</code></td>
-</tr>
-<tr>
-<td>The day of December 25, 2010</td>
-<td><code>2010-12-25</code></td>
-<td><code>2010-12-25T00:00:00.0Z/2010-12-25T23:59:59.999Z</code></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Description</dt>
+<dd>
+<p>Reduced Accuracy Time</p>
+<p>Equivalent Range</p>
+</dd>
+<dt>The month of September 2002</dt>
+<dd>
+<p><code>2002-09</code></p>
+<p><code>2002-09-01T00:00:00.0Z/2002-09-30T23:59:59.999Z</code></p>
+</dd>
+<dt>The day of December 25, 2010</dt>
+<dd>
+<p><code>2010-12-25</code></p>
+<p><code>2010-12-25T00:00:00.0Z/2010-12-25T23:59:59.999Z</code></p>
+</dd>
+</dl>
 <h2 id="reduced-accuracy-times-with-ranges">Reduced accuracy times with ranges</h2>
 <p>Reduced accuracy times are also allowed when specifying ranges. In this case, GeoServer effectively expands the start and end times as described above, and then includes any samples from after the beginning of the start interval and before the end of the end interval.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Again, the ranges are inclusive.</p>
 </div>
-<table>
-<thead>
-<tr>
-<th>Description</th>
-<th>Reduced Accuracy Time</th>
-<th>Equivalent Range</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>The months of September through December 2002</td>
-<td><code>2002-09/2002-12</code></td>
-<td><code>2002-09-01T00:00:00.0Z/2002-12-31T23:59:59.999Z</code></td>
-</tr>
-<tr>
-<td>12PM through 6PM, December 25, 2010</td>
-<td><code>2010-12-25T12/2010-12-25T18</code></td>
-<td><code>2010-12-25T12:00:00.0Z/2010-12-25T18:59:59.999Z</code></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Description</dt>
+<dd>
+<p>Reduced Accuracy Time</p>
+<p>Equivalent Range</p>
+</dd>
+<dt>The months of September through December 2002</dt>
+<dd>
+<p><code>2002-09/2002-12</code></p>
+<p><code>2002-09-01T00:00:00.0Z/2002-12-31T23:59:59.999Z</code></p>
+</dd>
+<dt>12PM through 6PM, December 25, 2010</dt>
+<dd>
+<p><code>2010-12-25T12/2010-12-25T18</code></p>
+<p><code>2010-12-25T12:00:00.0Z/2010-12-25T18:59:59.999Z</code></p>
+</dd>
+</dl>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In the last example, note that the result may not be intuitive, as it includes all times from 6PM to 6:59PM.</p>
@@ -2380,63 +2360,55 @@
 <p>GeoServer currently does not support lists of ranges, so all list queries effectively have a resolution of 1 millisecond. If you use reduced accuracy notation when specifying a range, each range will be automatically converted to the instant at the beginning of the range.</p>
 </div>
 <p>If the list is evenly spaced (for example, daily or hourly samples) then the list may be specified as a range, using a start time, end time, and period separated by slashes.</p>
-<table>
-<thead>
-<tr>
-<th>Description</th>
-<th>List notation</th>
-<th>Equivalent range notation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Noon every day for August 12-14, 2012</td>
-<td><code>TIME=2012-08-12T12:00:00.0Z,2012-08-13T12:00:00.0Z,2012-08-14T12:00:00.0Z</code></td>
-<td><code>TIME=2012-08-12T12:00:00.0Z/2012-08-18:T12:00:00.0Z/P1D</code></td>
-</tr>
-<tr>
-<td>Midnight on the first of September, October, and November 1999</td>
-<td><code>TIME=1999-09-01T00:00:00.0Z,1999-10-01T00:00:00.0Z,1999-11-01T00:00:00.0Z</code></td>
-<td><code>TIME=1999-09-01T00:00:00.0Z/1999-11-01T00:00:00.0Z/P1M</code></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Description</dt>
+<dd>
+<p>List notation</p>
+<p>Equivalent range notation</p>
+</dd>
+<dt>Noon every day for August 12-14, 2012</dt>
+<dd>
+<p><code>TIME=2012-08-12T12:00:00.0Z,2012-08-13T12:00:00.0Z,2012-08-14T12:00:00.0Z</code></p>
+<p><code>TIME=2012-08-12T12:00:00.0Z/2012-08-18:T12:00:00.0Z/P1D</code></p>
+</dd>
+<dt>Midnight on the first of September, October, and November 1999</dt>
+<dd>
+<p><code>TIME=1999-09-01T00:00:00.0Z,1999-10-01T00:00:00.0Z,1999-11-01T00:00:00.0Z</code></p>
+<p><code>TIME=1999-09-01T00:00:00.0Z/1999-11-01T00:00:00.0Z/P1M</code></p>
+</dd>
+</dl>
 <h2 id="specifying-a-periodicity">Specifying a periodicity</h2>
 <p>The periodicity is also specified in ISO-8601 format: a capital P followed by one or more interval lengths, each consisting of a number and a letter identifying a time unit:</p>
-<table>
-<thead>
-<tr>
-<th>Unit</th>
-<th>Abbreviation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Years</td>
-<td><code>Y</code></td>
-</tr>
-<tr>
-<td>Months</td>
-<td><code>M</code></td>
-</tr>
-<tr>
-<td>Days</td>
-<td><code>D</code></td>
-</tr>
-<tr>
-<td>Hours</td>
-<td><code>H</code></td>
-</tr>
-<tr>
-<td>Minutes</td>
-<td><code>M</code></td>
-</tr>
-<tr>
-<td>Seconds</td>
-<td><code>S</code></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Unit</dt>
+<dd>
+<p>Abbreviation</p>
+</dd>
+<dt>Years</dt>
+<dd>
+<p><code>Y</code></p>
+</dd>
+<dt>Months</dt>
+<dd>
+<p><code>M</code></p>
+</dd>
+<dt>Days</dt>
+<dd>
+<p><code>D</code></p>
+</dd>
+<dt>Hours</dt>
+<dd>
+<p><code>H</code></p>
+</dd>
+<dt>Minutes</dt>
+<dd>
+<p><code>M</code></p>
+</dd>
+<dt>Seconds</dt>
+<dd>
+<p><code>S</code></p>
+</dd>
+</dl>
 <p>The Year/Month/Day group of values must be separated from the Hours/Minutes/Seconds group by a <code>T</code> character. The T itself may be omitted if hours, minutes, and seconds are all omitted. Additionally, fields which contain a 0 may be omitted entirely.</p>
 <p>Fractional values are permitted, but only for the most specific value that is included.</p>
 <div class="admonition note">

@@ -2551,32 +2551,24 @@
 <h1 id="rendering-transformations">Rendering Transformations</h1>
 <p><strong>Rendering Transformations</strong> allow processing to be carried out on datasets within the GeoServer rendering pipeline. A typical transformation computes a derived or aggregated result from the input data, allowing various useful visualization effects to be obtained. Transformations may transform data from one format into another (i.e vector to raster or vice-versa), to provide an appropriate format for display.</p>
 <p>The following table lists examples of various kinds of rendering transformations available in GeoServer:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Type</strong></td>
-<td><strong>Examples</strong></td>
-</tr>
-<tr>
-<td>Raster-to-Vector</td>
-<td><strong>Contour</strong> extracts contours from a DEM raster. <strong>RasterAsPointCollections</strong> extracts a vector field from a multi-band raster</td>
-</tr>
-<tr>
-<td>Vector-to-Raster</td>
-<td><strong>BarnesSurfaceInterpolation</strong> computes a surface from scattered data points. <strong>Heatmap</strong> computes a heatmap surface from weighted data points.</td>
-</tr>
-<tr>
-<td>Vector-to-Vector</td>
-<td><strong>PointStacker</strong> aggregates dense point data into clusters.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Type</strong></dt>
+<dd>
+<p><strong>Examples</strong></p>
+</dd>
+<dt>Raster-to-Vector</dt>
+<dd>
+<p><strong>Contour</strong> extracts contours from a DEM raster. <strong>RasterAsPointCollections</strong> extracts a vector field from a multi-band raster</p>
+</dd>
+<dt>Vector-to-Raster</dt>
+<dd>
+<p><strong>BarnesSurfaceInterpolation</strong> computes a surface from scattered data points. <strong>Heatmap</strong> computes a heatmap surface from weighted data points.</p>
+</dd>
+<dt>Vector-to-Vector</dt>
+<dd>
+<p><strong>PointStacker</strong> aggregates dense point data into clusters.</p>
+</dd>
+</dl>
 <p>Rendering transformations are invoked within SLD styles. Parameters may be supplied to control the appearance of the output. The rendered output for the layer is produced by applying the styling rules and symbolizers in the SLD to the result of transformation.</p>
 <p>Rendering transformations are implemented using the same mechanism as <a href="../../../../services/wps/processes/">Process Cookbook</a>. They can thus also be executed via the WPS protocol, if required. Conversely, any WPS process can be executed as a transformation, as long as the input and output are appropriate for use within an SLD.</p>
 <p>This section is a general guide to rendering transformation usage in GeoServer. For details of input, parameters, and output for any particular rendering transformation, refer to its own documentation.</p>

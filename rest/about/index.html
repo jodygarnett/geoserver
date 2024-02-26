@@ -1851,48 +1851,40 @@
 <p><img alt="" src="../img/resthtml.png" />
 <em>System status</em></p>
 <p>The XML and JSON representations are quite similar. For each system information metric, the following attributes will be available:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Name</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td>name</td>
-<td>name of the metric</td>
-</tr>
-<tr>
-<td>available</td>
-<td>TRUE if the system information value is available</td>
-</tr>
-<tr>
-<td>description</td>
-<td>description of this system information</td>
-</tr>
-<tr>
-<td>unit</td>
-<td>unit of the system information, can be empty</td>
-</tr>
-<tr>
-<td>category</td>
-<td>category of this system information</td>
-</tr>
-<tr>
-<td>priority</td>
-<td>this value can be used to render the metrics in a predefined order</td>
-</tr>
-<tr>
-<td>identifier</td>
-<td>identifies the resource associated with the metric, e.g. file partition name</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Name</strong></dt>
+<dd>
+<p><strong>Description</strong></p>
+</dd>
+<dt>name</dt>
+<dd>
+<p>name of the metric</p>
+</dd>
+<dt>available</dt>
+<dd>
+<p>TRUE if the system information value is available</p>
+</dd>
+<dt>description</dt>
+<dd>
+<p>description of this system information</p>
+</dd>
+<dt>unit</dt>
+<dd>
+<p>unit of the system information, can be empty</p>
+</dd>
+<dt>category</dt>
+<dd>
+<p>category of this system information</p>
+</dd>
+<dt>priority</dt>
+<dd>
+<p>this value can be used to render the metrics in a predefined order</p>
+</dd>
+<dt>identifier</dt>
+<dd>
+<p>identifies the resource associated with the metric, e.g. file partition name</p>
+</dd>
+</dl>
 <p>Example of XML representation:</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;metrics&gt;</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&lt;metric&gt;</span>

@@ -3985,99 +3985,79 @@
 </span></code></pre></div>
 <p>Here is a list of resources and the HTTP methods that can be used on them.</p>
 <p><code>/rest/services/wfs/transforms[.&lt;format&gt;]</code></p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Action</th>
-<th>Return Code</th>
-<th>Formats</th>
-<th>Default Format</th>
-<th>Parameters</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>List all available transforms</td>
-<td>200</td>
-<td>HTML, XML, JSON</td>
-<td>HTML</td>
-<td></td>
-</tr>
-<tr>
-<td>POST</td>
-<td>Add a new transformation</td>
-<td>201, with <code>Location</code> header</td>
-<td>XML, JSON</td>
-<td></td>
-<td>name, sourceFormat, outputFormat, outputMimeType</td>
-</tr>
-<tr>
-<td>PUT</td>
-<td>Update global settings</td>
-<td>200</td>
-<td>XML, JSON</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td></td>
-<td>405</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Action</p>
+<p>Return Code</p>
+<p>Formats</p>
+<p>Default Format</p>
+<p>Parameters</p>
+</dd>
+<dt>GET</dt>
+<dd>
+<p>List all available transforms</p>
+<p>200</p>
+<p>HTML, XML, JSON</p>
+<p>HTML</p>
+</dd>
+<dt>POST</dt>
+<dd>
+<p>Add a new transformation</p>
+<p>201, with <code>Location</code> header</p>
+<p>XML, JSON</p>
+<p>name, sourceFormat, outputFormat, outputMimeType</p>
+</dd>
+<dt>PUT</dt>
+<dd>
+<p>Update global settings</p>
+<p>200</p>
+<p>XML, JSON</p>
+</dd>
+</dl>
+<p>DELETE</p>
+<blockquote>
+<p>405</p>
+</blockquote>
 <p>The <code>POST</code> method can be used to create a transformation in two ways:</p>
 <ul>
 <li>if the content type used is <code>application/xml</code> the server will assume a <code>&lt;transform&gt;</code> definition is being posted, and the XSLT will have to be uploaded separately using a <code>PUT</code> request with content type <code>application/xslt+xml</code> against the transformation resource</li>
 <li>if the content type used is <code>application/xslt+xml</code> the server will assume the XSLT itself is being posted, and the <code>name</code>, <code>sourceFormat</code>, <code>outputFormat</code>, <code>outputMimeType</code> query parameters will be used to fill in the transform configuration instead</li>
 </ul>
 <p><code>/rest/services/wfs/transforms/&lt;transform&gt;[.&lt;format&gt;]</code></p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Action</th>
-<th>Return Code</th>
-<th>Formats</th>
-<th>Default Format</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>Returns the transformation</td>
-<td>200</td>
-<td>HTML, XML, XSLT</td>
-<td>HTML</td>
-</tr>
-<tr>
-<td>POST</td>
-<td></td>
-<td>405</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>PUT</td>
-<td>Updates either the transformation configuration, or its XSLT, depending on the mime type used</td>
-<td>200</td>
-<td>XML, XSLT</td>
-<td></td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td>Deletes the transformation</td>
-<td>200</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Action</p>
+<p>Return Code</p>
+<p>Formats</p>
+<p>Default Format</p>
+</dd>
+<dt>GET</dt>
+<dd>
+<p>Returns the transformation</p>
+<p>200</p>
+<p>HTML, XML, XSLT</p>
+<p>HTML</p>
+</dd>
+</dl>
+<p>POST</p>
+<blockquote>
+<p>405</p>
+</blockquote>
+<dl>
+<dt>PUT</dt>
+<dd>
+<p>Updates either the transformation configuration, or its XSLT, depending on the mime type used</p>
+<p>200</p>
+<p>XML, XSLT</p>
+</dd>
+<dt>DELETE</dt>
+<dd>
+<p>Deletes the transformation</p>
+<p>200</p>
+</dd>
+</dl>
 <p>The PUT operation behaves differently depending on the content type used in the request:</p>
 <ul>
 <li>if the content type used is <code>application/xml</code> the server will assume a <code>&lt;transform&gt;</code> definition is being sent and will update it</li>

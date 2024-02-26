@@ -3928,47 +3928,43 @@
 
 <h1 id="usage-via-geoservers-rest-api">Usage Via GeoServer's REST API</h1>
 <p>The Backup and Restore REST API consists of a few resources meant to be used in an asynchronous fashion:</p>
-<table>
-<thead>
-<tr>
-<th>Resource</th>
-<th>Method</th>
-<th>Parameters and Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>/rest/br/backup/</td>
-<td>POST</td>
-<td>Post a JSON/XML document with the backup parameters, see below</td>
-</tr>
-<tr>
-<td>/rest/br/backup/backupId</td>
-<td>GET</td>
-<td>Returns a json/xml representation of the backup operation. See below</td>
-</tr>
-<tr>
-<td>/rest/br/backup/backupId</td>
-<td>DELETE</td>
-<td>Cancels the backup operation</td>
-</tr>
-<tr>
-<td>/rest/br/restore</td>
-<td>POST</td>
-<td>Post a JSON/XML document with the restore parameters, see below</td>
-</tr>
-<tr>
-<td>/rest/br/restore/restoreId</td>
-<td>GET</td>
-<td>Returns a json/xml representation of the backup operation, see below</td>
-</tr>
-<tr>
-<td>/rest/br/restore/restoreId</td>
-<td>DELETE</td>
-<td>Cancels the restore operation</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Resource</dt>
+<dd>
+<p>Method</p>
+<p>Parameters and Notes</p>
+</dd>
+<dt>/rest/br/backup/</dt>
+<dd>
+<p>POST</p>
+<p>Post a JSON/XML document with the backup parameters, see below</p>
+</dd>
+<dt>/rest/br/backup/backupId</dt>
+<dd>
+<p>GET</p>
+<p>Returns a json/xml representation of the backup operation. See below</p>
+</dd>
+<dt>/rest/br/backup/backupId</dt>
+<dd>
+<p>DELETE</p>
+<p>Cancels the backup operation</p>
+</dd>
+<dt>/rest/br/restore</dt>
+<dd>
+<p>POST</p>
+<p>Post a JSON/XML document with the restore parameters, see below</p>
+</dd>
+<dt>/rest/br/restore/restoreId</dt>
+<dd>
+<p>GET</p>
+<p>Returns a json/xml representation of the backup operation, see below</p>
+</dd>
+<dt>/rest/br/restore/restoreId</dt>
+<dd>
+<p>DELETE</p>
+<p>Cancels the restore operation</p>
+</dd>
+</dl>
 <h2 id="usage-example">Usage Example</h2>
 <p>We are going to use the command line tool cURL to send HTTP REST requests to GeoServer.</p>
 <p>The <code>/rest/br/backup/</code> and <code>/rest/br/restore</code> endpoints accept an optional format suffix that allows the Backup / Restore archive to be streamed to / from the client instead of being written on / read from the file system.</p>

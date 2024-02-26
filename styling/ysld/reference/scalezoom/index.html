@@ -2404,30 +2404,26 @@
   ...
 </code></pre></div>
 <p>where:</p>
-<table>
-<thead>
-<tr>
-<th>Attribute</th>
-<th>Required?</th>
-<th>Description</th>
-<th>Default value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>min</code></td>
-<td>Yes</td>
-<td>The minimum scale (inclusive) for which the rule will be applied. Value is a number, either decimal or integer.</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td><code>max</code></td>
-<td>Yes</td>
-<td>The maximum scale (exclusive) for which the rule will be applied. Value is a number, either decimal or integer.</td>
-<td>N/A</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Attribute</dt>
+<dd>
+<p>Required?</p>
+<p>Description</p>
+<p>Default value</p>
+</dd>
+<dt><code>min</code></dt>
+<dd>
+<p>Yes</p>
+<p>The minimum scale (inclusive) for which the rule will be applied. Value is a number, either decimal or integer.</p>
+<p>N/A</p>
+</dd>
+<dt><code>max</code></dt>
+<dd>
+<p>Yes</p>
+<p>The maximum scale (exclusive) for which the rule will be applied. Value is a number, either decimal or integer.</p>
+<p>N/A</p>
+</dd>
+</dl>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is not possible to use an expression for any of these values.</p>
@@ -2472,36 +2468,32 @@
 <li>A stroke width of 1 at scales greater than 200,000 (<code>small_scale</code>)</li>
 </ul>
 <p>Given the rules above, the following arbitrary sample scales would map to the rules as follows:</p>
-<table>
-<thead>
-<tr>
-<th>Scale</th>
-<th>Rule</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>50000</code></td>
-<td><code>large_scale</code></td>
-</tr>
-<tr>
-<td><code>100000</code></td>
-<td><code>medium_scale</code></td>
-</tr>
-<tr>
-<td><code>150000</code></td>
-<td><code>medium_scale</code></td>
-</tr>
-<tr>
-<td><code>200000</code></td>
-<td><code>small_scale</code></td>
-</tr>
-<tr>
-<td><code>300000</code></td>
-<td><code>small_scale</code></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Scale</dt>
+<dd>
+<p>Rule</p>
+</dd>
+<dt><code>50000</code></dt>
+<dd>
+<p><code>large_scale</code></p>
+</dd>
+<dt><code>100000</code></dt>
+<dd>
+<p><code>medium_scale</code></p>
+</dd>
+<dt><code>150000</code></dt>
+<dd>
+<p><code>medium_scale</code></p>
+</dd>
+<dt><code>200000</code></dt>
+<dd>
+<p><code>small_scale</code></p>
+</dd>
+<dt><code>300000</code></dt>
+<dd>
+<p><code>small_scale</code></p>
+</dd>
+</dl>
 <p>Note the edge cases, since the <code>min</code> value is inclusive and the <code>max</code> value is exclusive.</p>
 <h2 id="scientific-notation-for-scales">Scientific notation for scales</h2>
 <p>To make comprehension easier and to lessen the chance of errors, scale values can be expressed in scientific notation.</p>
@@ -2528,30 +2520,26 @@
   ...
 </code></pre></div>
 <p>where:</p>
-<table>
-<thead>
-<tr>
-<th>Attribute</th>
-<th>Required?</th>
-<th>Description</th>
-<th>Default value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>min</code></td>
-<td>Yes</td>
-<td>The minimum zoom level for which the rule will be applied. Value is an integer.</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td><code>max</code></td>
-<td>Yes</td>
-<td>The maximum zoom level for which the rule will be applied. Value is an integer.</td>
-<td>N/A</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Attribute</dt>
+<dd>
+<p>Required?</p>
+<p>Description</p>
+<p>Default value</p>
+</dd>
+<dt><code>min</code></dt>
+<dd>
+<p>Yes</p>
+<p>The minimum zoom level for which the rule will be applied. Value is an integer.</p>
+<p>N/A</p>
+</dd>
+<dt><code>max</code></dt>
+<dd>
+<p>Yes</p>
+<p>The maximum zoom level for which the rule will be applied. Value is an integer.</p>
+<p>N/A</p>
+</dd>
+</dl>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is not possible to use an expression for any of these values.</p>
@@ -2575,24 +2563,20 @@
   name: &lt;string&gt;
 </code></pre></div>
 <p>where:</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Required?</th>
-<th>Description</th>
-<th>Default value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>name</code></td>
-<td>No</td>
-<td><code>WGS84</code>, <code>WebMercator</code>, or a name of a predefined gridset in GeoServer.</td>
-<td><code>WebMercator</code></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Property</dt>
+<dd>
+<p>Required?</p>
+<p>Description</p>
+<p>Default value</p>
+</dd>
+<dt><code>name</code></dt>
+<dd>
+<p>No</p>
+<p><code>WGS84</code>, <code>WebMercator</code>, or a name of a predefined gridset in GeoServer.</p>
+<p><code>WebMercator</code></p>
+</dd>
+</dl>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>As many web maps use "web mercator" (also known as EPSG:3857 or EPSG:900913), this is assumed to be the default if no <code>grid</code> is specified.</p>
@@ -2604,167 +2588,155 @@
 <h2 id="zoom-examples">Zoom examples</h2>
 <h3 id="default-gridset">Default gridset</h3>
 <p>Given the default of web mercator (also known as EPSG:3857 or EPSG:900913), which requires no <code>grid</code> designation, this defines zoom levels as the following scale levels (rounded to the nearest whole number below):</p>
-<table>
-<thead>
-<tr>
-<th>Scale</th>
-<th>Zoom level</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>559082264</code></td>
-<td><code>0</code></td>
-</tr>
-<tr>
-<td><code>279541132</code></td>
-<td><code>1</code></td>
-</tr>
-<tr>
-<td><code>139770566</code></td>
-<td><code>2</code></td>
-</tr>
-<tr>
-<td><code>69885283</code></td>
-<td><code>3</code></td>
-</tr>
-<tr>
-<td><code>34942641</code></td>
-<td><code>4</code></td>
-</tr>
-<tr>
-<td><code>17471321</code></td>
-<td><code>5</code></td>
-</tr>
-<tr>
-<td><code>8735660</code></td>
-<td><code>6</code></td>
-</tr>
-<tr>
-<td><code>4367830</code></td>
-<td><code>7</code></td>
-</tr>
-<tr>
-<td><code>2183915</code></td>
-<td><code>8</code></td>
-</tr>
-<tr>
-<td><code>&lt;previous_scale&gt; / 2</code></td>
-<td><code>&lt;previous_zoom&gt; + 1</code></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Scale</dt>
+<dd>
+<p>Zoom level</p>
+</dd>
+<dt><code>559082264</code></dt>
+<dd>
+<p><code>0</code></p>
+</dd>
+<dt><code>279541132</code></dt>
+<dd>
+<p><code>1</code></p>
+</dd>
+<dt><code>139770566</code></dt>
+<dd>
+<p><code>2</code></p>
+</dd>
+<dt><code>69885283</code></dt>
+<dd>
+<p><code>3</code></p>
+</dd>
+<dt><code>34942641</code></dt>
+<dd>
+<p><code>4</code></p>
+</dd>
+<dt><code>17471321</code></dt>
+<dd>
+<p><code>5</code></p>
+</dd>
+<dt><code>8735660</code></dt>
+<dd>
+<p><code>6</code></p>
+</dd>
+<dt><code>4367830</code></dt>
+<dd>
+<p><code>7</code></p>
+</dd>
+<dt><code>2183915</code></dt>
+<dd>
+<p><code>8</code></p>
+</dd>
+<dt><code>&lt;previous_scale&gt; / 2</code></dt>
+<dd>
+<p><code>&lt;previous_zoom&gt; + 1</code></p>
+</dd>
+</dl>
 <h3 id="named-gridsets">Named gridsets</h3>
 <p>For the existing gridset of <code>WGS84</code> (often known as <code>EPSG:4326</code>):</p>
 <div class="language-text highlight"><pre><span></span><code>grid:
   name: WGS84
 </code></pre></div>
 <p>This defines zoom levels as the following scale levels (rounded to the nearest whole number below):</p>
-<table>
-<thead>
-<tr>
-<th>Scale</th>
-<th>Zoom level</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>559082264</code></td>
-<td><code>0</code></td>
-</tr>
-<tr>
-<td><code>279541132</code></td>
-<td><code>1</code></td>
-</tr>
-<tr>
-<td><code>139770566</code></td>
-<td><code>2</code></td>
-</tr>
-<tr>
-<td><code>69885283</code></td>
-<td><code>3</code></td>
-</tr>
-<tr>
-<td><code>34942641</code></td>
-<td><code>4</code></td>
-</tr>
-<tr>
-<td><code>17471321</code></td>
-<td><code>5</code></td>
-</tr>
-<tr>
-<td><code>8735660</code></td>
-<td><code>6</code></td>
-</tr>
-<tr>
-<td><code>4367830</code></td>
-<td><code>7</code></td>
-</tr>
-<tr>
-<td><code>2183915</code></td>
-<td><code>8</code></td>
-</tr>
-<tr>
-<td><code>&lt;previous_scale&gt; / 2</code></td>
-<td><code>&lt;previous_zoom&gt; + 1</code></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Scale</dt>
+<dd>
+<p>Zoom level</p>
+</dd>
+<dt><code>559082264</code></dt>
+<dd>
+<p><code>0</code></p>
+</dd>
+<dt><code>279541132</code></dt>
+<dd>
+<p><code>1</code></p>
+</dd>
+<dt><code>139770566</code></dt>
+<dd>
+<p><code>2</code></p>
+</dd>
+<dt><code>69885283</code></dt>
+<dd>
+<p><code>3</code></p>
+</dd>
+<dt><code>34942641</code></dt>
+<dd>
+<p><code>4</code></p>
+</dd>
+<dt><code>17471321</code></dt>
+<dd>
+<p><code>5</code></p>
+</dd>
+<dt><code>8735660</code></dt>
+<dd>
+<p><code>6</code></p>
+</dd>
+<dt><code>4367830</code></dt>
+<dd>
+<p><code>7</code></p>
+</dd>
+<dt><code>2183915</code></dt>
+<dd>
+<p><code>8</code></p>
+</dd>
+<dt><code>&lt;previous_scale&gt; / 2</code></dt>
+<dd>
+<p><code>&lt;previous_zoom&gt; + 1</code></p>
+</dd>
+</dl>
 <p>Given a custom named gridset called <code>NYLongIslandFtUS</code>, defined by a CRS of <a href="http://www.spatialreference.org/ref/epsg/2263/">EPSG:2263</a> and using its full extent:</p>
 <div class="language-text highlight"><pre><span></span><code>grid:
   name: NYLongIslandFtUS
 </code></pre></div>
 <p>This defines zoom levels as the following (rounded to the nearest whole number below):</p>
-<table>
-<thead>
-<tr>
-<th>Scale</th>
-<th>Zoom level</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>4381894</code></td>
-<td><code>0</code></td>
-</tr>
-<tr>
-<td><code>2190947</code></td>
-<td><code>1</code></td>
-</tr>
-<tr>
-<td><code>1095473</code></td>
-<td><code>2</code></td>
-</tr>
-<tr>
-<td><code>547736</code></td>
-<td><code>3</code></td>
-</tr>
-<tr>
-<td><code>273868</code></td>
-<td><code>4</code></td>
-</tr>
-<tr>
-<td><code>136934</code></td>
-<td><code>5</code></td>
-</tr>
-<tr>
-<td><code>68467</code></td>
-<td><code>6</code></td>
-</tr>
-<tr>
-<td><code>34234</code></td>
-<td><code>7</code></td>
-</tr>
-<tr>
-<td><code>17117</code></td>
-<td><code>8</code></td>
-</tr>
-<tr>
-<td><code>&lt;previous_scale&gt; / 2</code></td>
-<td><code>&lt;previous_zoom&gt; + 1</code></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Scale</dt>
+<dd>
+<p>Zoom level</p>
+</dd>
+<dt><code>4381894</code></dt>
+<dd>
+<p><code>0</code></p>
+</dd>
+<dt><code>2190947</code></dt>
+<dd>
+<p><code>1</code></p>
+</dd>
+<dt><code>1095473</code></dt>
+<dd>
+<p><code>2</code></p>
+</dd>
+<dt><code>547736</code></dt>
+<dd>
+<p><code>3</code></p>
+</dd>
+<dt><code>273868</code></dt>
+<dd>
+<p><code>4</code></p>
+</dd>
+<dt><code>136934</code></dt>
+<dd>
+<p><code>5</code></p>
+</dd>
+<dt><code>68467</code></dt>
+<dd>
+<p><code>6</code></p>
+</dd>
+<dt><code>34234</code></dt>
+<dd>
+<p><code>7</code></p>
+</dd>
+<dt><code>17117</code></dt>
+<dd>
+<p><code>8</code></p>
+</dd>
+<dt><code>&lt;previous_scale&gt; / 2</code></dt>
+<dd>
+<p><code>&lt;previous_zoom&gt; + 1</code></p>
+</dd>
+</dl>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>These scale values can be verified in GeoServer on the <strong>Gridsets</strong> page under the definition for the gridset:</p>

@@ -2018,52 +2018,44 @@
 <p>The purpose served by a connection pool is to maintain connection to an underlying database between requests. The benefit of which is that connection setup only need to occur once on the first request. Subsequent requests use existing connections and achieve a performance benefit as a result.</p>
 <p>Whenever a data store backed by a database is added to GeoServer an internal connection pool is created. This connection pool is configurable.</p>
 <h2 id="connection-pool-options">Connection pool options</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>max connections</td>
-<td>The maximum number of connections the pool can hold. When the maximum number of connections is exceeded, additional requests that require a database connection will be halted until a connection from the pool becomes available. The maximum number of connections limits the number of concurrent requests that can be made against the database.</td>
-</tr>
-<tr>
-<td>min connections</td>
-<td>The minimum number of connections the pool will hold. This number of connections is held even when there are no active requests. When this number of connections is exceeded due to serving requests additional connections are opened until the pool reaches its maximum size (described above).</td>
-</tr>
-<tr>
-<td>validate connections</td>
-<td>Flag indicating whether connections from the pool should be validated before they are used. A connection in the pool can become invalid for a number of reasons including network breakdown, database server timeout, etc.. The benefit of setting this flag is that an invalid connection will never be used which can prevent client errors. The downside of setting the flag is that a performance penalty is paid in order to validate connections.</td>
-</tr>
-<tr>
-<td>fetch size</td>
-<td>The number of records read from the database in each network exchange. If set too low (&lt;50) network latency will affect negatively performance, if set too high it might consume a significant portion of GeoServer memory and push it towards an <code>Out Of Memory</code> error. Defaults to 1000.</td>
-</tr>
-<tr>
-<td>connection timeout</td>
-<td>Time, in seconds, the connection pool will wait before giving up its attempt to get a new connection from the database. Defaults to 20 seconds.</td>
-</tr>
-<tr>
-<td>Test while idle</td>
-<td>Periodically test if the connections are still valid also while idle in the pool. Sometimes performing a test query using an idle connection can make the datastore unavailable for a while. Often the cause of this troublesome behaviour is related to a network firewall placed between GeoServer and the Database that force the closing of the underlying idle TCP connections.</td>
-</tr>
-<tr>
-<td>Evictor run periodicity</td>
-<td>Number of seconds between idle object evictor runs.</td>
-</tr>
-<tr>
-<td>Max connection idle time</td>
-<td>Number of seconds a connection needs to stay idle before the evictor starts to consider closing it.</td>
-</tr>
-<tr>
-<td>Evictor tests per run</td>
-<td>Number of connections checked by the idle connection evictor for each of its runs.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>max connections</dt>
+<dd>
+<p>The maximum number of connections the pool can hold. When the maximum number of connections is exceeded, additional requests that require a database connection will be halted until a connection from the pool becomes available. The maximum number of connections limits the number of concurrent requests that can be made against the database.</p>
+</dd>
+<dt>min connections</dt>
+<dd>
+<p>The minimum number of connections the pool will hold. This number of connections is held even when there are no active requests. When this number of connections is exceeded due to serving requests additional connections are opened until the pool reaches its maximum size (described above).</p>
+</dd>
+<dt>validate connections</dt>
+<dd>
+<p>Flag indicating whether connections from the pool should be validated before they are used. A connection in the pool can become invalid for a number of reasons including network breakdown, database server timeout, etc.. The benefit of setting this flag is that an invalid connection will never be used which can prevent client errors. The downside of setting the flag is that a performance penalty is paid in order to validate connections.</p>
+</dd>
+<dt>fetch size</dt>
+<dd>
+<p>The number of records read from the database in each network exchange. If set too low (&lt;50) network latency will affect negatively performance, if set too high it might consume a significant portion of GeoServer memory and push it towards an <code>Out Of Memory</code> error. Defaults to 1000.</p>
+</dd>
+<dt>connection timeout</dt>
+<dd>
+<p>Time, in seconds, the connection pool will wait before giving up its attempt to get a new connection from the database. Defaults to 20 seconds.</p>
+</dd>
+<dt>Test while idle</dt>
+<dd>
+<p>Periodically test if the connections are still valid also while idle in the pool. Sometimes performing a test query using an idle connection can make the datastore unavailable for a while. Often the cause of this troublesome behaviour is related to a network firewall placed between GeoServer and the Database that force the closing of the underlying idle TCP connections.</p>
+</dd>
+<dt>Evictor run periodicity</dt>
+<dd>
+<p>Number of seconds between idle object evictor runs.</p>
+</dd>
+<dt>Max connection idle time</dt>
+<dd>
+<p>Number of seconds a connection needs to stay idle before the evictor starts to consider closing it.</p>
+</dd>
+<dt>Evictor tests per run</dt>
+<dd>
+<p>Number of connections checked by the idle connection evictor for each of its runs.</p>
+</dd>
+</dl>
 
 
 

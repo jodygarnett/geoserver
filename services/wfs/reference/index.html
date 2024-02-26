@@ -2234,86 +2234,74 @@
 <p>The WFS standard defines the framework for providing access to, and supporting transactions on, discrete geographic features in a manner that is independent of the underlying data source. Through a combination of discovery, query, locking, and transaction operations, users have access to the source spatial and attribute data in a manner that allows them to interrogate, style, edit (create, update, and delete), and download individual features. The transactional capabilities of WFS also support the development and deployment of collaborative mapping applications.</p>
 <h2 id="operations">Operations</h2>
 <p>All versions of WFS support these operations:</p>
-<table>
-<thead>
-<tr>
-<th>Operation</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="#getcapabilities">GetCapabilities</a></td>
-<td>Generates a metadata document describing a WFS service provided by server as well as valid WFS operations and parameters</td>
-</tr>
-<tr>
-<td><a href="#describefeaturetype">DescribeFeatureType</a></td>
-<td>Returns a description of feature types supported by a WFS service</td>
-</tr>
-<tr>
-<td><a href="#getfeature">GetFeature</a></td>
-<td>Returns a selection of features from a data source including geometry and attribute values</td>
-</tr>
-<tr>
-<td><a href="#lockfeature">LockFeature</a></td>
-<td>Prevents a feature from being edited through a persistent feature lock</td>
-</tr>
-<tr>
-<td><a href="#transaction">Transaction</a></td>
-<td>Edits existing feature types by creating, updating, and deleting</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Operation</dt>
+<dd>
+<p>Description</p>
+</dd>
+<dt><a href="#getcapabilities">GetCapabilities</a></dt>
+<dd>
+<p>Generates a metadata document describing a WFS service provided by server as well as valid WFS operations and parameters</p>
+</dd>
+<dt><a href="#describefeaturetype">DescribeFeatureType</a></dt>
+<dd>
+<p>Returns a description of feature types supported by a WFS service</p>
+</dd>
+<dt><a href="#getfeature">GetFeature</a></dt>
+<dd>
+<p>Returns a selection of features from a data source including geometry and attribute values</p>
+</dd>
+<dt><a href="#lockfeature">LockFeature</a></dt>
+<dd>
+<p>Prevents a feature from being edited through a persistent feature lock</p>
+</dd>
+<dt><a href="#transaction">Transaction</a></dt>
+<dd>
+<p>Edits existing feature types by creating, updating, and deleting</p>
+</dd>
+</dl>
 <p>The following operations are available in <strong>version 2.0.0 only</strong>:</p>
-<table>
-<thead>
-<tr>
-<th>Operation</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="#getpropertyvalue">GetPropertyValue</a></td>
-<td>Retrieves the value of a feature property or part of the value of a complex feature property from the data store for a set of features identified using a query expression</td>
-</tr>
-<tr>
-<td><a href="#getfeaturewithlock">GetFeatureWithLock</a></td>
-<td>Returns a selection of features and also applies a lock on those features</td>
-</tr>
-<tr>
-<td><a href="#createstoredquery">CreateStoredQuery</a></td>
-<td>Create a stored query on the WFS server</td>
-</tr>
-<tr>
-<td><a href="#dropstoredquery">DropStoredQuery</a></td>
-<td>Deletes a stored query from the WFS server</td>
-</tr>
-<tr>
-<td><a href="#liststoredqueries">ListStoredQueries</a></td>
-<td>Returns a list of the stored queries on a WFS server</td>
-</tr>
-<tr>
-<td><a href="#describestoredqueries">DescribeStoredQueries</a></td>
-<td>Returns a metadata document describing the stored queries on a WFS server</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Operation</dt>
+<dd>
+<p>Description</p>
+</dd>
+<dt><a href="#getpropertyvalue">GetPropertyValue</a></dt>
+<dd>
+<p>Retrieves the value of a feature property or part of the value of a complex feature property from the data store for a set of features identified using a query expression</p>
+</dd>
+<dt><a href="#getfeaturewithlock">GetFeatureWithLock</a></dt>
+<dd>
+<p>Returns a selection of features and also applies a lock on those features</p>
+</dd>
+<dt><a href="#createstoredquery">CreateStoredQuery</a></dt>
+<dd>
+<p>Create a stored query on the WFS server</p>
+</dd>
+<dt><a href="#dropstoredquery">DropStoredQuery</a></dt>
+<dd>
+<p>Deletes a stored query from the WFS server</p>
+</dd>
+<dt><a href="#liststoredqueries">ListStoredQueries</a></dt>
+<dd>
+<p>Returns a list of the stored queries on a WFS server</p>
+</dd>
+<dt><a href="#describestoredqueries">DescribeStoredQueries</a></dt>
+<dd>
+<p>Returns a metadata document describing the stored queries on a WFS server</p>
+</dd>
+</dl>
 <p>The following operations are available in <strong>version 1.1.0 only</strong>:</p>
-<table>
-<thead>
-<tr>
-<th>Operation</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="#getgmlobject">GetGMLObject</a></td>
-<td>Retrieves features and elements by ID from a WFS</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Operation</dt>
+<dd>
+<p>Description</p>
+</dd>
+<dt><a href="#getgmlobject">GetGMLObject</a></dt>
+<dd>
+<p>Retrieves features and elements by ID from a WFS</p>
+</dd>
+</dl>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In the examples that follow, the fictional URL <code>http://example.com/geoserver/wfs</code> is used for illustration. To test the examples, substitute the address of a valid WFS. Also, although the request would normally be defined on one line with no breaks, breaks are added for clarity in the examples provided.</p>
@@ -2336,108 +2324,96 @@
 </span></code></pre></div>
 <p>GET requests are simplest to decode, but the POST requests are equivalent.</p>
 <p>The parameters for GetCapabilities are:</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Required?</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>service</code></td>
-<td>Yes</td>
-<td>Service name---Value is <code>WFS</code></td>
-</tr>
-<tr>
-<td><code>version</code></td>
-<td>Yes</td>
-<td>Service version---Value is the current version number. The full version number must be supplied ("1.1.0", "1.0.0"), not the abbreviated form ("1" or "1.1").</td>
-</tr>
-<tr>
-<td><code>request</code></td>
-<td>Yes</td>
-<td>Operation name---Value is <code>GetCapabilities</code></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Parameter</dt>
+<dd>
+<p>Required?</p>
+<p>Description</p>
+</dd>
+<dt><code>service</code></dt>
+<dd>
+<p>Yes</p>
+<p>Service name---Value is <code>WFS</code></p>
+</dd>
+<dt><code>version</code></dt>
+<dd>
+<p>Yes</p>
+<p>Service version---Value is the current version number. The full version number must be supplied ("1.1.0", "1.0.0"), not the abbreviated form ("1" or "1.1").</p>
+</dd>
+<dt><code>request</code></dt>
+<dd>
+<p>Yes</p>
+<p>Operation name---Value is <code>GetCapabilities</code></p>
+</dd>
+</dl>
 <p>Although all of the above parameters are technically required as per the specification, GeoServer will provide default values if any parameters are omitted from a request.</p>
 <p>The GetCapabilities response is a lengthy XML document, the format of which is different for each of the supported versions. There are five main components in a GetCapabilities document:</p>
-<table>
-<thead>
-<tr>
-<th>Component</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>ServiceIdentification</code></td>
-<td>Contains basic header information for the request such as the <code>Title</code> and <code>ServiceType</code>. The <code>ServiceType</code> indicates which version(s) of WFS are supported.</td>
-</tr>
-<tr>
-<td><code>ServiceProvider</code></td>
-<td>Provides contact information about the company publishing the WFS service, including telephone, website, and email.</td>
-</tr>
-<tr>
-<td><code>OperationsMetadata</code></td>
-<td>Describes the operations that the WFS server supports and the parameters for each operation. A WFS server may be configured not to respond to the operations listed above.</td>
-</tr>
-<tr>
-<td><code>FeatureTypeList</code></td>
-<td>Lists the feature types published by a WFS server. Feature types are listed in the form <code>namespace:featuretype</code>. The default projection of the feature type is also listed, along with the bounding box for the data in the stated projection.</td>
-</tr>
-<tr>
-<td><code>Filter_Capabilities</code></td>
-<td>Lists the filters, or expressions, that are available to form query predicates, for example, <code>SpatialOperators</code> (such as <code>Equals</code>, <code>Touches</code>) and <code>ComparisonOperators</code> (such as <code>LessThan</code>, <code>GreaterThan</code>). The filters themselves are not included in the GetCapabilities document.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Component</dt>
+<dd>
+<p>Description</p>
+</dd>
+<dt><code>ServiceIdentification</code></dt>
+<dd>
+<p>Contains basic header information for the request such as the <code>Title</code> and <code>ServiceType</code>. The <code>ServiceType</code> indicates which version(s) of WFS are supported.</p>
+</dd>
+<dt><code>ServiceProvider</code></dt>
+<dd>
+<p>Provides contact information about the company publishing the WFS service, including telephone, website, and email.</p>
+</dd>
+<dt><code>OperationsMetadata</code></dt>
+<dd>
+<p>Describes the operations that the WFS server supports and the parameters for each operation. A WFS server may be configured not to respond to the operations listed above.</p>
+</dd>
+<dt><code>FeatureTypeList</code></dt>
+<dd>
+<p>Lists the feature types published by a WFS server. Feature types are listed in the form <code>namespace:featuretype</code>. The default projection of the feature type is also listed, along with the bounding box for the data in the stated projection.</p>
+</dd>
+<dt><code>Filter_Capabilities</code></dt>
+<dd>
+<p>Lists the filters, or expressions, that are available to form query predicates, for example, <code>SpatialOperators</code> (such as <code>Equals</code>, <code>Touches</code>) and <code>ComparisonOperators</code> (such as <code>LessThan</code>, <code>GreaterThan</code>). The filters themselves are not included in the GetCapabilities document.</p>
+</dd>
+</dl>
 <h3 id="wfs_dft">DescribeFeatureType</h3>
 <p><strong>DescribeFeatureType</strong> requests information about an individual feature type before requesting the actual data. Specifically, the operation will request a list of features and attributes for the given feature type, or list the feature types available.</p>
 <p>The parameters for DescribeFeatureType are:</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Required?</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>service</code></td>
-<td>Yes</td>
-<td>Service name---Value is <code>WFS</code></td>
-</tr>
-<tr>
-<td><code>version</code></td>
-<td>Yes</td>
-<td>Service version---Value is the current version number</td>
-</tr>
-<tr>
-<td><code>request</code></td>
-<td>Yes</td>
-<td>Operation name---Value is <code>DescribeFeatureType</code></td>
-</tr>
-<tr>
-<td><code>typeNames</code></td>
-<td>Yes</td>
-<td>Name of the feature type to describe (<code>typeName</code> for WFS 1.1.0 and earlier)</td>
-</tr>
-<tr>
-<td><code>exceptions</code></td>
-<td>No</td>
-<td>Format for reporting exceptions---default value is <code>application/vnd.ogc.se_xml</code></td>
-</tr>
-<tr>
-<td><code>outputFormat</code></td>
-<td>No</td>
-<td>Defines the scheme description language used to describe feature types</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Parameter</dt>
+<dd>
+<p>Required?</p>
+<p>Description</p>
+</dd>
+<dt><code>service</code></dt>
+<dd>
+<p>Yes</p>
+<p>Service name---Value is <code>WFS</code></p>
+</dd>
+<dt><code>version</code></dt>
+<dd>
+<p>Yes</p>
+<p>Service version---Value is the current version number</p>
+</dd>
+<dt><code>request</code></dt>
+<dd>
+<p>Yes</p>
+<p>Operation name---Value is <code>DescribeFeatureType</code></p>
+</dd>
+<dt><code>typeNames</code></dt>
+<dd>
+<p>Yes</p>
+<p>Name of the feature type to describe (<code>typeName</code> for WFS 1.1.0 and earlier)</p>
+</dd>
+<dt><code>exceptions</code></dt>
+<dd>
+<p>No</p>
+<p>Format for reporting exceptions---default value is <code>application/vnd.ogc.se_xml</code></p>
+</dd>
+<dt><code>outputFormat</code></dt>
+<dd>
+<p>No</p>
+<p>Defines the scheme description language used to describe feature types</p>
+</dd>
+</dl>
 <p>To return a list of feature types, the GET request would be as follows. This request will return the list of feature types, sorted by namespace:</p>
 <div class="language-text highlight"><pre><span></span><code>http://example.com/geoserver/wfs?
   service=wfs&amp;
@@ -2687,32 +2663,28 @@ http://example.com/geoserver/wfs?
 </span></code></pre></div>
 <h2 id="exceptions">Exceptions</h2>
 <p>WFS also supports a number of formats for reporting exceptions. The supported values for exception reporting are:</p>
-<table>
-<thead>
-<tr>
-<th>Format</th>
-<th>Syntax</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>XML</td>
-<td><code>exceptions=text/xml</code></td>
-<td><em>(default)</em> XML output</td>
-</tr>
-<tr>
-<td>JSON</td>
-<td><code>exceptions=application/json</code></td>
-<td>Simple JSON</td>
-</tr>
-<tr>
-<td>JSONP</td>
-<td><code>exceptions=text/javascript</code></td>
-<td>Return a JSONP in the form: parseResponse(...jsonp...). See <a href="../../wms/vendor/">WMS vendor parameters</a> to change the callback name. Note that this format is disabled by default (See <a href="../../wms/global/">Global variables affecting WMS</a>).</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Format</dt>
+<dd>
+<p>Syntax</p>
+<p>Description</p>
+</dd>
+<dt>XML</dt>
+<dd>
+<p><code>exceptions=text/xml</code></p>
+<p><em>(default)</em> XML output</p>
+</dd>
+<dt>JSON</dt>
+<dd>
+<p><code>exceptions=application/json</code></p>
+<p>Simple JSON</p>
+</dd>
+<dt>JSONP</dt>
+<dd>
+<p><code>exceptions=text/javascript</code></p>
+<p>Return a JSONP in the form: parseResponse(...jsonp...). See <a href="../../wms/vendor/">WMS vendor parameters</a> to change the callback name. Note that this format is disabled by default (See <a href="../../wms/global/">Global variables affecting WMS</a>).</p>
+</dd>
+</dl>
 
 
 

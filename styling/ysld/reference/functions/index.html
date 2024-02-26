@@ -2563,32 +2563,28 @@
 <p>The <code>method</code> argument is optional, and can be either <code>numeric</code> or <code>color</code>. It determines whether <code>entry1</code>, <code>entry2</code>, ... are numbers or colors, and defaults to <code>numeric</code>.</p>
 <p>There is no equivalent to this function in vector styling. The closest to this in raster styling is the color ramp.</p>
 <p>The three theming functions can be neatly summarized by this table:</p>
-<table>
-<thead>
-<tr>
-<th>Function</th>
-<th>Type of input</th>
-<th>Type of output</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Recode</td>
-<td>Discrete</td>
-<td>Discrete</td>
-</tr>
-<tr>
-<td>Categorize</td>
-<td>Continuous</td>
-<td>Discrete</td>
-</tr>
-<tr>
-<td>Interpolate</td>
-<td>Continuous</td>
-<td>Continuous</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Function</dt>
+<dd>
+<p>Type of input</p>
+<p>Type of output</p>
+</dd>
+<dt>Recode</dt>
+<dd>
+<p>Discrete</p>
+<p>Discrete</p>
+</dd>
+<dt>Categorize</dt>
+<dd>
+<p>Continuous</p>
+<p>Discrete</p>
+</dd>
+<dt>Interpolate</dt>
+<dd>
+<p>Continuous</p>
+<p>Continuous</p>
+</dd>
+</dl>
 <h2 id="examples">Examples</h2>
 <h3 id="display-rotated-arrows-at-line-endpoints">Display rotated arrows at line endpoints</h3>
 <p>The <code>startPoint(geom)</code> and <code>endPoint(geom)</code> functions take a geometry as an argument and returns the start and end points of the geometry respectively. The <code>startAngle(geom)</code> and <code>endAngle(geom)</code> functions take a geometry as an argument and return the angle of the line terminating at the start and end points of the geometry respectively. These functions can be used to display an arrow at the end of a line geometry, and rotate it to match the direction of the line:</p>

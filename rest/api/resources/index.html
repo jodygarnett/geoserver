@@ -2286,100 +2286,86 @@
 
 <h1 id="resources">Resources</h1>
 <h2 id="resourcepathtoresource"><code>/resource&lt;/path/to/resource&gt;</code></h2>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Action</th>
-<th>Status code</th>
-<th>Parameters</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>Download a resource, list contents of directory, or show formatted resource metadata.</td>
-<td>200</td>
-<td>operation (default</td>
-</tr>
-<tr>
-<td>HEAD</td>
-<td>Show resource metadata in HTTP headers.</td>
-<td>200</td>
-<td></td>
-</tr>
-<tr>
-<td>PUT</td>
-<td>Upload/move/copy a resource, create directories on the fly (overwrite if exists). For move/copy operations, place source path in body. Copying is not supported for directories.</td>
-<td>200 (exists) 201 (new)</td>
-<td>operation (default</td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td>Delete a resource (recursively if directory)</td>
-<td>200</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Action</p>
+<p>Status code</p>
+<p>Parameters</p>
+</dd>
+<dt>GET</dt>
+<dd>
+<p>Download a resource, list contents of directory, or show formatted resource metadata.</p>
+<p>200</p>
+<p>operation (default | metadata); format (html | xml | json)</p>
+</dd>
+<dt>HEAD</dt>
+<dd>
+<p>Show resource metadata in HTTP headers.</p>
+<p>200</p>
+</dd>
+<dt>PUT</dt>
+<dd>
+<p>Upload/move/copy a resource, create directories on the fly (overwrite if exists). For move/copy operations, place source path in body. Copying is not supported for directories.</p>
+<p>200 (exists) 201 (new)</p>
+<p>operation (default | copy | move)</p>
+</dd>
+<dt>DELETE</dt>
+<dd>
+<p>Delete a resource (recursively if directory)</p>
+<p>200</p>
+</dd>
+</dl>
 <h3 id="exceptions">Exceptions</h3>
-<table>
-<thead>
-<tr>
-<th>Exception</th>
-<th>Status code</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET or DELETE for a resource that does not exist</td>
-<td>404</td>
-</tr>
-<tr>
-<td>PUT to directory</td>
-<td>405</td>
-</tr>
-<tr>
-<td>PUT method=copy with source directory</td>
-<td>405</td>
-</tr>
-<tr>
-<td>PUT with source path that doesn't exist</td>
-<td>404</td>
-</tr>
-<tr>
-<td>POST</td>
-<td>405</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Exception</dt>
+<dd>
+<p>Status code</p>
+</dd>
+<dt>GET or DELETE for a resource that does not exist</dt>
+<dd>
+<p>404</p>
+</dd>
+<dt>PUT to directory</dt>
+<dd>
+<p>405</p>
+</dd>
+<dt>PUT method=copy with source directory</dt>
+<dd>
+<p>405</p>
+</dd>
+<dt>PUT with source path that doesn't exist</dt>
+<dd>
+<p>404</p>
+</dd>
+<dt>POST</dt>
+<dd>
+<p>405</p>
+</dd>
+</dl>
 <h3 id="headers">Headers</h3>
-<table>
-<thead>
-<tr>
-<th>Header</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Last-Modified</td>
-<td>When resource was last modified.</td>
-</tr>
-<tr>
-<td>Content-Type</td>
-<td>Will guess mime-type from extension or content.</td>
-</tr>
-<tr>
-<td>Resource-Type (custom)</td>
-<td>directory</td>
-</tr>
-<tr>
-<td>Resource-Parent (custom)</td>
-<td>Path to parent</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Header</dt>
+<dd>
+<p>Description</p>
+</dd>
+<dt>Last-Modified</dt>
+<dd>
+<p>When resource was last modified.</p>
+</dd>
+<dt>Content-Type</dt>
+<dd>
+<p>Will guess mime-type from extension or content.</p>
+</dd>
+<dt>Resource-Type (custom)</dt>
+<dd>
+<p>directory | resource</p>
+</dd>
+<dt>Resource-Parent (custom)</dt>
+<dd>
+<p>Path to parent</p>
+</dd>
+</dl>
 <h3 id="format">Format</h3>
 <p>Examples are given in XML. The JSON and HTML formats are analogue.</p>
 <h4 id="metadata">Metadata</h4>

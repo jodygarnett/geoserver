@@ -3210,91 +3210,83 @@
 <p>Descriptions for the new introduced operations and associated formats will also be added to the capabilities document.</p>
 <h2 id="operations">Operations</h2>
 <p>This module adds three new operations to the WMTS service that are described in detail in this <a href="http://demo.geo-solutions.it/share/wmts-multidim/wmts_multidim_geosolutions.html">document</a>:</p>
-<table>
-<thead>
-<tr>
-<th>Operation</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>DescribeDomains</td>
-<td>Describes all the dimension domains in a compact document, along with the restricted bounding box of the two dimensional space intercepted by the request.</td>
-</tr>
-<tr>
-<td>GetDomainValues</td>
-<td>Allows to page through domain values (supplements DescribeDomains in case the domain has too many values, and the client still wants to get all of them, one page at a time)</td>
-</tr>
-<tr>
-<td>GetHistogram</td>
-<td>Given a scattered domain description and an interval, this operation divides the interval in regular buckets, and provides an item count for each bucket.</td>
-</tr>
-<tr>
-<td>GetFeature</td>
-<td>Enumerate the actual dimension possible values combinations, returns a list of features along with dimension values using the same formats as the feature info operation ("application/gml+xml; version=3.1").</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Operation</dt>
+<dd>
+<p>Description</p>
+</dd>
+<dt>DescribeDomains</dt>
+<dd>
+<p>Describes all the dimension domains in a compact document, along with the restricted bounding box of the two dimensional space intercepted by the request.</p>
+</dd>
+<dt>GetDomainValues</dt>
+<dd>
+<p>Allows to page through domain values (supplements DescribeDomains in case the domain has too many values, and the client still wants to get all of them, one page at a time)</p>
+</dd>
+<dt>GetHistogram</dt>
+<dd>
+<p>Given a scattered domain description and an interval, this operation divides the interval in regular buckets, and provides an item count for each bucket.</p>
+</dd>
+<dt>GetFeature</dt>
+<dd>
+<p>Enumerate the actual dimension possible values combinations, returns a list of features along with dimension values using the same formats as the feature info operation ("application/gml+xml; version=3.1").</p>
+</dd>
+</dl>
 <p>Note that currently there is no restful implementations of this operations.</p>
 <h3 id="describedomains">DescribeDomains</h3>
 <p>This operation is useful to understand which domains are available in our layer dimensions and how they relate to each other. The parameters available for this operation are:</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Mandatory</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Service=WMTS</td>
-<td>Yes</td>
-<td>Service type identifier</td>
-</tr>
-<tr>
-<td>Request=DescribeDomains</td>
-<td>Yes</td>
-<td>Operation name</td>
-</tr>
-<tr>
-<td>Version=1.0.0</td>
-<td>Yes</td>
-<td>Standard and schema version for this operation</td>
-</tr>
-<tr>
-<td>Layer</td>
-<td>Yes</td>
-<td>Layer identifier</td>
-</tr>
-<tr>
-<td>TileMatrixSet</td>
-<td>Yes</td>
-<td>Tile matrix set identifier</td>
-</tr>
-<tr>
-<td>bbox=minx,miny,maxx,maxy</td>
-<td>No</td>
-<td>Bounding box corners (lower left, upper right) in CRS units</td>
-</tr>
-<tr>
-<td>DimensionIdentifier</td>
-<td>No</td>
-<td>At most one per dimension, a range described as min/max, restricting the domain of this dimension</td>
-</tr>
-<tr>
-<td>Domains</td>
-<td>No</td>
-<td>A comma separated list of domain names to be returned, in case only a subset is required. The space domain is identified by "bbox".</td>
-</tr>
-<tr>
-<td>ExpandLimit</td>
-<td>No</td>
-<td>A numerical value, greater or equal to zero. If the number of unique domain values is below <code>ExpandLimit</code> then the domain with be represented in full, as a comma separated list of values, otherwise in compact form, as <code>start--end</code>. The server assumes a built-in limit of 200 in case not specified, and allows client to specify a value up to 10000, values can be tuned via the user interface, in the WMTS panel (server defaults) and on a layer by layer basis.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Name</dt>
+<dd>
+<p>Mandatory</p>
+<p>Description</p>
+</dd>
+<dt>Service=WMTS</dt>
+<dd>
+<p>Yes</p>
+<p>Service type identifier</p>
+</dd>
+<dt>Request=DescribeDomains</dt>
+<dd>
+<p>Yes</p>
+<p>Operation name</p>
+</dd>
+<dt>Version=1.0.0</dt>
+<dd>
+<p>Yes</p>
+<p>Standard and schema version for this operation</p>
+</dd>
+<dt>Layer</dt>
+<dd>
+<p>Yes</p>
+<p>Layer identifier</p>
+</dd>
+<dt>TileMatrixSet</dt>
+<dd>
+<p>Yes</p>
+<p>Tile matrix set identifier</p>
+</dd>
+<dt>bbox=minx,miny,maxx,maxy</dt>
+<dd>
+<p>No</p>
+<p>Bounding box corners (lower left, upper right) in CRS units</p>
+</dd>
+<dt>DimensionIdentifier</dt>
+<dd>
+<p>No</p>
+<p>At most one per dimension, a range described as min/max, restricting the domain of this dimension</p>
+</dd>
+<dt>Domains</dt>
+<dd>
+<p>No</p>
+<p>A comma separated list of domain names to be returned, in case only a subset is required. The space domain is identified by "bbox".</p>
+</dd>
+<dt>ExpandLimit</dt>
+<dd>
+<p>No</p>
+<p>A numerical value, greater or equal to zero. If the number of unique domain values is below <code>ExpandLimit</code> then the domain with be represented in full, as a comma separated list of values, otherwise in compact form, as <code>start--end</code>. The server assumes a built-in limit of 200 in case not specified, and allows client to specify a value up to 10000, values can be tuned via the user interface, in the WMTS panel (server defaults) and on a layer by layer basis.</p>
+</dd>
+</dl>
 <p><img alt="" src="../images/expandLimitConfig.png" />
 <em>Configuration domain expansion limits.</em></p>
 <div class="admonition note">
@@ -3392,72 +3384,68 @@
 </span></code></pre></div>
 <h3 id="getdomainvalues">GetDomainValues</h3>
 <p>This operation is useful to page through the values of a given domain, in case the "multidimensional" area of interest is too large for DescribeDomain to return them in a single shot.</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Mandatory</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Service=WMTS</td>
-<td>Yes</td>
-<td>Service type identifier</td>
-</tr>
-<tr>
-<td>Request=GetDomainValues</td>
-<td>Yes</td>
-<td>Operation name</td>
-</tr>
-<tr>
-<td>Version=1.0.0</td>
-<td>Yes</td>
-<td>Standard and schema version for this operation</td>
-</tr>
-<tr>
-<td>Layer</td>
-<td>Yes</td>
-<td>Layer identifier</td>
-</tr>
-<tr>
-<td>bbox=minx,miny,maxx,maxy</td>
-<td>No</td>
-<td>Bounding box corners (lower left, upper right) in CRS units</td>
-</tr>
-<tr>
-<td>DimensionIdentifier</td>
-<td>No</td>
-<td>At most one per dimension, a range described as min/max, restricting the domain of this dimension</td>
-</tr>
-<tr>
-<td>Domain</td>
-<td>Yes</td>
-<td>Name of the domain whose values will be returned (one cannot use "bbox", only single value dimensions can be enumerated by GetDomainValues, e.g., time, elevation).</td>
-</tr>
-<tr>
-<td>FromValue</td>
-<td>No</td>
-<td>Sets the beginning of domain enumeration, for paging purposes. It's not included in the result</td>
-</tr>
-<tr>
-<td>FromEnd</td>
-<td>No</td>
-<td>If equals to true specifies that the beginning of domain enumeration, set by the FromValue, should be applied to the end attribute. When set to true results will be sorted by end attribute.</td>
-</tr>
-<tr>
-<td>Sort</td>
-<td>No</td>
-<td>Can be "asc" or "desc", determines if the enumeration is from low to high, or from high to low</td>
-</tr>
-<tr>
-<td>Limit</td>
-<td>No</td>
-<td>Maximum number of values returned by this call. The server assumes a built-in limit of 1000 in case not specified, and allows client to specify a value up to 10000.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Name</dt>
+<dd>
+<p>Mandatory</p>
+<p>Description</p>
+</dd>
+<dt>Service=WMTS</dt>
+<dd>
+<p>Yes</p>
+<p>Service type identifier</p>
+</dd>
+<dt>Request=GetDomainValues</dt>
+<dd>
+<p>Yes</p>
+<p>Operation name</p>
+</dd>
+<dt>Version=1.0.0</dt>
+<dd>
+<p>Yes</p>
+<p>Standard and schema version for this operation</p>
+</dd>
+<dt>Layer</dt>
+<dd>
+<p>Yes</p>
+<p>Layer identifier</p>
+</dd>
+<dt>bbox=minx,miny,maxx,maxy</dt>
+<dd>
+<p>No</p>
+<p>Bounding box corners (lower left, upper right) in CRS units</p>
+</dd>
+<dt>DimensionIdentifier</dt>
+<dd>
+<p>No</p>
+<p>At most one per dimension, a range described as min/max, restricting the domain of this dimension</p>
+</dd>
+<dt>Domain</dt>
+<dd>
+<p>Yes</p>
+<p>Name of the domain whose values will be returned (one cannot use "bbox", only single value dimensions can be enumerated by GetDomainValues, e.g., time, elevation).</p>
+</dd>
+<dt>FromValue</dt>
+<dd>
+<p>No</p>
+<p>Sets the beginning of domain enumeration, for paging purposes. It's not included in the result</p>
+</dd>
+<dt>FromEnd</dt>
+<dd>
+<p>No</p>
+<p>If equals to true specifies that the beginning of domain enumeration, set by the FromValue, should be applied to the end attribute. When set to true results will be sorted by end attribute.</p>
+</dd>
+<dt>Sort</dt>
+<dd>
+<p>No</p>
+<p>Can be "asc" or "desc", determines if the enumeration is from low to high, or from high to low</p>
+</dd>
+<dt>Limit</dt>
+<dd>
+<p>No</p>
+<p>Maximum number of values returned by this call. The server assumes a built-in limit of 1000 in case not specified, and allows client to specify a value up to 10000.</p>
+</dd>
+</dl>
 <p>For example, let's say a "elevation" domain has values 1,2,3 and 5, and that we are paging through it by pages of 2 elements. The client will start without providing a "fromValue", and will then continue using the last value of the previous page as a reference:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>http://localhost:8080/geoserver/gwc/service/wmts?request=GetDomainValues&amp;Version=1.0.0&amp;Layer=sampleLayer&amp;domain=elevation&amp;limit=2
 </span></code></pre></div>
@@ -3542,67 +3530,63 @@
 <h3 id="gethistogram">GetHistogram</h3>
 <p>This operation can be used to provide information about the data distribution between the minimum and maximum values of a certain dimension.</p>
 <p>The parameters available for this operation are:</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Mandatory</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Service=WMTS</td>
-<td>Yes</td>
-<td>Service type identifier</td>
-</tr>
-<tr>
-<td>Request=GetHistogram</td>
-<td>Yes</td>
-<td>Operation name</td>
-</tr>
-<tr>
-<td>Version=1.0.0</td>
-<td>Yes</td>
-<td>Standard and schema version for this operation</td>
-</tr>
-<tr>
-<td>Layer</td>
-<td>Yes</td>
-<td>Layer identifier</td>
-</tr>
-<tr>
-<td>TileMatrixSet</td>
-<td>Yes</td>
-<td>Tile matrix set identifier</td>
-</tr>
-<tr>
-<td>BBOX=minx,miny,maxx,maxy</td>
-<td>No</td>
-<td>Bounding box corners (lower left, upper right) in CRS units</td>
-</tr>
-<tr>
-<td>DimensionIdentifier</td>
-<td>No</td>
-<td>At most one per dimension, a range described as min/max, restricting the domain of this dimension</td>
-</tr>
-<tr>
-<td>Histogram</td>
-<td>Yes</td>
-<td>Name of the dimension for which the histogram will be computed</td>
-</tr>
-<tr>
-<td>Resolution</td>
-<td>No</td>
-<td>Suggested size of the histogram bucket. Cannot be provided for enumerated dimensions, will use the period syntax for time (e.g. PT1H), a number for numeric dimensions, or auto to leave the decision to the server</td>
-</tr>
-<tr>
-<td>Format</td>
-<td>No</td>
-<td>The desired output format, default is text/html.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Name</dt>
+<dd>
+<p>Mandatory</p>
+<p>Description</p>
+</dd>
+<dt>Service=WMTS</dt>
+<dd>
+<p>Yes</p>
+<p>Service type identifier</p>
+</dd>
+<dt>Request=GetHistogram</dt>
+<dd>
+<p>Yes</p>
+<p>Operation name</p>
+</dd>
+<dt>Version=1.0.0</dt>
+<dd>
+<p>Yes</p>
+<p>Standard and schema version for this operation</p>
+</dd>
+<dt>Layer</dt>
+<dd>
+<p>Yes</p>
+<p>Layer identifier</p>
+</dd>
+<dt>TileMatrixSet</dt>
+<dd>
+<p>Yes</p>
+<p>Tile matrix set identifier</p>
+</dd>
+<dt>BBOX=minx,miny,maxx,maxy</dt>
+<dd>
+<p>No</p>
+<p>Bounding box corners (lower left, upper right) in CRS units</p>
+</dd>
+<dt>DimensionIdentifier</dt>
+<dd>
+<p>No</p>
+<p>At most one per dimension, a range described as min/max, restricting the domain of this dimension</p>
+</dd>
+<dt>Histogram</dt>
+<dd>
+<p>Yes</p>
+<p>Name of the dimension for which the histogram will be computed</p>
+</dd>
+<dt>Resolution</dt>
+<dd>
+<p>No</p>
+<p>Suggested size of the histogram bucket. Cannot be provided for enumerated dimensions, will use the period syntax for time (e.g. PT1H), a number for numeric dimensions, or auto to leave the decision to the server</p>
+</dd>
+<dt>Format</dt>
+<dd>
+<p>No</p>
+<p>The desired output format, default is text/html.</p>
+</dd>
+</dl>
 <p>The parameters common to the <code>DescribeDomains</code> operation work as already described above. Currently only the <code>text/xml</code> output format is supported.</p>
 <p>The following example request the histogram for time dimension with a resolution of 8 hours restricting elevations between 500.0 and 1000.0 meters:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>http://localhost:8080/geoserver/gwc/service/wmts?REQUEST=GetHistogram&amp;Version=1.0.0&amp;Layer=some_layer&amp;TileMatrixSet=EPSG:4326&amp;histogram=time&amp;resolution=PT8H&amp;elevation=500.0/1000.0
@@ -3633,57 +3617,53 @@
 <h3 id="getfeature">GetFeature</h3>
 <p>This operation is capable to enumerate the actual possible values combinations. The output of this operation is similar to the output of the <code>WFS 2.0 GetFeature</code> operation which is a list of features along with dimension values using the same formats as the feature info operation. This output can be used to draw the features on a map for example.</p>
 <p>The parameters available for this operation are:</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Mandatory</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Service=WMTS</td>
-<td>Yes</td>
-<td>Service type identifier</td>
-</tr>
-<tr>
-<td>Request=GetFeature</td>
-<td>Yes</td>
-<td>Operation name</td>
-</tr>
-<tr>
-<td>Version=1.0.0</td>
-<td>Yes</td>
-<td>Standard and schema version for this operation</td>
-</tr>
-<tr>
-<td>Layer</td>
-<td>Yes</td>
-<td>Layer identifier</td>
-</tr>
-<tr>
-<td>TileMatrixSet</td>
-<td>Yes</td>
-<td>Tile matrix set identifier</td>
-</tr>
-<tr>
-<td>BBOX=minx,miny,maxx,maxy</td>
-<td>No</td>
-<td>Bounding box corners (lower left, upper right) in CRS units</td>
-</tr>
-<tr>
-<td>DimensionIdentifier</td>
-<td>No</td>
-<td>At most one per dimension, a range described as min/max, restricting the domain of this dimension</td>
-</tr>
-<tr>
-<td>Format</td>
-<td>Yes</td>
-<td>The desired output format</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Name</dt>
+<dd>
+<p>Mandatory</p>
+<p>Description</p>
+</dd>
+<dt>Service=WMTS</dt>
+<dd>
+<p>Yes</p>
+<p>Service type identifier</p>
+</dd>
+<dt>Request=GetFeature</dt>
+<dd>
+<p>Yes</p>
+<p>Operation name</p>
+</dd>
+<dt>Version=1.0.0</dt>
+<dd>
+<p>Yes</p>
+<p>Standard and schema version for this operation</p>
+</dd>
+<dt>Layer</dt>
+<dd>
+<p>Yes</p>
+<p>Layer identifier</p>
+</dd>
+<dt>TileMatrixSet</dt>
+<dd>
+<p>Yes</p>
+<p>Tile matrix set identifier</p>
+</dd>
+<dt>BBOX=minx,miny,maxx,maxy</dt>
+<dd>
+<p>No</p>
+<p>Bounding box corners (lower left, upper right) in CRS units</p>
+</dd>
+<dt>DimensionIdentifier</dt>
+<dd>
+<p>No</p>
+<p>At most one per dimension, a range described as min/max, restricting the domain of this dimension</p>
+</dd>
+<dt>Format</dt>
+<dd>
+<p>Yes</p>
+<p>The desired output format</p>
+</dd>
+</dl>
 <p>The parameters common to the <code>DescribeDomains</code> operation work as already described above. Currently only the <code>application/gml+xml; version=3.1</code> output format is supported.</p>
 <p>Using the same restrictions parameters we used for the second request used as an example for the <code>DescribeDomains</code> operation a <code>GetFeature</code> request will look like this:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>http://localhost:8080/geoserver/gwc/service/wmts?REQUEST=GetFeature&amp;Version=1.0.0&amp;Layer=some_layer&amp;TileMatrixSet=EPSG:4326&amp;elevation=0/500&amp;time=2016-02-23T03:00:00.000Z

@@ -1680,44 +1680,36 @@
 <p>Java web containers such as <a href="http://tomcat.apache.org">Tomcat</a> or <a href="https://www.eclipse.org/jetty/">Jetty</a> ship with configurations that allow for fast startup, but don't always deliver the best performance.</p>
 <h2 id="optimize-your-jvm">Optimize your JVM</h2>
 <p>Set the following performance settings in the Java virtual machine (JVM) for your container. These settings are not specific to any container.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Option</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td><code>-Xms128m</code></td>
-<td>By starting with a larger heap GeoServer will not need to pause and ask the operating system for more memory during heavy load. The setting <code>-Xms128m</code> will tell the virtual machine to acquire grab a 128m heap memory on initial startup.</td>
-</tr>
-<tr>
-<td><code>-Xmx756M</code></td>
-<td>Defines an upper limit on how much heap memory Java will request from the operating system (use more if you have excess memory). By default, the JVM will use &frac14; of available system memory. The setting <code>-Xms756m</code> allocates 756MB of memory to GeoServer.</td>
-</tr>
-<tr>
-<td><code>-XX:SoftRefLRUPolicyMSPerMB=36000</code></td>
-<td>Increases the lifetime of "soft references" in GeoServer. GeoServer uses soft references to cache datastore, spatial reference systems, and other data structures. By increasing this value to <code>36000</code> (which is 36 seconds) these values will stay in memory longer increasing the effectiveness of the cache.</td>
-</tr>
-<tr>
-<td><code>-XX:+UseParallelGC</code></td>
-<td>This garbage collector <strong>pauses the application while using several threads to recover memory</strong>. Recommended if your GeoServer will be under light load and can tolerate pauses to clean up memory.</td>
-</tr>
-<tr>
-<td><code>-XX:+UseParNewGC</code></td>
-<td>Enables use of the concurrent mark sweep (CMS) garbage collector <strong>uses multiple threads to recover memory while the application is running</strong>. Recommended for GeoServer under continuous use, with heap sizes of less than 6GB.</td>
-</tr>
-<tr>
-<td><code>–XX:+UseG1GC</code></td>
-<td>The default garbage collector since Java 9. Enables use of the <a href="http://www.oracle.com/technetwork/java/javase/tech/g1-intro-jsp-135488.html">Garbage First Garbage Collector (G1)</a> using <strong>background threads to scan memory while the application is running</strong> prior to cleanup. Recommended for GeoServer under continuous load and heap sizes of 6GB or more. Additionally you may experiment with <code>-XX:+UseStringDeduplicationJVM</code> to ask G1 to better manage common text strings in memory.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Option</strong></dt>
+<dd>
+<p><strong>Description</strong></p>
+</dd>
+<dt><code>-Xms128m</code></dt>
+<dd>
+<p>By starting with a larger heap GeoServer will not need to pause and ask the operating system for more memory during heavy load. The setting <code>-Xms128m</code> will tell the virtual machine to acquire grab a 128m heap memory on initial startup.</p>
+</dd>
+<dt><code>-Xmx756M</code></dt>
+<dd>
+<p>Defines an upper limit on how much heap memory Java will request from the operating system (use more if you have excess memory). By default, the JVM will use &frac14; of available system memory. The setting <code>-Xms756m</code> allocates 756MB of memory to GeoServer.</p>
+</dd>
+<dt><code>-XX:SoftRefLRUPolicyMSPerMB=36000</code></dt>
+<dd>
+<p>Increases the lifetime of "soft references" in GeoServer. GeoServer uses soft references to cache datastore, spatial reference systems, and other data structures. By increasing this value to <code>36000</code> (which is 36 seconds) these values will stay in memory longer increasing the effectiveness of the cache.</p>
+</dd>
+<dt><code>-XX:+UseParallelGC</code></dt>
+<dd>
+<p>This garbage collector <strong>pauses the application while using several threads to recover memory</strong>. Recommended if your GeoServer will be under light load and can tolerate pauses to clean up memory.</p>
+</dd>
+<dt><code>-XX:+UseParNewGC</code></dt>
+<dd>
+<p>Enables use of the concurrent mark sweep (CMS) garbage collector <strong>uses multiple threads to recover memory while the application is running</strong>. Recommended for GeoServer under continuous use, with heap sizes of less than 6GB.</p>
+</dd>
+<dt><code>–XX:+UseG1GC</code></dt>
+<dd>
+<p>The default garbage collector since Java 9. Enables use of the <a href="http://www.oracle.com/technetwork/java/javase/tech/g1-intro-jsp-135488.html">Garbage First Garbage Collector (G1)</a> using <strong>background threads to scan memory while the application is running</strong> prior to cleanup. Recommended for GeoServer under continuous load and heap sizes of 6GB or more. Additionally you may experiment with <code>-XX:+UseStringDeduplicationJVM</code> to ask G1 to better manage common text strings in memory.</p>
+</dd>
+</dl>
 <p>For more information about JVM configuration, see the article <a href="http://www.petefreitag.com/articles/gctuning/">Performance tuning garbage collection in Java</a> and <a href="http://blog.takipi.com/garbage-collectors-serial-vs-parallel-vs-cms-vs-the-g1-and-whats-new-in-java-8/">The 4 Java Garbage Collectors</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

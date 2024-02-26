@@ -1899,51 +1899,43 @@
 <p>To remove a URL Check, select the checkbox next to one or more rows in the <strong>URL Check list</strong> table. Press the <strong>Remove selected URL checks</strong> button to remove. You will be asked to confirm or cancel the removal. Pressing <strong>OK</strong> removes the selected URL Checks.</p>
 <h2 id="security_urlchecks_edit">Editing a URL Check</h2>
 <p>Regular Expression URL checks can be configured, with the following parameters for each check:</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>Name for the check, used to identify it in the list.</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Description of the check, for later reference.</td>
-</tr>
-<tr>
-<td>Regular Expression</td>
-<td>A regular expression used to match allowed URLs</td>
-</tr>
-<tr>
-<td>Enabled</td>
-<td>Check box to enable or disable the check</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Field</dt>
+<dd>
+<p>Description</p>
+</dd>
+<dt>Name</dt>
+<dd>
+<p>Name for the check, used to identify it in the list.</p>
+</dd>
+<dt>Description</dt>
+<dd>
+<p>Description of the check, for later reference.</p>
+</dd>
+<dt>Regular Expression</dt>
+<dd>
+<p>A regular expression used to match allowed URLs</p>
+</dd>
+<dt>Enabled</dt>
+<dd>
+<p>Check box to enable or disable the check</p>
+</dd>
+</dl>
 <p><img alt="" src="../images/urlchecks-edit.png" />
 <em>Configure Regular Expression URL check</em></p>
 <h2 id="testing-url-checks">Testing URL checks</h2>
 <p>The <strong>Test URL Checks with external URL</strong> form allows a URL to be checked, reporting if access is allowed or disallowed.</p>
 <p>Test URL Checks form:</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>URL to check</td>
-<td>Supply URL of external resource to check if access is allowed</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Field</dt>
+<dd>
+<p>Description</p>
+</dd>
+<dt>URL to check</dt>
+<dd>
+<p>Supply URL of external resource to check if access is allowed</p>
+</dd>
+</dl>
 <p>Press the <strong>Test URL</strong> button to perform the checks. If at least one URL Check matches the URL, it will be allowed and the test will indicate the URL Check permitting access. Otherwise it will be rejected and the test will indicate that no URL Check matched.</p>
 <p><img alt="" src="../images/urlchecks-test.png" />
 <em>Test URL Checks with external URL</em></p>

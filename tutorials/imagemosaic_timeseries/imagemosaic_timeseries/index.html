@@ -2624,149 +2624,122 @@
 <p>Otherwise the usage of a shapefile could be useful in development and test environments due to less configurations are needed.</p>
 <h4 id="datastoreproperties">datastore.properties</h4>
 <p>Here is shown an example of datastore.properties suitable for Postgis.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Parameter</strong></td>
-<td><strong>Mandatory</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td><em>SPI</em></td>
-<td><strong>Y</strong></td>
-<td>The factory class used for the datastore e.g. org.geotools.data.postgis.PostgisNGDataStoreFactory</td>
-</tr>
-<tr>
-<td><em>host</em></td>
-<td><strong>Y</strong></td>
-<td>The host name of the database.</td>
-</tr>
-<tr>
-<td><em>port</em></td>
-<td><strong>Y</strong></td>
-<td>The port of the database</td>
-</tr>
-<tr>
-<td><em>database</em></td>
-<td><strong>Y</strong></td>
-<td>The name/instance of the database.</td>
-</tr>
-<tr>
-<td><em>schema</em></td>
-<td><strong>Y</strong></td>
-<td>The name of the database schema.</td>
-</tr>
-<tr>
-<td><em>user</em></td>
-<td><strong>Y</strong></td>
-<td>The database user.</td>
-</tr>
-<tr>
-<td><em>passwd</em></td>
-<td><strong>Y</strong></td>
-<td>The database password.</td>
-</tr>
-<tr>
-<td><em>Loose bbox</em></td>
-<td><strong>N</strong> default 'false'</td>
-<td>Boolean value to specify if loosing the bounding box.</td>
-</tr>
-<tr>
-<td><em>Estimated extend</em></td>
-<td><strong>N</strong> default 'true'</td>
-<td>Boolean values to specify if the extent of the data should be estimated.</td>
-</tr>
-<tr>
-<td><em>validate connections</em></td>
-<td><strong>N</strong> default 'true'</td>
-<td>Boolean value to specify if the connection should be validated.</td>
-</tr>
-<tr>
-<td><em>Connection timeout</em></td>
-<td><strong>N</strong> default '20'</td>
-<td>Specifies the timeout in minutes.</td>
-</tr>
-<tr>
-<td><em>preparedStatements</em></td>
-<td><strong>N</strong> default 'false'</td>
-<td>Boolean flag that specifies if for the database queries prepared statements should be used. This improves performance, because the database query parser has to parse the query only once</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Parameter</strong></dt>
+<dd>
+<p><strong>Mandatory</strong></p>
+<p><strong>Description</strong></p>
+</dd>
+<dt><em>SPI</em></dt>
+<dd>
+<p><strong>Y</strong></p>
+<p>The factory class used for the datastore e.g. org.geotools.data.postgis.PostgisNGDataStoreFactory</p>
+</dd>
+<dt><em>host</em></dt>
+<dd>
+<p><strong>Y</strong></p>
+<p>The host name of the database.</p>
+</dd>
+<dt><em>port</em></dt>
+<dd>
+<p><strong>Y</strong></p>
+<p>The port of the database</p>
+</dd>
+<dt><em>database</em></dt>
+<dd>
+<p><strong>Y</strong></p>
+<p>The name/instance of the database.</p>
+</dd>
+<dt><em>schema</em></dt>
+<dd>
+<p><strong>Y</strong></p>
+<p>The name of the database schema.</p>
+</dd>
+<dt><em>user</em></dt>
+<dd>
+<p><strong>Y</strong></p>
+<p>The database user.</p>
+</dd>
+<dt><em>passwd</em></dt>
+<dd>
+<p><strong>Y</strong></p>
+<p>The database password.</p>
+</dd>
+<dt><em>Loose bbox</em></dt>
+<dd>
+<p><strong>N</strong> default 'false'</p>
+<p>Boolean value to specify if loosing the bounding box.</p>
+</dd>
+<dt><em>Estimated extend</em></dt>
+<dd>
+<p><strong>N</strong> default 'true'</p>
+<p>Boolean values to specify if the extent of the data should be estimated.</p>
+</dd>
+<dt><em>validate connections</em></dt>
+<dd>
+<p><strong>N</strong> default 'true'</p>
+<p>Boolean value to specify if the connection should be validated.</p>
+</dd>
+<dt><em>Connection timeout</em></dt>
+<dd>
+<p><strong>N</strong> default '20'</p>
+<p>Specifies the timeout in minutes.</p>
+</dd>
+<dt><em>preparedStatements</em></dt>
+<dd>
+<p><strong>N</strong> default 'false'</p>
+<p>Boolean flag that specifies if for the database queries prepared statements should be used. This improves performance, because the database query parser has to parse the query only once</p>
+</dd>
+</dl>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The first 8 parameters are valid for each DBMS used, the last 4 may vary from different DBMS. for more information see :geotools<code>GeoTools JDBC documentation &lt;jdbc/index.html&gt;</code>.</p>
 </div>
 <h4 id="indexerproperties">indexer.properties</h4>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Parameter</strong></td>
-<td><strong>Mandatory</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td><em>TimeAttribute</em></td>
-<td>N</td>
-<td>Specifies the name of the time-variant attribute</td>
-</tr>
-<tr>
-<td><em>ElevationAttribute</em></td>
-<td>N</td>
-<td>Specifies the name of the elevation attribute.</td>
-</tr>
-<tr>
-<td><em>Schema</em></td>
-<td>Y</td>
-<td>A comma separated sequence that describes the mapping between attribute and the data type.</td>
-</tr>
-<tr>
-<td><em>PropertyCollectors</em></td>
-<td>Y</td>
-<td>Specifies the extractor classes.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Parameter</strong></dt>
+<dd>
+<p><strong>Mandatory</strong></p>
+<p><strong>Description</strong></p>
+</dd>
+<dt><em>TimeAttribute</em></dt>
+<dd>
+<p>N</p>
+<p>Specifies the name of the time-variant attribute</p>
+</dd>
+<dt><em>ElevationAttribute</em></dt>
+<dd>
+<p>N</p>
+<p>Specifies the name of the elevation attribute.</p>
+</dd>
+<dt><em>Schema</em></dt>
+<dd>
+<p>Y</p>
+<p>A comma separated sequence that describes the mapping between attribute and the data type.</p>
+</dd>
+<dt><em>PropertyCollectors</em></dt>
+<dd>
+<p>Y</p>
+<p>Specifies the extractor classes.</p>
+</dd>
+</dl>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p><strong>TimeAttribute</strong> is not a mandatory param but for the purpose of this tutorial is needed.</p>
 </div>
 <h4 id="timeregexproperties">timeregex.properties</h4>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Parameter</strong></td>
-<td><strong>Mandatory</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td><em>regex</em></td>
-<td>Y</td>
-<td>Specifies the pattern used for extracting the information from the file</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Parameter</strong></dt>
+<dd>
+<p><strong>Mandatory</strong></p>
+<p><strong>Description</strong></p>
+</dd>
+<dt><em>regex</em></dt>
+<dd>
+<p>Y</p>
+<p>Specifies the pattern used for extracting the information from the file</p>
+</dd>
+</dl>
 <p>After this you can create a new ImageMosaic datastore.</p>
 <h3 id="install-and-setup-a-dbms-instance">Install and setup a DBMS instance</h3>
 <p>First of all, note that the usage of a DBMS to store the mosaic indexes <strong>is not mandatory</strong>. If the user does not create a <code>datastore.properties</code> file in the MOSAIC_DIR, then the plugin will use a <strong>shapefile</strong>. The shapefile will be created in the MOSAIC_DIR.</p>

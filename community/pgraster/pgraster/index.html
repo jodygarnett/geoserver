@@ -3871,56 +3871,52 @@
 </blockquote>
 </li>
 </ol>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>PostGIS server</td>
-<td>The PostGIS server IP</td>
-</tr>
-<tr>
-<td>PostGIS port</td>
-<td>The PostGIS server port</td>
-</tr>
-<tr>
-<td>User</td>
-<td>The PostGIS DB user</td>
-</tr>
-<tr>
-<td>Password</td>
-<td>The PostGIS DB password</td>
-</tr>
-<tr>
-<td>Database</td>
-<td>The PostGIS Database (should have already been created)</td>
-</tr>
-<tr>
-<td>Schema</td>
-<td>The schema where the table will be created (default is public. The schema need to be already defined into the Database before the import)</td>
-</tr>
-<tr>
-<td>Table</td>
-<td>The name of the metadata table which contains all the references to</td>
-</tr>
-<tr>
-<td>File extension</td>
-<td>The extension of the raster files to be imported (such as <code>png</code>). It may not be specified when raster tiles have been already manually imported into the database by the user</td>
-</tr>
-<tr>
-<td>raster2pgsql import options</td>
-<td>The raster2pgsql script importing options (as an instance "-t 128x128" for raster tiles of 128x128). It may not be specified when raster tiles have been already manually imported into the database by the user</td>
-</tr>
-<tr>
-<td>EPSG Code</td>
-<td>The EPSG code which will be configured in the coverage configuration xml. (Default is 4326)</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Name</dt>
+<dd>
+<p>Description</p>
+</dd>
+<dt>PostGIS server</dt>
+<dd>
+<p>The PostGIS server IP</p>
+</dd>
+<dt>PostGIS port</dt>
+<dd>
+<p>The PostGIS server port</p>
+</dd>
+<dt>User</dt>
+<dd>
+<p>The PostGIS DB user</p>
+</dd>
+<dt>Password</dt>
+<dd>
+<p>The PostGIS DB password</p>
+</dd>
+<dt>Database</dt>
+<dd>
+<p>The PostGIS Database (should have already been created)</p>
+</dd>
+<dt>Schema</dt>
+<dd>
+<p>The schema where the table will be created (default is public. The schema need to be already defined into the Database before the import)</p>
+</dd>
+<dt>Table</dt>
+<dd>
+<p>The name of the metadata table which contains all the references to</p>
+</dd>
+<dt>File extension</dt>
+<dd>
+<p>The extension of the raster files to be imported (such as <code>png</code>). It may not be specified when raster tiles have been already manually imported into the database by the user</p>
+</dd>
+<dt>raster2pgsql import options</dt>
+<dd>
+<p>The raster2pgsql script importing options (as an instance "-t 128x128" for raster tiles of 128x128). It may not be specified when raster tiles have been already manually imported into the database by the user</p>
+</dd>
+<dt>EPSG Code</dt>
+<dd>
+<p>The EPSG code which will be configured in the coverage configuration xml. (Default is 4326)</p>
+</dd>
+</dl>
 <h2 id="limitations">Limitations</h2>
 <p>Right now it doesn't allow to import data folders which have been created with the gdal_retile's <code>useDirForEachRow</code> option.</p>
 

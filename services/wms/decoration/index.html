@@ -2165,32 +2165,28 @@
 <p>To use decorations in a <a href="../reference/#wms_getmap">GetMap</a> request, the administrator must first configure a decoration layout. These layouts are stored in a subdirectory called <code>layouts</code> in the <a href="../../../datadirectory/">GeoServer data directory</a> as XML files, one file per layout. Each layout file must have the extension <code>.xml</code>. Once a layout <code>foo.xml</code> is defined, users can request it by adding <code>&amp;format_options=layout:foo</code> to the request parameters.</p>
 <p>Layout files follow a very simple XML structure; a root node named layout containing any number of decoration elements. The order of the decoration elements is the order they are drawn so, in case they are overlapping, the first one will appear under the others.</p>
 <p>Each decoration element has several attributes:</p>
-<table>
-<thead>
-<tr>
-<th>Attribute</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>type</code></td>
-<td>the type of decoration to use (see <a href="./#wms_decoration_types">Decoration Types</a>)</td>
-</tr>
-<tr>
-<td><code>affinity</code></td>
-<td>the region of the map image to which the decoration is anchored</td>
-</tr>
-<tr>
-<td><code>offset</code></td>
-<td>how far from the anchor point the decoration is drawn</td>
-</tr>
-<tr>
-<td><code>size</code></td>
-<td>the maximum size to render the decoration. Note that some decorations may dynamically resize themselves.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Attribute</dt>
+<dd>
+<p>Meaning</p>
+</dd>
+<dt><code>type</code></dt>
+<dd>
+<p>the type of decoration to use (see <a href="./#wms_decoration_types">Decoration Types</a>)</p>
+</dd>
+<dt><code>affinity</code></dt>
+<dd>
+<p>the region of the map image to which the decoration is anchored</p>
+</dd>
+<dt><code>offset</code></dt>
+<dd>
+<p>how far from the anchor point the decoration is drawn</p>
+</dd>
+<dt><code>size</code></dt>
+<dd>
+<p>the maximum size to render the decoration. Note that some decorations may dynamically resize themselves.</p>
+</dd>
+</dl>
 <p>Each decoration element may also contain an arbitrary number of option elements providing a parameter name and value:</p>
 <div class="language-text highlight"><pre><span></span><code>&lt;option name=&quot;foo&quot; value=&quot;bar&quot;/&gt;
 </code></pre></div>
@@ -2198,144 +2194,124 @@
 <h2 id="wms_decoration_types">Decoration Types</h2>
 <p>While GeoServer allows for decorations to be added via extension, there is a core set of decorations included in the default installation. These decorations include:</p>
 <p>The <strong>image</strong> decoration (<code>type="image"</code>) overlays a static image file onto the document. If height and width are specified, the image will be scaled to fit, otherwise the image is displayed at full size.</p>
-<table>
-<thead>
-<tr>
-<th>Option Name</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>url</code></td>
-<td>provides the URL or file path to the image to draw (relative to the GeoServer data directory)</td>
-</tr>
-<tr>
-<td><code>opacity</code></td>
-<td>a number from 0 to 100 indicating how opaque the image should be.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Option Name</dt>
+<dd>
+<p>Meaning</p>
+</dd>
+<dt><code>url</code></dt>
+<dd>
+<p>provides the URL or file path to the image to draw (relative to the GeoServer data directory)</p>
+</dd>
+<dt><code>opacity</code></dt>
+<dd>
+<p>a number from 0 to 100 indicating how opaque the image should be.</p>
+</dd>
+</dl>
 <p>The <strong>scaleratio</strong> decoration (<code>type="scaleratio"</code>) overlays a text description of the map's scale ratio onto the document.</p>
-<table>
-<thead>
-<tr>
-<th>Option Name</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>bgcolor</code></td>
-<td>the background color for the text. supports RGB or RGBA colors specified as hex values.</td>
-</tr>
-<tr>
-<td><code>fgcolor</code></td>
-<td>the color for the text and border. follows the color specification from bgcolor.</td>
-</tr>
-<tr>
-<td><code>format</code></td>
-<td>the number format pattern, specified using Java own <a href="https://docs.oracle.com/javase/8/docs/api/java/text/DecimalFormat.html">DecimalFormat</a> syntax</td>
-</tr>
-<tr>
-<td><code>formatLanguage</code></td>
-<td>the language used to drive number formatting (applies only if also <code>format</code> is used), using a valid Java <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html">Locale</a></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Option Name</dt>
+<dd>
+<p>Meaning</p>
+</dd>
+<dt><code>bgcolor</code></dt>
+<dd>
+<p>the background color for the text. supports RGB or RGBA colors specified as hex values.</p>
+</dd>
+<dt><code>fgcolor</code></dt>
+<dd>
+<p>the color for the text and border. follows the color specification from bgcolor.</p>
+</dd>
+<dt><code>format</code></dt>
+<dd>
+<p>the number format pattern, specified using Java own <a href="https://docs.oracle.com/javase/8/docs/api/java/text/DecimalFormat.html">DecimalFormat</a> syntax</p>
+</dd>
+<dt><code>formatLanguage</code></dt>
+<dd>
+<p>the language used to drive number formatting (applies only if also <code>format</code> is used), using a valid Java <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html">Locale</a></p>
+</dd>
+</dl>
 <p>The <strong>scaleline</strong> decoration (<code>type="scaleline"</code>) overlays a graphic showing the scale of the map in world units.</p>
-<table>
-<thead>
-<tr>
-<th>Option Name</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>bgcolor</code></td>
-<td>the background color, as used in scaleratio</td>
-</tr>
-<tr>
-<td><code>fgcolor</code></td>
-<td>the foreground color, as used in scaleratio</td>
-</tr>
-<tr>
-<td><code>fontsize</code></td>
-<td>the size of the font to use</td>
-</tr>
-<tr>
-<td><code>transparent</code></td>
-<td>if set to true, the background and border won't be painted (false by default)</td>
-</tr>
-<tr>
-<td><code>measurement-system</code></td>
-<td>can be set to "metric" to only show metric units, "imperial" to only show imperial units, or "both" to show both of them (default)</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Option Name</dt>
+<dd>
+<p>Meaning</p>
+</dd>
+<dt><code>bgcolor</code></dt>
+<dd>
+<p>the background color, as used in scaleratio</p>
+</dd>
+<dt><code>fgcolor</code></dt>
+<dd>
+<p>the foreground color, as used in scaleratio</p>
+</dd>
+<dt><code>fontsize</code></dt>
+<dd>
+<p>the size of the font to use</p>
+</dd>
+<dt><code>transparent</code></dt>
+<dd>
+<p>if set to true, the background and border won't be painted (false by default)</p>
+</dd>
+<dt><code>measurement-system</code></dt>
+<dd>
+<p>can be set to "metric" to only show metric units, "imperial" to only show imperial units, or "both" to show both of them (default)</p>
+</dd>
+</dl>
 <p>The <strong>legend</strong> decoration (<code>type="legend"</code>) overlays a graphic containing legends for the layers in the map.</p>
-<table>
-<thead>
-<tr>
-<th>Option Name</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>legend_options</code></td>
-<td>the list of legend_options used as in <a href="./get_legend_graphic/index.html#controlling-legend-appearance-with-legend-options">GetLegendGraphic</a></td>
-</tr>
-<tr>
-<td><code>opacity</code></td>
-<td>the legend opacity with a value between 0 and 1</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Option Name</dt>
+<dd>
+<p>Meaning</p>
+</dd>
+<dt><code>legend_options</code></dt>
+<dd>
+<p>the list of legend_options used as in <a href="./get_legend_graphic/index.html#controlling-legend-appearance-with-legend-options">GetLegendGraphic</a></p>
+</dd>
+<dt><code>opacity</code></dt>
+<dd>
+<p>the legend opacity with a value between 0 and 1</p>
+</dd>
+</dl>
 <p>The <strong>text</strong> decoration (<code>type="text"</code>) overlays a parametric, single line text message on top of the map. The parameter values can be fed via the <code>env</code> request parameter, just like SLD environment parameters.</p>
-<table>
-<thead>
-<tr>
-<th>Option Name</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>message</code></td>
-<td>the message to be displayed, as plain text or Freemarker template that can use the <code>env</code> map contents to expand variables</td>
-</tr>
-<tr>
-<td><code>font-family</code></td>
-<td>the name of the font used to display the message, e.g., <code>Arial</code>, defaults to <code>Serif</code></td>
-</tr>
-<tr>
-<td><code>font-size</code></td>
-<td>the size of the font to use (can have decimals), defaults to 12</td>
-</tr>
-<tr>
-<td><code>font-italic</code></td>
-<td>it <code>true</code> the font will be italic, defaults to <code>false</code></td>
-</tr>
-<tr>
-<td><code>font-bold</code></td>
-<td>if <code>true</code> the font will be bold, defaults to <code>false</code></td>
-</tr>
-<tr>
-<td><code>font-color</code></td>
-<td>the color of the message, in <code>#RRGGBB</code> or <code>#RRGGBBAA</code> format, defaults to black</td>
-</tr>
-<tr>
-<td><code>halo-radius</code></td>
-<td>the radius of a halo around the message, can have decimals, defaults to 0</td>
-</tr>
-<tr>
-<td><code>halo-color</code></td>
-<td>the halo fill color, in <code>#RRGGBB</code> or <code>#RRGGBBAA</code> format, defaults to white</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Option Name</dt>
+<dd>
+<p>Meaning</p>
+</dd>
+<dt><code>message</code></dt>
+<dd>
+<p>the message to be displayed, as plain text or Freemarker template that can use the <code>env</code> map contents to expand variables</p>
+</dd>
+<dt><code>font-family</code></dt>
+<dd>
+<p>the name of the font used to display the message, e.g., <code>Arial</code>, defaults to <code>Serif</code></p>
+</dd>
+<dt><code>font-size</code></dt>
+<dd>
+<p>the size of the font to use (can have decimals), defaults to 12</p>
+</dd>
+<dt><code>font-italic</code></dt>
+<dd>
+<p>it <code>true</code> the font will be italic, defaults to <code>false</code></p>
+</dd>
+<dt><code>font-bold</code></dt>
+<dd>
+<p>if <code>true</code> the font will be bold, defaults to <code>false</code></p>
+</dd>
+<dt><code>font-color</code></dt>
+<dd>
+<p>the color of the message, in <code>#RRGGBB</code> or <code>#RRGGBBAA</code> format, defaults to black</p>
+</dd>
+<dt><code>halo-radius</code></dt>
+<dd>
+<p>the radius of a halo around the message, can have decimals, defaults to 0</p>
+</dd>
+<dt><code>halo-color</code></dt>
+<dd>
+<p>the halo fill color, in <code>#RRGGBB</code> or <code>#RRGGBBAA</code> format, defaults to white</p>
+</dd>
+</dl>
 <h2 id="example">Example</h2>
 <p>A layout configuration file might look like this:</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;layout&gt;</span>

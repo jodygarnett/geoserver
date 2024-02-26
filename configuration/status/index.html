@@ -1829,85 +1829,135 @@
 <em>Status Page (default tab)</em></p>
 <h3 id="status-field-descriptions">Status Field Descriptions</h3>
 <p>The following table describes the current status indicators.</p>
-<p>+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Option                      | Description                                                                                                                                                                                                                                                                                                                                                                                                          |
-+=============================+======================================================================================================================================================================================================================================================================================================================================================================================================================+
-| Data directory              | Shows the path to the GeoServer data directory (<code>GEOSERVER_DATA_DIR</code> property).                                                                                                                                                                                                                                                                                                                                      |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Locks                       | A WFS has the ability to lock features to prevent more than one person from updating the feature at one time. If data is locked, edits can be performed by a single WFS editor. When the edits are posted, the locks are released and features can be edited by other WFS editors. A zero in the locks field means all locks are released. If locks is non-zero then a client has reserved some content for editing. |
-|                             |                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|                             | Press <strong>Free locks</strong> to release all feature locks currently held by the server and update the field value to zero.                                                                                                                                                                                                                                                                                                   |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Connections                 | Refers to the numbers of stores GeoServer is connected to, in the above case 9, that are enabled and available.                                                                                                                                                                                                                                                                                                      |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Memory Usage                | The amount of memory currently used by GeoServer. In the above example, 174 MB of memory used out of a total of 3.56 GB available to Java.                                                                                                                                                                                                                                                                           |
-|                             |                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|                             | Press <strong>Free Memory</strong> to recycle unused memory by running the garbage collector.                                                                                                                                                                                                                                                                                                                                     |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| JVM Version                 | Denotes which version of the JVM (Java Virtual Machine) is being used to power the server. Here the JVM is AdoptOpenJDK 1.8.0_282.                                                                                                                                                                                                                                                                                   |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Java Rendering Engine       | Shows the rendering engine used for vector operations.                                                                                                                                                                                                                                                                                                                                                               |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Available Fonts             | Shows the number of fonts available. Selecting the link will show the full list.                                                                                                                                                                                                                                                                                                                                     |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Native JAI                  | GeoServer uses <a href="https://www.oracle.com/java/technologies/java-archive-downloads-java-client-downloads.html">Java Advanced Imaging</a> (JAI) framework for image rendering and coverage manipulation.                                                                                                                                                                                                                    |
-|                             |                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|                             | We recommend the use of JAI-EXT operations for greater stability.                                                                                                                                                                                                                                                                                                                                                    |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Native JAI ImageIO          | GeoServer uses <a href="https://docs.oracle.com/javase/6/docs/technotes/guides/imageio/">JAI Image IO</a> (JAI) framework for raster data loading and image encoding.                                                                                                                                                                                                                                                           |
-|                             |                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|                             | We recommend use of libjpeg-turbo for those interested in increasing encoding performance.                                                                                                                                                                                                                                                                                                                           |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| JAI Maximum Memory          | The amount of memory available for the image processing tile cache, in this case 1.78 GB.                                                                                                                                                                                                                                                                                                                            |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| JAI Memory Usage            | Run-time amount of memory is used for the tile cache.                                                                                                                                                                                                                                                                                                                                                                |
-|                             |                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|                             | Press <strong>Free Memory</strong> to clear available JAI memory by flushing the tile cache.                                                                                                                                                                                                                                                                                                                                      |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| JAI Memory Threshold        | Refers to the percentage, e.g. 75, of cache memory to retain during tile removal.                                                                                                                                                                                                                                                                                                                                    |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Number of JAI Tile Threads  | The number of parallel threads used by the scheduler to handle tiles.                                                                                                                                                                                                                                                                                                                                                |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| JAI Tile Thread Priority    | Schedules the global tile scheduler priority. The priority value defaults to 5, and must fall between 1 and 10.                                                                                                                                                                                                                                                                                                      |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Thread Pool Core Pool Size  | Number of threads that the ThreadPoolExecutor will create. This is underlying Java runtime functionality - see the Java documentation for ThreadPoolExecutor for more information.                                                                                                                                                                                                                                   |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Thread Pool Max Pool Size   | Maximum number of threads that the ThreadPoolExecutor will create. This is underlying Java runtime functionality - see the Java documentation for ThreadPoolExecutor for more information.                                                                                                                                                                                                                           |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Thread Pool Keep Alive Time | Timeout for threads to be terminated if they are idle and more than the core pool number exist. This is underlying Java runtime functionality - see the Java documentation for ThreadPoolExecutor for more information.                                                                                                                                                                                              |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update Sequence             | Refers to the number of times, e.g. 157, the server configuration has been modified.                                                                                                                                                                                                                                                                                                                                 |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Resource cache              | GeoServer maintains a resource cache with connections to stores, feature type definitions, external graphics, font definitions, and CRS definitions. This includes custom CRS definitions defined in data directory <strong><code>user_projections/epsg.properties</code></strong>.                                                                                                                                                        |
-|                             |                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|                             | Press <strong>Clear</strong> to empty the resource cache. This will force GeoServer to reconnect to stores, reconnect to databases, re-read icon and font information, and reload custom CRS definitions.                                                                                                                                                                                                                         |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Configuration and catalog   | GeoServer keeps its configuration data in memory.                                                                                                                                                                                                                                                                                                                                                                    |
-|                             |                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|                             | Press <strong>Reload</strong> to force GeoServer to reload all of its configuration from disk. This is useful if for any reason that configuration information has become stale (e.g., an external utility has modified the configuration on disk).                                                                                                                                                                               |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</p>
+<dl>
+<dt>Option</dt>
+<dd>
+<p>Description</p>
+</dd>
+<dt>Data directory</dt>
+<dd>
+<p>Shows the path to the GeoServer data directory (<code>GEOSERVER_DATA_DIR</code> property).</p>
+</dd>
+<dt>Locks</dt>
+<dd>
+<p>A WFS has the ability to lock features to prevent more than one person from updating the feature at one time. If data is locked, edits can be performed by a single WFS editor. When the edits are posted, the locks are released and features can be edited by other WFS editors. A zero in the locks field means all locks are released. If locks is non-zero then a client has reserved some content for editing.</p>
+<p>Press <strong>Free locks</strong> to release all feature locks currently held by the server and update the field value to zero.</p>
+</dd>
+<dt>Connections</dt>
+<dd>
+<p>Refers to the numbers of stores GeoServer is connected to, in the above case 9, that are enabled and available.</p>
+</dd>
+<dt>Memory Usage</dt>
+<dd>
+<p>The amount of memory currently used by GeoServer. In the above example, 174 MB of memory used out of a total of 3.56 GB available to Java.</p>
+<p>Press <strong>Free Memory</strong> to recycle unused memory by running the garbage collector.</p>
+</dd>
+<dt>JVM Version</dt>
+<dd>
+<p>Denotes which version of the JVM (Java Virtual Machine) is being used to power the server. Here the JVM is AdoptOpenJDK 1.8.0_282.</p>
+</dd>
+<dt>Java Rendering Engine</dt>
+<dd>
+<p>Shows the rendering engine used for vector operations.</p>
+</dd>
+<dt>Available Fonts</dt>
+<dd>
+<p>Shows the number of fonts available. Selecting the link will show the full list.</p>
+</dd>
+<dt>Native JAI</dt>
+<dd>
+<p>GeoServer uses <a href="https://www.oracle.com/java/technologies/java-archive-downloads-java-client-downloads.html">Java Advanced Imaging</a> (JAI) framework for image rendering and coverage manipulation.</p>
+<p>We recommend the use of JAI-EXT operations for greater stability.</p>
+</dd>
+<dt>Native JAI ImageIO</dt>
+<dd>
+<p>GeoServer uses <a href="https://docs.oracle.com/javase/6/docs/technotes/guides/imageio/">JAI Image IO</a> (JAI) framework for raster data loading and image encoding.</p>
+<p>We recommend use of libjpeg-turbo for those interested in increasing encoding performance.</p>
+</dd>
+<dt>JAI Maximum Memory</dt>
+<dd>
+<p>The amount of memory available for the image processing tile cache, in this case 1.78 GB.</p>
+</dd>
+<dt>JAI Memory Usage</dt>
+<dd>
+<p>Run-time amount of memory is used for the tile cache.</p>
+<p>Press <strong>Free Memory</strong> to clear available JAI memory by flushing the tile cache.</p>
+</dd>
+<dt>JAI Memory Threshold</dt>
+<dd>
+<p>Refers to the percentage, e.g. 75, of cache memory to retain during tile removal.</p>
+</dd>
+<dt>Number of JAI Tile Threads</dt>
+<dd>
+<p>The number of parallel threads used by the scheduler to handle tiles.</p>
+</dd>
+<dt>JAI Tile Thread Priority</dt>
+<dd>
+<p>Schedules the global tile scheduler priority. The priority value defaults to 5, and must fall between 1 and 10.</p>
+</dd>
+<dt>Thread Pool Core Pool Size</dt>
+<dd>
+<p>Number of threads that the ThreadPoolExecutor will create. This is underlying Java runtime functionality - see the Java documentation for ThreadPoolExecutor for more information.</p>
+</dd>
+<dt>Thread Pool Max Pool Size</dt>
+<dd>
+<p>Maximum number of threads that the ThreadPoolExecutor will create. This is underlying Java runtime functionality - see the Java documentation for ThreadPoolExecutor for more information.</p>
+</dd>
+<dt>Thread Pool Keep Alive Time</dt>
+<dd>
+<p>Timeout for threads to be terminated if they are idle and more than the core pool number exist. This is underlying Java runtime functionality - see the Java documentation for ThreadPoolExecutor for more information.</p>
+</dd>
+<dt>Update Sequence</dt>
+<dd>
+<p>Refers to the number of times, e.g. 157, the server configuration has been modified.</p>
+</dd>
+<dt>Resource cache</dt>
+<dd>
+<p>GeoServer maintains a resource cache with connections to stores, feature type definitions, external graphics, font definitions, and CRS definitions. This includes custom CRS definitions defined in data directory <strong><code>user_projections/epsg.properties</code></strong>.</p>
+<p>Press <strong>Clear</strong> to empty the resource cache. This will force GeoServer to reconnect to stores, reconnect to databases, re-read icon and font information, and reload custom CRS definitions.</p>
+</dd>
+<dt>Configuration and catalog</dt>
+<dd>
+<p>GeoServer keeps its configuration data in memory.</p>
+<p>Press <strong>Reload</strong> to force GeoServer to reload all of its configuration from disk. This is useful if for any reason that configuration information has become stale (e.g., an external utility has modified the configuration on disk).</p>
+</dd>
+</dl>
 <h2 id="config_serverstatus_module">Module Status</h2>
 <p>The <strong>Modules</strong> tab provides a summary of the status of all installed modules in the running server.</p>
 <p><img alt="" src="../img/module_status.png" />
 <em>Module Status</em></p>
 <h3 id="field-descriptions">Field Descriptions</h3>
-<p>+-----------------+----------------------------------------------------------------------------------------------------------------------+
-| Module Name     | Human readable name of the module, this links to a popup containing the full details and messages of the module      |
-+=================+======================================================================================================================+
-| Module ID       | The internal package name of the module                                                                              |
-+-----------------+----------------------------------------------------------------------------------------------------------------------+
-| Available       | Whether the module is available to GeoServer.                                                                        |
-|                 |                                                                                                                      |
-|                 | A database extension requiring a third-party database driver to be installed would not be available for use.         |
-+-----------------+----------------------------------------------------------------------------------------------------------------------+
-| Enabled         | Whether the module is enabled in the current GeoServer configuration                                                 |
-+-----------------+----------------------------------------------------------------------------------------------------------------------+
-| Component       | Functional component provided by the module.                                                                         |
-+-----------------+----------------------------------------------------------------------------------------------------------------------+
-| Version         | The version of the installed module                                                                                  |
-+-----------------+----------------------------------------------------------------------------------------------------------------------+
-| Message (popup) | Status message such as what Java rendering engine is in use, or the library path if the module/driver is unavailable |
-+-----------------+----------------------------------------------------------------------------------------------------------------------+</p>
+<dl>
+<dt>Module Name</dt>
+<dd>
+<p>Human readable name of the module, this links to a popup containing the full details and messages of the module</p>
+</dd>
+<dt>Module ID</dt>
+<dd>
+<p>The internal package name of the module</p>
+</dd>
+<dt>Available</dt>
+<dd>
+<p>Whether the module is available to GeoServer.</p>
+<p>A database extension requiring a third-party database driver to be installed would not be available for use.</p>
+</dd>
+<dt>Enabled</dt>
+<dd>
+<p>Whether the module is enabled in the current GeoServer configuration</p>
+</dd>
+<dt>Component</dt>
+<dd>
+<p>Functional component provided by the module.</p>
+</dd>
+<dt>Version</dt>
+<dd>
+<p>The version of the installed module</p>
+</dd>
+<dt>Message (popup)</dt>
+<dd>
+<p>Status message such as what Java rendering engine is in use, or the library path if the module/driver is unavailable</p>
+</dd>
+</dl>
 <p><img alt="" src="../img/module_popup.png" />
 <em>Module Status popup</em></p>
 <h2 id="config_serverstatus_system">System Status</h2>
@@ -1917,172 +1967,163 @@
 <p>This information is also available via the REST API to troubleshoot remote systems. The library <a href="https://github.com/oshi/oshi/">OSHI</a> is used to retrieve system-level information without depending on native libraries or DLLs, relying solely on <a href="https://github.com/java-native-access/jna/">Apache JNA</a>. Major operating systems (Linux, Windows and MacOS) are supported out of the box.</p>
 <p>Use the checkbox <strong>Enable All Statistics</strong> to start and stop the collecting and displaying system status information. Disabling is useful if GeoServer is generating a high CPU load due to system status collection.</p>
 <p>The available system information is:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Info</strong></td>
-<td><strong>Example</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td>Operating system</td>
-<td>Linux Mint 18</td>
-<td>Name of the operating system and the used version</td>
-</tr>
-<tr>
-<td>Uptime</td>
-<td>08:34:50</td>
-<td>Up time of the system</td>
-</tr>
-<tr>
-<td>System average load 1 minute</td>
-<td>0.90</td>
-<td>System average load for the last minute</td>
-</tr>
-<tr>
-<td>System average load 5 minutes</td>
-<td>1.12</td>
-<td>System average load for the last five minute</td>
-</tr>
-<tr>
-<td>System average load 15 minute</td>
-<td>0.68</td>
-<td>System average load for the last fifteen minute</td>
-</tr>
-<tr>
-<td>Number of physical CPUs</td>
-<td>4</td>
-<td>Number of physical CPUs / cores available</td>
-</tr>
-<tr>
-<td>Number of logical CPUs</td>
-<td>8</td>
-<td>Number of logical CPUs / cores available</td>
-</tr>
-<tr>
-<td>Number of running process</td>
-<td>316</td>
-<td>Total number of process running in the system</td>
-</tr>
-<tr>
-<td>Number of running threads</td>
-<td>1094</td>
-<td>Total number of threads running in the system</td>
-</tr>
-<tr>
-<td>CPU load average</td>
-<td>4.12 %</td>
-<td>Average load of the CPU in the last second</td>
-</tr>
-<tr>
-<td>CPU * load</td>
-<td>11.43 %</td>
-<td>Load of a specific core in the last second</td>
-</tr>
-<tr>
-<td>Used physical memory</td>
-<td>31.58 %</td>
-<td>Percentage of the system memory used</td>
-</tr>
-<tr>
-<td>Total physical memory</td>
-<td>31.4 GiB</td>
-<td>System total memory</td>
-</tr>
-<tr>
-<td>Free physical memory</td>
-<td>21.4 GiB</td>
-<td>System memory available for use</td>
-</tr>
-<tr>
-<td>Used swap memory</td>
-<td>0.00%</td>
-<td>Percentage of swap memory used</td>
-</tr>
-<tr>
-<td>Total swap memory</td>
-<td>32.0 GiB</td>
-<td>System total swap memory</td>
-</tr>
-<tr>
-<td>Free swap memory</td>
-<td>32.0 GiB</td>
-<td>Free swap memory</td>
-</tr>
-<tr>
-<td>File system usage</td>
-<td>65.47 %</td>
-<td>File system usage taking in account all partitions</td>
-</tr>
-<tr>
-<td>Partition * used space</td>
-<td>54.8 %</td>
-<td>Percentage of space used in a specific partition</td>
-</tr>
-<tr>
-<td>Partition * total space</td>
-<td>338.9 GiB</td>
-<td>Total space of a specific partition</td>
-</tr>
-<tr>
-<td>Partition * free space</td>
-<td>117.0 GiB</td>
-<td>Free space on a specific partition</td>
-</tr>
-<tr>
-<td>Network interfaces send</td>
-<td>42.0 MiB</td>
-<td>Data send through all the available network interfaces</td>
-</tr>
-<tr>
-<td>Network interfaces received</td>
-<td>700.4 MiB</td>
-<td>Data received through all the available network interfaces</td>
-</tr>
-<tr>
-<td>Network interface * send</td>
-<td>25.0 MiB</td>
-<td>Data send through a specific network interface</td>
-</tr>
-<tr>
-<td>Network interface * received</td>
-<td>250.4 MiB</td>
-<td>Data received through a specific network interface</td>
-</tr>
-<tr>
-<td>CPU temperature</td>
-<td>52.00 ºC</td>
-<td>CPU temperature</td>
-</tr>
-<tr>
-<td>CPU voltage</td>
-<td>1.5 V</td>
-<td>CPU voltage</td>
-</tr>
-<tr>
-<td>GeoServer CPU usage</td>
-<td>3.5 %</td>
-<td>Percentage of CPU used by GeoServer in the last second</td>
-</tr>
-<tr>
-<td>GeoServer threads</td>
-<td>49</td>
-<td>Number of threads created by GeoServer</td>
-</tr>
-<tr>
-<td>GeoServer JVM memory usage</td>
-<td>5.83 %</td>
-<td>Percentage of the JVM memory used by GeoServer</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Info</strong></dt>
+<dd>
+<p><strong>Example</strong></p>
+<p><strong>Description</strong></p>
+</dd>
+<dt>Operating system</dt>
+<dd>
+<p>Linux Mint 18</p>
+<p>Name of the operating system and the used version</p>
+</dd>
+<dt>Uptime</dt>
+<dd>
+<p>08:34:50</p>
+<p>Up time of the system</p>
+</dd>
+<dt>System average load 1 minute</dt>
+<dd>
+<p>0.90</p>
+<p>System average load for the last minute</p>
+</dd>
+<dt>System average load 5 minutes</dt>
+<dd>
+<p>1.12</p>
+<p>System average load for the last five minute</p>
+</dd>
+<dt>System average load 15 minute</dt>
+<dd>
+<p>0.68</p>
+<p>System average load for the last fifteen minute</p>
+</dd>
+<dt>Number of physical CPUs</dt>
+<dd>
+<p>4</p>
+<p>Number of physical CPUs / cores available</p>
+</dd>
+<dt>Number of logical CPUs</dt>
+<dd>
+<p>8</p>
+<p>Number of logical CPUs / cores available</p>
+</dd>
+<dt>Number of running process</dt>
+<dd>
+<p>316</p>
+<p>Total number of process running in the system</p>
+</dd>
+<dt>Number of running threads</dt>
+<dd>
+<p>1094</p>
+<p>Total number of threads running in the system</p>
+</dd>
+<dt>CPU load average</dt>
+<dd>
+<p>4.12 %</p>
+<p>Average load of the CPU in the last second</p>
+</dd>
+<dt>CPU * load</dt>
+<dd>
+<p>11.43 %</p>
+<p>Load of a specific core in the last second</p>
+</dd>
+<dt>Used physical memory</dt>
+<dd>
+<p>31.58 %</p>
+<p>Percentage of the system memory used</p>
+</dd>
+<dt>Total physical memory</dt>
+<dd>
+<p>31.4 GiB</p>
+<p>System total memory</p>
+</dd>
+<dt>Free physical memory</dt>
+<dd>
+<p>21.4 GiB</p>
+<p>System memory available for use</p>
+</dd>
+<dt>Used swap memory</dt>
+<dd>
+<p>0.00%</p>
+<p>Percentage of swap memory used</p>
+</dd>
+<dt>Total swap memory</dt>
+<dd>
+<p>32.0 GiB</p>
+<p>System total swap memory</p>
+</dd>
+<dt>Free swap memory</dt>
+<dd>
+<p>32.0 GiB</p>
+<p>Free swap memory</p>
+</dd>
+<dt>File system usage</dt>
+<dd>
+<p>65.47 %</p>
+<p>File system usage taking in account all partitions</p>
+</dd>
+<dt>Partition * used space</dt>
+<dd>
+<p>54.8 %</p>
+<p>Percentage of space used in a specific partition</p>
+</dd>
+<dt>Partition * total space</dt>
+<dd>
+<p>338.9 GiB</p>
+<p>Total space of a specific partition</p>
+</dd>
+<dt>Partition * free space</dt>
+<dd>
+<p>117.0 GiB</p>
+<p>Free space on a specific partition</p>
+</dd>
+<dt>Network interfaces send</dt>
+<dd>
+<p>42.0 MiB</p>
+<p>Data send through all the available network interfaces</p>
+</dd>
+<dt>Network interfaces received</dt>
+<dd>
+<p>700.4 MiB</p>
+<p>Data received through all the available network interfaces</p>
+</dd>
+<dt>Network interface * send</dt>
+<dd>
+<p>25.0 MiB</p>
+<p>Data send through a specific network interface</p>
+</dd>
+<dt>Network interface * received</dt>
+<dd>
+<p>250.4 MiB</p>
+<p>Data received through a specific network interface</p>
+</dd>
+<dt>CPU temperature</dt>
+<dd>
+<p>52.00 ºC</p>
+<p>CPU temperature</p>
+</dd>
+<dt>CPU voltage</dt>
+<dd>
+<p>1.5 V</p>
+<p>CPU voltage</p>
+</dd>
+<dt>GeoServer CPU usage</dt>
+<dd>
+<p>3.5 %</p>
+<p>Percentage of CPU used by GeoServer in the last second</p>
+</dd>
+<dt>GeoServer threads</dt>
+<dd>
+<p>49</p>
+<p>Number of threads created by GeoServer</p>
+</dd>
+<dt>GeoServer JVM memory usage</dt>
+<dd>
+<p>5.83 %</p>
+<p>Percentage of the JVM memory used by GeoServer</p>
+</dd>
+</dl>
 <p>If some information is not available the special term <code>NOT AVAILABLE</code> will appear. Values will be automatically converted to best human readable unit.</p>
 <h2 id="config_serverstatus_jvm">JVM Console</h2>
 <p>For information on the live Java Runtime Environment the <strong>JVM Console</strong> tab provides access to two useful troubleshooting tools.</p>

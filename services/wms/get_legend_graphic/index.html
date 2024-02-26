@@ -2391,87 +2391,78 @@
 <p><img alt="" src="img/samplelegend.png" />
 <em>Sample legend</em></p>
 <p>The following table lists the whole set of GetLegendGraphic parameters that can be used.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Parameter</strong></td>
-<td><strong>Required</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td><em>REQUEST</em></td>
-<td>Required</td>
-<td>Value must be "GetLegendGraphic".</td>
-</tr>
-<tr>
-<td><em>LAYER</em></td>
-<td>Required</td>
-<td>Layer for which to produce legend graphic.</td>
-</tr>
-<tr>
-<td><em>STYLE</em></td>
-<td>Optional</td>
-<td>Style of layer for which to produce legend graphic. If not present, the default style is selected. The style may be any valid style available for a layer, including non-SLD internally-defined styles.</td>
-</tr>
-<tr>
-<td><em>FEATURETYPE</em></td>
-<td>Optional</td>
-<td>Feature type for which to produce the legend graphic. This is not needed if the layer has only a single feature type.</td>
-</tr>
-<tr>
-<td><em>RULE</em></td>
-<td>Optional</td>
-<td>Rule of style to produce legend graphic for, if applicable. In the case that a style has multiple rules but no specific rule is selected, then the map server is obligated to produce a graphic that is representative of all of the rules of the style.</td>
-</tr>
-<tr>
-<td><em>SCALE</em></td>
-<td>Optional</td>
-<td>In the case that a RULE is not specified for a style, this parameter may assist the server in selecting a more appropriate representative graphic by eliminating internal rules that are out-of-scope. This value is a standardized scale denominator, defined in Section 10.2. Specifying the scale will also make the symbolizers using Unit Of Measure resize according to the specified scale.</td>
-</tr>
-<tr>
-<td><em>SLD</em></td>
-<td>Optional</td>
-<td>This parameter specifies a reference to an external SLD document. It works in the same way as the SLD= parameter of the WMS GetMap operation.</td>
-</tr>
-<tr>
-<td><em>SLD_BODY</em></td>
-<td>Optional</td>
-<td>This parameter allows an SLD document to be included directly in an HTTP-GET request. It works in the same way as the SLD_BODY= parameter of the WMS GetMap operation.</td>
-</tr>
-<tr>
-<td><em>FORMAT</em></td>
-<td>Required</td>
-<td>This gives the MIME type of the file format in which to return the legend graphic. Allowed values are the same as for the FORMAT= parameter of the WMS GetMap request.</td>
-</tr>
-<tr>
-<td><em>WIDTH</em></td>
-<td>Optional</td>
-<td>This gives a hint for the width of the returned graphic in pixels. Vector-graphics can use this value as a hint for the level of detail to include.</td>
-</tr>
-<tr>
-<td><em>HEIGHT</em></td>
-<td>Optional</td>
-<td>This gives a hint for the height of the returned graphic in pixels.</td>
-</tr>
-<tr>
-<td><em>EXCEPTIONS</em></td>
-<td>Optional</td>
-<td>This gives the MIME type of the format in which to return exceptions. Allowed values are the same as for the EXCEPTIONS= parameter of the WMS GetMap request.</td>
-</tr>
-<tr>
-<td><em>LANGUAGE</em></td>
-<td>Optional</td>
-<td>Allows setting labels language for style titles and rules titles; needs a correctly localized SLD to work properly; if labels are not available in the requested language, the default text will be used; look at <a href="../../../styling/sld/language/">i18N in SLD</a> for further details.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Parameter</strong></dt>
+<dd>
+<p><strong>Required</strong></p>
+<p><strong>Description</strong></p>
+</dd>
+<dt><em>REQUEST</em></dt>
+<dd>
+<p>Required</p>
+<p>Value must be "GetLegendGraphic".</p>
+</dd>
+<dt><em>LAYER</em></dt>
+<dd>
+<p>Required</p>
+<p>Layer for which to produce legend graphic.</p>
+</dd>
+<dt><em>STYLE</em></dt>
+<dd>
+<p>Optional</p>
+<p>Style of layer for which to produce legend graphic. If not present, the default style is selected. The style may be any valid style available for a layer, including non-SLD internally-defined styles.</p>
+</dd>
+<dt><em>FEATURETYPE</em></dt>
+<dd>
+<p>Optional</p>
+<p>Feature type for which to produce the legend graphic. This is not needed if the layer has only a single feature type.</p>
+</dd>
+<dt><em>RULE</em></dt>
+<dd>
+<p>Optional</p>
+<p>Rule of style to produce legend graphic for, if applicable. In the case that a style has multiple rules but no specific rule is selected, then the map server is obligated to produce a graphic that is representative of all of the rules of the style.</p>
+</dd>
+<dt><em>SCALE</em></dt>
+<dd>
+<p>Optional</p>
+<p>In the case that a RULE is not specified for a style, this parameter may assist the server in selecting a more appropriate representative graphic by eliminating internal rules that are out-of-scope. This value is a standardized scale denominator, defined in Section 10.2. Specifying the scale will also make the symbolizers using Unit Of Measure resize according to the specified scale.</p>
+</dd>
+<dt><em>SLD</em></dt>
+<dd>
+<p>Optional</p>
+<p>This parameter specifies a reference to an external SLD document. It works in the same way as the SLD= parameter of the WMS GetMap operation.</p>
+</dd>
+<dt><em>SLD_BODY</em></dt>
+<dd>
+<p>Optional</p>
+<p>This parameter allows an SLD document to be included directly in an HTTP-GET request. It works in the same way as the SLD_BODY= parameter of the WMS GetMap operation.</p>
+</dd>
+<dt><em>FORMAT</em></dt>
+<dd>
+<p>Required</p>
+<p>This gives the MIME type of the file format in which to return the legend graphic. Allowed values are the same as for the FORMAT= parameter of the WMS GetMap request.</p>
+</dd>
+<dt><em>WIDTH</em></dt>
+<dd>
+<p>Optional</p>
+<p>This gives a hint for the width of the returned graphic in pixels. Vector-graphics can use this value as a hint for the level of detail to include.</p>
+</dd>
+<dt><em>HEIGHT</em></dt>
+<dd>
+<p>Optional</p>
+<p>This gives a hint for the height of the returned graphic in pixels.</p>
+</dd>
+<dt><em>EXCEPTIONS</em></dt>
+<dd>
+<p>Optional</p>
+<p>This gives the MIME type of the format in which to return exceptions. Allowed values are the same as for the EXCEPTIONS= parameter of the WMS GetMap request.</p>
+</dd>
+<dt><em>LANGUAGE</em></dt>
+<dd>
+<p>Optional</p>
+<p>Allows setting labels language for style titles and rules titles; needs a correctly localized SLD to work properly; if labels are not available in the requested language, the default text will be used; look at <a href="../../../styling/sld/language/">i18N in SLD</a> for further details.</p>
+</dd>
+</dl>
 <h2 id="get_legend_graphic_options">Controlling legend appearance with LEGEND_OPTIONS</h2>
 <p>GeoServer allows finer control over the legend appearance via the vendor parameter <code>LEGEND_OPTIONS</code>. The general format of <code>LEGEND_OPTIONS</code> is the same as <code>FORMAT_OPTIONS</code>, that is:</p>
 <div class="language-text highlight"><pre><span></span><code>...&amp;LEGEND_OPTIONS=key1:v1;key2:v2;...;keyn:vn

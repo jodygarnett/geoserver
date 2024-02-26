@@ -2195,60 +2195,52 @@
 <h2 id="configuring-an-oracle-datastore">Configuring an Oracle datastore</h2>
 <p><img alt="" src="../images/oracleconfigure.png" />
 <em>Configuring an Oracle datastore</em></p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Option</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td><code>host</code></td>
-<td>The Oracle server host name or IP address.</td>
-</tr>
-<tr>
-<td><code>port</code></td>
-<td>The port on which the Oracle server is accepting connections (often this is port 1521).</td>
-</tr>
-<tr>
-<td><code>database</code></td>
-<td>The name of the database to connect to. By default this is interpreted as a SID name. To connect to a Service, prefix the name with a <code>/</code>.</td>
-</tr>
-<tr>
-<td><code>schema</code></td>
-<td>The database schema to access tables from. Setting this value greatly increases the speed at which the data store displays its publishable tables and views, so it is advisable to set this.</td>
-</tr>
-<tr>
-<td><code>user</code></td>
-<td>The name of the user to use when connecting to the database.</td>
-</tr>
-<tr>
-<td><code>password</code></td>
-<td>The password to use when connecting to the database. Leave blank for no password.</td>
-</tr>
-<tr>
-<td><code>max connections</code> <code>min connections</code> <code>fetch size</code> <code>Connection timeout</code> <code>validate connections</code></td>
-<td>Connection pool configuration parameters. See <a href="../connection-pooling/">Database Connection Pooling</a> for details.</td>
-</tr>
-<tr>
-<td><code>Loose bbox</code></td>
-<td>Controls how bounding box filters are made against geometries in the database. See the <a href="./#oracle_loose_bbox">Using loose bounding box</a> section below.</td>
-</tr>
-<tr>
-<td><code>Metadata bbox</code></td>
-<td>Flag controlling the use of MDSYS.USER_SDO_GEOM_METADATA or MDSYS.ALL_SDO_GEOM_METADATA table for bounding box calculations, this brings a better performance if the views access is fast and the bounds are configured right in the tables default is false</td>
-</tr>
-<tr>
-<td><code>Get remarks</code></td>
-<td>Boolean flag specifies whether REMARKS metadata will be returned.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Option</strong></dt>
+<dd>
+<p><strong>Description</strong></p>
+</dd>
+<dt><code>host</code></dt>
+<dd>
+<p>The Oracle server host name or IP address.</p>
+</dd>
+<dt><code>port</code></dt>
+<dd>
+<p>The port on which the Oracle server is accepting connections (often this is port 1521).</p>
+</dd>
+<dt><code>database</code></dt>
+<dd>
+<p>The name of the database to connect to. By default this is interpreted as a SID name. To connect to a Service, prefix the name with a <code>/</code>.</p>
+</dd>
+<dt><code>schema</code></dt>
+<dd>
+<p>The database schema to access tables from. Setting this value greatly increases the speed at which the data store displays its publishable tables and views, so it is advisable to set this.</p>
+</dd>
+<dt><code>user</code></dt>
+<dd>
+<p>The name of the user to use when connecting to the database.</p>
+</dd>
+<dt><code>password</code></dt>
+<dd>
+<p>The password to use when connecting to the database. Leave blank for no password.</p>
+</dd>
+<dt><code>max connections``min connections``fetch size``Connection timeout``validate connections</code></dt>
+<dd>
+<p>Connection pool configuration parameters. See <a href="../connection-pooling/">Database Connection Pooling</a> for details.</p>
+</dd>
+<dt><code>Loose bbox</code></dt>
+<dd>
+<p>Controls how bounding box filters are made against geometries in the database. See the <a href="./#oracle_loose_bbox">Using loose bounding box</a> section below.</p>
+</dd>
+<dt><code>Metadata bbox</code></dt>
+<dd>
+<p>Flag controlling the use of MDSYS.USER_SDO_GEOM_METADATA or MDSYS.ALL_SDO_GEOM_METADATA table for bounding box calculations, this brings a better performance if the views access is fast and the bounds are configured right in the tables default is false</p>
+</dd>
+<dt><code>Get remarks</code></dt>
+<dd>
+<p>Boolean flag specifies whether REMARKS metadata will be returned.</p>
+</dd>
+</dl>
 <h2 id="connecting-to-an-oracle-cluster">Connecting to an Oracle cluster</h2>
 <p>In order to connect to an Oracle RAC one can use an almost full JDBC url as the <code>database</code>, provided it starts with <code>(</code> it will be used verbatim and options "host" and "port" will be ignored. Here is an example "database" value used to connect to an Oracle RAC:</p>
 <div class="language-text highlight"><pre><span></span><code>(DESCRIPTION=(LOAD_BALANCE=on)(ADDRESS=(PROTOCOL=TCP)(HOST=host1) (PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=host2) (PORT=1521))(CONNECT_DATA=(SERVICE_NAME=service)))

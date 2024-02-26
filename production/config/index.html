@@ -1927,36 +1927,28 @@
 <h2 id="set-a-service-strategy">Set a service strategy</h2>
 <p>A service strategy is the method in which output is served to the client. This is a balance between proper form (being absolutely sure of reporting errors with the proper OGC codes, etc.) and speed (serving output as quickly as possible). This is a decision to be made based on the function that GeoServer is providing. You can configure the service strategy by modifying the <strong><code>web.xml</code></strong> file of your GeoServer instance.</p>
 <p>The possible strategies are:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Strategy</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td><code>SPEED</code></td>
-<td>Serves output right away. This is the fastest strategy, but proper OGC errors are usually omitted.</td>
-</tr>
-<tr>
-<td><code>BUFFER</code></td>
-<td>Stores the whole result in memory, and then serves it after the output is complete. This ensures proper OGC error reporting, but delays the response quite a bit and can exhaust memory if the response is large.</td>
-</tr>
-<tr>
-<td><code>FILE</code></td>
-<td>Similar to <code>BUFFER</code>, but stores the whole result in a file instead of in memory. Slower than <code>BUFFER</code>, but ensures there won't be memory issues.</td>
-</tr>
-<tr>
-<td><code>PARTIAL-BUFFER</code></td>
-<td>A balance between <code>BUFFER</code> and <code>SPEED</code>, this strategy tries to buffer in memory a few KB of response, then serves the full output.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Strategy</strong></dt>
+<dd>
+<p><strong>Description</strong></p>
+</dd>
+<dt><code>SPEED</code></dt>
+<dd>
+<p>Serves output right away. This is the fastest strategy, but proper OGC errors are usually omitted.</p>
+</dd>
+<dt><code>BUFFER</code></dt>
+<dd>
+<p>Stores the whole result in memory, and then serves it after the output is complete. This ensures proper OGC error reporting, but delays the response quite a bit and can exhaust memory if the response is large.</p>
+</dd>
+<dt><code>FILE</code></dt>
+<dd>
+<p>Similar to <code>BUFFER</code>, but stores the whole result in a file instead of in memory. Slower than <code>BUFFER</code>, but ensures there won't be memory issues.</p>
+</dd>
+<dt><code>PARTIAL-BUFFER</code></dt>
+<dd>
+<p>A balance between <code>BUFFER</code> and <code>SPEED</code>, this strategy tries to buffer in memory a few KB of response, then serves the full output.</p>
+</dd>
+</dl>
 <h2 id="personalize-your-server">Personalize your server</h2>
 <p>This isn't a performance consideration, but it is just as important. In order to make GeoServer as useful as possible, you should customize the server's metadata to your organization. It may be tempting to skip some of the configuration steps, and leave in the same keywords and abstract as the sample, but this will only confuse potential users.</p>
 <p>Suggestions:</p>

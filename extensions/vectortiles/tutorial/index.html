@@ -3152,32 +3152,28 @@
 <ul>
 <li>MVT is the preferred format for production.</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th>Format</th>
-<th>MIME</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://github.com/mapbox/vector-tile-spec">MapBox Vector (MVT)</a></td>
-<td><code>application/vnd.mapbox-vector-tile</code></td>
-<td><strong>Recommended Format</strong> This is an efficient binary format that is widely supported by almost all Vector Tile applications.</td>
-</tr>
-<tr>
-<td><a href="http://geojson.org/">GeoJSON</a></td>
-<td><code>application/json;type=geojson</code></td>
-<td>This is a human readable JSON format. Although many geo-spatial applications support GeoJSON datasets, few Vector Tile applications support tiles in this format. Supported by Open Layers 3.</td>
-</tr>
-<tr>
-<td><a href="https://github.com/mbostock/topojson/wiki">TopoJSON</a></td>
-<td><code>application/json;type=topojson</code></td>
-<td>This is a very complex, but somewhat human readable JSON format that is good for polygon coverages. It is not a widely supported and very few Vector Tile applications support it. Supported by Open Layers 3.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Format</dt>
+<dd>
+<p>MIME</p>
+<p>Description</p>
+</dd>
+<dt><a href="https://github.com/mapbox/vector-tile-spec">MapBox Vector (MVT)</a></dt>
+<dd>
+<p><code>application/vnd.mapbox-vector-tile</code></p>
+<p><strong>Recommended Format</strong> This is an efficient binary format that is widely supported by almost all Vector Tile applications.</p>
+</dd>
+<dt><a href="http://geojson.org/">GeoJSON</a></dt>
+<dd>
+<p><code>application/json;type=geojson</code></p>
+<p>This is a human readable JSON format. Although many geo-spatial applications support GeoJSON datasets, few Vector Tile applications support tiles in this format. Supported by Open Layers 3.</p>
+</dd>
+<dt><a href="https://github.com/mbostock/topojson/wiki">TopoJSON</a></dt>
+<dd>
+<p><code>application/json;type=topojson</code></p>
+<p>This is a very complex, but somewhat human readable JSON format that is good for polygon coverages. It is not a widely supported and very few Vector Tile applications support it. Supported by Open Layers 3.</p>
+</dd>
+</dl>
 <h2 id="publish-vector-tiles-in-geowebcache">Publish vector tiles in GeoWebCache</h2>
 <p>We'll be publishing our vector tiles through GeoWebCache and publishing the layer in a custom OpenLayers application.</p>
 <p>For this tutorial, we'll be using the layer <code>opengeo:countries</code> to show off the capabilities, though with slight modifications, any layer will do.</p>

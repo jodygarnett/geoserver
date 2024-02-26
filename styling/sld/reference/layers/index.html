@@ -2373,81 +2373,63 @@
 <h2 id="namedlayer">NamedLayer</h2>
 <p>A <strong>NamedLayer</strong> specifies an existing layer to be styled, and the styling to apply to it. The styling may be any combination of catalog styles and explicitly-defined styles. If no style is specified, the default style for the layer is used.</p>
 <p>The <code>&lt;NamedLayer&gt;</code> element contains the following elements:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Tag</strong></td>
-<td><strong>Required?</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td><code>&lt;Name&gt;</code></td>
-<td>Yes</td>
-<td>The name of the layer to be styled. (Ignored in catalog styles.)</td>
-</tr>
-<tr>
-<td><code>&lt;Description&gt;</code></td>
-<td>No</td>
-<td>The description for the layer.</td>
-</tr>
-<tr>
-<td><code>&lt;NamedStyle&gt;</code></td>
-<td>0..N</td>
-<td>The name of a catalog style to apply to the layer.</td>
-</tr>
-<tr>
-<td><code>&lt;UserStyle&gt;</code></td>
-<td>0..N</td>
-<td>The definition of a style to apply to the layer. See <a href="../styles/">Styles</a></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Tag</strong></dt>
+<dd>
+<p><strong>Required?</strong></p>
+<p><strong>Description</strong></p>
+</dd>
+<dt><code>&lt;Name&gt;</code></dt>
+<dd>
+<p>Yes</p>
+<p>The name of the layer to be styled. (Ignored in catalog styles.)</p>
+</dd>
+<dt><code>&lt;Description&gt;</code></dt>
+<dd>
+<p>No</p>
+<p>The description for the layer.</p>
+</dd>
+<dt><code>&lt;NamedStyle&gt;</code></dt>
+<dd>
+<p>0..N</p>
+<p>The name of a catalog style to apply to the layer.</p>
+</dd>
+<dt><code>&lt;UserStyle&gt;</code></dt>
+<dd>
+<p>0..N</p>
+<p>The definition of a style to apply to the layer. See <a href="../styles/">Styles</a></p>
+</dd>
+</dl>
 <h2 id="userlayer">UserLayer</h2>
 <p>A <strong>UserLayer</strong> defines a new layer to be styled, and the styling to apply to it. The data for the layer is provided directly in the layer definition using the <code>&lt;InlineFeature&gt;</code> element. Since the layer is not known to the server, the styling must be explicitly specified as well.</p>
 <p>The <code>&lt;UserLayer&gt;</code> element contains the following elements:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Tag</strong></td>
-<td><strong>Required?</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td><code>&lt;Name&gt;</code></td>
-<td>No</td>
-<td>The name for the layer being defined</td>
-</tr>
-<tr>
-<td><code>&lt;Description&gt;</code></td>
-<td>No</td>
-<td>The description for the layer</td>
-</tr>
-<tr>
-<td><code>&lt;InlineFeature&gt;</code></td>
-<td>No</td>
-<td>One or more feature collections providing the layer data, specified using GML.</td>
-</tr>
-<tr>
-<td><code>&lt;UserStyle&gt;</code></td>
-<td>1..N</td>
-<td>The definition of the style(s) to use for the layer. See <a href="../styles/">Styles</a></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Tag</strong></dt>
+<dd>
+<p><strong>Required?</strong></p>
+<p><strong>Description</strong></p>
+</dd>
+<dt><code>&lt;Name&gt;</code></dt>
+<dd>
+<p>No</p>
+<p>The name for the layer being defined</p>
+</dd>
+<dt><code>&lt;Description&gt;</code></dt>
+<dd>
+<p>No</p>
+<p>The description for the layer</p>
+</dd>
+<dt><code>&lt;InlineFeature&gt;</code></dt>
+<dd>
+<p>No</p>
+<p>One or more feature collections providing the layer data, specified using GML.</p>
+</dd>
+<dt><code>&lt;UserStyle&gt;</code></dt>
+<dd>
+<p>1..N</p>
+<p>The definition of the style(s) to use for the layer. See <a href="../styles/">Styles</a></p>
+</dd>
+</dl>
 <p>A common use is to define a geometry to be rendered to indicate an Area Of Interest.</p>
 <h2 id="sld_reference_inlinefeature">InlineFeature</h2>
 <p>An <strong>InlineFeature</strong> element contains data defining a layer to be styled. The element contains one or more <code>&lt;FeatureCollection&gt;</code> elements defining the data. Each Feature Collection can contain any number of <code>&lt;featureMember&gt;</code> elements, each containing a feature specified using GML markup. The features can contain any type of geometry (point, line or polygon, and collections of these). They may also contain scalar-valued attributes, which can be useful for labelling.</p>

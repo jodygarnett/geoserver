@@ -2492,122 +2492,94 @@
 <p>A <code>coverage store</code> contains raster format spatial data.</p>
 <h2 id="workspaceswscoveragestoresformat"><code>/workspaces/&lt;ws&gt;/coveragestores[.&lt;format&gt;]</code></h2>
 <p>Controls all coverage stores in a given workspace.</p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Action</th>
-<th>Status code</th>
-<th>Formats</th>
-<th>Default Format</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>List all coverage stores in workspace <code>ws</code></td>
-<td>200</td>
-<td>HTML, XML, JSON</td>
-<td>HTML</td>
-</tr>
-<tr>
-<td>POST</td>
-<td>Create a new coverage store</td>
-<td>201 with <code>Location</code> header</td>
-<td>XML, JSON</td>
-<td></td>
-</tr>
-<tr>
-<td>PUT</td>
-<td></td>
-<td>405</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td></td>
-<td>405</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Action</p>
+<p>Status code</p>
+<p>Formats</p>
+<p>Default Format</p>
+</dd>
+<dt>GET</dt>
+<dd>
+<p>List all coverage stores in workspace <code>ws</code></p>
+<p>200</p>
+<p>HTML, XML, JSON</p>
+<p>HTML</p>
+</dd>
+<dt>POST</dt>
+<dd>
+<p>Create a new coverage store</p>
+<p>201 with <code>Location</code> header</p>
+<p>XML, JSON</p>
+</dd>
+</dl>
+<p>PUT</p>
+<blockquote>
+<p>405</p>
+</blockquote>
+<p>DELETE</p>
+<blockquote>
+<p>405</p>
+</blockquote>
 <h2 id="workspaceswscoveragestorescsformat"><code>/workspaces/&lt;ws&gt;/coveragestores/&lt;cs&gt;[.&lt;format&gt;]</code></h2>
 <p>Controls a particular coverage store in a given workspace.</p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Action</th>
-<th>Status code</th>
-<th>Formats</th>
-<th>Default Format</th>
-<th>Parameters</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>Return coverage store <code>cs</code></td>
-<td>200</td>
-<td>HTML, XML, JSON</td>
-<td>HTML</td>
-<td><a href="./#rest_api_coveragestores_quietOnNotFound">quietOnNotFound</a></td>
-</tr>
-<tr>
-<td>POST</td>
-<td></td>
-<td>405</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>PUT</td>
-<td>Modify coverage store <code>cs</code></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td>Delete coverage store <code>cs</code></td>
-<td></td>
-<td></td>
-<td></td>
-<td><a href="./#rest_api_coveragestores_recurse">recurse</a>, <a href="./#rest_api_coveragestores_purge">purge</a></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Action</p>
+<p>Status code</p>
+<p>Formats</p>
+<p>Default Format</p>
+<p>Parameters</p>
+</dd>
+<dt>GET</dt>
+<dd>
+<p>Return coverage store <code>cs</code></p>
+<p>200</p>
+<p>HTML, XML, JSON</p>
+<p>HTML</p>
+<p><a href="./#rest_api_coveragestores_quietOnNotFound">quietOnNotFound</a></p>
+</dd>
+</dl>
+<p>POST</p>
+<blockquote>
+<p>405</p>
+</blockquote>
+<dl>
+<dt>PUT</dt>
+<dd>
+<p>Modify coverage store <code>cs</code></p>
+</dd>
+<dt>DELETE</dt>
+<dd>
+<p>Delete coverage store <code>cs</code></p>
+<p><a href="./#rest_api_coveragestores_recurse">recurse</a>, <a href="./#rest_api_coveragestores_purge">purge</a></p>
+</dd>
+</dl>
 <h3 id="exceptions">Exceptions</h3>
-<table>
-<thead>
-<tr>
-<th>Exception</th>
-<th>Status code</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET for a coverage store that does not exist</td>
-<td>404</td>
-</tr>
-<tr>
-<td>PUT that changes name of coverage store</td>
-<td>403</td>
-</tr>
-<tr>
-<td>PUT that changes workspace of coverage store</td>
-<td>403</td>
-</tr>
-<tr>
-<td>DELETE against a coverage store that contains configured coverage</td>
-<td>403</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Exception</dt>
+<dd>
+<p>Status code</p>
+</dd>
+<dt>GET for a coverage store that does not exist</dt>
+<dd>
+<p>404</p>
+</dd>
+<dt>PUT that changes name of coverage store</dt>
+<dd>
+<p>403</p>
+</dd>
+<dt>PUT that changes workspace of coverage store</dt>
+<dd>
+<p>403</p>
+</dd>
+<dt>DELETE against a coverage store that contains configured coverage</dt>
+<dd>
+<p>403</p>
+</dd>
+</dl>
 <h3 id="parameters">Parameters</h3>
 <h4 id="rest_api_coveragestores_recurse"><code>recurse</code></h4>
 <p>The <code>recurse</code> parameter recursively deletes all layers referenced by the coverage store. Allowed values for this parameter are "true" or "false". The default value is "false".</p>
@@ -2622,99 +2594,77 @@
 <p>The <code>quietOnNotFound</code> parameter avoids to log an Exception when the coverage store is not present. Note that 404 status code will be returned anyway.</p>
 <h2 id="workspaceswscoveragestorescsfileextension"><code>/workspaces/&lt;ws&gt;/coveragestores/&lt;cs&gt;/file[.&lt;extension&gt;]</code></h2>
 <p>This end point allows a file containing spatial data to be added (via a POST or PUT) into an existing coverage store, or will create a new coverage store if it doesn't already exist. In case of coverage stores containing multiple coverages (e.g., mosaic of NetCDF files) all the coverages will be configured unless <code>configure=false</code> is specified as a parameter.</p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Action</th>
-<th>Status code</th>
-<th>Formats</th>
-<th>Default Format</th>
-<th>Parameters</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td><em>Deprecated</em>. Get the underlying files for the coverage store as a zip file with MIME type <code>application/zip</code>.</td>
-<td>200</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>POST</td>
-<td>If the coverage store is a simple one (e.g. GeoTiff) it will return a 405, if the coverage store is a structured one (e.g., mosaic) it will harvest the specified files into it, which in turn will integrate the files into the store. Harvest meaning is store dependent, for mosaic the new files will be added as new granules of the mosaic, and existing files will get their attribute updated, other stores might have a different behavior.</td>
-<td>405 if the coverage store is a simple one, 200 if structured and the harvest operation succeeded</td>
-<td></td>
-<td></td>
-<td><a href="./#rest_api_coveragestores_recalculate">recalculate</a>, <a href="./#rest_api_coveragestores_filename">filename</a></td>
-</tr>
-<tr>
-<td>PUT</td>
-<td>Creates or overwrites the files for coverage store <code>cs</code></td>
-<td>200</td>
-<td><a href="./#rest_api_coveragestores_file_put">See note below</a></td>
-<td></td>
-<td><a href="./#rest_api_coveragestores_configure">configure</a>, <a href="./#rest_api_coveragestores_coveragename">coverageName</a></td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td></td>
-<td>405</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Action</p>
+<p>Status code</p>
+<p>Formats</p>
+<p>Default Format</p>
+<p>Parameters</p>
+</dd>
+<dt>GET</dt>
+<dd>
+<p><em>Deprecated</em>. Get the underlying files for the coverage store as a zip file with MIME type <code>application/zip</code>.</p>
+<p>200</p>
+</dd>
+<dt>POST</dt>
+<dd>
+<p>If the coverage store is a simple one (e.g. GeoTiff) it will return a 405, if the coverage store is a structured one (e.g., mosaic) it will harvest the specified files into it, which in turn will integrate the files into the store. Harvest meaning is store dependent, for mosaic the new files will be added as new granules of the mosaic, and existing files will get their attribute updated, other stores might have a different behavior.</p>
+<p>405 if the coverage store is a simple one, 200 if structured and the harvest operation succeeded</p>
+<p><a href="./#rest_api_coveragestores_recalculate">recalculate</a>, <a href="./#rest_api_coveragestores_filename">filename</a></p>
+</dd>
+<dt>PUT</dt>
+<dd>
+<p>Creates or overwrites the files for coverage store <code>cs</code></p>
+<p>200</p>
+<p><a href="./#rest_api_coveragestores_file_put">See note below</a></p>
+<p><a href="./#rest_api_coveragestores_configure">configure</a>, <a href="./#rest_api_coveragestores_coveragename">coverageName</a></p>
+</dd>
+</dl>
+<p>DELETE</p>
+<blockquote>
+<p>405</p>
+</blockquote>
 <h3 id="rest_api_coveragestores_file_put">coveragestores file PUT</h3>
 <p>A file can be PUT to a coverage store as a standalone or zipped archive file. Standalone files are only suitable for coverage stores that work with a single file such as GeoTIFF store. Coverage stores that work with multiple files, such as the ImageMosaic store, must be sent as a zip archive.</p>
 <p>When uploading a standalone file, set the <code>Content-type</code> appropriately based on the file type. If you are loading a zip archive, set the <code>Content-type</code> to <code>application/zip</code>.</p>
 <h3 id="exceptions_1">Exceptions</h3>
-<table>
-<thead>
-<tr>
-<th>Exception</th>
-<th>Status code</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET for a data store that does not exist</td>
-<td>404</td>
-</tr>
-<tr>
-<td>GET for a data store that is not file based</td>
-<td>404</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Exception</dt>
+<dd>
+<p>Status code</p>
+</dd>
+<dt>GET for a data store that does not exist</dt>
+<dd>
+<p>404</p>
+</dd>
+<dt>GET for a data store that is not file based</dt>
+<dd>
+<p>404</p>
+</dd>
+</dl>
 <h3 id="parameters_1">Parameters</h3>
 <h4 id="extension"><code>extension</code></h4>
 <p>The <code>extension</code> parameter specifies the type of coverage store. The following extensions are supported:</p>
-<table>
-<thead>
-<tr>
-<th>Extension</th>
-<th>Coverage store</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>geotiff</td>
-<td>GeoTIFF</td>
-</tr>
-<tr>
-<td>worldimage</td>
-<td>Georeferenced image (JPEG, PNG, TIFF)</td>
-</tr>
-<tr>
-<td>imagemosaic</td>
-<td>Image mosaic</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Extension</dt>
+<dd>
+<p>Coverage store</p>
+</dd>
+<dt>geotiff</dt>
+<dd>
+<p>GeoTIFF</p>
+</dd>
+<dt>worldimage</dt>
+<dd>
+<p>Georeferenced image (JPEG, PNG, TIFF)</p>
+</dd>
+<dt>imagemosaic</dt>
+<dd>
+<p>Image mosaic</p>
+</dd>
+</dl>
 <h4 id="rest_api_coveragestores_configure"><code>configure</code></h4>
 <p>The <code>configure</code> parameter controls how the coverage store is configured upon file upload. It can take one of the three values:</p>
 <ul>

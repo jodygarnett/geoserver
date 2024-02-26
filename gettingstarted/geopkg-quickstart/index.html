@@ -1951,38 +1951,20 @@
 </li>
 <li>
 <p>You will be prompted to enter a workspace <strong>Name</strong> and <strong>Namespace URI</strong>.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>
-<ul>
-<li>Field</li>
-<li>Value</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>Name:</li>
-<li><code>tutorial</code></li>
-</ul>
-</li>
-<li>
-<ul>
-<li>Namespace URI</li>
-<li><code>http://localhost:8080/geoserver/tutorial</code></li>
-</ul>
-</li>
-</ul>
+<dl>
+<dt>Field</dt>
+<dd>
+<p>Value</p>
+</dd>
+<dt>Name:</dt>
+<dd>
+<p><code>tutorial</code></p>
+</dd>
+<dt>Namespace URI</dt>
+<dd>
+<p><code>http://localhost:8080/geoserver/tutorial</code></p>
+</dd>
+</dl>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>A workspace name is an identifier describing your project. It must not exceed ten characters or contain spaces.</p>
@@ -2023,44 +2005,24 @@
 </li>
 <li>
 <p>Begin by configuring the <strong>Basic Store Info</strong>.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>
-<ul>
-<li>Field</li>
-<li>Value</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>workspace</li>
-<li><code>tutorial</code></li>
-</ul>
-</li>
-<li>
-<ul>
-<li>Data Source Name</li>
-<li><code>NaturalEarth</code></li>
-</ul>
-</li>
-<li>
-<ul>
-<li>Description</li>
-<li><code>GeoPackage of NaturalEarth data</code></li>
-</ul>
-</li>
-</ul>
+<dl>
+<dt>Field</dt>
+<dd>
+<p>Value</p>
+</dd>
+<dt>workspace</dt>
+<dd>
+<p><code>tutorial</code></p>
+</dd>
+<dt>Data Source Name</dt>
+<dd>
+<p><code>NaturalEarth</code></p>
+</dd>
+<dt>Description</dt>
+<dd>
+<p><code>GeoPackage of NaturalEarth data</code></p>
+</dd>
+</dl>
 <p>This information is internal to GeoServer and is not used as part of the web service protocols. We recommend keeping the <strong>Data Source Name</strong> simple as they will be used to form folders in the data directory (so keep any operating system restrictions on character use in mind).</p>
 <p><img alt="" src="images/basic.png" />
 <em>Basic Store info</em></p>
@@ -2075,38 +2037,20 @@
 </li>
 <li>
 <p>The <strong>Connection Parameters</strong> for our geopackage are:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>
-<ul>
-<li>Field</li>
-<li>Value</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>Database</li>
-<li><code>file:data/ne/natural_earth.gpkg</code></li>
-</ul>
-</li>
-<li>
-<ul>
-<li>Read only</li>
-<li>checked</li>
-</ul>
-</li>
-</ul>
+<dl>
+<dt>Field</dt>
+<dd>
+<p>Value</p>
+</dd>
+<dt>Database</dt>
+<dd>
+<p><code>file:data/ne/natural_earth.gpkg</code></p>
+</dd>
+<dt>Read only</dt>
+<dd>
+<p>checked</p>
+</dd>
+</dl>
 <p>The use of <strong>read_only</strong> above indicates that we will not be writing to this GeoPackage, allowing GeoServer to avoid managing write locks when accessing this content for greater performance.</p>
 <p><img alt="" src="images/connection.png" />
 <em>Connection Parameters</em></p>
@@ -2144,88 +2088,48 @@
 </li>
 <li>
 <p>Locate <strong>Basic Resource Info</strong> and define the layer:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>
-<ul>
-<li>Field</li>
-<li>Value</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>Name</li>
-<li><code>countries</code></li>
-</ul>
-</li>
-<li>
-<ul>
-<li>Title</li>
-<li><code>Countries</code></li>
-</ul>
-</li>
-<li>
-<ul>
-<li>Abstract</li>
-<li><code>Sovereign states</code></li>
-</ul>
-</li>
-</ul>
+<dl>
+<dt>Field</dt>
+<dd>
+<p>Value</p>
+</dd>
+<dt>Name</dt>
+<dd>
+<p><code>countries</code></p>
+</dd>
+<dt>Title</dt>
+<dd>
+<p><code>Countries</code></p>
+</dd>
+<dt>Abstract</dt>
+<dd>
+<p><code>Sovereign states</code></p>
+</dd>
+</dl>
 <p>The naming of a layer is important, and while GeoServer does not offer restrictions many of the individual protocols will only work with very simple names.</p>
 <p><img alt="" src="images/layer_basic.png" />
 <em>Basic Resource Info</em></p>
 </li>
 <li>
 <p>Double check the <strong>Coordiante Reference Systems</strong> information is correct.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>
-<ul>
-<li>Field</li>
-<li>Value</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>Native SRS</li>
-<li><code>EPSG:4326</code></li>
-</ul>
-</li>
-<li>
-<ul>
-<li>Declaired SRS</li>
-<li><code>EPSG:4326</code></li>
-</ul>
-</li>
-<li>
-<ul>
-<li>SRS Handling</li>
-<li><code>Force declared</code></li>
-</ul>
-</li>
-</ul>
+<dl>
+<dt>Field</dt>
+<dd>
+<p>Value</p>
+</dd>
+<dt>Native SRS</dt>
+<dd>
+<p><code>EPSG:4326</code></p>
+</dd>
+<dt>Declaired SRS</dt>
+<dd>
+<p><code>EPSG:4326</code></p>
+</dd>
+<dt>SRS Handling</dt>
+<dd>
+<p><code>Force declared</code></p>
+</dd>
+</dl>
 <p><img alt="" src="images/layer_crs.png" />
 <em>Coordinate Reference Systems</em></p>
 </li>

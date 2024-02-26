@@ -2405,57 +2405,48 @@
 <p>The <code>env</code> function can be used in an SLD anywhere an OGC expression is allowed. For example, it can be used in <code>CSSParameter</code> elements, in size and offset elements, and in rule filter expressions. It is also accepted in some places where full expressions are not allowed, such as in the <code>Mark/WellKnownName</code> element.</p>
 <h2 id="predefined-variables">Predefined Variables</h2>
 <p>GeoServer has predefined variables which provide information about specific properties of the request output. These are useful when SLD parameters need to depend on output dimensions. The predefined variables are:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Name</strong></td>
-<td><strong>Type</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td><code>wms_bbox</code></td>
-<td><code>ReferencedEnvelope</code></td>
-<td>the georeferenced extent of the request output</td>
-</tr>
-<tr>
-<td><code>wms_crs</code></td>
-<td><code>CoordinateReferenceSystem</code></td>
-<td>the definition of the output coordinate reference system</td>
-</tr>
-<tr>
-<td><code>wms_srs</code></td>
-<td><code>String</code></td>
-<td>the code for the output coordinate reference system</td>
-</tr>
-<tr>
-<td><code>wms_width</code></td>
-<td><code>Integer</code></td>
-<td>the width (in pixels) of the output image</td>
-</tr>
-<tr>
-<td><code>wms_height</code></td>
-<td><code>Integer</code></td>
-<td>the height (in pixels) of the output image</td>
-</tr>
-<tr>
-<td><code>wms_scale_denominator</code></td>
-<td><code>Integer</code></td>
-<td>the denominator of the output map scale</td>
-</tr>
-<tr>
-<td><code>kmlOutputMode</code></td>
-<td>Either <code>vector</code> or empty</td>
-<td>this variable gets set to <code>vector</code> when the kml generator is writing out vector features as placemarks, as opposed to ground overlays</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Name</strong></dt>
+<dd>
+<p><strong>Type</strong></p>
+<p><strong>Description</strong></p>
+</dd>
+<dt><code>wms_bbox</code></dt>
+<dd>
+<p><code>ReferencedEnvelope</code></p>
+<p>the georeferenced extent of the request output</p>
+</dd>
+<dt><code>wms_crs</code></dt>
+<dd>
+<p><code>CoordinateReferenceSystem</code></p>
+<p>the definition of the output coordinate reference system</p>
+</dd>
+<dt><code>wms_srs</code></dt>
+<dd>
+<p><code>String</code></p>
+<p>the code for the output coordinate reference system</p>
+</dd>
+<dt><code>wms_width</code></dt>
+<dd>
+<p><code>Integer</code></p>
+<p>the width (in pixels) of the output image</p>
+</dd>
+<dt><code>wms_height</code></dt>
+<dd>
+<p><code>Integer</code></p>
+<p>the height (in pixels) of the output image</p>
+</dd>
+<dt><code>wms_scale_denominator</code></dt>
+<dd>
+<p><code>Integer</code></p>
+<p>the denominator of the output map scale</p>
+</dd>
+<dt><code>kmlOutputMode</code></dt>
+<dd>
+<p>Either <code>vector</code> or empty</p>
+<p>this variable gets set to <code>vector</code> when the kml generator is writing out vector features as placemarks, as opposed to ground overlays</p>
+</dd>
+</dl>
 <h2 id="example">Example</h2>
 <p>The following SLD symbolizer has been parameterized in three places, with default values provided in each case:</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;PointSymbolizer&gt;</span>

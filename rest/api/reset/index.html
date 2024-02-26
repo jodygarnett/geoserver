@@ -2173,47 +2173,35 @@
 <h1 id="resource-reset">Resource reset</h1>
 <p>Resets all store, raster, and schema caches. This operation is used to force GeoServer to drop all caches and store connections and reconnect to each of them the next time they are needed by a request. This is useful in case the stores themselves cache some information about the data structures they manage that may have changed in the meantime.</p>
 <h2 id="reset"><code>/reset</code></h2>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Action</th>
-<th>Status code</th>
-<th>Formats</th>
-<th>Default Format</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td></td>
-<td>405</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>POST</td>
-<td>Reset all store, raster, and schema caches</td>
-<td>200</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>PUT</td>
-<td>Reset all store, raster, and schema caches</td>
-<td>200</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td></td>
-<td>405</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Action</p>
+<p>Status code</p>
+<p>Formats</p>
+<p>Default Format</p>
+</dd>
+</dl>
+<p>GET</p>
+<blockquote>
+<p>405</p>
+</blockquote>
+<dl>
+<dt>POST</dt>
+<dd>
+<p>Reset all store, raster, and schema caches</p>
+<p>200</p>
+</dd>
+<dt>PUT</dt>
+<dd>
+<p>Reset all store, raster, and schema caches</p>
+<p>200</p>
+</dd>
+</dl>
+<p>DELETE</p>
+<blockquote>
+<p>405</p>
+</blockquote>
 
 
 

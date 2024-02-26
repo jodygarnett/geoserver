@@ -1958,48 +1958,20 @@
 <p><img alt="" src="../img/preview_list.png" />
 <em>Layer Preview Page</em></p>
 <p>Each layer row consists of a type, name, title, and available formats for viewing.</p>
-<table>
-<thead>
-<tr>
-<th>Icon</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><img alt="image" src="../img/raster_icon.png" /></td>
-<td>Raster (grid)</td>
-</tr>
-<tr>
-<td><img alt="image" src="../img/polygon_icon.png" /></td>
-<td>Polygon</td>
-</tr>
-<tr>
-<td><img alt="image" src="../img/line_string_icon.png" /></td>
-<td>Line</td>
-</tr>
-<tr>
-<td><img alt="image" src="../img/point_icon.png" /></td>
-<td>Point</td>
-</tr>
-<tr>
-<td><img alt="image" src="../img/vector.png" /></td>
-<td>Other Geometry</td>
-</tr>
-<tr>
-<td><img alt="image" src="../img/layers.png" /></td>
-<td>Layer Group</td>
-</tr>
-<tr>
-<td><img alt="image" src="../img/map.png" /></td>
-<td>Cascading WMS</td>
-</tr>
-<tr>
-<td><img alt="image" src="../img/error.png" /></td>
-<td>Unknown/Other</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Icon</dt>
+<dd>
+<p>Description</p>
+</dd>
+</dl>
+<p><img alt="image" src="img/raster_icon.png%0ARaster%20(grid)" /></p>
+<p><img alt="image" src="img/polygon_icon.png%0APolygon" /></p>
+<p><img alt="image" src="img/line_string_icon.png%0ALine" /></p>
+<p><img alt="image" src="img/point_icon.png%0APoint" /></p>
+<p><img alt="image" src="img/vector.png%0AOther%20Geometry" /></p>
+<p><img alt="image" src="img/layers.png%0ALayer%20Group" /></p>
+<p><img alt="image" src="img/map.png%0ACascading%20WMS" /></p>
+<p><img alt="image" src="img/error.png%0AUnknown/Other" /></p>
 <p>Name refers to the Workspace and Layer Name of a layer, while Title refers to the brief description configured in the <a href="../layers/#data_webadmin_layers_edit_data">Edit Layer: Data</a> panel. In the following example, nurc refers to the Workspace, Arc_Sample refers to the Layer Name and "A sample ArcGrid field" is specified on the Edit Later Data panel.</p>
 <p><img alt="" src="../img/preview_row.png" />
 <em>Single Layer preview row</em></p>
@@ -2007,77 +1979,69 @@
 <p>The Layer Preview page supports a variety of output formats for further use or data sharing. You can preview all three layer types in the common OpenLayers and KML formats. Similarly, using the "All formats" menu you can preview all layer types in seven additional output formats---AtomPub, GIF, GeoRss, JPEG, KML (compressed), PDF, PNG, SVG, and TIFF. Only Vector layers provide the WFS output previews, including the common GML as well as the CSV, GML3, GeoJSON and shapefile formats. The table below provides a brief description of all supported output formats, organized by output type (image, text, or data).</p>
 <h3 id="image-outputs">Image Outputs</h3>
 <p>All image outputs can be initiated from a WMS getMap request on either a raster, vector or coverage data. WMS are methods that allows visual display of spatial data without necessarily providing access to the features that comprise those data.</p>
-<table>
-<thead>
-<tr>
-<th>Format</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>KML</td>
-<td>KML (Keyhole Markup Language) is an XML-based language schema for expressing geographic data in an Earth browser, such as Google Earth or Google Maps. KML uses a tag-based structure with nested elements and attributes. For GeoServer, KML files are distributed as a KMZ, which is a zipped KML file.</td>
-</tr>
-<tr>
-<td>JPEG</td>
-<td>WMS output in raster format. The JPEG is a compressed graphic file format, with some loss of quality due to compression. It is best used for photos and not recommended for exact reproduction of data.</td>
-</tr>
-<tr>
-<td>GIF</td>
-<td>WMS output in raster format. The GIF (Graphics Interchange Format) is a bitmap image format best suited for sharp-edged line art with a limited number of colors. This takes advantage of the format's lossless compression, which favors flat areas of uniform color with well defined edges (in contrast to JPEG, which favors smooth gradients and softer images). GIF is limited to an 8-bit palette, or 256 colors.</td>
-</tr>
-<tr>
-<td>SVG</td>
-<td>WMS output in vector format. SVG (Scalable Vector Graphics) is a language for modeling two-dimensional graphics in XML. It differs from the GIF and JPEG in that it uses graphic objects rather than individual points.</td>
-</tr>
-<tr>
-<td>TIFF</td>
-<td>WMS output in raster format. TIFF (Tagged Image File Format) is a flexible, adaptable format for handling multiple data in a single file. GeoTIFF contains geographic data embedded as tags within the TIFF file.</td>
-</tr>
-<tr>
-<td>PNG</td>
-<td>WMS output in raster format. The PNG (Portable Network Graphics) file format was created as the free, open-source successor to the GIF. The PNG file format supports truecolor (16 million colors) while the GIF supports only 256 colors. The PNG file excels when the image has large, uniformly coloured areas.</td>
-</tr>
-<tr>
-<td>OpenLayers</td>
-<td>WMS GetMap request outputs a simple OpenLayers preview window. <a href="http://openlayers.org/">OpenLayers</a> is an open source JavaScript library for displaying map data in web browsers. The OpenLayers output has some advanced filters that are not available when using a standalone version of OpenLayers. Further, the generated preview contains a header with easy configuration options for display. Version 3 of the OpenLayers library is used by default. Version 3 can be disabled with the <code>ENABLE_OL3</code> (true/false) format option or system property. For older browsers not supported by OpenLayers 3, version 2 is used regardless of the setting.</td>
-</tr>
-<tr>
-<td>PDF</td>
-<td>A PDF (Portable Document Format) encapsulates a complete description of a fixed-layout 2D document,including any text, fonts, raster images, and 2D vector graphics.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Format</dt>
+<dd>
+<p>Description</p>
+</dd>
+<dt>KML</dt>
+<dd>
+<p>KML (Keyhole Markup Language) is an XML-based language schema for expressing geographic data in an Earth browser, such as Google Earth or Google Maps. KML uses a tag-based structure with nested elements and attributes. For GeoServer, KML files are distributed as a KMZ, which is a zipped KML file.</p>
+</dd>
+<dt>JPEG</dt>
+<dd>
+<p>WMS output in raster format. The JPEG is a compressed graphic file format, with some loss of quality due to compression. It is best used for photos and not recommended for exact reproduction of data.</p>
+</dd>
+<dt>GIF</dt>
+<dd>
+<p>WMS output in raster format. The GIF (Graphics Interchange Format) is a bitmap image format best suited for sharp-edged line art with a limited number of colors. This takes advantage of the format's lossless compression, which favors flat areas of uniform color with well defined edges (in contrast to JPEG, which favors smooth gradients and softer images). GIF is limited to an 8-bit palette, or 256 colors.</p>
+</dd>
+<dt>SVG</dt>
+<dd>
+<p>WMS output in vector format. SVG (Scalable Vector Graphics) is a language for modeling two-dimensional graphics in XML. It differs from the GIF and JPEG in that it uses graphic objects rather than individual points.</p>
+</dd>
+<dt>TIFF</dt>
+<dd>
+<p>WMS output in raster format. TIFF (Tagged Image File Format) is a flexible, adaptable format for handling multiple data in a single file. GeoTIFF contains geographic data embedded as tags within the TIFF file.</p>
+</dd>
+<dt>PNG</dt>
+<dd>
+<p>WMS output in raster format. The PNG (Portable Network Graphics) file format was created as the free, open-source successor to the GIF. The PNG file format supports truecolor (16 million colors) while the GIF supports only 256 colors. The PNG file excels when the image has large, uniformly coloured areas.</p>
+</dd>
+<dt>OpenLayers</dt>
+<dd>
+<p>WMS GetMap request outputs a simple OpenLayers preview window. <a href="http://openlayers.org/">OpenLayers</a> is an open source JavaScript library for displaying map data in web browsers. The OpenLayers output has some advanced filters that are not available when using a standalone version of OpenLayers. Further, the generated preview contains a header with easy configuration options for display. Version 3 of the OpenLayers library is used by default. Version 3 can be disabled with the <code>ENABLE_OL3</code> (true/false) format option or system property. For older browsers not supported by OpenLayers 3, version 2 is used regardless of the setting.</p>
+</dd>
+<dt>PDF</dt>
+<dd>
+<p>A PDF (Portable Document Format) encapsulates a complete description of a fixed-layout 2D document,including any text, fonts, raster images, and 2D vector graphics.</p>
+</dd>
+</dl>
 <p><img alt="" src="../img/preview_openlayers.png" />
 <em>Sample Image Output-an OpenLayers preview of nurc:Pk50095</em></p>
 <h3 id="text-outputs">Text Outputs</h3>
-<table>
-<thead>
-<tr>
-<th>Format</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>AtomPub</code></td>
-<td>WMS output of spatial data in XML format. The AtomPub (Atom Publishing Protocol) is an application-level protocol for publishing and editing Web Resources using HTTP and XML. Developed as a replacement for the RSS family of standards for content syndication, Atom allows subscription of geo data.</td>
-</tr>
-<tr>
-<td><code>GeoRss</code></td>
-<td>WMS GetMap request output of vector data in XML format. RSS (Rich Site Summary) is an XML format for delivering regularly changing web content. <a href="https://www.ogc.org/standard/georss/">GeoRss</a> is a standard for encoding location as part of a RSS feed.supports Layers Preview produces a RSS 2.0 documents, with GeoRSS Simple geometries using Atom.</td>
-</tr>
-<tr>
-<td><code>GeoJSON</code></td>
-<td><a href="https://json.org/">JavaScript Object Notation</a> (JSON) is a lightweight data-interchange format based on the JavaScript programming language. This makes it an ideal interchange format for browser based applications since it can be parsed directly and easily in to javascript. <a href="https://geojson.org">GeoJSON</a> is a plain text output format that add geographic types to JSON (and is now a w3c standard).</td>
-</tr>
-<tr>
-<td><code>CSV</code></td>
-<td>WFS GetFeature output in comma-delimited text. CSV (Comma Separated Values) files are text files containing rows of data. Data values in each row are separated by commas. CSV files also contain a comma-separated header row explaining each row's value ordering. GeoServer's CSVs are fully streaming, with no limitation on the amount of data that can be outputted.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Format</dt>
+<dd>
+<p>Description</p>
+</dd>
+<dt><code>AtomPub</code></dt>
+<dd>
+<p>WMS output of spatial data in XML format. The AtomPub (Atom Publishing Protocol) is an application-level protocol for publishing and editing Web Resources using HTTP and XML. Developed as a replacement for the RSS family of standards for content syndication, Atom allows subscription of geo data.</p>
+</dd>
+<dt><code>GeoRss</code></dt>
+<dd>
+<p>WMS GetMap request output of vector data in XML format. RSS (Rich Site Summary) is an XML format for delivering regularly changing web content. <a href="https://www.ogc.org/standard/georss/">GeoRss</a> is a standard for encoding location as part of a RSS feed.supports Layers Preview produces a RSS 2.0 documents, with GeoRSS Simple geometries using Atom.</p>
+</dd>
+<dt><code>GeoJSON</code></dt>
+<dd>
+<p><a href="https://json.org/">JavaScript Object Notation</a> (JSON) is a lightweight data-interchange format based on the JavaScript programming language. This makes it an ideal interchange format for browser based applications since it can be parsed directly and easily in to javascript. <a href="https://geojson.org">GeoJSON</a> is a plain text output format that add geographic types to JSON (and is now a w3c standard).</p>
+</dd>
+<dt><code>CSV</code></dt>
+<dd>
+<p>WFS GetFeature output in comma-delimited text. CSV (Comma Separated Values) files are text files containing rows of data. Data values in each row are separated by commas. CSV files also contain a comma-separated header row explaining each row's value ordering. GeoServer's CSVs are fully streaming, with no limitation on the amount of data that can be outputted.</p>
+</dd>
+</dl>
 <p>A fragment of a simple GeoRSS for <code>nurc:Pk50095</code> using Atom:</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w"> </span><span class="nt">&lt;rss</span><span class="w"> </span><span class="na">xmlns:atom=</span><span class="s">&quot;http://www.w3.org/2005/Atom&quot;</span>
@@ -2099,24 +2063,20 @@
 </span></code></pre></div>
 <h3 id="data-outputs">Data Outputs</h3>
 <p>All data outputs are initiated from a WFS GetFeature request on vector data.</p>
-<table>
-<thead>
-<tr>
-<th>Format</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>GML2</code> <code>GML3</code></td>
-<td>GML (Geography Markup Language) is the XML grammar defined by the <a href="http://en.wikipedia.org/wiki/Open_Geospatial_Consortium">Open Geospatial Consortium</a> (OGC) to express geographical features. GML serves as a modeling language for geographic systems as well as an open interchange format for geographic data sharing. GML2 is the default (Common) output format, while GML3 is available from the "All Formats" menu.</td>
-</tr>
-<tr>
-<td><code>Shapefile</code></td>
-<td>The ESRI Shapefile, or simply a shapefile, is the most commonly used format for exchanging GIS data. GeoServer outputs shapefiles in zip format, with a directory of .cst, .dbf, .prg, .shp, and .shx files.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Format</dt>
+<dd>
+<p>Description</p>
+</dd>
+<dt><code>GML2</code> <code>GML3</code></dt>
+<dd>
+<p>GML (Geography Markup Language) is the XML grammar defined by the <a href="http://en.wikipedia.org/wiki/Open_Geospatial_Consortium">Open Geospatial Consortium</a> (OGC) to express geographical features. GML serves as a modeling language for geographic systems as well as an open interchange format for geographic data sharing. GML2 is the default (Common) output format, while GML3 is available from the "All Formats" menu.</p>
+</dd>
+<dt><code>Shapefile</code></dt>
+<dd>
+<p>The ESRI Shapefile, or simply a shapefile, is the most commonly used format for exchanging GIS data. GeoServer outputs shapefiles in zip format, with a directory of .cst, .dbf, .prg, .shp, and .shx files.</p>
+</dd>
+</dl>
 
 
 

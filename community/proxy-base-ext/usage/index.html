@@ -3904,32 +3904,24 @@
 <h2 id="proxy-base-extension-rules">Proxy Base Extension Rules</h2>
 <p>Proxy Base Extension rules allow the matching of the URLs for alteration based on their path elements and followed by the specification a replacement for the entire URL.</p>
 <p>A Proxy Base Extension rule is defined by three mandatory attributes:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Attribute</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td><code>Position</code></td>
-<td>The priority of the rule, the lower the number the higher the priority. Rules are applied on a first match basis.</td>
-</tr>
-<tr>
-<td><code>Matcher</code></td>
-<td>The pattern used to match against paths. Regular expressions can be used to achieve matches.</td>
-</tr>
-<tr>
-<td><code>Transformer</code></td>
-<td>The transformation that will be applied to the entire URL. Literal expressions can be used to achieve transformations based on matching header values.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Attribute</strong></dt>
+<dd>
+<p><strong>Description</strong></p>
+</dd>
+<dt><code>Position</code></dt>
+<dd>
+<p>The priority of the rule, the lower the number the higher the priority. Rules are applied on a first match basis.</p>
+</dd>
+<dt><code>Matcher</code></dt>
+<dd>
+<p>The pattern used to match against paths. Regular expressions can be used to achieve matches.</p>
+</dd>
+<dt><code>Transformer</code></dt>
+<dd>
+<p>The transformation that will be applied to the entire URL. Literal expressions can be used to achieve transformations based on matching header values.</p>
+</dd>
+</dl>
 <p>The following example shows a rule that will match any URL contains the substring <code>wfs</code> in the path (the example matcher value is <code>.*/wfs</code>) and replace the full URL (the example transformer value is <code>https://wfs.eastern.com/${myCollection}/${yourFeature}</code>) with <code>https://wfs.eastern.com/ABigCollection/AnImportantFeature</code> if the <code>myCollection</code> header is set to <code>ABigCollection</code> and the <code>yourFeature</code> header is set to <code>AnImportantFeature</code>. Note that if one or more of the headers referenced in the transformer by literal expressions are not present the rule will not be applied.</p>
 <p>Example of a Proxy Base Extension rule:</p>
 <p><img alt="" src="../images/proxy_base_ext_rule_editor2.png" />
@@ -3944,52 +3936,44 @@
 <p>Rules can be managed and tested with simulated headers in the rules management UI. Besides the basic operations like add, remove and update is also possible to activate or deactivate rules. A deactivated rule will be ignored by this module.</p>
 <p><img alt="" src="../images/proxy_base_rule_config.png" />
 <em>Rules management UI</em></p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Attribute</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td><code>Position</code></td>
-<td>The priority of the rule, the lower the number the higher the priority. Rules are applied on a first match basis.</td>
-</tr>
-<tr>
-<td><code>Matcher</code></td>
-<td>The pattern used to match against paths. Regular expressions can be used to achieve matches.</td>
-</tr>
-<tr>
-<td><code>Transformer</code></td>
-<td>The transformation that will be applied to the entire URL. Literal expressions can be used to achieve transformations based on matching header values.</td>
-</tr>
-<tr>
-<td><code>Active</code></td>
-<td>When this box is checked, the rule will be applied.</td>
-</tr>
-<tr>
-<td><code>Edit</code></td>
-<td>Click to launch an editor for this specific rule.</td>
-</tr>
-<tr>
-<td><code>Input</code></td>
-<td>The input URL to be tested against the rules listed above.</td>
-</tr>
-<tr>
-<td><code>Headers</code></td>
-<td>If the rule to be tested has literal expressions, simulated headers for the test can be entered here in Properties File Format (equal sign separated, with each header on a new line).</td>
-</tr>
-<tr>
-<td><code>Output</code></td>
-<td>The result of applying the rules to the input URL will be displayed here after the <code>Test</code> button is clicked.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Attribute</strong></dt>
+<dd>
+<p><strong>Description</strong></p>
+</dd>
+<dt><code>Position</code></dt>
+<dd>
+<p>The priority of the rule, the lower the number the higher the priority. Rules are applied on a first match basis.</p>
+</dd>
+<dt><code>Matcher</code></dt>
+<dd>
+<p>The pattern used to match against paths. Regular expressions can be used to achieve matches.</p>
+</dd>
+<dt><code>Transformer</code></dt>
+<dd>
+<p>The transformation that will be applied to the entire URL. Literal expressions can be used to achieve transformations based on matching header values.</p>
+</dd>
+<dt><code>Active</code></dt>
+<dd>
+<p>When this box is checked, the rule will be applied.</p>
+</dd>
+<dt><code>Edit</code></dt>
+<dd>
+<p>Click to launch an editor for this specific rule.</p>
+</dd>
+<dt><code>Input</code></dt>
+<dd>
+<p>The input URL to be tested against the rules listed above.</p>
+</dd>
+<dt><code>Headers</code></dt>
+<dd>
+<p>If the rule to be tested has literal expressions, simulated headers for the test can be entered here in Properties File Format (equal sign separated, with each header on a new line).</p>
+</dd>
+<dt><code>Output</code></dt>
+<dd>
+<p>The result of applying the rules to the input URL will be displayed here after the <code>Test</code> button is clicked.</p>
+</dd>
+</dl>
 <h2 id="rest-api">REST API</h2>
 <p>The rules can also be managed by means of a REST API found at <code>geoserver/rest/proxy-base-ext</code>. Documentation for it is available in <a href="https://docs.geoserver.org/latest/en/api/#1.0.0/proxy-base-ext.yaml">Swagger format</a></p>
 

@@ -2313,52 +2313,36 @@
 <p>This endpoint retrieves details on all loaded JARs.</p>
 <p>All the GeoServer manifest JARs are marked with the property <code>GeoServerModule</code> and classified by type, so you can use filtering capabilities to search for a set of manifests using regular expressions (see the <a href="./#rest_api_manifests_manifest">manifest</a> parameter) or a type category (see the <a href="./#rest_api_manifests_key">key</a> and <a href="./#rest_api_manifests_value">value</a> parameter).</p>
 <p>The available types are <code>core</code>, <code>extension</code>, or <code>community</code>. To filter modules by a particular type, append a request with <code>key=GeoServerModule&amp;value=&lt;type&gt;</code></p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Action</th>
-<th>Status Code</th>
-<th>Formats</th>
-<th>Default Format</th>
-<th>Parameters</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>List all manifests into the classpath</td>
-<td>200</td>
-<td>HTML, XML, JSON</td>
-<td>HTML</td>
-<td><a href="./#rest_api_manifests_manifest">manifest</a>, <a href="./#rest_api_manifests_key">key</a>, <a href="./#rest_api_manifests_value">value</a></td>
-</tr>
-<tr>
-<td>POST</td>
-<td></td>
-<td>405</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>PUT</td>
-<td></td>
-<td>405</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td></td>
-<td>405</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Action</p>
+<p>Status Code</p>
+<p>Formats</p>
+<p>Default Format</p>
+<p>Parameters</p>
+</dd>
+<dt>GET</dt>
+<dd>
+<p>List all manifests into the classpath</p>
+<p>200</p>
+<p>HTML, XML, JSON</p>
+<p>HTML</p>
+<p><a href="./#rest_api_manifests_manifest">manifest</a>, <a href="./#rest_api_manifests_key">key</a>, <a href="./#rest_api_manifests_value">value</a></p>
+</dd>
+</dl>
+<p>POST</p>
+<blockquote>
+<p>405</p>
+</blockquote>
+<p>PUT</p>
+<blockquote>
+<p>405</p>
+</blockquote>
+<p>DELETE</p>
+<blockquote>
+<p>405</p>
+</blockquote>
 <h3 id="usage">Usage</h3>
 <p>The model is very simple and is shared between the version and the resource requests to parse both requests.:</p>
 <div class="language-text highlight"><pre><span></span><code>&lt;about&gt;
@@ -2389,100 +2373,67 @@ versionAttributeInclusions=Project-Version:Version,Build-Timestamp,Git-Revision,
 <p>The <code>value</code> parameter is used to filter over resulting resource (manifest) properties value. It can be combined with the <code>key</code> parameter.</p>
 <h2 id="aboutversionformat"><code>/about/version[.&lt;format&gt;]</code></h2>
 <p>This endpoint shows only the details for the high-level components: GeoServer, GeoTools, and GeoWebCache.</p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Action</th>
-<th>Status Code</th>
-<th>Formats</th>
-<th>Default Format</th>
-<th>Parameters</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>List GeoServer, GeoWebCache and GeoTools manifests</td>
-<td>200</td>
-<td>HTML, XML, JSON</td>
-<td>HTML</td>
-<td><a href="./#rest_api_manifests_manifest">manifest</a>, <a href="./#rest_api_manifests_key">key</a>, <a href="./#rest_api_manifests_value">value</a></td>
-</tr>
-<tr>
-<td>POST</td>
-<td></td>
-<td>405</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>PUT</td>
-<td></td>
-<td>405</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td></td>
-<td>405</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Action</p>
+<p>Status Code</p>
+<p>Formats</p>
+<p>Default Format</p>
+<p>Parameters</p>
+</dd>
+<dt>GET</dt>
+<dd>
+<p>List GeoServer, GeoWebCache and GeoTools manifests</p>
+<p>200</p>
+<p>HTML, XML, JSON</p>
+<p>HTML</p>
+<p><a href="./#rest_api_manifests_manifest">manifest</a>, <a href="./#rest_api_manifests_key">key</a>, <a href="./#rest_api_manifests_value">value</a></p>
+</dd>
+</dl>
+<p>POST</p>
+<blockquote>
+<p>405</p>
+</blockquote>
+<p>PUT</p>
+<blockquote>
+<p>405</p>
+</blockquote>
+<p>DELETE</p>
+<blockquote>
+<p>405</p>
+</blockquote>
 <h2 id="aboutstatusformat"><code>/about/status[.&lt;format&gt;]</code></h2>
 <p>This endpoint shows the status details of all installed and configured modules.Status details always include human readable name, and module name. Optional details include version, availability, status message, and links to documentation.</p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Action</th>
-<th>Status Code</th>
-<th>Formats</th>
-<th>Default Format</th>
-<th>Parameters</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>List module statuses</td>
-<td>200</td>
-<td>HTML, XML, JSON</td>
-<td>HTML</td>
-<td></td>
-</tr>
-<tr>
-<td>POST</td>
-<td></td>
-<td>405</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>PUT</td>
-<td></td>
-<td>405</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td></td>
-<td>405</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Action</p>
+<p>Status Code</p>
+<p>Formats</p>
+<p>Default Format</p>
+<p>Parameters</p>
+</dd>
+<dt>GET</dt>
+<dd>
+<p>List module statuses</p>
+<p>200</p>
+<p>HTML, XML, JSON</p>
+<p>HTML</p>
+</dd>
+</dl>
+<p>POST</p>
+<blockquote>
+<p>405</p>
+</blockquote>
+<p>PUT</p>
+<blockquote>
+<p>405</p>
+</blockquote>
+<p>DELETE</p>
+<blockquote>
+<p>405</p>
+</blockquote>
 
 
 

@@ -4005,20 +4005,12 @@
 <h2 id="community_solr_configure_store">Configuring a SOLR data store</h2>
 <p><img alt="" src="../images/solr_configuration.png" />
 <em>Configuring a SOLR data store</em></p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>solr_url</code></td>
-<td>Provide a link to the SOLR server that provides the documents</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><code>solr_url</code></dt>
+<dd>
+<p>Provide a link to the SOLR server that provides the documents</p>
+</dd>
+</dl>
 <p>Once the parameters are entered and confirmed, GeoServer will contact the SOLR server and fetch a list of layer names and fill the layer chooser page accordingly:</p>
 <p><img alt="" src="../images/solr_layerlist.png" />
 <em>List of layers available in the SOLR server</em></p>
@@ -4026,44 +4018,36 @@
 <p>Once the layer name is chosen, the usual layer configuration panel will appear, with a pop-up showing in a table the fields available:</p>
 <p><img alt="" src="../images/solr_fieldlist.png" />
 <em>The layer field list configuration</em></p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Is empty</code></td>
-<td>Read only fields, checked if the field has no values in the documents associated to this layer</td>
-</tr>
-<tr>
-<td><code>Use</code></td>
-<td>Used to select the fields that will make up this layer features</td>
-</tr>
-<tr>
-<td><code>Name</code></td>
-<td>Name of the field</td>
-</tr>
-<tr>
-<td><code>Type</code></td>
-<td>Type of the field, as derived from the SOLR schema. For geometry types, you have the option to provide a more specific data type</td>
-</tr>
-<tr>
-<td><code>SRID</code></td>
-<td>Native spatial reference ID of the geometries</td>
-</tr>
-<tr>
-<td><code>Default geometry</code></td>
-<td>Indicates if the geometry field is the default one. Useful if the documents contain more than one geometry field, as SLDs and spatial filters will hit the default geometry field unless otherwise specified</td>
-</tr>
-<tr>
-<td><code>Identifier</code></td>
-<td>Check if the field can be used as the feature identifier</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><code>Is empty</code></dt>
+<dd>
+<p>Read only fields, checked if the field has no values in the documents associated to this layer</p>
+</dd>
+<dt><code>Use</code></dt>
+<dd>
+<p>Used to select the fields that will make up this layer features</p>
+</dd>
+<dt><code>Name</code></dt>
+<dd>
+<p>Name of the field</p>
+</dd>
+<dt><code>Type</code></dt>
+<dd>
+<p>Type of the field, as derived from the SOLR schema. For geometry types, you have the option to provide a more specific data type</p>
+</dd>
+<dt><code>SRID</code></dt>
+<dd>
+<p>Native spatial reference ID of the geometries</p>
+</dd>
+<dt><code>Default geometry</code></dt>
+<dd>
+<p>Indicates if the geometry field is the default one. Useful if the documents contain more than one geometry field, as SLDs and spatial filters will hit the default geometry field unless otherwise specified</p>
+</dd>
+<dt><code>Identifier</code></dt>
+<dd>
+<p>Check if the field can be used as the feature identifier</p>
+</dd>
+</dl>
 <p>By default the list will contain only the fields that have at least one non null value in the documents associated to the layer, but it is possible to get the full list by un-checking the "Hide field if empty" check-box:</p>
 <p><img alt="" src="../images/solr_fieldlist_all.png" />
 <em>Showing all fields available in SOLR</em></p>

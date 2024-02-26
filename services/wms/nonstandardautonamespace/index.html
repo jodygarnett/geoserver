@@ -2065,63 +2065,47 @@
 <p>in GeoServer 2.8.x the factor parameter in the AUTO namespace is ignored. The BBOX parameter to GetMap must therefore be specified in metres.</p>
 </div>
 <p>The WMS standard provide projections with IDs in the range 42001 to 42005.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ID</td>
-<td>Projection</td>
-</tr>
-<tr>
-<td>42001</td>
-<td>Universal Transverse Mercator</td>
-</tr>
-<tr>
-<td>42002</td>
-<td>Transverse Mercator</td>
-</tr>
-<tr>
-<td>42003</td>
-<td>Orthographic</td>
-</tr>
-<tr>
-<td>42004</td>
-<td>Equirectangular</td>
-</tr>
-<tr>
-<td>42005</td>
-<td>Mollweide (not supported in GeoServer 2.8.x)</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>ID</dt>
+<dd>
+<p>Projection</p>
+</dd>
+<dt>42001</dt>
+<dd>
+<p>Universal Transverse Mercator</p>
+</dd>
+<dt>42002</dt>
+<dd>
+<p>Transverse Mercator</p>
+</dd>
+<dt>42003</dt>
+<dd>
+<p>Orthographic</p>
+</dd>
+<dt>42004</dt>
+<dd>
+<p>Equirectangular</p>
+</dd>
+<dt>42005</dt>
+<dd>
+<p>Mollweide (not supported in GeoServer 2.8.x)</p>
+</dd>
+</dl>
 <p>GeoServer also supports some non-standard coordinate reference systems. These are</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ID</td>
-<td>Projection</td>
-</tr>
-<tr>
-<td>97001</td>
-<td>Gnomonic</td>
-</tr>
-<tr>
-<td>97002</td>
-<td>Stereographic</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>ID</dt>
+<dd>
+<p>Projection</p>
+</dd>
+<dt>97001</dt>
+<dd>
+<p>Gnomonic</p>
+</dd>
+<dt>97002</dt>
+<dd>
+<p>Stereographic</p>
+</dd>
+</dl>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>the auto stereographic projection uses a sphere. It does this by setting the semi minor axis to the same value as the semi major axis.</p>

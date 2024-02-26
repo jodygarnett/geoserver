@@ -2208,40 +2208,32 @@
 
 <h1 id="wps-operations">WPS Operations</h1>
 <p>The WPS 1.0.0 standard defines three operations for the discovery and execution of geospatial processes, and GeoServer extends these with two further vendor or pseudo-operations. The operations are:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Operation</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td><a href="#getcapabilities">GetCapabilities</a></td>
-<td>Retrieves details of the service offering, including service metadata and metadata describing the available processes</td>
-</tr>
-<tr>
-<td><a href="#describeprocess">DescribeProcess</a></td>
-<td>Retrieves a description of a WPS process available through the service</td>
-</tr>
-<tr>
-<td><a href="#execute">Execute</a></td>
-<td>A request to perform the process with specified input values and required output data items</td>
-</tr>
-<tr>
-<td><a href="#dismiss">Dismiss</a> (vendor extension)</td>
-<td>Used to cancel the execution of a process</td>
-</tr>
-<tr>
-<td><a href="#getexecutions">GetExecutions</a> (vendor extension)</td>
-<td>Retrieves a list of the current Execution Statuses</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Operation</strong></dt>
+<dd>
+<p><strong>Description</strong></p>
+</dd>
+<dt><a href="#getcapabilities">GetCapabilities</a></dt>
+<dd>
+<p>Retrieves details of the service offering, including service metadata and metadata describing the available processes</p>
+</dd>
+<dt><a href="#describeprocess">DescribeProcess</a></dt>
+<dd>
+<p>Retrieves a description of a WPS process available through the service</p>
+</dd>
+<dt><a href="#execute">Execute</a></dt>
+<dd>
+<p>A request to perform the process with specified input values and required output data items</p>
+</dd>
+<dt><a href="#dismiss">Dismiss</a> (vendor extension)</dt>
+<dd>
+<p>Used to cancel the execution of a process</p>
+</dd>
+<dt><a href="#getexecutions">GetExecutions</a> (vendor extension)</dt>
+<dd>
+<p>Retrieves a list of the current Execution Statuses</p>
+</dd>
+</dl>
 <h2 id="wps_getcaps">GetCapabilities</h2>
 <p>The <strong>GetCapabilities</strong> operation requests details of the service offering, including service metadata and metadata describing the available processes. The response is an XML document called the <strong>capabilities document</strong>.</p>
 <p>The required parameters, as in all OGC GetCapabilities requests, are <code>service=WPS</code>, <code>version=1.0.0</code> and <code>request=GetCapabilities</code>.</p>
@@ -2271,19 +2263,23 @@
   identifier=JTS:buffer
 </code></pre></div>
 <p>The response XML document contains the following information:</p>
-<p>+--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| <strong>Title</strong>          | "Buffers a geometry using a certain distance"                                                                                                 |
-+--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| <strong>Inputs</strong>         | <strong>geom</strong>: "The geometry to be buffered" <em>(geometry, mandatory)</em>                                                                               |
-|                    |                                                                                                                                                 |
-|                    | <strong>distance</strong>: "The distance (same unit of measure as the geometry)" <em>(double, mandatory)</em>                                                     |
-|                    |                                                                                                                                                 |
-|                    | <strong>quadrant segments</strong>: "Number of quadrant segments. Use &gt; 0 for round joins, 0 for flat joins, &lt; 0 for mitred joins" <em>(integer, optional)</em> |
-|                    |                                                                                                                                                 |
-|                    | <strong>capstyle</strong>: "The buffer cap style, round, flat, square" <em>(literal value, optional)</em>                                                         |
-+--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| <strong>Output formats</strong> | One of the GeoServer supported formats for Geometry encoding                                                                                    |
-+--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+</p>
+<dl>
+<dt><strong>Title</strong></dt>
+<dd>
+<p>"Buffers a geometry using a certain distance"</p>
+</dd>
+<dt><strong>Inputs</strong></dt>
+<dd>
+<p><strong>geom</strong>: "The geometry to be buffered" <em>(geometry, mandatory)</em></p>
+<p><strong>distance</strong>: "The distance (same unit of measure as the geometry)" <em>(double, mandatory)</em></p>
+<p><strong>quadrant segments</strong>: "Number of quadrant segments. Use &gt; 0 for round joins, 0 for flat joins, &lt; 0 for mitred joins" <em>(integer, optional)</em></p>
+<p><strong>capstyle</strong>: "The buffer cap style, round, flat, square" <em>(literal value, optional)</em></p>
+</dd>
+<dt><strong>Output formats</strong></dt>
+<dd>
+<p>One of the GeoServer supported formats for Geometry encoding</p>
+</dd>
+</dl>
 <p>In general, GeoServer processes use complex objects as inputs and objects, like geometries, feature collections and raster data.</p>
 <p>The formats available for input and output of each of those complex processes are commonly managed by Process Parameter IO classes, generic encoders/decoders that are attached to each process by the WPS machinery.</p>
 <p>In the core of GeoServer WPS, the following PPIOs are available:</p>

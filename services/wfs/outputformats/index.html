@@ -2033,47 +2033,43 @@
 <div class="language-text highlight"><pre><span></span><code>outputFormat=&lt;format&gt;
 </code></pre></div>
 <p>where <code>&lt;format&gt;</code> is one of the following options:</p>
-<table>
-<thead>
-<tr>
-<th>Format</th>
-<th>Syntax</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GML2</td>
-<td><code>outputFormat=GML2</code></td>
-<td>Default option for WFS 1.0.0</td>
-</tr>
-<tr>
-<td>GML3</td>
-<td><code>outputFormat=GML3</code></td>
-<td>Default option for WFS 1.1.0 and 2.0.0</td>
-</tr>
-<tr>
-<td>Shapefile</td>
-<td><code>outputFormat=shape-zip</code></td>
-<td>ZIP archive will be generated containing the shapefile (see <a href="./#wfs_outputformat_shapezip">Shapefile output</a> below).</td>
-</tr>
-<tr>
-<td>JSON</td>
-<td><code>outputFormat=application/json</code></td>
-<td>Returns a GeoJSON or a JSON output. Note <code>outputFormat=json</code> is only supported for getFeature (for backward compatibility).</td>
-</tr>
-<tr>
-<td>JSONP</td>
-<td><code>outputFormat=text/javascript</code></td>
-<td>Returns a <a href="http://en.wikipedia.org/wiki/JSONP">JSONP</a> in the form: <code>parseResponse(...json...)</code>. See <a href="../../wms/vendor/">WMS vendor parameters</a> to change the callback name. Note that this format is disabled by default (See <a href="../../wms/global/">Global variables affecting WMS</a>).</td>
-</tr>
-<tr>
-<td>CSV</td>
-<td><code>outputFormat=csv</code></td>
-<td>Returns a CSV (comma-separated values) file</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Format</dt>
+<dd>
+<p>Syntax</p>
+<p>Notes</p>
+</dd>
+<dt>GML2</dt>
+<dd>
+<p><code>outputFormat=GML2</code></p>
+<p>Default option for WFS 1.0.0</p>
+</dd>
+<dt>GML3</dt>
+<dd>
+<p><code>outputFormat=GML3</code></p>
+<p>Default option for WFS 1.1.0 and 2.0.0</p>
+</dd>
+<dt>Shapefile</dt>
+<dd>
+<p><code>outputFormat=shape-zip</code></p>
+<p>ZIP archive will be generated containing the shapefile (see <a href="./#wfs_outputformat_shapezip">Shapefile output</a> below).</p>
+</dd>
+<dt>JSON</dt>
+<dd>
+<p><code>outputFormat=application/json</code></p>
+<p>Returns a GeoJSON or a JSON output. Note <code>outputFormat=json</code> is only supported for getFeature (for backward compatibility).</p>
+</dd>
+<dt>JSONP</dt>
+<dd>
+<p><code>outputFormat=text/javascript</code></p>
+<p>Returns a <a href="http://en.wikipedia.org/wiki/JSONP">JSONP</a> in the form: <code>parseResponse(...json...)</code>. See <a href="../../wms/vendor/">WMS vendor parameters</a> to change the callback name. Note that this format is disabled by default (See <a href="../../wms/global/">Global variables affecting WMS</a>).</p>
+</dd>
+<dt>CSV</dt>
+<dd>
+<p><code>outputFormat=csv</code></p>
+<p>Returns a CSV (comma-separated values) file</p>
+</dd>
+</dl>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Some additional output formats (such as <a href="../../../extensions/excel/">Excel</a>) are available with the use of an extension. The full list of output formats supported by a particular GeoServer instance can be found by performing a WFS <a href="../reference/#wfs_getcap">GetCapabilities</a> request.</p>

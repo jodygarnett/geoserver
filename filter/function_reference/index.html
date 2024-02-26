@@ -1673,151 +1673,125 @@
 <p>The list of functions available on a GeoServer instance can be determined by browsing to <a href="http://localhost:8080/geoserver/wfs?request=GetCapabilities">http://localhost:8080/geoserver/wfs?request=GetCapabilities</a> and searching for <code>ogc:Function_Names</code> (WFS 1.0.0), <code>ogc:FunctionNames</code> (WFS 1.1.0), or <code>fes:Functions</code> (WFS 2.0.0) in the returned XML. If a function is described in the Capabilities document but is not in this reference, then it might mean that the function cannot be used for filtering, or that it is new and has not been documented. Ask for details on the user mailing list.</p>
 <p>Unless otherwise specified, none of the filter functions in this reference are understood natively by the data stores, and thus expressions using them will be evaluated in-memory.</p>
 <h2 id="function-argument-type-reference">Function argument type reference</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Type</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td>Double</td>
-<td>Floating point number, 8 bytes, IEEE 754. Ranges from 4.94065645841246544e-324d to 1.79769313486231570e+308d</td>
-</tr>
-<tr>
-<td>Float</td>
-<td>Floating point number, 4 bytes, IEEE 754. Ranges from 1.40129846432481707e-45 to 3.40282346638528860e+38. Smaller range and less accurate than Double.</td>
-</tr>
-<tr>
-<td>Integer</td>
-<td>Integer number, ranging from -2,147,483,648 to 2,147,483,647</td>
-</tr>
-<tr>
-<td>Long</td>
-<td>Integer number, ranging from -9,223,372,036,854,775,808 to +9,223,372,036,854,775,807</td>
-</tr>
-<tr>
-<td>Number</td>
-<td>A numeric value of any type</td>
-</tr>
-<tr>
-<td>Object</td>
-<td>A value of any type</td>
-</tr>
-<tr>
-<td>String</td>
-<td>A sequence of characters</td>
-</tr>
-<tr>
-<td>Timestamp</td>
-<td>Date and time information</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Type</strong></dt>
+<dd>
+<p><strong>Description</strong></p>
+</dd>
+<dt>Double</dt>
+<dd>
+<p>Floating point number, 8 bytes, IEEE 754. Ranges from 4.94065645841246544e-324d to 1.79769313486231570e+308d</p>
+</dd>
+<dt>Float</dt>
+<dd>
+<p>Floating point number, 4 bytes, IEEE 754. Ranges from 1.40129846432481707e-45 to 3.40282346638528860e+38. Smaller range and less accurate than Double.</p>
+</dd>
+<dt>Integer</dt>
+<dd>
+<p>Integer number, ranging from -2,147,483,648 to 2,147,483,647</p>
+</dd>
+<dt>Long</dt>
+<dd>
+<p>Integer number, ranging from -9,223,372,036,854,775,808 to +9,223,372,036,854,775,807</p>
+</dd>
+<dt>Number</dt>
+<dd>
+<p>A numeric value of any type</p>
+</dd>
+<dt>Object</dt>
+<dd>
+<p>A value of any type</p>
+</dd>
+<dt>String</dt>
+<dd>
+<p>A sequence of characters</p>
+</dd>
+<dt>Timestamp</dt>
+<dd>
+<p>Date and time information</p>
+</dd>
+</dl>
 <h2 id="comparison-functions">Comparison functions</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Name</strong></td>
-<td><strong>Arguments</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td>between</td>
-<td><code>num</code>:Number, <code>low</code>:Number, <code>high</code>:Number</td>
-<td>returns true if <code>low</code> &lt;= <code>num</code> &lt;= <code>high</code></td>
-</tr>
-<tr>
-<td>equalTo</td>
-<td><code>a</code>:Object, <code>b</code>:Object</td>
-<td>Can be used to compare for equality two numbers, two strings, two dates, and so on</td>
-</tr>
-<tr>
-<td>greaterEqualThan</td>
-<td><code>x</code>:Object, <code>y</code>:Object</td>
-<td>Returns true if <code>x</code> &gt;= <code>y</code>. Parameters can be either numbers or strings (in the second case lexicographic ordering is used)</td>
-</tr>
-<tr>
-<td>greaterThan</td>
-<td><code>x</code>:Object, <code>y</code>:Object</td>
-<td>Returns true if <code>x</code> &gt; <code>y</code>. Parameters can be either numbers or strings (in the second case lexicographic ordering is used)</td>
-</tr>
-<tr>
-<td>in2, in3, in4, in5, in6, in7, in8, in9, in10</td>
-<td><code>candidate</code>:Object, <code>v1</code>:Object, ..., <code>v9</code>:Object</td>
-<td>Returns true if <code>candidate</code> is equal to one of the <code>v1</code>, ..., <code>v9</code> values. Use the function name matching the number of arguments specified.</td>
-</tr>
-<tr>
-<td>in</td>
-<td><code>candidate</code>:Object, <code>v1</code>:Object, <code>v2</code>:Object, ...</td>
-<td>Works exactly the same as the in2, ..., in10 functions described above, but takes any number of values as input.</td>
-</tr>
-<tr>
-<td>isLike</td>
-<td><code>string</code>:String, <code>pattern</code>:String</td>
-<td>Returns true if the string matches the specified pattern. For the full syntax of the pattern specification see the <a href="http://java.sun.com/javase/6/docs/api/java/util/regex/Pattern.html">Java Pattern class javadocs</a></td>
-</tr>
-<tr>
-<td>isNull</td>
-<td><code>obj</code>:Object</td>
-<td>Returns true the passed parameter is <code>null</code>, false otherwise</td>
-</tr>
-<tr>
-<td>lessThan</td>
-<td><code>x</code>:Object, <code>y</code>:Object</td>
-<td>Returns true if <code>x</code> &lt; <code>y</code>. Parameters can be either numbers or strings (in the second case lexicographic ordering is used</td>
-</tr>
-<tr>
-<td>lessEqualThan</td>
-<td><code>x</code>:Object, <code>y</code>:Object</td>
-<td>Returns true if <code>x</code> &lt;= <code>y</code>. Parameters can be either numbers or strings (in the second case lexicographic ordering is used</td>
-</tr>
-<tr>
-<td>not</td>
-<td><code>bool</code>:Boolean</td>
-<td>Returns the negation of <code>bool</code></td>
-</tr>
-<tr>
-<td>notEqualTo</td>
-<td><code>x</code>:Object, <code>y</code>:Object</td>
-<td>Returns true if <code>x</code> and <code>y</code> are equal, false otherwise</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Name</strong></dt>
+<dd>
+<p><strong>Arguments</strong></p>
+<p><strong>Description</strong></p>
+</dd>
+<dt>between</dt>
+<dd>
+<p><code>num</code>:Number, <code>low</code>:Number, <code>high</code>:Number</p>
+<p>returns true if <code>low</code> &lt;= <code>num</code> &lt;= <code>high</code></p>
+</dd>
+<dt>equalTo</dt>
+<dd>
+<p><code>a</code>:Object, <code>b</code>:Object</p>
+<p>Can be used to compare for equality two numbers, two strings, two dates, and so on</p>
+</dd>
+<dt>greaterEqualThan</dt>
+<dd>
+<p><code>x</code>:Object, <code>y</code>:Object</p>
+<p>Returns true if <code>x</code> &gt;= <code>y</code>. Parameters can be either numbers or strings (in the second case lexicographic ordering is used)</p>
+</dd>
+<dt>greaterThan</dt>
+<dd>
+<p><code>x</code>:Object, <code>y</code>:Object</p>
+<p>Returns true if <code>x</code> &gt; <code>y</code>. Parameters can be either numbers or strings (in the second case lexicographic ordering is used)</p>
+</dd>
+<dt>in2, in3, in4, in5, in6, in7, in8, in9, in10</dt>
+<dd>
+<p><code>candidate</code>:Object, <code>v1</code>:Object, ..., <code>v9</code>:Object</p>
+<p>Returns true if <code>candidate</code> is equal to one of the <code>v1</code>, ..., <code>v9</code> values. Use the function name matching the number of arguments specified.</p>
+</dd>
+<dt>in</dt>
+<dd>
+<p><code>candidate</code>:Object, <code>v1</code>:Object, <code>v2</code>:Object, ...</p>
+<p>Works exactly the same as the in2, ..., in10 functions described above, but takes any number of values as input.</p>
+</dd>
+<dt>isLike</dt>
+<dd>
+<p><code>string</code>:String, <code>pattern</code>:String</p>
+<p>Returns true if the string matches the specified pattern. For the full syntax of the pattern specification see the <a href="http://java.sun.com/javase/6/docs/api/java/util/regex/Pattern.html">Java Pattern class javadocs</a></p>
+</dd>
+<dt>isNull</dt>
+<dd>
+<p><code>obj</code>:Object</p>
+<p>Returns true the passed parameter is <code>null</code>, false otherwise</p>
+</dd>
+<dt>lessThan</dt>
+<dd>
+<p><code>x</code>:Object, <code>y</code>:Object</p>
+<p>Returns true if <code>x</code> &lt; <code>y</code>. Parameters can be either numbers or strings (in the second case lexicographic ordering is used</p>
+</dd>
+<dt>lessEqualThan</dt>
+<dd>
+<p><code>x</code>:Object, <code>y</code>:Object</p>
+<p>Returns true if <code>x</code> &lt;= <code>y</code>. Parameters can be either numbers or strings (in the second case lexicographic ordering is used</p>
+</dd>
+<dt>not</dt>
+<dd>
+<p><code>bool</code>:Boolean</p>
+<p>Returns the negation of <code>bool</code></p>
+</dd>
+<dt>notEqualTo</dt>
+<dd>
+<p><code>x</code>:Object, <code>y</code>:Object</p>
+<p>Returns true if <code>x</code> and <code>y</code> are equal, false otherwise</p>
+</dd>
+</dl>
 <h2 id="control-functions">Control functions</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Name</strong></td>
-<td><strong>Arguments</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td>if_then_else</td>
-<td><code>condition</code>:Boolean, <code>x</code>:Object, <code>y</code>: Object</td>
-<td>Returns <code>x</code> if the condition is true, <code>y</code> otherwise</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Name</strong></dt>
+<dd>
+<p><strong>Arguments</strong></p>
+<p><strong>Description</strong></p>
+</dd>
+<dt>if_then_else</dt>
+<dd>
+<p><code>condition</code>:Boolean, <code>x</code>:Object, <code>y</code>: Object</p>
+<p>Returns <code>x</code> if the condition is true, <code>y</code> otherwise</p>
+</dd>
+</dl>
 <h2 id="environment-function">Environment function</h2>
 <p>This function returns the value of environment variables defined in various contexts. WMS GetMap automatically defines some variables <a href="../../styling/sld/extensions/substitution/">SLD rendering</a>, while others can be provided using the <code>env</code> request parameter. Example usage in e.g. a dynamic symbolizer:</p>
 <p><code>${env('size', 20)}</code></p>
@@ -1834,744 +1808,686 @@
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nt">&lt;/Graphic&gt;</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="nt">&lt;/PointSymbolizer&gt;</span>
 </span></code></pre></div>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Name</strong></td>
-<td><strong>Arguments</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td>env</td>
-<td><code>variable</code>:String</td>
-<td>Returns the value of the environment variable <code>variable</code>.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Name</strong></dt>
+<dd>
+<p><strong>Arguments</strong></p>
+<p><strong>Description</strong></p>
+</dd>
+<dt>env</dt>
+<dd>
+<p><code>variable</code>:String</p>
+<p>Returns the value of the environment variable <code>variable</code>.</p>
+</dd>
+</dl>
 <h2 id="feature-functions">Feature functions</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Name</strong></td>
-<td><strong>Arguments</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td>id</td>
-<td><code>feature</code>:Feature</td>
-<td>returns the identifier of the feature</td>
-</tr>
-<tr>
-<td>PropertyExists</td>
-<td><code>f</code>:Feature, <code>propertyName</code>:String</td>
-<td>Returns <code>true</code> if <code>f</code> has a property named <code>propertyName</code></td>
-</tr>
-<tr>
-<td>property</td>
-<td><code>f</code>:Feature, <code>propertyName</code>:String</td>
-<td>Returns the value of the property <code>propertyName</code>. Allows property names to be computed or specified by <a href="../../styling/sld/extensions/substitution/">Variable substitution in SLD</a>.</td>
-</tr>
-<tr>
-<td>mapGet</td>
-<td><code>f</code>:Feature, <code>map</code>:Map, <code>key</code>:String</td>
-<td>Get the value of the map <code>map</code> related to the specified <code>key</code>.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Name</strong></dt>
+<dd>
+<p><strong>Arguments</strong></p>
+<p><strong>Description</strong></p>
+</dd>
+<dt>id</dt>
+<dd>
+<p><code>feature</code>:Feature</p>
+<p>returns the identifier of the feature</p>
+</dd>
+<dt>PropertyExists</dt>
+<dd>
+<p><code>f</code>:Feature, <code>propertyName</code>:String</p>
+<p>Returns <code>true</code> if <code>f</code> has a property named <code>propertyName</code></p>
+</dd>
+<dt>property</dt>
+<dd>
+<p><code>f</code>:Feature, <code>propertyName</code>:String</p>
+<p>Returns the value of the property <code>propertyName</code>. Allows property names to be computed or specified by <a href="../../styling/sld/extensions/substitution/">Variable substitution in SLD</a>.</p>
+</dd>
+<dt>mapGet</dt>
+<dd>
+<p><code>f</code>:Feature, <code>map</code>:Map, <code>key</code>:String</p>
+<p>Get the value of the map <code>map</code> related to the specified <code>key</code>.</p>
+</dd>
+</dl>
 <h2 id="spatial-relationship-functions">Spatial Relationship functions</h2>
 <p>For more information about the precise meaning of the spatial relationships consult the <a href="http://www.opengeospatial.org/standards/sfs">OGC Simple Feature Specification for SQL</a></p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Name</strong></td>
-<td><strong>Arguments</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td>contains</td>
-<td><code>a</code>:Geometry, <code>b</code>:Geometry</td>
-<td>Returns true if the geometry <code>a</code> contains <code>b</code></td>
-</tr>
-<tr>
-<td>crosses</td>
-<td><code>a</code>:Geometry, <code>b</code>:Geometry</td>
-<td>Returns true if <code>a</code> crosses <code>b</code></td>
-</tr>
-<tr>
-<td>disjoint</td>
-<td><code>a</code>:Geometry, <code>b</code>:Geometry</td>
-<td>Returns true if the two geometries are disjoint, false otherwise</td>
-</tr>
-<tr>
-<td>equalsExact</td>
-<td><code>a</code>:Geometry, <code>b</code>:Geometry</td>
-<td>Returns true if the two geometries are exactly equal, same coordinates in the same order</td>
-</tr>
-<tr>
-<td>equalsExactTolerance</td>
-<td><code>a</code>:Geometry, <code>b</code>:Geometry, <code>tol</code>:Double</td>
-<td>Returns true if the two geometries are exactly equal, same coordinates in the same order, allowing for a <code>tol</code> distance in the corresponding points</td>
-</tr>
-<tr>
-<td>intersects</td>
-<td><code>a</code>:Geometry, <code>b</code>:Geometry</td>
-<td>Returns true if <code>a</code> intersects <code>b</code></td>
-</tr>
-<tr>
-<td>isWithinDistance</td>
-<td><code>a</code>: Geometry, <code>b</code>:Geometry, <code>distance</code>: Double</td>
-<td>Returns true if the distance between <code>a</code> and <code>b</code> is less than <code>distance</code> (measured as an euclidean distance)</td>
-</tr>
-<tr>
-<td>overlaps</td>
-<td><code>a</code>: Geometry, <code>b</code>:Geometry</td>
-<td>Returns true <code>a</code> overlaps with <code>b</code></td>
-</tr>
-<tr>
-<td>relate</td>
-<td><code>a</code>: Geometry, <code>b</code>:Geometry</td>
-<td>Returns the DE-9IM intersection matrix for <code>a</code> and <code>b</code></td>
-</tr>
-<tr>
-<td>relatePattern</td>
-<td><code>a</code>: Geometry, <code>b</code>:Geometry, <code>pattern</code>:String</td>
-<td>Returns true if the DE-9IM intersection matrix for <code>a</code> and <code>b</code> matches the specified pattern</td>
-</tr>
-<tr>
-<td>touches</td>
-<td><code>a</code>: Geometry, <code>b</code>: Geometry</td>
-<td>Returns true if <code>a</code> touches <code>b</code> according to the SQL simple feature specification rules</td>
-</tr>
-<tr>
-<td>within</td>
-<td><code>a</code>: Geometry, <code>b</code>:Geometry</td>
-<td>Returns true is fully contained inside <code>b</code></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Name</strong></dt>
+<dd>
+<p><strong>Arguments</strong></p>
+<p><strong>Description</strong></p>
+</dd>
+<dt>contains</dt>
+<dd>
+<p><code>a</code>:Geometry, <code>b</code>:Geometry</p>
+<p>Returns true if the geometry <code>a</code> contains <code>b</code></p>
+</dd>
+<dt>crosses</dt>
+<dd>
+<p><code>a</code>:Geometry, <code>b</code>:Geometry</p>
+<p>Returns true if <code>a</code> crosses <code>b</code></p>
+</dd>
+<dt>disjoint</dt>
+<dd>
+<p><code>a</code>:Geometry, <code>b</code>:Geometry</p>
+<p>Returns true if the two geometries are disjoint, false otherwise</p>
+</dd>
+<dt>equalsExact</dt>
+<dd>
+<p><code>a</code>:Geometry, <code>b</code>:Geometry</p>
+<p>Returns true if the two geometries are exactly equal, same coordinates in the same order</p>
+</dd>
+<dt>equalsExactTolerance</dt>
+<dd>
+<p><code>a</code>:Geometry, <code>b</code>:Geometry, <code>tol</code>:Double</p>
+<p>Returns true if the two geometries are exactly equal, same coordinates in the same order, allowing for a <code>tol</code> distance in the corresponding points</p>
+</dd>
+<dt>intersects</dt>
+<dd>
+<p><code>a</code>:Geometry, <code>b</code>:Geometry</p>
+<p>Returns true if <code>a</code> intersects <code>b</code></p>
+</dd>
+<dt>isWithinDistance</dt>
+<dd>
+<p><code>a</code>: Geometry, <code>b</code>:Geometry, <code>distance</code>: Double</p>
+<p>Returns true if the distance between <code>a</code> and <code>b</code> is less than <code>distance</code> (measured as an euclidean distance)</p>
+</dd>
+<dt>overlaps</dt>
+<dd>
+<p><code>a</code>: Geometry, <code>b</code>:Geometry</p>
+<p>Returns true <code>a</code> overlaps with <code>b</code></p>
+</dd>
+<dt>relate</dt>
+<dd>
+<p><code>a</code>: Geometry, <code>b</code>:Geometry</p>
+<p>Returns the DE-9IM intersection matrix for <code>a</code> and <code>b</code></p>
+</dd>
+<dt>relatePattern</dt>
+<dd>
+<p><code>a</code>: Geometry, <code>b</code>:Geometry, <code>pattern</code>:String</p>
+<p>Returns true if the DE-9IM intersection matrix for <code>a</code> and <code>b</code> matches the specified pattern</p>
+</dd>
+<dt>touches</dt>
+<dd>
+<p><code>a</code>: Geometry, <code>b</code>: Geometry</p>
+<p>Returns true if <code>a</code> touches <code>b</code> according to the SQL simple feature specification rules</p>
+</dd>
+<dt>within</dt>
+<dd>
+<p><code>a</code>: Geometry, <code>b</code>:Geometry</p>
+<p>Returns true is fully contained inside <code>b</code></p>
+</dd>
+</dl>
 <h2 id="geometric-functions">Geometric functions</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Name</strong></td>
-<td><strong>Arguments</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td>area</td>
-<td><code>geometry</code>:Geometry</td>
-<td>The area of the specified geometry. Works in a Cartesian plane, the result will be in the same unit of measure as the geometry coordinates (which also means the results won't make any sense for geographic data)</td>
-</tr>
-<tr>
-<td>boundary</td>
-<td><code>geometry</code>:Geometry</td>
-<td>Returns the boundary of a geometry</td>
-</tr>
-<tr>
-<td>boundaryDimension</td>
-<td><code>geometry</code>:Geometry</td>
-<td>Returns the number of dimensions of the geometry boundary</td>
-</tr>
-<tr>
-<td>buffer</td>
-<td><code>geometry</code>:Geometry, <code>distance</code>:Double</td>
-<td>Returns the buffered area around the geometry using the specified distance</td>
-</tr>
-<tr>
-<td>bufferWithSegments</td>
-<td><code>geometry</code>:Geometry, <code>distance</code>:Double, <code>segments</code>:Integer</td>
-<td>Returns the buffered area around the geometry using the specified distance and using the specified number of segments to represent a quadrant of a circle.</td>
-</tr>
-<tr>
-<td>centroid</td>
-<td><code>geometry</code>:Geometry</td>
-<td>Returns the centroid of the geometry. Can be often used as a label point for polygons, though there is no guarantee it will actually lie inside the geometry</td>
-</tr>
-<tr>
-<td>convexHull</td>
-<td><code>geometry</code>:Geometry</td>
-<td>Returns the convex hull of the specified geometry</td>
-</tr>
-<tr>
-<td>difference</td>
-<td><code>a</code>:Geometry, <code>b</code>:Geometry</td>
-<td>Returns all the points that sit in <code>a</code> but not in <code>b</code></td>
-</tr>
-<tr>
-<td>dimension</td>
-<td><code>a</code>:Geometry</td>
-<td>Returns the dimension of the specified geometry</td>
-</tr>
-<tr>
-<td>distance</td>
-<td><code>a</code>:Geometry, <code>b</code>:Geometry</td>
-<td>Returns the euclidean distance between the two geometries</td>
-</tr>
-<tr>
-<td>endAngle</td>
-<td><code>line</code>:LineString</td>
-<td>Returns the angle of the end segment of the linestring</td>
-</tr>
-<tr>
-<td>endPoint</td>
-<td><code>line</code>:LineString</td>
-<td>Returns the end point of the linestring</td>
-</tr>
-<tr>
-<td>envelope</td>
-<td><code>geometry</code>:geometry</td>
-<td>Returns the polygon representing the envelope of the geometry, that is, the minimum rectangle with sides parallels to the axis containing it</td>
-</tr>
-<tr>
-<td>exteriorRing</td>
-<td><code>poly</code>:Polygon</td>
-<td>Returns the exterior ring of the specified polygon</td>
-</tr>
-<tr>
-<td>geometryType</td>
-<td><code>geometry</code>:Geometry</td>
-<td>Returns the type of the geometry as a string. May be <code>Point</code>, <code>MultiPoint</code>, <code>LineString</code>, <code>LinearRing</code>, <code>MultiLineString</code>, <code>Polygon</code>, <code>MultiPolygon</code>, <code>GeometryCollection</code></td>
-</tr>
-<tr>
-<td>geomFromWKT</td>
-<td><code>wkt</code>:String</td>
-<td>Returns the <code>Geometry</code> represented in the Well Known Text format contained in the <code>wkt</code> parameter</td>
-</tr>
-<tr>
-<td>geomLength</td>
-<td><code>geometry</code>:Geometry</td>
-<td>Returns the length/perimeter of this geometry (computed in Cartesian space)</td>
-</tr>
-<tr>
-<td>getGeometryN</td>
-<td><code>collection</code>:GeometryCollection, <code>n</code>:Integer</td>
-<td>Returns the n-th geometry inside the collection</td>
-</tr>
-<tr>
-<td>getX</td>
-<td><code>p</code>:Point</td>
-<td>Returns the <code>x</code> ordinate of <code>p</code></td>
-</tr>
-<tr>
-<td>getY</td>
-<td><code>p</code>:Point</td>
-<td>Returns the <code>y</code> ordinate of <code>p</code></td>
-</tr>
-<tr>
-<td>getZ</td>
-<td><code>p</code>:Point</td>
-<td>Returns the <code>z</code> ordinate of <code>p</code></td>
-</tr>
-<tr>
-<td>interiorPoint</td>
-<td><code>geometry</code>:Geometry</td>
-<td>Returns a point that is either interior to the geometry, when possible, or sitting on its boundary, otherwise</td>
-</tr>
-<tr>
-<td>interiorRingN</td>
-<td><code>polyg</code>:Polygon, <code>n</code>:Integer</td>
-<td>Returns the n-th interior ring of the polygon</td>
-</tr>
-<tr>
-<td>intersection</td>
-<td><code>a</code>:Geometry, <code>b</code>:Geometry</td>
-<td>Returns the intersection between <code>a</code> and <code>b</code>. The intersection result can be anything including a geometry collection of heterogeneous, if the result is empty, it will be represented by an empty collection.</td>
-</tr>
-<tr>
-<td>isClosed</td>
-<td><code>line</code>: LineString</td>
-<td>Returns true if <code>line</code> forms a closed ring, that is, if the first and last coordinates are equal</td>
-</tr>
-<tr>
-<td>isEmpty</td>
-<td><code>geometry</code>:Geometry</td>
-<td>Returns true if the geometry does not contain any point (typical case, an empty geometry collection)</td>
-</tr>
-<tr>
-<td>isometric</td>
-<td><code>geometry</code>:Geometry, <code>extrusion</code>:Double</td>
-<td>Returns a MultiPolygon containing the isometric extrusions of all components of the input geometry. The extrusion distance is <code>extrusion</code>, expressed in the same unit as the geometry coordinates. Can be used to get a pseudo-3d effect in a map</td>
-</tr>
-<tr>
-<td>isRing</td>
-<td><code>line</code>:LineString</td>
-<td>Returns true if the <code>line</code> is actually a closed ring (equivalent to <code>isRing(line) and isSimple(line)</code>)</td>
-</tr>
-<tr>
-<td>isSimple</td>
-<td><code>line</code>:LineString</td>
-<td>Returns true if the geometry self intersects only at boundary points</td>
-</tr>
-<tr>
-<td>isValid</td>
-<td><code>geometry</code>: Geometry</td>
-<td>Returns true if the geometry is topologically valid (rings are closed, holes are inside the hull, and so on)</td>
-</tr>
-<tr>
-<td>numGeometries</td>
-<td><code>collection</code>: GeometryCollection</td>
-<td>Returns the number of geometries contained in the geometry collection</td>
-</tr>
-<tr>
-<td>numInteriorRing</td>
-<td><code>poly</code>: Polygon</td>
-<td>Returns the number of interior rings (holes) inside the specified polygon</td>
-</tr>
-<tr>
-<td>numPoint</td>
-<td><code>geometry</code>: Geometry</td>
-<td>Returns the number of points (vertexes) contained in <code>geometry</code></td>
-</tr>
-<tr>
-<td>offset</td>
-<td><code>geometry</code>: Geometry, <code>offsetX</code>:Double, <code>offsetY</code>:Double</td>
-<td>Offsets all points in a geometry by the specified X and Y offsets. Offsets are working in the same coordinate system as the geometry own coordinates.</td>
-</tr>
-<tr>
-<td>pointN</td>
-<td><code>geometry</code>: Geometry, <code>n</code>:Integer</td>
-<td>Returns the n-th point inside the specified geometry</td>
-</tr>
-<tr>
-<td>startAngle</td>
-<td><code>line</code>: LineString</td>
-<td>Returns the angle of the starting segment of the input linestring</td>
-</tr>
-<tr>
-<td>startPoint</td>
-<td><code>line</code>: LineString</td>
-<td>Returns the starting point of the input linestring</td>
-</tr>
-<tr>
-<td>symDifference</td>
-<td><code>a</code>: Geometry, <code>b</code>:Geometry</td>
-<td>Returns the symmetrical difference between <code>a</code> and <code>b</code> (all points that are inside <code>a</code> or <code>b</code>, but not both)</td>
-</tr>
-<tr>
-<td>toWKT</td>
-<td><code>geometry</code>: Geometry</td>
-<td>Returns the WKT representation of <code>geometry</code></td>
-</tr>
-<tr>
-<td>union</td>
-<td><code>a</code>: Geometry, <code>b</code>:Geometry</td>
-<td>Returns the union of <code>a</code> and <code>b</code> (the result may be a geometry collection)</td>
-</tr>
-<tr>
-<td>vertices</td>
-<td><code>geom</code>: Geometry</td>
-<td>Returns a multi-point made with all the vertices of <code>geom</code></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Name</strong></dt>
+<dd>
+<p><strong>Arguments</strong></p>
+<p><strong>Description</strong></p>
+</dd>
+<dt>area</dt>
+<dd>
+<p><code>geometry</code>:Geometry</p>
+<p>The area of the specified geometry. Works in a Cartesian plane, the result will be in the same unit of measure as the geometry coordinates (which also means the results won't make any sense for geographic data)</p>
+</dd>
+<dt>boundary</dt>
+<dd>
+<p><code>geometry</code>:Geometry</p>
+<p>Returns the boundary of a geometry</p>
+</dd>
+<dt>boundaryDimension</dt>
+<dd>
+<p><code>geometry</code>:Geometry</p>
+<p>Returns the number of dimensions of the geometry boundary</p>
+</dd>
+<dt>buffer</dt>
+<dd>
+<p><code>geometry</code>:Geometry, <code>distance</code>:Double</p>
+<p>Returns the buffered area around the geometry using the specified distance</p>
+</dd>
+<dt>bufferWithSegments</dt>
+<dd>
+<p><code>geometry</code>:Geometry, <code>distance</code>:Double, <code>segments</code>:Integer</p>
+<p>Returns the buffered area around the geometry using the specified distance and using the specified number of segments to represent a quadrant of a circle.</p>
+</dd>
+<dt>centroid</dt>
+<dd>
+<p><code>geometry</code>:Geometry</p>
+<p>Returns the centroid of the geometry. Can be often used as a label point for polygons, though there is no guarantee it will actually lie inside the geometry</p>
+</dd>
+<dt>convexHull</dt>
+<dd>
+<p><code>geometry</code>:Geometry</p>
+<p>Returns the convex hull of the specified geometry</p>
+</dd>
+<dt>difference</dt>
+<dd>
+<p><code>a</code>:Geometry, <code>b</code>:Geometry</p>
+<p>Returns all the points that sit in <code>a</code> but not in <code>b</code></p>
+</dd>
+<dt>dimension</dt>
+<dd>
+<p><code>a</code>:Geometry</p>
+<p>Returns the dimension of the specified geometry</p>
+</dd>
+<dt>distance</dt>
+<dd>
+<p><code>a</code>:Geometry, <code>b</code>:Geometry</p>
+<p>Returns the euclidean distance between the two geometries</p>
+</dd>
+<dt>endAngle</dt>
+<dd>
+<p><code>line</code>:LineString</p>
+<p>Returns the angle of the end segment of the linestring</p>
+</dd>
+<dt>endPoint</dt>
+<dd>
+<p><code>line</code>:LineString</p>
+<p>Returns the end point of the linestring</p>
+</dd>
+<dt>envelope</dt>
+<dd>
+<p><code>geometry</code>:geometry</p>
+<p>Returns the polygon representing the envelope of the geometry, that is, the minimum rectangle with sides parallels to the axis containing it</p>
+</dd>
+<dt>exteriorRing</dt>
+<dd>
+<p><code>poly</code>:Polygon</p>
+<p>Returns the exterior ring of the specified polygon</p>
+</dd>
+<dt>geometryType</dt>
+<dd>
+<p><code>geometry</code>:Geometry</p>
+<p>Returns the type of the geometry as a string. May be <code>Point</code>, <code>MultiPoint</code>, <code>LineString</code>, <code>LinearRing</code>, <code>MultiLineString</code>, <code>Polygon</code>, <code>MultiPolygon</code>, <code>GeometryCollection</code></p>
+</dd>
+<dt>geomFromWKT</dt>
+<dd>
+<p><code>wkt</code>:String</p>
+<p>Returns the <code>Geometry</code> represented in the Well Known Text format contained in the <code>wkt</code> parameter</p>
+</dd>
+<dt>geomLength</dt>
+<dd>
+<p><code>geometry</code>:Geometry</p>
+<p>Returns the length/perimeter of this geometry (computed in Cartesian space)</p>
+</dd>
+<dt>getGeometryN</dt>
+<dd>
+<p><code>collection</code>:GeometryCollection, <code>n</code>:Integer</p>
+<p>Returns the n-th geometry inside the collection</p>
+</dd>
+<dt>getX</dt>
+<dd>
+<p><code>p</code>:Point</p>
+<p>Returns the <code>x</code> ordinate of <code>p</code></p>
+</dd>
+<dt>getY</dt>
+<dd>
+<p><code>p</code>:Point</p>
+<p>Returns the <code>y</code> ordinate of <code>p</code></p>
+</dd>
+<dt>getZ</dt>
+<dd>
+<p><code>p</code>:Point</p>
+<p>Returns the <code>z</code> ordinate of <code>p</code></p>
+</dd>
+<dt>interiorPoint</dt>
+<dd>
+<p><code>geometry</code>:Geometry</p>
+<p>Returns a point that is either interior to the geometry, when possible, or sitting on its boundary, otherwise</p>
+</dd>
+<dt>interiorRingN</dt>
+<dd>
+<p><code>polyg</code>:Polygon, <code>n</code>:Integer</p>
+<p>Returns the n-th interior ring of the polygon</p>
+</dd>
+<dt>intersection</dt>
+<dd>
+<p><code>a</code>:Geometry, <code>b</code>:Geometry</p>
+<p>Returns the intersection between <code>a</code> and <code>b</code>. The intersection result can be anything including a geometry collection of heterogeneous, if the result is empty, it will be represented by an empty collection.</p>
+</dd>
+<dt>isClosed</dt>
+<dd>
+<p><code>line</code>: LineString</p>
+<p>Returns true if <code>line</code> forms a closed ring, that is, if the first and last coordinates are equal</p>
+</dd>
+<dt>isEmpty</dt>
+<dd>
+<p><code>geometry</code>:Geometry</p>
+<p>Returns true if the geometry does not contain any point (typical case, an empty geometry collection)</p>
+</dd>
+<dt>isometric</dt>
+<dd>
+<p><code>geometry</code>:Geometry, <code>extrusion</code>:Double</p>
+<p>Returns a MultiPolygon containing the isometric extrusions of all components of the input geometry. The extrusion distance is <code>extrusion</code>, expressed in the same unit as the geometry coordinates. Can be used to get a pseudo-3d effect in a map</p>
+</dd>
+<dt>isRing</dt>
+<dd>
+<p><code>line</code>:LineString</p>
+<p>Returns true if the <code>line</code> is actually a closed ring (equivalent to <code>isRing(line) and isSimple(line)</code>)</p>
+</dd>
+<dt>isSimple</dt>
+<dd>
+<p><code>line</code>:LineString</p>
+<p>Returns true if the geometry self intersects only at boundary points</p>
+</dd>
+<dt>isValid</dt>
+<dd>
+<p><code>geometry</code>: Geometry</p>
+<p>Returns true if the geometry is topologically valid (rings are closed, holes are inside the hull, and so on)</p>
+</dd>
+<dt>numGeometries</dt>
+<dd>
+<p><code>collection</code>: GeometryCollection</p>
+<p>Returns the number of geometries contained in the geometry collection</p>
+</dd>
+<dt>numInteriorRing</dt>
+<dd>
+<p><code>poly</code>: Polygon</p>
+<p>Returns the number of interior rings (holes) inside the specified polygon</p>
+</dd>
+<dt>numPoint</dt>
+<dd>
+<p><code>geometry</code>: Geometry</p>
+<p>Returns the number of points (vertexes) contained in <code>geometry</code></p>
+</dd>
+<dt>offset</dt>
+<dd>
+<p><code>geometry</code>: Geometry, <code>offsetX</code>:Double, <code>offsetY</code>:Double</p>
+<p>Offsets all points in a geometry by the specified X and Y offsets. Offsets are working in the same coordinate system as the geometry own coordinates.</p>
+</dd>
+<dt>pointN</dt>
+<dd>
+<p><code>geometry</code>: Geometry, <code>n</code>:Integer</p>
+<p>Returns the n-th point inside the specified geometry</p>
+</dd>
+<dt>startAngle</dt>
+<dd>
+<p><code>line</code>: LineString</p>
+<p>Returns the angle of the starting segment of the input linestring</p>
+</dd>
+<dt>startPoint</dt>
+<dd>
+<p><code>line</code>: LineString</p>
+<p>Returns the starting point of the input linestring</p>
+</dd>
+<dt>symDifference</dt>
+<dd>
+<p><code>a</code>: Geometry, <code>b</code>:Geometry</p>
+<p>Returns the symmetrical difference between <code>a</code> and <code>b</code> (all points that are inside <code>a</code> or <code>b</code>, but not both)</p>
+</dd>
+<dt>toWKT</dt>
+<dd>
+<p><code>geometry</code>: Geometry</p>
+<p>Returns the WKT representation of <code>geometry</code></p>
+</dd>
+<dt>union</dt>
+<dd>
+<p><code>a</code>: Geometry, <code>b</code>:Geometry</p>
+<p>Returns the union of <code>a</code> and <code>b</code> (the result may be a geometry collection)</p>
+</dd>
+<dt>vertices</dt>
+<dd>
+<p><code>geom</code>: Geometry</p>
+<p>Returns a multi-point made with all the vertices of <code>geom</code></p>
+</dd>
+</dl>
 <h2 id="math-functions">Math functions</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Name</strong></td>
-<td><strong>Arguments</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td>abs</td>
-<td><code>value</code>:Integer</td>
-<td>The absolute value of the specified Integer <code>value</code></td>
-</tr>
-<tr>
-<td>abs_2</td>
-<td><code>value</code>:Long</td>
-<td>The absolute value of the specified Long <code>value</code></td>
-</tr>
-<tr>
-<td>abs_3</td>
-<td><code>value</code>:Float</td>
-<td>The absolute value of the specified Float <code>value</code></td>
-</tr>
-<tr>
-<td>abs_4</td>
-<td><code>value</code>:Double</td>
-<td>The absolute value of the specified Double <code>value</code></td>
-</tr>
-<tr>
-<td>acos</td>
-<td><code>angle</code>:Double</td>
-<td>Returns the arc cosine of an <code>angle</code> in radians, in the range of 0.0 through <code>PI</code></td>
-</tr>
-<tr>
-<td>asin</td>
-<td><code>angle</code>:Double</td>
-<td>Returns the arc sine of an <code>angle</code> in radians, in the range of <code>-PI / 2</code> through <code>PI / 2</code></td>
-</tr>
-<tr>
-<td>atan</td>
-<td><code>angle</code>:Double</td>
-<td>Returns the arc tangent of an angle in radians, in the range of <code>-PI/2</code> through <code>PI/2</code></td>
-</tr>
-<tr>
-<td>atan2</td>
-<td><code>x</code>:Double, <code>y</code>:Double</td>
-<td>Converts a rectangular coordinate <code>(x, y)</code> to polar <strong>(r, theta)</strong> and returns <strong>theta</strong>.</td>
-</tr>
-<tr>
-<td>ceil</td>
-<td><code>x</code>: Double</td>
-<td>Returns the smallest (closest to negative infinity) double value that is greater than or equal to <code>x</code> and is equal to a mathematical integer.</td>
-</tr>
-<tr>
-<td>cos</td>
-<td><code>angle</code>: Double</td>
-<td>Returns the cosine of an <code>angle</code> expressed in radians</td>
-</tr>
-<tr>
-<td>double2bool</td>
-<td><code>x</code>: Double</td>
-<td>Returns <code>true</code> if <code>x</code> is zero, <code>false</code> otherwise</td>
-</tr>
-<tr>
-<td>exp</td>
-<td><code>x</code>: Double</td>
-<td>Returns Euler's number <strong>e</strong> raised to the power of <code>x</code></td>
-</tr>
-<tr>
-<td>floor</td>
-<td><code>x</code>: Double</td>
-<td>Returns the largest (closest to positive infinity) value that is less than or equal to <code>x</code> and is equal to a mathematical integer</td>
-</tr>
-<tr>
-<td>IEEERemainder</td>
-<td><code>x</code>: Double, <code>y</code>:Double</td>
-<td>Computes the remainder of <code>x</code> divided by <code>y</code> as prescribed by the IEEE 754 standard</td>
-</tr>
-<tr>
-<td>int2bbool</td>
-<td><code>x</code>: Integer</td>
-<td>Returns true if <code>x</code> is zero, false otherwise</td>
-</tr>
-<tr>
-<td>int2ddouble</td>
-<td><code>x</code>: Integer</td>
-<td>Converts <code>x</code> to a Double</td>
-</tr>
-<tr>
-<td>log</td>
-<td><code>x</code>: Integer</td>
-<td>Returns the natural logarithm (base <code>e</code>) of <code>x</code></td>
-</tr>
-<tr>
-<td>max, max_3, max_4</td>
-<td><code>x1</code>: Double, <code>x2</code>:Double, <code>x3</code>:Double, <code>x4</code>:Double</td>
-<td>Returns the maximum between <code>x1</code>, ..., <code>x4</code></td>
-</tr>
-<tr>
-<td>min, min_3, min_4</td>
-<td><code>x1</code>: Double, <code>x2</code>:Double, <code>x3</code>:Double, <code>x4</code>:Double</td>
-<td>Returns the minimum between <code>x1</code>, ..., <code>x4</code></td>
-</tr>
-<tr>
-<td>pi</td>
-<td>None</td>
-<td>Returns an approximation of <code>pi</code>, the ratio of the circumference of a circle to its diameter</td>
-</tr>
-<tr>
-<td>pow</td>
-<td><code>base</code>:Double, <code>exponent</code>:Double</td>
-<td>Returns the value of <code>base</code> raised to the power of <code>exponent</code></td>
-</tr>
-<tr>
-<td>random</td>
-<td>None</td>
-<td>Returns a Double value with a positive sign, greater than or equal to <code>0.0</code> and less than <code>1.0</code>. Returned values are chosen pseudo-randomly with (approximately) uniform distribution from that range.</td>
-</tr>
-<tr>
-<td>rint</td>
-<td><code>x</code>:Double</td>
-<td>Returns the Double value that is closest in value to the argument and is equal to a mathematical integer. If two double values that are mathematical integers are equally close, the result is the integer value that is even.</td>
-</tr>
-<tr>
-<td>round_2</td>
-<td><code>x</code>:Double</td>
-<td>Same as <code>round</code>, but returns a Long</td>
-</tr>
-<tr>
-<td>round</td>
-<td><code>x</code>:Double</td>
-<td>Returns the closest Integer to <code>x</code>. The result is rounded to an integer by adding &frac12;, taking the floor of the result, and casting the result to type Integer. In other words, the result is equal to the value of the expression <code>(int)floor(a + 0.5)</code></td>
-</tr>
-<tr>
-<td>roundDouble</td>
-<td><code>x</code>:Double</td>
-<td>Returns the closest Long to <code>x</code></td>
-</tr>
-<tr>
-<td>sin</td>
-<td><code>angle</code>: Double</td>
-<td>Returns the sine of an <code>angle</code> expressed in radians</td>
-</tr>
-<tr>
-<td>tan</td>
-<td><code>angle</code>:Double</td>
-<td>Returns the trigonometric tangent of <code>angle</code> expressed in radians</td>
-</tr>
-<tr>
-<td>toDegrees</td>
-<td><code>angle</code>:Double</td>
-<td>Converts an angle expressed in radians into degrees</td>
-</tr>
-<tr>
-<td>toRadians</td>
-<td><code>angle</code>:Double</td>
-<td>Converts an angle expressed in radians into degrees</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Name</strong></dt>
+<dd>
+<p><strong>Arguments</strong></p>
+<p><strong>Description</strong></p>
+</dd>
+<dt>abs</dt>
+<dd>
+<p><code>value</code>:Integer</p>
+<p>The absolute value of the specified Integer <code>value</code></p>
+</dd>
+<dt>abs_2</dt>
+<dd>
+<p><code>value</code>:Long</p>
+<p>The absolute value of the specified Long <code>value</code></p>
+</dd>
+<dt>abs_3</dt>
+<dd>
+<p><code>value</code>:Float</p>
+<p>The absolute value of the specified Float <code>value</code></p>
+</dd>
+<dt>abs_4</dt>
+<dd>
+<p><code>value</code>:Double</p>
+<p>The absolute value of the specified Double <code>value</code></p>
+</dd>
+<dt>acos</dt>
+<dd>
+<p><code>angle</code>:Double</p>
+<p>Returns the arc cosine of an <code>angle</code> in radians, in the range of 0.0 through <code>PI</code></p>
+</dd>
+<dt>asin</dt>
+<dd>
+<p><code>angle</code>:Double</p>
+<p>Returns the arc sine of an <code>angle</code> in radians, in the range of <code>-PI / 2</code> through <code>PI / 2</code></p>
+</dd>
+<dt>atan</dt>
+<dd>
+<p><code>angle</code>:Double</p>
+<p>Returns the arc tangent of an angle in radians, in the range of <code>-PI/2</code> through <code>PI/2</code></p>
+</dd>
+<dt>atan2</dt>
+<dd>
+<p><code>x</code>:Double, <code>y</code>:Double</p>
+<p>Converts a rectangular coordinate <code>(x, y)</code> to polar <strong>(r, theta)</strong> and returns <strong>theta</strong>.</p>
+</dd>
+<dt>ceil</dt>
+<dd>
+<p><code>x</code>: Double</p>
+<p>Returns the smallest (closest to negative infinity) double value that is greater than or equal to <code>x</code> and is equal to a mathematical integer.</p>
+</dd>
+<dt>cos</dt>
+<dd>
+<p><code>angle</code>: Double</p>
+<p>Returns the cosine of an <code>angle</code> expressed in radians</p>
+</dd>
+<dt>double2bool</dt>
+<dd>
+<p><code>x</code>: Double</p>
+<p>Returns <code>true</code> if <code>x</code> is zero, <code>false</code> otherwise</p>
+</dd>
+<dt>exp</dt>
+<dd>
+<p><code>x</code>: Double</p>
+<p>Returns Euler's number <strong>e</strong> raised to the power of <code>x</code></p>
+</dd>
+<dt>floor</dt>
+<dd>
+<p><code>x</code>: Double</p>
+<p>Returns the largest (closest to positive infinity) value that is less than or equal to <code>x</code> and is equal to a mathematical integer</p>
+</dd>
+<dt>IEEERemainder</dt>
+<dd>
+<p><code>x</code>: Double, <code>y</code>:Double</p>
+<p>Computes the remainder of <code>x</code> divided by <code>y</code> as prescribed by the IEEE 754 standard</p>
+</dd>
+<dt>int2bbool</dt>
+<dd>
+<p><code>x</code>: Integer</p>
+<p>Returns true if <code>x</code> is zero, false otherwise</p>
+</dd>
+<dt>int2ddouble</dt>
+<dd>
+<p><code>x</code>: Integer</p>
+<p>Converts <code>x</code> to a Double</p>
+</dd>
+<dt>log</dt>
+<dd>
+<p><code>x</code>: Integer</p>
+<p>Returns the natural logarithm (base <code>e</code>) of <code>x</code></p>
+</dd>
+<dt>max, max_3, max_4</dt>
+<dd>
+<p><code>x1</code>: Double, <code>x2</code>:Double, <code>x3</code>:Double, <code>x4</code>:Double</p>
+<p>Returns the maximum between <code>x1</code>, ..., <code>x4</code></p>
+</dd>
+<dt>min, min_3, min_4</dt>
+<dd>
+<p><code>x1</code>: Double, <code>x2</code>:Double, <code>x3</code>:Double, <code>x4</code>:Double</p>
+<p>Returns the minimum between <code>x1</code>, ..., <code>x4</code></p>
+</dd>
+<dt>pi</dt>
+<dd>
+<p>None</p>
+<p>Returns an approximation of <code>pi</code>, the ratio of the circumference of a circle to its diameter</p>
+</dd>
+<dt>pow</dt>
+<dd>
+<p><code>base</code>:Double, <code>exponent</code>:Double</p>
+<p>Returns the value of <code>base</code> raised to the power of <code>exponent</code></p>
+</dd>
+<dt>random</dt>
+<dd>
+<p>None</p>
+<p>Returns a Double value with a positive sign, greater than or equal to <code>0.0</code> and less than <code>1.0</code>. Returned values are chosen pseudo-randomly with (approximately) uniform distribution from that range.</p>
+</dd>
+<dt>rint</dt>
+<dd>
+<p><code>x</code>:Double</p>
+<blockquote>
+<p>Returns the Double value that is closest in value to the argument and is equal to a mathematical integer. If two double values that are mathematical integers are equally close, the result is the integer value that is even.</p>
+</blockquote>
+</dd>
+<dt>round_2</dt>
+<dd>
+<p><code>x</code>:Double</p>
+<blockquote>
+<p>Same as <code>round</code>, but returns a Long</p>
+</blockquote>
+</dd>
+<dt>round</dt>
+<dd>
+<p><code>x</code>:Double</p>
+<blockquote>
+<p>Returns the closest Integer to <code>x</code>. The result is rounded to an integer by adding &frac12;, taking the floor of the result, and casting the result to type Integer. In other words, the result is equal to the value of the expression <code>(int)floor(a + 0.5)</code></p>
+</blockquote>
+</dd>
+<dt>roundDouble</dt>
+<dd>
+<p><code>x</code>:Double</p>
+<p>Returns the closest Long to <code>x</code></p>
+</dd>
+<dt>sin</dt>
+<dd>
+<p><code>angle</code>: Double</p>
+<p>Returns the sine of an <code>angle</code> expressed in radians</p>
+</dd>
+<dt>tan</dt>
+<dd>
+<p><code>angle</code>:Double</p>
+<p>Returns the trigonometric tangent of <code>angle</code> expressed in radians</p>
+</dd>
+<dt>toDegrees</dt>
+<dd>
+<p><code>angle</code>:Double</p>
+<p>Converts an angle expressed in radians into degrees</p>
+</dd>
+<dt>toRadians</dt>
+<dd>
+<p><code>angle</code>:Double</p>
+<p>Converts an angle expressed in radians into degrees</p>
+</dd>
+</dl>
 <h2 id="string-functions">String functions</h2>
 <p>String functions generally will accept any type of value for <code>String</code> arguments. Non-string values will be converted into a string representation automatically.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Name</strong></td>
-<td><strong>Arguments</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td>Concatenate</td>
-<td><code>s1</code>:String, <code>s2</code>:String, ...</td>
-<td>Concatenates any number of strings. Non-string arguments are allowed.</td>
-</tr>
-<tr>
-<td>strAbbreviate</td>
-<td><code>sentence</code>:String, <code>lower</code>:Integer, <code>upper</code>:Integer, <code>append</code>:String</td>
-<td>Abbreviates the sentence at first space beyond <code>lower</code> (or at <code>upper</code> if no space). Appends <code>append</code> if string is abbreviated.</td>
-</tr>
-<tr>
-<td>strCapitalize</td>
-<td><code>sentence</code>:String</td>
-<td>Fully capitalizes the sentence. For example, "HoW aRe YOU?" will be turned into "How Are You?"</td>
-</tr>
-<tr>
-<td>strConcat</td>
-<td><code>a</code>:String, <code>b</code>:String</td>
-<td>Concatenates the two strings into one</td>
-</tr>
-<tr>
-<td>strDefaultIfBlank</td>
-<td><code>str</code>:String, <code>default</code>:String</td>
-<td>returns <code>default</code> if <code>str</code> is empty, blank or null</td>
-</tr>
-<tr>
-<td>strEndsWith</td>
-<td><code>string</code>:String, <code>suffix</code>:String</td>
-<td>Returns true if <code>string</code> ends with <code>suffix</code></td>
-</tr>
-<tr>
-<td>strEqualsIgnoreCase</td>
-<td><code>a</code>:String, <code>b</code>:String</td>
-<td>Returns true if the two strings are equal ignoring case considerations</td>
-</tr>
-<tr>
-<td>strIndexOf</td>
-<td><code>string</code>:String, <code>substring</code>:String</td>
-<td>Returns the index within this string of the first occurrence of the specified substring, or <code>-1</code> if not found</td>
-</tr>
-<tr>
-<td>strLastIndexOf</td>
-<td><code>string</code>:String, <code>substring</code>:String</td>
-<td>Returns the index within this string of the last occurrence of the specified substring, or <code>-1</code> if not found</td>
-</tr>
-<tr>
-<td>strLength</td>
-<td><code>string</code>:String</td>
-<td>Returns the string length</td>
-</tr>
-<tr>
-<td>strMatches</td>
-<td><code>string</code>:String, <code>pattern</code>:String</td>
-<td>Returns true if the string matches the specified regular expression. For the full syntax of the pattern specification see the <a href="http://java.sun.com/javase/6/docs/api/java/util/regex/Pattern.html">Java Pattern class javadocs</a></td>
-</tr>
-<tr>
-<td>strReplace</td>
-<td><code>string</code>:String, <code>pattern</code>:String, <code>replacement</code>:String, <code>global</code>: boolean</td>
-<td>Returns the string with the pattern replaced with the given replacement text. If the <code>global</code> argument is <code>true</code> then all occurrences of the pattern will be replaced, otherwise only the first. For the full syntax of the pattern specification see the <a href="http://java.sun.com/javase/6/docs/api/java/util/regex/Pattern.html">Java Pattern class javadocs</a></td>
-</tr>
-<tr>
-<td>strStartsWith</td>
-<td><code>string</code>:String, <code>prefix</code>:String</td>
-<td>Returns true if <code>string</code> starts with <code>prefix</code></td>
-</tr>
-<tr>
-<td>strStripAccents</td>
-<td><code>string</code>:String</td>
-<td>Removes diacritics (\~= accents) from a string. The case will not be altered.</td>
-</tr>
-<tr>
-<td>strSubstring</td>
-<td><code>string</code>:String, <code>begin</code>:Integer, <code>end</code>:Integer</td>
-<td>Returns a new string that is a substring of this string. The substring begins at the specified <code>begin</code> and extends to the character at index <code>endIndex - 1</code> (indexes are zero-based).</td>
-</tr>
-<tr>
-<td>strSubstringStart</td>
-<td><code>string</code>:String, <code>begin</code>:Integer</td>
-<td>Returns a new string that is a substring of this string. The substring begins at the specified <code>begin</code> and extends to the last character of the string</td>
-</tr>
-<tr>
-<td>strToLowerCase</td>
-<td><code>string</code>:String</td>
-<td>Returns the lower case version of the string</td>
-</tr>
-<tr>
-<td>strToUpperCase</td>
-<td><code>string</code>:String</td>
-<td>Returns the upper case version of the string</td>
-</tr>
-<tr>
-<td>strTrim</td>
-<td><code>string</code>:String</td>
-<td>Returns a copy of the string, with leading and trailing blank-space omitted</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Name</strong></dt>
+<dd>
+<p><strong>Arguments</strong></p>
+<p><strong>Description</strong></p>
+</dd>
+<dt>Concatenate</dt>
+<dd>
+<p><code>s1</code>:String, <code>s2</code>:String, ...</p>
+<p>Concatenates any number of strings. Non-string arguments are allowed.</p>
+</dd>
+<dt>strAbbreviate</dt>
+<dd>
+<p><code>sentence</code>:String, <code>lower</code>:Integer, <code>upper</code>:Integer, <code>append</code>:String</p>
+<p>Abbreviates the sentence at first space beyond <code>lower</code> (or at <code>upper</code> if no space). Appends <code>append</code> if string is abbreviated.</p>
+</dd>
+<dt>strCapitalize</dt>
+<dd>
+<p><code>sentence</code>:String</p>
+<p>Fully capitalizes the sentence. For example, "HoW aRe YOU?" will be turned into "How Are You?"</p>
+</dd>
+<dt>strConcat</dt>
+<dd>
+<p><code>a</code>:String, <code>b</code>:String</p>
+<p>Concatenates the two strings into one</p>
+</dd>
+<dt>strDefaultIfBlank</dt>
+<dd>
+<p><code>str</code>:String, <code>default</code>:String</p>
+<p>returns <code>default</code> if <code>str</code> is empty, blank or null</p>
+</dd>
+<dt>strEndsWith</dt>
+<dd>
+<p><code>string</code>:String, <code>suffix</code>:String</p>
+<p>Returns true if <code>string</code> ends with <code>suffix</code></p>
+</dd>
+<dt>strEqualsIgnoreCase</dt>
+<dd>
+<p><code>a</code>:String, <code>b</code>:String</p>
+<p>Returns true if the two strings are equal ignoring case considerations</p>
+</dd>
+<dt>strIndexOf</dt>
+<dd>
+<p><code>string</code>:String, <code>substring</code>:String</p>
+<p>Returns the index within this string of the first occurrence of the specified substring, or <code>-1</code> if not found</p>
+</dd>
+<dt>strLastIndexOf</dt>
+<dd>
+<p><code>string</code>:String, <code>substring</code>:String</p>
+<p>Returns the index within this string of the last occurrence of the specified substring, or <code>-1</code> if not found</p>
+</dd>
+<dt>strLength</dt>
+<dd>
+<p><code>string</code>:String</p>
+<p>Returns the string length</p>
+</dd>
+<dt>strMatches</dt>
+<dd>
+<p><code>string</code>:String, <code>pattern</code>:String</p>
+<p>Returns true if the string matches the specified regular expression. For the full syntax of the pattern specification see the <a href="http://java.sun.com/javase/6/docs/api/java/util/regex/Pattern.html">Java Pattern class javadocs</a></p>
+</dd>
+<dt>strReplace</dt>
+<dd>
+<p><code>string</code>:String, <code>pattern</code>:String, <code>replacement</code>:String, <code>global</code>: boolean</p>
+<p>Returns the string with the pattern replaced with the given replacement text. If the <code>global</code> argument is <code>true</code> then all occurrences of the pattern will be replaced, otherwise only the first. For the full syntax of the pattern specification see the <a href="http://java.sun.com/javase/6/docs/api/java/util/regex/Pattern.html">Java Pattern class javadocs</a></p>
+</dd>
+<dt>strStartsWith</dt>
+<dd>
+<p><code>string</code>:String, <code>prefix</code>:String</p>
+<p>Returns true if <code>string</code> starts with <code>prefix</code></p>
+</dd>
+<dt>strStripAccents</dt>
+<dd>
+<p><code>string</code>:String</p>
+<p>Removes diacritics (\~= accents) from a string. The case will not be altered.</p>
+</dd>
+<dt>strSubstring</dt>
+<dd>
+<p><code>string</code>:String, <code>begin</code>:Integer, <code>end</code>:Integer</p>
+<p>Returns a new string that is a substring of this string. The substring begins at the specified <code>begin</code> and extends to the character at index <code>endIndex - 1</code> (indexes are zero-based).</p>
+</dd>
+<dt>strSubstringStart</dt>
+<dd>
+<p><code>string</code>:String, <code>begin</code>:Integer</p>
+<p>Returns a new string that is a substring of this string. The substring begins at the specified <code>begin</code> and extends to the last character of the string</p>
+</dd>
+<dt>strToLowerCase</dt>
+<dd>
+<p><code>string</code>:String</p>
+<p>Returns the lower case version of the string</p>
+</dd>
+<dt>strToUpperCase</dt>
+<dd>
+<p><code>string</code>:String</p>
+<p>Returns the upper case version of the string</p>
+</dd>
+<dt>strTrim</dt>
+<dd>
+<p><code>string</code>:String</p>
+<p>Returns a copy of the string, with leading and trailing blank-space omitted</p>
+</dd>
+</dl>
 <h2 id="parsing-and-formatting-functions">Parsing and formatting functions</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Name</strong></td>
-<td><strong>Arguments</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td>dateFormat</td>
-<td><code>format</code>:String, <code>date</code>:Timestamp</td>
-<td>Formats the specified date according to the provided format. The format syntax can be found in the <a href="http://java.sun.com/javase/6/docs/api/java/text/SimpleDateFormat.html">Java SimpleDateFormat javadocs</a></td>
-</tr>
-<tr>
-<td>dateParse</td>
-<td><code>format</code>:String, <code>dateString</code>:String</td>
-<td>Parses a date from a <code>dateString</code> formatted according to the <code>format</code> specification. The format syntax can be found in the <a href="http://java.sun.com/javase/6/docs/api/java/text/SimpleDateFormat.html">Java SimpleDateFormat javadocs</a></td>
-</tr>
-<tr>
-<td>numberFormat</td>
-<td><code>format</code>:String, <code>number</code>:Double, <code>locale</code>:String</td>
-<td>Formats the number according to the specified <code>format</code> using the default locale or the one provided as an optional argument. The format syntax can be found in the <a href="http://java.sun.com/javase/6/docs/api/java/text/DecimalFormat.html">Java DecimalFormat javadocs</a></td>
-</tr>
-<tr>
-<td>parseBoolean</td>
-<td><code>boolean</code>:String</td>
-<td>Parses a string into a boolean. The empty string, <code>f</code>, <code>0.0</code> and <code>0</code> are considered false, everything else is considered true.</td>
-</tr>
-<tr>
-<td>parseDouble</td>
-<td><code>number</code>:String</td>
-<td>Parses a string into a double. The number can be expressed in normal or scientific form.</td>
-</tr>
-<tr>
-<td>parseInt</td>
-<td><code>number</code>:String</td>
-<td>Parses a string into an integer.</td>
-</tr>
-<tr>
-<td>parseLong</td>
-<td><code>number</code>:String</td>
-<td>Parses a string into a long integer</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Name</strong></dt>
+<dd>
+<p><strong>Arguments</strong></p>
+<p><strong>Description</strong></p>
+</dd>
+<dt>dateFormat</dt>
+<dd>
+<p><code>format</code>:String, <code>date</code>:Timestamp</p>
+<p>Formats the specified date according to the provided format. The format syntax can be found in the <a href="http://java.sun.com/javase/6/docs/api/java/text/SimpleDateFormat.html">Java SimpleDateFormat javadocs</a></p>
+</dd>
+<dt>dateParse</dt>
+<dd>
+<p><code>format</code>:String, <code>dateString</code>:String</p>
+<p>Parses a date from a <code>dateString</code> formatted according to the <code>format</code> specification. The format syntax can be found in the <a href="http://java.sun.com/javase/6/docs/api/java/text/SimpleDateFormat.html">Java SimpleDateFormat javadocs</a></p>
+</dd>
+<dt>numberFormat</dt>
+<dd>
+<p><code>format</code>:String, <code>number</code>:Double, <code>locale</code>:String</p>
+<p>Formats the number according to the specified <code>format</code> using the default locale or the one provided as an optional argument. The format syntax can be found in the <a href="http://java.sun.com/javase/6/docs/api/java/text/DecimalFormat.html">Java DecimalFormat javadocs</a></p>
+</dd>
+<dt>parseBoolean</dt>
+<dd>
+<p><code>boolean</code>:String</p>
+<p>Parses a string into a boolean. The empty string, <code>f</code>, <code>0.0</code> and <code>0</code> are considered false, everything else is considered true.</p>
+</dd>
+<dt>parseDouble</dt>
+<dd>
+<p><code>number</code>:String</p>
+<p>Parses a string into a double. The number can be expressed in normal or scientific form.</p>
+</dd>
+<dt>parseInt</dt>
+<dd>
+<p><code>number</code>:String</p>
+<p>Parses a string into an integer.</p>
+</dd>
+<dt>parseLong</dt>
+<dd>
+<p><code>number</code>:String</p>
+<p>Parses a string into a long integer</p>
+</dd>
+</dl>
 <h2 id="temporal-functions">Temporal functions</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Name</strong></td>
-<td><strong>Arguments</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td>dateDifference</td>
-<td><code>a</code>:Date, <code>b</code>:Date, <code>timeUnits</code>:String</td>
-<td>Computes the difference between two date (as a-b) and return a result in a specific time units. <code>timeUnits</code> is optional, representing the desired time units result. Default as milliseconds. Possible values are <code>s</code> (seconds), <code>m</code> (minutes), <code>h</code> (hours), <code>d</code> (days).</td>
-</tr>
-<tr>
-<td>now</td>
-<td>None</td>
-<td>Returns the current time as a Date</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Name</strong></dt>
+<dd>
+<p><strong>Arguments</strong></p>
+<p><strong>Description</strong></p>
+</dd>
+<dt>dateDifference</dt>
+<dd>
+<p><code>a</code>:Date, <code>b</code>:Date, <code>timeUnits</code>:String</p>
+<p>Computes the difference between two date (as a-b) and return a result in a specific time units. <code>timeUnits</code> is optional, representing the desired time units result. Default as milliseconds. Possible values are <code>s</code> (seconds), <code>m</code> (minutes), <code>h</code> (hours), <code>d</code> (days).</p>
+</dd>
+<dt>now</dt>
+<dd>
+<p>None</p>
+<p>Returns the current time as a Date</p>
+</dd>
+</dl>
 <h2 id="transformation-functions">Transformation functions</h2>
 <p>Transformation functions transform values from one data space into another. These functions provide a concise way to compute styling parameters from feature attribute values. See also <a href="../../styling/sld/tipstricks/transformation-func/">Styling using Transformation Functions</a>.</p>
-<p>+-------------+----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <strong>Name</strong>    | <strong>Arguments</strong>                                      | <strong>Description</strong>                                                                                                                                                                                                                                                                                                                                                                                                    |
-+-------------+----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Recode      | <code>lookupValue</code>:Object,                              | Transforms a <code>lookupValue</code> from a set of discrete data values into another set of values. Any number of <code>data</code>/<code>value</code> pairs may be specified.                                                                                                                                                                                                                                                                     |
-|             |                                                    |                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|             | <code>data</code>:Object, <code>value</code>:Object, ...                |                                                                                                                                                                                                                                                                                                                                                                                                                    |
-+-------------+----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Categorize  | <code>lookupValue</code>:Object, <code>value</code>:Object,              | Transforms a continuous-valued attribute value into a set of discrete values. <code>lookupValue</code> and <code>value</code> must be an orderable type (typically numeric). The initial <code>value</code> is required. Any number of additional <code>threshold</code>/<code>value</code> pairs may be specified. <code>belongsTo</code> is optional, with the value <code>succeeding</code> or <code>preceding</code>. It defines which interval to use when the lookup value equals a threshold value. |
-|             |                                                    |                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|             | <code>threshold</code>:Object, ... <code>value</code>:Object,           |                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|             |                                                    |                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|             | <code>belongsTo</code> : String                               |                                                                                                                                                                                                                                                                                                                                                                                                                    |
-+-------------+----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Interpolate | <code>lookupValue</code>:Numeric,                             | Transforms a continuous-valued attribute value into another continuous range of values. Any number of <code>data</code>/<code>value</code> pairs may be specified. <code>mode</code> is optional, with the value <code>linear</code>, <code>cosine</code> or <code>cubic</code>. It defines the interpolation algorithm to use. <code>method</code> is optional, with the value <code>numeric</code> or <code>color</code>. It defines whether the target values are numeric or RGB color specifications.             |
-|             |                                                    |                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|             | <code>data</code>:Numeric, <code>value</code>:Numeric <em>or</em> #RRGGBB, ... |                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|             |                                                    |                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|             | <code>mode</code>:String, <code>method</code>:String                     |                                                                                                                                                                                                                                                                                                                                                                                                                    |
-+-------------+----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</p>
+<dl>
+<dt><strong>Name</strong></dt>
+<dd>
+<p><strong>Arguments</strong></p>
+<p><strong>Description</strong></p>
+</dd>
+<dt>Recode</dt>
+<dd>
+<p><code>lookupValue</code>:Object,</p>
+<p><code>data</code>:Object, <code>value</code>:Object, ...</p>
+<p>Transforms a <code>lookupValue</code> from a set of discrete data values into another set of values. Any number of <code>data</code>/<code>value</code> pairs may be specified.</p>
+</dd>
+<dt>Categorize</dt>
+<dd>
+<p><code>lookupValue</code>:Object, <code>value</code>:Object,</p>
+<p><code>threshold</code>:Object, ... <code>value</code>:Object,</p>
+<p><code>belongsTo</code> : String</p>
+<p>Transforms a continuous-valued attribute value into a set of discrete values. <code>lookupValue</code> and <code>value</code> must be an orderable type (typically numeric). The initial <code>value</code> is required. Any number of additional <code>threshold</code>/<code>value</code> pairs may be specified. <code>belongsTo</code> is optional, with the value <code>succeeding</code> or <code>preceding</code>. It defines which interval to use when the lookup value equals a threshold value.</p>
+</dd>
+<dt>Interpolate</dt>
+<dd>
+<p><code>lookupValue</code>:Numeric,</p>
+<p><code>data</code>:Numeric, <code>value</code>:Numeric <em>or</em> #RRGGBB, ...</p>
+<p><code>mode</code>:String, <code>method</code>:String</p>
+<p>Transforms a continuous-valued attribute value into another continuous range of values. Any number of <code>data</code>/<code>value</code> pairs may be specified. <code>mode</code> is optional, with the value <code>linear</code>, <code>cosine</code> or <code>cubic</code>. It defines the interpolation algorithm to use. <code>method</code> is optional, with the value <code>numeric</code> or <code>color</code>. It defines whether the target values are numeric or RGB color specifications.</p>
+</dd>
+</dl>
 
 
 

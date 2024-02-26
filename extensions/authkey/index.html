@@ -3185,64 +3185,48 @@ ef18d7e7-963b-470f-9230-c7f9de166888=topp
 <h3 id="key-provider-using-an-external-web-service">Key provider using an external web service</h3>
 <p>This key provider calls an external URL to map the authentication key to the user. This allows GeoServer to integrate into an existing security infrastructure, where a session token is shared among applications and managed through dedicated web services.</p>
 <p>The web service URL and some other parameters can be specified to configure the mapper in detail:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Option</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td><code>Web Service URL, with key placeholder</code></td>
-<td>the complete URL of the key mapping webservice, with a special placeholder ({key}) that will be replaced by the current authentication key</td>
-</tr>
-<tr>
-<td><code>Web Service Response User Search Regular Expression</code></td>
-<td>a regular expression used to extract the username from the webservice response; the first matched group (the part included in parentheses) in the regular expression will be used as the username; the default (\^\s<em>(.</em>)\s*\$) takes all the response text, trimming spaces at both ends</td>
-</tr>
-<tr>
-<td><code>Connection Timeout</code></td>
-<td>timeout to connect to the webservice</td>
-</tr>
-<tr>
-<td><code>Read Timeout</code></td>
-<td>timeout to read data from the webservice</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Option</strong></dt>
+<dd>
+<p><strong>Description</strong></p>
+</dd>
+<dt><code>Web Service URL, with key placeholder</code></dt>
+<dd>
+<p>the complete URL of the key mapping webservice, with a special placeholder ({key}) that will be replaced by the current authentication key</p>
+</dd>
+<dt><code>Web Service Response User Search Regular Expression</code></dt>
+<dd>
+<p>a regular expression used to extract the username from the webservice response; the first matched group (the part included in parentheses) in the regular expression will be used as the username; the default (\^\s<em>(.</em>)\s*\$) takes all the response text, trimming spaces at both ends</p>
+</dd>
+<dt><code>Connection Timeout</code></dt>
+<dd>
+<p>timeout to connect to the webservice</p>
+</dd>
+<dt><code>Read Timeout</code></dt>
+<dd>
+<p>timeout to read data from the webservice</p>
+</dd>
+</dl>
 <p>The mapper will call the webservice using an HTTP GET request (webservice requiring POST are not supported yet), replacing the {key} placeholder in the configured URL with the actual authentication key.</p>
 <p>If a response is received, it is parsed using the configured regular expression to extract the username from it. New lines are automatically stripped from the response. Some examples of regular expression that can be used are:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Regular Expression</strong></td>
-<td><strong>Usage</strong></td>
-</tr>
-<tr>
-<td><code>^\s*(.*)\s*$</code></td>
-<td>all text trimming spaces at both ends</td>
-</tr>
-<tr>
-<td><code>^.*?"user"\s*:\s*"([^"]+)".*$</code></td>
-<td>json response where the username is contained in a property named <strong>user</strong></td>
-</tr>
-<tr>
-<td><code>^.*?&lt;username&gt;(.*?)&lt;/username&gt;.*$</code></td>
-<td>xml response where the username is contained in a tag named <strong>username</strong></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Regular Expression</strong></dt>
+<dd>
+<p><strong>Usage</strong></p>
+</dd>
+<dt><code>^\s*(.*)\s*$</code></dt>
+<dd>
+<p>all text trimming spaces at both ends</p>
+</dd>
+<dt><code>^.*?"user"\s*:\s*"([^"]+)".*$</code></dt>
+<dd>
+<p>json response where the username is contained in a property named <strong>user</strong></p>
+</dd>
+<dt><code>^.*?&lt;username&gt;(.*?)&lt;/username&gt;.*$</code></dt>
+<dd>
+<p>xml response where the username is contained in a tag named <strong>username</strong></p>
+</dd>
+</dl>
 <p>Synchronizing users with the user/group service means clearing the current Security context cache. The keys cached in memory will be removed and re-created at the next call.</p>
 <h4 id="authkey-webservice-body-response-usergroup-service">AuthKEY WebService Body Response UserGroup Service</h4>
 <p>When using an external web service to get Auth details, it is possible to define a custom <code>GeoServer UserGroup Service</code> being able to fetch Authorities - aka user's Roles - from the HTTP Body Response.</p>

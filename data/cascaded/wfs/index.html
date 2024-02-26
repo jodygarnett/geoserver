@@ -1908,100 +1908,92 @@
 <p>To connect to an external WFS, it is necessary to load it as a new datastore. To start, navigate to <strong>Stores &rarr; Add a new store &rarr; Web Feature Server</strong>.</p>
 <p><img alt="" src="../images/externalwfs.png" />
 <em>Adding an external WFS as a store</em></p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Option</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td><strong>Workspace</strong></td>
-<td>Name of the workspace to contain the store. This will also be the prefix of all of the layer names created from the store.</td>
-</tr>
-<tr>
-<td><strong>Data Source Name</strong></td>
-<td>Name of the store as known to GeoServer.</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Description of the store.</td>
-</tr>
-<tr>
-<td><strong>Enabled</strong></td>
-<td>Enables the store. If disabled, no data from the external WFS will be served.</td>
-</tr>
-<tr>
-<td><strong>GET_CAPABILITIES_URL</strong></td>
-<td>URL to access the capabilities document of the remote WFS.</td>
-</tr>
-<tr>
-<td><strong>PROTOCOL</strong></td>
-<td>When checked, connects with POST, otherwise uses GET.</td>
-</tr>
-<tr>
-<td><strong>USERNAME</strong></td>
-<td>The user name to connect to the external WFS.</td>
-</tr>
-<tr>
-<td><strong>PASSWORD</strong></td>
-<td>The password associated with the above user name.</td>
-</tr>
-<tr>
-<td><strong>ENCODING</strong></td>
-<td>The character encoding of the XML requests sent to the server. Defaults to <code>UTF-8</code>.</td>
-</tr>
-<tr>
-<td><strong>TIMEOUT</strong></td>
-<td>Time (in milliseconds) before timing out. Default is <code>3000</code>.</td>
-</tr>
-<tr>
-<td><strong>BUFFER_SIZE</strong></td>
-<td>Specifies a buffer size (in number of features). Default is <code>10</code> features.</td>
-</tr>
-<tr>
-<td><strong>TRY_GZIP</strong></td>
-<td>Specifies that the server should transfer data using compressed HTTP if supported by the server.</td>
-</tr>
-<tr>
-<td><strong>LENIENT</strong></td>
-<td>When checked, will try to render features that don't match the appropriate schema. Errors will be logged.</td>
-</tr>
-<tr>
-<td><strong>MAXFEATURES</strong></td>
-<td>Maximum number of features to retrieve for each featuretype. Default is no limit.</td>
-</tr>
-<tr>
-<td><strong>AXIS_ORDER</strong></td>
-<td>Axis order used in result coordinates (It applies only to WFS 1.x.0 servers). Default is Compliant.</td>
-</tr>
-<tr>
-<td><strong>AXIS_ORDER_FILTER</strong></td>
-<td>Axis order used in filter (It applies only to WFS 1.x.0 servers). Default is Compliant.</td>
-</tr>
-<tr>
-<td><strong>OUTPUTFORMAT</strong></td>
-<td>Output format to request (instead of the default remote service one) e.g. JSON.</td>
-</tr>
-<tr>
-<td><strong>GML_COMPLIANCE_LEVEL</strong></td>
-<td>OCG GML compliance level. i.e. (simple feature) 0, 1 or 2. Default is 0.</td>
-</tr>
-<tr>
-<td><strong>GML_COMPATIBLE_TYPENAMES</strong></td>
-<td>Use GML Compatible TypeNames (replace : by _). Default is no false.</td>
-</tr>
-<tr>
-<td><strong>USE_HTTP_CONNECTION_POOLING</strong></td>
-<td>Use connection pooling to connect to the remote WFS service. Also enables digest authentication.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Option</strong></dt>
+<dd>
+<p><strong>Description</strong></p>
+</dd>
+<dt><strong>Workspace</strong></dt>
+<dd>
+<p>Name of the workspace to contain the store. This will also be the prefix of all of the layer names created from the store.</p>
+</dd>
+<dt><strong>Data Source Name</strong></dt>
+<dd>
+<p>Name of the store as known to GeoServer.</p>
+</dd>
+<dt><strong>Description</strong></dt>
+<dd>
+<p>Description of the store.</p>
+</dd>
+<dt><strong>Enabled</strong></dt>
+<dd>
+<p>Enables the store. If disabled, no data from the external WFS will be served.</p>
+</dd>
+<dt><strong>GET_CAPABILITIES_URL</strong></dt>
+<dd>
+<p>URL to access the capabilities document of the remote WFS.</p>
+</dd>
+<dt><strong>PROTOCOL</strong></dt>
+<dd>
+<p>When checked, connects with POST, otherwise uses GET.</p>
+</dd>
+<dt><strong>USERNAME</strong></dt>
+<dd>
+<p>The user name to connect to the external WFS.</p>
+</dd>
+<dt><strong>PASSWORD</strong></dt>
+<dd>
+<p>The password associated with the above user name.</p>
+</dd>
+<dt><strong>ENCODING</strong></dt>
+<dd>
+<p>The character encoding of the XML requests sent to the server. Defaults to <code>UTF-8</code>.</p>
+</dd>
+<dt><strong>TIMEOUT</strong></dt>
+<dd>
+<p>Time (in milliseconds) before timing out. Default is <code>3000</code>.</p>
+</dd>
+<dt><strong>BUFFER_SIZE</strong></dt>
+<dd>
+<p>Specifies a buffer size (in number of features). Default is <code>10</code> features.</p>
+</dd>
+<dt><strong>TRY_GZIP</strong></dt>
+<dd>
+<p>Specifies that the server should transfer data using compressed HTTP if supported by the server.</p>
+</dd>
+<dt><strong>LENIENT</strong></dt>
+<dd>
+<p>When checked, will try to render features that don't match the appropriate schema. Errors will be logged.</p>
+</dd>
+<dt><strong>MAXFEATURES</strong></dt>
+<dd>
+<p>Maximum number of features to retrieve for each featuretype. Default is no limit.</p>
+</dd>
+<dt><strong>AXIS_ORDER</strong></dt>
+<dd>
+<p>Axis order used in result coordinates (It applies only to WFS 1.x.0 servers). Default is Compliant.</p>
+</dd>
+<dt><strong>AXIS_ORDER_FILTER</strong></dt>
+<dd>
+<p>Axis order used in filter (It applies only to WFS 1.x.0 servers). Default is Compliant.</p>
+</dd>
+<dt><strong>OUTPUTFORMAT</strong></dt>
+<dd>
+<p>Output format to request (instead of the default remote service one) e.g. JSON.</p>
+</dd>
+<dt><strong>GML_COMPLIANCE_LEVEL</strong></dt>
+<dd>
+<p>OCG GML compliance level. i.e. (simple feature) 0, 1 or 2. Default is 0.</p>
+</dd>
+<dt><strong>GML_COMPATIBLE_TYPENAMES</strong></dt>
+<dd>
+<p>Use GML Compatible TypeNames (replace : by _). Default is no false.</p>
+</dd>
+<dt><strong>USE_HTTP_CONNECTION_POOLING</strong></dt>
+<dd>
+<p>Use connection pooling to connect to the remote WFS service. Also enables digest authentication.</p>
+</dd>
+</dl>
 <p>When finished, click <strong>Save</strong>.</p>
 <h2 id="configuring-external-wfs-layers">Configuring external WFS layers</h2>
 <p>When properly loaded, all layers served by the external WFS will be available to GeoServer. Before they can be served, however, they will need to be individually configured as new layers. See the section on <a href="../../webadmin/layers/">Layers</a> for how to add and edit new layers.</p>

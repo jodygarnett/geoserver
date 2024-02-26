@@ -3070,71 +3070,63 @@
 <blockquote>
 <p><img alt="" src="images/configuration.png" /></p>
 </blockquote>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>Name of the filter</td>
-</tr>
-<tr>
-<td>CAS server URL including context root</td>
-<td>The CAS server location (GeoServer will redirect to it, for example, in order to login, adding the necessary extra path elements)</td>
-</tr>
-<tr>
-<td>No single sign on</td>
-<td>If checkecd, will send the "renew=true" options to the CAS server, forcing the user to login on the server at each request (unless session creation is allowed)</td>
-</tr>
-<tr>
-<td>Participate in single sign out</td>
-<td>Whether GeoServer should receive and handle callbacks for Single Sign Out.</td>
-</tr>
-<tr>
-<td>URL in CAS loutput page</td>
-<td>CAS logout page location</td>
-</tr>
-<tr>
-<td>Proxy callback URL</td>
-<td>The URL CAS will call back to after proxy ticket authentication</td>
-</tr>
-<tr>
-<td>Role source</td>
-<td>A choice of role sources for the user authenticated via CAS</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Key</dt>
+<dd>
+<p>Description</p>
+</dd>
+<dt>Name</dt>
+<dd>
+<p>Name of the filter</p>
+</dd>
+<dt>CAS server URL including context root</dt>
+<dd>
+<p>The CAS server location (GeoServer will redirect to it, for example, in order to login, adding the necessary extra path elements)</p>
+</dd>
+<dt>No single sign on</dt>
+<dd>
+<p>If checkecd, will send the "renew=true" options to the CAS server, forcing the user to login on the server at each request (unless session creation is allowed)</p>
+</dd>
+<dt>Participate in single sign out</dt>
+<dd>
+<p>Whether GeoServer should receive and handle callbacks for Single Sign Out.</p>
+</dd>
+<dt>URL in CAS loutput page</dt>
+<dd>
+<p>CAS logout page location</p>
+</dd>
+<dt>Proxy callback URL</dt>
+<dd>
+<p>The URL CAS will call back to after proxy ticket authentication</p>
+</dd>
+<dt>Role source</dt>
+<dd>
+<p>A choice of role sources for the user authenticated via CAS</p>
+</dd>
+</dl>
 <p>Specifically for the <strong>role source</strong>, the following options are available:</p>
-<table>
-<thead>
-<tr>
-<th>Source</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>User group service</td>
-<td>Locate the user in a the specified user group service, extract the roles from it.</td>
-</tr>
-<tr>
-<td>Role service</td>
-<td>Locate user roles from the specified role service</td>
-</tr>
-<tr>
-<td>Header attribute</td>
-<td>Look up the roles in the specified HTTP header of the CAS response</td>
-</tr>
-<tr>
-<td>Custom CAS attribute</td>
-<td>Extract the roles from a CAS custom attribute in the <code>&lt;cas:serviceResponse&gt;</code> received from the server. The attributes must be configured, on the CAS side, via an attribute repository, and then released for publication in service configuration.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Source</dt>
+<dd>
+<p>Description</p>
+</dd>
+<dt>User group service</dt>
+<dd>
+<p>Locate the user in a the specified user group service, extract the roles from it.</p>
+</dd>
+<dt>Role service</dt>
+<dd>
+<p>Locate user roles from the specified role service</p>
+</dd>
+<dt>Header attribute</dt>
+<dd>
+<p>Look up the roles in the specified HTTP header of the CAS response</p>
+</dd>
+<dt>Custom CAS attribute</dt>
+<dd>
+<p>Extract the roles from a CAS custom attribute in the <code>&lt;cas:serviceResponse&gt;</code> received from the server. The attributes must be configured, on the CAS side, via an attribute repository, and then released for publication in service configuration.</p>
+</dd>
+</dl>
 <h2 id="example-cas-configuration">Example CAS configuration</h2>
 <p>In order to use the CAS custom attributes the server must be configured to extract the attributes from a given attribute repository, and then allow their release in the GeoServer service configuration.</p>
 <p>For example, the following <code>cas.properties</code> file sets up a JDBC user source, as well as JDBC attribute repository (this configuration file might useful for testing purposes, but not setup for production):</p>

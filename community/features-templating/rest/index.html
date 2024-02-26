@@ -3998,87 +3998,270 @@
 <h2 id="template-configuration">Template Configuration</h2>
 <p><code>/rest/featurestemplates</code></p>
 <p>Finds all templates in the global (<code>features-templating</code>) directory or creates a new template in the global directory.</p>
-<p>+--------+-------------------------------------------------------------------------------------------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+------------------------------------+
-| Method | Consumes                                                                                        | Produces                           | Action                                                                                                            | Supported parameters                                                                   | Response                           |
-+========+=================================================================================================+====================================+===================================================================================================================+========================================================================================+====================================+
-| GET    |                                                                                                 | application/xml, application/json. | List of all the templates available in the <code>features-templating</code> directory.                                       |                                                                                        | 200. List of rules in XML or JSON. |
-+--------+-------------------------------------------------------------------------------------------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+------------------------------------+
-| POST   | application/xml, text/xml, application/json, text/json, application/xhtml+xml, application/zip. | text/plain.                        | Add the template in the request body (text or zip file) as a new Template in the <code>features-templating</code> directory. | templateName (mandatory when posting a raw template, optional when posting a zip file) | 201. Created <code>Location</code> header.    |
-+--------+-------------------------------------------------------------------------------------------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+------------------------------------+</p>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Consumes</p>
+<p>Produces</p>
+<p>Action</p>
+<p>Supported parameters</p>
+<p>Response</p>
+</dd>
+</dl>
+<p>GET</p>
+<blockquote>
+<p>application/xml, application/json.</p>
+<p>List of all the templates available in the <code>features-templating</code> directory.</p>
+<ol>
+<li>List of rules in XML or JSON.</li>
+</ol>
+</blockquote>
+<dl>
+<dt>POST</dt>
+<dd>
+<p>application/xml, text/xml, application/json, text/json, application/xhtml+xml, application/zip.</p>
+<p>text/plain.</p>
+<p>Add the template in the request body (text or zip file) as a new Template in the <code>features-templating</code> directory.</p>
+<p>templateName (mandatory when posting a raw template, optional when posting a zip file)</p>
+<ol>
+<li>Created <code>Location</code> header.</li>
+</ol>
+</dd>
+</dl>
 <p><code>/rest/workspaces/&lt;workspace name&gt;/featurestemplates</code></p>
 <p>Finds all templates in the <code>workspace</code> directory or creates a new template in the <code>workspace</code> directory.</p>
-<p>+--------+-------------------------------------------------------------------------------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+------------------------------------+
-| Method | Consumes                                                                                        | Produces                           | Action                                                                                                  | Supported parameters                                                                   | Response                           |
-+========+=================================================================================================+====================================+=========================================================================================================+========================================================================================+====================================+
-| GET    |                                                                                                 | application/xml, application/json. | List of all the templates available in the <code>workspace</code> directory                                        |                                                                                        | 200. List of rules in XML or JSON. |
-+--------+-------------------------------------------------------------------------------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+------------------------------------+
-| POST   | application/xml, text/xml, application/json, text/json, application/xhtml+xml, application/zip. | text/plain.                        | Add the template in the request body (text or zip file) as a new Template in the <code>workspace</code> directory. | templateName (mandatory when posting a raw template, optional when posting a zip file) | 201. Created <code>Location</code> header.    |
-+--------+-------------------------------------------------------------------------------------------------+------------------------------------+---------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+------------------------------------+</p>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Consumes</p>
+<p>Produces</p>
+<p>Action</p>
+<p>Supported parameters</p>
+<p>Response</p>
+</dd>
+</dl>
+<p>GET</p>
+<blockquote>
+<p>application/xml, application/json.</p>
+<p>List of all the templates available in the <code>workspace</code> directory</p>
+<ol>
+<li>List of rules in XML or JSON.</li>
+</ol>
+</blockquote>
+<dl>
+<dt>POST</dt>
+<dd>
+<p>application/xml, text/xml, application/json, text/json, application/xhtml+xml, application/zip.</p>
+<p>text/plain.</p>
+<p>Add the template in the request body (text or zip file) as a new Template in the <code>workspace</code> directory.</p>
+<p>templateName (mandatory when posting a raw template, optional when posting a zip file)</p>
+<ol>
+<li>Created <code>Location</code> header.</li>
+</ol>
+</dd>
+</dl>
 <p><code>/rest/workspaces/&lt;workspace name&gt;/featuretypes/&lt;featureType name&gt;/featurestemplates</code></p>
 <p>Finds all templates in the <code>featuretype</code> directory or creates a new template in the <code>featuretype</code> directory.</p>
-<p>+--------+-------------------------------------------------------------------------------------------------+------------------------------------+------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+------------------------------------+
-| Method | Consumes                                                                                        | Produces                           | Action                                                                                                     | Supported parameters                                                                   | Response                           |
-+========+=================================================================================================+====================================+============================================================================================================+========================================================================================+====================================+
-| GET    |                                                                                                 | application/json, application/xml. | List of all the templates available in the <code>featuretype</code> directory                                         |                                                                                        | 200. List of rules in XML or JSON. |
-+--------+-------------------------------------------------------------------------------------------------+------------------------------------+------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+------------------------------------+
-| POST   | application/xml, text/xml, application/json, text/json, application/xhtml+xml, application/zip. | text/plain.                        | Add the template in the request body (text or zip file) as a new Template in the <code>Feature Type</code> directory. | templateName (mandatory when posting a raw template, optional when posting a zip file) | 201. Created <code>Location</code> header.    |
-+--------+-------------------------------------------------------------------------------------------------+------------------------------------+------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+------------------------------------+</p>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Consumes</p>
+<p>Produces</p>
+<p>Action</p>
+<p>Supported parameters</p>
+<p>Response</p>
+</dd>
+</dl>
+<p>GET</p>
+<blockquote>
+<p>application/json, application/xml.</p>
+<p>List of all the templates available in the <code>featuretype</code> directory</p>
+<ol>
+<li>List of rules in XML or JSON.</li>
+</ol>
+</blockquote>
+<dl>
+<dt>POST</dt>
+<dd>
+<p>application/xml, text/xml, application/json, text/json, application/xhtml+xml, application/zip.</p>
+<p>text/plain.</p>
+<p>Add the template in the request body (text or zip file) as a new Template in the <code>Feature Type</code> directory.</p>
+<p>templateName (mandatory when posting a raw template, optional when posting a zip file)</p>
+<ol>
+<li>Created <code>Location</code> header.</li>
+</ol>
+</dd>
+</dl>
 <p><code>/rest/featurestemplates/&lt;template name&gt;</code></p>
 <p>If the template with the specified name exists in the global (<code>features-templating</code>) directory, returns the template or replaces the template content with the one in the request body.</p>
-<p>+--------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+--------------------+
-| Method | Consumes                                                                                        | Produces                                                  | Action                                                                                                                          | Response           |
-+========+=================================================================================================+===========================================================+=================================================================================================================================+====================+
-| GET    |                                                                                                 | application/xml, application/json, application/xhtml+xml. | the template with the specified name if present in the <code>features-templating</code> directory.                                         | 200. The template. |
-+--------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+--------------------+
-| PUT    | application/xml, text/xml, application/json, text/json, application/xhtml+xml, application/zip. | text/plain.                                               | replace the template, if found in the <code>features-templating</code> directory with the template in the request body (text or zip file). | 201.              |
-+--------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+--------------------+
-| DELETE |                                                                                                 |                                                           | delete the template, if found in the <code>features-templating</code> directory.                                                           | 204.              |
-+--------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+--------------------+</p>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Consumes</p>
+<p>Produces</p>
+<p>Action</p>
+<p>Response</p>
+</dd>
+</dl>
+<p>GET</p>
+<blockquote>
+<p>application/xml, application/json, application/xhtml+xml.</p>
+<p>the template with the specified name if present in the <code>features-templating</code> directory.</p>
+<ol>
+<li>The template.</li>
+</ol>
+</blockquote>
+<dl>
+<dt>PUT</dt>
+<dd>
+<p>application/xml, text/xml, application/json, text/json, application/xhtml+xml, application/zip.</p>
+<p>text/plain.</p>
+<p>replace the template, if found in the <code>features-templating</code> directory with the template in the request body (text or zip file).</p>
+<p>201.</p>
+</dd>
+</dl>
+<p>DELETE</p>
+<blockquote>
+<p>delete the template, if found in the <code>features-templating</code> directory.</p>
+<p>204.</p>
+</blockquote>
 <p><code>/rest/workspaces/&lt;workspace name&gt;/featurestemplates/&lt;template name&gt;</code></p>
 <p>If the template with the specified name exists in the <code>workspace</code> directory, returns the template or replaces the template content with the one in the request body.</p>
-<p>+--------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+--------------------+
-| Method | Consumes                                                                                        | Produces                                                  | Action                                                                                                                         | Response           |
-+========+=================================================================================================+===========================================================+================================================================================================================================+====================+
-| GET    |                                                                                                 | application/xml, application/json, application/xhtml+xml. | the template with the specified name if present in the <code>workspace</code> directory.                                                  | 200. The template. |
-+--------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+--------------------+
-| PUT    | application/xml, text/xml, application/json, text/json, application/xhtml+xml, application/zip. | text/plain.                                               | replace the existing template, if found in the <code>workspace</code> directory with the template in the request body (text or zip file). | 201.              |
-+--------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+--------------------+
-| DELETE |                                                                                                 |                                                           | delete the template, if found in the <code>workspace</code> directory.                                                                    | 204.              |
-+--------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+--------------------+</p>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Consumes</p>
+<p>Produces</p>
+<p>Action</p>
+<p>Response</p>
+</dd>
+</dl>
+<p>GET</p>
+<blockquote>
+<p>application/xml, application/json, application/xhtml+xml.</p>
+<p>the template with the specified name if present in the <code>workspace</code> directory.</p>
+<ol>
+<li>The template.</li>
+</ol>
+</blockquote>
+<dl>
+<dt>PUT</dt>
+<dd>
+<p>application/xml, text/xml, application/json, text/json, application/xhtml+xml, application/zip.</p>
+<p>text/plain.</p>
+<p>replace the existing template, if found in the <code>workspace</code> directory with the template in the request body (text or zip file).</p>
+<p>201.</p>
+</dd>
+</dl>
+<p>DELETE</p>
+<blockquote>
+<p>delete the template, if found in the <code>workspace</code> directory.</p>
+<p>204.</p>
+</blockquote>
 <p><code>/rest/workspaces/&lt;workspace name&gt;/featuretypes/&lt;featureType name&gt;</code> <code>/featurestemplates/&lt;template name&gt;</code></p>
 <p>If the template with the specified name exists in the <code>featuretype</code> directory, returns the template or replaces the template content with the one in the request body.</p>
-<p>+--------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
-| Method | Consumes                                                                                        | Produces                                                  | Action                                                                                                                           | Response           |
-+========+=================================================================================================+===========================================================+==================================================================================================================================+====================+
-| GET    |                                                                                                 | application/xml, application/json, application/xhtml+xml. | the template with the specified name if present in the <code>featuretype</code> directory.                                                  | 200. The template. |
-+--------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
-| PUT    | application/xml, text/xml, application/json, text/json, application/xhtml+xml, application/zip. | text/plain.                                               | replace the existing template, if found in the <code>featuretype</code> directory with the template in the request body (text or zip file). | 201.              |
-+--------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+
-| DELETE |                                                                                                 |                                                           | delete the template, if found in the <code>featuretype</code> directory.                                                                    | 204.              |
-+--------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+</p>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Consumes</p>
+<p>Produces</p>
+<p>Action</p>
+<p>Response</p>
+</dd>
+</dl>
+<p>GET</p>
+<blockquote>
+<p>application/xml, application/json, application/xhtml+xml.</p>
+<p>the template with the specified name if present in the <code>featuretype</code> directory.</p>
+<ol>
+<li>The template.</li>
+</ol>
+</blockquote>
+<dl>
+<dt>PUT</dt>
+<dd>
+<p>application/xml, text/xml, application/json, text/json, application/xhtml+xml, application/zip.</p>
+<p>text/plain.</p>
+<p>replace the existing template, if found in the <code>featuretype</code> directory with the template in the request body (text or zip file).</p>
+<p>201.</p>
+</dd>
+</dl>
+<p>DELETE</p>
+<blockquote>
+<p>delete the template, if found in the <code>featuretype</code> directory.</p>
+<p>204.</p>
+</blockquote>
 <h2 id="template-rule-configuration">Template Rule Configuration</h2>
 <p><code>/rest/workspaces/&lt;workspace name&gt;/featuretypes/&lt;featureType name&gt;/templaterules</code></p>
 <p>Finds all the configured template rules for the <code>featuretype</code> or creates a new one.</p>
-<p>+--------+---------------------------------------------------------+------------------------------------+-----------------------------------------------------------------+------------------------------------+
-| Method | Consumes                                                | Produces                           | Action                                                          | Response                           |
-+========+=========================================================+====================================+=================================================================+====================================+
-| GET    |                                                         | application/xml, application/json. | List of all the template rules available for the <code>featuretype</code>. | 200. List of rules in XML or JSON. |
-+--------+---------------------------------------------------------+------------------------------------+-----------------------------------------------------------------+------------------------------------+
-| POST   | application/xml, text/xml, application/json, text/json. | text/plain.                        | Add the template rule in the request body.                      | 201. Created <code>Location</code> header.    |
-+--------+---------------------------------------------------------+------------------------------------+-----------------------------------------------------------------+------------------------------------+</p>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Consumes</p>
+<p>Produces</p>
+<p>Action</p>
+<p>Response</p>
+</dd>
+</dl>
+<p>GET</p>
+<blockquote>
+<p>application/xml, application/json.</p>
+<p>List of all the template rules available for the <code>featuretype</code>.</p>
+<ol>
+<li>List of rules in XML or JSON.</li>
+</ol>
+</blockquote>
+<dl>
+<dt>POST</dt>
+<dd>
+<p>application/xml, text/xml, application/json, text/json.</p>
+<p>text/plain.</p>
+<p>Add the template rule in the request body.</p>
+<ol>
+<li>Created <code>Location</code> header.</li>
+</ol>
+</dd>
+</dl>
 <p><code>/rest/workspaces/&lt;workspace name&gt;/featuretypes/&lt;featureType name&gt;</code> <code>/templaterules/&lt;rule identifier&gt;</code></p>
 <p>Finds, replaces, updates or deletes the template rule with the specified identifier.</p>
-<p>+--------+---------------------------------------------------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------+
-| Method | Consumes                                                | Produces                           | Action                                                                                                                                                                                                                  | Response                           |
-+========+=========================================================+====================================+=========================================================================================================================================================================================================================+====================================+
-| GET    |                                                         | application/xml, application/json. | The rule with the specified <code>rule identifier</code>.                                                                                                                                                                          | 200. List of rules in XML or JSON. |
-+--------+---------------------------------------------------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------+
-| PUT    | application/xml, text/xml, application/json, text/json. | text/plain.                        | Replace the rule with the specified id with the one provided in the request body.                                                                                                                                       | 201.                              |
-+--------+---------------------------------------------------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------+
-| PATCH  | application/xml, text/xml, application/json, text/json. | text/plain.                        | Allows partial updates of the rule with the specified id using the fields specified in the rule provided in the request body. It uses a <a href="https://datatracker.ietf.org/doc/html/rfc7386">JSON merge patch like strategy</a> | 201.                              |
-+--------+---------------------------------------------------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------+
-| DELETE |                                                         |                                    | Delete the rule with the specified id.                                                                                                                                                                                  | 204.                              |
-+--------+---------------------------------------------------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------+</p>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Consumes</p>
+<p>Produces</p>
+<p>Action</p>
+<p>Response</p>
+</dd>
+</dl>
+<p>GET</p>
+<blockquote>
+<p>application/xml, application/json.</p>
+<p>The rule with the specified <code>rule identifier</code>.</p>
+<ol>
+<li>List of rules in XML or JSON.</li>
+</ol>
+</blockquote>
+<dl>
+<dt>PUT</dt>
+<dd>
+<p>application/xml, text/xml, application/json, text/json.</p>
+<p>text/plain.</p>
+<p>Replace the rule with the specified id with the one provided in the request body.</p>
+<p>201.</p>
+</dd>
+<dt>PATCH</dt>
+<dd>
+<p>application/xml, text/xml, application/json, text/json.</p>
+<p>text/plain.</p>
+<p>Allows partial updates of the rule with the specified id using the fields specified in the rule provided in the request body. It uses a <a href="https://datatracker.ietf.org/doc/html/rfc7386">JSON merge patch like strategy</a></p>
+<p>201.</p>
+</dd>
+</dl>
+<p>DELETE</p>
+<blockquote>
+<p>Delete the rule with the specified id.</p>
+<p>204.</p>
+</blockquote>
 <h3 id="data-object-transfer">Data Object Transfer</h3>
 <p>Both XML and JSON are supported for transfer of data objects.</p>
 <p>Encoding of a template rule in XML:</p>

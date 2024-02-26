@@ -1976,32 +1976,28 @@
 </dl>
 <p>Query String regular expressions will match the full query string (\^ and \$ terminators are automatically appended), so to match only part of it, remember to prefix and postfix the expression with .<em> (e.g. .</em>request=getcapabilities.*)</p>
 <h3 id="examples-of-rules-ant-patterns-and-query-string-regular-expressions">Examples of rules (ANT patterns and query string regular expressions)</h3>
-<table>
-<thead>
-<tr>
-<th>Pattern</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>/wms, /wms/**</td>
-<td>simple ANT pattern</td>
-</tr>
-<tr>
-<td>/wms</td>
-<td>.<em>request=GetMap.</em></td>
-</tr>
-<tr>
-<td>/wms</td>
-<td>(?=.<em>request=getmap)(?=.</em>format=image/png).*</td>
-</tr>
-<tr>
-<td>/wms</td>
-<td>(?=.<em>request=getmap)(?!.</em>format=image/png).*</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Pattern</dt>
+<dd>
+<p>Description</p>
+</dd>
+<dt>/wms, /wms/**</dt>
+<dd>
+<p>simple ANT pattern</p>
+</dd>
+<dt>/wms|.<em>request=GetMap.</em></dt>
+<dd>
+<p>ANT pattern and querystring regex to match one parameter</p>
+</dd>
+<dt>/wms|(?=.<em>request=getmap)(?=.</em>format=image/png).*</dt>
+<dd>
+<p>ANT pattern and querystring regex to match two parameters in any order</p>
+</dd>
+<dt>/wms|(?=.<em>request=getmap)(?!.</em>format=image/png).*</dt>
+<dd>
+<p>ANT pattern and querystring regex to match one parameters and be sure another one is not matched</p>
+</dd>
+</dl>
 
 
 

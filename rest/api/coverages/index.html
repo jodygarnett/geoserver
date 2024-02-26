@@ -2292,118 +2292,93 @@
 </div>
 <h2 id="workspaceswscoveragestorescscoveragesformat"><code>/workspaces/&lt;ws&gt;/coveragestores/&lt;cs&gt;/coverages[.&lt;format&gt;]</code></h2>
 <p>Controls all coverages in a given coverage store and workspace.</p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Action</th>
-<th>Status code</th>
-<th>Formats</th>
-<th>Default Format</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>List all coverages in coverage store <code>cs</code></td>
-<td>200</td>
-<td>HTML, XML, JSON</td>
-<td>HTML</td>
-</tr>
-<tr>
-<td>POST</td>
-<td>Create a new coverage</td>
-<td>201 with <code>Location</code> header</td>
-<td>XML, JSON</td>
-<td></td>
-</tr>
-<tr>
-<td>PUT</td>
-<td></td>
-<td>405</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td></td>
-<td>405</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Action</p>
+<p>Status code</p>
+<p>Formats</p>
+<p>Default Format</p>
+</dd>
+<dt>GET</dt>
+<dd>
+<p>List all coverages in coverage store <code>cs</code></p>
+<p>200</p>
+<p>HTML, XML, JSON</p>
+<p>HTML</p>
+</dd>
+<dt>POST</dt>
+<dd>
+<p>Create a new coverage</p>
+<p>201 with <code>Location</code> header</p>
+<p>XML, JSON</p>
+</dd>
+</dl>
+<p>PUT</p>
+<blockquote>
+<p>405</p>
+</blockquote>
+<p>DELETE</p>
+<blockquote>
+<p>405</p>
+</blockquote>
 <h2 id="workspaceswscoveragestorescscoveragescformat"><code>/workspaces/&lt;ws&gt;/coveragestores/&lt;cs&gt;/coverages/&lt;c&gt;[.&lt;format&gt;]</code></h2>
 <p>Controls a particular coverage in a given coverage store and workspace.</p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Action</th>
-<th>Status code</th>
-<th>Formats</th>
-<th>Default Format</th>
-<th>Parameters</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>Return coverage <code>c</code></td>
-<td>200</td>
-<td>HTML, XML, JSON</td>
-<td>HTML</td>
-<td><a href="./#rest_api_coverages_quietOnNotFound">quietOnNotFound</a></td>
-</tr>
-<tr>
-<td>POST</td>
-<td></td>
-<td>405</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>PUT</td>
-<td>Modify coverage <code>c</code></td>
-<td>200</td>
-<td>XML,JSON</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td>Delete coverage <code>c</code></td>
-<td>200</td>
-<td></td>
-<td></td>
-<td><a href="./#rest_api_coverages_recurse">recurse</a></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Action</p>
+<p>Status code</p>
+<p>Formats</p>
+<p>Default Format</p>
+<p>Parameters</p>
+</dd>
+<dt>GET</dt>
+<dd>
+<p>Return coverage <code>c</code></p>
+<p>200</p>
+<p>HTML, XML, JSON</p>
+<p>HTML</p>
+<p><a href="./#rest_api_coverages_quietOnNotFound">quietOnNotFound</a></p>
+</dd>
+</dl>
+<p>POST</p>
+<blockquote>
+<p>405</p>
+</blockquote>
+<dl>
+<dt>PUT</dt>
+<dd>
+<p>Modify coverage <code>c</code></p>
+<p>200</p>
+<p>XML,JSON</p>
+</dd>
+<dt>DELETE</dt>
+<dd>
+<p>Delete coverage <code>c</code></p>
+<p>200</p>
+<p><a href="./#rest_api_coverages_recurse">recurse</a></p>
+</dd>
+</dl>
 <h3 id="exceptions">Exceptions</h3>
-<table>
-<thead>
-<tr>
-<th>Exception</th>
-<th>Status code</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET for a coverage that does not exist</td>
-<td>404</td>
-</tr>
-<tr>
-<td>PUT that changes name of coverage</td>
-<td>403</td>
-</tr>
-<tr>
-<td>PUT that changes coverage store of coverage</td>
-<td>403</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Exception</dt>
+<dd>
+<p>Status code</p>
+</dd>
+<dt>GET for a coverage that does not exist</dt>
+<dd>
+<p>404</p>
+</dd>
+<dt>PUT that changes name of coverage</dt>
+<dd>
+<p>403</p>
+</dd>
+<dt>PUT that changes coverage store of coverage</dt>
+<dd>
+<p>403</p>
+</dd>
+</dl>
 <h3 id="parameters">Parameters</h3>
 <h4 id="rest_api_coverages_recurse"><code>recurse</code></h4>
 <p>The <code>recurse</code> parameter recursively deletes all layers referenced by the specified coverage. Permitted values for this parameter are "true" or "false". The default value is "false".</p>
@@ -2414,100 +2389,71 @@
 <p>The following API applies exclusively to structured coverage readers.</p>
 <h2 id="workspaceswscoveragestorescscoveragescoverageindexformat"><code>/workspaces/&lt;ws&gt;/coveragestores/&lt;cs&gt;/coverages/&lt;coverage&gt;/index[.&lt;format&gt;]</code></h2>
 <p>Declares the set of attributes associated to the specified coverage, their name, type and min/max occurrences.</p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Action</th>
-<th>Status code</th>
-<th>Formats</th>
-<th>Default Format</th>
-<th>Parameters</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>Returns the attributes, their names and their types</td>
-<td>200</td>
-<td>XML, JSON</td>
-<td>XML</td>
-<td></td>
-</tr>
-<tr>
-<td>POST</td>
-<td></td>
-<td>405</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>PUT</td>
-<td></td>
-<td>405</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td></td>
-<td>405</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Action</p>
+<p>Status code</p>
+<p>Formats</p>
+<p>Default Format</p>
+<p>Parameters</p>
+</dd>
+<dt>GET</dt>
+<dd>
+<p>Returns the attributes, their names and their types</p>
+<p>200</p>
+<p>XML, JSON</p>
+<p>XML</p>
+</dd>
+</dl>
+<p>POST</p>
+<blockquote>
+<p>405</p>
+</blockquote>
+<p>PUT</p>
+<blockquote>
+<p>405</p>
+</blockquote>
+<p>DELETE</p>
+<blockquote>
+<p>405</p>
+</blockquote>
 <h2 id="workspaceswscoveragestorescscoveragescoverageindexgranulesformat"><code>/workspaces/&lt;ws&gt;/coveragestores/&lt;cs&gt;/coverages/&lt;coverage&gt;/index/granules.&lt;format&gt;</code></h2>
 <p>Returns the full list of granules, each with its attributes vales and geometry, and allows to selectively remove them</p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Action</th>
-<th>Status code</th>
-<th>Formats</th>
-<th>Default Format</th>
-<th>Parameters</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>Returns the list of granules and their attributes, either in GML (when XML is used) or GeoJSON (when JSON is used)</td>
-<td>200</td>
-<td>XML, JSON</td>
-<td>XML</td>
-<td><a href="./#rest_api_coverages_offset">offset</a>, <a href="./#rest_api_coverages_limit">limit</a>, <a href="./#rest_api_coverages_filter">filter</a></td>
-</tr>
-<tr>
-<td>POST</td>
-<td></td>
-<td>405</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>PUT</td>
-<td></td>
-<td>405</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td>Deletes the granules (all, or just the ones selected via the filter parameter)</td>
-<td>200</td>
-<td></td>
-<td></td>
-<td><a href="./#rest_api_coverages_filter">filter</a></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Action</p>
+<p>Status code</p>
+<p>Formats</p>
+<p>Default Format</p>
+<p>Parameters</p>
+</dd>
+<dt>GET</dt>
+<dd>
+<p>Returns the list of granules and their attributes, either in GML (when XML is used) or GeoJSON (when JSON is used)</p>
+<p>200</p>
+<p>XML, JSON</p>
+<p>XML</p>
+<p><a href="./#rest_api_coverages_offset">offset</a>, <a href="./#rest_api_coverages_limit">limit</a>, <a href="./#rest_api_coverages_filter">filter</a></p>
+</dd>
+</dl>
+<p>POST</p>
+<blockquote>
+<p>405</p>
+</blockquote>
+<p>PUT</p>
+<blockquote>
+<p>405</p>
+</blockquote>
+<dl>
+<dt>DELETE</dt>
+<dd>
+<p>Deletes the granules (all, or just the ones selected via the filter parameter)</p>
+<p>200</p>
+<p><a href="./#rest_api_coverages_filter">filter</a></p>
+</dd>
+</dl>
 <h3 id="parameters_1">Parameters</h3>
 <h4 id="rest_api_coverages_offset"><code>offset</code></h4>
 <p>The <code>offset</code> parameter instructs GeoServer to skip the specified number of first granules when returning the data.</p>
@@ -2517,67 +2463,50 @@
 <p>The <code>filter</code> parameter is a CQL filter that allows to select which granules will be returned based on their attribute values.</p>
 <h2 id="workspaceswscoveragestorescscoveragesmosaicindexgranulesgranuleidformat"><code>/workspaces/&lt;ws&gt;/coveragestores/&lt;cs&gt;/coverages/&lt;mosaic&gt;/index/granules/&lt;granuleId&gt;.&lt;format&gt;</code></h2>
 <p>Returns a single granule and allows for its removal.</p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Action</th>
-<th>Status code</th>
-<th>Formats</th>
-<th>Default Format</th>
-<th>Parameters</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>Returns the specified of granules and its attributes, either in GML (when XML is used) or GeoJSON (when JSON is used)</td>
-<td>200</td>
-<td>XML, JSON</td>
-<td>XML</td>
-<td><a href="./#rest_api_structuredcoverages_quietOnNotFound">quietOnNotFound</a></td>
-</tr>
-<tr>
-<td>POST</td>
-<td></td>
-<td>405</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>PUT</td>
-<td></td>
-<td>405</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td>Deletes the granule</td>
-<td>200</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Action</p>
+<p>Status code</p>
+<p>Formats</p>
+<p>Default Format</p>
+<p>Parameters</p>
+</dd>
+<dt>GET</dt>
+<dd>
+<p>Returns the specified of granules and its attributes, either in GML (when XML is used) or GeoJSON (when JSON is used)</p>
+<p>200</p>
+<p>XML, JSON</p>
+<p>XML</p>
+<p><a href="./#rest_api_structuredcoverages_quietOnNotFound">quietOnNotFound</a></p>
+</dd>
+</dl>
+<p>POST</p>
+<blockquote>
+<p>405</p>
+</blockquote>
+<p>PUT</p>
+<blockquote>
+<p>405</p>
+</blockquote>
+<dl>
+<dt>DELETE</dt>
+<dd>
+<p>Deletes the granule</p>
+<p>200</p>
+</dd>
+</dl>
 <h3 id="exceptions_1">Exceptions</h3>
-<table>
-<thead>
-<tr>
-<th>Exception</th>
-<th>Status code</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET for a granule that does not exist</td>
-<td>404</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Exception</dt>
+<dd>
+<p>Status code</p>
+</dd>
+<dt>GET for a granule that does not exist</dt>
+<dd>
+<p>404</p>
+</dd>
+</dl>
 <h3 id="parameters_2">Parameters</h3>
 <h4 id="rest_api_structuredcoverages_quietOnNotFound"><code>quietOnNotFound</code></h4>
 <p>The <code>quietOnNotFound</code> parameter avoids to log an Exception when the granule is not present. Note that 404 status code will be returned anyway.</p>

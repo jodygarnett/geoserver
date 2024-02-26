@@ -2453,85 +2453,77 @@
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="nt">x-inclusion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;text&gt;</span>
 </span></code></pre></div>
 <p>where:</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Required?</th>
-<th>Description</th>
-<th>Default value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>name</code></td>
-<td>No</td>
-<td>Internal reference to the feature style. It is recommended that the value be <strong>lower case</strong> and contain <strong>no spaces</strong>.</td>
-<td>Blank</td>
-</tr>
-<tr>
-<td><code>title</code></td>
-<td>No</td>
-<td>Human-readable name of the feature style. Exposed as a name for the group of rules contained in the feature style.</td>
-<td>Blank</td>
-</tr>
-<tr>
-<td><code>abstract</code></td>
-<td>No</td>
-<td>Longer description of the feature style.</td>
-<td>Blank</td>
-</tr>
-<tr>
-<td><code>transform</code></td>
-<td>No</td>
-<td><a href="../transforms/">Rendering transformation</a> information.</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td><code>rules</code></td>
-<td>Yes</td>
-<td>List of styling <a href="../rules/">rules</a>.</td>
-<td>N/A</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Property</dt>
+<dd>
+<p>Required?</p>
+<p>Description</p>
+<p>Default value</p>
+</dd>
+<dt><code>name</code></dt>
+<dd>
+<p>No</p>
+<p>Internal reference to the feature style. It is recommended that the value be <strong>lower case</strong> and contain <strong>no spaces</strong>.</p>
+<p>Blank</p>
+</dd>
+<dt><code>title</code></dt>
+<dd>
+<p>No</p>
+<p>Human-readable name of the feature style. Exposed as a name for the group of rules contained in the feature style.</p>
+<p>Blank</p>
+</dd>
+<dt><code>abstract</code></dt>
+<dd>
+<p>No</p>
+<p>Longer description of the feature style.</p>
+<p>Blank</p>
+</dd>
+<dt><code>transform</code></dt>
+<dd>
+<p>No</p>
+<p><a href="../transforms/">Rendering transformation</a> information.</p>
+<p>N/A</p>
+</dd>
+<dt><code>rules</code></dt>
+<dd>
+<p>Yes</p>
+<p>List of styling <a href="../rules/">rules</a>.</p>
+<p>N/A</p>
+</dd>
+</dl>
 <p>The following properties are equivalent to SLD "vendor options".</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Required?</th>
-<th>Description</th>
-<th>Default value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>x-ruleEvaluation</code></td>
-<td>No</td>
-<td>When equals to <code>first</code> - stops rule evaluation after the first match. Can make the rendering more efficient by reducing the number of rules that need to be traversed by features, as well as simplyfing the rule filters.</td>
-<td><code>all</code></td>
-</tr>
-<tr>
-<td><code>x-composite</code></td>
-<td>No</td>
-<td>Allows for both alpha compositing and color blending options between buffers. There are many options; <a href="./#ysld_reference_featurestyles_composite">see below</a>.</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td><code>x-composite-base</code></td>
-<td>No</td>
-<td>Allows the rendering engine to use that feature-style as a "base", and will compose all subsequent feature-styles and layers on top of it, until another base is found. Once the full set of layers against a base is composed, then the base itself will be composed against the next set of composed layers using its own compositing operator, if present. This is useful to fine-tune the use of <code>x-composite</code>, and to make sure that only the desired content is composited/blended and not all of the drawn content.</td>
-<td><code>false</code></td>
-</tr>
-<tr>
-<td><code>x-inclusion</code></td>
-<td>No</td>
-<td>Define if rule should be included in style for <code>legendOnly</code> or <code>mapOnly</code> (see <a href="../../../sld/extensions/rendering-selection/">Rendering Selection</a>)</td>
-<td><code>normal</code></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Property</dt>
+<dd>
+<p>Required?</p>
+<p>Description</p>
+<p>Default value</p>
+</dd>
+<dt><code>x-ruleEvaluation</code></dt>
+<dd>
+<p>No</p>
+<p>When equals to <code>first</code> - stops rule evaluation after the first match. Can make the rendering more efficient by reducing the number of rules that need to be traversed by features, as well as simplyfing the rule filters.</p>
+<p><code>all</code></p>
+</dd>
+<dt><code>x-composite</code></dt>
+<dd>
+<p>No</p>
+<p>Allows for both alpha compositing and color blending options between buffers. There are many options; <a href="./#ysld_reference_featurestyles_composite">see below</a>.</p>
+<p>N/A</p>
+</dd>
+<dt><code>x-composite-base</code></dt>
+<dd>
+<p>No</p>
+<p>Allows the rendering engine to use that feature-style as a "base", and will compose all subsequent feature-styles and layers on top of it, until another base is found. Once the full set of layers against a base is composed, then the base itself will be composed against the next set of composed layers using its own compositing operator, if present. This is useful to fine-tune the use of <code>x-composite</code>, and to make sure that only the desired content is composited/blended and not all of the drawn content.</p>
+<p><code>false</code></p>
+</dd>
+<dt><code>x-inclusion</code></dt>
+<dd>
+<p>No</p>
+<p>Define if rule should be included in style for <code>legendOnly</code> or <code>mapOnly</code> (see <a href="../../../sld/extensions/rendering-selection/">Rendering Selection</a>)</p>
+<p><code>normal</code></p>
+</dd>
+</dl>
 <h2 id="ysld_reference_featurestyles_composite">Compositing and blending</h2>
 <p>By default, multiple feature styles are drawn with one buffer on top of the other. However, using the <code>x-composite</code> and <code>x-composite-base</code> options, one can customize the way that buffers are displayed.</p>
 <p>The following two tables show the possible alpha compositing and color blending values for the <code>x-composite</code> option. Note that in the tables below, <strong>source</strong> refers to the buffer that is drawn on top, while <strong>destination</strong> refers to the buffer that the source is drawn on top of.</p>
@@ -2541,102 +2533,130 @@
 </div>
 <p><strong>Alpha compositing</strong></p>
 <p>Alpha compositing controls how buffers are merged using the transparent areas of each buffer.</p>
-<p>+--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Value              | Description                                                                                                                                                                                                 |
-+====================+=============================================================================================================================================================================================================+
-| <code>copy</code>             | Only the source will be present in the output.                                                                                                                                                              |
-|                    |                                                                                                                                                                                                             |
-|                    | <img alt="image" src="img/composite-source.*" />                                                                                                                                                                            |
-+--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <code>destination</code>      | Only the destination will be present in the output.                                                                                                                                                         |
-|                    |                                                                                                                                                                                                             |
-|                    | <img alt="image" src="img/composite-destination.*" />                                                                                                                                                                       |
-+--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <code>source-over</code>      | The source is drawn over the destination, and the destination is visible where the source is transparent. Opposite of <code>destination-over</code>. This is the default value for x-composite.                        |
-|                    |                                                                                                                                                                                                             |
-|                    | <img alt="image" src="img/composite-source-over.*" />                                                                                                                                                                       |
-+--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <code>destination-over</code> | The source is drawn below the destination, and is visible only when the destination is transparent. Opposite of <code>source-over</code>.                                                                              |
-|                    |                                                                                                                                                                                                             |
-|                    | <img alt="image" src="img/composite-destination-over.*" />                                                                                                                                                                  |
-+--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <code>source-in</code>        | The source is visible only when overlapping some non-transparent pixel of the destination. This allows the background map to act as a mask for the layer/feature being drawn. Opposite of <code>destination-in</code>. |
-|                    |                                                                                                                                                                                                             |
-|                    | <img alt="image" src="img/composite-source-in.*" />                                                                                                                                                                         |
-+--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <code>destination-in</code>   | The destination is retained only when overlapping some non transparent pixel in the source. This allows the layer/feature to be drawn to act as a mask for the background map. Opposite of <code>source-in</code>.     |
-|                    |                                                                                                                                                                                                             |
-|                    | <img alt="image" src="img/composite-destination-in.*" />                                                                                                                                                                    |
-+--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <code>source-out</code>       | The source is retained only in areas where the destination is transparent. This acts as a reverse mask when compared to <code>source-in</code>.                                                                        |
-|                    |                                                                                                                                                                                                             |
-|                    | <img alt="image" src="img/composite-source-out.*" />                                                                                                                                                                        |
-+--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <code>destination-out</code>  | The destination is retained only in areas where the source is transparent. This acts as a reverse mask when compared to <code>destination-in</code>.                                                                   |
-|                    |                                                                                                                                                                                                             |
-|                    | <img alt="image" src="img/composite-destination-out.*" />                                                                                                                                                                   |
-+--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <code>source-atop</code>      | The destination is drawn fully, while the source is drawn only where it intersects the destination.                                                                                                         |
-|                    |                                                                                                                                                                                                             |
-|                    | <img alt="image" src="img/composite-source-atop.*" />                                                                                                                                                                       |
-+--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <code>destination-atop</code> | The source is drawn fully, and the destination is drawn over the source only where it intersects it.                                                                                                        |
-|                    |                                                                                                                                                                                                             |
-|                    | <img alt="image" src="img/composite-destination-atop.*" />                                                                                                                                                                  |
-+--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <code>xor</code>              | "Exclusive Or" mode. Each pixel is rendered only if either the source or the destination is not blank, but not both.                                                                                      |
-|                    |                                                                                                                                                                                                             |
-|                    | <img alt="image" src="img/composite-xor.*" />                                                                                                                                                                               |
-+--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</p>
+<dl>
+<dt>Value</dt>
+<dd>
+<p>Description</p>
+</dd>
+<dt><code>copy</code></dt>
+<dd>
+<p>Only the source will be present in the output.</p>
+<p><img alt="image" src="img/composite-source.*" /></p>
+</dd>
+<dt><code>destination</code></dt>
+<dd>
+<p>Only the destination will be present in the output.</p>
+<p><img alt="image" src="img/composite-destination.*" /></p>
+</dd>
+<dt><code>source-over</code></dt>
+<dd>
+<p>The source is drawn over the destination, and the destination is visible where the source is transparent. Opposite of <code>destination-over</code>. This is the default value for x-composite.</p>
+<p><img alt="image" src="img/composite-source-over.*" /></p>
+</dd>
+<dt><code>destination-over</code></dt>
+<dd>
+<p>The source is drawn below the destination, and is visible only when the destination is transparent. Opposite of <code>source-over</code>.</p>
+<p><img alt="image" src="img/composite-destination-over.*" /></p>
+</dd>
+<dt><code>source-in</code></dt>
+<dd>
+<p>The source is visible only when overlapping some non-transparent pixel of the destination. This allows the background map to act as a mask for the layer/feature being drawn. Opposite of <code>destination-in</code>.</p>
+<p><img alt="image" src="img/composite-source-in.*" /></p>
+</dd>
+<dt><code>destination-in</code></dt>
+<dd>
+<p>The destination is retained only when overlapping some non transparent pixel in the source. This allows the layer/feature to be drawn to act as a mask for the background map. Opposite of <code>source-in</code>.</p>
+<p><img alt="image" src="img/composite-destination-in.*" /></p>
+</dd>
+<dt><code>source-out</code></dt>
+<dd>
+<p>The source is retained only in areas where the destination is transparent. This acts as a reverse mask when compared to <code>source-in</code>.</p>
+<p><img alt="image" src="img/composite-source-out.*" /></p>
+</dd>
+<dt><code>destination-out</code></dt>
+<dd>
+<p>The destination is retained only in areas where the source is transparent. This acts as a reverse mask when compared to <code>destination-in</code>.</p>
+<p><img alt="image" src="img/composite-destination-out.*" /></p>
+</dd>
+<dt><code>source-atop</code></dt>
+<dd>
+<p>The destination is drawn fully, while the source is drawn only where it intersects the destination.</p>
+<p><img alt="image" src="img/composite-source-atop.*" /></p>
+</dd>
+<dt><code>destination-atop</code></dt>
+<dd>
+<p>The source is drawn fully, and the destination is drawn over the source only where it intersects it.</p>
+<p><img alt="image" src="img/composite-destination-atop.*" /></p>
+</dd>
+<dt><code>xor</code></dt>
+<dd>
+<p>"Exclusive Or" mode. Each pixel is rendered only if either the source or the destination is not blank, but not both.</p>
+<p><img alt="image" src="img/composite-xor.*" /></p>
+</dd>
+</dl>
 <p><strong>Color blending</strong></p>
 <p>Color blending allows buffers to be mixed during composition.</p>
-<p>+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Value         | Description                                                                                                                                                                                                                                                                                            |
-+===============+========================================================================================================================================================================================================================================================================================================+
-| <code>multiply</code>    | The source color is multiplied by the destination color and replaces the destination. The resulting color is always at least as dark as either the source or destination color. Multiplying any color with black results in black. Multiplying any color with white preserves the original color.      |
-|               |                                                                                                                                                                                                                                                                                                        |
-|               | <img alt="image" src="../img/blend-multiply.png" />                                                                                                                                                                                                                                                                       |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <code>screen</code>      | Multiplies the complements of the source and destination color values, then complements the result. The end result color is always at least as light as either of the two constituent colors. Screening any color with white produces white; screening with black leaves the original color unchanged. |
-|               |                                                                                                                                                                                                                                                                                                        |
-|               | <img alt="image" src="../img/blend-screen.png" />                                                                                                                                                                                                                                                                         |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <code>overlay</code>     | Multiplies the colors depending on the destination color value. Source colors overlay the destination while preserving highlights and shadows. The backdrop color is not replaced but is mixed with the source color to reflect the lightness or darkness of the backdrop.                             |
-|               |                                                                                                                                                                                                                                                                                                        |
-|               | <img alt="image" src="../img/blend-overlay.png" />                                                                                                                                                                                                                                                                        |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <code>darken</code>      | Selects the darker of the destination and source colors. The destination is replaced with the source only where the source is darker.                                                                                                                                                                  |
-|               |                                                                                                                                                                                                                                                                                                        |
-|               | <img alt="image" src="../img/blend-darken.png" />                                                                                                                                                                                                                                                                         |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <code>lighten</code>     | Selects the lighter of the destination and source colors. The destination is replaced with the source only where the source is lighter.                                                                                                                                                                |
-|               |                                                                                                                                                                                                                                                                                                        |
-|               | <img alt="image" src="../img/blend-lighten.png" />                                                                                                                                                                                                                                                                        |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <code>color-dodge</code> | Brightens the destination color to reflect the source color. Drawing with black produces no changes.                                                                                                                                                                                                   |
-|               |                                                                                                                                                                                                                                                                                                        |
-|               | <img alt="image" src="../img/blend-color-dodge.png" />                                                                                                                                                                                                                                                                    |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <code>color-burn</code>  | Darkens the destination color to reflect the source color. Drawing with white produces no change.                                                                                                                                                                                                      |
-|               |                                                                                                                                                                                                                                                                                                        |
-|               | <img alt="image" src="../img/blend-color-burn.png" />                                                                                                                                                                                                                                                                     |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <code>hard-light</code>  | Multiplies the colors, depending on the source color value. The effect is similar to shining a harsh spotlight on the destination.                                                                                                                                                                     |
-|               |                                                                                                                                                                                                                                                                                                        |
-|               | <img alt="image" src="../img/blend-hard-light.png" />                                                                                                                                                                                                                                                                     |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <code>soft-light</code>  | Darkens or lightens the colors, depending on the source color value. The effect is similar to a diffused spotlight on the destination.                                                                                                                                                                 |
-|               |                                                                                                                                                                                                                                                                                                        |
-|               | <img alt="image" src="../img/blend-soft-light.png" />                                                                                                                                                                                                                                                                     |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <code>difference</code>  | Subtracts the darker of the two constituent colors from the lighter color. White inverts the destination color; black produces no change.                                                                                                                                                              |
-|               |                                                                                                                                                                                                                                                                                                        |
-|               | <img alt="image" src="../img/blend-difference.png" />                                                                                                                                                                                                                                                                     |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <code>exclusion</code>   | Produces an effect similar to that of difference but lower in contrast. White inverts the destination color; black produces no change.                                                                                                                                                                 |
-|               |                                                                                                                                                                                                                                                                                                        |
-|               | <img alt="image" src="../img/blend-difference.png" />                                                                                                                                                                                                                                                                     |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</p>
+<dl>
+<dt>Value</dt>
+<dd>
+<p>Description</p>
+</dd>
+<dt><code>multiply</code></dt>
+<dd>
+<p>The source color is multiplied by the destination color and replaces the destination. The resulting color is always at least as dark as either the source or destination color. Multiplying any color with black results in black. Multiplying any color with white preserves the original color.</p>
+<p><img alt="image" src="../img/blend-multiply.png" /></p>
+</dd>
+<dt><code>screen</code></dt>
+<dd>
+<p>Multiplies the complements of the source and destination color values, then complements the result. The end result color is always at least as light as either of the two constituent colors. Screening any color with white produces white; screening with black leaves the original color unchanged.</p>
+<p><img alt="image" src="../img/blend-screen.png" /></p>
+</dd>
+<dt><code>overlay</code></dt>
+<dd>
+<p>Multiplies the colors depending on the destination color value. Source colors overlay the destination while preserving highlights and shadows. The backdrop color is not replaced but is mixed with the source color to reflect the lightness or darkness of the backdrop.</p>
+<p><img alt="image" src="../img/blend-overlay.png" /></p>
+</dd>
+<dt><code>darken</code></dt>
+<dd>
+<p>Selects the darker of the destination and source colors. The destination is replaced with the source only where the source is darker.</p>
+<p><img alt="image" src="../img/blend-darken.png" /></p>
+</dd>
+<dt><code>lighten</code></dt>
+<dd>
+<p>Selects the lighter of the destination and source colors. The destination is replaced with the source only where the source is lighter.</p>
+<p><img alt="image" src="../img/blend-lighten.png" /></p>
+</dd>
+<dt><code>color-dodge</code></dt>
+<dd>
+<p>Brightens the destination color to reflect the source color. Drawing with black produces no changes.</p>
+<p><img alt="image" src="../img/blend-color-dodge.png" /></p>
+</dd>
+<dt><code>color-burn</code></dt>
+<dd>
+<p>Darkens the destination color to reflect the source color. Drawing with white produces no change.</p>
+<p><img alt="image" src="../img/blend-color-burn.png" /></p>
+</dd>
+<dt><code>hard-light</code></dt>
+<dd>
+<p>Multiplies the colors, depending on the source color value. The effect is similar to shining a harsh spotlight on the destination.</p>
+<p><img alt="image" src="../img/blend-hard-light.png" /></p>
+</dd>
+<dt><code>soft-light</code></dt>
+<dd>
+<p>Darkens or lightens the colors, depending on the source color value. The effect is similar to a diffused spotlight on the destination.</p>
+<p><img alt="image" src="../img/blend-soft-light.png" /></p>
+</dd>
+<dt><code>difference</code></dt>
+<dd>
+<p>Subtracts the darker of the two constituent colors from the lighter color. White inverts the destination color; black produces no change.</p>
+<p><img alt="image" src="../img/blend-difference.png" /></p>
+</dd>
+<dt><code>exclusion</code></dt>
+<dd>
+<p>Produces an effect similar to that of difference but lower in contrast. White inverts the destination color; black produces no change.</p>
+<p><img alt="image" src="../img/blend-difference.png" /></p>
+</dd>
+</dl>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For more details about the compositing and blending options, please see <a href="../../../sld/extensions/composite-blend/modes/">Composite and blending modes</a>.</p>

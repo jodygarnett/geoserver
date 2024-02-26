@@ -2226,42 +2226,32 @@
 </div>
 <h2 id="layer-list">Layer list</h2>
 <p>URL: <code>/gwc/rest/layers.xml</code></p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Action</th>
-<th>Return Code</th>
-<th>Formats</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>Return the list of available layers</td>
-<td>200</td>
-<td>XML</td>
-</tr>
-<tr>
-<td>POST</td>
-<td></td>
-<td>400</td>
-<td></td>
-</tr>
-<tr>
-<td>PUT</td>
-<td></td>
-<td>400</td>
-<td></td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td></td>
-<td>400</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Action</p>
+<p>Return Code</p>
+<p>Formats</p>
+</dd>
+<dt>GET</dt>
+<dd>
+<p>Return the list of available layers</p>
+<p>200</p>
+<p>XML</p>
+</dd>
+</dl>
+<p>POST</p>
+<blockquote>
+<p>400</p>
+</blockquote>
+<p>PUT</p>
+<blockquote>
+<p>400</p>
+</blockquote>
+<p>DELETE</p>
+<blockquote>
+<p>400</p>
+</blockquote>
 <p>The following example will request a full list of layers:</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>&quot;http://localhost:8080/geoserver/gwc/rest/layers&quot;
 </span></code></pre></div>
@@ -2286,42 +2276,37 @@
 <p class="admonition-title">Note</p>
 <p>JSON is not recommended for managing layers as the JSON library has a number of issues with multi-valued properties such as "parameterFilters".</p>
 </div>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Action</th>
-<th>Return Code</th>
-<th>Formats</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>Return the XML representation of the layer</td>
-<td>200</td>
-<td>XML</td>
-</tr>
-<tr>
-<td>POST</td>
-<td>Modify the definition/configuration of the layer</td>
-<td>200</td>
-<td>XML</td>
-</tr>
-<tr>
-<td>PUT</td>
-<td>Add a new layer</td>
-<td>200</td>
-<td>XML</td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td>Delete the layer</td>
-<td>200</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Action</p>
+<p>Return Code</p>
+<p>Formats</p>
+</dd>
+<dt>GET</dt>
+<dd>
+<p>Return the XML representation of the layer</p>
+<p>200</p>
+<p>XML</p>
+</dd>
+<dt>POST</dt>
+<dd>
+<p>Modify the definition/configuration of the layer</p>
+<p>200</p>
+<p>XML</p>
+</dd>
+<dt>PUT</dt>
+<dd>
+<p>Add a new layer</p>
+<p>200</p>
+<p>XML</p>
+</dd>
+<dt>DELETE</dt>
+<dd>
+<p>Delete the layer</p>
+<p>200</p>
+</dd>
+</dl>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>There are two different representations for cached layers, depending on whether the tile layer is created from the GeoServer WMS layer or layer group (<code>GeoServerLayer</code>), or is configured in <code>geowebcache.xml</code> as a regular GWC layer (<code>wmsLayer</code>). A GeoServer layer is referred to as a <code>GeoServerLayer</code> and contains no image data source information such as origin WMS URL.</p>

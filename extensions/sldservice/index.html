@@ -3154,26 +3154,22 @@
 <p>All the services are published under the common prefix <code>/rest/sldservice/{layer}</code>, where <strong>layer</strong> is the layer to classify/query.</p>
 <h2 id="query-vector-data-attributes">Query Vector Data Attributes</h2>
 <p><code>/attributes[.&lt;format&gt;]</code></p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Action</th>
-<th>Status code</th>
-<th>Formats</th>
-<th>Default Format</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>Gets the list of attributes for the given layer (of vector type)</td>
-<td>200</td>
-<td>HTML, XML, JSON</td>
-<td>HTML</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Action</p>
+<p>Status code</p>
+<p>Formats</p>
+<p>Default Format</p>
+</dd>
+<dt>GET</dt>
+<dd>
+<p>Gets the list of attributes for the given layer (of vector type)</p>
+<p>200</p>
+<p>HTML, XML, JSON</p>
+<p>HTML</p>
+</dd>
+</dl>
 <p>The service can be used to get the attributes list for the given vector layer. This can be used by a client as a prerequisite for the <strong>classify</strong> service, to get all the attributes usable for classification and let the user choose one.</p>
 <h3 id="examples">Examples</h3>
 <p>Get attributes for the states layer, in XML format</p>
@@ -3223,192 +3219,167 @@
 </span></code></pre></div>
 <h2 id="classify-raster-and-vector-data">Classify Raster and Vector Data</h2>
 <p><code>/classify[.&lt;format&gt;]</code></p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Action</th>
-<th>Status code</th>
-<th>Formats</th>
-<th>Default Format</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>Create a set of SLD Rules for the given layer</td>
-<td>200</td>
-<td>HTML, XML, JSON</td>
-<td>HTML</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Action</p>
+<p>Status code</p>
+<p>Formats</p>
+<p>Default Format</p>
+</dd>
+<dt>GET</dt>
+<dd>
+<p>Create a set of SLD Rules for the given layer</p>
+<p>200</p>
+<p>HTML, XML, JSON</p>
+<p>HTML</p>
+</dd>
+</dl>
 <p>The service can be used to create a set of SLD rules for the given vector layer, specifying the <strong>attribute</strong> used for classification, the <strong>classification type</strong> (equalInterval, uniqueInterval, quantile, jenks, equalArea, standardDeviation) and one of the <strong>predefined color ranges</strong> (red, blue, gray, jet, random, custom), together with some other optional parameters.</p>
 <p>The same can be applied on a raster layer too, in order to classify its contents. Data from the first band is used by default, but a different one can be selected.</p>
 <p>Using the <strong>CUSTOM</strong> ColorMap, startColor and endColor (and optionally midColor) have to be specified.</p>
 <p>The parameters usable to customize the SLD are:</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-<th>Values</th>
-<th>Default Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>intervals</td>
-<td>Number of intervals (rules) for the SLD</td>
-<td>integer numeric value</td>
-<td>2</td>
-</tr>
-<tr>
-<td>attribute (mandatory)</td>
-<td>Classification attribute</td>
-<td>For vector layers, one of the layer attribute names, for raster layers, a band number (starting from one, like in the raster symbolizer)</td>
-<td>No default for vectors, "1" for rasters</td>
-</tr>
-<tr>
-<td>method</td>
-<td>Classification method</td>
-<td>equalInterval, uniqueInterval, quantile, jenks, equalArea, standardDeviation (intervals above and below the mean of one standard deviation, available for vectors only)</td>
-<td>equalInterval</td>
-</tr>
-<tr>
-<td>open</td>
-<td>open or closed ranges</td>
-<td>true, false</td>
-<td>false</td>
-</tr>
-<tr>
-<td>reverse</td>
-<td>normal or inverted ranges</td>
-<td>true, false</td>
-<td>false</td>
-</tr>
-<tr>
-<td>normalize</td>
-<td>normalize (cast) attribute to double type (needed by some stores to handle integer types correctly)</td>
-<td>true, false</td>
-<td>false</td>
-</tr>
-<tr>
-<td>ramp</td>
-<td>color ranges to use</td>
-<td>red, blue, gray, jet, random, custom</td>
-<td>red</td>
-</tr>
-<tr>
-<td>startColor</td>
-<td>starting color for the custom ramp</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>endColor</td>
-<td>ending color for the custom ramp</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>midColor</td>
-<td>central color for the custom ramp</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>colors</td>
-<td>list of comma delimited colors for the custom ramp (use this instead of startColor, endColor and midColor to specify colors in more detail)</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>strokeColor</td>
-<td>color of the stroke, for points and polygons</td>
-<td></td>
-<td>BLACK</td>
-</tr>
-<tr>
-<td>strokeWeight</td>
-<td>weight of the stroke, for points and polygons (use a negative value to not include stroke in style)</td>
-<td></td>
-<td>1</td>
-</tr>
-<tr>
-<td>pointSize</td>
-<td>size of points</td>
-<td></td>
-<td>15</td>
-</tr>
-<tr>
-<td>fullSLD</td>
-<td>create a full valid SLD document, instead of the Rules fragment only</td>
-<td>true or false</td>
-<td>false</td>
-</tr>
-<tr>
-<td>cache</td>
-<td>append caching headers to the responses</td>
-<td>expire time in seconds, use 0 to disable cache</td>
-<td>600 (10 minutes)</td>
-</tr>
-<tr>
-<td>viewparams</td>
-<td>allows use of parametric views</td>
-<td>view parameters in the usual format (<key>:<value>;...;<keyN>:<valueN>)</td>
-<td></td>
-</tr>
-<tr>
-<td>customClasses</td>
-<td>allows specifying a set of custom classes (client driven style); no classes calculation will happen (method, intervals, etc. are ignored)</td>
-<td>classes in the following format: <min>,<max>,<color>;...;<minN>,<maxN>,<colorN>)</td>
-<td></td>
-</tr>
-<tr>
-<td>bbox</td>
-<td>allows to run the classification on a specific bounding box. Recommended when the overall dataset is too big, and the classification can be performed on a smaller dataset, or to enhance the visualization of a particular subset of data</td>
-<td>same syntax as WMS/WFS, expected axis order is east/north unless the spatial reference system is explicitly provided, <code>minx,miny,max,maxy[,srsName]</code></td>
-<td></td>
-</tr>
-<tr>
-<td>stddevs</td>
-<td>limits the data the classifier is working on to a range of "stddevs" standard deviations around the mean value.</td>
-<td>a positive floating-point number (e.g., '1', '2.5', '3').</td>
-<td></td>
-</tr>
-<tr>
-<td>env</td>
-<td>a list of environment variables that the underlying layer may be using to select features/rasters to be classified (e.g., by using the <code>filter</code> in vector and mosaic layer definitions)</td>
-<td>a semicolon separate list of name to value assignments, e.g. <code>name1:value1;name2:value2;name3:value3;...</code></td>
-<td></td>
-</tr>
-<tr>
-<td>continuous</td>
-<td>used only for raster layers, if set to true will generate a raster palette that interpolates linearly between classified values</td>
-<td>true</td>
-<td>false</td>
-</tr>
-<tr>
-<td>percentages</td>
-<td>allows to obtain percentages of values in each class. For raster layers they will be included in the label of the ColorMapEntry, while for vector layer they will be placed in the rule title; in both cases they will be placed at the end of the text between parentheses.</td>
-<td>true</td>
-<td>false</td>
-</tr>
-<tr>
-<td>percentagesScale</td>
-<td>number of digits of percentages</td>
-<td>integer numeric value</td>
-<td>1</td>
-</tr>
-<tr>
-<td>intervalsForUnique</td>
-<td>Max number of intervals (rules or ColorMapEntry) that a uniqueIntervalClassification can produce. If the number of classes produced by the classification is greater than the number specified by this parameter, the service will return an error message.</td>
-<td>integer numeric value</td>
-<td>-1</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Parameter</dt>
+<dd>
+<p>Description</p>
+<p>Values</p>
+<p>Default Value</p>
+</dd>
+<dt>intervals</dt>
+<dd>
+<p>Number of intervals (rules) for the SLD</p>
+<p>integer numeric value</p>
+<p>2</p>
+</dd>
+<dt>attribute (mandatory)</dt>
+<dd>
+<p>Classification attribute</p>
+<p>For vector layers, one of the layer attribute names, for raster layers, a band number (starting from one, like in the raster symbolizer)</p>
+<p>No default for vectors, "1" for rasters</p>
+</dd>
+<dt>method</dt>
+<dd>
+<p>Classification method</p>
+<p>equalInterval, uniqueInterval, quantile, jenks, equalArea, standardDeviation (intervals above and below the mean of one standard deviation, available for vectors only)</p>
+<p>equalInterval</p>
+</dd>
+<dt>open</dt>
+<dd>
+<p>open or closed ranges</p>
+<p>true, false</p>
+<p>false</p>
+</dd>
+<dt>reverse</dt>
+<dd>
+<p>normal or inverted ranges</p>
+<p>true, false</p>
+<p>false</p>
+</dd>
+<dt>normalize</dt>
+<dd>
+<p>normalize (cast) attribute to double type (needed by some stores to handle integer types correctly)</p>
+<p>true, false</p>
+<p>false</p>
+</dd>
+<dt>ramp</dt>
+<dd>
+<p>color ranges to use</p>
+<p>red, blue, gray, jet, random, custom</p>
+<p>red</p>
+</dd>
+<dt>startColor</dt>
+<dd>
+<p>starting color for the custom ramp</p>
+</dd>
+<dt>endColor</dt>
+<dd>
+<p>ending color for the custom ramp</p>
+</dd>
+<dt>midColor</dt>
+<dd>
+<p>central color for the custom ramp</p>
+</dd>
+<dt>colors</dt>
+<dd>
+<p>list of comma delimited colors for the custom ramp (use this instead of startColor, endColor and midColor to specify colors in more detail)</p>
+</dd>
+<dt>strokeColor</dt>
+<dd>
+<p>color of the stroke, for points and polygons</p>
+<p>BLACK</p>
+</dd>
+<dt>strokeWeight</dt>
+<dd>
+<p>weight of the stroke, for points and polygons (use a negative value to not include stroke in style)</p>
+<p>1</p>
+</dd>
+<dt>pointSize</dt>
+<dd>
+<p>size of points</p>
+<p>15</p>
+</dd>
+<dt>fullSLD</dt>
+<dd>
+<p>create a full valid SLD document, instead of the Rules fragment only</p>
+<p>true or false</p>
+<p>false</p>
+</dd>
+<dt>cache</dt>
+<dd>
+<p>append caching headers to the responses</p>
+<p>expire time in seconds, use 0 to disable cache</p>
+<p>600 (10 minutes)</p>
+</dd>
+<dt>viewparams</dt>
+<dd>
+<p>allows use of parametric views</p>
+<p>view parameters in the usual format (<key>:<value>;...;<keyN>:<valueN>)</p>
+</dd>
+<dt>customClasses</dt>
+<dd>
+<p>allows specifying a set of custom classes (client driven style); no classes calculation will happen (method, intervals, etc. are ignored)</p>
+<p>classes in the following format: <min>,<max>,<color>;...;<minN>,<maxN>,<colorN>)</p>
+</dd>
+<dt>bbox</dt>
+<dd>
+<p>allows to run the classification on a specific bounding box. Recommended when the overall dataset is too big, and the classification can be performed on a smaller dataset, or to enhance the visualization of a particular subset of data</p>
+<p>same syntax as WMS/WFS, expected axis order is east/north unless the spatial reference system is explicitly provided, <code>minx,miny,max,maxy[,srsName]</code></p>
+</dd>
+<dt>stddevs</dt>
+<dd>
+<p>limits the data the classifier is working on to a range of "stddevs" standard deviations around the mean value.</p>
+<p>a positive floating-point number (e.g., '1', '2.5', '3').</p>
+</dd>
+<dt>env</dt>
+<dd>
+<p>a list of environment variables that the underlying layer may be using to select features/rasters to be classified (e.g., by using the <code>filter</code> in vector and mosaic layer definitions)</p>
+<p>a semicolon separate list of name to value assignments, e.g. <code>name1:value1;name2:value2;name3:value3;...</code></p>
+</dd>
+<dt>continuous</dt>
+<dd>
+<p>used only for raster layers, if set to true will generate a raster palette that interpolates linearly between classified values</p>
+<p>true|false</p>
+</dd>
+<dt>percentages</dt>
+<dd>
+<p>allows to obtain percentages of values in each class. For raster layers they will be included in the label of the ColorMapEntry, while for vector layer they will be placed in the rule title; in both cases they will be placed at the end of the text between parentheses.</p>
+<p>true|false</p>
+<p>false</p>
+</dd>
+<dt>percentagesScale</dt>
+<dd>
+<p>number of digits of percentages</p>
+<p>integer numeric value</p>
+<p>1</p>
+</dd>
+<dt>intervalsForUnique</dt>
+<dd>
+<p>Max number of intervals (rules or ColorMapEntry) that a uniqueIntervalClassification can produce. If the number of classes produced by the classification is greater than the number specified by this parameter, the service will return an error message.</p>
+<p>integer numeric value</p>
+<p>-1</p>
+</dd>
+</dl>
 <h3 id="more-on-unique-intervals-classification">More on unique intervals classification</h3>
 <p>The <code>intervalsForUnique</code> parameter allows the user to control the number of classes generated by the classification, that is important when dealing with large dataset. In this case the check on the classes' number will be made once the unique interval classification has been performed. Additionally it is possible to define a system variable named <code>org.geoserver.sldService.maxUniqueRange</code> to define the maximum number of values that can be collected by the classification (default value is <code>1024</code>). This control is performed before the unique interval classification is performed on the data. If the number of values is found to be greater than the system variable value, the service will return an error message.</p>
 <h3 id="examples_1">Examples</h3>
@@ -3636,101 +3607,87 @@
 <h2 id="classify-raster-data">Classify Raster Data</h2>
 <p>This resource is deprecated, as the classify endpoint can now also handle raster data</p>
 <p><code>/rasterize[.&lt;format&gt;]</code></p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Action</th>
-<th>Status code</th>
-<th>Formats</th>
-<th>Default Format</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>Create a ColorMap SLD for the given layer (of coverage type)</td>
-<td>200</td>
-<td>HTML, XML, JSON, SLD</td>
-<td>HTML</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Action</p>
+<p>Status code</p>
+<p>Formats</p>
+<p>Default Format</p>
+</dd>
+<dt>GET</dt>
+<dd>
+<p>Create a ColorMap SLD for the given layer (of coverage type)</p>
+<p>200</p>
+<p>HTML, XML, JSON, SLD</p>
+<p>HTML</p>
+</dd>
+</dl>
 <p>The service can be used to create a ColorMap SLD for the given coverage, specifying the <strong>type of ColorMap</strong> (VALUES, INTERVALS, RAMP) and one of the <strong>predefined color ranges</strong> (RED, BLUE, GRAY, JET, RANDOM, CUSTOM).</p>
 <p>Using the <strong>CUSTOM</strong> ColorMap, startColor and endColor (and optionally midColor) have to be specified.</p>
 <p>The parameters usable to customize the ColorMap are:</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-<th>Values</th>
-<th>Default Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>min</td>
-<td>Minimum value for classification</td>
-<td>double numeric value</td>
-<td>0.0</td>
-</tr>
-<tr>
-<td>max</td>
-<td>Maximum value for classification</td>
-<td>double numeric value</td>
-<td>100.0</td>
-</tr>
-<tr>
-<td>classes</td>
-<td>Number of classes for the created map</td>
-<td>integer numeric value</td>
-<td>100</td>
-</tr>
-<tr>
-<td>digits</td>
-<td>Number of fractional digits for class limits (in labels)</td>
-<td>integer numeric value</td>
-<td>5</td>
-</tr>
-<tr>
-<td>type</td>
-<td>ColorMap type</td>
-<td>INTERVALS, VALUES, RAMP</td>
-<td>RAMP</td>
-</tr>
-<tr>
-<td>ramp</td>
-<td>ColorMap color ranges</td>
-<td>RED, BLUE, GRAY, JET, RANDOM, CUSTOM</td>
-<td>RED</td>
-</tr>
-<tr>
-<td>startColor</td>
-<td>starting color for the CUSTOM ramp</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>endColor</td>
-<td>ending color for the CUSTOM ramp</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>midColor</td>
-<td>central color for the CUSTOM ramp</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>cache</td>
-<td>append caching headers to the responses</td>
-<td>expire time in seconds, use 0 to disable cache</td>
-<td>600 (10 minutes)</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Parameter</dt>
+<dd>
+<p>Description</p>
+<p>Values</p>
+<p>Default Value</p>
+</dd>
+<dt>min</dt>
+<dd>
+<p>Minimum value for classification</p>
+<p>double numeric value</p>
+<p>0.0</p>
+</dd>
+<dt>max</dt>
+<dd>
+<p>Maximum value for classification</p>
+<p>double numeric value</p>
+<p>100.0</p>
+</dd>
+<dt>classes</dt>
+<dd>
+<p>Number of classes for the created map</p>
+<p>integer numeric value</p>
+<p>100</p>
+</dd>
+<dt>digits</dt>
+<dd>
+<p>Number of fractional digits for class limits (in labels)</p>
+<p>integer numeric value</p>
+<p>5</p>
+</dd>
+<dt>type</dt>
+<dd>
+<p>ColorMap type</p>
+<p>INTERVALS, VALUES, RAMP</p>
+<p>RAMP</p>
+</dd>
+<dt>ramp</dt>
+<dd>
+<p>ColorMap color ranges</p>
+<p>RED, BLUE, GRAY, JET, RANDOM, CUSTOM</p>
+<p>RED</p>
+</dd>
+<dt>startColor</dt>
+<dd>
+<p>starting color for the CUSTOM ramp</p>
+</dd>
+<dt>endColor</dt>
+<dd>
+<p>ending color for the CUSTOM ramp</p>
+</dd>
+<dt>midColor</dt>
+<dd>
+<p>central color for the CUSTOM ramp</p>
+</dd>
+<dt>cache</dt>
+<dd>
+<p>append caching headers to the responses</p>
+<p>expire time in seconds, use 0 to disable cache</p>
+<p>600 (10 minutes)</p>
+</dd>
+</dl>
 <h3 id="examples_2">Examples</h3>
 <p>A RED color ramp with 5 classes</p>
 <div class="language-console highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="go">curl -v -u admin:geoserver -XGET </span>
@@ -3794,26 +3751,22 @@
 </span></code></pre></div>
 <h2 id="capabilities">Capabilities</h2>
 <p><code>/capabilities[.&lt;format&gt;]</code></p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Action</th>
-<th>Status code</th>
-<th>Formats</th>
-<th>Default Format</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>Returns the supported classification's methods for rasters and vectors</td>
-<td>200</td>
-<td>JSON, XML</td>
-<td>JSON</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Action</p>
+<p>Status code</p>
+<p>Formats</p>
+<p>Default Format</p>
+</dd>
+<dt>GET</dt>
+<dd>
+<p>Returns the supported classification's methods for rasters and vectors</p>
+<p>200</p>
+<p>JSON, XML</p>
+<p>JSON</p>
+</dd>
+</dl>
 <p>The service can be used to retrieve the capabilities of the SldService plugin. At the time of writing the endpoint will simply return a list of supported classification's methods for both raster and vector data. It can be useful i.e. for clients who might be dealing with different GeoServer versions to know which classification methods is available to be used. Follow the service's outputs in json and xml format:</p>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="p">{</span>
 </span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nt">&quot;capabilities&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>

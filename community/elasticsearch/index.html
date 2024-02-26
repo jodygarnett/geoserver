@@ -4166,52 +4166,91 @@
 <p><img alt="store_config" src="images/elasticsearch_configuration.png" /></p>
 <hr />
 <p>Available data store configuration parameters are summarized in the following table:</p>
-<p>+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Parameter                | Description                                                                                                                                                    |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| elasticsearch_host       | Host (IP) for connecting to Elasticsearch. HTTP scheme and port can optionally be included to override the defaults. Multiple hosts can be provided. Examples: |
-|                          |                                                                                                                                                                |
-|                          |     localhost                                                                                                                                                  |
-|                          |     localhost:9200                                                                                                                                             |
-|                          |     http://localhost                                                                                                                                           |
-|                          |     http://localhost:9200                                                                                                                                      |
-|                          |     https://localhost:9200                                                                                                                                     |
-|                          |     https://somehost.somedomain:9200,https://anotherhost.somedomain:9200                                                                                       |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| elasticsearch_port       | Default HTTP port for connecting to Elasticsearch. Ignored if the hostname includes the port.                                                                  |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| user                     | Elasticsearch user. Must have superuser privilege on index.                                                                                                    |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| passwd                   | Elasticsearch user password                                                                                                                                    |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| runas_geoserver_user     | Whether to submit requests on behalf of the authenticated GeoServer user                                                                                       |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| proxy_user               | Elasticsearch user for document queries. If not provided then admin user credentials are used for all requests.                                                |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| proxy_passwd             | Elasticsearch proxy user password                                                                                                                              |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| index_name               | Index name or alias (wildcards supported)                                                                                                                      |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| reject_unauthorized      | Whether to validate the server certificate during the SSL handshake for https connections                                                                      |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| default_max_features     | Default used when maxFeatures is unlimited                                                                                                                     |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| source_filtering_enabled | Whether to enable filtering of the _source field                                                                                                              |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| scroll_enabled           | Enable the Elasticsearch scan and scroll API                                                                                                                   |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| scroll_size              | Number of documents per shard when using the scroll API                                                                                                        |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| scroll_time              | Search context timeout when using the scroll API                                                                                                               |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| array_encoding           | Array encoding strategy. Allowed values are <code>JSON</code> (keep arrays) and <code>CSV</code> (keep first array element).                                                         |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| grid_size                | Hint for Geohash grid size (numRows*numCols)                                                                                                                  |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| grid_threshold           | Geohash grid aggregation precision will be the minimum necessary so that actual_grid_size/grid_size &gt; grid_threshold                                          |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| response_buffer_limit    | Maximum number of bytes to buffer in memory when reading responses from Elasticsearch                                                                          |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+</p>
+<dl>
+<dt>Parameter</dt>
+<dd>
+<p>Description</p>
+</dd>
+<dt>elasticsearch_host</dt>
+<dd>
+<p>Host (IP) for connecting to Elasticsearch. HTTP scheme and port can optionally be included to override the defaults. Multiple hosts can be provided. Examples:</p>
+<div class="language-text highlight"><pre><span></span><code>localhost
+localhost:9200
+http://localhost
+http://localhost:9200
+https://localhost:9200
+https://somehost.somedomain:9200,https://anotherhost.somedomain:9200
+</code></pre></div>
+</dd>
+<dt>elasticsearch_port</dt>
+<dd>
+<p>Default HTTP port for connecting to Elasticsearch. Ignored if the hostname includes the port.</p>
+</dd>
+<dt>user</dt>
+<dd>
+<p>Elasticsearch user. Must have superuser privilege on index.</p>
+</dd>
+<dt>passwd</dt>
+<dd>
+<p>Elasticsearch user password</p>
+</dd>
+<dt>runas_geoserver_user</dt>
+<dd>
+<p>Whether to submit requests on behalf of the authenticated GeoServer user</p>
+</dd>
+<dt>proxy_user</dt>
+<dd>
+<p>Elasticsearch user for document queries. If not provided then admin user credentials are used for all requests.</p>
+</dd>
+<dt>proxy_passwd</dt>
+<dd>
+<p>Elasticsearch proxy user password</p>
+</dd>
+<dt>index_name</dt>
+<dd>
+<p>Index name or alias (wildcards supported)</p>
+</dd>
+<dt>reject_unauthorized</dt>
+<dd>
+<p>Whether to validate the server certificate during the SSL handshake for https connections</p>
+</dd>
+<dt>default_max_features</dt>
+<dd>
+<p>Default used when maxFeatures is unlimited</p>
+</dd>
+<dt>source_filtering_enabled</dt>
+<dd>
+<p>Whether to enable filtering of the _source field</p>
+</dd>
+<dt>scroll_enabled</dt>
+<dd>
+<p>Enable the Elasticsearch scan and scroll API</p>
+</dd>
+<dt>scroll_size</dt>
+<dd>
+<p>Number of documents per shard when using the scroll API</p>
+</dd>
+<dt>scroll_time</dt>
+<dd>
+<p>Search context timeout when using the scroll API</p>
+</dd>
+<dt>array_encoding</dt>
+<dd>
+<p>Array encoding strategy. Allowed values are <code>JSON</code> (keep arrays) and <code>CSV</code> (keep first array element).</p>
+</dd>
+<dt>grid_size</dt>
+<dd>
+<p>Hint for Geohash grid size (numRows*numCols)</p>
+</dd>
+<dt>grid_threshold</dt>
+<dd>
+<p>Geohash grid aggregation precision will be the minimum necessary so that actual_grid_size/grid_size &gt; grid_threshold</p>
+</dd>
+<dt>response_buffer_limit</dt>
+<dd>
+<p>Maximum number of bytes to buffer in memory when reading responses from Elasticsearch</p>
+</dd>
+</dl>
 <h4 id="configuring-authentication">Configuring authentication</h4>
 <p>Basic authentication is supported through the <code>user</code> and <code>passwd</code> credential parameters. The provided user must have superuser privilege on the index to enable the mapping and alias requests performed during store initialization. Note that aliases must already be present on the Elasticsearch index. If you enter an alias which is not present, the plugin will not generate it for you. Optional <code>proxy_user</code> and <code>proxy_passwd</code> parameters can be used to specify an alternate user for document search (OGC service) requests. The proxy user can have restricted privileges on the index through document level security. If not provided the default user is used for all requests.</p>
 <p>The <code>runas_geoserver_user</code> flag can be used to enable Elasticsearch requests to be submitted on behalf of the authenticated GeoServer user. When the run-as mechanism is configured the plugin will add the <code>es-security-runas-user</code> header with the authenticated GeoServer username. See <a href="https://www.elastic.co/guide/en/x-pack/current/run-as-privilege.html">X-Pack run-as documentation</a> for more information. Note the run-as mechanism is applied only to document search requests.</p>
@@ -4234,68 +4273,60 @@ javax.net.ssl.keyStorePassword
 <hr />
 <p><img alt="field_list" class="align-middle" src="images/elasticsearch_fieldlist.png" /></p>
 <hr />
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Item</td>
-<td>Description</td>
-</tr>
-<tr>
-<td><code>Use All</code></td>
-<td>Use all fields in the layer feature type</td>
-</tr>
-<tr>
-<td><code>Use</code></td>
-<td>Used to select the fields that will make up the layer feature type</td>
-</tr>
-<tr>
-<td><code>Name</code></td>
-<td>Name of the field</td>
-</tr>
-<tr>
-<td><code>Type</code></td>
-<td>Type of the field, as derived from the Elasticsearch schema. For geometry types, you have the option to provide a more specific data type.</td>
-</tr>
-<tr>
-<td><code>Order</code></td>
-<td>Integer order values are used to sort fields, where fields with smaller order are returned first</td>
-</tr>
-<tr>
-<td><code>Custom Name</code></td>
-<td>Provides the option to give the field a custom name</td>
-</tr>
-<tr>
-<td><code>Default Geometry</code></td>
-<td>Indicates if the geometry field is the default one. Useful if the documents contain more than one geometry field, as SLDs and spatial filters will hit the default geometry field unless otherwise specified</td>
-</tr>
-<tr>
-<td><code>Stored</code></td>
-<td>Indicates whether the field is stored in the index</td>
-</tr>
-<tr>
-<td><code>Analyzed</code></td>
-<td>Indicates whether the field is analyzed</td>
-</tr>
-<tr>
-<td><code>SRID</code></td>
-<td>Native spatial reference ID of the geometries. Currently only EPSG:4326 is supported.</td>
-</tr>
-<tr>
-<td><code>Valid Date Formats</code></td>
-<td>Possible valid date formats used for parsing field values and printing filter elements</td>
-</tr>
-<tr>
-<td><code>Refresh</code></td>
-<td>If the field mappings or Elasticsearch schema has changed since this page was loaded, use this button to update the field configuration list.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Item</dt>
+<dd>
+<p>Description</p>
+</dd>
+<dt><code>Use All</code></dt>
+<dd>
+<p>Use all fields in the layer feature type</p>
+</dd>
+<dt><code>Use</code></dt>
+<dd>
+<p>Used to select the fields that will make up the layer feature type</p>
+</dd>
+<dt><code>Name</code></dt>
+<dd>
+<p>Name of the field</p>
+</dd>
+<dt><code>Type</code></dt>
+<dd>
+<p>Type of the field, as derived from the Elasticsearch schema. For geometry types, you have the option to provide a more specific data type.</p>
+</dd>
+<dt><code>Order</code></dt>
+<dd>
+<p>Integer order values are used to sort fields, where fields with smaller order are returned first</p>
+</dd>
+<dt><code>Custom Name</code></dt>
+<dd>
+<p>Provides the option to give the field a custom name</p>
+</dd>
+<dt><code>Default Geometry</code></dt>
+<dd>
+<p>Indicates if the geometry field is the default one. Useful if the documents contain more than one geometry field, as SLDs and spatial filters will hit the default geometry field unless otherwise specified</p>
+</dd>
+<dt><code>Stored</code></dt>
+<dd>
+<p>Indicates whether the field is stored in the index</p>
+</dd>
+<dt><code>Analyzed</code></dt>
+<dd>
+<p>Indicates whether the field is analyzed</p>
+</dd>
+<dt><code>SRID</code></dt>
+<dd>
+<p>Native spatial reference ID of the geometries. Currently only EPSG:4326 is supported.</p>
+</dd>
+<dt><code>Valid Date Formats</code></dt>
+<dd>
+<p>Possible valid date formats used for parsing field values and printing filter elements</p>
+</dd>
+<dt><code>Refresh</code></dt>
+<dd>
+<p>If the field mappings or Elasticsearch schema has changed since this page was loaded, use this button to update the field configuration list.</p>
+</dd>
+</dl>
 <p>To return to the field table after it has been closed, click the "Configure Elasticsearch fields" button below the "Feature Type Details" panel on the layer configuration page.</p>
 <hr />
 <p><img alt="field_list_edit" class="align-middle" src="images/elasticsearch_fieldlist_edit.png" /></p>
@@ -4477,42 +4508,32 @@ log4j.category.org.geoserver.process.elasticsearch=DEBUG
 <p>The store may update the precision to a smaller value, if it finds it goes beyond the aggregation limits setup in its configuration, see <code>grid_size</code> and <code>grid_threshold</code> above.</p>
 <h3 id="grid-strategy">Grid Strategy</h3>
 <p><code>gridStrategy</code>: Parameter to identify the <code>org.geoserver.process.elasticsearch.GeoHashGrid</code> implementation that will be used to convert each geohashgrid bucket into a raster value (number).</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>gridStrategy</td>
-<td>gridStrategyArgs</td>
-<td>Description</td>
-</tr>
-<tr>
-<td>Basic</td>
-<td><code>basic</code></td>
-<td>no</td>
-<td>Raster value is geohashgrid bucket <code>doc_count</code>.</td>
-</tr>
-<tr>
-<td>Metric</td>
-<td><code>metric</code></td>
-<td>yes</td>
-<td>Raster value is geohashgrid bucket metric value.</td>
-</tr>
-<tr>
-<td>Nested</td>
-<td><code>nested_agg</code></td>
-<td>yes</td>
-<td>Extract raster value from nested aggregation results.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Name</dt>
+<dd>
+<p>gridStrategy</p>
+<p>gridStrategyArgs</p>
+<p>Description</p>
+</dd>
+<dt>Basic</dt>
+<dd>
+<p><code>basic</code></p>
+<p>no</p>
+<p>Raster value is geohashgrid bucket <code>doc_count</code>.</p>
+</dd>
+<dt>Metric</dt>
+<dd>
+<p><code>metric</code></p>
+<p>yes</p>
+<p>Raster value is geohashgrid bucket metric value.</p>
+</dd>
+<dt>Nested</dt>
+<dd>
+<p><code>nested_agg</code></p>
+<p>yes</p>
+<p>Extract raster value from nested aggregation results.</p>
+</dd>
+</dl>
 <p><code>gridStrategyArgs</code>: (Optional) Parameter used to specify an optional argument list for the grid strategy.</p>
 <p><code>emptyCellValue</code>: (Optional) Parameter used to specify the value for empty grid cells. By default, empty grid cells are set to <code>0</code>.</p>
 <p><code>scaleMin</code>, <code>scaleMax</code>: (Optional) Parameters used to specify a scale applied to all raster values. Each tile request is scaled according to the min and max values for that tile. It is best to use a non-tiled layer with this parameter to avoid confusing results.</p>
@@ -4537,32 +4558,23 @@ log4j.category.org.geoserver.process.elasticsearch=DEBUG
 <p>Extracted raster value: <code>1</code></p>
 <h4 id="metric">Metric</h4>
 <p>Raster value is geohashgrid bucket metric value.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Argument Index</td>
-<td>Default Value</td>
-<td>Description</td>
-</tr>
-<tr>
-<td>0</td>
-<td><code>metric</code></td>
-<td>Key used to pluck metric object from top level bucket. Empty string results in plucking doc_count.</td>
-</tr>
-<tr>
-<td>1</td>
-<td><code>value</code></td>
-<td>Key used to pluck the value from the metric object.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Argument Index</dt>
+<dd>
+<p>Default Value</p>
+<p>Description</p>
+</dd>
+<dt>0</dt>
+<dd>
+<p><code>metric</code></p>
+<p>Key used to pluck metric object from top level bucket. Empty string results in plucking doc_count.</p>
+</dd>
+<dt>1</dt>
+<dd>
+<p><code>value</code></p>
+<p>Key used to pluck the value from the metric object.</p>
+</dd>
+</dl>
 <p>Example Aggregation:</p>
 <div class="language-text highlight"><pre><span></span><code>{
   &quot;agg&quot;: {
@@ -4591,52 +4603,43 @@ log4j.category.org.geoserver.process.elasticsearch=DEBUG
 <p>Extracted raster value: <code>4.9</code></p>
 <h4 id="nested">Nested</h4>
 <p>Extract raster value from nested aggregation results.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Argument Index</td>
-<td>Default Value</td>
-<td>Description</td>
-</tr>
-<tr>
-<td>0</td>
-<td><code>nested</code></td>
-<td>Key used to pluck nested aggregation results from the geogrid bucket.</td>
-</tr>
-<tr>
-<td>1</td>
-<td>empty string</td>
-<td>Key used to pluck metric object from each nested aggregation bucket. Empty string results in plucking doc_count.</td>
-</tr>
-<tr>
-<td>2</td>
-<td><code>value</code></td>
-<td>Key used to pluck the value from the metric object.</td>
-</tr>
-<tr>
-<td>3</td>
-<td><code>largest</code></td>
-<td><code>largest</code></td>
-</tr>
-<tr>
-<td>4</td>
-<td><code>value</code></td>
-<td><code>key</code></td>
-</tr>
-<tr>
-<td>5</td>
-<td>null</td>
-<td>(Optional) Map used to convert String keys into numeric values. Use the format <code>key1:1;key2:2</code>. Only utilized when raster strategy is <code>key</code>.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Argument Index</dt>
+<dd>
+<p>Default Value</p>
+<p>Description</p>
+</dd>
+<dt>0</dt>
+<dd>
+<p><code>nested</code></p>
+<p>Key used to pluck nested aggregation results from the geogrid bucket.</p>
+</dd>
+<dt>1</dt>
+<dd>
+<p>empty string</p>
+<p>Key used to pluck metric object from each nested aggregation bucket. Empty string results in plucking doc_count.</p>
+</dd>
+<dt>2</dt>
+<dd>
+<p><code>value</code></p>
+<p>Key used to pluck the value from the metric object.</p>
+</dd>
+<dt>3</dt>
+<dd>
+<p><code>largest</code></p>
+<p><code>largest</code> | <code>smallest</code>. Strategy used to select a bucket from the nested aggregation buckets. The grid cell raster value is extracted from the selected bucket.</p>
+</dd>
+<dt>4</dt>
+<dd>
+<p><code>value</code></p>
+<p><code>key</code> | <code>value</code>. Strategy used to extract the raster value from the selected bucket. <code>value</code>: Raster value is the selected bucket's metric value. <code>key</code>: Raster value is the selected bucket's key.</p>
+</dd>
+<dt>5</dt>
+<dd>
+<p>null</p>
+<p>(Optional) Map used to convert String keys into numeric values. Use the format <code>key1:1;key2:2</code>. Only utilized when raster strategy is <code>key</code>.</p>
+</dd>
+</dl>
 <p>Example Aggregation:</p>
 <div class="language-text highlight"><pre><span></span><code>{
   &quot;agg&quot;: {

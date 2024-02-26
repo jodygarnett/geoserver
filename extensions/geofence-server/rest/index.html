@@ -3364,166 +3364,150 @@
 </code></pre></div>
 <h3 id="filter-parameters">Filter Parameters</h3>
 <p>All filter parameters are optional.</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>page</td>
-<td>number</td>
-<td>Used for paging a list of rules. Specifies the number of the page. Leave out for no paging. If specified, <code>entries</code> should also be specified.</td>
-</tr>
-<tr>
-<td>entries</td>
-<td>number</td>
-<td>Used for paging a list of rules. Specifies the number of entries per page. Leave out for no paging. If specified, <code>page</code> should also be specified.</td>
-</tr>
-<tr>
-<td>userName</td>
-<td>string</td>
-<td>Filter rules on username (excludes all other specified usernames).</td>
-</tr>
-<tr>
-<td>userAny</td>
-<td>0 or 1.</td>
-<td>Specify whether rules for 'any' username are included or not.</td>
-</tr>
-<tr>
-<td>roleName</td>
-<td>string</td>
-<td>Filter rules on rolename (excludes all other specified rolenames).</td>
-</tr>
-<tr>
-<td>roleAny</td>
-<td>0 or 1.</td>
-<td>Specify whether rules for 'any' rolename are included or not.</td>
-</tr>
-<tr>
-<td>service</td>
-<td>string</td>
-<td>Filter rules on service (excludes all other specified services).</td>
-</tr>
-<tr>
-<td>serviceAny</td>
-<td>0 or 1.</td>
-<td>Specify whether rules for 'any' service are included or not.</td>
-</tr>
-<tr>
-<td>request</td>
-<td>string</td>
-<td>Filter rules on request (excludes all other specified requests).</td>
-</tr>
-<tr>
-<td>requestAny</td>
-<td>0 or 1.</td>
-<td>Specify whether rules for 'any' request are included or not.</td>
-</tr>
-<tr>
-<td>workspace</td>
-<td>string</td>
-<td>Filter rules on workspace (excludes all other specified workspaces).</td>
-</tr>
-<tr>
-<td>workspaceAny</td>
-<td>0 or 1.</td>
-<td>Specify whether rules for 'any' workspace are included or not.</td>
-</tr>
-<tr>
-<td>layer</td>
-<td>string</td>
-<td>Filter rules on layer (excludes all other specified layers).</td>
-</tr>
-<tr>
-<td>layerAny</td>
-<td>0 or 1.</td>
-<td>Specify whether rules for 'any' layer are included or not.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Name</dt>
+<dd>
+<p>Type</p>
+<p>Description</p>
+</dd>
+<dt>page</dt>
+<dd>
+<p>number</p>
+<p>Used for paging a list of rules. Specifies the number of the page. Leave out for no paging. If specified, <code>entries</code> should also be specified.</p>
+</dd>
+<dt>entries</dt>
+<dd>
+<p>number</p>
+<p>Used for paging a list of rules. Specifies the number of entries per page. Leave out for no paging. If specified, <code>page</code> should also be specified.</p>
+</dd>
+<dt>userName</dt>
+<dd>
+<p>string</p>
+<p>Filter rules on username (excludes all other specified usernames).</p>
+</dd>
+<dt>userAny</dt>
+<dd>
+<p>0 or 1.</p>
+<p>Specify whether rules for 'any' username are included or not.</p>
+</dd>
+<dt>roleName</dt>
+<dd>
+<p>string</p>
+<p>Filter rules on rolename (excludes all other specified rolenames).</p>
+</dd>
+<dt>roleAny</dt>
+<dd>
+<p>0 or 1.</p>
+<p>Specify whether rules for 'any' rolename are included or not.</p>
+</dd>
+<dt>service</dt>
+<dd>
+<p>string</p>
+<p>Filter rules on service (excludes all other specified services).</p>
+</dd>
+<dt>serviceAny</dt>
+<dd>
+<p>0 or 1.</p>
+<p>Specify whether rules for 'any' service are included or not.</p>
+</dd>
+<dt>request</dt>
+<dd>
+<p>string</p>
+<p>Filter rules on request (excludes all other specified requests).</p>
+</dd>
+<dt>requestAny</dt>
+<dd>
+<p>0 or 1.</p>
+<p>Specify whether rules for 'any' request are included or not.</p>
+</dd>
+<dt>workspace</dt>
+<dd>
+<p>string</p>
+<p>Filter rules on workspace (excludes all other specified workspaces).</p>
+</dd>
+<dt>workspaceAny</dt>
+<dd>
+<p>0 or 1.</p>
+<p>Specify whether rules for 'any' workspace are included or not.</p>
+</dd>
+<dt>layer</dt>
+<dd>
+<p>string</p>
+<p>Filter rules on layer (excludes all other specified layers).</p>
+</dd>
+<dt>layerAny</dt>
+<dd>
+<p>0 or 1.</p>
+<p>Specify whether rules for 'any' layer are included or not.</p>
+</dd>
+</dl>
 <h2 id="requests">Requests</h2>
 <h3 id="restgeofencerules"><code>/rest/geofence/rules/</code></h3>
 <p>Query all rules or add a new rule.</p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Action</th>
-<th>Supported parameters</th>
-<th>Response</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>List all rules, with respect to any added filters</td>
-<td>page, entries, userName, userAny, roleName, roleAny, service, serviceAny, request, requestAny, workspace, workspaceAny, layer, layerAny</td>
-<td>200 OK. List of rules in XML.</td>
-</tr>
-<tr>
-<td>POST</td>
-<td>Add a new rule</td>
-<td>None</td>
-<td>201 Inserted. Created <code>ID</code> header.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Action</p>
+<p>Supported parameters</p>
+<p>Response</p>
+</dd>
+<dt>GET</dt>
+<dd>
+<p>List all rules, with respect to any added filters</p>
+<p>page, entries, userName, userAny, roleName, roleAny, service, serviceAny, request, requestAny, workspace, workspaceAny, layer, layerAny</p>
+<p>200 OK. List of rules in XML.</p>
+</dd>
+<dt>POST</dt>
+<dd>
+<p>Add a new rule</p>
+<p>None</p>
+<p>201 Inserted. Created <code>ID</code> header.</p>
+</dd>
+</dl>
 <h3 id="restgeofencerulescount"><code>/rest/geofence/rules/count</code></h3>
 <p>Counts (filtered) rules.</p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Action</th>
-<th>Supported parameters</th>
-<th>Response</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>Count all rules, with respect to any added filters</td>
-<td>userName, userAny, roleName, roleAny, service, serviceAny, request, requestAny, workspace, workspaceAny, layer, layerAny</td>
-<td>200 OK. Rule list count in XML.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Action</p>
+<p>Supported parameters</p>
+<p>Response</p>
+</dd>
+<dt>GET</dt>
+<dd>
+<p>Count all rules, with respect to any added filters</p>
+<p>userName, userAny, roleName, roleAny, service, serviceAny, request, requestAny, workspace, workspaceAny, layer, layerAny</p>
+<p>200 OK. Rule list count in XML.</p>
+</dd>
+</dl>
 <h3 id="restgeofencerulesidid"><code>/rest/geofence/rules/id/&lt;id&gt;</code></h3>
 <p>Query, modify or delete a specific rule.</p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Action</th>
-<th>Supported parameters</th>
-<th>Response</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>Read rule information</td>
-<td>None</td>
-<td>200 OK. Rule in XML.</td>
-</tr>
-<tr>
-<td>POST</td>
-<td>Modify the rule, unspecified fields remain unchanged.</td>
-<td>None</td>
-<td>200 OK.</td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td>Delete the rule</td>
-<td>None</td>
-<td>200 OK.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Action</p>
+<p>Supported parameters</p>
+<p>Response</p>
+</dd>
+<dt>GET</dt>
+<dd>
+<p>Read rule information</p>
+<p>None</p>
+<p>200 OK. Rule in XML.</p>
+</dd>
+<dt>POST</dt>
+<dd>
+<p>Modify the rule, unspecified fields remain unchanged.</p>
+<p>None</p>
+<p>200 OK.</p>
+</dd>
+<dt>DELETE</dt>
+<dd>
+<p>Delete the rule</p>
+<p>None</p>
+<p>200 OK.</p>
+</dd>
+</dl>
 
 
 
