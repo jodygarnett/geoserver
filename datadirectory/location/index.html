@@ -1716,28 +1716,32 @@
 
 <h1 id="data-directory-default-location">Data directory default location</h1>
 <p>If GeoServer is running in <strong>standalone</strong> mode (via an installer or a binary) the data directory is located at <code>&lt;installation root&gt;/data_dir</code>.</p>
-<dl>
-<dt>Standalone platform</dt>
-<dd>
-<p>Default/typical location</p>
-</dd>
-<dt>Windows (except XP)</dt>
-<dd>
-<p>C:\Program Files\GeoServer 2.24.2\data_dir</p>
-</dd>
-<dt>Windows XP</dt>
-<dd>
-<p>C:\Program Files\GeoServer 2.24.2\data_dir</p>
-</dd>
-<dt>Mac OS X</dt>
-<dd>
-<p>/Applications/GeoServer.app/Contents/Resources/Java/data_dir</p>
-</dd>
-<dt>Linux (Tomcat)</dt>
-<dd>
-<p>/var/lib/tomcat9/webapps/geoserver/data</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Standalone platform</th>
+<th>Default/typical location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows (except XP)</td>
+<td>C:\Program Files\GeoServer 2.24.2\data_dir</td>
+</tr>
+<tr>
+<td>Windows XP</td>
+<td>C:\Program Files\GeoServer 2.24.2\data_dir</td>
+</tr>
+<tr>
+<td>Mac OS X</td>
+<td>/Applications/GeoServer.app/Contents/Resources/Java/data_dir</td>
+</tr>
+<tr>
+<td>Linux (Tomcat)</td>
+<td>/var/lib/tomcat9/webapps/geoserver/data</td>
+</tr>
+</tbody>
+</table>
 <p>If GeoServer is running as a <strong>web archive</strong> inside of a custom-deployed application server, the data directory is by default located at <code>&lt;web application root&gt;/data</code>.</p>
 <h2 id="creating-a-new-data-directory">Creating a new data directory</h2>
 <p>The easiest way to create a new data directory is to copy an existing one.</p>

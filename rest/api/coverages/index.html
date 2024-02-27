@@ -2389,35 +2389,52 @@
 <p>The following API applies exclusively to structured coverage readers.</p>
 <h2 id="workspaceswscoveragestorescscoveragescoverageindexformat"><code>/workspaces/&lt;ws&gt;/coveragestores/&lt;cs&gt;/coverages/&lt;coverage&gt;/index[.&lt;format&gt;]</code></h2>
 <p>Declares the set of attributes associated to the specified coverage, their name, type and min/max occurrences.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-<p>Parameters</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Returns the attributes, their names and their types</p>
-<p>200</p>
-<p>XML, JSON</p>
-<p>XML</p>
-</dd>
-</dl>
-<p>POST</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<p>PUT</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<p>DELETE</p>
-<blockquote>
-<p>405</p>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Returns the attributes, their names and their types</td>
+<td>200</td>
+<td>XML, JSON</td>
+<td>XML</td>
+<td></td>
+</tr>
+<tr>
+<td>POST</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="workspaceswscoveragestorescscoveragescoverageindexgranulesformat"><code>/workspaces/&lt;ws&gt;/coveragestores/&lt;cs&gt;/coverages/&lt;coverage&gt;/index/granules.&lt;format&gt;</code></h2>
 <p>Returns the full list of granules, each with its attributes vales and geometry, and allows to selectively remove them</p>
 <dl>
@@ -2463,39 +2480,52 @@
 <p>The <code>filter</code> parameter is a CQL filter that allows to select which granules will be returned based on their attribute values.</p>
 <h2 id="workspaceswscoveragestorescscoveragesmosaicindexgranulesgranuleidformat"><code>/workspaces/&lt;ws&gt;/coveragestores/&lt;cs&gt;/coverages/&lt;mosaic&gt;/index/granules/&lt;granuleId&gt;.&lt;format&gt;</code></h2>
 <p>Returns a single granule and allows for its removal.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-<p>Parameters</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Returns the specified of granules and its attributes, either in GML (when XML is used) or GeoJSON (when JSON is used)</p>
-<p>200</p>
-<p>XML, JSON</p>
-<p>XML</p>
-<p><a href="./#rest_api_structuredcoverages_quietOnNotFound">quietOnNotFound</a></p>
-</dd>
-</dl>
-<p>POST</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<p>PUT</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<dl>
-<dt>DELETE</dt>
-<dd>
-<p>Deletes the granule</p>
-<p>200</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Returns the specified of granules and its attributes, either in GML (when XML is used) or GeoJSON (when JSON is used)</td>
+<td>200</td>
+<td>XML, JSON</td>
+<td>XML</td>
+<td><a href="./#rest_api_structuredcoverages_quietOnNotFound">quietOnNotFound</a></td>
+</tr>
+<tr>
+<td>POST</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Deletes the granule</td>
+<td>200</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h3 id="exceptions_1">Exceptions</h3>
 <dl>
 <dt>Exception</dt>

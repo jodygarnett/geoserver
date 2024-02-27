@@ -3888,24 +3888,32 @@
 <p>For a client application to use a BIL layer, it must know the data encoding of the BIL file (e.g. 16-bit integer, 32-bit floating point, etc), the byte order of the data, and the value that indicates missing data. BIL files do not contain this metadata, so it may be necessary to configure the server to produce BIL files in the format that a client application expects.</p>
 <p><img alt="" src="images/bil_config.png" /></p>
 <p>The BIL output format can be configured for each layer in the Publishing tab of the layer configuration. The plugin supports the following options:</p>
-<dl>
-<dt><strong>Option</strong></dt>
-<dd>
-<p><strong>Description</strong></p>
-</dd>
-<dt><code>Default encoding</code></dt>
-<dd>
-<p>The data encoding to use if the request does not specify an encoding. For example, application/bil does not specify the response encoding, while application/bil16 does specify an encoding. Default: use same encoding as layer source files.</p>
-</dd>
-<dt><code>Byte order</code></dt>
-<dd>
-<p>Byte order of the response. Default: network byte order (big endian).</p>
-</dd>
-<dt><code>No Data value</code></dt>
-<dd>
-<p>The value that indicates missing data. If this option is set, missing data values will be recoded to this value. Default: no data translation.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Option</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>Default encoding</code></td>
+<td>The data encoding to use if the request does not specify an encoding. For example, application/bil does not specify the response encoding, while application/bil16 does specify an encoding. Default: use same encoding as layer source files.</td>
+</tr>
+<tr>
+<td><code>Byte order</code></td>
+<td>Byte order of the response. Default: network byte order (big endian).</td>
+</tr>
+<tr>
+<td><code>No Data value</code></td>
+<td>The value that indicates missing data. If this option is set, missing data values will be recoded to this value. Default: no data translation.</td>
+</tr>
+</tbody>
+</table>
 <p>For compatibility with the default behavior of NASA World Wind, use these settings:</p>
 <ul>
 <li>Default encoding: application/bil16</li>

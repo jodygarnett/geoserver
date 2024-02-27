@@ -2386,56 +2386,23 @@ feature-styles:
 <div class="language-text highlight"><pre><span></span><code>&lt;property&gt;: &lt;value&gt;
 </code></pre></div>
 <p>The <code>&lt;property&gt;</code> is a string denoting the property name, while the <code>&lt;value&gt;</code> can be one of a number of different types depending on context. These different types require slightly different markup, as shown in the following table:</p>
-<dl>
-<dt>Type</dt>
-<dd>
-<p>Syntax</p>
-<p>Example</p>
-<p>Notes</p>
-</dd>
-<dt>Integer</dt>
-<dd>
-<p>Value only</p>
-<p><code>12</code></p>
-<p>Quotes allowed as well</p>
-</dd>
-<dt>Float</dt>
-<dd>
-<p>Value only</p>
-<p><code>0.75</code></p>
-<p>Quotes allowed as well</p>
-</dd>
-<dt>Text</dt>
-<dd>
-<p>Quotes</p>
-<p><code>Title</code></p>
-<p>Spaces, colons, and other special characters are allowed. If value is ambiguous, use single quotes.</p>
-</dd>
-<dt>Color</dt>
-<dd>
-<ul>
-<li>'# + six digits' (hex)</li>
-<li>rgb(r,g,b) (decimal)</li>
-<li>Text (named colors)</li>
-</ul>
-</dd>
-<dt><code>'#FF00FF'</code><em> <code>rgb(255,0,255)</code></em> <code>fuchsia</code></dt>
-<dd>
-<p>Used when specifying RGB colors. For hex, use <code>'#RRGGBB'</code> with each two character pair having a value from <code>00</code> to <code>FF</code>. For decimal, use <code>rgb(rrr,ggg,bbb)</code> with each ordinate having a value from <code>0</code> to <code>255</code>. Quotes are not required when using <a href="http://www.w3schools.com/html/html_colornames.asp">named colors</a>.</p>
-</dd>
-<dt>Tuple</dt>
-<dd>
-<p>Brackets</p>
-<p><code>[0,15000]</code></p>
-<p>Use two single quotes to denote blank entries in the tuple (for example: <code>['#FFFFFF',0,0,'']</code>).</p>
-</dd>
-<dt><a href="../filters/">Filter</a> or other expression</dt>
-<dd>
-<p>\${<expression>}</p>
-<p><code>${type = road}</code></p>
-<p>If attribute name is ambiguous, encase in brackets (for example: <code>${[type] = road}</code>). If value is ambiguous, use single quotes (<code>${type = 'road'}</code>).</p>
-</dd>
-</dl>
+<p>+-------------------------------------------+------------------------------+----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Type                                      | Syntax                       | Example              | Notes                                                                                                                                                                                                                                                                                                                   |
++===========================================+==============================+======================+=========================================================================================================================================================================================================================================================================================================================+
+| Integer                                   | Value only                   | <code>12</code>                 | Quotes allowed as well                                                                                                                                                                                                                                                                                                  |
++-------------------------------------------+------------------------------+----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Float                                     | Value only                   | <code>0.75</code>               | Quotes allowed as well                                                                                                                                                                                                                                                                                                  |
++-------------------------------------------+------------------------------+----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Text                                      | Quotes                       | <code>Title</code>              | Spaces, colons, and other special characters are allowed. If value is ambiguous, use single quotes.                                                                                                                                                                                                                     |
++-------------------------------------------+------------------------------+----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Color                                     | -   '# + six digits' (hex) | -   <code>'#FF00FF'</code>      | Used when specifying RGB colors. For hex, use <code>'#RRGGBB'</code> with each two character pair having a value from <code>00</code> to <code>FF</code>. For decimal, use <code>rgb(rrr,ggg,bbb)</code> with each ordinate having a value from <code>0</code> to <code>255</code>. Quotes are not required when using <a href="http://www.w3schools.com/html/html_colornames.asp">named colors</a>. |
+|                                           | -   rgb(r,g,b) (decimal)     | -   <code>rgb(255,0,255)</code> |                                                                                                                                                                                                                                                                                                                         |
+|                                           | -   Text (named colors)      | -   <code>fuchsia</code>        |                                                                                                                                                                                                                                                                                                                         |
++-------------------------------------------+------------------------------+----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Tuple                                     | Brackets                     | <code>[0,15000]</code>          | Use two single quotes to denote blank entries in the tuple (for example: <code>['#FFFFFF',0,0,'']</code>).                                                                                                                                                                                                                         |
++-------------------------------------------+------------------------------+----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| <a href="../filters/">Filter</a> or other expression | \${<expression>}           | <code>${type = road}</code>     | If attribute name is ambiguous, encase in brackets (for example: <code>${[type] = road}</code>). If value is ambiguous, use single quotes (<code>${type = 'road'}</code>).                                                                                                                                                                    |
++-------------------------------------------+------------------------------+----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</p>
 <h2 id="expressions">Expressions</h2>
 <p>Throughout the reference guide, there are references to values that are denoted by <code>&lt;expression&gt;</code>. An <strong>expression</strong> is a flexible term meaning that the value can be one of the following kinds of objects:</p>
 <ul>
@@ -2470,36 +2437,40 @@ feature-styles:
 </code></pre></div>
 <p>The dash next to <code>polygon</code> means that the item itself is contained in a list, not that it contains a list. And <strong>the placement of the dash is at the same level of indentation as the list title.</strong></p>
 <p>It is sometimes not obvious whether an object should be a list (and use dashes) or a mapping (and not use dashes), so please refer to this table if unsure:</p>
-<dl>
-<dt>Object</dt>
-<dd>
-<p>Type</p>
-</dd>
-<dt><a href="../featurestyles/">Feature style</a></dt>
-<dd>
-<p>List</p>
-</dd>
-<dt><a href="../rules/">Rule</a></dt>
-<dd>
-<p>List</p>
-</dd>
-<dt><a href="../symbolizers/">Symbolizer</a></dt>
-<dd>
-<p>List</p>
-</dd>
-<dt>Individual symbolizers (contents)</dt>
-<dd>
-<p>Mapping</p>
-</dd>
-<dt><a href="../transforms/">Transform</a></dt>
-<dd>
-<p>Mapping</p>
-</dd>
-<dt>Color table (for raster symbolizers)</dt>
-<dd>
-<p>List</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Object</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../featurestyles/">Feature style</a></td>
+<td>List</td>
+</tr>
+<tr>
+<td><a href="../rules/">Rule</a></td>
+<td>List</td>
+</tr>
+<tr>
+<td><a href="../symbolizers/">Symbolizer</a></td>
+<td>List</td>
+</tr>
+<tr>
+<td>Individual symbolizers (contents)</td>
+<td>Mapping</td>
+</tr>
+<tr>
+<td><a href="../transforms/">Transform</a></td>
+<td>Mapping</td>
+</tr>
+<tr>
+<td>Color table (for raster symbolizers)</td>
+<td>List</td>
+</tr>
+</tbody>
+</table>
 <h2 id="ysld_reference_structure_indentation">Indentation</h2>
 <p>Indentation is very important in YSLD. All directives must be indented to its proper place to ensure proper hierarchy. <strong>Improper indentation will cause a style to be rendered incorrectly, or not at all.</strong></p>
 <p>For example, the polygon symbolizer, since it is a mapping, contains certain parameters inside it, such as the color of the fill and stroke. These must be indented such that they are "inside" the polygon block.</p>

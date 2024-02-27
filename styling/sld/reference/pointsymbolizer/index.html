@@ -2426,81 +2426,108 @@
 <p>A <strong>PointSymbolizer</strong> styles features as <strong>points</strong>. Points are depicted as graphic symbols at a single location on the map.</p>
 <h2 id="syntax">Syntax</h2>
 <p>A <code>&lt;PointSymbolizer&gt;</code> contains an optional <code>&lt;Geometry&gt;</code> element, and a required <code>&lt;Graphic&gt;</code> element specifying the point symbology.</p>
-<dl>
-<dt><strong>Tag</strong></dt>
-<dd>
-<p><strong>Required?</strong></p>
-<p><strong>Description</strong></p>
-</dd>
-<dt><code>&lt;Geometry&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>Specifies the geometry to be rendered.</p>
-</dd>
-<dt><code>&lt;Graphic&gt;</code></dt>
-<dd>
-<p>Yes</p>
-<p>Specifies the styling for the point symbol.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tag</strong></td>
+<td><strong>Required?</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>&lt;Geometry&gt;</code></td>
+<td>No</td>
+<td>Specifies the geometry to be rendered.</td>
+</tr>
+<tr>
+<td><code>&lt;Graphic&gt;</code></td>
+<td>Yes</td>
+<td>Specifies the styling for the point symbol.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="geometry">Geometry</h3>
 <p>The <code>&lt;Geometry&gt;</code> element is optional. If present, it specifies the featuretype property from which to obtain the geometry to style using a <code>&lt;PropertyName&gt;</code> element. See also <a href="../../extensions/geometry-transformations/">Geometry transformations in SLD</a> for GeoServer extensions for specifying geometry.</p>
 <p>Any kind of geometry may be styled with a <code>&lt;PointSymbolizer&gt;</code>. For non-point geometries, a representative point is used (such as the centroid of a line or polygon).</p>
 <h3 id="sld_reference_graphic">Graphic</h3>
 <p>Symbology is specified using a <code>&lt;Graphic&gt;</code> element. The symbol is specified by either an <code>&lt;ExternalGraphic&gt;</code> or a <code>&lt;Mark&gt;</code> element. <strong>External Graphics</strong> are image files (in a format such as PNG or SVG) that contain the shape and color information defining how to render a symbol. <strong>Marks</strong> are vector shapes whose stroke and fill are defined explicitly in the symbolizer.</p>
 <p>There are five possible sub-elements of the <code>&lt;Graphic&gt;</code> element. One of <code>&lt;ExternalGraphic&gt;</code> or <code>&lt;Mark&gt;</code> must be specified; the others are optional.</p>
-<dl>
-<dt><strong>Tag</strong></dt>
-<dd>
-<p><strong>Required?</strong></p>
-<p><strong>Description</strong></p>
-</dd>
-<dt><code>&lt;ExternalGraphic&gt;</code></dt>
-<dd>
-<p>No (when using <code>&lt;Mark&gt;</code>)</p>
-<p>Specifies an external image file to use as the symbol.</p>
-</dd>
-<dt><code>&lt;Mark&gt;</code></dt>
-<dd>
-<p>No (when using <code>&lt;ExternalGraphic&gt;</code>)</p>
-<p>Specifies a named shape to use as the symbol.</p>
-</dd>
-<dt><code>&lt;Opacity&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>Specifies the opacity (transparency) of the symbol. Values range from <code>0</code> (completely transparent) to <code>1</code> (completely opaque). Value may contain <a href="./#sld_reference_parameter_expressions">expressions</a>. Default is <code>1</code> (opaque).</p>
-</dd>
-<dt><code>&lt;Size&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>Specifies the size of the symbol, in pixels. When used with an image file, this specifies the height of the image, with the width being scaled accordingly. if omitted the native symbol size is used. Value may contain <a href="./#sld_reference_parameter_expressions">expressions</a>.</p>
-</dd>
-<dt><code>&lt;Rotation&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>Specifies the rotation of the symbol about its center point, in decimal degrees. Positive values indicate rotation in the clockwise direction, negative values indicate counter-clockwise rotation. Value may contain <a href="./#sld_reference_parameter_expressions">expressions</a>. Default is <code>0</code>.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tag</strong></td>
+<td><strong>Required?</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>&lt;ExternalGraphic&gt;</code></td>
+<td>No (when using <code>&lt;Mark&gt;</code>)</td>
+<td>Specifies an external image file to use as the symbol.</td>
+</tr>
+<tr>
+<td><code>&lt;Mark&gt;</code></td>
+<td>No (when using <code>&lt;ExternalGraphic&gt;</code>)</td>
+<td>Specifies a named shape to use as the symbol.</td>
+</tr>
+<tr>
+<td><code>&lt;Opacity&gt;</code></td>
+<td>No</td>
+<td>Specifies the opacity (transparency) of the symbol. Values range from <code>0</code> (completely transparent) to <code>1</code> (completely opaque). Value may contain <a href="./#sld_reference_parameter_expressions">expressions</a>. Default is <code>1</code> (opaque).</td>
+</tr>
+<tr>
+<td><code>&lt;Size&gt;</code></td>
+<td>No</td>
+<td>Specifies the size of the symbol, in pixels. When used with an image file, this specifies the height of the image, with the width being scaled accordingly. if omitted the native symbol size is used. Value may contain <a href="./#sld_reference_parameter_expressions">expressions</a>.</td>
+</tr>
+<tr>
+<td><code>&lt;Rotation&gt;</code></td>
+<td>No</td>
+<td>Specifies the rotation of the symbol about its center point, in decimal degrees. Positive values indicate rotation in the clockwise direction, negative values indicate counter-clockwise rotation. Value may contain <a href="./#sld_reference_parameter_expressions">expressions</a>. Default is <code>0</code>.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="externalgraphic">ExternalGraphic</h3>
 <p><strong>External Graphics</strong> are image files (in formats such as PNG or SVG) that contain the shape and color information defining how to render a symbol. For GeoServer extensions for specifying external graphics, see <a href="../../extensions/pointsymbols/">Graphic symbology in GeoServer</a>.</p>
 <p>The <code>&lt;ExternalGraphic&gt;</code> element has the sub-elements:</p>
-<dl>
-<dt><strong>Tag</strong></dt>
-<dd>
-<p><strong>Required?</strong></p>
-<p><strong>Description</strong></p>
-</dd>
-<dt><code>&lt;OnlineResource&gt;</code></dt>
-<dd>
-<p>Yes</p>
-<p>The <code>xlink:href</code> attribute specifies the location of the image file. The value can be either a URL or a local pathname relative to the SLD directory. The value can contain CQL expressions delimited by <code>${ }</code>. The attribute <code>xlink:type="simple"</code> is also required. The element does not contain any content.</p>
-</dd>
-<dt><code>&lt;Format&gt;</code></dt>
-<dd>
-<p>Yes</p>
-<p>The MIME type of the image format. Most standard web image formats are supported. Common MIME types are <code>image/png</code>, <code>image/jpeg</code>, <code>image/gif</code>, and <code>image/svg+xml</code></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tag</strong></td>
+<td><strong>Required?</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>&lt;OnlineResource&gt;</code></td>
+<td>Yes</td>
+<td>The <code>xlink:href</code> attribute specifies the location of the image file. The value can be either a URL or a local pathname relative to the SLD directory. The value can contain CQL expressions delimited by <code>${ }</code>. The attribute <code>xlink:type="simple"</code> is also required. The element does not contain any content.</td>
+</tr>
+<tr>
+<td><code>&lt;Format&gt;</code></td>
+<td>Yes</td>
+<td>The MIME type of the image format. Most standard web image formats are supported. Common MIME types are <code>image/png</code>, <code>image/jpeg</code>, <code>image/gif</code>, and <code>image/svg+xml</code></td>
+</tr>
+</tbody>
+</table>
 <h3 id="mark">Mark</h3>
 <p><strong>Marks</strong> are predefined vector shapes identified by a well-known name. Their fill and stroke can be defined explicitly in the SLD. For GeoServer extensions for specifying mark symbols, see <a href="../../extensions/pointsymbols/">Graphic symbology in GeoServer</a>.</p>
 <p>The <code>&lt;Mark&gt;</code> element has the sub-elements:</p>

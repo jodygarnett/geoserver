@@ -1908,32 +1908,40 @@
 <h2 id="cascaded-stored-query-parameters">Cascaded stored query parameters</h2>
 <p>The relationship between stored query parameters and the schema returned by the query is not well defined. For cascaded stored queries to work, the relationship between the query received by GeoServer and the parameters passed to the stored query must be defined.</p>
 <p>When you set up a layer based on a stored query, you have to select which stored query to cascade and what values are passed to each parameter. Cascaded stored queries can leverage view parameters passed to the query. This is similar to how arbitrary parameters are passed to <a href="../../database/sqlview/">SQL Views</a>. GeoServer supports multiple strategies to pass these values. See below for a full list.</p>
-<dl>
-<dt><strong>Parameter type</strong></dt>
-<dd>
-<p><strong>Explanation</strong></p>
-</dd>
-<dt><strong>No mapping</strong></dt>
-<dd>
-<p>The value of the view parameter will be passed as is to the stored query. No parameter will be passed if there is no view parameter of the same name.</p>
-</dd>
-<dt><strong>Blocked</strong></dt>
-<dd>
-<p>This parameter will never be passed to the stored query</p>
-</dd>
-<dt><strong>Default</strong></dt>
-<dd>
-<p>The specified value is used unless overwritten by a view parameter</p>
-</dd>
-<dt><strong>Static</strong></dt>
-<dd>
-<p>The specified value is always used (view parameter value will be ignored)</p>
-</dd>
-<dt><strong>CQL Expression</strong></dt>
-<dd>
-<p>An expression that will be evaluated on every request (see below for more details)</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Parameter type</strong></td>
+<td><strong>Explanation</strong></td>
+</tr>
+<tr>
+<td><strong>No mapping</strong></td>
+<td>The value of the view parameter will be passed as is to the stored query. No parameter will be passed if there is no view parameter of the same name.</td>
+</tr>
+<tr>
+<td><strong>Blocked</strong></td>
+<td>This parameter will never be passed to the stored query</td>
+</tr>
+<tr>
+<td><strong>Default</strong></td>
+<td>The specified value is used unless overwritten by a view parameter</td>
+</tr>
+<tr>
+<td><strong>Static</strong></td>
+<td>The specified value is always used (view parameter value will be ignored)</td>
+</tr>
+<tr>
+<td><strong>CQL Expression</strong></td>
+<td>An expression that will be evaluated on every request (see below for more details)</td>
+</tr>
+</tbody>
+</table>
 <p>See <a href="../../database/sqlview/#using_a_parametric_sql_view">Using a parametric SQL View</a> for more details how clients pass view parameters to GeoServer.</p>
 <h2 id="cql-expressions">CQL expressions</h2>
 <p>Parameter mappings configured as CQL expressions are evaluated for each request using a context derived from the request query and the view parameters. General information on CQL expressions is available here <a href="../../../filter/ecql_reference/#ecql_expr">Expression</a>.</p>

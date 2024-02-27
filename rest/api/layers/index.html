@@ -2336,61 +2336,75 @@
 </blockquote>
 <h2 id="layerslformat"><code>/layers/&lt;l&gt;[.&lt;format&gt;]</code></h2>
 <p>Controls a particular layer.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-<p>Parameters</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Return layer <code>l</code></p>
-<p>200</p>
-<p>HTML, XML, JSON</p>
-<p>HTML</p>
-<p><a href="./#rest_api_layers_quietOnNotFound">quietOnNotFound</a></p>
-</dd>
-</dl>
-<p>POST</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<dl>
-<dt>PUT</dt>
-<dd>
-<p>Modify layer <code>l</code></p>
-<p>200</p>
-<p>XML,JSON</p>
-</dd>
-<dt>DELETE</dt>
-<dd>
-<p>Delete layer <code>l</code></p>
-<p>200</p>
-<p><a href="./#rest_api_layers_recurse">recurse</a></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Return layer <code>l</code></td>
+<td>200</td>
+<td>HTML, XML, JSON</td>
+<td>HTML</td>
+<td><a href="./#rest_api_layers_quietOnNotFound">quietOnNotFound</a></td>
+</tr>
+<tr>
+<td>POST</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Modify layer <code>l</code></td>
+<td>200</td>
+<td>XML,JSON</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Delete layer <code>l</code></td>
+<td>200</td>
+<td></td>
+<td></td>
+<td><a href="./#rest_api_layers_recurse">recurse</a></td>
+</tr>
+</tbody>
+</table>
 <h3 id="exceptions">Exceptions</h3>
-<dl>
-<dt>Exception</dt>
-<dd>
-<p>Status code</p>
-</dd>
-<dt>GET for a layer that does not exist</dt>
-<dd>
-<p>404</p>
-</dd>
-<dt>PUT that changes name of layer</dt>
-<dd>
-<p>403</p>
-</dd>
-<dt>PUT that changes resource of layer</dt>
-<dd>
-<p>403</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Exception</th>
+<th>Status code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET for a layer that does not exist</td>
+<td>404</td>
+</tr>
+<tr>
+<td>PUT that changes name of layer</td>
+<td>403</td>
+</tr>
+<tr>
+<td>PUT that changes resource of layer</td>
+<td>403</td>
+</tr>
+</tbody>
+</table>
 <h3 id="parameters">Parameters</h3>
 <h4 id="rest_api_layers_recurse"><code>recurse</code></h4>
 <p>The <code>recurse</code> parameter recursively deletes all styles referenced by the specified layer. Allowed values for this parameter are "true" or "false". The default value is "false".</p>
@@ -2398,36 +2412,47 @@
 <p>The <code>quietOnNotFound</code> parameter avoids to log an Exception when the layer is not present. Note that 404 status code will be returned anyway.</p>
 <h2 id="layerslstylesformat"><code>/layers/&lt;l&gt;/styles[.&lt;format&gt;]</code></h2>
 <p>Controls all styles in a given layer.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Return all styles for layer <code>l</code></p>
-<p>200</p>
-<p>SLD, HTML, XML, JSON</p>
-<p>HTML</p>
-</dd>
-<dt>POST</dt>
-<dd>
-<p>Add a new style to layer <code>l</code></p>
-<p>201, with <code>Location</code> header</p>
-<p>XML, JSON</p>
-</dd>
-</dl>
-<p>PUT</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<p>DELETE</p>
-<blockquote>
-<p>405</p>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Return all styles for layer <code>l</code></td>
+<td>200</td>
+<td>SLD, HTML, XML, JSON</td>
+<td>HTML</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Add a new style to layer <code>l</code></td>
+<td>201, with <code>Location</code> header</td>
+<td>XML, JSON</td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 
 

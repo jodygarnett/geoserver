@@ -2320,42 +2320,52 @@
 </blockquote>
 <h2 id="namespacesnsformat"><code>/namespaces/&lt;ns&gt;[.&lt;format&gt;]</code></h2>
 <p>Controls a particular namespace.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-<p>Parameters</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Return namespace <code>ns</code></p>
-<p>200</p>
-<p>HTML, XML, JSON</p>
-<p>HTML</p>
-<p><a href="./#rest_api_namespaces_quietOnNotFound">quietOnNotFound</a></p>
-</dd>
-</dl>
-<p>POST</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<dl>
-<dt>PUT</dt>
-<dd>
-<p>200</p>
-<p>Modify namespace <code>ns</code></p>
-<p>XML, JSON</p>
-</dd>
-<dt>DELETE</dt>
-<dd>
-<p>200</p>
-<p>Delete namespace <code>ns</code></p>
-<p>XML, JSON</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Return namespace <code>ns</code></td>
+<td>200</td>
+<td>HTML, XML, JSON</td>
+<td>HTML</td>
+<td><a href="./#rest_api_namespaces_quietOnNotFound">quietOnNotFound</a></td>
+</tr>
+<tr>
+<td>POST</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>200</td>
+<td>Modify namespace <code>ns</code></td>
+<td>XML, JSON</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>200</td>
+<td>Delete namespace <code>ns</code></td>
+<td>XML, JSON</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h3 id="exceptions">Exceptions</h3>
 <dl>
 <dt>Exception</dt>
@@ -2380,38 +2390,47 @@
 <p>The <code>quietOnNotFound</code> parameter avoids to log an Exception when the Namespace is not present. Note that 404 status code will be returned anyway.</p>
 <h2 id="namespacesdefaultformat"><code>/namespaces/default[.&lt;format&gt;]</code></h2>
 <p>Controls the default namespace.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Return default namespace</p>
-<p>200</p>
-<p>HTML, XML, JSON</p>
-<p>HTML</p>
-</dd>
-</dl>
-<p>POST</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<dl>
-<dt>PUT</dt>
-<dd>
-<p>200</p>
-<p>Set default namespace</p>
-<p>XML, JSON</p>
-</dd>
-</dl>
-<p>DELETE</p>
-<blockquote>
-<p>405</p>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Return default namespace</td>
+<td>200</td>
+<td>HTML, XML, JSON</td>
+<td>HTML</td>
+</tr>
+<tr>
+<td>POST</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>200</td>
+<td>Set default namespace</td>
+<td>XML, JSON</td>
+<td></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 
 

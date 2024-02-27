@@ -2234,34 +2234,42 @@
 <p>The GeoWebCache REST API provides a RESTful interface through which users can add or remove tiles from the cache on a per-layer basis.</p>
 <h2 id="operations">Operations</h2>
 <p>URL: <code>/gwc/rest/seed/&lt;layer&gt;.&lt;format&gt;</code></p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Return Code</p>
-<p>Formats</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Return the status of the seeding threads</p>
-<p>200</p>
-<p>JSON</p>
-</dd>
-<dt>POST</dt>
-<dd>
-<p>Issue a seed or truncate task request</p>
-<p>200</p>
-<p>XML, JSON</p>
-</dd>
-</dl>
-<p>PUT</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<p>DELETE</p>
-<blockquote>
-<p>405</p>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Return Code</th>
+<th>Formats</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Return the status of the seeding threads</td>
+<td>200</td>
+<td>JSON</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Issue a seed or truncate task request</td>
+<td>200</td>
+<td>XML, JSON</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td></td>
+<td>405</td>
+<td></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td></td>
+<td>405</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p><strong>Representations</strong>:</p>
 <ul>
 <li><a href="../representations/seed_xml.txt">XML</a></li>
@@ -2351,32 +2359,42 @@
 </code></pre></div>
 <h2 id="querying-running-tasks">Querying running tasks</h2>
 <p>URL: <code>/gwc/rest/seed[/&lt;layer&gt;].json</code></p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Return Code</p>
-<p>Formats</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Get the global or per layer state of running and pending tasks</p>
-<p>200</p>
-<p>JSON</p>
-</dd>
-</dl>
-<p>POST</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<p>PUT</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<p>DELETE</p>
-<blockquote>
-<p>405</p>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Return Code</th>
+<th>Formats</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Get the global or per layer state of running and pending tasks</td>
+<td>200</td>
+<td>JSON</td>
+</tr>
+<tr>
+<td>POST</td>
+<td></td>
+<td>405</td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td></td>
+<td>405</td>
+<td></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td></td>
+<td>405</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h3 id="getting-current-state-of-the-seeding-threads">Getting current state of the seeding threads</h3>
 <p>Sending a GET request to the <code>/gwc/rest/seed.json</code> resource returns a list of pending (scheduled) and running tasks for all the layers.</p>
 <p>Sending a GET request to the <code>/gwc/rest/seed/&lt;layer name&gt;.json</code> resource returns a list of pending (scheduled) and running tasks for that specific layer.</p>
@@ -2408,33 +2426,42 @@
 </span></code></pre></div>
 <h2 id="terminating-running-tasks">Terminating running tasks</h2>
 <p>URL: <code>/gwc/rest/seed[/&lt;layer&gt;]</code></p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Return Code</p>
-<p>Formats</p>
-</dd>
-</dl>
-<p>GET</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<dl>
-<dt>POST</dt>
-<dd>
-<p>Issue a kill running and/or pending tasks request</p>
-<p>200</p>
-</dd>
-</dl>
-<p>PUT</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<p>DELETE</p>
-<blockquote>
-<p>405</p>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Return Code</th>
+<th>Formats</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td></td>
+<td>405</td>
+<td></td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Issue a kill running and/or pending tasks request</td>
+<td>200</td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td></td>
+<td>405</td>
+<td></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td></td>
+<td>405</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p>A POST request to the <code>/gwc/rest/seed</code> resource terminates pending and/or running tasks for <strong>all layers</strong>. A POST request to the <code>/gwc/rest/seed/&lt;layername&gt;</code> resource terminates pending and/or running tasks for a specific layer.</p>
 <p>It is possible to terminate individual or all pending and/or running tasks. Use the parameter <code>kill_all</code> with one of the following values: <code>running</code>, <code>pending</code>, or <code>all</code>.</p>
 <div class="admonition note">

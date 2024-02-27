@@ -2555,24 +2555,32 @@
 <em>Setup</em></p>
 <h2 id="creating-the-template">Creating the Template</h2>
 <p>Next we will create a template which allows us to specify the temporal aspects of the dataset. The schema of our dataset looks like:</p>
-<dl>
-<dt>INET_P100n</dt>
-<dd>
-<p>Number of internet users per 100 people</p>
-</dd>
-<dt>NAME</dt>
-<dd>
-<p>Name of country</p>
-</dd>
-<dt>RPT_YEAR</dt>
-<dd>
-<p>Year</p>
-</dd>
-<dt>Geometry</dt>
-<dd>
-<p>Polygon representing the country</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INET_P100n</td>
+<td>Number of internet users per 100 people</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Name of country</td>
+</tr>
+<tr>
+<td>RPT_YEAR</td>
+<td>Year</td>
+</tr>
+<tr>
+<td>Geometry</td>
+<td>Polygon representing the country</td>
+</tr>
+</tbody>
+</table>
 <p>The temporal attribute is <code>RPT_YEAR</code> and is the one that matters to us. Ok, time to create the template.</p>
 <ol>
 <li>In your text editor of choice, create a new text file called <code>time.ftl</code>.</li>
@@ -2645,28 +2653,36 @@
 </dd>
 </dl>
 <p>The set of <strong>date time</strong> formats which GeoServer can be understand is formed by appending the timestamp formats <code>hh:mm</code> and <code>hh:mm:ss</code> to the entries in the above table:</p>
-<dl>
-<dt><strong>DateTime Format</strong></dt>
-<dd>
-<p><strong>Example</strong></p>
-</dd>
-<dt>yyyy-MM-dd hh:mm</dt>
-<dd>
-<p>2007-06-20 12:30</p>
-</dd>
-<dt>yyyy-MMM-dd hh:mm</dt>
-<dd>
-<p>2007-Jun-20 12:30</p>
-</dd>
-<dt>yyyy-MM-dd hh<img alt="🇲🇲" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f1f2-1f1f2.svg" title=":mm:" />ss</dt>
-<dd>
-<p>2007-06-20 12:30:00</p>
-</dd>
-<dt>yyyy-MMM-dd hh<img alt="🇲🇲" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f1f2-1f1f2.svg" title=":mm:" />ss</dt>
-<dd>
-<p>2007-Jun-20 12:30:00</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DateTime Format</strong></td>
+<td><strong>Example</strong></td>
+</tr>
+<tr>
+<td>yyyy-MM-dd hh:mm</td>
+<td>2007-06-20 12:30</td>
+</tr>
+<tr>
+<td>yyyy-MMM-dd hh:mm</td>
+<td>2007-Jun-20 12:30</td>
+</tr>
+<tr>
+<td>yyyy-MM-dd hh<img alt="🇲🇲" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f1f2-1f1f2.svg" title=":mm:" />ss</td>
+<td>2007-06-20 12:30:00</td>
+</tr>
+<tr>
+<td>yyyy-MMM-dd hh<img alt="🇲🇲" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f1f2-1f1f2.svg" title=":mm:" />ss</td>
+<td>2007-Jun-20 12:30:00</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p><strong>Setting the Timezone</strong></p>

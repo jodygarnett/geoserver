@@ -2538,48 +2538,57 @@
 <p>The <code>&lt;CssParameter&gt;</code> elements describe the basic styling of the line. Any number of <code>&lt;CssParameter&gt;</code> elements can be specified.</p>
 <p>The <code>name</code> <strong>attribute</strong> indicates what aspect of styling an element specifies, using the standard CSS/SVG styling model. The <strong>content</strong> of the element supplies the value of the styling parameter. The value may contain <a href="../pointsymbolizer/#sld_reference_parameter_expressions">expressions</a>.</p>
 <p>The following parameters are supported:</p>
-<dl>
-<dt><strong>Parameter</strong></dt>
-<dd>
-<p><strong>Required?</strong></p>
-<p><strong>Description</strong></p>
-</dd>
-<dt><code>name="stroke"</code></dt>
-<dd>
-<p>No</p>
-<p>Specifies the solid color given to the line, in the form <code>#RRGGBB</code>. Default is black (<code>#000000</code>).</p>
-</dd>
-<dt><code>name="stroke-width"</code></dt>
-<dd>
-<p>No</p>
-<p>Specifies the width of the line in pixels. Default is <code>1</code>.</p>
-</dd>
-<dt><code>name="stroke-opacity"</code></dt>
-<dd>
-<p>No</p>
-<p>Specifies the opacity (transparency) of the line. The value is a number are between <code>0</code> (completely transparent) and <code>1</code> (completely opaque). Default is <code>1</code>.</p>
-</dd>
-<dt><code>name="stroke-linejoin"</code></dt>
-<dd>
-<p>No</p>
-<p>Determines how lines are rendered at intersections of line segments. Possible values are <code>mitre</code> (sharp corner), <code>round</code> (rounded corner), and <code>bevel</code> (diagonal corner). Default is <code>mitre</code>.</p>
-</dd>
-<dt><code>name="stroke-linecap"</code></dt>
-<dd>
-<p>No</p>
-<p>Determines how lines are rendered at their ends. Possible values are <code>butt</code> (sharp square edge), <code>round</code> (rounded edge), and <code>square</code> (slightly elongated square edge). Default is <code>butt</code>.</p>
-</dd>
-<dt><code>name="stroke-dasharray"</code></dt>
-<dd>
-<p>No</p>
-<p>Encodes a dash pattern as a series of numbers separated by spaces. Odd-indexed numbers (first, third, etc) determine the length in pxiels to draw the line, and even-indexed numbers (second, fourth, etc) determine the length in pixels to blank out the line. Default is an unbroken line. <code>Starting from version 2.1</code> dash arrays can be combined with graphic strokes to generate complex line styles with alternating symbols or a mix of lines and symbols.</p>
-</dd>
-<dt><code>name="stroke-dashoffset"</code></dt>
-<dd>
-<p>No</p>
-<p>Specifies the distance in pixels into the <code>dasharray</code> pattern at which to start drawing. Default is <code>0</code>.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Parameter</strong></td>
+<td><strong>Required?</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>name="stroke"</code></td>
+<td>No</td>
+<td>Specifies the solid color given to the line, in the form <code>#RRGGBB</code>. Default is black (<code>#000000</code>).</td>
+</tr>
+<tr>
+<td><code>name="stroke-width"</code></td>
+<td>No</td>
+<td>Specifies the width of the line in pixels. Default is <code>1</code>.</td>
+</tr>
+<tr>
+<td><code>name="stroke-opacity"</code></td>
+<td>No</td>
+<td>Specifies the opacity (transparency) of the line. The value is a number are between <code>0</code> (completely transparent) and <code>1</code> (completely opaque). Default is <code>1</code>.</td>
+</tr>
+<tr>
+<td><code>name="stroke-linejoin"</code></td>
+<td>No</td>
+<td>Determines how lines are rendered at intersections of line segments. Possible values are <code>mitre</code> (sharp corner), <code>round</code> (rounded corner), and <code>bevel</code> (diagonal corner). Default is <code>mitre</code>.</td>
+</tr>
+<tr>
+<td><code>name="stroke-linecap"</code></td>
+<td>No</td>
+<td>Determines how lines are rendered at their ends. Possible values are <code>butt</code> (sharp square edge), <code>round</code> (rounded edge), and <code>square</code> (slightly elongated square edge). Default is <code>butt</code>.</td>
+</tr>
+<tr>
+<td><code>name="stroke-dasharray"</code></td>
+<td>No</td>
+<td>Encodes a dash pattern as a series of numbers separated by spaces. Odd-indexed numbers (first, third, etc) determine the length in pxiels to draw the line, and even-indexed numbers (second, fourth, etc) determine the length in pixels to blank out the line. Default is an unbroken line. <code>Starting from version 2.1</code> dash arrays can be combined with graphic strokes to generate complex line styles with alternating symbols or a mix of lines and symbols.</td>
+</tr>
+<tr>
+<td><code>name="stroke-dashoffset"</code></td>
+<td>No</td>
+<td>Specifies the distance in pixels into the <code>dasharray</code> pattern at which to start drawing. Default is <code>0</code>.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="perpendicularoffset">PerpendicularOffset</h3>
 <p>The <code>&lt;PerpendicularOffset&gt;</code> element is optional. It is native to the SE 1.1 specification, but supported also in SLD 1.0 as a vendor extension.</p>
 <p>If present, it makes the renderer draw a line parallel to the original one, at the given distance. When applied on lines, positive values generate a parallel line on the left hand side, negative values on the right hand side. When applied on polygons instead, positive is interpreted as outwards, negative as inwards.</p>

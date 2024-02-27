@@ -2324,94 +2324,118 @@
 <p>A <code>workspace</code> is a grouping of data stores. Similar to a namespace, it is used to group data that is related in some way.</p>
 <h2 id="workspacesformat"><code>/workspaces[.&lt;format&gt;]</code></h2>
 <p>Controls all workspaces.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>List all workspaces</p>
-<p>200</p>
-<p>HTML, XML, JSON</p>
-<p>HTML</p>
-</dd>
-<dt>POST</dt>
-<dd>
-<p>Create a new workspace</p>
-<p>201 with <code>Location</code> header</p>
-<p>XML, JSON</p>
-</dd>
-</dl>
-<p>PUT</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<p>DELETE</p>
-<blockquote>
-<p>405</p>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>List all workspaces</td>
+<td>200</td>
+<td>HTML, XML, JSON</td>
+<td>HTML</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Create a new workspace</td>
+<td>201 with <code>Location</code> header</td>
+<td>XML, JSON</td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="workspaceswsformat"><code>/workspaces/&lt;ws&gt;[.&lt;format&gt;]</code></h2>
 <p>Controls a specific workspace.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-<p>Parameters</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Return workspace <code>ws</code></p>
-<p>200</p>
-<p>HTML, XML, JSON</p>
-<p>HTML</p>
-<p><a href="./#rest_api_workspaces_quietOnNotFound">quietOnNotFound</a></p>
-</dd>
-</dl>
-<p>POST</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<dl>
-<dt>PUT</dt>
-<dd>
-<p>200</p>
-<p>Modify workspace <code>ws</code></p>
-<p>XML, JSON</p>
-</dd>
-<dt>DELETE</dt>
-<dd>
-<p>200</p>
-<p>Delete workspace <code>ws</code></p>
-<p>XML, JSON</p>
-<p><a href="./#rest_api_workspaces_recurse">recurse</a></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Return workspace <code>ws</code></td>
+<td>200</td>
+<td>HTML, XML, JSON</td>
+<td>HTML</td>
+<td><a href="./#rest_api_workspaces_quietOnNotFound">quietOnNotFound</a></td>
+</tr>
+<tr>
+<td>POST</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>200</td>
+<td>Modify workspace <code>ws</code></td>
+<td>XML, JSON</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>200</td>
+<td>Delete workspace <code>ws</code></td>
+<td>XML, JSON</td>
+<td></td>
+<td><a href="./#rest_api_workspaces_recurse">recurse</a></td>
+</tr>
+</tbody>
+</table>
 <h3 id="exceptions">Exceptions</h3>
-<dl>
-<dt>Exception</dt>
-<dd>
-<p>Status code</p>
-</dd>
-<dt>GET for a workspace that does not exist</dt>
-<dd>
-<p>404</p>
-</dd>
-<dt>PUT that changes name of workspace</dt>
-<dd>
-<p>403</p>
-</dd>
-<dt>DELETE against a workspace that is non-empty</dt>
-<dd>
-<p>403</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Exception</th>
+<th>Status code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET for a workspace that does not exist</td>
+<td>404</td>
+</tr>
+<tr>
+<td>PUT that changes name of workspace</td>
+<td>403</td>
+</tr>
+<tr>
+<td>DELETE against a workspace that is non-empty</td>
+<td>403</td>
+</tr>
+</tbody>
+</table>
 <h3 id="parameters">Parameters</h3>
 <h4 id="rest_api_workspaces_recurse"><code>recurse</code></h4>
 <p>The <code>recurse</code> parameter recursively deletes all layers referenced by the specified workspace, including data stores, coverage stores, feature types, and so on. Allowed values for this parameter are "true" or "false". The default value is "false".</p>
@@ -2453,40 +2477,47 @@
 </blockquote>
 <h2 id="workspaceswssettingsformat"><code>/workspaces/&lt;ws&gt;/settings[.&lt;format&gt;]</code></h2>
 <p>Controls settings on a specific workspace.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Returns workspace settings</p>
-<p>200</p>
-<p>HTML, XML, JSON</p>
-<p>HTML</p>
-</dd>
-</dl>
-<p>POST</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<dl>
-<dt>PUT</dt>
-<dd>
-<p>Creates or updates workspace settings</p>
-<p>200</p>
-<p>XML, JSON</p>
-</dd>
-<dt>DELETE</dt>
-<dd>
-<p>Deletes workspace settings</p>
-<p>200</p>
-<p>XML, JSON</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Returns workspace settings</td>
+<td>200</td>
+<td>HTML, XML, JSON</td>
+<td>HTML</td>
+</tr>
+<tr>
+<td>POST</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Creates or updates workspace settings</td>
+<td>200</td>
+<td>XML, JSON</td>
+<td></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Deletes workspace settings</td>
+<td>200</td>
+<td>XML, JSON</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 
 

@@ -2486,38 +2486,52 @@
 <p>A <code>style</code> describes how a resource (feature type or coverage) should be symbolized or rendered by the Web Map Service. In GeoServer styles are specified with <a href="../../../styling/">SLD</a>.</p>
 <h2 id="stylesformat"><code>/styles[.&lt;format&gt;]</code></h2>
 <p>Controls all styles.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-<p>Parameters</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Return all styles</p>
-<p>200</p>
-<p>HTML, XML, JSON</p>
-<p>HTML</p>
-</dd>
-<dt>POST</dt>
-<dd>
-<p>Create a new style</p>
-<p>201 with <code>Location</code> header</p>
-<p>SLD, XML, JSON, ZIP <a href="./#rest_api_styles_post_put">See note below</a></p>
-<p><a href="./#rest_api_styles_name">name</a> <a href="./#rest_api_styles_raw">raw</a></p>
-</dd>
-</dl>
-<p>PUT</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<p>DELETE</p>
-<blockquote>
-<p>405</p>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Return all styles</td>
+<td>200</td>
+<td>HTML, XML, JSON</td>
+<td>HTML</td>
+<td></td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Create a new style</td>
+<td>201 with <code>Location</code> header</td>
+<td>SLD, XML, JSON, ZIP <a href="./#rest_api_styles_post_put">See note below</a></td>
+<td></td>
+<td><a href="./#rest_api_styles_name">name</a> <a href="./#rest_api_styles_raw">raw</a></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h3 id="rest_api_styles_post_put">Styles POST and PUT</h3>
 <p>When executing a POST or PUT request with an SLD style, the <code>Content-type</code> header should be set to the mime type identifying the style format. Style formats supported out of the box include:</p>
 <ul>
@@ -2533,63 +2547,75 @@
 <p>The <code>raw</code> parameter specifies whether to forgo parsing and encoding of the uploaded style content. When set to "true" the style payload will be streamed directly to GeoServer configuration. Use this setting if the content and formatting of the style is to be preserved exactly. Use this setting with care as it may result in an invalid and unusable style. The default is "false".</p>
 <h2 id="stylessformat"><code>/styles/&lt;s&gt;[.&lt;format&gt;]</code></h2>
 <p>Controls a given style.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-<p>Parameters</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Return style <code>s</code></p>
-<p>200</p>
-<p>SLD, HTML, XML, JSON</p>
-<p>HTML</p>
-<p><a href="./#rest_api_styles_quietOnNotFound">quietOnNotFound</a> <a href="./#rest_api_styles_pretty">pretty</a></p>
-</dd>
-</dl>
-<p>POST</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<dl>
-<dt>PUT</dt>
-<dd>
-<p>Modify style <code>s</code></p>
-<p>200</p>
-<p>SLD, XML, JSON, ZIP <a href="./#rest_api_styles_post_put">See note above</a></p>
-<p><a href="./#rest_api_styles_raw">raw</a></p>
-</dd>
-<dt>DELETE</dt>
-<dd>
-<p>Delete style <code>s</code></p>
-<p>200</p>
-<p><a href="./#rest_api_styles_purge">purge</a></p>
-<p><a href="./#rest_api_styles_recurse">recurse</a></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Return style <code>s</code></td>
+<td>200</td>
+<td>SLD, HTML, XML, JSON</td>
+<td>HTML</td>
+<td><a href="./#rest_api_styles_quietOnNotFound">quietOnNotFound</a> <a href="./#rest_api_styles_pretty">pretty</a></td>
+</tr>
+<tr>
+<td>POST</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Modify style <code>s</code></td>
+<td>200</td>
+<td>SLD, XML, JSON, ZIP <a href="./#rest_api_styles_post_put">See note above</a></td>
+<td></td>
+<td><a href="./#rest_api_styles_raw">raw</a></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Delete style <code>s</code></td>
+<td>200</td>
+<td></td>
+<td><a href="./#rest_api_styles_purge">purge</a></td>
+<td><a href="./#rest_api_styles_recurse">recurse</a></td>
+</tr>
+</tbody>
+</table>
 <h3 id="exceptions">Exceptions</h3>
-<dl>
-<dt>Exception</dt>
-<dd>
-<p>Status code</p>
-</dd>
-<dt>GET for a style that does not exist</dt>
-<dd>
-<p>404</p>
-</dd>
-<dt>PUT that changes name of style</dt>
-<dd>
-<p>403</p>
-</dd>
-<dt>DELETE against style which is referenced by existing layers</dt>
-<dd>
-<p>403</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Exception</th>
+<th>Status code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET for a style that does not exist</td>
+<td>404</td>
+</tr>
+<tr>
+<td>PUT that changes name of style</td>
+<td>403</td>
+</tr>
+<tr>
+<td>DELETE against style which is referenced by existing layers</td>
+<td>403</td>
+</tr>
+</tbody>
+</table>
 <h3 id="parameters_1">Parameters</h3>
 <h4 id="rest_api_styles_purge"><code>purge</code></h4>
 <p>The <code>purge</code> parameter specifies whether the underlying SLD file for the style should be deleted on disk. Allowable values for this parameter are "true" or "false". When set to "true" the underlying file will be deleted.</p>
@@ -2636,53 +2662,67 @@
 </blockquote>
 <h2 id="workspaceswsstylessformat"><code>/workspaces/&lt;ws&gt;/styles/&lt;s&gt;[.&lt;format&gt;]</code></h2>
 <p>Controls a particular style in a given workspace.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-<p>Parameters</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Return style <code>s</code> within workspace <code>ws</code></p>
-<p>200</p>
-<p>SLD, HTML, XML, JSON</p>
-<p>HTML</p>
-<p><a href="./#rest_api_styles_quietOnNotFound">quietOnNotFound</a></p>
-</dd>
-</dl>
-<p>POST</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<dl>
-<dt>PUT</dt>
-<dd>
-<p>Modify style <code>s</code> within workspace <code>ws</code></p>
-<p>200</p>
-<p>SLD, XML, JSON, ZIP <a href="./#rest_api_styles_post_put">See note above</a></p>
-<p><a href="./#rest_api_styles_raw">raw</a></p>
-</dd>
-<dt>DELETE</dt>
-<dd>
-<p>Delete style <code>s</code> within workspace <code>ws</code></p>
-<p>200</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Return style <code>s</code> within workspace <code>ws</code></td>
+<td>200</td>
+<td>SLD, HTML, XML, JSON</td>
+<td>HTML</td>
+<td><a href="./#rest_api_styles_quietOnNotFound">quietOnNotFound</a></td>
+</tr>
+<tr>
+<td>POST</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Modify style <code>s</code> within workspace <code>ws</code></td>
+<td>200</td>
+<td>SLD, XML, JSON, ZIP <a href="./#rest_api_styles_post_put">See note above</a></td>
+<td></td>
+<td><a href="./#rest_api_styles_raw">raw</a></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Delete style <code>s</code> within workspace <code>ws</code></td>
+<td>200</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h3 id="exceptions_1">Exceptions</h3>
-<dl>
-<dt>Exception</dt>
-<dd>
-<p>Status code</p>
-</dd>
-<dt>GET for a style that does not exist for that workspace</dt>
-<dd>
-<p>404</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Exception</th>
+<th>Status code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET for a style that does not exist for that workspace</td>
+<td>404</td>
+</tr>
+</tbody>
+</table>
 
 
 

@@ -2582,32 +2582,40 @@
 <p>The most important aspect of regionation is to decide how to determine which features show up more prominently than others. This can be done either <strong>by geometry</strong>, or <strong>by attribute</strong>. One should choose the option that best exemplifies the relative "importance" of the feature. When choosing to regionate by geometry, only the larger lines and polygons will be displayed at higher zoom levels, with smaller ones being displayed when zooming in. When regionating by an attribute, the higher value of this attribute will make those features show up at higher zoom levels. (Choosing an attribute with a non-numeric value will be ignored, and will instead default to regionation by geometry.)</p>
 <h2 id="regionation-strategies">Regionation Strategies</h2>
 <p>Regionation strategies sets how to determine which features should be shown at any given time or zoom level. There are five types of regionation strategies:</p>
-<dl>
-<dt><strong>Strategy</strong></dt>
-<dd>
-<p><strong>Description</strong></p>
-</dd>
-<dt><code>best_guess</code></dt>
-<dd>
-<p>(<em>default</em>) The actual strategy is determined by the type of data being operated on. If the data consists of points, the <code>random</code> strategy is used. If the data consists of lines or polygons, the <code>geometry</code> strategy is used.</p>
-</dd>
-<dt><code>external-sorting</code></dt>
-<dd>
-<p>Creates a temporary auxiliary database within GeoServer. It takes slightly extra time to build the index upon first request.</p>
-</dd>
-<dt><code>native-sorting</code></dt>
-<dd>
-<p>Uses the default sorting algorithm of the backend where the data is hosted. It is faster than external-sorting, but will only work with PostGIS datastores.</p>
-</dd>
-<dt><code>geometry</code></dt>
-<dd>
-<p>Externally sorts by length (if lines) or area (if polygons).</p>
-</dd>
-<dt><code>random</code></dt>
-<dd>
-<p>Uses the existing order of the data and does not sort.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Strategy</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>best_guess</code></td>
+<td>(<em>default</em>) The actual strategy is determined by the type of data being operated on. If the data consists of points, the <code>random</code> strategy is used. If the data consists of lines or polygons, the <code>geometry</code> strategy is used.</td>
+</tr>
+<tr>
+<td><code>external-sorting</code></td>
+<td>Creates a temporary auxiliary database within GeoServer. It takes slightly extra time to build the index upon first request.</td>
+</tr>
+<tr>
+<td><code>native-sorting</code></td>
+<td>Uses the default sorting algorithm of the backend where the data is hosted. It is faster than external-sorting, but will only work with PostGIS datastores.</td>
+</tr>
+<tr>
+<td><code>geometry</code></td>
+<td>Externally sorts by length (if lines) or area (if polygons).</td>
+</tr>
+<tr>
+<td><code>random</code></td>
+<td>Uses the existing order of the data and does not sort.</td>
+</tr>
+</tbody>
+</table>
 <p>In most cases, the <strong>best_guess</strong> strategy is sufficient.</p>
 <h2 id="setting-regionation-parameters">Setting Regionation Parameters</h2>
 <p>Regionation strategies and attributes are featuretype-specific, and therefore are set in the <a href="../../../../../data/webadmin/layers/">Layers</a> editing page of the <a href="../../../../../webadmin/">Web administration interface</a>. This can be navigated to by selecting 'Layers' on the left sidebar.</p>

@@ -3119,28 +3119,37 @@ Warning
 </span></code></pre></div>
 <h2 id="function-reference">Function reference</h2>
 <p>The extension provides the following filter functions to support cross-layer filtering.</p>
-<dl>
-<dt><strong>Name</strong></dt>
-<dd>
-<p><strong>Arguments</strong></p>
-<p><strong>Description</strong></p>
-</dd>
-<dt>querySingle</dt>
-<dd>
-<p><code>layer</code> : String, <code>attribute</code> : String, <code>filter</code> : String</p>
-<p>Queries the specified <code>layer</code> applying the specified <a href="../../filter/ecql_reference/">ECQL</a> <code>filter</code> and returns the value of <code>attribute</code> from the first feature in the result set. The layer name must be qualified (e.g. <code>topp:states</code>). If no filtering is desired use the filter <code>INCLUDE</code>.</p>
-</dd>
-<dt>queryCollection</dt>
-<dd>
-<p><code>layer</code> : String, <code>attribute</code> : String, <code>filter</code> : String</p>
-<p>Queries the specified <code>layer</code> applying the specified <a href="../../filter/ecql_reference/">ECQL</a> <code>filter</code> and returns a list containing the value of <code>attribute</code> for every feature in the result set. The layer name must be qualified (e.g. <code>topp:states</code>). If no filtering is desired use the filter <code>INCLUDE</code>. An exception is thrown if too many results are collected (see <em>Memory Limits</em>).</p>
-</dd>
-<dt>collectGeometries</dt>
-<dd>
-<p><code>geometries</code>: a list of Geometry objects</p>
-<p>Converts a list of geometries into a single Geometry object. The output of <code>queryCollection</code> must be converted by this function in order to use it in spatial filter expressions (since geometry lists cannot be used directly). An exception is thrown if too many coordinates are collected (see <em>Memory Limits</em>).</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Arguments</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td>querySingle</td>
+<td><code>layer</code> : String, <code>attribute</code> : String, <code>filter</code> : String</td>
+<td>Queries the specified <code>layer</code> applying the specified <a href="../../filter/ecql_reference/">ECQL</a> <code>filter</code> and returns the value of <code>attribute</code> from the first feature in the result set. The layer name must be qualified (e.g. <code>topp:states</code>). If no filtering is desired use the filter <code>INCLUDE</code>.</td>
+</tr>
+<tr>
+<td>queryCollection</td>
+<td><code>layer</code> : String, <code>attribute</code> : String, <code>filter</code> : String</td>
+<td>Queries the specified <code>layer</code> applying the specified <a href="../../filter/ecql_reference/">ECQL</a> <code>filter</code> and returns a list containing the value of <code>attribute</code> for every feature in the result set. The layer name must be qualified (e.g. <code>topp:states</code>). If no filtering is desired use the filter <code>INCLUDE</code>. An exception is thrown if too many results are collected (see <em>Memory Limits</em>).</td>
+</tr>
+<tr>
+<td>collectGeometries</td>
+<td><code>geometries</code>: a list of Geometry objects</td>
+<td>Converts a list of geometries into a single Geometry object. The output of <code>queryCollection</code> must be converted by this function in order to use it in spatial filter expressions (since geometry lists cannot be used directly). An exception is thrown if too many coordinates are collected (see <em>Memory Limits</em>).</td>
+</tr>
+</tbody>
+</table>
 <h2 id="optimizing-performance">Optimizing performance</h2>
 <p>In the GeoServer 2.1.x series, in order to have cross-layer filters execute with optimal performance it is necessary to specify the following system variable when starting the JVM:</p>
 <div class="language-text highlight"><pre><span></span><code>-Dorg.geotools.filter.function.simplify=true

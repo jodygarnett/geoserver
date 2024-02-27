@@ -2085,36 +2085,44 @@ CREATE UNIQUE INDEX gt_pk_metadata_table_idx01 ON gt_pk_metadata (table_schema, 
 </code></pre></div>
 <p>The table can be given a different name. In that case, the (schema qualified) name of the table must be specified in the <code>primary key metadata table</code> configuration parameter of the store.</p>
 <p>The following table describes the meaning of each column in the metadata table.</p>
-<dl>
-<dt><strong>Column</strong></dt>
-<dd>
-<p><strong>Description</strong></p>
-</dd>
-<dt><strong>table_schema</strong></dt>
-<dd>
-<p>Name of the database schema in which the table is located.</p>
-</dd>
-<dt><strong>table_name</strong></dt>
-<dd>
-<p>Name of the table or view to be published</p>
-</dd>
-<dt><strong>pk_column</strong></dt>
-<dd>
-<p>Name of a column used to form the feature IDs</p>
-</dd>
-<dt><strong>pk_column_idx</strong></dt>
-<dd>
-<p>Index of the column in a multi-column key, else NULL. In case multi column keys are needed, multiple records with the same table schema and table name will be used.</p>
-</dd>
-<dt><strong>pk_policy</strong></dt>
-<dd>
-<p>The new value generation policy, used in case a new feature needs to be added in the table (following a WFS-T insert operation).</p>
-</dd>
-<dt><strong>pk_sequence</strong></dt>
-<dd>
-<p>The name of the database sequence to be used when generating a new value for the pk_column.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Column</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><strong>table_schema</strong></td>
+<td>Name of the database schema in which the table is located.</td>
+</tr>
+<tr>
+<td><strong>table_name</strong></td>
+<td>Name of the table or view to be published</td>
+</tr>
+<tr>
+<td><strong>pk_column</strong></td>
+<td>Name of a column used to form the feature IDs</td>
+</tr>
+<tr>
+<td><strong>pk_column_idx</strong></td>
+<td>Index of the column in a multi-column key, else NULL. In case multi column keys are needed, multiple records with the same table schema and table name will be used.</td>
+</tr>
+<tr>
+<td><strong>pk_policy</strong></td>
+<td>The new value generation policy, used in case a new feature needs to be added in the table (following a WFS-T insert operation).</td>
+</tr>
+<tr>
+<td><strong>pk_sequence</strong></td>
+<td>The name of the database sequence to be used when generating a new value for the pk_column.</td>
+</tr>
+</tbody>
+</table>
 <p>The possible values for <code>pk_policy</code> are:</p>
 <blockquote>
 <ul>

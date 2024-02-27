@@ -2254,40 +2254,44 @@
 <h2 id="filtering-on-data-attributes">Filtering on data attributes</h2>
 <p>An attribute filter matches some attribute of the data (for example, a column in a database table). This is probably the most common type of filter. An attribute filter takes the form of an attribute name and a data value separated by some predicate operator (such as the less-than operator <code>&lt;</code>).</p>
 <p>Supported predicate operators include the following:</p>
-<dl>
-<dt>Operator</dt>
-<dd>
-<p>Meaning</p>
-</dd>
-<dt><code>=</code></dt>
-<dd>
-<p>The property must be exactly <code>equal</code> to the specified value.</p>
-</dd>
-<dt><code>&lt;&gt;</code></dt>
-<dd>
-<p>The property must not be exactly equal to the specified value.</p>
-</dd>
-<dt><code>&gt;</code></dt>
-<dd>
-<p>The property must be greater than (or alphabetically later than) the specified value.</p>
-</dd>
-<dt><code>&gt;=</code></dt>
-<dd>
-<p>The property must be greater than or equal to the specified value.</p>
-</dd>
-<dt><code>&lt;</code></dt>
-<dd>
-<p>The property must be less than (or alphabetically earlier than) the specified value.</p>
-</dd>
-<dt><code>&lt;=</code></dt>
-<dd>
-<p>The property must be less than or equal to the specified value.</p>
-</dd>
-<dt><code>LIKE</code></dt>
-<dd>
-<p>The property must match the pattern described by the specified value. Patterns use <code>_</code> to indicate a single unspecified character and <code>%</code> to indicate an unknown number of unspecified characters.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>=</code></td>
+<td>The property must be exactly <code>equal</code> to the specified value.</td>
+</tr>
+<tr>
+<td><code>&lt;&gt;</code></td>
+<td>The property must not be exactly equal to the specified value.</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>The property must be greater than (or alphabetically later than) the specified value.</td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td>The property must be greater than or equal to the specified value.</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>The property must be less than (or alphabetically earlier than) the specified value.</td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td>The property must be less than or equal to the specified value.</td>
+</tr>
+<tr>
+<td><code>LIKE</code></td>
+<td>The property must match the pattern described by the specified value. Patterns use <code>_</code> to indicate a single unspecified character and <code>%</code> to indicate an unknown number of unspecified characters.</td>
+</tr>
+</tbody>
+</table>
 <p>For example, to only render outlines for the states whose names start with letters in the first half of the alphabet, the rule would look like:</p>
 <div class="language-css highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="o">[</span><span class="nt">STATE_NAME</span><span class="o">&lt;=</span><span class="s1">&#39;M&#39;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
@@ -2320,20 +2324,24 @@
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>The context details that are provided are as follows:</p>
-<dl>
-<dt>Pseudo-Attribute</dt>
-<dd>
-<p>Meaning</p>
-</dd>
-<dt>@sd</dt>
-<dd>
-<p>The scale denominator for the current rendering. More explicitly, this is the ratio of real-world distance to screen/rendered distance.</p>
-</dd>
-<dt>@scale</dt>
-<dd>
-<p>Same as above, the scale denominator (not scale) for the current rendering. Supported for backwards compatibility</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Pseudo-Attribute</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@sd</td>
+<td>The scale denominator for the current rendering. More explicitly, this is the ratio of real-world distance to screen/rendered distance.</td>
+</tr>
+<tr>
+<td>@scale</td>
+<td>Same as above, the scale denominator (not scale) for the current rendering. Supported for backwards compatibility</td>
+</tr>
+</tbody>
+</table>
 <p>The scale value can be expressed as a plain number, for for brevity and readability the suffixes k (kilo), M (mega), G (giga) can be used, for example:</p>
 <div class="language-css highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="o">[</span><span class="p">@</span><span class="k">sd</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">100k</span><span class="o">]</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="o">[</span><span class="p">@</span><span class="k">sd</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">12M</span><span class="o">]</span>
@@ -2345,44 +2353,48 @@
 </div>
 <h2 id="filtering-symbols">Filtering symbols</h2>
 <p>When using symbols to create graphics inline, you may want to apply some styling options to them. You can specify style attributes for built-in symbols by using a few special selectors:</p>
-<dl>
-<dt>PseudoSelector</dt>
-<dd>
-<p>Meaning</p>
-</dd>
-<dt><code>:mark</code></dt>
-<dd>
-<p>specifies that a rule applies to symbols used as point markers</p>
-</dd>
-<dt><code>:stroke</code></dt>
-<dd>
-<p>specifies that a rule applies to symbols used as stroke patterns</p>
-</dd>
-<dt><code>:fill</code></dt>
-<dd>
-<p>specifies that a rule applies to symbols used as fill patterns</p>
-</dd>
-<dt><code>:symbol</code></dt>
-<dd>
-<p>specifies that a rule applies to any symbol, regardless of which context it is used in</p>
-</dd>
-<dt><code>:nth-mark(n)</code></dt>
-<dd>
-<p>specifies that a rule applies to the symbol used for the nth stacked point marker on a feature.</p>
-</dd>
-<dt><code>:nth-stroke(n)</code></dt>
-<dd>
-<p>specifies that a rule applies to the symbol used for the nth stacked stroke pattern on a feature.</p>
-</dd>
-<dt><code>:nth-fill(n)</code></dt>
-<dd>
-<p>specifies that a rule applies to the symbol used for the nth stacked fill pattern on a feature.</p>
-</dd>
-<dt><code>:nth-symbol(n)</code></dt>
-<dd>
-<p>specifies that a rule applies to the symbol used for the nth stacked symbol on a feature, regardless of which context it is used in.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>PseudoSelector</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>:mark</code></td>
+<td>specifies that a rule applies to symbols used as point markers</td>
+</tr>
+<tr>
+<td><code>:stroke</code></td>
+<td>specifies that a rule applies to symbols used as stroke patterns</td>
+</tr>
+<tr>
+<td><code>:fill</code></td>
+<td>specifies that a rule applies to symbols used as fill patterns</td>
+</tr>
+<tr>
+<td><code>:symbol</code></td>
+<td>specifies that a rule applies to any symbol, regardless of which context it is used in</td>
+</tr>
+<tr>
+<td><code>:nth-mark(n)</code></td>
+<td>specifies that a rule applies to the symbol used for the nth stacked point marker on a feature.</td>
+</tr>
+<tr>
+<td><code>:nth-stroke(n)</code></td>
+<td>specifies that a rule applies to the symbol used for the nth stacked stroke pattern on a feature.</td>
+</tr>
+<tr>
+<td><code>:nth-fill(n)</code></td>
+<td>specifies that a rule applies to the symbol used for the nth stacked fill pattern on a feature.</td>
+</tr>
+<tr>
+<td><code>:nth-symbol(n)</code></td>
+<td>specifies that a rule applies to the symbol used for the nth stacked symbol on a feature, regardless of which context it is used in.</td>
+</tr>
+</tbody>
+</table>
 <p>For more discussion on using these selectors, see <a href="../styledmarks/">Styled marks</a>.</p>
 <h2 id="global-rules">Global rules</h2>
 <p>Sometimes it is useful to have a rule that matches all features, for example, to provide some default styling for your map (remember, by default nothing is rendered). This is accomplished using a single asterisk <code>*</code> in place of the usual filter. This catch-all rule can be used in complex expressions, which may be useful if you want a rule to provide defaults as well as overriding values for some features:</p>

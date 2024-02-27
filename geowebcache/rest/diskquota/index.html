@@ -2168,36 +2168,42 @@
 <p>The GeoWebCache REST API provides a RESTful interface through which users can configure the disk usage limits and expiration policies for a GeoWebCache instance.</p>
 <h2 id="operations">Operations</h2>
 <p>URL: <code>/gwc/rest/diskquota.&lt;format&gt;</code></p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Return Code</p>
-<p>Formats</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Return the global disk quota configuration</p>
-<p>200</p>
-<p>XML, JSON</p>
-</dd>
-</dl>
-<p>POST</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<dl>
-<dt>PUT</dt>
-<dd>
-<p>Modify the global disk quota configuration</p>
-<p>200</p>
-<p>XML, JSON</p>
-</dd>
-</dl>
-<p>DELETE</p>
-<blockquote>
-<p>405</p>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Return Code</th>
+<th>Formats</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Return the global disk quota configuration</td>
+<td>200</td>
+<td>XML, JSON</td>
+</tr>
+<tr>
+<td>POST</td>
+<td></td>
+<td>405</td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Modify the global disk quota configuration</td>
+<td>200</td>
+<td>XML, JSON</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td></td>
+<td>405</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p><strong>Representations</strong>:</p>
 <ul>
 <li><a href="../representations/diskquota_xml.txt">XML</a></li>

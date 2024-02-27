@@ -2193,30 +2193,40 @@
 <p>It is possible to use the GeoServer REST API to manage Freemarker templates for catalog resources.</p>
 <h2 id="templatestemplateftl"><code>/templates/&lt;template&gt;.ftl</code></h2>
 <p>This endpoint manages a template that is global to the entire catalog.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status Code</p>
-<p>Formats</p>
-<p>Default Format</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Return a template</p>
-<p>200</p>
-</dd>
-<dt>PUT</dt>
-<dd>
-<p>Insert or update a template</p>
-<p>405</p>
-</dd>
-<dt>DELETE</dt>
-<dd>
-<p>Delete a template</p>
-<p>405</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status Code</th>
+<th>Formats</th>
+<th>Default Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Return a template</td>
+<td>200</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Insert or update a template</td>
+<td>405</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Delete a template</td>
+<td>405</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p>Identical operations apply to the following endpoints:</p>
 <ul>
 <li>Workspace templates---<code>/workspaces/&lt;ws&gt;/templates/&lt;template&gt;.ftl</code></li>
@@ -2227,22 +2237,26 @@
 </ul>
 <h2 id="templatesformat"><code>/templates[.&lt;format&gt;]</code></h2>
 <p>This endpoint manages all global templates.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status Code</p>
-<p>Formats</p>
-<p>Default Format</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Return templates</p>
-<p>200</p>
-<p>HTML, XML, JSON</p>
-<p>HTML</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status Code</th>
+<th>Formats</th>
+<th>Default Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Return templates</td>
+<td>200</td>
+<td>HTML, XML, JSON</td>
+<td>HTML</td>
+</tr>
+</tbody>
+</table>
 <p>Identical operations apply to the following endpoints:</p>
 <ul>
 <li>Workspace templates---<code>/workspaces/&lt;ws&gt;/templates[.&lt;format&gt;]</code></li>

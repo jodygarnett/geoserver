@@ -2391,148 +2391,160 @@
     x-inclusion: &lt;text&gt;
 </code></pre></div>
 <p>where:</p>
-<dl>
-<dt>Property</dt>
-<dd>
-<p>Required?</p>
-<p>Description</p>
-<p>Default value</p>
-</dd>
-<dt><code>opacity</code></dt>
-<dd>
-<p>No</p>
-<p>Opacity of the entire display. Valid values are a decimal between <code>0</code> (completely transparent) and <code>1</code> (completely opaque).</p>
-<p><code>1</code></p>
-</dd>
-<dt><code>channels</code></dt>
-<dd>
-<p>No</p>
-<p>Selects the band(s) to display and the display method.</p>
-<p>N/A</p>
-</dd>
-<dt><code>gray</code></dt>
-<dd>
-<p>No</p>
-<p>Display a single band as a grayscale image. Cannot be used with <code>red</code>, <code>green</code>, and <code>blue</code>. The <code>&lt;channel_options&gt;</code> can be the band name or a mapping containing <code>name:</code> and <code>contrast-enhancement:</code> (optional).</p>
-<p><code>1</code></p>
-</dd>
-<dt><code>red</code></dt>
-<dd>
-<p>No</p>
-<p>Display three bands as an RGB image. Must be used with <code>green</code>, and <code>blue</code>. Cannot be used with <code>gray</code>. The <code>&lt;channel_options&gt;</code> can be the band name or a mapping containing <code>name:</code> and <code>contrast-enhancement:</code> (optional).</p>
-<p><code>1</code></p>
-</dd>
-<dt><code>green</code></dt>
-<dd>
-<p>No</p>
-<p>Display three bands as an RGB image. Must be used with <code>red</code>, and <code>blue</code>. Cannot be used with <code>gray</code>. The <code>&lt;channel_options&gt;</code> can be the band name or a mapping containing <code>name:</code> and <code>contrast-enhancement:</code> (optional).</p>
-<p><code>2</code></p>
-</dd>
-<dt><code>blue</code></dt>
-<dd>
-<p>No</p>
-<p>Display three bands as an RGB image. Must be used with <code>red</code>, and <code>green</code>. Cannot be used with <code>gray</code>. The <code>&lt;channel_options&gt;</code> can be the band name or a mapping containing <code>name:</code> and <code>contrast-enhancement:</code> (optional). See examples below.</p>
-<p><code>3</code></p>
-</dd>
-<dt><code>color-map</code></dt>
-<dd>
-<p>No</p>
-<p>Creates a mapping of colors to grid values. Can only be used with a single band.</p>
-<p>N/A</p>
-</dd>
-<dt><code>type</code></dt>
-<dd>
-<p>No</p>
-<p>Type of color mapping. Options are <code>ramp</code>, an interpolated list of values; <code>interval</code>, a non-interpolated list of values; and <code>values</code>, where values need to match exactly to be drawn.</p>
-<p><code>ramp</code></p>
-</dd>
-<dt><code>entries</code></dt>
-<dd>
-<p>No</p>
-<p>Values for the color mapping. Syntax is a list of tuples.</p>
-<p>N/A</p>
-</dd>
-<dt><code>color</code></dt>
-<dd>
-<p>Yes</p>
-<p>Color for the particular color map entry. Value is a standard color value.</p>
-<p>N/A</p>
-</dd>
-<dt><code>entry_opacity</code></dt>
-<dd>
-<p>Yes</p>
-<p>Opacity of the particular color map entry. Valid values are a decimal between <code>0</code> (completely transparent) and <code>1</code> (completely opaque).</p>
-<p>N/A</p>
-</dd>
-<dt><code>band_value</code></dt>
-<dd>
-<p>Yes</p>
-<p>Grid value to use for the particular color map entry. Values are data-dependent. Behavior at or around this value is determined by the color ramp <code>type</code>.</p>
-<p>N/A</p>
-</dd>
-<dt><code>text_label</code></dt>
-<dd>
-<p>No</p>
-<p>Label for the particular color map entry</p>
-<p>Blank</p>
-</dd>
-<dt><code>contrast-enhancement</code></dt>
-<dd>
-<p>No</p>
-<p>Modifies the contrast of the display</p>
-<p>N/A</p>
-</dd>
-<dt><code>mode</code></dt>
-<dd>
-<p>No</p>
-<p>Type of contrast enhancement. Options are <code>normalize</code> (stretches contrast so that the smallest and largest values are set to black and white, respectively) or <code>histogram</code> (produces equal number of content in the image at each brightness level).</p>
-<p><code>normalize</code></p>
-</dd>
-<dt><code>gamma</code></dt>
-<dd>
-<p>No</p>
-<p>Multiplier value for contrast adjustment. A value greater than 1 will increase darkness, while a value less than 1 will decrease darkness.</p>
-<p><code>1</code></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>opacity</code></td>
+<td>No</td>
+<td>Opacity of the entire display. Valid values are a decimal between <code>0</code> (completely transparent) and <code>1</code> (completely opaque).</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>channels</code></td>
+<td>No</td>
+<td>Selects the band(s) to display and the display method.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>gray</code></td>
+<td>No</td>
+<td>Display a single band as a grayscale image. Cannot be used with <code>red</code>, <code>green</code>, and <code>blue</code>. The <code>&lt;channel_options&gt;</code> can be the band name or a mapping containing <code>name:</code> and <code>contrast-enhancement:</code> (optional).</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>red</code></td>
+<td>No</td>
+<td>Display three bands as an RGB image. Must be used with <code>green</code>, and <code>blue</code>. Cannot be used with <code>gray</code>. The <code>&lt;channel_options&gt;</code> can be the band name or a mapping containing <code>name:</code> and <code>contrast-enhancement:</code> (optional).</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>green</code></td>
+<td>No</td>
+<td>Display three bands as an RGB image. Must be used with <code>red</code>, and <code>blue</code>. Cannot be used with <code>gray</code>. The <code>&lt;channel_options&gt;</code> can be the band name or a mapping containing <code>name:</code> and <code>contrast-enhancement:</code> (optional).</td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td><code>blue</code></td>
+<td>No</td>
+<td>Display three bands as an RGB image. Must be used with <code>red</code>, and <code>green</code>. Cannot be used with <code>gray</code>. The <code>&lt;channel_options&gt;</code> can be the band name or a mapping containing <code>name:</code> and <code>contrast-enhancement:</code> (optional). See examples below.</td>
+<td><code>3</code></td>
+</tr>
+<tr>
+<td><code>color-map</code></td>
+<td>No</td>
+<td>Creates a mapping of colors to grid values. Can only be used with a single band.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>No</td>
+<td>Type of color mapping. Options are <code>ramp</code>, an interpolated list of values; <code>interval</code>, a non-interpolated list of values; and <code>values</code>, where values need to match exactly to be drawn.</td>
+<td><code>ramp</code></td>
+</tr>
+<tr>
+<td><code>entries</code></td>
+<td>No</td>
+<td>Values for the color mapping. Syntax is a list of tuples.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td>Yes</td>
+<td>Color for the particular color map entry. Value is a standard color value.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>entry_opacity</code></td>
+<td>Yes</td>
+<td>Opacity of the particular color map entry. Valid values are a decimal between <code>0</code> (completely transparent) and <code>1</code> (completely opaque).</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>band_value</code></td>
+<td>Yes</td>
+<td>Grid value to use for the particular color map entry. Values are data-dependent. Behavior at or around this value is determined by the color ramp <code>type</code>.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>text_label</code></td>
+<td>No</td>
+<td>Label for the particular color map entry</td>
+<td>Blank</td>
+</tr>
+<tr>
+<td><code>contrast-enhancement</code></td>
+<td>No</td>
+<td>Modifies the contrast of the display</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>mode</code></td>
+<td>No</td>
+<td>Type of contrast enhancement. Options are <code>normalize</code> (stretches contrast so that the smallest and largest values are set to black and white, respectively) or <code>histogram</code> (produces equal number of content in the image at each brightness level).</td>
+<td><code>normalize</code></td>
+</tr>
+<tr>
+<td><code>gamma</code></td>
+<td>No</td>
+<td>Multiplier value for contrast adjustment. A value greater than 1 will increase darkness, while a value less than 1 will decrease darkness.</td>
+<td><code>1</code></td>
+</tr>
+</tbody>
+</table>
 <p>Additional "vendor options" properties for <a href="../../../../sld/extensions/composite-blend/">Color compositing and color blending</a>:</p>
 <p>Additional "vendor options" properties for <a href="../../../../sld/extensions/composite-blend/">Color compositing and color blending</a>:</p>
-<dl>
-<dt>Property</dt>
-<dd>
-<p>Required?</p>
-<p>Description</p>
-<p>Default value</p>
-</dd>
-<dt><code>x-composite</code></dt>
-<dd>
-<p>No</p>
-<p>Allows for both alpha compositing and color blending options between symbolizers.</p>
-<p>N/A</p>
-</dd>
-<dt><code>x-composite-base</code></dt>
-<dd>
-<p>No</p>
-<p>Allows the rendering engine to use the symbolizer mapping to define a "base" buffer for subsequent compositing and blending using <code>x-composite</code>. See the section on <a href="../../featurestyles/#ysld_reference_featurestyles_composite">Feature Styles</a> for more details.</p>
-<p><code>false</code></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x-composite</code></td>
+<td>No</td>
+<td>Allows for both alpha compositing and color blending options between symbolizers.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>x-composite-base</code></td>
+<td>No</td>
+<td>Allows the rendering engine to use the symbolizer mapping to define a "base" buffer for subsequent compositing and blending using <code>x-composite</code>. See the section on <a href="../../featurestyles/#ysld_reference_featurestyles_composite">Feature Styles</a> for more details.</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
 <p>Additional "vendor options" properties for <a href="../../../../sld/extensions/rendering-selection/">Rendering Selection</a>:</p>
 <p>Additional "vendor options" properties for <a href="../../../../sld/extensions/rendering-selection/">Rendering Selection</a>:</p>
-<dl>
-<dt>Property</dt>
-<dd>
-<p>Required?</p>
-<p>Description</p>
-<p>Default value</p>
-</dd>
-<dt><code>x-inclusion</code></dt>
-<dd>
-<p>No</p>
-<p>Define if rule should be included in style for <code>legendOnly</code> or <code>mapOnly</code>.</p>
-<p><code>normal</code></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x-inclusion</code></td>
+<td>No</td>
+<td>Define if rule should be included in style for <code>legendOnly</code> or <code>mapOnly</code>.</td>
+<td><code>normal</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="examples">Examples</h2>
 <div class="admonition info">
 <p class="admonition-title">Todo</p>

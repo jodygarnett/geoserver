@@ -2872,48 +2872,57 @@
 <p>While points are seemingly the simplest type of shape, possessing only position and no other dimensions, there are many different ways that a point can be styled in CSS.</p>
 <h2 id="css_cookbook_points_attributes">Example points layer</h2>
 <p>The <a href="../../../sld/cookbook/artifacts/sld_cookbook_point.zip">points layer</a> used for the examples below contains name and population information for the major cities of a fictional country. For reference, the attribute table for the points in this layer is included below.</p>
-<dl>
-<dt><strong>fid</strong> (Feature ID)</dt>
-<dd>
-<p><strong>name</strong> (City name)</p>
-<p><strong>pop</strong> (Population)</p>
-</dd>
-<dt>point.1</dt>
-<dd>
-<p>Borfin</p>
-<p>157860</p>
-</dd>
-<dt>point.2</dt>
-<dd>
-<p>Supox City</p>
-<p>578231</p>
-</dd>
-<dt>point.3</dt>
-<dd>
-<p>Ruckis</p>
-<p>98159</p>
-</dd>
-<dt>point.4</dt>
-<dd>
-<p>Thisland</p>
-<p>34879</p>
-</dd>
-<dt>point.5</dt>
-<dd>
-<p>Synopolis</p>
-<p>24567</p>
-</dd>
-<dt>point.6</dt>
-<dd>
-<p>San Glissando</p>
-<p>76024</p>
-</dd>
-<dt>point.7</dt>
-<dd>
-<p>Detrania</p>
-<p>205609</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>fid</strong> (Feature ID)</td>
+<td><strong>name</strong> (City name)</td>
+<td><strong>pop</strong> (Population)</td>
+</tr>
+<tr>
+<td>point.1</td>
+<td>Borfin</td>
+<td>157860</td>
+</tr>
+<tr>
+<td>point.2</td>
+<td>Supox City</td>
+<td>578231</td>
+</tr>
+<tr>
+<td>point.3</td>
+<td>Ruckis</td>
+<td>98159</td>
+</tr>
+<tr>
+<td>point.4</td>
+<td>Thisland</td>
+<td>34879</td>
+</tr>
+<tr>
+<td>point.5</td>
+<td>Synopolis</td>
+<td>24567</td>
+</tr>
+<tr>
+<td>point.6</td>
+<td>San Glissando</td>
+<td>76024</td>
+</tr>
+<tr>
+<td>point.7</td>
+<td>Detrania</td>
+<td>205609</td>
+</tr>
+</tbody>
+</table>
 <p><a href="../../../sld/cookbook/artifacts/sld_cookbook_point.zip">Download the points shapefile</a></p>
 <h2 id="css_cookbook_points_simplepoint">Simple point</h2>
 <p>This example specifies points be styled as red circles with a diameter of 6 pixels.</p>
@@ -3088,32 +3097,42 @@
 </div>
 <p>This style shows how the basic mark setup (red circle, default size) can be overridden via cascading/nesting, changing the size depending on the pop attribute value, with smaller values yielding a smaller circle, and larger values yielding a larger circle.</p>
 <p>The three rules are designed as follows:</p>
-<dl>
-<dt><strong>Rule order</strong></dt>
-<dd>
-<p><strong>Rule name</strong></p>
-<p><strong>Population</strong> ("pop")</p>
-<p><strong>Size</strong></p>
-</dd>
-<dt>1</dt>
-<dd>
-<p>SmallPop</p>
-<p>Less than 50,000</p>
-<p>8</p>
-</dd>
-<dt>2</dt>
-<dd>
-<p>MediumPop</p>
-<p>50,000 to 100,000</p>
-<p>12</p>
-</dd>
-<dt>3</dt>
-<dd>
-<p>LargePop</p>
-<p>Greater than 100,000</p>
-<p>16</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rule order</strong></td>
+<td><strong>Rule name</strong></td>
+<td><strong>Population</strong> ("pop")</td>
+<td><strong>Size</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td>SmallPop</td>
+<td>Less than 50,000</td>
+<td>8</td>
+</tr>
+<tr>
+<td>2</td>
+<td>MediumPop</td>
+<td>50,000 to 100,000</td>
+<td>12</td>
+</tr>
+<tr>
+<td>3</td>
+<td>LargePop</td>
+<td>Greater than 100,000</td>
+<td>16</td>
+</tr>
+</tbody>
+</table>
 <p>The result of this style is that cities with larger populations have larger points. In particular, the rule at <strong>Line 6</strong> matches all features whose "pop" attribute is less than 50000, the rule at <strong>Line 9</strong> matches all features whose "pop" attribute is between 50000 and 100000 (mind the space between the two predicates, it is equivalent to and AND, if we had used a comma it would have been an OR instead), while the rule at <strong>Line 12</strong> matches all features with more than 100000 inhabitants.</p>
 <h2 id="zoom-based-point">Zoom-based point</h2>
 <p>This example alters the style of the points at different zoom levels.</p>
@@ -3151,32 +3170,42 @@
 <p>Determining the appropriate scale denominators (zoom levels) to use is beyond the scope of this example.</p>
 </div>
 <p>This style contains three rules matching the scale. The three rules are designed as follows:</p>
-<dl>
-<dt><strong>Rule order</strong></dt>
-<dd>
-<p><strong>Rule name</strong></p>
-<p><strong>Scale denominator</strong></p>
-<p><strong>Point size</strong></p>
-</dd>
-<dt>1</dt>
-<dd>
-<p>Large</p>
-<p>1:16,000,000 or less</p>
-<p>12</p>
-</dd>
-<dt>2</dt>
-<dd>
-<p>Medium</p>
-<p>1:16,000,000 to 1:32,000,000</p>
-<p>8</p>
-</dd>
-<dt>3</dt>
-<dd>
-<p>Small</p>
-<p>Greater than 1:32,000,000</p>
-<p>4</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rule order</strong></td>
+<td><strong>Rule name</strong></td>
+<td><strong>Scale denominator</strong></td>
+<td><strong>Point size</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Large</td>
+<td>1:16,000,000 or less</td>
+<td>12</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Medium</td>
+<td>1:16,000,000 to 1:32,000,000</td>
+<td>8</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Small</td>
+<td>Greater than 1:32,000,000</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
 <p>The order of these rules does not matter since the scales denominated in each rule do not overlap.</p>
 <p>The rules use the "@sd" pseudo-attribute, which refers to the current scale denominator, and which can be compared using the '&lt;' and '&gt;' operators only (using any other operator or function will result in errors).</p>
 <p>The result of this style is that points are drawn larger as one zooms in and smaller as one zooms out.</p>

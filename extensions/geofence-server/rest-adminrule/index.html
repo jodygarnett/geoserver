@@ -3408,48 +3408,56 @@
 </dl>
 <h3 id="geofencerestadminrulescount"><code>/geofence/rest/adminrules/count</code></h3>
 <p>Counts (filtered) adminrules.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Supported parameters</p>
-<p>Response</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Count all adminrules, with respect to any added filters</p>
-<p>userName, userAny, roleName, roleAny, workspace, workspaceAny</p>
-<p>200 OK. Rule list count in XML.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Supported parameters</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Count all adminrules, with respect to any added filters</td>
+<td>userName, userAny, roleName, roleAny, workspace, workspaceAny</td>
+<td>200 OK. Rule list count in XML.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="geofencerestadminrulesidid"><code>/geofence/rest/adminrules/id/&lt;id&gt;</code></h3>
 <p>Query, modify or delete a specific adminrule.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Supported parameters</p>
-<p>Response</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Read adminrule information</p>
-<p>None</p>
-<p>200 OK. AdminRule in XML.</p>
-</dd>
-<dt>POST</dt>
-<dd>
-<p>Modify the adminrule, unspecified fields remain unchanged.</p>
-<p>None</p>
-<p>200 OK.</p>
-</dd>
-<dt>DELETE</dt>
-<dd>
-<p>Delete the adminrule</p>
-<p>None</p>
-<p>200 OK.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Supported parameters</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Read adminrule information</td>
+<td>None</td>
+<td>200 OK. AdminRule in XML.</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Modify the adminrule, unspecified fields remain unchanged.</td>
+<td>None</td>
+<td>200 OK.</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Delete the adminrule</td>
+<td>None</td>
+<td>200 OK.</td>
+</tr>
+</tbody>
+</table>
 
 
 

@@ -2211,21 +2211,26 @@
 <p class="admonition-title">Warning</p>
 <p>The use of HTTPS is recommended, otherwise all password are sent in plain text.</p>
 </div>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-</dd>
-<dt>PUT</dt>
-<dd>
-<p>Changes the user password</p>
-<p>200,400,424</p>
-<p>XML, JSON</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PUT</td>
+<td>Changes the user password</td>
+<td>200,400,424</td>
+<td>XML, JSON</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p>Formats for PUT (password change).</p>
 <p><strong>XML</strong></p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;userPassword&gt;</span>
@@ -2236,23 +2241,27 @@
 <div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;newPassword&quot;</span><span class="p">:</span><span class="s2">&quot;newPassword&quot;</span><span class="w"> </span><span class="p">}</span>
 </span></code></pre></div>
 <h3 id="exceptions">Exceptions</h3>
-<dl>
-<dt>Exception</dt>
-<dd>
-<p>Status code</p>
-<p>Error string (payload)</p>
-</dd>
-<dt>PUT with an invalid <code>newPassword</code> or bad params</dt>
-<dd>
-<p>400</p>
-<p><code>Missing 'newPassword'</code></p>
-</dd>
-<dt>PUT for user not updatable</dt>
-<dd>
-<p>424</p>
-<p><code>User service does not support changing pw</code></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Exception</th>
+<th>Status code</th>
+<th>Error string (payload)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PUT with an invalid <code>newPassword</code> or bad params</td>
+<td>400</td>
+<td><code>Missing 'newPassword'</code></td>
+</tr>
+<tr>
+<td>PUT for user not updatable</td>
+<td>424</td>
+<td><code>User service does not support changing pw</code></td>
+</tr>
+</tbody>
+</table>
 
 
 

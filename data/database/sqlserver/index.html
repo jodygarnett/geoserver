@@ -2177,36 +2177,44 @@
 <h2 id="configuring-a-sql-server-data-store">Configuring a SQL Server data store</h2>
 <p><img alt="" src="../images/sqlserverconfigure.png" />
 <em>Configuring a SQL Server data store</em></p>
-<dl>
-<dt><code>host</code></dt>
-<dd>
-<p>The sql server instance host name or ip address, only. Note that <code>server\instance</code> notation is not accepted - specify the port below, instead, if you have a non-default instance.</p>
-</dd>
-<dt><code>port</code></dt>
-<dd>
-<p>The port on which the SQL server instance is accepting connections. See the <a href="./#port_notes">note</a> below.</p>
-</dd>
-<dt><code>database</code></dt>
-<dd>
-<p>The name of the database to connect to. Might be left blank if the user connecting to SQL Server has a "default database" set in the user configuration</p>
-</dd>
-<dt><code>schema</code></dt>
-<dd>
-<p>The database schema to access tables from (optional).</p>
-</dd>
-<dt><code>user</code></dt>
-<dd>
-<p>The name of the user to connect to the database as.</p>
-</dd>
-<dt><code>password</code></dt>
-<dd>
-<p>The password to use when connecting to the database. Leave blank for no password.</p>
-</dd>
-<dt><code>max connections</code> <code>min connections</code></dt>
-<dd>
-<p>Connection pool configuration parameters. See the <a href="../connection-pooling/">Database Connection Pooling</a> section for details. If you are connecting to SQL Azure make sure to set the <code>validate connections</code> flag as SQL Azure closes inactive connections after a very short delay.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>host</code></td>
+<td>The sql server instance host name or ip address, only. Note that <code>server\instance</code> notation is not accepted - specify the port below, instead, if you have a non-default instance.</td>
+</tr>
+<tr>
+<td><code>port</code></td>
+<td>The port on which the SQL server instance is accepting connections. See the <a href="./#port_notes">note</a> below.</td>
+</tr>
+<tr>
+<td><code>database</code></td>
+<td>The name of the database to connect to. Might be left blank if the user connecting to SQL Server has a "default database" set in the user configuration</td>
+</tr>
+<tr>
+<td><code>schema</code></td>
+<td>The database schema to access tables from (optional).</td>
+</tr>
+<tr>
+<td><code>user</code></td>
+<td>The name of the user to connect to the database as.</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>The password to use when connecting to the database. Leave blank for no password.</td>
+</tr>
+<tr>
+<td><code>max connections</code> <code>min connections</code></td>
+<td>Connection pool configuration parameters. See the <a href="../connection-pooling/">Database Connection Pooling</a> section for details. If you are connecting to SQL Azure make sure to set the <code>validate connections</code> flag as SQL Azure closes inactive connections after a very short delay.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="port_notes">Determining the port used by the SQL Server instance</h3>
 <p>You can determine the port in use by connecting to your SQL server instance using some other software, and then using <strong><em>netstat</em></strong> to display details on network connections. In the following example on a Windows PC, the port is 2646 :</p>
 <div class="language-batch highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>C<span class="p">:</span><span class="nl">\</span><span class="c1">&gt;netstat -a | find &quot;sql1&quot;</span>

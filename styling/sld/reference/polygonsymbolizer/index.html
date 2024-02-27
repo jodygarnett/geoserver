@@ -2455,23 +2455,32 @@
 <p>The <code>&lt;Stroke&gt;</code> element specifies the styling for the <strong>border</strong> of a polygon. The syntax is described in the <code>&lt;LineSymbolizer&gt;</code> <a href="../linesymbolizer/#sld_reference_stroke">Stroke</a> section.</p>
 <h3 id="sld_reference_fill">Fill</h3>
 <p>The <code>&lt;Fill&gt;</code> element specifies the styling for the <strong>interior</strong> of a polygon. It can contain the sub-elements:</p>
-<dl>
-<dt><strong>Tag</strong></dt>
-<dd>
-<p><strong>Required?</strong></p>
-<p><strong>Description</strong></p>
-</dd>
-<dt><code>&lt;GraphicFill&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>Renders the fill of the polygon with a repeated pattern.</p>
-</dd>
-<dt><code>&lt;CssParameter&gt;</code></dt>
-<dd>
-<p>0..N</p>
-<p>Specifies parameters for filling with a solid color.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tag</strong></td>
+<td><strong>Required?</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>&lt;GraphicFill&gt;</code></td>
+<td>No</td>
+<td>Renders the fill of the polygon with a repeated pattern.</td>
+</tr>
+<tr>
+<td><code>&lt;CssParameter&gt;</code></td>
+<td>0..N</td>
+<td>Specifies parameters for filling with a solid color.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="graphicfill">GraphicFill</h3>
 <p>The <code>&lt;GraphicFill&gt;</code> element contains a <code>&lt;Graphic&gt;</code> element, which specifies a graphic image or symbol to use for a repeated fill pattern. The syntax is described in the <code>PointSymbolizer</code> <a href="../pointsymbolizer/#sld_reference_graphic">Graphic</a> section.</p>
 <h3 id="cssparameter">CssParameter</h3>

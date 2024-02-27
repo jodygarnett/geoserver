@@ -3339,93 +3339,97 @@
 </ul>
 <h2 id="http">HTTP</h2>
 <p>The following attributes are all HTTP related.</p>
-<dl>
-<dt>Attribute</dt>
-<dd>
-<p>Description</p>
-<p>Type</p>
-</dd>
-<dt>HTTP method</dt>
-<dd>
-<p>The HTTP method, one of <code>GET</code>, <code>POST</code>, <code>PUT</code>, or <code>DELETE</code></p>
-<p>String</p>
-</dd>
-<dt>Remote address</dt>
-<dd>
-<p>The IP address of the client from which the request originated.</p>
-<p>String</p>
-</dd>
-<dt>Remote host</dt>
-<dd>
-<p>The hostname corresponding to the remote address, obtained via reverse DNS lookup.</p>
-<p>String</p>
-</dd>
-<dt>Host</dt>
-<dd>
-<p>The hostname of the server handling the request, from the point of view of the client.</p>
-<p>String</p>
-</dd>
-<dt>Internal host</dt>
-<dd>
-<p>The hostname of the server handling request, from the point of view of the local network. Availability depends on host and network configuration.</p>
-<p>String</p>
-</dd>
-<dt>Path</dt>
-<dd>
-<p>The path component of the request URL, for example: "/wms", "/rest/workspaces.xml", etc...</p>
-<p>String</p>
-</dd>
-<dt>Query string</dt>
-<dd>
-<p>The query string component of the request URL. Typically only present when the HTTP method is GET.</p>
-<p>String</p>
-</dd>
-<dt>Body</dt>
-<dd>
-<p>The body content of the request. Typically only present when the HTTP method is PUT or POST.</p>
-<p>Binary blob</p>
-</dd>
-<dt>Body content length</dt>
-<dd>
-<p>The total number of bytes comprising the body of the request. Typically only present when the HTTP method is PUT or POST.</p>
-<p>Numeric</p>
-</dd>
-<dt>Body content type</dt>
-<dd>
-<p>The mime type of the body content of the request, for example: "application/json", "text/xml; subtype=gml/3.2", etc... Typically only present when the HTTP method is PUT or POST.</p>
-<p>String</p>
-</dd>
-<dt>Response status</dt>
-<dd>
-<p>The HTTP response code, for example: 200, 401, etc...</p>
-<p>Numeric</p>
-</dd>
-<dt>Response length</dt>
-<dd>
-<p>The total number of bytes comprising the response to the request.</p>
-<p>Numeric</p>
-</dd>
-<dt>Response content type</dt>
-<dd>
-<p>The mime type of the response to the request.</p>
-<p>String</p>
-</dd>
-<dt>Remote user</dt>
-<dd>
-<p>The username specified parsed of the request. Only available when request included credentials for authentication.</p>
-<p>String</p>
-</dd>
-<dt>Remote user agent</dt>
-<dd>
-<p>The value of the <code>User-Agent</code> HTTP header.</p>
-<p>String</p>
-</dd>
-<dt>Http referrer</dt>
-<dd>
-<p>The value of the <code>Referer</code> HTTP header.</p>
-<p>String</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTTP method</td>
+<td>The HTTP method, one of <code>GET</code>, <code>POST</code>, <code>PUT</code>, or <code>DELETE</code></td>
+<td>String</td>
+</tr>
+<tr>
+<td>Remote address</td>
+<td>The IP address of the client from which the request originated.</td>
+<td>String</td>
+</tr>
+<tr>
+<td>Remote host</td>
+<td>The hostname corresponding to the remote address, obtained via reverse DNS lookup.</td>
+<td>String</td>
+</tr>
+<tr>
+<td>Host</td>
+<td>The hostname of the server handling the request, from the point of view of the client.</td>
+<td>String</td>
+</tr>
+<tr>
+<td>Internal host</td>
+<td>The hostname of the server handling request, from the point of view of the local network. Availability depends on host and network configuration.</td>
+<td>String</td>
+</tr>
+<tr>
+<td>Path</td>
+<td>The path component of the request URL, for example: "/wms", "/rest/workspaces.xml", etc...</td>
+<td>String</td>
+</tr>
+<tr>
+<td>Query string</td>
+<td>The query string component of the request URL. Typically only present when the HTTP method is GET.</td>
+<td>String</td>
+</tr>
+<tr>
+<td>Body</td>
+<td>The body content of the request. Typically only present when the HTTP method is PUT or POST.</td>
+<td>Binary blob</td>
+</tr>
+<tr>
+<td>Body content length</td>
+<td>The total number of bytes comprising the body of the request. Typically only present when the HTTP method is PUT or POST.</td>
+<td>Numeric</td>
+</tr>
+<tr>
+<td>Body content type</td>
+<td>The mime type of the body content of the request, for example: "application/json", "text/xml; subtype=gml/3.2", etc... Typically only present when the HTTP method is PUT or POST.</td>
+<td>String</td>
+</tr>
+<tr>
+<td>Response status</td>
+<td>The HTTP response code, for example: 200, 401, etc...</td>
+<td>Numeric</td>
+</tr>
+<tr>
+<td>Response length</td>
+<td>The total number of bytes comprising the response to the request.</td>
+<td>Numeric</td>
+</tr>
+<tr>
+<td>Response content type</td>
+<td>The mime type of the response to the request.</td>
+<td>String</td>
+</tr>
+<tr>
+<td>Remote user</td>
+<td>The username specified parsed of the request. Only available when request included credentials for authentication.</td>
+<td>String</td>
+</tr>
+<tr>
+<td>Remote user agent</td>
+<td>The value of the <code>User-Agent</code> HTTP header.</td>
+<td>String</td>
+</tr>
+<tr>
+<td>Http referrer</td>
+<td>The value of the <code>Referer</code> HTTP header.</td>
+<td>String</td>
+</tr>
+</tbody>
+</table>
 <h2 id="owsogc">OWS/OGC</h2>
 <p>The following attributes are OGC service specific.</p>
 <dl>
@@ -3477,52 +3481,60 @@
 </dl>
 <h2 id="geoip">GeoIP</h2>
 <p>The following attributes are specific to GeoIP look ups and are not captured out of the box. See <a href="../geoip/">GeoIP</a> for more details.</p>
-<dl>
-<dt>Attribute</dt>
-<dd>
-<p>Description</p>
-<p>Type</p>
-</dd>
-<dt>Remote country</dt>
-<dd>
-<p>Name of the country of the client from which the request originated.</p>
-<p>String</p>
-</dd>
-<dt>Remote city</dt>
-<dd>
-<p>Name of the city from which the request originated.</p>
-<p>String</p>
-</dd>
-<dt>Remote lat</dt>
-<dd>
-<p>The latitude from which the request originated.</p>
-<p>Numeric</p>
-</dd>
-<dt>Remote lon</dt>
-<dd>
-<p>The longitude from which the request originated.</p>
-<p>Numeric</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Remote country</td>
+<td>Name of the country of the client from which the request originated.</td>
+<td>String</td>
+</tr>
+<tr>
+<td>Remote city</td>
+<td>Name of the city from which the request originated.</td>
+<td>String</td>
+</tr>
+<tr>
+<td>Remote lat</td>
+<td>The latitude from which the request originated.</td>
+<td>Numeric</td>
+</tr>
+<tr>
+<td>Remote lon</td>
+<td>The longitude from which the request originated.</td>
+<td>Numeric</td>
+</tr>
+</tbody>
+</table>
 <h2 id="gwc">GWC</h2>
 <p>The following attributes are specific to tile cached requests.</p>
-<dl>
-<dt>Attribute</dt>
-<dd>
-<p>Description</p>
-<p>Type</p>
-</dd>
-<dt>CacheResult</dt>
-<dd>
-<p>"HIT" or "MISS" (can be empty if GWC was not involved)</p>
-<p>String</p>
-</dd>
-<dt>MissReason</dt>
-<dd>
-<p>A description of why the cache was not used. Available only on requests hitting a cached layer on direct WMS integration, applies to cases where the request was not forwarded to GWC, for example "no parameter filter exists for FEATUREID", "request does not align to grid(s) "EPSG:4326" or "not a tile layer". Will be missing for any request not hitting the direct integration (e.g., direct WMTS requests, for example)</p>
-<p>String</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CacheResult</td>
+<td>"HIT" or "MISS" (can be empty if GWC was not involved)</td>
+<td>String</td>
+</tr>
+<tr>
+<td>MissReason</td>
+<td>A description of why the cache was not used. Available only on requests hitting a cached layer on direct WMS integration, applies to cases where the request was not forwarded to GWC, for example "no parameter filter exists for FEATUREID", "request does not align to grid(s) "EPSG:4326" or "not a tile layer". Will be missing for any request not hitting the direct integration (e.g., direct WMTS requests, for example)</td>
+<td>String</td>
+</tr>
+</tbody>
+</table>
 
 
 

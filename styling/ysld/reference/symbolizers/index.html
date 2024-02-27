@@ -2315,49 +2315,54 @@
 </div>
 <h2 id="matching-symbolizers-and-geometries">Matching symbolizers and geometries</h2>
 <p>It is common to match the symbolizer with the type of geometries contained in the layer, but this is not required. The following table illustrates what will happen when a geometry symbolizer is matched up with another type of geometry.</p>
-<blockquote>
-<p>Points</p>
-<p>Lines</p>
-<p>Polygon</p>
-<p>Raster</p>
-</blockquote>
-<dl>
-<dt>Point Symbolizer</dt>
-<dd>
-<p><strong>Points</strong></p>
-<p>Midpoint of the lines</p>
-<p>Centroid of the polygons</p>
-<p>Centroid of the raster</p>
-</dd>
-<dt>Line Symbolizer</dt>
-<dd>
-<p>n/a</p>
-<p><strong>Lines</strong></p>
-<p>Outline (stroke) of the polygons</p>
-<p>Outline (stroke) of the raster</p>
-</dd>
-<dt>Polygon Symbolizer</dt>
-<dd>
-<p>n/a</p>
-<p>Will "close" the line and style as a polygon</p>
-<p><strong>Polygons</strong></p>
-<p>Will "outline" the raster and style as a polygon</p>
-</dd>
-<dt>Raster Symbolizer</dt>
-<dd>
-<p>n/a</p>
-<p>n/a</p>
-<p>n/a</p>
-<p>Transform raster values to color channels for display</p>
-</dd>
-<dt>Text Symbolizer</dt>
-<dd>
-<p>Label at point location</p>
-<p>Label at midpoint of lines</p>
-<p>Label at centroid of polygons</p>
-<p>Label at centroid of raster outline</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Points</th>
+<th>Lines</th>
+<th>Polygon</th>
+<th>Raster</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Point Symbolizer</td>
+<td><strong>Points</strong></td>
+<td>Midpoint of the lines</td>
+<td>Centroid of the polygons</td>
+<td>Centroid of the raster</td>
+</tr>
+<tr>
+<td>Line Symbolizer</td>
+<td>n/a</td>
+<td><strong>Lines</strong></td>
+<td>Outline (stroke) of the polygons</td>
+<td>Outline (stroke) of the raster</td>
+</tr>
+<tr>
+<td>Polygon Symbolizer</td>
+<td>n/a</td>
+<td>Will "close" the line and style as a polygon</td>
+<td><strong>Polygons</strong></td>
+<td>Will "outline" the raster and style as a polygon</td>
+</tr>
+<tr>
+<td>Raster Symbolizer</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>Transform raster values to color channels for display</td>
+</tr>
+<tr>
+<td>Text Symbolizer</td>
+<td>Label at point location</td>
+<td>Label at midpoint of lines</td>
+<td>Label at centroid of polygons</td>
+<td>Label at centroid of raster outline</td>
+</tr>
+</tbody>
+</table>
 <h2 id="syntax">Syntax</h2>
 <p>The following is the basic syntax common to all symbolizers. Note that the contents of the block are not all expanded here and that each kind of symbolizer provides additional syntax.</p>
 <div class="language-text highlight"><pre><span></span><code>geometry: &lt;cql&gt;
@@ -2368,62 +2373,74 @@ x-composite-base: &lt;boolean&gt;
 x-inclusion: &lt;text&gt;
 </code></pre></div>
 <p>Where:</p>
-<dl>
-<dt>Property</dt>
-<dd>
-<p>Required?</p>
-<p>Description</p>
-<p>Default value</p>
-</dd>
-<dt><code>geometry</code></dt>
-<dd>
-<p>No</p>
-<p>Specifies which attribute to use as the geometry (see <a href="../../../sld/extensions/geometry-transformations/">Geometry transformations in SLD</a>)</p>
-<p>First geometry attribute found (usually named <code>geom</code> or <code>the_geom</code>)</p>
-</dd>
-<dt><code>uom</code></dt>
-<dd>
-<p>No</p>
-<p>Unit of measure used for width calculations (see <a href="../../../sld/extensions/uom/">Specifying symbolizer sizes in ground units</a>)</p>
-<p>pixel</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>geometry</code></td>
+<td>No</td>
+<td>Specifies which attribute to use as the geometry (see <a href="../../../sld/extensions/geometry-transformations/">Geometry transformations in SLD</a>)</td>
+<td>First geometry attribute found (usually named <code>geom</code> or <code>the_geom</code>)</td>
+</tr>
+<tr>
+<td><code>uom</code></td>
+<td>No</td>
+<td>Unit of measure used for width calculations (see <a href="../../../sld/extensions/uom/">Specifying symbolizer sizes in ground units</a>)</td>
+<td>pixel</td>
+</tr>
+</tbody>
+</table>
 <p>Additional "vendor options" properties for <a href="../../../sld/extensions/composite-blend/">Color compositing and color blending</a>:</p>
-<dl>
-<dt>Property</dt>
-<dd>
-<p>Required?</p>
-<p>Description</p>
-<p>Default value</p>
-</dd>
-<dt><code>x-composite</code></dt>
-<dd>
-<p>No</p>
-<p>Allows for both alpha compositing and color blending options between symbolizers.</p>
-<p>N/A</p>
-</dd>
-<dt><code>x-composite-base</code></dt>
-<dd>
-<p>No</p>
-<p>Allows the rendering engine to use the symbolizer mapping to define a "base" buffer for subsequent compositing and blending using <code>x-composite</code>. See the section on <a href="../featurestyles/#ysld_reference_featurestyles_composite">Feature Styles</a> for more details.</p>
-<p><code>false</code></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x-composite</code></td>
+<td>No</td>
+<td>Allows for both alpha compositing and color blending options between symbolizers.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>x-composite-base</code></td>
+<td>No</td>
+<td>Allows the rendering engine to use the symbolizer mapping to define a "base" buffer for subsequent compositing and blending using <code>x-composite</code>. See the section on <a href="../featurestyles/#ysld_reference_featurestyles_composite">Feature Styles</a> for more details.</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
 <p>Additional "vendor options" properties for <a href="../../../sld/extensions/rendering-selection/">Rendering Selection</a>:</p>
-<dl>
-<dt>Property</dt>
-<dd>
-<p>Required?</p>
-<p>Description</p>
-<p>Default value</p>
-</dd>
-<dt><code>x-inclusion</code></dt>
-<dd>
-<p>No</p>
-<p>Define if rule should be included in style for <code>legendOnly</code> or <code>mapOnly</code>.</p>
-<p><code>normal</code></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x-inclusion</code></td>
+<td>No</td>
+<td>Define if rule should be included in style for <code>legendOnly</code> or <code>mapOnly</code>.</td>
+<td><code>normal</code></td>
+</tr>
+</tbody>
+</table>
 
 
 

@@ -2420,59 +2420,77 @@
 <p>A <code>feature type</code> is a vector based spatial resource or data set that originates from a data store. In some cases, such as with a shapefile, a feature type has a one-to-one relationship with its data store. In other cases, such as PostGIS, the relationship of feature type to data store is many-to-one, feature types corresponding to a table in the database.</p>
 <h2 id="workspaceswsdatastoresdsfeaturetypesformat"><code>/workspaces/&lt;ws&gt;/datastores/&lt;ds&gt;/featuretypes[.&lt;format&gt;]</code></h2>
 <p>Controls all feature types in a given data store / workspace.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-<p>Parameters</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>List all feature types in data store <code>ds</code></p>
-<p>200</p>
-<p>HTML, XML, JSON</p>
-<p>HTML</p>
-<p><a href="./#rest_api_featuretypes_list">list</a></p>
-</dd>
-<dt>POST</dt>
-<dd>
-<p>Create a new feature type, <a href="./#rest_api_featuretypes_post">see note below</a></p>
-<p>201 with <code>Location</code> header</p>
-<p>XML, JSON</p>
-</dd>
-</dl>
-<p>PUT</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<p>DELETE</p>
-<blockquote>
-<p>405</p>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>List all feature types in data store <code>ds</code></td>
+<td>200</td>
+<td>HTML, XML, JSON</td>
+<td>HTML</td>
+<td><a href="./#rest_api_featuretypes_list">list</a></td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Create a new feature type, <a href="./#rest_api_featuretypes_post">see note below</a></td>
+<td>201 with <code>Location</code> header</td>
+<td>XML, JSON</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h3 id="rest_api_featuretypes_post">featuretypes POST</h3>
 <p>When creating a new feature type via <code>POST</code>, if no underlying dataset with the specified name exists an attempt will be made to create it. This will work only in cases where the underlying data format supports the creation of new types (such as a database). When creating a feature type in this manner the client should include all attribute information in the feature type representation.</p>
 <h3 id="exceptions">Exceptions</h3>
-<dl>
-<dt>Exception</dt>
-<dd>
-<p>Status code</p>
-</dd>
-<dt>GET for a feature type that does not exist</dt>
-<dd>
-<p>404</p>
-</dd>
-<dt>PUT that changes name of feature type</dt>
-<dd>
-<p>403</p>
-</dd>
-<dt>PUT that changes data store of feature type</dt>
-<dd>
-<p>403</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Exception</th>
+<th>Status code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET for a feature type that does not exist</td>
+<td>404</td>
+</tr>
+<tr>
+<td>PUT that changes name of feature type</td>
+<td>403</td>
+</tr>
+<tr>
+<td>PUT that changes data store of feature type</td>
+<td>403</td>
+</tr>
+</tbody>
+</table>
 <h3 id="parameters">Parameters</h3>
 <h4 id="rest_api_featuretypes_list"><code>list</code></h4>
 <p>The <code>list</code> parameter is used to control the category of feature types that are returned. It can take one of the following values:</p>
@@ -2484,62 +2502,75 @@
 </ul>
 <h2 id="workspaceswsdatastoresdsfeaturetypesftformat"><code>/workspaces/&lt;ws&gt;/datastores/&lt;ds&gt;/featuretypes/&lt;ft&gt;[.&lt;format&gt;]</code></h2>
 <p>Controls a particular feature type in a given data store and workspace.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-<p>Parameters</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Return feature type <code>ft</code></p>
-<p>200</p>
-<p>HTML, XML, JSON</p>
-<p>HTML</p>
-<p><a href="./#rest_api_featuretypes_quietOnNotFound">quietOnNotFound</a></p>
-</dd>
-</dl>
-<p>POST</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<dl>
-<dt>PUT</dt>
-<dd>
-<p>Modify feature type <code>ft</code></p>
-<p>200</p>
-<p>XML,JSON</p>
-<p><a href="./#rest_api_featuretypes_recalculate">recalculate</a></p>
-</dd>
-<dt>DELETE</dt>
-<dd>
-<p>Delete feature type <code>ft</code></p>
-<p>200</p>
-<p><a href="./#rest_api_featuretypes_recurse">recurse</a></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Return feature type <code>ft</code></td>
+<td>200</td>
+<td>HTML, XML, JSON</td>
+<td>HTML</td>
+<td><a href="./#rest_api_featuretypes_quietOnNotFound">quietOnNotFound</a></td>
+</tr>
+<tr>
+<td>POST</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Modify feature type <code>ft</code></td>
+<td>200</td>
+<td>XML,JSON</td>
+<td></td>
+<td><a href="./#rest_api_featuretypes_recalculate">recalculate</a></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Delete feature type <code>ft</code></td>
+<td>200</td>
+<td></td>
+<td></td>
+<td><a href="./#rest_api_featuretypes_recurse">recurse</a></td>
+</tr>
+</tbody>
+</table>
 <h3 id="exceptions_1">Exceptions</h3>
-<dl>
-<dt>Exception</dt>
-<dd>
-<p>Status code</p>
-</dd>
-<dt>GET for a feature type that does not exist</dt>
-<dd>
-<p>404</p>
-</dd>
-<dt>PUT that changes name of feature type</dt>
-<dd>
-<p>403</p>
-</dd>
-<dt>PUT that changes data store of feature type</dt>
-<dd>
-<p>403</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Exception</th>
+<th>Status code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET for a feature type that does not exist</td>
+<td>404</td>
+</tr>
+<tr>
+<td>PUT that changes name of feature type</td>
+<td>403</td>
+</tr>
+<tr>
+<td>PUT that changes data store of feature type</td>
+<td>403</td>
+</tr>
+</tbody>
+</table>
 <h3 id="parameters_1">Parameters</h3>
 <h4 id="rest_api_featuretypes_recurse"><code>recurse</code></h4>
 <p>The <code>recurse</code> parameter recursively deletes all layers referenced by the specified featuretype. Allowed values for this parameter are "true" or "false". The default value is "false". A DELETE request with <code>recurse=false</code> will fail if any layers reference the featuretype.</p>
@@ -2552,24 +2583,28 @@
 </ul>
 <h4 id="projection-policy"><code>Projection Policy</code></h4>
 <p>When specifying the Projection Policy in a FeatureType defined in the request body, the internal name should be used instead of the one available on the UI. The following table shows the correspondence between display and internal names:</p>
-<dl>
-<dt>Display Name</dt>
-<dd>
-<p>Internal Name</p>
-</dd>
-<dt>Force declared</dt>
-<dd>
-<p>FORCE_DECLARED</p>
-</dd>
-<dt>Keep native</dt>
-<dd>
-<p>NONE</p>
-</dd>
-<dt>Reproject native to declared</dt>
-<dd>
-<p>REPROJECT_TO_DECLARED</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Display Name</th>
+<th>Internal Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Force declared</td>
+<td>FORCE_DECLARED</td>
+</tr>
+<tr>
+<td>Keep native</td>
+<td>NONE</td>
+</tr>
+<tr>
+<td>Reproject native to declared</td>
+<td>REPROJECT_TO_DECLARED</td>
+</tr>
+</tbody>
+</table>
 <h4 id="rest_api_featuretypes_quietOnNotFound"><code>quietOnNotFound</code></h4>
 <p>The <code>quietOnNotFound</code> parameter avoids to log an Exception when the feature type is not present. Note that 404 status code will be returned anyway.</p>
 

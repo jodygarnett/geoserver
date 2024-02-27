@@ -2558,28 +2558,32 @@
 </dd>
 </dl>
 <h3 id="exceptions">Exceptions</h3>
-<dl>
-<dt>Exception</dt>
-<dd>
-<p>Status code</p>
-</dd>
-<dt>GET for a data store that does not exist</dt>
-<dd>
-<p>404</p>
-</dd>
-<dt>PUT that changes name of data store</dt>
-<dd>
-<p>403</p>
-</dd>
-<dt>PUT that changes workspace of data store</dt>
-<dd>
-<p>403</p>
-</dd>
-<dt>DELETE against a data store that contains configured feature types</dt>
-<dd>
-<p>403</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Exception</th>
+<th>Status code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET for a data store that does not exist</td>
+<td>404</td>
+</tr>
+<tr>
+<td>PUT that changes name of data store</td>
+<td>403</td>
+</tr>
+<tr>
+<td>PUT that changes workspace of data store</td>
+<td>403</td>
+</tr>
+<tr>
+<td>DELETE against a data store that contains configured feature types</td>
+<td>403</td>
+</tr>
+</tbody>
+</table>
 <h3 id="parameters">Parameters</h3>
 <h4 id="rest_api_datastores_recurse"><code>recurse</code></h4>
 <p>The <code>recurse</code> parameter recursively deletes all layers referenced by the specified data store. Allowed values for this parameter are "true" or "false". The default value is "false".</p>

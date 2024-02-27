@@ -2259,28 +2259,32 @@
 </div>
 <h2 id="colors">Colors</h2>
 <p>Color values are relatively important to styling, so there are multiple ways to specify them.</p>
-<dl>
-<dt>Format</dt>
-<dd>
-<p>Interpretation</p>
-</dd>
-<dt><code>#RRGGBB</code></dt>
-<dd>
-<p>A hexadecimal-encoded color value, with two digits each for red, green, and blue.</p>
-</dd>
-<dt><code>#RGB</code></dt>
-<dd>
-<p>A hexadecimal-encoded color value, with one digits each for red, green, and blue. This is equivalent to the two-digit-per-channel encoding with each digit duplicated.</p>
-</dd>
-<dt><code>rgb(r, g, b)</code></dt>
-<dd>
-<p>A three-part color value with each channel represented by a value in the range 0 to 1, or in the range 0 to 255. 0 to 1 is used if any of the values include a decimal point, otherwise it is 0 to 255.</p>
-</dd>
-<dt><em>Simple name</em></dt>
-<dd>
-<p>The simple English name of the color. A full list of the supported colors is available at <a href="http://www.w3.org/TR/SVG/types.html#ColorKeywords">http://www.w3.org/TR/SVG/types.html#ColorKeywords</a></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#RRGGBB</code></td>
+<td>A hexadecimal-encoded color value, with two digits each for red, green, and blue.</td>
+</tr>
+<tr>
+<td><code>#RGB</code></td>
+<td>A hexadecimal-encoded color value, with one digits each for red, green, and blue. This is equivalent to the two-digit-per-channel encoding with each digit duplicated.</td>
+</tr>
+<tr>
+<td><code>rgb(r, g, b)</code></td>
+<td>A three-part color value with each channel represented by a value in the range 0 to 1, or in the range 0 to 255. 0 to 1 is used if any of the values include a decimal point, otherwise it is 0 to 255.</td>
+</tr>
+<tr>
+<td><em>Simple name</em></td>
+<td>The simple English name of the color. A full list of the supported colors is available at <a href="http://www.w3.org/TR/SVG/types.html#ColorKeywords">http://www.w3.org/TR/SVG/types.html#ColorKeywords</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="external-references">External references</h2>
 <p>When using external images to decorate map features, it is necessary to reference them by URL. This is done by a call to the <code>url</code> function. The URL value may be wrapped in single or double-quotes, or not at all. The same escaping rules as for string values. The <code>url</code> function is also a special case where the surrounding quote marks can usually be omitted. Some examples:</p>
 <div class="language-css highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c">/* These properties are all equivalent. */</span>

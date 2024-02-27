@@ -2453,77 +2453,85 @@
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="nt">x-inclusion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;text&gt;</span>
 </span></code></pre></div>
 <p>where:</p>
-<dl>
-<dt>Property</dt>
-<dd>
-<p>Required?</p>
-<p>Description</p>
-<p>Default value</p>
-</dd>
-<dt><code>name</code></dt>
-<dd>
-<p>No</p>
-<p>Internal reference to the feature style. It is recommended that the value be <strong>lower case</strong> and contain <strong>no spaces</strong>.</p>
-<p>Blank</p>
-</dd>
-<dt><code>title</code></dt>
-<dd>
-<p>No</p>
-<p>Human-readable name of the feature style. Exposed as a name for the group of rules contained in the feature style.</p>
-<p>Blank</p>
-</dd>
-<dt><code>abstract</code></dt>
-<dd>
-<p>No</p>
-<p>Longer description of the feature style.</p>
-<p>Blank</p>
-</dd>
-<dt><code>transform</code></dt>
-<dd>
-<p>No</p>
-<p><a href="../transforms/">Rendering transformation</a> information.</p>
-<p>N/A</p>
-</dd>
-<dt><code>rules</code></dt>
-<dd>
-<p>Yes</p>
-<p>List of styling <a href="../rules/">rules</a>.</p>
-<p>N/A</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>No</td>
+<td>Internal reference to the feature style. It is recommended that the value be <strong>lower case</strong> and contain <strong>no spaces</strong>.</td>
+<td>Blank</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>No</td>
+<td>Human-readable name of the feature style. Exposed as a name for the group of rules contained in the feature style.</td>
+<td>Blank</td>
+</tr>
+<tr>
+<td><code>abstract</code></td>
+<td>No</td>
+<td>Longer description of the feature style.</td>
+<td>Blank</td>
+</tr>
+<tr>
+<td><code>transform</code></td>
+<td>No</td>
+<td><a href="../transforms/">Rendering transformation</a> information.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>rules</code></td>
+<td>Yes</td>
+<td>List of styling <a href="../rules/">rules</a>.</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
 <p>The following properties are equivalent to SLD "vendor options".</p>
-<dl>
-<dt>Property</dt>
-<dd>
-<p>Required?</p>
-<p>Description</p>
-<p>Default value</p>
-</dd>
-<dt><code>x-ruleEvaluation</code></dt>
-<dd>
-<p>No</p>
-<p>When equals to <code>first</code> - stops rule evaluation after the first match. Can make the rendering more efficient by reducing the number of rules that need to be traversed by features, as well as simplyfing the rule filters.</p>
-<p><code>all</code></p>
-</dd>
-<dt><code>x-composite</code></dt>
-<dd>
-<p>No</p>
-<p>Allows for both alpha compositing and color blending options between buffers. There are many options; <a href="./#ysld_reference_featurestyles_composite">see below</a>.</p>
-<p>N/A</p>
-</dd>
-<dt><code>x-composite-base</code></dt>
-<dd>
-<p>No</p>
-<p>Allows the rendering engine to use that feature-style as a "base", and will compose all subsequent feature-styles and layers on top of it, until another base is found. Once the full set of layers against a base is composed, then the base itself will be composed against the next set of composed layers using its own compositing operator, if present. This is useful to fine-tune the use of <code>x-composite</code>, and to make sure that only the desired content is composited/blended and not all of the drawn content.</p>
-<p><code>false</code></p>
-</dd>
-<dt><code>x-inclusion</code></dt>
-<dd>
-<p>No</p>
-<p>Define if rule should be included in style for <code>legendOnly</code> or <code>mapOnly</code> (see <a href="../../../sld/extensions/rendering-selection/">Rendering Selection</a>)</p>
-<p><code>normal</code></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x-ruleEvaluation</code></td>
+<td>No</td>
+<td>When equals to <code>first</code> - stops rule evaluation after the first match. Can make the rendering more efficient by reducing the number of rules that need to be traversed by features, as well as simplyfing the rule filters.</td>
+<td><code>all</code></td>
+</tr>
+<tr>
+<td><code>x-composite</code></td>
+<td>No</td>
+<td>Allows for both alpha compositing and color blending options between buffers. There are many options; <a href="./#ysld_reference_featurestyles_composite">see below</a>.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>x-composite-base</code></td>
+<td>No</td>
+<td>Allows the rendering engine to use that feature-style as a "base", and will compose all subsequent feature-styles and layers on top of it, until another base is found. Once the full set of layers against a base is composed, then the base itself will be composed against the next set of composed layers using its own compositing operator, if present. This is useful to fine-tune the use of <code>x-composite</code>, and to make sure that only the desired content is composited/blended and not all of the drawn content.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>x-inclusion</code></td>
+<td>No</td>
+<td>Define if rule should be included in style for <code>legendOnly</code> or <code>mapOnly</code> (see <a href="../../../sld/extensions/rendering-selection/">Rendering Selection</a>)</td>
+<td><code>normal</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="ysld_reference_featurestyles_composite">Compositing and blending</h2>
 <p>By default, multiple feature styles are drawn with one buffer on top of the other. However, using the <code>x-composite</code> and <code>x-composite-base</code> options, one can customize the way that buffers are displayed.</p>
 <p>The following two tables show the possible alpha compositing and color blending values for the <code>x-composite</code> option. Note that in the tables below, <strong>source</strong> refers to the buffer that is drawn on top, while <strong>destination</strong> refers to the buffer that the source is drawn on top of.</p>

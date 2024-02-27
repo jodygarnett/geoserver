@@ -2360,38 +2360,47 @@
 <h2 id="featuretypestyle">FeatureTypeStyle</h2>
 <p>The <strong>FeatureTypeStyle</strong> element specifies the styling that is applied to a single feature type of a layer. It contains a list of rules which determine the symbology to be applied to each feature of a layer.</p>
 <p>The <code>&lt;FeatureTypeStyle&gt;</code> element contains the following elements:</p>
-<dl>
-<dt><strong>Tag</strong></dt>
-<dd>
-<p><strong>Required?</strong></p>
-<p><strong>Description</strong></p>
-</dd>
-<dt><code>&lt;Name&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>Not used at present</p>
-</dd>
-<dt><code>&lt;Title&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>The title for the style.</p>
-</dd>
-<dt><code>&lt;Abstract&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>The description for the style.</p>
-</dd>
-<dt><code>&lt;FeatureTypeName&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>Identifies the feature type the style is to be applied to. Omitted if the style applies to all features in a layer.</p>
-</dd>
-<dt><code>&lt;Rule&gt;</code></dt>
-<dd>
-<p>1..N</p>
-<p>A styling rule to be evaluated. See <a href="../rules/">Rules</a></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tag</strong></td>
+<td><strong>Required?</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>&lt;Name&gt;</code></td>
+<td>No</td>
+<td>Not used at present</td>
+</tr>
+<tr>
+<td><code>&lt;Title&gt;</code></td>
+<td>No</td>
+<td>The title for the style.</td>
+</tr>
+<tr>
+<td><code>&lt;Abstract&gt;</code></td>
+<td>No</td>
+<td>The description for the style.</td>
+</tr>
+<tr>
+<td><code>&lt;FeatureTypeName&gt;</code></td>
+<td>No</td>
+<td>Identifies the feature type the style is to be applied to. Omitted if the style applies to all features in a layer.</td>
+</tr>
+<tr>
+<td><code>&lt;Rule&gt;</code></td>
+<td>1..N</td>
+<td>A styling rule to be evaluated. See <a href="../rules/">Rules</a></td>
+</tr>
+</tbody>
+</table>
 <p>Usually a layer contains only a single feature type, so the <code>&lt;FeatureTypeName&gt;</code> is omitted.</p>
 <p>Any number of <code>&lt;FeatureTypeStyle&gt;</code> elements can be specified in a style. In GeoServer each one is rendered into a separate image buffer. After all features are rendered the buffers are composited to form the final layer image. The compositing is done in the order the FeatureTypeStyles are given in the SLD, with the first one on the bottom (the "Painter's Model"). This effectively creates "virtual layers", which can be used to achieve styling effects such as cased lines.</p>
 

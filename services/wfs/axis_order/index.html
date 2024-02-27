@@ -2227,33 +2227,37 @@
 <p>Some spatial reference systems, for example polar stereographic, do not have an <code>east</code> or <code>west</code> as they have a pole in the middle of the axis.</p>
 </div>
 <p>These differences may cause difficulties when clients switch between different <code>WFS</code> versions. To minimize confusion and increase interoperability, GeoServer has adopted the following guidelines when specifying spatial reference systems to avoid ambiguity.</p>
-<dl>
-<dt>Representation</dt>
-<dd>
-<p>Axis order</p>
-<p>Interpretation</p>
-</dd>
-<dt><code>EPSG:4326</code></dt>
-<dd>
-<p>longitude/latitude</p>
-<p>assumption</p>
-</dd>
-<dt><code>http://www.opengis.net/gml/srs/epsg.xml#xxxx</code></dt>
-<dd>
-<p>longitude/latitude</p>
-<p>strict</p>
-</dd>
-<dt><code>urn:x-ogc:def:crs:EPSG:xxxx</code></dt>
-<dd>
-<p>latitude/longitude</p>
-<p>strict</p>
-</dd>
-<dt><code>urn:ogc:def:crs:EPSG::4326</code></dt>
-<dd>
-<p>latitude/longitude</p>
-<p>strict</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Representation</th>
+<th>Axis order</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>EPSG:4326</code></td>
+<td>longitude/latitude</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td><code>http://www.opengis.net/gml/srs/epsg.xml#xxxx</code></td>
+<td>longitude/latitude</td>
+<td>strict</td>
+</tr>
+<tr>
+<td><code>urn:x-ogc:def:crs:EPSG:xxxx</code></td>
+<td>latitude/longitude</td>
+<td>strict</td>
+</tr>
+<tr>
+<td><code>urn:ogc:def:crs:EPSG::4326</code></td>
+<td>latitude/longitude</td>
+<td>strict</td>
+</tr>
+</tbody>
+</table>
 <h2 id="srslist-axis-order">SRSList Axis Order</h2>
 <p>To compare the spatial reference system definition for <code>EPSG:4326</code>:</p>
 <ol>

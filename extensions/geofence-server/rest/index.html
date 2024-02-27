@@ -3466,48 +3466,56 @@
 </dl>
 <h3 id="restgeofencerulescount"><code>/rest/geofence/rules/count</code></h3>
 <p>Counts (filtered) rules.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Supported parameters</p>
-<p>Response</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Count all rules, with respect to any added filters</p>
-<p>userName, userAny, roleName, roleAny, service, serviceAny, request, requestAny, workspace, workspaceAny, layer, layerAny</p>
-<p>200 OK. Rule list count in XML.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Supported parameters</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Count all rules, with respect to any added filters</td>
+<td>userName, userAny, roleName, roleAny, service, serviceAny, request, requestAny, workspace, workspaceAny, layer, layerAny</td>
+<td>200 OK. Rule list count in XML.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="restgeofencerulesidid"><code>/rest/geofence/rules/id/&lt;id&gt;</code></h3>
 <p>Query, modify or delete a specific rule.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Supported parameters</p>
-<p>Response</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Read rule information</p>
-<p>None</p>
-<p>200 OK. Rule in XML.</p>
-</dd>
-<dt>POST</dt>
-<dd>
-<p>Modify the rule, unspecified fields remain unchanged.</p>
-<p>None</p>
-<p>200 OK.</p>
-</dd>
-<dt>DELETE</dt>
-<dd>
-<p>Delete the rule</p>
-<p>None</p>
-<p>200 OK.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Supported parameters</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Read rule information</td>
+<td>None</td>
+<td>200 OK. Rule in XML.</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Modify the rule, unspecified fields remain unchanged.</td>
+<td>None</td>
+<td>200 OK.</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Delete the rule</td>
+<td>None</td>
+<td>200 OK.</td>
+</tr>
+</tbody>
+</table>
 
 
 

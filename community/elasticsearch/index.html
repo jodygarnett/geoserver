@@ -4273,60 +4273,68 @@ javax.net.ssl.keyStorePassword
 <hr />
 <p><img alt="field_list" class="align-middle" src="images/elasticsearch_fieldlist.png" /></p>
 <hr />
-<dl>
-<dt>Item</dt>
-<dd>
-<p>Description</p>
-</dd>
-<dt><code>Use All</code></dt>
-<dd>
-<p>Use all fields in the layer feature type</p>
-</dd>
-<dt><code>Use</code></dt>
-<dd>
-<p>Used to select the fields that will make up the layer feature type</p>
-</dd>
-<dt><code>Name</code></dt>
-<dd>
-<p>Name of the field</p>
-</dd>
-<dt><code>Type</code></dt>
-<dd>
-<p>Type of the field, as derived from the Elasticsearch schema. For geometry types, you have the option to provide a more specific data type.</p>
-</dd>
-<dt><code>Order</code></dt>
-<dd>
-<p>Integer order values are used to sort fields, where fields with smaller order are returned first</p>
-</dd>
-<dt><code>Custom Name</code></dt>
-<dd>
-<p>Provides the option to give the field a custom name</p>
-</dd>
-<dt><code>Default Geometry</code></dt>
-<dd>
-<p>Indicates if the geometry field is the default one. Useful if the documents contain more than one geometry field, as SLDs and spatial filters will hit the default geometry field unless otherwise specified</p>
-</dd>
-<dt><code>Stored</code></dt>
-<dd>
-<p>Indicates whether the field is stored in the index</p>
-</dd>
-<dt><code>Analyzed</code></dt>
-<dd>
-<p>Indicates whether the field is analyzed</p>
-</dd>
-<dt><code>SRID</code></dt>
-<dd>
-<p>Native spatial reference ID of the geometries. Currently only EPSG:4326 is supported.</p>
-</dd>
-<dt><code>Valid Date Formats</code></dt>
-<dd>
-<p>Possible valid date formats used for parsing field values and printing filter elements</p>
-</dd>
-<dt><code>Refresh</code></dt>
-<dd>
-<p>If the field mappings or Elasticsearch schema has changed since this page was loaded, use this button to update the field configuration list.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Item</td>
+<td>Description</td>
+</tr>
+<tr>
+<td><code>Use All</code></td>
+<td>Use all fields in the layer feature type</td>
+</tr>
+<tr>
+<td><code>Use</code></td>
+<td>Used to select the fields that will make up the layer feature type</td>
+</tr>
+<tr>
+<td><code>Name</code></td>
+<td>Name of the field</td>
+</tr>
+<tr>
+<td><code>Type</code></td>
+<td>Type of the field, as derived from the Elasticsearch schema. For geometry types, you have the option to provide a more specific data type.</td>
+</tr>
+<tr>
+<td><code>Order</code></td>
+<td>Integer order values are used to sort fields, where fields with smaller order are returned first</td>
+</tr>
+<tr>
+<td><code>Custom Name</code></td>
+<td>Provides the option to give the field a custom name</td>
+</tr>
+<tr>
+<td><code>Default Geometry</code></td>
+<td>Indicates if the geometry field is the default one. Useful if the documents contain more than one geometry field, as SLDs and spatial filters will hit the default geometry field unless otherwise specified</td>
+</tr>
+<tr>
+<td><code>Stored</code></td>
+<td>Indicates whether the field is stored in the index</td>
+</tr>
+<tr>
+<td><code>Analyzed</code></td>
+<td>Indicates whether the field is analyzed</td>
+</tr>
+<tr>
+<td><code>SRID</code></td>
+<td>Native spatial reference ID of the geometries. Currently only EPSG:4326 is supported.</td>
+</tr>
+<tr>
+<td><code>Valid Date Formats</code></td>
+<td>Possible valid date formats used for parsing field values and printing filter elements</td>
+</tr>
+<tr>
+<td><code>Refresh</code></td>
+<td>If the field mappings or Elasticsearch schema has changed since this page was loaded, use this button to update the field configuration list.</td>
+</tr>
+</tbody>
+</table>
 <p>To return to the field table after it has been closed, click the "Configure Elasticsearch fields" button below the "Feature Type Details" panel on the layer configuration page.</p>
 <hr />
 <p><img alt="field_list_edit" class="align-middle" src="images/elasticsearch_fieldlist_edit.png" /></p>
@@ -4508,32 +4516,42 @@ log4j.category.org.geoserver.process.elasticsearch=DEBUG
 <p>The store may update the precision to a smaller value, if it finds it goes beyond the aggregation limits setup in its configuration, see <code>grid_size</code> and <code>grid_threshold</code> above.</p>
 <h3 id="grid-strategy">Grid Strategy</h3>
 <p><code>gridStrategy</code>: Parameter to identify the <code>org.geoserver.process.elasticsearch.GeoHashGrid</code> implementation that will be used to convert each geohashgrid bucket into a raster value (number).</p>
-<dl>
-<dt>Name</dt>
-<dd>
-<p>gridStrategy</p>
-<p>gridStrategyArgs</p>
-<p>Description</p>
-</dd>
-<dt>Basic</dt>
-<dd>
-<p><code>basic</code></p>
-<p>no</p>
-<p>Raster value is geohashgrid bucket <code>doc_count</code>.</p>
-</dd>
-<dt>Metric</dt>
-<dd>
-<p><code>metric</code></p>
-<p>yes</p>
-<p>Raster value is geohashgrid bucket metric value.</p>
-</dd>
-<dt>Nested</dt>
-<dd>
-<p><code>nested_agg</code></p>
-<p>yes</p>
-<p>Extract raster value from nested aggregation results.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>gridStrategy</td>
+<td>gridStrategyArgs</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>Basic</td>
+<td><code>basic</code></td>
+<td>no</td>
+<td>Raster value is geohashgrid bucket <code>doc_count</code>.</td>
+</tr>
+<tr>
+<td>Metric</td>
+<td><code>metric</code></td>
+<td>yes</td>
+<td>Raster value is geohashgrid bucket metric value.</td>
+</tr>
+<tr>
+<td>Nested</td>
+<td><code>nested_agg</code></td>
+<td>yes</td>
+<td>Extract raster value from nested aggregation results.</td>
+</tr>
+</tbody>
+</table>
 <p><code>gridStrategyArgs</code>: (Optional) Parameter used to specify an optional argument list for the grid strategy.</p>
 <p><code>emptyCellValue</code>: (Optional) Parameter used to specify the value for empty grid cells. By default, empty grid cells are set to <code>0</code>.</p>
 <p><code>scaleMin</code>, <code>scaleMax</code>: (Optional) Parameters used to specify a scale applied to all raster values. Each tile request is scaled according to the min and max values for that tile. It is best to use a non-tiled layer with this parameter to avoid confusing results.</p>
@@ -4558,23 +4576,32 @@ log4j.category.org.geoserver.process.elasticsearch=DEBUG
 <p>Extracted raster value: <code>1</code></p>
 <h4 id="metric">Metric</h4>
 <p>Raster value is geohashgrid bucket metric value.</p>
-<dl>
-<dt>Argument Index</dt>
-<dd>
-<p>Default Value</p>
-<p>Description</p>
-</dd>
-<dt>0</dt>
-<dd>
-<p><code>metric</code></p>
-<p>Key used to pluck metric object from top level bucket. Empty string results in plucking doc_count.</p>
-</dd>
-<dt>1</dt>
-<dd>
-<p><code>value</code></p>
-<p>Key used to pluck the value from the metric object.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Argument Index</td>
+<td>Default Value</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>0</td>
+<td><code>metric</code></td>
+<td>Key used to pluck metric object from top level bucket. Empty string results in plucking doc_count.</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>value</code></td>
+<td>Key used to pluck the value from the metric object.</td>
+</tr>
+</tbody>
+</table>
 <p>Example Aggregation:</p>
 <div class="language-text highlight"><pre><span></span><code>{
   &quot;agg&quot;: {

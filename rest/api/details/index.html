@@ -2213,43 +2213,47 @@
 <h2 id="status-codes">Status codes</h2>
 <p>An HTTP request uses a status code to relay the outcome of the request to the client. Different status codes are used for various purposes throughout this document. These codes are described in detail by the <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">HTTP specification</a>.</p>
 <p>The most common status codes are listed below, along with their descriptions:</p>
-<dl>
-<dt>Status code</dt>
-<dd>
-<p>Description</p>
-<p>Notes</p>
-</dd>
-<dt>200</dt>
-<dd>
-<p>OK</p>
-<p>The request was successful</p>
-</dd>
-<dt>201</dt>
-<dd>
-<p>Created</p>
-<p>A new resource was successfully created, such as a new feature type or data store</p>
-</dd>
-<dt>403</dt>
-<dd>
-<p>Forbidden</p>
-<p>Often denotes a permissions mismatch</p>
-</dd>
-<dt>404</dt>
-<dd>
-<p>Not Found</p>
-<p>Endpoint or resource was not at the indicated location</p>
-</dd>
-<dt>405</dt>
-<dd>
-<p>Method Not Allowed</p>
-<p>Often denotes an endpoint accessed with an incorrect operation (for example, a GET request where a PUT/POST is indicated)</p>
-</dd>
-<dt>500</dt>
-<dd>
-<p>Internal Server Error</p>
-<p>Often denotes a syntax error in the request</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td>The request was successful</td>
+</tr>
+<tr>
+<td>201</td>
+<td>Created</td>
+<td>A new resource was successfully created, such as a new feature type or data store</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden</td>
+<td>Often denotes a permissions mismatch</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found</td>
+<td>Endpoint or resource was not at the indicated location</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed</td>
+<td>Often denotes an endpoint accessed with an incorrect operation (for example, a GET request where a PUT/POST is indicated)</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error</td>
+<td>Often denotes a syntax error in the request</td>
+</tr>
+</tbody>
+</table>
 <h2 id="formats-and-representations">Formats and representations</h2>
 <p>A <code>format</code> specifies how a particular resource should be represented. A format is used:</p>
 <ul>
@@ -2260,32 +2264,36 @@
 <p>There are two ways to specify the format for a GET operation. The first option uses the <code>Accept</code> header. For example, with the header set to <code>"Accept: text/xml"</code> the resource would be returned as XML. The second option of setting the format is via a file extension. For example, given a resource <code>foo</code>, to request a representation of <code>foo</code> as XML, the request URI would end with <code>/foo.xml</code>. To request a representation as JSON, the request URI would end with <code>/foo.json</code>. When no format is specified the server will use its own internal format, usually HTML. When the response format is specified both by the header and by the extension, the format specified by the extension takes precedence.</p>
 <p>In a <strong>POST</strong> or <strong>PUT</strong> operation, the format of content being sent to the server is specified with the <code>Content-type</code> header. For example, to send a representation in XML, use <code>"Content-type: text/xml"</code> or <code>"Content-type: application/xml"</code>. As with GET requests, the representation of the content returned from the server is specified by the <code>Accept</code> header or by the format.</p>
 <p>The following table defines the <code>Content-type</code> values for each format:</p>
-<dl>
-<dt>Format</dt>
-<dd>
-<p>Content-type</p>
-</dd>
-<dt>XML</dt>
-<dd>
-<p><code>application/xml</code></p>
-</dd>
-<dt>JSON</dt>
-<dd>
-<p><code>application/json</code></p>
-</dd>
-<dt>HTML</dt>
-<dd>
-<p><code>application/html</code></p>
-</dd>
-<dt>SLD</dt>
-<dd>
-<p><code>application/vnd.ogc.sld+xml</code></p>
-</dd>
-<dt>ZIP</dt>
-<dd>
-<p><code>application/zip</code></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Content-type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XML</td>
+<td><code>application/xml</code></td>
+</tr>
+<tr>
+<td>JSON</td>
+<td><code>application/json</code></td>
+</tr>
+<tr>
+<td>HTML</td>
+<td><code>application/html</code></td>
+</tr>
+<tr>
+<td>SLD</td>
+<td><code>application/vnd.ogc.sld+xml</code></td>
+</tr>
+<tr>
+<td>ZIP</td>
+<td><code>application/zip</code></td>
+</tr>
+</tbody>
+</table>
 
 
 

@@ -2032,24 +2032,28 @@ workspace.workspaceLayerGroup.permission=role[,role2,...]
 <div class="language-text highlight"><pre><span></span><code>mode=option
 </code></pre></div>
 <p><code>option</code> may be one of three values:</p>
-<dl>
-<dt>Option</dt>
-<dd>
-<p>Description</p>
-</dd>
-<dt><code>hide</code></dt>
-<dd>
-<p><em>(Default)</em> Hides layers that the user does not have read access to, and behaves as if a layer is read only if the user does not have write permissions. The capabilities documents will not contain the layers the current user cannot access. This is the highest security mode. As a result, it may not work very well with clients such as uDig or Google Earth.</p>
-</dd>
-<dt><code>challenge</code></dt>
-<dd>
-<p>Allows free access to metadata, but any attempt at accessing actual data is met by a HTTP 401 code (which forces most clients to show an authentication dialog). The capabilities documents contain the full list of layers. DescribeFeatureType and DescribeCoverage operations work successfully. This mode works fine with clients such as uDig or Google Earth.</p>
-</dd>
-<dt><code>mixed</code></dt>
-<dd>
-<p>Hides the layers the user cannot read from the capabilities documents, but triggers authentication for any other attempt to access the data or the metadata. This option is useful if you don't want the world to see the existence of some of your data, but you still want selected people to who have data access links to get the data after authentication.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hide</code></td>
+<td><em>(Default)</em> Hides layers that the user does not have read access to, and behaves as if a layer is read only if the user does not have write permissions. The capabilities documents will not contain the layers the current user cannot access. This is the highest security mode. As a result, it may not work very well with clients such as uDig or Google Earth.</td>
+</tr>
+<tr>
+<td><code>challenge</code></td>
+<td>Allows free access to metadata, but any attempt at accessing actual data is met by a HTTP 401 code (which forces most clients to show an authentication dialog). The capabilities documents contain the full list of layers. DescribeFeatureType and DescribeCoverage operations work successfully. This mode works fine with clients such as uDig or Google Earth.</td>
+</tr>
+<tr>
+<td><code>mixed</code></td>
+<td>Hides the layers the user cannot read from the capabilities documents, but triggers authentication for any other attempt to access the data or the metadata. This option is useful if you don't want the world to see the existence of some of your data, but you still want selected people to who have data access links to get the data after authentication.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="access_mode">Access modes</h2>
 <p>The access mode defines what level of access should be granted on a specific workspace/layer to a particular role. There are three types of access mode:</p>
 <ul>
@@ -2078,43 +2082,47 @@ private.*.w=TRUSTED_ROLE
 topp.congress_district.w=STATE_LEGISLATORS
 </code></pre></div>
 <p>The mapping of roles to permissions is as follows:</p>
-<dl>
-<dt>Role</dt>
-<dd>
-<p>private.*</p>
-<p>topp.*</p>
-<p>topp.congress_district</p>
-<p>(all other workspaces)</p>
-</dd>
-<dt><code>NO_ONE</code></dt>
-<dd>
-<p>(none)</p>
-<p>w</p>
-<p>(none)</p>
-<p>w</p>
-</dd>
-<dt><code>TRUSTED_ROLE</code></dt>
-<dd>
-<p>r/w</p>
-<p>r</p>
-<p>r</p>
-<p>r</p>
-</dd>
-<dt><code>STATE_LEGISLATORS</code></dt>
-<dd>
-<p>(none)</p>
-<p>r</p>
-<p>r/w</p>
-<p>r</p>
-</dd>
-<dt>(All other users)</dt>
-<dd>
-<p>(none)</p>
-<p>r</p>
-<p>r</p>
-<p>r</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>private.*</th>
+<th>topp.*</th>
+<th>topp.congress_district</th>
+<th>(all other workspaces)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NO_ONE</code></td>
+<td>(none)</td>
+<td>w</td>
+<td>(none)</td>
+<td>w</td>
+</tr>
+<tr>
+<td><code>TRUSTED_ROLE</code></td>
+<td>r/w</td>
+<td>r</td>
+<td>r</td>
+<td>r</td>
+</tr>
+<tr>
+<td><code>STATE_LEGISLATORS</code></td>
+<td>(none)</td>
+<td>r</td>
+<td>r/w</td>
+<td>r</td>
+</tr>
+<tr>
+<td>(All other users)</td>
+<td>(none)</td>
+<td>r</td>
+<td>r</td>
+<td>r</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Specific workspace rule <code>private.*.r=TRUSTED_ROLE</code> will take precedence over the more generic rule <code>*.*.r=*</code>. When a request is made to read a layer <code>private:vulnerable_infrastructure</code> the most specific rule available is used to control access. In this case the workspace rule <code>private.*.r=TRUSTED_ROLE</code> is the most specific and only users that have TRUSTED_ROLE will be granted <code>r</code> access and be able to read the <code>private:vulnerable_infrastructure</code> layer. Other users that do not have the TRUSTED_ROLE will not be granted <code>r</code> access and will be unable to access the <code>private:vulnerable_infrastructure</code> layer.</p>
@@ -2128,32 +2136,36 @@ army.*.r=MILITARY_ROLE,TRUSTED_ROLE
 army.*.w=MILITARY_ROLE,TRUSTED_ROLE
 </code></pre></div>
 <p>The mapping of roles to permissions is as follows:</p>
-<dl>
-<dt>Role</dt>
-<dd>
-<p>topp.*</p>
-<p>army.*</p>
-<p>(All other workspaces)</p>
-</dd>
-<dt><code>TRUSTED_ROLE</code></dt>
-<dd>
-<p>r/w</p>
-<p>r/w</p>
-<p>r/w</p>
-</dd>
-<dt><code>MILITARY_ROLE</code></dt>
-<dd>
-<p>r</p>
-<p>r/w</p>
-<p>(none)</p>
-</dd>
-<dt>(All other users)</dt>
-<dd>
-<p>r</p>
-<p>(none)</p>
-<p>(none)</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>topp.*</th>
+<th>army.*</th>
+<th>(All other workspaces)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TRUSTED_ROLE</code></td>
+<td>r/w</td>
+<td>r/w</td>
+<td>r/w</td>
+</tr>
+<tr>
+<td><code>MILITARY_ROLE</code></td>
+<td>r</td>
+<td>r/w</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td>(All other users)</td>
+<td>r</td>
+<td>(none)</td>
+<td>(none)</td>
+</tr>
+</tbody>
+</table>
 <h3 id="providing-restricted-administrative-access">Providing restricted administrative access</h3>
 <p>The following provides administrative access on a single workspace to a specific role, in additional to the full administrator role:</p>
 <div class="language-text highlight"><pre><span></span><code>*.*.a=ROLE_ADMINISTRATOR
@@ -2171,64 +2183,68 @@ topp.military_bases.r=MILITARY_ROLE
 topp.military_bases.w=MILITARY_ROLE
 </code></pre></div>
 <p>The mapping of roles to permissions is as follows:</p>
-<dl>
-<dt>Role</dt>
-<dd>
-<p>topp.states</p>
-<p>topp.poly_landmarks</p>
-<p>topp.military_bases</p>
-<p>topp.(all other layers)</p>
-<p>(All other workspaces)</p>
-</dd>
-<dt><code>NO_ONE</code></dt>
-<dd>
-<p>w</p>
-<p>r</p>
-<p>(none)</p>
-<p>w</p>
-<p>w</p>
-</dd>
-<dt><code>TRUSTED_ROLE</code></dt>
-<dd>
-<p>r</p>
-<p>r</p>
-<p>(none)</p>
-<p>r</p>
-<p>r</p>
-</dd>
-<dt><code>MILITARY_ROLE</code></dt>
-<dd>
-<p>(none)</p>
-<p>r</p>
-<p>r/w</p>
-<p>r</p>
-<p>(none)</p>
-</dd>
-<dt><code>USA_CITIZEN_ROLE</code></dt>
-<dd>
-<p>r</p>
-<p>r</p>
-<p>(none)</p>
-<p>r</p>
-<p>(none)</p>
-</dd>
-<dt><code>LAND_MANAGER_ROLE</code></dt>
-<dd>
-<p>r</p>
-<p>r/w</p>
-<p>(none)</p>
-<p>r</p>
-<p>(none)</p>
-</dd>
-<dt>(All other users)</dt>
-<dd>
-<p>(none)</p>
-<p>r</p>
-<p>(none)</p>
-<p>r</p>
-<p>(none)</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>topp.states</th>
+<th>topp.poly_landmarks</th>
+<th>topp.military_bases</th>
+<th>topp.(all other layers)</th>
+<th>(All other workspaces)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NO_ONE</code></td>
+<td>w</td>
+<td>r</td>
+<td>(none)</td>
+<td>w</td>
+<td>w</td>
+</tr>
+<tr>
+<td><code>TRUSTED_ROLE</code></td>
+<td>r</td>
+<td>r</td>
+<td>(none)</td>
+<td>r</td>
+<td>r</td>
+</tr>
+<tr>
+<td><code>MILITARY_ROLE</code></td>
+<td>(none)</td>
+<td>r</td>
+<td>r/w</td>
+<td>r</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>USA_CITIZEN_ROLE</code></td>
+<td>r</td>
+<td>r</td>
+<td>(none)</td>
+<td>r</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>LAND_MANAGER_ROLE</code></td>
+<td>r</td>
+<td>r/w</td>
+<td>(none)</td>
+<td>r</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td>(All other users)</td>
+<td>(none)</td>
+<td>r</td>
+<td>(none)</td>
+<td>r</td>
+<td>(none)</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The entry <code>topp.states.w=NO_ONE</code> is not required because this permission would be inherited from the global level (the entry <code>*.*.w=NO_ONE</code>).</p>

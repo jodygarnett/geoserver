@@ -2823,48 +2823,57 @@
 </div>
 <h2 id="sld_cookbook_points_attributes">Example points layer</h2>
 <p>The <a href="../artifacts/sld_cookbook_point.zip">points layer</a> used for the examples below contains name and population information for the major cities of a fictional country. For reference, the attribute table for the points in this layer is included below.</p>
-<dl>
-<dt><strong>fid</strong> (Feature ID)</dt>
-<dd>
-<p><strong>name</strong> (City name)</p>
-<p><strong>pop</strong> (Population)</p>
-</dd>
-<dt>point.1</dt>
-<dd>
-<p>Borfin</p>
-<p>157860</p>
-</dd>
-<dt>point.2</dt>
-<dd>
-<p>Supox City</p>
-<p>578231</p>
-</dd>
-<dt>point.3</dt>
-<dd>
-<p>Ruckis</p>
-<p>98159</p>
-</dd>
-<dt>point.4</dt>
-<dd>
-<p>Thisland</p>
-<p>34879</p>
-</dd>
-<dt>point.5</dt>
-<dd>
-<p>Synopolis</p>
-<p>24567</p>
-</dd>
-<dt>point.6</dt>
-<dd>
-<p>San Glissando</p>
-<p>76024</p>
-</dd>
-<dt>point.7</dt>
-<dd>
-<p>Detrania</p>
-<p>205609</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>fid</strong> (Feature ID)</td>
+<td><strong>name</strong> (City name)</td>
+<td><strong>pop</strong> (Population)</td>
+</tr>
+<tr>
+<td>point.1</td>
+<td>Borfin</td>
+<td>157860</td>
+</tr>
+<tr>
+<td>point.2</td>
+<td>Supox City</td>
+<td>578231</td>
+</tr>
+<tr>
+<td>point.3</td>
+<td>Ruckis</td>
+<td>98159</td>
+</tr>
+<tr>
+<td>point.4</td>
+<td>Thisland</td>
+<td>34879</td>
+</tr>
+<tr>
+<td>point.5</td>
+<td>Synopolis</td>
+<td>24567</td>
+</tr>
+<tr>
+<td>point.6</td>
+<td>San Glissando</td>
+<td>76024</td>
+</tr>
+<tr>
+<td>point.7</td>
+<td>Detrania</td>
+<td>205609</td>
+</tr>
+</tbody>
+</table>
 <p><a href="../artifacts/sld_cookbook_point.zip">Download the points shapefile</a></p>
 <h2 id="sld_cookbook_points_simplepoint">Simple point</h2>
 <p>This example specifies points be styled as red circles with a diameter of 6 pixels.</p>
@@ -3218,32 +3227,42 @@
 </div>
 <p>This style contains three rules. Each <code>&lt;Rule&gt;</code> varies the style based on the value of the population ("pop") attribute for each point, with smaller values yielding a smaller circle, and larger values yielding a larger circle.</p>
 <p>The three rules are designed as follows:</p>
-<dl>
-<dt><strong>Rule order</strong></dt>
-<dd>
-<p><strong>Rule name</strong></p>
-<p><strong>Population</strong> ("pop")</p>
-<p><strong>Size</strong></p>
-</dd>
-<dt>1</dt>
-<dd>
-<p>SmallPop</p>
-<p>Less than 50,000</p>
-<p>8</p>
-</dd>
-<dt>2</dt>
-<dd>
-<p>MediumPop</p>
-<p>50,000 to 100,000</p>
-<p>12</p>
-</dd>
-<dt>3</dt>
-<dd>
-<p>LargePop</p>
-<p>Greater than 100,000</p>
-<p>16</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rule order</strong></td>
+<td><strong>Rule name</strong></td>
+<td><strong>Population</strong> ("pop")</td>
+<td><strong>Size</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td>SmallPop</td>
+<td>Less than 50,000</td>
+<td>8</td>
+</tr>
+<tr>
+<td>2</td>
+<td>MediumPop</td>
+<td>50,000 to 100,000</td>
+<td>12</td>
+</tr>
+<tr>
+<td>3</td>
+<td>LargePop</td>
+<td>Greater than 100,000</td>
+<td>16</td>
+</tr>
+</tbody>
+</table>
 <p>The order of the rules does not matter in this case, since each shape is only rendered by a single rule.</p>
 <p>The first rule, on <strong>lines 2-22</strong>, specifies the styling of those points whose population attribute is less than 50,000. <strong>Lines 5-10</strong> set this filter, with <strong>lines 6-9</strong> setting the "less than" filter, <strong>line 7</strong> denoting the attribute ("pop"), and <strong>line 8</strong> the value of 50,000. The symbol is a circle (<strong>line 14</strong>), the color is dark blue (<code>#0033CC</code>, on <strong>line 16</strong>), and the size is 8 pixels in diameter (<strong>line 19</strong>).</p>
 <p>The second rule, on <strong>lines 23-49</strong>, specifies a style for points whose population attribute is greater than or equal to 50,000 and less than 100,000. The population filter is set on <strong>lines 26-37</strong>. This filter is longer than in the first rule because two criteria need to be specified instead of one: a "greater than or equal to" and a "less than" filter. Notice the <code>And</code> on <strong>line 27</strong> and <strong>line 36</strong>. This mandates that both filters need to be true for the rule to be applicable. The size of the graphic is set to 12 pixels on <strong>line 46</strong>. All other styling directives are identical to the first rule.</p>
@@ -3315,32 +3334,42 @@
 <p>Determining the appropriate scale denominators (zoom levels) to use is beyond the scope of this example.</p>
 </div>
 <p>This style contains three rules. The three rules are designed as follows:</p>
-<dl>
-<dt><strong>Rule order</strong></dt>
-<dd>
-<p><strong>Rule name</strong></p>
-<p><strong>Scale denominator</strong></p>
-<p><strong>Point size</strong></p>
-</dd>
-<dt>1</dt>
-<dd>
-<p>Large</p>
-<p>1:160,000,000 or less</p>
-<p>12</p>
-</dd>
-<dt>2</dt>
-<dd>
-<p>Medium</p>
-<p>1:160,000,000 to 1:320,000,000</p>
-<p>8</p>
-</dd>
-<dt>3</dt>
-<dd>
-<p>Small</p>
-<p>Greater than 1:320,000,000</p>
-<p>4</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rule order</strong></td>
+<td><strong>Rule name</strong></td>
+<td><strong>Scale denominator</strong></td>
+<td><strong>Point size</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Large</td>
+<td>1:160,000,000 or less</td>
+<td>12</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Medium</td>
+<td>1:160,000,000 to 1:320,000,000</td>
+<td>8</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Small</td>
+<td>Greater than 1:320,000,000</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
 <p>The order of these rules does not matter since the scales denominated in each rule do not overlap.</p>
 <p>The first rule (<strong>lines 2-16</strong>) is for the smallest scale denominator, corresponding to when the view is "zoomed in". The scale rule is set on <strong>line 4</strong>, so that the rule will apply to any map with a scale denominator of 160,000,000 or less. The rule draws a circle (<strong>line 8</strong>), colored red (<code>#CC3300</code> on <strong>line 10</strong>) with a size of 12 pixels (<strong>line 13</strong>).</p>
 <p>The second rule (<strong>lines 17-32</strong>) is the intermediate scale denominator, corresponding to when the view is "partially zoomed". The scale rules are set on <strong>lines 19-20</strong>, so that the rule will apply to any map with a scale denominator between 160,000,000 and 320,000,000. (The <code>&lt;MinScaleDenominator&gt;</code> is inclusive and the <code>&lt;MaxScaleDenominator&gt;</code> is exclusive, so a zoom level of exactly 320,000,000 would <em>not</em> apply here.) Aside from the scale, the only difference between this rule and the first is the size of the symbol, which is set to 8 pixels on <strong>line 29</strong>.</p>

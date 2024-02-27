@@ -2002,33 +2002,42 @@
 <h2 id="coverage-processing">Coverage processing</h2>
 <p>The WCS processing chain can be tuned in respect of how raster overviews and read subsampling are used.</p>
 <p>The overview policy has four possible values:</p>
-<dl>
-<dt><strong>Option</strong></dt>
-<dd>
-<p><strong>Description</strong></p>
-<p><strong>Version</strong></p>
-</dd>
-<dt><strong>Lower resolution overview</strong></dt>
-<dd>
-<p>Looks up the two overviews with a resolution closest to the one requested and chooses the one at the lower resolution.</p>
-<p>2.0.3</p>
-</dd>
-<dt><strong>Don't use overviews</strong></dt>
-<dd>
-<p>Overviews will be ignored, the data at its native resolution will be used instead. This is the default value.</p>
-<p>2.0.3</p>
-</dd>
-<dt><strong>Higher resolution overview</strong></dt>
-<dd>
-<p>Looks up the two overviews with a resolution closest to the one requested and chooses the one at the higher resolution.</p>
-<p>2.0.3</p>
-</dd>
-<dt><strong>Closest overview</strong></dt>
-<dd>
-<p>Looks up the overview closest to the one requested</p>
-<p>2.0.3</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Option</strong></td>
+<td><strong>Description</strong></td>
+<td><strong>Version</strong></td>
+</tr>
+<tr>
+<td><strong>Lower resolution overview</strong></td>
+<td>Looks up the two overviews with a resolution closest to the one requested and chooses the one at the lower resolution.</td>
+<td>2.0.3</td>
+</tr>
+<tr>
+<td><strong>Don't use overviews</strong></td>
+<td>Overviews will be ignored, the data at its native resolution will be used instead. This is the default value.</td>
+<td>2.0.3</td>
+</tr>
+<tr>
+<td><strong>Higher resolution overview</strong></td>
+<td>Looks up the two overviews with a resolution closest to the one requested and chooses the one at the higher resolution.</td>
+<td>2.0.3</td>
+</tr>
+<tr>
+<td><strong>Closest overview</strong></td>
+<td>Looks up the overview closest to the one requested</td>
+<td>2.0.3</td>
+</tr>
+</tbody>
+</table>
 <p>While reading coverage data at a resolution lower than the one available on persistent storage its common to use subsampling, that is, read one every N pixels as a way to reduce the resolution of the data read in memory. <strong>Use subsampling</strong> controls whether subsampling is enabled or not.</p>
 <h2 id="resource-consumption-limits">Resource consumption limits</h2>
 <p>The request limit options allow the administrator to limit the resources consumed by each WCS <code>GetCoverage</code> request.</p>

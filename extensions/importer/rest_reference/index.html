@@ -4140,32 +4140,36 @@
 <h2 id="rest-api-reference">REST API Reference</h2>
 <h3 id="all-the-imports">All the imports</h3>
 <h4 id="imports">/imports</h4>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status Code/Headers</p>
-<p>Input</p>
-<p>Output</p>
-<p>Parameters</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Retrieve all imports</p>
-<p>200</p>
-<p>n/a</p>
-<p>Import Collection</p>
-<p>n/a</p>
-</dd>
-<dt>POST</dt>
-<dd>
-<p>Create a new import</p>
-<p>201 with Location header</p>
-<p>n/a</p>
-<p>Imports</p>
-<p>async=false/true,execute=false/true</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status Code/Headers</th>
+<th>Input</th>
+<th>Output</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Retrieve all imports</td>
+<td>200</td>
+<td>n/a</td>
+<td>Import Collection</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Create a new import</td>
+<td>201 with Location header</td>
+<td>n/a</td>
+<td>Imports</td>
+<td>async=false/true,execute=false/true</td>
+</tr>
+</tbody>
+</table>
 <h4 id="retrieving-the-list-of-all-imports">Retrieving the list of all imports</h4>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>GET /imports     
 </span></code></pre></div>
@@ -4210,28 +4214,32 @@ Content-Type: application/json
 }
 </code></pre></div>
 <p>The parameters are:</p>
-<dl>
-<dt>Name</dt>
-<dd>
-<p>Optional</p>
-<p>Description</p>
-</dd>
-<dt>targetWorkspace</dt>
-<dd>
-<p>Y</p>
-<p>The target workspace to import to</p>
-</dd>
-<dt>targetStore</dt>
-<dd>
-<p>Y</p>
-<p>The target store to import to</p>
-</dd>
-<dt>data</dt>
-<dd>
-<p>Y</p>
-<p>The data to be imported</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>targetWorkspace</td>
+<td>Y</td>
+<td>The target workspace to import to</td>
+</tr>
+<tr>
+<td>targetStore</td>
+<td>Y</td>
+<td>The target store to import to</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Y</td>
+<td>The data to be imported</td>
+</tr>
+</tbody>
+</table>
 <p>The mere creation does not start the import, but it may automatically populate its tasks depending on the target. For example, by referring a directory of shapefiles to be importer, the creation will automatically fill in a task to import each of the shapefiles as a new layer.</p>
 <p>The response to the above POST request will be:</p>
 <div class="language-text highlight"><pre><span></span><code>Status: 201 Created
@@ -4302,48 +4310,52 @@ Content-Type: application/json
 <p>To get more information about transformations see the <a href="./#transformations">Transformation reference</a>.</p>
 <h3 id="import-object">Import object</h3>
 <h4 id="imports_1">/imports/<importId></h4>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status Code/Headers</p>
-<p>Input</p>
-<p>Output</p>
-<p>Parameters</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Retrieve import with id <importId></p>
-<p>200</p>
-<p>n/a</p>
-<p>Imports</p>
-<p>n/a</p>
-</dd>
-<dt>POST</dt>
-<dd>
-<p>Execute import with id <importId></p>
-<p>204</p>
-<p>n/a</p>
-<p>n/a</p>
-<p>async=true/false</p>
-</dd>
-<dt>PUT</dt>
-<dd>
-<p>Create import with proposed id <importId>. If the proposed id is ahead of the current (next) id, the current id will be advanced. If the proposed id is less than or equal to the current id, the current will be used. This allows an external system to dictate the id management.</p>
-<p>201 with Location header</p>
-<p>n/a</p>
-<p>Imports</p>
-<p>n/a</p>
-</dd>
-<dt>DELETE</dt>
-<dd>
-<p>Remove import with id <importId></p>
-<p>200</p>
-<p>n/a</p>
-<p>n/a</p>
-<p>n/a</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status Code/Headers</th>
+<th>Input</th>
+<th>Output</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Retrieve import with id <importId></td>
+<td>200</td>
+<td>n/a</td>
+<td>Imports</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Execute import with id <importId></td>
+<td>204</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>async=true/false</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Create import with proposed id <importId>. If the proposed id is ahead of the current (next) id, the current id will be advanced. If the proposed id is less than or equal to the current id, the current will be used. This allows an external system to dictate the id management.</td>
+<td>201 with Location header</td>
+<td>n/a</td>
+<td>Imports</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Remove import with id <importId></td>
+<td>200</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+</tbody>
+</table>
 <p>The representation of a import is the same as the one contained in the import creation response. The execution of a import can be a long task, as such, it's possible to add <code>async=true</code> to the request to make it run in an asynchronous fashion, the client will have to poll the import representation and check when it reaches either the "COMPLETE" or "COMPLETE_ERROR" state.</p>
 <h3 id="data">Data</h3>
 <p>A import can have a "data" representing the source of the data to be imported. The data can be of different types, in particular, "file", "directory", "mosaic", "database" and "remote". During the import initialization the importer will scan the contents of said resource, and generate import tasks for each data found in it.</p>
@@ -4360,29 +4372,33 @@ Content-Type: application/json
 <p>The location can be <a href="http://commons.apache.org/proper/commons-vfs/filesystems.html">any URI supported by Commons VFS</a>, including HTTP and FTP servers. The <code>username</code>, <code>password</code> and <code>domain</code> elements are all optional, and required only if the remote server demands an authentication of sorts. In case the referred file is compressed, it will be unpacked as the download completes, and the tasks will be created over the result of unpacking.</p>
 <h3 id="tasks">Tasks</h3>
 <h4 id="importstasks">/imports/<importId>/tasks</h4>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status Code/Headers</p>
-<p>Input</p>
-<p>Output</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Retrieve all tasks for import with id <importId></p>
-<p>200</p>
-<p>n/a</p>
-<p>Task Collection</p>
-</dd>
-<dt>POST</dt>
-<dd>
-<p>Create a new task</p>
-<p>201 with Location header</p>
-<p><a href="./#file_upload">Multipart form data</a></p>
-<p>Tasks</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status Code/Headers</th>
+<th>Input</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Retrieve all tasks for import with id <importId></td>
+<td>200</td>
+<td>n/a</td>
+<td>Task Collection</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Create a new task</td>
+<td>201 with Location header</td>
+<td><a href="./#file_upload">Multipart form data</a></td>
+<td>Tasks</td>
+</tr>
+</tbody>
+</table>
 <h4 id="file_upload">Getting the list of tasks</h4>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>GET /imports/0/tasks
 </span></code></pre></div>
@@ -4447,58 +4463,66 @@ url=file:///data/spearfish/
 <p>The creation response will be the same as the multipart upload.</p>
 <h3 id="single-task-resource">Single task resource</h3>
 <h4 id="importstasks_1">/imports/<importId>/tasks/<taskId></h4>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status Code/Headers</p>
-<p>Input</p>
-<p>Output</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Retrieve task with id <taskId> within import with id <importId></p>
-<p>200</p>
-<p>n/a</p>
-<p>Task</p>
-</dd>
-<dt>PUT</dt>
-<dd>
-<p>Modify task with id <taskId> within import with id <importId></p>
-<p>200</p>
-<p>Task</p>
-<p>Task</p>
-</dd>
-<dt>DELETE</dt>
-<dd>
-<p>Remove task with id <taskId> within import with id <importId></p>
-<p>200</p>
-<p>n/a</p>
-<p>n/a</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status Code/Headers</th>
+<th>Input</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Retrieve task with id <taskId> within import with id <importId></td>
+<td>200</td>
+<td>n/a</td>
+<td>Task</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Modify task with id <taskId> within import with id <importId></td>
+<td>200</td>
+<td>Task</td>
+<td>Task</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Remove task with id <taskId> within import with id <importId></td>
+<td>200</td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+</tbody>
+</table>
 <p>The representation of a task resource is the same one reported in the task creation response.</p>
 <h4 id="updating-a-task">Updating a task</h4>
 <p>A PUT request over an existing task can be used to update its representation. The representation can be partial, and just contains the elements that need to be updated.</p>
 <p>The updateMode of a task may have different values.</p>
-<dl>
-<dt>UpdateMode</dt>
-<dd>
-<p>Description</p>
-</dd>
-<dt>CREATE</dt>
-<dd>
-<p>This is the default starting updateMode of a task, that is: create the target resource if missing.</p>
-</dd>
-<dt>REPLACE</dt>
-<dd>
-<p>For vector stores: delete the existing features in the target layer and replace them with those from the task source. For raster stores: replace the underlying data. When dealing with StructuredGridCoverage reader (e.g. ImageMosaic) the new file will be harvested (replacing the old one). For single raster coverages (e.g. GeoTIFF) the name of the file should be the same so that the coverageStore layer will preserve the original name (the old file will be deleted).</p>
-</dd>
-<dt>APPEND</dt>
-<dd>
-<p>Add the features from the task source into an existing layer.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>UpdateMode</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CREATE</td>
+<td>This is the default starting updateMode of a task, that is: create the target resource if missing.</td>
+</tr>
+<tr>
+<td>REPLACE</td>
+<td>For vector stores: delete the existing features in the target layer and replace them with those from the task source. For raster stores: replace the underlying data. When dealing with StructuredGridCoverage reader (e.g. ImageMosaic) the new file will be harvested (replacing the old one). For single raster coverages (e.g. GeoTIFF) the name of the file should be the same so that the coverageStore layer will preserve the original name (the old file will be deleted).</td>
+</tr>
+<tr>
+<td>APPEND</td>
+<td>Add the features from the task source into an existing layer.</td>
+</tr>
+</tbody>
+</table>
 <p>The following PUT request updates a task from "CREATE" to "APPEND" mode:</p>
 <div class="language-text highlight"><pre><span></span><code>Content-Type: application/json
 
@@ -4511,22 +4535,26 @@ url=file:///data/spearfish/
 <h3 id="directory-files-representation">Directory files representation</h3>
 <p>The following operations are specific to data objects of type <code>directory</code>.</p>
 <h4 id="importstasksdatafiles">/imports/<importId>/tasks/<taskId>/data/files</h4>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status Code/Headers</p>
-<p>Input</p>
-<p>Output</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Retrieve the list of files for a task with id <taskId> within import with id <importId></p>
-<p>200</p>
-<p>n/a</p>
-<p>Task</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status Code/Headers</th>
+<th>Input</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Retrieve the list of files for a task with id <taskId> within import with id <importId></td>
+<td>200</td>
+<td>n/a</td>
+<td>Task</td>
+</tr>
+</tbody>
+</table>
 <p>The response to a GET request will be:</p>
 <div class="language-text highlight"><pre><span></span><code>Status: 200 OK
 Content-Type: application/json
@@ -4620,22 +4648,26 @@ Content-Type: application/json
 <h3 id="database-data">Database data</h3>
 <p>The following operations are specific to data objects of type <code>database</code>. At the time or writing, the REST API does not allow the creation of a database data source, but it can provide a read only description of one that has been created using the GUI.</p>
 <h4 id="importstasksdata">/imports/<importId>/tasks/<taskId>/data</h4>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status Code/Headers</p>
-<p>Input</p>
-<p>Output</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Retrieve the database connection parameters for a task with id <taskId> within import with id <importId></p>
-<p>200</p>
-<p>n/a</p>
-<p>List of database connection parameters and available tables</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status Code/Headers</th>
+<th>Input</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Retrieve the database connection parameters for a task with id <taskId> within import with id <importId></td>
+<td>200</td>
+<td>n/a</td>
+<td>List of database connection parameters and available tables</td>
+</tr>
+</tbody>
+</table>
 <p>Performing a GET on a database type data will result in the following response:</p>
 <div class="language-text highlight"><pre><span></span><code>{
     type: &quot;database&quot;,
@@ -4669,22 +4701,26 @@ Content-Type: application/json
 <h3 id="database-table">Database table</h3>
 <p>The following operations are specific to data objects of type <code>table</code>. At the time or writing, the REST API does not allow the creation of a database data source, but it can provide a read only description of one that has been created using the GUI. A table description is normally linked to task, and refers to a database data linked to the overall import.</p>
 <h4 id="importstasksdata_1">/imports/<importId>/tasks/<taskId>/data</h4>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status Code/Headers</p>
-<p>Input</p>
-<p>Output</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Retrieve the table description for a task with id <taskId> within import with id <importId></p>
-<p>200</p>
-<p>n/a</p>
-<p>A table representation</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status Code/Headers</th>
+<th>Input</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Retrieve the table description for a task with id <taskId> within import with id <importId></td>
+<td>200</td>
+<td>n/a</td>
+<td>A table representation</td>
+</tr>
+</tbody>
+</table>
 <p>Performing a GET on a database type data will result in the following response:</p>
 <div class="language-text highlight"><pre><span></span><code>{
     type: &quot;table&quot;,
@@ -4774,29 +4810,33 @@ Content-Type: application/json
 <p>All the above attributes can be updated using a PUT request. Even if the above representation is similar to the REST config API, it should not be confused with it, as it does not support all the same properties, in particular the supported properties are all the ones listed above.</p>
 <h3 id="task-transformations">Task transformations</h3>
 <h4 id="importstaskstransforms">/imports/<importId>/tasks/<taskId>/transforms</h4>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status Code/Headers</p>
-<p>Input</p>
-<p>Output</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Retrieve the list of transformations of a task with id <taskId> within import with id <importId></p>
-<p>200</p>
-<p>n/a</p>
-<p>A list of transfromations in JSON format</p>
-</dd>
-<dt>POST</dt>
-<dd>
-<p>Create a new transformation and append it inside a task with id <taskId> within import with id <importId></p>
-<p>201</p>
-<p>A JSON transformation representation</p>
-<p>The transform location</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status Code/Headers</th>
+<th>Input</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Retrieve the list of transformations of a task with id <taskId> within import with id <importId></td>
+<td>200</td>
+<td>n/a</td>
+<td>A list of transfromations in JSON format</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Create a new transformation and append it inside a task with id <taskId> within import with id <importId></td>
+<td>201</td>
+<td>A JSON transformation representation</td>
+<td>The transform location</td>
+</tr>
+</tbody>
+</table>
 <h4 id="retrieving-the-transformation-list">Retrieving the transformation list</h4>
 <p>A GET request for the list of transformations will result in the following response:</p>
 <div class="language-text highlight"><pre><span></span><code>Status: 200 OK
@@ -4835,36 +4875,40 @@ Content-Type: application/json
 Location: http://localhost:8080/geoserver/rest/imports/0/tasks/1/transform/2
 </code></pre></div>
 <h4 id="importstaskstransforms_1">/imports/<importId>/tasks/<taskId>/transforms/<transformId></h4>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status Code/Headers</p>
-<p>Input</p>
-<p>Output</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Retrieve a transformation identified by <transformId> inside a task with id <taskId> within import with id <importId></p>
-<p>200</p>
-<p>n/a</p>
-<p>A single transformation in JSON format</p>
-</dd>
-<dt>PUT</dt>
-<dd>
-<p>Modifies the definition of a transformation identified by <transformId> inside a task with id <taskId> within import with id <importId></p>
-<p>200</p>
-<p>A JSON transformation representation (eventually just the portion of it that needs to be modified)</p>
-<p>The full transformation representation</p>
-</dd>
-<dt>DELETE</dt>
-<dd>
-<p>Removes the transformation identified by <transformId> inside a task with id <taskId> within import with id <importId></p>
-<p>200</p>
-<p>A JSON transformation representation (eventually just the portion of it that needs to be modified)</p>
-<p>The full transformation representation</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status Code/Headers</th>
+<th>Input</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Retrieve a transformation identified by <transformId> inside a task with id <taskId> within import with id <importId></td>
+<td>200</td>
+<td>n/a</td>
+<td>A single transformation in JSON format</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Modifies the definition of a transformation identified by <transformId> inside a task with id <taskId> within import with id <importId></td>
+<td>200</td>
+<td>A JSON transformation representation (eventually just the portion of it that needs to be modified)</td>
+<td>The full transformation representation</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Removes the transformation identified by <transformId> inside a task with id <taskId> within import with id <importId></td>
+<td>200</td>
+<td>A JSON transformation representation (eventually just the portion of it that needs to be modified)</td>
+<td>The full transformation representation</td>
+</tr>
+</tbody>
+</table>
 <h4 id="retrieve-a-single-transformation">Retrieve a single transformation</h4>
 <p>Requesting a single transformation by identifier will result in the following response:</p>
 <div class="language-text highlight"><pre><span></span><code>Status: 200 OK
@@ -4942,175 +4986,211 @@ Content-Type: application/json
 </dl>
 <h4 id="attributestopointgeometrytransform">AttributesToPointGeometryTransform</h4>
 <p>Transforms two numeric fields <code>latField</code> and <code>lngField</code> into a point geometry representation with <code>pointFieldName</code> setting name of the point <code>POINT(lngField,latField)</code>, the source fields will be removed if <code>preserveGeometry</code> is false.</p>
-<dl>
-<dt>Parameter</dt>
-<dd>
-<p>Optional</p>
-<p>Description</p>
-</dd>
-<dt>latField</dt>
-<dd>
-<p>N</p>
-<p>The "latitude" field</p>
-</dd>
-<dt>lngField</dt>
-<dd>
-<p>N</p>
-<p>The "longitude" field</p>
-</dd>
-<dt>pointFieldName</dt>
-<dd>
-<p>Y</p>
-<p>The name of the point</p>
-</dd>
-<dt>preserveGeometry</dt>
-<dd>
-<p>Y</p>
-<p>Setting this flag will prevent source fields from removal (false by default)</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>latField</td>
+<td>N</td>
+<td>The "latitude" field</td>
+</tr>
+<tr>
+<td>lngField</td>
+<td>N</td>
+<td>The "longitude" field</td>
+</tr>
+<tr>
+<td>pointFieldName</td>
+<td>Y</td>
+<td>The name of the point</td>
+</tr>
+<tr>
+<td>preserveGeometry</td>
+<td>Y</td>
+<td>Setting this flag will prevent source fields from removal (false by default)</td>
+</tr>
+</tbody>
+</table>
 <h4 id="createindextransform">CreateIndexTransform</h4>
 <p>For database targets only, creates an index on a given column after importing the data into the database</p>
-<dl>
-<dt>Parameter</dt>
-<dd>
-<p>Optional</p>
-<p>Description</p>
-</dd>
-<dt>field</dt>
-<dd>
-<p>N</p>
-<p>The field to be indexed</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field</td>
+<td>N</td>
+<td>The field to be indexed</td>
+</tr>
+</tbody>
+</table>
 <h4 id="dateformattransform">DateFormatTransform</h4>
 <p>Parses a string representation of a date into a Date/Timestamp object</p>
-<dl>
-<dt>Parameter</dt>
-<dd>
-<p>Optional</p>
-<p>Description</p>
-</dd>
-<dt>field</dt>
-<dd>
-<p>N</p>
-<p>The field to be parsed</p>
-</dd>
-<dt>format</dt>
-<dd>
-<p>Y</p>
-<p>A date parsing pattern, setup using the Java <a href="http://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat syntax</a>. In case it's missing, a number of built-in formats will be tried instead (short and full ISO date formats, dates without any separators).</p>
-</dd>
-<dt>enddate</dt>
-<dd>
-<p>Y</p>
-<p>The field used as end date for the time dimension.</p>
-</dd>
-<dt>presentation</dt>
-<dd>
-<p>Y</p>
-<p>The time dimension presentation type; one of {LIST; DISCRETE_INTERVAL; CONTINUOUS_INTERVAL}</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field</td>
+<td>N</td>
+<td>The field to be parsed</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Y</td>
+<td>A date parsing pattern, setup using the Java <a href="http://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat syntax</a>. In case it's missing, a number of built-in formats will be tried instead (short and full ISO date formats, dates without any separators).</td>
+</tr>
+<tr>
+<td>enddate</td>
+<td>Y</td>
+<td>The field used as end date for the time dimension.</td>
+</tr>
+<tr>
+<td>presentation</td>
+<td>Y</td>
+<td CONTINUOUS_INTERVAL="CONTINUOUS_INTERVAL" DISCRETE_INTERVAL_="DISCRETE_INTERVAL;" LIST_="LIST;">The time dimension presentation type; one of</td>
+</tr>
+</tbody>
+</table>
 <h4 id="integerfieldtodatetransform">IntegerFieldToDateTransform</h4>
 <p>Takes a integer field and transforms it to a date, interpreting the intereger field as a date</p>
-<dl>
-<dt>Parameter</dt>
-<dd>
-<p>Optional</p>
-<p>Description</p>
-</dd>
-<dt>field</dt>
-<dd>
-<p>N</p>
-<p>The field containing the year information</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field</td>
+<td>N</td>
+<td>The field containing the year information</td>
+</tr>
+</tbody>
+</table>
 <h4 id="reprojecttransform">ReprojectTransform</h4>
 <p>Reprojects a vector layer from a source CRS to a target CRS</p>
-<dl>
-<dt>Parameter</dt>
-<dd>
-<p>Optional</p>
-<p>Description</p>
-</dd>
-<dt>source</dt>
-<dd>
-<p>Y</p>
-<p>Identifier of the source coordinate reference system (the native one will be used if missing)</p>
-</dd>
-<dt>target</dt>
-<dd>
-<p>N</p>
-<p>Identifier of the target coordinate reference system</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>source</td>
+<td>Y</td>
+<td>Identifier of the source coordinate reference system (the native one will be used if missing)</td>
+</tr>
+<tr>
+<td>target</td>
+<td>N</td>
+<td>Identifier of the target coordinate reference system</td>
+</tr>
+</tbody>
+</table>
 <h4 id="gdaltranslatetransform">GdalTranslateTransform</h4>
 <p>Applies <code>gdal_translate</code> to a single file raster input. Requires <code>gdal_translate</code> to be inside the PATH used by the web container running GeoServer.</p>
-<dl>
-<dt>Parameter</dt>
-<dd>
-<p>Optional</p>
-<p>Description</p>
-</dd>
-<dt>options</dt>
-<dd>
-<p>N</p>
-<p>Array of options that will be passed to <code>gdal_translate</code> (beside the input and output names, which are internally managed)</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>options</td>
+<td>N</td>
+<td>Array of options that will be passed to <code>gdal_translate</code> (beside the input and output names, which are internally managed)</td>
+</tr>
+</tbody>
+</table>
 <h4 id="gdalwarptransform">GdalWarpTransform</h4>
 <p>Applies <code>gdalwarp</code> to a single file raster input. Requires <code>gdalwarp</code> to be inside the PATH used by the web container running GeoServer.</p>
-<dl>
-<dt>Parameter</dt>
-<dd>
-<p>Optional</p>
-<p>Description</p>
-</dd>
-<dt>options</dt>
-<dd>
-<p>N</p>
-<p>Array of options that will be passed to <code>gdalwarp</code> (beside the input and output names, which are internally managed)</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>options</td>
+<td>N</td>
+<td>Array of options that will be passed to <code>gdalwarp</code> (beside the input and output names, which are internally managed)</td>
+</tr>
+</tbody>
+</table>
 <h4 id="gdaladdotransform">GdalAddoTransform</h4>
 <p>Applies <code>gdaladdo</code> to a single file raster input. Requires <code>gdaladdo</code> to be inside the PATH used by the web container running GeoServer.</p>
-<dl>
-<dt>Parameter</dt>
-<dd>
-<p>Optional</p>
-<p>Description</p>
-</dd>
-<dt>options</dt>
-<dd>
-<p>N</p>
-<p>Array of options that will be passed to <code>gdaladdo</code> (beside the input file name, which is internally managed)</p>
-</dd>
-<dt>levels</dt>
-<dd>
-<p>N</p>
-<p>Array of integers with the overview levels that will be passed to <code>gdaladdo</code></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>options</td>
+<td>N</td>
+<td>Array of options that will be passed to <code>gdaladdo</code> (beside the input file name, which is internally managed)</td>
+</tr>
+<tr>
+<td>levels</td>
+<td>N</td>
+<td>Array of integers with the overview levels that will be passed to <code>gdaladdo</code></td>
+</tr>
+</tbody>
+</table>
 <h4 id="postscripttransform">PostScriptTransform</h4>
 <p>Runs the specified script after the data is imported. The script must be located in <code>$GEOSERVER_DATA_DIR/importer/scripts</code>. The script can be any executable file. At the time of writing, there is no way to pass information about the data just imported to the script (TBD).</p>
-<dl>
-<dt>Parameter</dt>
-<dd>
-<p>Optional</p>
-<p>Description</p>
-</dd>
-<dt>name</dt>
-<dd>
-<p>N</p>
-<p>Name of the script to be invoked</p>
-</dd>
-<dt>options</dt>
-<dd>
-<p>Y</p>
-<p>Array of options that will be passed to the script</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>N</td>
+<td>Name of the script to be invoked</td>
+</tr>
+<tr>
+<td>options</td>
+<td>Y</td>
+<td>Array of options that will be passed to the script</td>
+</tr>
+</tbody>
+</table>
 
 
 

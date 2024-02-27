@@ -2341,56 +2341,60 @@
   x-inclusion: &lt;text&gt;
 </code></pre></div>
 <p>where:</p>
-<dl>
-<dt>Property</dt>
-<dd>
-<p>Required?</p>
-<p>Description</p>
-<p>Default value</p>
-</dd>
-<dt><code>name</code></dt>
-<dd>
-<p>No</p>
-<p>Internal reference to the feature style. It is recommended that the value be <strong>lower case</strong> and contain <strong>no spaces</strong>.</p>
-<p>Blank</p>
-</dd>
-<dt><code>title</code></dt>
-<dd>
-<p>No</p>
-<p>Human-readable description of what the rule accomplishes.</p>
-<p>Blank</p>
-</dd>
-<dt><code>filter</code></dt>
-<dd>
-<p>No</p>
-<p><a href="../filters/">Filter</a> expression which will need to evaluate to be true for the symbolizer(s) to be applied. Cannot be used with <code>else</code>.</p>
-<p>Blank (meaning that the rule will apply to all features)</p>
-</dd>
-<dt><code>else</code></dt>
-<dd>
-<p>No</p>
-<p>Specifies whether the rule will be an "else" rule. An else rule applies when, after scale and filters are applied, no other rule applies. To make an else rule, set this option to <code>true</code>. Cannot be used with <code>filter</code>.</p>
-<p><code>false</code></p>
-</dd>
-<dt><code>scale</code></dt>
-<dd>
-<p>No</p>
-<p><a href="../scalezoom/">Scale</a> boundaries showing at what scales (related to zoom levels) the rule will be applied.</p>
-<p>Visible at all scales</p>
-</dd>
-<dt><code>symbolizers</code></dt>
-<dd>
-<p>Yes</p>
-<p>Block containing one or more <a href="../symbolizers/">symbolizers</a>. These contain the actual visualization directives. If the filter returns true and the view is within the scale boundaries, these symbolizers will be drawn.</p>
-<p>N/A</p>
-</dd>
-<dt><code>x-inclusion</code></dt>
-<dd>
-<p>No</p>
-<p>Define if rule should be included in style for <code>legendOnly</code> or <code>mapOnly</code> (see <a href="../../../sld/extensions/rendering-selection/">Rendering Selection</a>)</p>
-<p><code>normal</code></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>No</td>
+<td>Internal reference to the feature style. It is recommended that the value be <strong>lower case</strong> and contain <strong>no spaces</strong>.</td>
+<td>Blank</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>No</td>
+<td>Human-readable description of what the rule accomplishes.</td>
+<td>Blank</td>
+</tr>
+<tr>
+<td><code>filter</code></td>
+<td>No</td>
+<td><a href="../filters/">Filter</a> expression which will need to evaluate to be true for the symbolizer(s) to be applied. Cannot be used with <code>else</code>.</td>
+<td>Blank (meaning that the rule will apply to all features)</td>
+</tr>
+<tr>
+<td><code>else</code></td>
+<td>No</td>
+<td>Specifies whether the rule will be an "else" rule. An else rule applies when, after scale and filters are applied, no other rule applies. To make an else rule, set this option to <code>true</code>. Cannot be used with <code>filter</code>.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>scale</code></td>
+<td>No</td>
+<td><a href="../scalezoom/">Scale</a> boundaries showing at what scales (related to zoom levels) the rule will be applied.</td>
+<td>Visible at all scales</td>
+</tr>
+<tr>
+<td><code>symbolizers</code></td>
+<td>Yes</td>
+<td>Block containing one or more <a href="../symbolizers/">symbolizers</a>. These contain the actual visualization directives. If the filter returns true and the view is within the scale boundaries, these symbolizers will be drawn.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>x-inclusion</code></td>
+<td>No</td>
+<td>Define if rule should be included in style for <code>legendOnly</code> or <code>mapOnly</code> (see <a href="../../../sld/extensions/rendering-selection/">Rendering Selection</a>)</td>
+<td><code>normal</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="short-syntax">Short syntax</h2>
 <p>When a style has a single rule inside a single feature style, it is possible to omit the syntax for both and start at the first parameter inside.</p>
 <p>So the following complete styles are equivalent:</p>

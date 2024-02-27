@@ -2294,27 +2294,33 @@
 <li>CHALLENGE</li>
 </ul>
 </blockquote>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Fetch the catalog mode</p>
-<p>200,403</p>
-<p>XML, JSON</p>
-</dd>
-<dt>PUT</dt>
-<dd>
-<p>Set the catalog mode</p>
-<p>200,403,404,422</p>
-<p>XML, JSON</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Fetch the catalog mode</td>
+<td>200,403</td>
+<td>XML, JSON</td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Set the catalog mode</td>
+<td>200,403,404,422</td>
+<td>XML, JSON</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p>Formats:</p>
 <p><strong>XML</strong></p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;catalog&gt;</span>
@@ -2325,24 +2331,28 @@
 <div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="s2">&quot;HIDE&quot;</span><span class="w"> </span><span class="p">}</span>
 </span></code></pre></div>
 <h3 id="exceptions">Exceptions</h3>
-<dl>
-<dt>Exception</dt>
-<dd>
-<p>Status code</p>
-</dd>
-<dt>No administrative privileges</dt>
-<dd>
-<p>403</p>
-</dd>
-<dt>Malformed request</dt>
-<dd>
-<p>404</p>
-</dd>
-<dt>Invalid catalog mode</dt>
-<dd>
-<p>422</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Exception</th>
+<th>Status code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No administrative privileges</td>
+<td>403</td>
+</tr>
+<tr>
+<td>Malformed request</td>
+<td>404</td>
+</tr>
+<tr>
+<td>Invalid catalog mode</td>
+<td>422</td>
+</tr>
+</tbody>
+</table>
 <h2 id="securityacllayersformat"><code>/security/acl/layers.&lt;format&gt;</code></h2>
 <h2 id="securityaclservicesformat"><code>/security/acl/services.&lt;format&gt;</code></h2>
 <h2 id="securityaclrestformat"><code>/security/acl/rest.&lt;format&gt;</code></h2>
@@ -2428,32 +2438,36 @@
 </blockquote>
 <p>The content of a rule element is a comma separated list of roles or the asterisk.</p>
 <h3 id="exceptions_1">Exceptions</h3>
-<dl>
-<dt>Exception</dt>
-<dd>
-<p>Status code</p>
-</dd>
-<dt>No administrative privileges</dt>
-<dd>
-<p>403</p>
-</dd>
-<dt>POST, adding an already existing rule</dt>
-<dd>
-<p>409</p>
-</dd>
-<dt>PUT, modifying a non existing rule</dt>
-<dd>
-<p>409</p>
-</dd>
-<dt>DELETE, Deleting a non existing rule</dt>
-<dd>
-<p>409</p>
-</dd>
-<dt>Invalid rule specification</dt>
-<dd>
-<p>422</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Exception</th>
+<th>Status code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No administrative privileges</td>
+<td>403</td>
+</tr>
+<tr>
+<td>POST, adding an already existing rule</td>
+<td>409</td>
+</tr>
+<tr>
+<td>PUT, modifying a non existing rule</td>
+<td>409</td>
+</tr>
+<tr>
+<td>DELETE, Deleting a non existing rule</td>
+<td>409</td>
+</tr>
+<tr>
+<td>Invalid rule specification</td>
+<td>422</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When adding a set of rules and only one role does already exist, the whole request is aborted. When modifying a set of rules and only one role does not exist, the whole request is aborted too.</p>

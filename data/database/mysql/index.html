@@ -2079,32 +2079,40 @@
 <h2 id="configuring-a-mysql-data-store">Configuring a MySQL data store</h2>
 <p><img alt="" src="../images/mysqlconfigure.png" />
 <em>Configuring a MySQL data store</em></p>
-<dl>
-<dt><code>host</code></dt>
-<dd>
-<p>The mysql server host name or ip address.</p>
-</dd>
-<dt><code>port</code></dt>
-<dd>
-<p>The port on which the mysql server is accepting connections.</p>
-</dd>
-<dt><code>database</code></dt>
-<dd>
-<p>The name of the database to connect to. Can also contain a suffix with a connection URL query, such as <code>mydbname?useSSL=false</code></p>
-</dd>
-<dt><code>user</code></dt>
-<dd>
-<p>The name of the user to connect to the mysql database as.</p>
-</dd>
-<dt><code>password</code></dt>
-<dd>
-<p>The password to use when connecting to the database. Left blank for no password.</p>
-</dd>
-<dt><code>max connections</code> <code>min connections</code> <code>validate connections</code></dt>
-<dd>
-<p>Connection pool configuration parameters. See the <a href="../connection-pooling/">Database Connection Pooling</a> section for details.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>host</code></td>
+<td>The mysql server host name or ip address.</td>
+</tr>
+<tr>
+<td><code>port</code></td>
+<td>The port on which the mysql server is accepting connections.</td>
+</tr>
+<tr>
+<td><code>database</code></td>
+<td>The name of the database to connect to. Can also contain a suffix with a connection URL query, such as <code>mydbname?useSSL=false</code></td>
+</tr>
+<tr>
+<td><code>user</code></td>
+<td>The name of the user to connect to the mysql database as.</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>The password to use when connecting to the database. Left blank for no password.</td>
+</tr>
+<tr>
+<td><code>max connections</code> <code>min connections</code> <code>validate connections</code></td>
+<td>Connection pool configuration parameters. See the <a href="../connection-pooling/">Database Connection Pooling</a> section for details.</td>
+</tr>
+</tbody>
+</table>
 
 
 

@@ -2338,149 +2338,177 @@
     x-inclusion: &lt;text&gt;
 </code></pre></div>
 <p>where:</p>
-<dl>
-<dt>Property</dt>
-<dd>
-<p>Required?</p>
-<p>Description</p>
-<p>Default value</p>
-</dd>
-<dt><code>stroke-color</code></dt>
-<dd>
-<p>No</p>
-<p>Color of line features.</p>
-<p><code>'#000000'</code> (black)</p>
-</dd>
-<dt><code>stroke-width</code></dt>
-<dd>
-<p>No</p>
-<p>Width of line features, measured in pixels.</p>
-<p><code>1</code></p>
-</dd>
-<dt><code>stroke-opacity</code></dt>
-<dd>
-<p>No</p>
-<p>Opacity of line features. Valid values are a decimal value between <code>0</code> (completely transparent) and <code>1</code> (completely opaque).</p>
-<p><code>1</code></p>
-</dd>
-<dt><code>stroke-linejoin</code></dt>
-<dd>
-<p>No</p>
-<p>How line segments are joined together. Options are <code>mitre</code> (sharp corner), <code>round</code> (round corner), and <code>bevel</code> (diagonal corner).</p>
-<p><code>mitre</code></p>
-</dd>
-<dt><code>stroke-linecap</code></dt>
-<dd>
-<p>No</p>
-<p>How line features are rendered at their ends. Options are <code>butt</code> (sharp square edge), <code>round</code> (rounded edge), and <code>square</code> (slightly elongated square edge).</p>
-<p><code>butt</code></p>
-</dd>
-<dt><code>stroke-dasharray</code></dt>
-<dd>
-<p>No</p>
-<p>A numeric list signifying length of lines and gaps, creating a dashed effect. Units are pixels, so <code>"2 3"</code> would be a repeating pattern of 2 pixels of drawn line followed by 3 pixels of blank space. If only one number is supplied, this will mean equal amounts of line and gap.</p>
-<p>No dash</p>
-</dd>
-<dt><code>stroke-dashoffset</code></dt>
-<dd>
-<p>No</p>
-<p>Number of pixels into the dasharray to offset the drawing of the dash, used to shift the location of the lines and gaps in a dash.</p>
-<p><code>0</code></p>
-</dd>
-<dt><code>stroke-graphic</code></dt>
-<dd>
-<p>No</p>
-<p>A design or pattern to be used along the stroke. Output will always be a linear repeating pattern, and as such is not tied to the value of <code>stroke-width</code>. Can either be a mark consisting of a common shape or a URL that points to a graphic. The <code>&lt;graphic_options&gt;</code> should consist of a mapping containing <code>symbols:</code> followed by an <code>external:</code> or <code>mark:</code>, with appropriate parameters as detailed in the <a href="../point/">Point symbolizer</a> section. Cannot be used with <code>stroke-graphic-fill</code>.</p>
-<p>N/A</p>
-</dd>
-<dt><code>stroke-graphic-fill</code></dt>
-<dd>
-<p>No</p>
-<p>A design or pattern to be used for the fill of the stroke. The area that is to be filled is tied directly to the value of <code>stroke-width</code>. Can either be a mark consisting of a common shape or a URL that points to a graphic. The <code>&lt;graphic_options&gt;</code> should consist of a mapping containing <code>symbols:</code> followed by an <code>external:</code> or <code>mark:</code>, with appropriate parameters as detailed in the <a href="../point/">Point symbolizer</a> section. Cannot be used with <code>stroke-graphic</code>.</p>
-<p>N/A</p>
-</dd>
-<dt>Property</dt>
-<dd>
-<p>Required?</p>
-<p>Description</p>
-<p>Default value</p>
-</dd>
-<dt><code>offset</code></dt>
-<dd>
-<p>No</p>
-<p>Value in pixels for moving the drawn line relative to the location of the feature.</p>
-<p><code>0</code></p>
-</dd>
-<dt>Property</dt>
-<dd>
-<p>Required?</p>
-<p>Description</p>
-<p>Default value</p>
-</dd>
-<dt><code>geometry</code></dt>
-<dd>
-<p>No</p>
-<p>Specifies which attribute to use as the geometry (see <a href="../../../../sld/extensions/geometry-transformations/">Geometry transformations in SLD</a>)</p>
-<p>First geometry attribute found (usually named <code>geom</code> or <code>the_geom</code>)</p>
-</dd>
-<dt><code>uom</code></dt>
-<dd>
-<p>No</p>
-<p>Unit of measure used for width calculations (see <a href="../../../../sld/extensions/uom/">Specifying symbolizer sizes in ground units</a>)</p>
-<p>pixel</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>stroke-color</code></td>
+<td>No</td>
+<td>Color of line features.</td>
+<td><code>'#000000'</code> (black)</td>
+</tr>
+<tr>
+<td><code>stroke-width</code></td>
+<td>No</td>
+<td>Width of line features, measured in pixels.</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>stroke-opacity</code></td>
+<td>No</td>
+<td>Opacity of line features. Valid values are a decimal value between <code>0</code> (completely transparent) and <code>1</code> (completely opaque).</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>stroke-linejoin</code></td>
+<td>No</td>
+<td>How line segments are joined together. Options are <code>mitre</code> (sharp corner), <code>round</code> (round corner), and <code>bevel</code> (diagonal corner).</td>
+<td><code>mitre</code></td>
+</tr>
+<tr>
+<td><code>stroke-linecap</code></td>
+<td>No</td>
+<td>How line features are rendered at their ends. Options are <code>butt</code> (sharp square edge), <code>round</code> (rounded edge), and <code>square</code> (slightly elongated square edge).</td>
+<td><code>butt</code></td>
+</tr>
+<tr>
+<td><code>stroke-dasharray</code></td>
+<td>No</td>
+<td>A numeric list signifying length of lines and gaps, creating a dashed effect. Units are pixels, so <code>"2 3"</code> would be a repeating pattern of 2 pixels of drawn line followed by 3 pixels of blank space. If only one number is supplied, this will mean equal amounts of line and gap.</td>
+<td>No dash</td>
+</tr>
+<tr>
+<td><code>stroke-dashoffset</code></td>
+<td>No</td>
+<td>Number of pixels into the dasharray to offset the drawing of the dash, used to shift the location of the lines and gaps in a dash.</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>stroke-graphic</code></td>
+<td>No</td>
+<td>A design or pattern to be used along the stroke. Output will always be a linear repeating pattern, and as such is not tied to the value of <code>stroke-width</code>. Can either be a mark consisting of a common shape or a URL that points to a graphic. The <code>&lt;graphic_options&gt;</code> should consist of a mapping containing <code>symbols:</code> followed by an <code>external:</code> or <code>mark:</code>, with appropriate parameters as detailed in the <a href="../point/">Point symbolizer</a> section. Cannot be used with <code>stroke-graphic-fill</code>.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>stroke-graphic-fill</code></td>
+<td>No</td>
+<td>A design or pattern to be used for the fill of the stroke. The area that is to be filled is tied directly to the value of <code>stroke-width</code>. Can either be a mark consisting of a common shape or a URL that points to a graphic. The <code>&lt;graphic_options&gt;</code> should consist of a mapping containing <code>symbols:</code> followed by an <code>external:</code> or <code>mark:</code>, with appropriate parameters as detailed in the <a href="../point/">Point symbolizer</a> section. Cannot be used with <code>stroke-graphic</code>.</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>offset</code></td>
+<td>No</td>
+<td>Value in pixels for moving the drawn line relative to the location of the feature.</td>
+<td><code>0</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>geometry</code></td>
+<td>No</td>
+<td>Specifies which attribute to use as the geometry (see <a href="../../../../sld/extensions/geometry-transformations/">Geometry transformations in SLD</a>)</td>
+<td>First geometry attribute found (usually named <code>geom</code> or <code>the_geom</code>)</td>
+</tr>
+<tr>
+<td><code>uom</code></td>
+<td>No</td>
+<td>Unit of measure used for width calculations (see <a href="../../../../sld/extensions/uom/">Specifying symbolizer sizes in ground units</a>)</td>
+<td>pixel</td>
+</tr>
+</tbody>
+</table>
 <p>Additional "vendor options" property for <a href="../../../../sld/extensions/label-obstacles/">Label Obstacles</a>:</p>
-<dl>
-<dt>Property</dt>
-<dd>
-<p>Required?</p>
-<p>Description</p>
-<p>Default value</p>
-</dd>
-<dt><code>x-labelObstacle</code></dt>
-<dd>
-<p>No</p>
-<p>Marks the symbolizer as an obstacle such that labels drawn via a <a href="../text/">text symbolizer</a> will not be drawn over top of these features. Options are <code>true</code> or <code>false</code>. Note that the bounding boxes of features are used when calculating obstacles, so unintended effects may occur when marking a line or polygon symbolizer as an obstacle.</p>
-<p><code>false</code></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x-labelObstacle</code></td>
+<td>No</td>
+<td>Marks the symbolizer as an obstacle such that labels drawn via a <a href="../text/">text symbolizer</a> will not be drawn over top of these features. Options are <code>true</code> or <code>false</code>. Note that the bounding boxes of features are used when calculating obstacles, so unintended effects may occur when marking a line or polygon symbolizer as an obstacle.</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
 <p>Additional "vendor options" properties for <a href="../../../../sld/extensions/composite-blend/">Color compositing and color blending</a>:</p>
-<dl>
-<dt>Property</dt>
-<dd>
-<p>Required?</p>
-<p>Description</p>
-<p>Default value</p>
-</dd>
-<dt><code>x-composite</code></dt>
-<dd>
-<p>No</p>
-<p>Allows for both alpha compositing and color blending options between symbolizers.</p>
-<p>N/A</p>
-</dd>
-<dt><code>x-composite-base</code></dt>
-<dd>
-<p>No</p>
-<p>Allows the rendering engine to use the symbolizer mapping to define a "base" buffer for subsequent compositing and blending using <code>x-composite</code>. See the section on <a href="../../featurestyles/#ysld_reference_featurestyles_composite">Feature Styles</a> for more details.</p>
-<p><code>false</code></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x-composite</code></td>
+<td>No</td>
+<td>Allows for both alpha compositing and color blending options between symbolizers.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>x-composite-base</code></td>
+<td>No</td>
+<td>Allows the rendering engine to use the symbolizer mapping to define a "base" buffer for subsequent compositing and blending using <code>x-composite</code>. See the section on <a href="../../featurestyles/#ysld_reference_featurestyles_composite">Feature Styles</a> for more details.</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
 <p>Additional "vendor options" properties for <a href="../../../../sld/extensions/rendering-selection/">Rendering Selection</a>:</p>
-<dl>
-<dt>Property</dt>
-<dd>
-<p>Required?</p>
-<p>Description</p>
-<p>Default value</p>
-</dd>
-<dt><code>x-inclusion</code></dt>
-<dd>
-<p>No</p>
-<p>Define if rule should be included in style for <code>legendOnly</code> or <code>mapOnly</code>.</p>
-<p><code>normal</code></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x-inclusion</code></td>
+<td>No</td>
+<td>Define if rule should be included in style for <code>legendOnly</code> or <code>mapOnly</code>.</td>
+<td><code>normal</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="examples">Examples</h2>
 <h3 id="basic-line-with-styled-ends">Basic line with styled ends</h3>
 <p>The <code>linejoin</code> and <code>linecap</code> properties can be used to style the joins and ends of any stroke. This example draws lines with partially transparent black lines with rounded ends and sharp (mitred) corners:</p>

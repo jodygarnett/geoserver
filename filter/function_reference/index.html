@@ -1673,44 +1673,52 @@
 <p>The list of functions available on a GeoServer instance can be determined by browsing to <a href="http://localhost:8080/geoserver/wfs?request=GetCapabilities">http://localhost:8080/geoserver/wfs?request=GetCapabilities</a> and searching for <code>ogc:Function_Names</code> (WFS 1.0.0), <code>ogc:FunctionNames</code> (WFS 1.1.0), or <code>fes:Functions</code> (WFS 2.0.0) in the returned XML. If a function is described in the Capabilities document but is not in this reference, then it might mean that the function cannot be used for filtering, or that it is new and has not been documented. Ask for details on the user mailing list.</p>
 <p>Unless otherwise specified, none of the filter functions in this reference are understood natively by the data stores, and thus expressions using them will be evaluated in-memory.</p>
 <h2 id="function-argument-type-reference">Function argument type reference</h2>
-<dl>
-<dt><strong>Type</strong></dt>
-<dd>
-<p><strong>Description</strong></p>
-</dd>
-<dt>Double</dt>
-<dd>
-<p>Floating point number, 8 bytes, IEEE 754. Ranges from 4.94065645841246544e-324d to 1.79769313486231570e+308d</p>
-</dd>
-<dt>Float</dt>
-<dd>
-<p>Floating point number, 4 bytes, IEEE 754. Ranges from 1.40129846432481707e-45 to 3.40282346638528860e+38. Smaller range and less accurate than Double.</p>
-</dd>
-<dt>Integer</dt>
-<dd>
-<p>Integer number, ranging from -2,147,483,648 to 2,147,483,647</p>
-</dd>
-<dt>Long</dt>
-<dd>
-<p>Integer number, ranging from -9,223,372,036,854,775,808 to +9,223,372,036,854,775,807</p>
-</dd>
-<dt>Number</dt>
-<dd>
-<p>A numeric value of any type</p>
-</dd>
-<dt>Object</dt>
-<dd>
-<p>A value of any type</p>
-</dd>
-<dt>String</dt>
-<dd>
-<p>A sequence of characters</p>
-</dd>
-<dt>Timestamp</dt>
-<dd>
-<p>Date and time information</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td>Double</td>
+<td>Floating point number, 8 bytes, IEEE 754. Ranges from 4.94065645841246544e-324d to 1.79769313486231570e+308d</td>
+</tr>
+<tr>
+<td>Float</td>
+<td>Floating point number, 4 bytes, IEEE 754. Ranges from 1.40129846432481707e-45 to 3.40282346638528860e+38. Smaller range and less accurate than Double.</td>
+</tr>
+<tr>
+<td>Integer</td>
+<td>Integer number, ranging from -2,147,483,648 to 2,147,483,647</td>
+</tr>
+<tr>
+<td>Long</td>
+<td>Integer number, ranging from -9,223,372,036,854,775,808 to +9,223,372,036,854,775,807</td>
+</tr>
+<tr>
+<td>Number</td>
+<td>A numeric value of any type</td>
+</tr>
+<tr>
+<td>Object</td>
+<td>A value of any type</td>
+</tr>
+<tr>
+<td>String</td>
+<td>A sequence of characters</td>
+</tr>
+<tr>
+<td>Timestamp</td>
+<td>Date and time information</td>
+</tr>
+</tbody>
+</table>
 <h2 id="comparison-functions">Comparison functions</h2>
 <dl>
 <dt><strong>Name</strong></dt>
@@ -1780,18 +1788,27 @@
 </dd>
 </dl>
 <h2 id="control-functions">Control functions</h2>
-<dl>
-<dt><strong>Name</strong></dt>
-<dd>
-<p><strong>Arguments</strong></p>
-<p><strong>Description</strong></p>
-</dd>
-<dt>if_then_else</dt>
-<dd>
-<p><code>condition</code>:Boolean, <code>x</code>:Object, <code>y</code>: Object</p>
-<p>Returns <code>x</code> if the condition is true, <code>y</code> otherwise</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Arguments</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td>if_then_else</td>
+<td><code>condition</code>:Boolean, <code>x</code>:Object, <code>y</code>: Object</td>
+<td>Returns <code>x</code> if the condition is true, <code>y</code> otherwise</td>
+</tr>
+</tbody>
+</table>
 <h2 id="environment-function">Environment function</h2>
 <p>This function returns the value of environment variables defined in various contexts. WMS GetMap automatically defines some variables <a href="../../styling/sld/extensions/substitution/">SLD rendering</a>, while others can be provided using the <code>env</code> request parameter. Example usage in e.g. a dynamic symbolizer:</p>
 <p><code>${env('size', 20)}</code></p>
@@ -1821,33 +1838,42 @@
 </dd>
 </dl>
 <h2 id="feature-functions">Feature functions</h2>
-<dl>
-<dt><strong>Name</strong></dt>
-<dd>
-<p><strong>Arguments</strong></p>
-<p><strong>Description</strong></p>
-</dd>
-<dt>id</dt>
-<dd>
-<p><code>feature</code>:Feature</p>
-<p>returns the identifier of the feature</p>
-</dd>
-<dt>PropertyExists</dt>
-<dd>
-<p><code>f</code>:Feature, <code>propertyName</code>:String</p>
-<p>Returns <code>true</code> if <code>f</code> has a property named <code>propertyName</code></p>
-</dd>
-<dt>property</dt>
-<dd>
-<p><code>f</code>:Feature, <code>propertyName</code>:String</p>
-<p>Returns the value of the property <code>propertyName</code>. Allows property names to be computed or specified by <a href="../../styling/sld/extensions/substitution/">Variable substitution in SLD</a>.</p>
-</dd>
-<dt>mapGet</dt>
-<dd>
-<p><code>f</code>:Feature, <code>map</code>:Map, <code>key</code>:String</p>
-<p>Get the value of the map <code>map</code> related to the specified <code>key</code>.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Arguments</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td>id</td>
+<td><code>feature</code>:Feature</td>
+<td>returns the identifier of the feature</td>
+</tr>
+<tr>
+<td>PropertyExists</td>
+<td><code>f</code>:Feature, <code>propertyName</code>:String</td>
+<td>Returns <code>true</code> if <code>f</code> has a property named <code>propertyName</code></td>
+</tr>
+<tr>
+<td>property</td>
+<td><code>f</code>:Feature, <code>propertyName</code>:String</td>
+<td>Returns the value of the property <code>propertyName</code>. Allows property names to be computed or specified by <a href="../../styling/sld/extensions/substitution/">Variable substitution in SLD</a>.</td>
+</tr>
+<tr>
+<td>mapGet</td>
+<td><code>f</code>:Feature, <code>map</code>:Map, <code>key</code>:String</td>
+<td>Get the value of the map <code>map</code> related to the specified <code>key</code>.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="spatial-relationship-functions">Spatial Relationship functions</h2>
 <p>For more information about the precise meaning of the spatial relationships consult the <a href="http://www.opengeospatial.org/standards/sfs">OGC Simple Feature Specification for SQL</a></p>
 <dl>
@@ -2399,66 +2425,84 @@
 </dd>
 </dl>
 <h2 id="parsing-and-formatting-functions">Parsing and formatting functions</h2>
-<dl>
-<dt><strong>Name</strong></dt>
-<dd>
-<p><strong>Arguments</strong></p>
-<p><strong>Description</strong></p>
-</dd>
-<dt>dateFormat</dt>
-<dd>
-<p><code>format</code>:String, <code>date</code>:Timestamp</p>
-<p>Formats the specified date according to the provided format. The format syntax can be found in the <a href="http://java.sun.com/javase/6/docs/api/java/text/SimpleDateFormat.html">Java SimpleDateFormat javadocs</a></p>
-</dd>
-<dt>dateParse</dt>
-<dd>
-<p><code>format</code>:String, <code>dateString</code>:String</p>
-<p>Parses a date from a <code>dateString</code> formatted according to the <code>format</code> specification. The format syntax can be found in the <a href="http://java.sun.com/javase/6/docs/api/java/text/SimpleDateFormat.html">Java SimpleDateFormat javadocs</a></p>
-</dd>
-<dt>numberFormat</dt>
-<dd>
-<p><code>format</code>:String, <code>number</code>:Double, <code>locale</code>:String</p>
-<p>Formats the number according to the specified <code>format</code> using the default locale or the one provided as an optional argument. The format syntax can be found in the <a href="http://java.sun.com/javase/6/docs/api/java/text/DecimalFormat.html">Java DecimalFormat javadocs</a></p>
-</dd>
-<dt>parseBoolean</dt>
-<dd>
-<p><code>boolean</code>:String</p>
-<p>Parses a string into a boolean. The empty string, <code>f</code>, <code>0.0</code> and <code>0</code> are considered false, everything else is considered true.</p>
-</dd>
-<dt>parseDouble</dt>
-<dd>
-<p><code>number</code>:String</p>
-<p>Parses a string into a double. The number can be expressed in normal or scientific form.</p>
-</dd>
-<dt>parseInt</dt>
-<dd>
-<p><code>number</code>:String</p>
-<p>Parses a string into an integer.</p>
-</dd>
-<dt>parseLong</dt>
-<dd>
-<p><code>number</code>:String</p>
-<p>Parses a string into a long integer</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Arguments</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td>dateFormat</td>
+<td><code>format</code>:String, <code>date</code>:Timestamp</td>
+<td>Formats the specified date according to the provided format. The format syntax can be found in the <a href="http://java.sun.com/javase/6/docs/api/java/text/SimpleDateFormat.html">Java SimpleDateFormat javadocs</a></td>
+</tr>
+<tr>
+<td>dateParse</td>
+<td><code>format</code>:String, <code>dateString</code>:String</td>
+<td>Parses a date from a <code>dateString</code> formatted according to the <code>format</code> specification. The format syntax can be found in the <a href="http://java.sun.com/javase/6/docs/api/java/text/SimpleDateFormat.html">Java SimpleDateFormat javadocs</a></td>
+</tr>
+<tr>
+<td>numberFormat</td>
+<td><code>format</code>:String, <code>number</code>:Double, <code>locale</code>:String</td>
+<td>Formats the number according to the specified <code>format</code> using the default locale or the one provided as an optional argument. The format syntax can be found in the <a href="http://java.sun.com/javase/6/docs/api/java/text/DecimalFormat.html">Java DecimalFormat javadocs</a></td>
+</tr>
+<tr>
+<td>parseBoolean</td>
+<td><code>boolean</code>:String</td>
+<td>Parses a string into a boolean. The empty string, <code>f</code>, <code>0.0</code> and <code>0</code> are considered false, everything else is considered true.</td>
+</tr>
+<tr>
+<td>parseDouble</td>
+<td><code>number</code>:String</td>
+<td>Parses a string into a double. The number can be expressed in normal or scientific form.</td>
+</tr>
+<tr>
+<td>parseInt</td>
+<td><code>number</code>:String</td>
+<td>Parses a string into an integer.</td>
+</tr>
+<tr>
+<td>parseLong</td>
+<td><code>number</code>:String</td>
+<td>Parses a string into a long integer</td>
+</tr>
+</tbody>
+</table>
 <h2 id="temporal-functions">Temporal functions</h2>
-<dl>
-<dt><strong>Name</strong></dt>
-<dd>
-<p><strong>Arguments</strong></p>
-<p><strong>Description</strong></p>
-</dd>
-<dt>dateDifference</dt>
-<dd>
-<p><code>a</code>:Date, <code>b</code>:Date, <code>timeUnits</code>:String</p>
-<p>Computes the difference between two date (as a-b) and return a result in a specific time units. <code>timeUnits</code> is optional, representing the desired time units result. Default as milliseconds. Possible values are <code>s</code> (seconds), <code>m</code> (minutes), <code>h</code> (hours), <code>d</code> (days).</p>
-</dd>
-<dt>now</dt>
-<dd>
-<p>None</p>
-<p>Returns the current time as a Date</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Arguments</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td>dateDifference</td>
+<td><code>a</code>:Date, <code>b</code>:Date, <code>timeUnits</code>:String</td>
+<td>Computes the difference between two date (as a-b) and return a result in a specific time units. <code>timeUnits</code> is optional, representing the desired time units result. Default as milliseconds. Possible values are <code>s</code> (seconds), <code>m</code> (minutes), <code>h</code> (hours), <code>d</code> (days).</td>
+</tr>
+<tr>
+<td>now</td>
+<td>None</td>
+<td>Returns the current time as a Date</td>
+</tr>
+</tbody>
+</table>
 <h2 id="transformation-functions">Transformation functions</h2>
 <p>Transformation functions transform values from one data space into another. These functions provide a concise way to compute styling parameters from feature attribute values. See also <a href="../../styling/sld/tipstricks/transformation-func/">Styling using Transformation Functions</a>.</p>
 <dl>

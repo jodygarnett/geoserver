@@ -1651,28 +1651,36 @@
 </ul>
 <h2 id="ecql_cond">Condition</h2>
 <p>A filter condition is a single predicate, or a logical combination of other conditions.</p>
-<dl>
-<dt><strong>Syntax</strong></dt>
-<dd>
-<p><strong>Description</strong></p>
-</dd>
-<dt><a href="./#ecql_pred">Predicate</a></dt>
-<dd>
-<p>Single predicate expression</p>
-</dd>
-<dt><a href="./#ecql_cond">Condition</a> <code>AND</code> | <code>OR</code> <a href="./#ecql_cond">Condition</a></dt>
-<dd>
-<p>Conjunction or disjunction of conditions</p>
-</dd>
-<dt><code>NOT</code> <a href="./#ecql_cond">Condition</a></dt>
-<dd>
-<p>Negation of a condition</p>
-</dd>
-<dt><code>(</code> | <code>[</code> <a href="./#ecql_cond">Condition</a> <code>]</code> | <code>)</code></dt>
-<dd>
-<p>Bracketing with <code>(</code> or <code>[</code> controls evaluation order</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Syntax</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><a href="./#ecql_pred">Predicate</a></td>
+<td>Single predicate expression</td>
+</tr>
+<tr>
+<td><a href="./#ecql_cond">Condition</a> <code>AND</code></td>
+<td><code>OR</code> <a href="./#ecql_cond">Condition</a></td>
+</tr>
+<tr>
+<td><code>NOT</code> <a href="./#ecql_cond">Condition</a></td>
+<td>Negation of a condition</td>
+</tr>
+<tr>
+<td><code>(</code></td>
+<td><code>[</code> <a href="./#ecql_cond">Condition</a> <code>]</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="ecql_pred">Predicate</h2>
 <p>Predicates are boolean-valued expressions which specify relationships between values.</p>
 <dl>

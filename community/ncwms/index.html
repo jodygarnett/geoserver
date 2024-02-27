@@ -4119,20 +4119,24 @@ Note
 <h2 id="ncwms-extension-configuration">ncWMS extension configuration</h2>
 <p>The ncWMS extension adds a panel at the bottom of the WMS administration page:</p>
 <p><img alt="" src="images/admin.png" /></p>
-<dl>
-<dt>Option</dt>
-<dd>
-<p>Description</p>
-</dd>
-<dt>GetTimeSeries thread pool size</dt>
-<dd>
-<p>Size of the thread pool used to compute GetTimeSeries results (parallelized to speed up computation)</p>
-</dd>
-<dt>Maximum number of times in GetTimeSeries</dt>
-<dd>
-<p>Maximum number of times tha GetTimeSeries will process. A user asking for more times will get back a service exception. The configuration is set the first time the admin hits save in the WMS page, even with a value of 0 (from that point on, GetTimeSeries will be independent on the WMS max dimensions setting).</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GetTimeSeries thread pool size</td>
+<td>Size of the thread pool used to compute GetTimeSeries results (parallelized to speed up computation)</td>
+</tr>
+<tr>
+<td>Maximum number of times in GetTimeSeries</td>
+<td>Maximum number of times tha GetTimeSeries will process. A user asking for more times will get back a service exception. The configuration is set the first time the admin hits save in the WMS page, even with a value of 0 (from that point on, GetTimeSeries will be independent on the WMS max dimensions setting).</td>
+</tr>
+</tbody>
+</table>
 
 
 

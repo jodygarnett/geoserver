@@ -2356,32 +2356,36 @@
 <div class="language-text highlight"><pre><span></span><code>define: &amp;variable &lt;value&gt;
 </code></pre></div>
 <p>where:</p>
-<dl>
-<dt>Attribute</dt>
-<dd>
-<p>Required?</p>
-<p>Description</p>
-<p>Default value</p>
-</dd>
-<dt><code>define</code></dt>
-<dd>
-<p>Yes</p>
-<p>Starts the definition block.</p>
-<p>N/A</p>
-</dd>
-<dt><code>&amp;variable</code></dt>
-<dd>
-<p>Yes</p>
-<p>The name of the variable being defined. The <code>&amp;</code> is not part of the variable name.</p>
-<p>N/A</p>
-</dd>
-<dt><code>&lt;value&gt;</code></dt>
-<dd>
-<p>Yes</p>
-<p>A single value, such as <code>512</code> or <code>'#DD0000'</code></p>
-<p>N/A</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>define</code></td>
+<td>Yes</td>
+<td>Starts the definition block.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>&amp;variable</code></td>
+<td>Yes</td>
+<td>The name of the variable being defined. The <code>&amp;</code> is not part of the variable name.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>&lt;value&gt;</code></td>
+<td>Yes</td>
+<td>A single value, such as <code>512</code> or <code>'#DD0000'</code></td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
 <p>The syntax for using this variable is to prepend the variable name with a <code>*</code>:</p>
 <div class="language-text highlight"><pre><span></span><code>&lt;directive&gt;: *variable
 </code></pre></div>

@@ -1915,40 +1915,48 @@
 <p>To begin, navigate to <strong>Stores &rarr; Add a new store &rarr; Directory of spatial files</strong>.</p>
 <p><img alt="" src="../images/directory.png" />
 <em>Adding a directory of spatial files as a store</em></p>
-<dl>
-<dt><strong>Option</strong></dt>
-<dd>
-<p><strong>Description</strong></p>
-</dd>
-<dt><strong>Workspace</strong></dt>
-<dd>
-<p>Name of the workspace to contain the store. This will also be the prefix of all of the layer names created from shapefiles in the store.</p>
-</dd>
-<dt><strong>Data Source Name</strong></dt>
-<dd>
-<p>Name of the store as known to GeoServer.</p>
-</dd>
-<dt><strong>Description</strong></dt>
-<dd>
-<p>Description of the directory store.</p>
-</dd>
-<dt><strong>Enabled</strong></dt>
-<dd>
-<p>Enables the store. If disabled, no data in any of the shapefiles will be served.</p>
-</dd>
-<dt><strong>URL</strong></dt>
-<dd>
-<p>Location of the directory. Can be an absolute path (such as <strong><code>file:C:\Data\shapefile_directory</code></strong>) or a path relative to the data directory (such as <strong><code>file:data/shapefile_directory</code></strong>.</p>
-</dd>
-<dt><strong>namespace</strong></dt>
-<dd>
-<p>Namespace to be associated with the store. This field is altered by changing the workspace name.</p>
-</dd>
-<dt><strong>skip scan</strong></dt>
-<dd>
-<p>Skip scan of alternative shapefile extensions (i.e. .SHP, .shp.XML, .CPG, ...) on Not-Windows systems. This can be useful when you have a directory containing several thousands of shapefiles. By Default, the shapefile plugin will look for all the shapefile extensions (.shp, .dbf, .shx, .prj, .qix, .fix, .shp.xml, .cpg). As soon as one of these is missing, it will do a search on the directory for the missing file, ignoring the case. This might be time consuming on directories with a huge number of files.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Option</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><strong>Workspace</strong></td>
+<td>Name of the workspace to contain the store. This will also be the prefix of all of the layer names created from shapefiles in the store.</td>
+</tr>
+<tr>
+<td><strong>Data Source Name</strong></td>
+<td>Name of the store as known to GeoServer.</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Description of the directory store.</td>
+</tr>
+<tr>
+<td><strong>Enabled</strong></td>
+<td>Enables the store. If disabled, no data in any of the shapefiles will be served.</td>
+</tr>
+<tr>
+<td><strong>URL</strong></td>
+<td>Location of the directory. Can be an absolute path (such as <strong><code>file:C:\Data\shapefile_directory</code></strong>) or a path relative to the data directory (such as <strong><code>file:data/shapefile_directory</code></strong>.</td>
+</tr>
+<tr>
+<td><strong>namespace</strong></td>
+<td>Namespace to be associated with the store. This field is altered by changing the workspace name.</td>
+</tr>
+<tr>
+<td><strong>skip scan</strong></td>
+<td>Skip scan of alternative shapefile extensions (i.e. .SHP, .shp.XML, .CPG, ...) on Not-Windows systems. This can be useful when you have a directory containing several thousands of shapefiles. By Default, the shapefile plugin will look for all the shapefile extensions (.shp, .dbf, .shx, .prj, .qix, .fix, .shp.xml, .cpg). As soon as one of these is missing, it will do a search on the directory for the missing file, ignoring the case. This might be time consuming on directories with a huge number of files.</td>
+</tr>
+</tbody>
+</table>
 <p>When finished, click <strong>Save</strong>.</p>
 <h2 id="configuring-shapefiles">Configuring shapefiles</h2>
 <p>All of the shapefiles contained in the directory store will be loaded as part of the directory store, but they will need to be individually configured as new layers they can be served by GeoServer. See the section on <a href="../../webadmin/layers/">Layers</a> for how to add and edit new layers.</p>

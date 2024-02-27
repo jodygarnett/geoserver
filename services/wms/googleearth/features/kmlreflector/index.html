@@ -2589,60 +2589,68 @@
 </code></pre></div>
 <p>where <code>GEOSERVER_URL</code> is the URL of your GeoServer instance, and <code>&lt;layer&gt;</code> is the name of the featuretype to be served.</p>
 <p>The following table lists the default assumptions:</p>
-<dl>
-<dt><strong>Key</strong></dt>
-<dd>
-<p><strong>Value</strong></p>
-</dd>
-<dt><code>request</code></dt>
-<dd>
-<p><code>GetMap</code></p>
-</dd>
-<dt><code>service</code></dt>
-<dd>
-<p><code>wms</code></p>
-</dd>
-<dt><code>version</code></dt>
-<dd>
-<p><code>1.1.1</code></p>
-</dd>
-<dt><code>srs</code></dt>
-<dd>
-<p><code>EPSG:4326</code></p>
-</dd>
-<dt><code>format</code></dt>
-<dd>
-<p><code>application/vnd.google-earth.kml+xml</code></p>
-</dd>
-<dt><code>width</code></dt>
-<dd>
-<p><code>2048</code></p>
-</dd>
-<dt><code>height</code></dt>
-<dd>
-<p><code>2048</code></p>
-</dd>
-<dt><code>bbox</code></dt>
-<dd>
-<p><code>&lt;layer bounds&gt;</code></p>
-</dd>
-<dt><code>kmattr</code></dt>
-<dd>
-<p><code>true</code></p>
-</dd>
-<dt><code>kmplacemark</code></dt>
-<dd>
-<p><code>false</code></p>
-</dd>
-<dt><code>kmscore</code></dt>
-<dd>
-<p><code>40</code></p>
-</dd>
-<dt><code>styles</code></dt>
-<dd>
-<p>[default style for the featuretype]</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Key</strong></td>
+<td><strong>Value</strong></td>
+</tr>
+<tr>
+<td><code>request</code></td>
+<td><code>GetMap</code></td>
+</tr>
+<tr>
+<td><code>service</code></td>
+<td><code>wms</code></td>
+</tr>
+<tr>
+<td><code>version</code></td>
+<td><code>1.1.1</code></td>
+</tr>
+<tr>
+<td><code>srs</code></td>
+<td><code>EPSG:4326</code></td>
+</tr>
+<tr>
+<td><code>format</code></td>
+<td><code>application/vnd.google-earth.kml+xml</code></td>
+</tr>
+<tr>
+<td><code>width</code></td>
+<td><code>2048</code></td>
+</tr>
+<tr>
+<td><code>height</code></td>
+<td><code>2048</code></td>
+</tr>
+<tr>
+<td><code>bbox</code></td>
+<td><code>&lt;layer bounds&gt;</code></td>
+</tr>
+<tr>
+<td><code>kmattr</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>kmplacemark</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>kmscore</code></td>
+<td><code>40</code></td>
+</tr>
+<tr>
+<td><code>styles</code></td>
+<td>[default style for the featuretype]</td>
+</tr>
+</tbody>
+</table>
 <p>Any of these defaults can be changed when specifying the request. For instance, to specify a particular style, one can append <code>styles=population</code> to the request:</p>
 <div class="language-text highlight"><pre><span></span><code>http://localhost:8080/geoserver/wms/kml?layers=topp:states&amp;styles=population
 </code></pre></div>
@@ -2655,51 +2663,67 @@
 <div class="language-text highlight"><pre><span></span><code>mode=&lt;mode&gt;
 </code></pre></div>
 <p>where <code>&lt;mode&gt;</code> is one of the three reflector modes. The details for each mode are as follows:</p>
-<dl>
-<dt><strong>Mode</strong></dt>
-<dd>
-<p><strong>Description</strong></p>
-</dd>
-<dt><code>refresh</code></dt>
-<dd>
-<p>(<em>default for all versions except 1.7.1 through 1.7.5</em>) Returns dynamic KML that can be refreshed/updated by the Google Earth client. Data is refreshed and new data/imagery is downloaded when zooming/panning stops. This mode can return either vector or raster (placemark or overlay) The decision to return either vector or raster data is determined by the value of <code>kmscore</code>. Please see the section on <a href="../kmlscoring/">KML Scoring</a> for more information.</p>
-</dd>
-<dt><code>superoverlay</code></dt>
-<dd>
-<p>(<em>default for versions 1.7.1 through 1.7.5</em>) Returns KML as a super-overlay. A super-overlay is a form of KML in which data is broken up into regions. Please see the section on <a href="../kmlsuperoverlays/">KML Super-Overlays</a> for more information.</p>
-</dd>
-<dt><code>download</code></dt>
-<dd>
-<p>Returns KML which contains the entire data set. In the case of a vector layer, this will include a series of KML placemarks. With raster layers, this will include a single KML ground overlay. This is the only mode that doesn't dynamically request new data from the server, and thus is self-contained KML.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mode</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>refresh</code></td>
+<td>(<em>default for all versions except 1.7.1 through 1.7.5</em>) Returns dynamic KML that can be refreshed/updated by the Google Earth client. Data is refreshed and new data/imagery is downloaded when zooming/panning stops. This mode can return either vector or raster (placemark or overlay) The decision to return either vector or raster data is determined by the value of <code>kmscore</code>. Please see the section on <a href="../kmlscoring/">KML Scoring</a> for more information.</td>
+</tr>
+<tr>
+<td><code>superoverlay</code></td>
+<td>(<em>default for versions 1.7.1 through 1.7.5</em>) Returns KML as a super-overlay. A super-overlay is a form of KML in which data is broken up into regions. Please see the section on <a href="../kmlsuperoverlays/">KML Super-Overlays</a> for more information.</td>
+</tr>
+<tr>
+<td><code>download</code></td>
+<td>Returns KML which contains the entire data set. In the case of a vector layer, this will include a series of KML placemarks. With raster layers, this will include a single KML ground overlay. This is the only mode that doesn't dynamically request new data from the server, and thus is self-contained KML.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="more-about-the-superoverlay-mode">More about the "superoverlay" mode</h2>
 <p>When requesting KML using the <code>superoverlay</code> mode, there are four additional submodes available regarding how and when data is requested. These options are set by appending the following parameter to the KML reflector request:</p>
 <div class="language-text highlight"><pre><span></span><code>superoverlay_mode=&lt;submode&gt;
 </code></pre></div>
 <p>where <code>&lt;submode&gt;</code> is one of the following options:</p>
-<dl>
-<dt><strong>Submode</strong></dt>
-<dd>
-<p><strong>Description</strong></p>
-</dd>
-<dt><code>auto</code></dt>
-<dd>
-<p>(<em>default</em>) Always returns vector features if the original data is in vector form, and returns raster imagery if the original data is in raster form. This can sometimes be less than optimal if the geometry of the features are very complicated, which can slow down Google Earth.</p>
-</dd>
-<dt><code>raster</code></dt>
-<dd>
-<p>Always returns raster imagery, regardless of the original data. This is almost always faster, but all vector information is lost in this view.</p>
-</dd>
-<dt><code>overview</code></dt>
-<dd>
-<p>Displays either vector or raster data depending on the view. At higher zoom levels, raster imagery will be displayed, and at lower zoom levels, vector features will be displayed. The determination for when to switch between vector and raster is made by the regionation parameters set on the server. See the section on <a href="../kmlregionation/">KML Regionation</a> for more information.</p>
-</dd>
-<dt><code>hybrid</code></dt>
-<dd>
-<p>Displays both raster and vector data at all times.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Submode</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>auto</code></td>
+<td>(<em>default</em>) Always returns vector features if the original data is in vector form, and returns raster imagery if the original data is in raster form. This can sometimes be less than optimal if the geometry of the features are very complicated, which can slow down Google Earth.</td>
+</tr>
+<tr>
+<td><code>raster</code></td>
+<td>Always returns raster imagery, regardless of the original data. This is almost always faster, but all vector information is lost in this view.</td>
+</tr>
+<tr>
+<td><code>overview</code></td>
+<td>Displays either vector or raster data depending on the view. At higher zoom levels, raster imagery will be displayed, and at lower zoom levels, vector features will be displayed. The determination for when to switch between vector and raster is made by the regionation parameters set on the server. See the section on <a href="../kmlregionation/">KML Regionation</a> for more information.</td>
+</tr>
+<tr>
+<td><code>hybrid</code></td>
+<td>Displays both raster and vector data at all times.</td>
+</tr>
+</tbody>
+</table>
 
 
 

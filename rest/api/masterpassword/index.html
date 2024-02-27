@@ -2208,27 +2208,33 @@
 </div>
 <h2 id="securitymasterpwformat"><code>/security/masterpw[.&lt;format&gt;]</code></h2>
 <p>Fetches the keystore password and allows to change the keystore password</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Fetch the keystore password</p>
-<p>200,403</p>
-<p>XML, JSON</p>
-</dd>
-<dt>PUT</dt>
-<dd>
-<p>Changes the keystore password</p>
-<p>200,405,422</p>
-<p>XML, JSON</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Fetch the keystore password</td>
+<td>200,403</td>
+<td>XML, JSON</td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Changes the keystore password</td>
+<td>200,405,422</td>
+<td>XML, JSON</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p>Formats for PUT (keystore password change).</p>
 <p><strong>XML</strong></p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;masterPassword&gt;</span>
@@ -2241,28 +2247,32 @@
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;newMasterPassword&quot;</span><span class="p">:</span><span class="s2">&quot;newPassword&quot;</span><span class="w"> </span><span class="p">}</span>
 </span></code></pre></div>
 <h3 id="exceptions">Exceptions</h3>
-<dl>
-<dt>Exception</dt>
-<dd>
-<p>Status code</p>
-</dd>
-<dt>GET without administrative privileges</dt>
-<dd>
-<p>403</p>
-</dd>
-<dt>PUT without administrative privileges</dt>
-<dd>
-<p>405</p>
-</dd>
-<dt>PUT with the wrong current keystore password</dt>
-<dd>
-<p>422</p>
-</dd>
-<dt>PUT with a new keystore password rejected by the password policy</dt>
-<dd>
-<p>422</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Exception</th>
+<th>Status code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET without administrative privileges</td>
+<td>403</td>
+</tr>
+<tr>
+<td>PUT without administrative privileges</td>
+<td>405</td>
+</tr>
+<tr>
+<td>PUT with the wrong current keystore password</td>
+<td>422</td>
+</tr>
+<tr>
+<td>PUT with a new keystore password rejected by the password policy</td>
+<td>422</td>
+</tr>
+</tbody>
+</table>
 
 
 

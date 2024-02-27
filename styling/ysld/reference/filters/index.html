@@ -2362,87 +2362,95 @@
 <div class="language-text highlight"><pre><span></span><code>${&lt;attribute&gt; &lt;operator&gt; &lt;value&gt;}
 </code></pre></div>
 <p>where:</p>
-<dl>
-<dt>Attribute</dt>
-<dd>
-<p>Required?</p>
-<p>Description</p>
-<p>Default value</p>
-</dd>
-<dt><code>&lt;attribute&gt;</code></dt>
-<dd>
-<p>Yes</p>
-<p>That to which something is going to be compared. Typically an <strong>attribute name</strong>. May be case sensitive.</p>
-<p>N/A</p>
-</dd>
-<dt><code>&lt;operator&gt;</code></dt>
-<dd>
-<p>Yes</p>
-<p>Method of comparison. Valid operators are <code>=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>&lt;&gt;</code>, <code>LIKE</code>, <code>ILIKE</code>, <code>BETWEEN</code>, <code>IS NULL</code>, <code>IN</code>. <code>NOT</code> can be added to invert the comparison.</p>
-<p>N/A</p>
-</dd>
-<dt><code>&lt;value&gt;</code></dt>
-<dd>
-<p>Yes</p>
-<p>That which the <code>&lt;attribute&gt;</code> is being compared to. Typically a static value such as a string or scalar, though can be an expression that evaluates to a static value. Can include mathematical operators such as <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>. Use <strong>single quotes</strong> for strings, as double-quotes will be interpreted as an attribute name. Omit quotes for scalar values.</p>
-<p>N/A</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;attribute&gt;</code></td>
+<td>Yes</td>
+<td>That to which something is going to be compared. Typically an <strong>attribute name</strong>. May be case sensitive.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>&lt;operator&gt;</code></td>
+<td>Yes</td>
+<td>Method of comparison. Valid operators are <code>=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>&lt;&gt;</code>, <code>LIKE</code>, <code>ILIKE</code>, <code>BETWEEN</code>, <code>IS NULL</code>, <code>IN</code>. <code>NOT</code> can be added to invert the comparison.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>&lt;value&gt;</code></td>
+<td>Yes</td>
+<td>That which the <code>&lt;attribute&gt;</code> is being compared to. Typically a static value such as a string or scalar, though can be an expression that evaluates to a static value. Can include mathematical operators such as <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>. Use <strong>single quotes</strong> for strings, as double-quotes will be interpreted as an attribute name. Omit quotes for scalar values.</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
 <p>The following is a description of all available operators:</p>
-<dl>
-<dt>Operator</dt>
-<dd>
-<p>Description</p>
-</dd>
-<dt><code>=</code></dt>
-<dd>
-<p>Equals</p>
-</dd>
-<dt><code>&lt;</code></dt>
-<dd>
-<p>Less than (non-inclusive)</p>
-</dd>
-<dt><code>&gt;</code></dt>
-<dd>
-<p>Greater than (non-inclusive)</p>
-</dd>
-<dt><code>&lt;=</code></dt>
-<dd>
-<p>Less than or equal to (inclusive)</p>
-</dd>
-<dt><code>&gt;=</code></dt>
-<dd>
-<p>Greater than or equal to (inclusive)</p>
-</dd>
-<dt><code>LIKE</code></dt>
-<dd>
-<p>Fuzzy matching for strings and other non-numeric attributes. Add <code>%</code> for multi-character wildcards, and <code>_</code> for single-character wildcards.</p>
-</dd>
-<dt><code>ILIKE</code></dt>
-<dd>
-<p>Case-insensitive version of <code>LIKE</code></p>
-</dd>
-<dt><code>BETWEEN</code></dt>
-<dd>
-<p>Tests if a value that is between two given values</p>
-</dd>
-<dt><code>IS NULL</code></dt>
-<dd>
-<p>For testing against a <code>NULL</code> value</p>
-</dd>
-<dt><code>IN</code></dt>
-<dd>
-<p>Used when specifying a list. Must be contained in the list for the statement to be true.</p>
-</dd>
-<dt><code>NOT</code></dt>
-<dd>
-<p>Negates a boolean (true/false) condition. Can be used with an additional operator such as <code>NOT LIKE</code> or <code>NOT BETWEEN</code>.</p>
-</dd>
-<dt><code>&lt;&gt;</code></dt>
-<dd>
-<p>Not equal (used when comparing a string or numeric value only)</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>=</code></td>
+<td>Equals</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>Less than (non-inclusive)</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>Greater than (non-inclusive)</td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td>Less than or equal to (inclusive)</td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td>Greater than or equal to (inclusive)</td>
+</tr>
+<tr>
+<td><code>LIKE</code></td>
+<td>Fuzzy matching for strings and other non-numeric attributes. Add <code>%</code> for multi-character wildcards, and <code>_</code> for single-character wildcards.</td>
+</tr>
+<tr>
+<td><code>ILIKE</code></td>
+<td>Case-insensitive version of <code>LIKE</code></td>
+</tr>
+<tr>
+<td><code>BETWEEN</code></td>
+<td>Tests if a value that is between two given values</td>
+</tr>
+<tr>
+<td><code>IS NULL</code></td>
+<td>For testing against a <code>NULL</code> value</td>
+</tr>
+<tr>
+<td><code>IN</code></td>
+<td>Used when specifying a list. Must be contained in the list for the statement to be true.</td>
+</tr>
+<tr>
+<td><code>NOT</code></td>
+<td>Negates a boolean (true/false) condition. Can be used with an additional operator such as <code>NOT LIKE</code> or <code>NOT BETWEEN</code>.</td>
+</tr>
+<tr>
+<td><code>&lt;&gt;</code></td>
+<td>Not equal (used when comparing a string or numeric value only)</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>These operators are not case sensitive, but are shown here in all caps for legibility and consistency.</p>

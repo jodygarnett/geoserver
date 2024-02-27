@@ -2269,56 +2269,60 @@
 <p>To add a new JDBC user/group service, click the <strong>Add new</strong> link, and then the <strong>JDBC</strong> option at the top of the following form. The following figure shows the configuration options for a JDBC user/group service.</p>
 <p><img alt="" src="../images/ugr_ugjdbcsettings.png" />
 <em>Adding a user/group service via JDBC</em></p>
-<dl>
-<dt>Option</dt>
-<dd>
-<p>Description</p>
-</dd>
-<dt>Name</dt>
-<dd>
-<p>Name of the JDBC user/group service in GeoServer</p>
-</dd>
-<dt>Password encryption</dt>
-<dd>
-<p>The method to used to <a href="../../passwd/#security_passwd_encryption">encrypt user passwords</a></p>
-</dd>
-<dt>Password policy</dt>
-<dd>
-<p>The <a href="../../passwd/#security_passwd_policy">policy</a> to use to enforce constraints on user passwords</p>
-</dd>
-<dt>JNDI</dt>
-<dd>
-<p>When unchecked, specifies a direct connection to the database. When checked, specifies an existing connection located through <a href="../../../data/database/jndi/">JNDI</a>.</p>
-</dd>
-<dt>Driver class name</dt>
-<dd>
-<p>JDBC driver to use for the database connection</p>
-</dd>
-<dt>Connection URL</dt>
-<dd>
-<p>Specifies the JDBC URL to use when creating the database connection</p>
-</dd>
-<dt>Username</dt>
-<dd>
-<p>Username to use when connecting to the database</p>
-</dd>
-<dt>Password</dt>
-<dd>
-<p>Password to use when connecting to the database</p>
-</dd>
-<dt>Create database tables</dt>
-<dd>
-<p>Specifies whether to create all the necessary tables in the underlying database</p>
-</dd>
-<dt>Data Definition Language (DDL) file</dt>
-<dd>
-<p>Specifies a custom DDL file to use for creating tables in the underlying database, for cases where the default DDL statements fail on the given database. If left blank, internal defaults are used.</p>
-</dd>
-<dt>Data Manipulation Language (DML) file</dt>
-<dd>
-<p>Specifies a custom DML file to use for accessing tables in the underlying database, for cases where the default DML statements fail on the given database. If left blank, internal defaults are used.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Name of the JDBC user/group service in GeoServer</td>
+</tr>
+<tr>
+<td>Password encryption</td>
+<td>The method to used to <a href="../../passwd/#security_passwd_encryption">encrypt user passwords</a></td>
+</tr>
+<tr>
+<td>Password policy</td>
+<td>The <a href="../../passwd/#security_passwd_policy">policy</a> to use to enforce constraints on user passwords</td>
+</tr>
+<tr>
+<td>JNDI</td>
+<td>When unchecked, specifies a direct connection to the database. When checked, specifies an existing connection located through <a href="../../../data/database/jndi/">JNDI</a>.</td>
+</tr>
+<tr>
+<td>Driver class name</td>
+<td>JDBC driver to use for the database connection</td>
+</tr>
+<tr>
+<td>Connection URL</td>
+<td>Specifies the JDBC URL to use when creating the database connection</td>
+</tr>
+<tr>
+<td>Username</td>
+<td>Username to use when connecting to the database</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>Password to use when connecting to the database</td>
+</tr>
+<tr>
+<td>Create database tables</td>
+<td>Specifies whether to create all the necessary tables in the underlying database</td>
+</tr>
+<tr>
+<td>Data Definition Language (DDL) file</td>
+<td>Specifies a custom DDL file to use for creating tables in the underlying database, for cases where the default DDL statements fail on the given database. If left blank, internal defaults are used.</td>
+</tr>
+<tr>
+<td>Data Manipulation Language (DML) file</td>
+<td>Specifies a custom DML file to use for accessing tables in the underlying database, for cases where the default DML statements fail on the given database. If left blank, internal defaults are used.</td>
+</tr>
+</tbody>
+</table>
 <p>In addition to the parameters listed above, the following additional parameter will apply when the <a href="../../../data/database/jndi/">JNDI</a> flag is set.</p>
 <p><img alt="" src="../images/ugr_ugjdbcjndisettings.png" />
 <em>Adding a user/group service via JDBC with JNDI</em></p>
@@ -2442,52 +2446,56 @@
 <h3 id="security_webadmin_users">Add user</h3>
 <p><img alt="" src="../images/ugr_newuser.png" />
 <em>Creating or editing a user</em></p>
-<dl>
-<dt>Option</dt>
-<dd>
-<p>Description</p>
-</dd>
-<dt>User name</dt>
-<dd>
-<p>The name of the user</p>
-</dd>
-<dt>Enabled</dt>
-<dd>
-<p>When selected, will enable the user to authenticate</p>
-</dd>
-<dt>Password</dt>
-<dd>
-<p>The password for this user. Existing passwords will be obscured when viewed.</p>
-</dd>
-<dt>Confirm password</dt>
-<dd>
-<p>To set or change the password enter the password twice.</p>
-</dd>
-<dt>User properties</dt>
-<dd>
-<p>Key/value pairs associated with the user. Used for associating additional information with the user.</p>
-</dd>
-<dt>Group list</dt>
-<dd>
-<p>Full list of groups, including list of groups to which the user is a member. Membership can be toggled here via the arrow buttons.</p>
-</dd>
-<dt>Add a new group</dt>
-<dd>
-<p>Shortcut to adding a new group. Also available in the Groups tab.</p>
-</dd>
-<dt>Role list</dt>
-<dd>
-<p>Full list of roles, including a list of roles to which the user is associated. Association can be toggled here via the arrow buttons.</p>
-</dd>
-<dt>Add a new role</dt>
-<dd>
-<p>Shortcut to adding a new role</p>
-</dd>
-<dt>List of current roles for the user</dt>
-<dd>
-<p>List of current roles associated with the user. Click a role to enable editing.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>User name</td>
+<td>The name of the user</td>
+</tr>
+<tr>
+<td>Enabled</td>
+<td>When selected, will enable the user to authenticate</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>The password for this user. Existing passwords will be obscured when viewed.</td>
+</tr>
+<tr>
+<td>Confirm password</td>
+<td>To set or change the password enter the password twice.</td>
+</tr>
+<tr>
+<td>User properties</td>
+<td>Key/value pairs associated with the user. Used for associating additional information with the user.</td>
+</tr>
+<tr>
+<td>Group list</td>
+<td>Full list of groups, including list of groups to which the user is a member. Membership can be toggled here via the arrow buttons.</td>
+</tr>
+<tr>
+<td>Add a new group</td>
+<td>Shortcut to adding a new group. Also available in the Groups tab.</td>
+</tr>
+<tr>
+<td>Role list</td>
+<td>Full list of roles, including a list of roles to which the user is associated. Association can be toggled here via the arrow buttons.</td>
+</tr>
+<tr>
+<td>Add a new role</td>
+<td>Shortcut to adding a new role</td>
+</tr>
+<tr>
+<td>List of current roles for the user</td>
+<td>List of current roles associated with the user. Click a role to enable editing.</td>
+</tr>
+</tbody>
+</table>
 <p>The Groups tab provides configuration options for groups in this user/group service. There are options to add and remove a group, with an additional option to remove a group and the roles associated with that group.</p>
 <p><img alt="" src="../images/ugr_uggroups.png" />
 <em>Groups tab</em></p>
@@ -2540,91 +2548,103 @@
 <p>To add a new XML role service, click the <strong>Add new</strong> link. XML is the default option. The following figure shows the configuration options for an XML role service.</p>
 <p><img alt="" src="../images/ugr_rolexmlsettings.png" />
 <em>Adding an XML role service</em></p>
-<dl>
-<dt>Option</dt>
-<dd>
-<p>Description</p>
-</dd>
-<dt>Name</dt>
-<dd>
-<p>The name of the role service</p>
-</dd>
-<dt>Administrator role</dt>
-<dd>
-<p>The name of the role that performs the administrator functions</p>
-</dd>
-<dt>XML filename</dt>
-<dd>
-<p>Name of the file that will contain the role information. Default is <strong><code>roles.xml</code></strong> in the <code>security/role/&lt;name_of_roleservice&gt;</code> directory.</p>
-</dd>
-<dt>File reload interval</dt>
-<dd>
-<p>Defines the frequency (in milliseconds) in which GeoServer will check for changes to the XML file. If the file is found to have been modified, GeoServer will recreate the user/group database based on the current state of the file. This value is meant to be set in cases where the XML file contents might change "out of process" and not directly through the web admin interface. The value is specified in milliseconds. A value of 0 disables any checking of the file.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>The name of the role service</td>
+</tr>
+<tr>
+<td>Administrator role</td>
+<td>The name of the role that performs the administrator functions</td>
+</tr>
+<tr>
+<td>XML filename</td>
+<td>Name of the file that will contain the role information. Default is <strong><code>roles.xml</code></strong> in the <code>security/role/&lt;name_of_roleservice&gt;</code> directory.</td>
+</tr>
+<tr>
+<td>File reload interval</td>
+<td>Defines the frequency (in milliseconds) in which GeoServer will check for changes to the XML file. If the file is found to have been modified, GeoServer will recreate the user/group database based on the current state of the file. This value is meant to be set in cases where the XML file contents might change "out of process" and not directly through the web admin interface. The value is specified in milliseconds. A value of 0 disables any checking of the file.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="add-new-jdbc-role-service">Add new JDBC role service</h2>
 <p>To add a new XML role service, click the <strong>Add new</strong> link, and then the <strong>JDBC</strong> option at the top of the following form. The following figure shows the configuration options for a JDBC role service.</p>
 <p><img alt="" src="../images/ugr_rolejdbcsettings.png" />
 <em>Adding a role service via JDBC</em></p>
-<dl>
-<dt>Option</dt>
-<dd>
-<p>Description</p>
-</dd>
-<dt>Name</dt>
-<dd>
-<p>Name of the JDBC role service in GeoServer</p>
-</dd>
-<dt>Administrator role</dt>
-<dd>
-<p>The name of the role that performs the administrator function</p>
-</dd>
-<dt>JNDI</dt>
-<dd>
-<p>When unchecked, specifies a direct connection to the database. When checked, specifies an existing connection located through <a href="../../../data/database/jndi/">JNDI</a>.</p>
-</dd>
-<dt>Driver class name</dt>
-<dd>
-<p>JDBC driver to use for the database connection</p>
-</dd>
-<dt>Connection URL</dt>
-<dd>
-<p>Specifies the JDBC URL to use when creating the database connection</p>
-</dd>
-<dt>Username</dt>
-<dd>
-<p>Username to use when connecting to the database</p>
-</dd>
-<dt>Password</dt>
-<dd>
-<p>Password to use when connecting to the database</p>
-</dd>
-<dt>Create database tables</dt>
-<dd>
-<p>Specifies whether to create all the necessary tables in the underlying database</p>
-</dd>
-<dt>Data Definition Language (DDL) file</dt>
-<dd>
-<p>Specifies a custom DDL file to use for creating tables in the underlying database, for cases where the default DDL statements fail on the given database. If left blank, internal defaults are used.</p>
-</dd>
-<dt>Data Manipulation Language (DML) file</dt>
-<dd>
-<p>Specifies a custom DML file to use for accessing tables in the underlying database, for cases where the default DML statements fail on the given database. If left blank, internal defaults are used.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Name of the JDBC role service in GeoServer</td>
+</tr>
+<tr>
+<td>Administrator role</td>
+<td>The name of the role that performs the administrator function</td>
+</tr>
+<tr>
+<td>JNDI</td>
+<td>When unchecked, specifies a direct connection to the database. When checked, specifies an existing connection located through <a href="../../../data/database/jndi/">JNDI</a>.</td>
+</tr>
+<tr>
+<td>Driver class name</td>
+<td>JDBC driver to use for the database connection</td>
+</tr>
+<tr>
+<td>Connection URL</td>
+<td>Specifies the JDBC URL to use when creating the database connection</td>
+</tr>
+<tr>
+<td>Username</td>
+<td>Username to use when connecting to the database</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>Password to use when connecting to the database</td>
+</tr>
+<tr>
+<td>Create database tables</td>
+<td>Specifies whether to create all the necessary tables in the underlying database</td>
+</tr>
+<tr>
+<td>Data Definition Language (DDL) file</td>
+<td>Specifies a custom DDL file to use for creating tables in the underlying database, for cases where the default DDL statements fail on the given database. If left blank, internal defaults are used.</td>
+</tr>
+<tr>
+<td>Data Manipulation Language (DML) file</td>
+<td>Specifies a custom DML file to use for accessing tables in the underlying database, for cases where the default DML statements fail on the given database. If left blank, internal defaults are used.</td>
+</tr>
+</tbody>
+</table>
 <p>In addition to the parameters listed above, the following additional parameter will apply when the <a href="../../../data/database/jndi/">JNDI</a> flag is set.</p>
 <p><img alt="" src="../images/ugr_rolejdbcjndisettings.png" />
 <em>Adding a role service via JDBC with JNDI</em></p>
-<dl>
-<dt>Option</dt>
-<dd>
-<p>Description</p>
-</dd>
-<dt>JNDI resource name</dt>
-<dd>
-<p>JNDI name used to locate the database connection.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JNDI resource name</td>
+<td>JNDI name used to locate the database connection.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="add-new-ldap-role-service">Add new LDAP role service</h2>
 <p>To add a new LDAP role service, click the <strong>Add new</strong> link, and then the <strong>LDAP</strong> option at the top of the following form. The following figure shows the configuration options for a LDAP role service.</p>
 <p><img alt="" src="../images/ldap_role_empty.png" />

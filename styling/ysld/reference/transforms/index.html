@@ -2309,45 +2309,53 @@
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
 </span></code></pre></div>
 <p>where:</p>
-<dl>
-<dt>Property</dt>
-<dd>
-<p>Required?</p>
-<p>Description</p>
-<p>Default value</p>
-</dd>
-<dt><code>name</code></dt>
-<dd>
-<p>Yes</p>
-<p>Full name of the rendering transform including any prefixes (such as <code>vec:Heatmap</code>)</p>
-<p>N/A</p>
-</dd>
-<dt><code>params</code></dt>
-<dd>
-<p>Yes</p>
-<p>All input parameters for the rendering transformation. Content will vary greatly based on the amount and type of parameters needed.</p>
-<p>N/A</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>Yes</td>
+<td>Full name of the rendering transform including any prefixes (such as <code>vec:Heatmap</code>)</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>params</code></td>
+<td>Yes</td>
+<td>All input parameters for the rendering transformation. Content will vary greatly based on the amount and type of parameters needed.</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
 <p>The values in the <code>params</code> options typically include values, strings, or attributes. However, it can be useful with a transformation to include environment parameters that concern the position and size of the map when it is rendered. For example, the following are common reserved environment parameters:</p>
-<dl>
-<dt>Environment parameter</dt>
-<dd>
-<p>Description</p>
-</dd>
-<dt><code>env('wms_bbox')</code></dt>
-<dd>
-<p>The bounding box of the request</p>
-</dd>
-<dt><code>env('wms_width')</code></dt>
-<dd>
-<p>The width of the request</p>
-</dd>
-<dt><code>env('wms_height')</code></dt>
-<dd>
-<p>The height of the request</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Environment parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>env('wms_bbox')</code></td>
+<td>The bounding box of the request</td>
+</tr>
+<tr>
+<td><code>env('wms_width')</code></td>
+<td>The width of the request</td>
+</tr>
+<tr>
+<td><code>env('wms_height')</code></td>
+<td>The height of the request</td>
+</tr>
+</tbody>
+</table>
 <p>With this in mind, the following <code>params</code> are assumed unless otherwise specified:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">params</span><span class="p">:</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
