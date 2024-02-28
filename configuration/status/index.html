@@ -1100,6 +1100,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="JVM Console">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#java-threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Java Threads
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java-heap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Java Heap
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1789,6 +1813,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="JVM Console">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#java-threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Java Threads
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java-heap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Java Heap
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1806,7 +1854,7 @@
                   
 
   
-    <a href="https://github.com/jodygarnett/geoserver/edit/mkdocs-preflight-rst-fixes/doc/en/user/source/configuration/status.rst" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/jodygarnett/geoserver/edit/mkdocs-preflight-test/doc/en/user/docs/configuration/status.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -1815,7 +1863,7 @@
     
       
     
-    <a href="https://github.com/jodygarnett/geoserver/raw/mkdocs-preflight-rst-fixes/doc/en/user/source/configuration/status.rst" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/jodygarnett/geoserver/raw/mkdocs-preflight-test/doc/en/user/docs/configuration/status.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
@@ -2136,20 +2184,34 @@
 <p>If some information is not available the special term <code>NOT AVAILABLE</code> will appear. Values will be automatically converted to best human readable unit.</p>
 <h2 id="config_serverstatus_jvm">JVM Console</h2>
 <p>For information on the live Java Runtime Environment the <strong>JVM Console</strong> tab provides access to two useful troubleshooting tools.</p>
-<p>Press <strong>Thread Dump</strong> for a summary of all active threads. This is primarily used to troubleshoot performance issues and a non-responsive system. This can be used to identify when significant work is happening in the background, or if threads are stuck waiting on a resource.</p>
-<p><img alt="" src="../img/thread_dump.png" />
-<em>Thread Dump console output</em></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-</div>
-<p>Press <strong>Heap Dump</strong> for an overview of memory use. This can be used to troubleshoot systems that are encountering a memory leak over time. .. code-block:: raw_markdown</p>
-<blockquote>
-<p>!<a href="../img/heap_dump.png"></a> <em>Heap Dump console output</em></p>
-</blockquote>
-<ul>
-<li>Click <strong>Download</strong> link to download the JVM Console contents.</li>
-</ul>
 <p>For more information on effective use see <a href="../../production/troubleshooting/">Troubleshooting</a>.</p>
+</div>
+<h3 id="java-threads">Java Threads</h3>
+<p>Java Threads are how CPU use is shared between outstanding work GeoServer is performing (or waiting to perform). The "Thread Dump" is primarily used to troubleshoot performance issues and a non-responsive system. This can be used to identify when significant work is happening in the background, or if threads are stuck waiting on a resource.</p>
+<ol>
+<li>
+<p>Press <strong>Thread Dump</strong> for a summary of all active threads.</p>
+<p><img alt="" src="../img/thread_dump.png" />
+<em>Thread Dump console output</em></p>
+</li>
+<li>
+<p>Click <strong>Download</strong> link to download the JVM Console contents.</p>
+</li>
+</ol>
+<h3 id="java-heap">Java Heap</h3>
+<p>The Java Heap is a description of dynamic (or heap) memory use. The "Thread Dump" can be used to troubleshoot systems that are encountering a memory leak over time.</p>
+<ol>
+<li>
+<p>Press <strong>Heap Dump</strong> for an overview of memory use.</p>
+<p><img alt="" src="../img/heap_dump.png" />
+<em>Heap Dump console output</em></p>
+</li>
+<li>
+<p>Click <strong>Download</strong> link to download the JVM Console contents.</p>
+</li>
+</ol>
 
 
 
