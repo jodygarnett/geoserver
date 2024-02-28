@@ -9,7 +9,7 @@ site_url: http://jodygarnett.github.io/geoserver/
 repo_name: geoserver
 repo_url: http://github.com/jodygarnett/geoserver
 edit_uri: edit/mkdocs-preflight-rst-fixes/docs/en/user/docs
-edit_uri_template: https://github.com/jodygarnett/geoserver/edit/mkdocs-preflight-rst-fixes/doc/en/user/source/{path_noext}.rst
+edit_uri_template: https://github.com/jodygarnett/geoserver/edit/mkdocs-preflight-test/doc/en/user/docs/{path_noext}.md
 
 # Copyright
 copyright: Copyright &copy; 2024 Open Source Geospatial Foundation
