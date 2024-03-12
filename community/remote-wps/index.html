@@ -3975,30 +3975,12 @@
 <p>Runtime discovery of new remote executable will be supported through adding new Properties files to a location known to the Python modules. A new OGC WPS compliant process will be directly exposed to GeoServer without restarting the GeoServer itself for the new remote executable since the Python wrappers will communicate the existence of a new executable by interacting with the GeoServer Orchestrator via XMPP messages. The end user will see as many OGC WPS compliant processes as properties configuration files on the remote machines thanks to the functionalities implemented by the Python framework scripts.</p>
 <p>An example of such a properties file can be like below:</p>
 <blockquote>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[Description]
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>service<span class="w"> </span>=<span class="w"> </span>Service
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>namespace<span class="w"> </span>=<span class="w"> </span>default
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>description<span class="w"> </span>=<span class="w"> </span>A<span class="w"> </span>dummy<span class="w"> </span>service,<span class="w"> </span>replace<span class="w"> </span>with<span class="w"> </span>your<span class="w"> </span>own<span class="w"> </span>description
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>executable<span class="w"> </span>=<span class="w"> </span>process.py
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>process_buffer<span class="w"> </span>=<span class="w"> </span>0
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>result_size<span class="w"> </span>=<span class="w"> </span>0
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>active<span class="w"> </span>=<span class="w"> </span>True
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>[Options]
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>customargs<span class="w"> </span>=<span class="w"> </span>--path=D:\user\
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>argformat<span class="w"> </span>=<span class="w"> </span>--key=value
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>debug<span class="w"> </span>=<span class="w"> </span>True
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>[Input]
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>name<span class="w"> </span>=<span class="w"> </span>{&quot;type&quot;:<span class="w"> </span>&quot;string&quot;,<span class="w"> </span>&quot;description&quot;:<span class="w"> </span>&quot;A<span class="w"> </span>person<span class="w"> </span>name&quot;,<span class="w"> </span>&quot;enum&quot;:<span class="w"> </span>[&quot;Hans&quot;,<span class="w"> </span>&quot;Peter&quot;,<span class="w"> </span>&quot;Alex&quot;,<span class="w"> </span>&quot;Michi&quot;],
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>&quot;default&quot;:<span class="w"> </span>&quot;Hans&quot;,<span class="w"> </span>&quot;max&quot;:<span class="w"> </span>1}
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>surname<span class="w"> </span>=<span class="w"> </span>{&quot;type&quot;:<span class="w"> </span>&quot;string&quot;,<span class="w"> </span>&quot;description&quot;:<span class="w"> </span>&quot;A<span class="w"> </span>persons<span class="w"> </span>surname&quot;,<span class="w"> </span>&quot;max&quot;:<span class="w"> </span>1,<span class="w"> </span>&quot;default&quot;:<span class="w"> </span>&quot;Meier&quot;}
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>child<span class="w"> </span>=<span class="w"> </span>{&quot;type&quot;:<span class="w"> </span>&quot;string&quot;,<span class="w"> </span>&quot;description&quot;:<span class="w"> </span>&quot;A<span class="w"> </span>child<span class="w"> </span>name&quot;,<span class="w"> </span>&quot;min&quot;:<span class="w"> </span>0,<span class="w"> </span>&quot;max&quot;:<span class="w"> </span>10}
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>[Output]
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>welcome<span class="w"> </span>=<span class="w"> </span>{&quot;type&quot;:<span class="w"> </span>&quot;string&quot;,<span class="w"> </span>&quot;description&quot;:<span class="w"> </span>&quot;A<span class="w"> </span>welcome<span class="w"> </span>message&quot;}
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>goodbye<span class="w"> </span>=<span class="w"> </span>{&quot;type&quot;:<span class="w"> </span>&quot;string&quot;,<span class="w"> </span>&quot;description&quot;:<span class="w"> </span>&quot;A<span class="w"> </span>goodbye<span class="w"> </span>message&quot;}
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>
 </span></code></pre></div>
+<p>[Description] service = Service namespace = default description = A dummy service, replace with your own description executable = process.py process_buffer = 0 result_size = 0 active = True</p>
+<p>[Options] customargs = --path=D:userargformat = --key=value debug = True</p>
+<p>[Input] name = {"type": "string", "description": "A person name", "enum": ["Hans", "Peter", "Alex", "Michi"], "default": "Hans", "max": 1} surname = {"type": "string", "description": "A persons surname", "max": 1, "default": "Meier"} child = {"type": "string", "description": "A child name", "min": 0, "max": 10}</p>
+<p>[Output] welcome = {"type": "string", "description": "A welcome message"} goodbye = {"type": "string", "description": "A goodbye message"}</p>
 </blockquote>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>

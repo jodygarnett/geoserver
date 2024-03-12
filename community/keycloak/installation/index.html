@@ -3896,17 +3896,23 @@
 <li>
 <p>Community modules are not yet ready for distribution with GeoServer release.</p>
 <p>To compile the keycloak community module yourself download the src bundle for your GeoServer version and compile:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>src/community
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>mvn<span class="w"> </span>install<span class="w"> </span>-PcommunityRelease<span class="w"> </span>-DskipTests
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>
 </span></code></pre></div>
-<p>And package:</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>src/community
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>mvn<span class="w"> </span>assembly:single<span class="w"> </span>-N
-</span></code></pre></div>
-2.  Place the JARs in <code>WEB-INF/lib</code>.
-3.  Restart GeoServer.</p>
 </li>
 </ul>
+<p>cd src/community mvn install -PcommunityRelease -DskipTests</p>
+<blockquote>
+<p>And package:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>
+</span></code></pre></div>
+</blockquote>
+<p>cd src/community mvn assembly:single -N</p>
+</li>
+<li>
+<p>Place the JARs in <code>WEB-INF/lib</code>.</p>
+</li>
+<li>
+<p>Restart GeoServer.</p>
 </li>
 </ol>
 

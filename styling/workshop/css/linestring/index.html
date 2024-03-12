@@ -2409,13 +2409,22 @@
 </li>
 <li>
 <p>Replace the generated CSS definition with the following <strong>stroke</strong> example:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c">/* @title Line</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c"> * @abstract Example line symbolization</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c"> */</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">   </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w"> </span><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>/* @title Line</dt>
+<dd>
+<ul>
+<li>@abstract Example line symbolization */</li>
+</ul>
+</dd>
+</dl>
+<div class="language-text highlight"><pre><span></span><code>* {
+
+:   stroke: blue;
+
+}
+</code></pre></div>
 </li>
 <li>
 <p>Click <strong>Submit</strong> and then the <strong>Map</strong> tab for an initial preview.</p>
@@ -2424,45 +2433,53 @@
 </li>
 <li>
 <p>You can look at the <strong>SLD</strong> tab at any time to see the generated SLD. Currently it is showing a straight forward LineSymbolizer generated from the CSS <strong>stroke</strong> property:</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;sld:UserStyle&gt;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">   </span><span class="nt">&lt;sld:Name&gt;</span>Default<span class="w"> </span>Styler<span class="nt">&lt;/sld:Name&gt;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">   </span><span class="nt">&lt;sld:FeatureTypeStyle&gt;</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="nt">&lt;sld:Name&gt;</span>name<span class="nt">&lt;/sld:Name&gt;</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="nt">&lt;sld:Rule&gt;</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">         </span><span class="nt">&lt;sld:Title&gt;</span>Line<span class="nt">&lt;/sld:Title&gt;</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">         </span><span class="nt">&lt;sld:Abstract&gt;</span>Example<span class="w"> </span>line<span class="w"> </span>symboloization<span class="nt">&lt;/sld:Abstract&gt;</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">         </span><span class="nt">&lt;sld:LineSymbolizer&gt;</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">            </span><span class="nt">&lt;sld:Stroke&gt;</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">               </span><span class="nt">&lt;sld:CssParameter</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;stroke&quot;</span><span class="nt">&gt;</span>#0000ff<span class="nt">&lt;/sld:CssParameter&gt;</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">            </span><span class="nt">&lt;/sld:Stroke&gt;</span><span class="w"> </span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">         </span><span class="nt">&lt;/sld:LineSymbolizer&gt;</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">      </span><span class="nt">&lt;/sld:Rule&gt;</span>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">   </span><span class="nt">&lt;/sld:FeatureTypeStyle&gt;</span>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="nt">&lt;/sld:UserStyle&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>
 </span></code></pre></div>
+<dl>
+<dt><sld:UserStyle></dt>
+<dd>
+<p><sld:Name>Default Styler</sld:Name> <sld:FeatureTypeStyle> <sld:Name>name</sld:Name> <sld:Rule> <sld:Title>Line</sld:Title> <sld:Abstract>Example line symboloization</sld:Abstract> <sld:LineSymbolizer> <sld:Stroke> <sld:CssParameter name="stroke">#0000ff</sld:CssParameter> </sld:Stroke> </sld:LineSymbolizer> </sld:Rule> </sld:FeatureTypeStyle></p>
+</dd>
+</dl>
+<p></sld:UserStyle></p>
 </li>
 <li>
 <p>Additional properties cane be used fine-tune appearance. Use <strong>stroke-width</strong> to specify the width of the line.</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c">/* @title Line</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c"> * @abstract Example line symbolization</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c"> */</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">   </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">   </span><span class="k">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="p">;</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w"> </span><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>/* @title Line</dt>
+<dd>
+<ul>
+<li>@abstract Example line symbolization */</li>
+</ul>
+</dd>
+</dl>
+<div class="language-text highlight"><pre><span></span><code>* {
+
+:   stroke: blue; stroke-width: 2px;
+
+}
+</code></pre></div>
 </li>
 <li>
 <p>The <strong>stroke-dasharray</strong> is used to define breaks rendering the line as a dot dash pattern.</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c">/* @title Line</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c"> * @abstract Example line symbolization</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c"> */</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">   </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">   </span><span class="k">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="p">;</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">   </span><span class="k">stroke-dasharray</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w"> </span><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>/* @title Line</dt>
+<dd>
+<ul>
+<li>@abstract Example line symbolization */</li>
+</ul>
+</dd>
+</dl>
+<div class="language-text highlight"><pre><span></span><code>* {
+
+:   stroke: blue; stroke-width: 2px; stroke-dasharray: 5 2;
+
+}
+</code></pre></div>
 </li>
 <li>
 <p>Check the <strong>Map</strong> tab to preview the result.</p>
@@ -2481,11 +2498,15 @@
 <li>
 <p>Providing two strokes is often used to provide a contrasting edge (called casing) to thick line work.</p>
 <p>Update <code>line_example</code> with the following:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">,</span><span class="w"> </span><span class="mh">#8080E6</span><span class="p">;</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="k">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>stroke: black, #8080E6; stroke-width: 5px, 3px;</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>If you look carefully you can see a problem with our initial attempt. The junctions of each line show that the casing outlines each line individually, making the lines appear randomly overlapped. Ideally we would like to control this process, only making use of this effect for overpasses.</p>
@@ -2493,12 +2514,15 @@
 </li>
 <li>
 <p>The <strong>z-index</strong> parameter allows a draw order to be supplied. This time all the thick black lines are dawn first (at z-index 0) followed by the thinner blue lines (at z-index 1).</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">,</span><span class="w"> </span><span class="mh">#8080E6</span><span class="p">;</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="k">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="k">z-index</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>stroke: black, #8080E6; stroke-width: 5px, 3px; z-index: 0, 1;</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>If you look carefully you can see the difference.</p>
@@ -2518,11 +2542,15 @@
 <li>
 <p>To enable LineString labeling we will need to use the key properties for both <strong>stroke</strong> and <strong>label</strong>.</p>
 <p>Update <code>line_example</code> with the following:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="n">label</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">name</span><span class="p">];</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>stroke: blue; label: [name];</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>The SLD standard documents the default label position for each kind of Geometry. For LineStrings the initial label is positioned on the midway point of the line.</p>
@@ -2530,43 +2558,53 @@
 </li>
 <li>
 <p>We have used an expression to calculate a property value for label. The <strong>label</strong> property is generated dynamically from the <code>name</code> attribute. Expressions are supplied within square brackets, making use of Constraint Query Language (CQL) syntax.</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="n">label</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">name</span><span class="p">];</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>stroke: blue; label: [name];</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>Additional properties can be supplied to fine-tune label presentation:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="n">label</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">name</span><span class="p">];</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="n">font-fill</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span><span class="n">label-offset</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="kt">px</span><span class="p">;</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>stroke: blue; label: [name]; font-fill: black; label-offset: 7px;</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>The <strong>font-fill</strong> property is set to <code>black</code> provides the label color.</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="n">label</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">name</span><span class="p">];</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="n">font-fill</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">  </span><span class="n">label-offset</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="kt">px</span><span class="p">;</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>stroke: blue; label: [name]; font-fill: black; label-offset: 7px;</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>The <strong>label-offset</strong> property is used to adjust the starting position used for labeling.</p>
 <p>Normally the displacement offset is supplied using two numbers (allowing an x and y offset from the midway point used for LineString labeling).</p>
 <p>When labeling a LineString there is a special twist: by specifying a single number for <strong>label-offset</strong> we can ask the rendering engine to position our label a set distance away from the LineString.</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="n">label</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">name</span><span class="p">];</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="n">font-fill</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">  </span><span class="n">label-offset</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="kt">px</span><span class="p">;</span>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>stroke: blue; label: [name]; font-fill: black; label-offset: 7px;</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>When used in this manner the rotation of the label will be adjusted automatically to match the LineString.</p>
@@ -2580,25 +2618,27 @@
 <li>
 <p>The ability to take control of the labeling process is exactly the kind of hint a extra parameter is intended for.</p>
 <p>Update <code>line_example</code> with the following:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="n">label</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">name</span><span class="p">];</span>
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span><span class="n">font-fill</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">  </span><span class="n">label-offset</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="kt">px</span><span class="p">;</span>
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">  </span><span class="n">label-padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>stroke: blue; label: [name]; font-fill: black; label-offset: 7px; label-padding: 10;</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>The parameter <strong>label-padding</strong> provides additional space around our label for use in collision avoidance.</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="n">label</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">name</span><span class="p">];</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">  </span><span class="n">font-fill</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">  </span><span class="n">label-offset</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="kt">px</span><span class="p">;</span>
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">  </span><span class="n">label-padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>stroke: blue; label: [name]; font-fill: black; label-offset: 7px; label-padding: 10;</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>Each label is now separated from its neighbor, improving legibility.</p>
@@ -2610,10 +2650,15 @@
 <ol>
 <li>
 <p>Replace the <code>line_example</code> CSS definition with:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="o">[</span><span class="nt">scalerank</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">4</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>[scalerank &lt; 4] {</dt>
+<dd>
+<p>stroke: black;</p>
+</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>And use the <strong>Map</strong> tab to preview the result.</p>
@@ -2625,13 +2670,15 @@
 <li>
 <p>In addition to testing feature attributes, selectors can also be used to check the state of the rendering engine.</p>
 <p>Replace your CSS with the following:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">35000000</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">   </span><span class="nt">stroke</span><span class="o">:</span><span class="w"> </span><span class="nt">black</span><span class="o">;</span>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="p">}</span>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">35000000</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">   </span><span class="nt">stroke</span><span class="o">:</span><span class="w"> </span><span class="nt">blue</span><span class="o">;</span>
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>[@scale &gt; 35000000] {</dt>
+<dd>
+<p>stroke: black;</p>
+</dd>
+</dl>
+<p>} [@scale &lt; 35000000] { stroke: blue; }</p>
 </li>
 <li>
 <p>As you adjust the scale in the <strong>Map</strong> preview (using the mouse scroll wheel) the color will change between black and blue. You can read the current scale in the bottom right corner, and the legend will change to reflect the current style.</p>
@@ -2639,38 +2686,43 @@
 </li>
 <li>
 <p>Putting these two ideas together allows control of level detail based on scale:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">9000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="nt">scalerank</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">7</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="nt">stroke</span><span class="o">:</span><span class="w"> </span><span class="p">#</span><span class="nn">888888</span><span class="o">;</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="p">}</span>
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
-</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">17000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="nt">scalerank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nt">7</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">  </span><span class="nt">stroke</span><span class="o">:</span><span class="w"> </span><span class="p">#</span><span class="nn">777777</span><span class="o">;</span>
-</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="p">}</span>
-</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>
-</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">35000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="nt">scalerank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nt">6</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">  </span><span class="nt">stroke</span><span class="o">:</span><span class="w"> </span><span class="p">#</span><span class="nn">444444</span><span class="o">;</span>
-</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="p">}</span>
-</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>
-</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">9000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">70000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="nt">scalerank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nt">5</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">  </span><span class="nt">stroke</span><span class="o">:</span><span class="w"> </span><span class="p">#</span><span class="nn">000055</span><span class="o">;</span>
-</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="p">}</span>
-</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">9000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="nt">scalerank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nt">5</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="w">  </span><span class="nt">stroke</span><span class="o">:</span><span class="w"> </span><span class="p">#</span><span class="nn">000055</span><span class="o">;</span>
-</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="w">  </span><span class="nt">stroke-width</span><span class="o">:</span><span class="w"> </span><span class="nt">2</span>
-</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="p">}</span>
-</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a>
-</span><span id="__span-15-21"><a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">35000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="nt">scalerank</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">4</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-15-22"><a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="w">  </span><span class="nt">stroke</span><span class="o">:</span><span class="w"> </span><span class="nt">black</span><span class="o">;</span>
-</span><span id="__span-15-23"><a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a><span class="p">}</span>
-</span><span id="__span-15-24"><a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">9000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nt">35000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="nt">scalerank</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">4</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-15-25"><a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a><span class="w">  </span><span class="nt">stroke</span><span class="o">:</span><span class="w"> </span><span class="nt">black</span><span class="o">;</span>
-</span><span id="__span-15-26"><a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a><span class="w">  </span><span class="nt">stroke-width</span><span class="o">:</span><span class="w"> </span><span class="nt">2</span>
-</span><span id="__span-15-27"><a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a><span class="p">}</span>
-</span><span id="__span-15-28"><a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nt">9000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="nt">scalerank</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">4</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-15-29"><a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a><span class="w">  </span><span class="nt">stroke</span><span class="o">:</span><span class="w"> </span><span class="nt">black</span><span class="o">;</span>
-</span><span id="__span-15-30"><a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a><span class="w">  </span><span class="nt">stroke-width</span><span class="o">:</span><span class="w"> </span><span class="nt">4</span>
-</span><span id="__span-15-31"><a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>[@scale &lt; 9000000] [scalerank &gt; 7] {</dt>
+<dd>
+<p>stroke: #888888;</p>
+</dd>
+</dl>
+<p>}</p>
+<dl>
+<dt>[@scale &lt; 17000000] [scalerank = 7] {</dt>
+<dd>
+<p>stroke: #777777;</p>
+</dd>
+</dl>
+<p>}</p>
+<dl>
+<dt>[@scale &lt; 35000000] [scalerank = 6] {</dt>
+<dd>
+<p>stroke: #444444;</p>
+</dd>
+</dl>
+<p>}</p>
+<dl>
+<dt>[@scale &gt; 9000000] [@scale &lt; 70000000] [scalerank = 5] {</dt>
+<dd>
+<p>stroke: #000055;</p>
+</dd>
+</dl>
+<p>} [@scale &lt; 9000000] [scalerank = 5] { stroke: #000055; stroke-width: 2 }</p>
+<dl>
+<dt>[@scale &gt; 35000000] [scalerank &lt; 4] {</dt>
+<dd>
+<p>stroke: black;</p>
+</dd>
+</dl>
+<p>} [@scale &gt; 9000000] [@scale &lt;= 35000000] [scalerank &lt; 4] { stroke: black; stroke-width: 2 } [@scale &lt;= 9000000] [scalerank &lt; 4] { stroke: black; stroke-width: 4 }</p>
 </li>
 <li>
 <p>As shown above selectors can be combined in the same rule:</p>
@@ -2695,36 +2747,39 @@
 <ol>
 <li>
 <p>Update <code>line_example</code> with the following:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="mh">#ededff</span><span class="p">;</span>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">  </span><span class="k">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">  </span><span class="n">label</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="kc">level</span><span class="p">]</span><span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span><span class="p">[</span><span class="n">name</span><span class="p">];</span>
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">  </span><span class="n">font-fill</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
-</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">  </span><span class="n">label-follow-line</span><span class="p">:</span><span class="w"> </span><span class="n">true</span><span class="p">;</span>
-</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>stroke: #ededff; stroke-width: 10; label: [level] " " [name]; font-fill: black; label-follow-line: true;</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>The property <strong>stroke-width</strong> has been used to make our line thicker in order to provide a backdrop for our label.</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="mh">#ededff</span><span class="p">;</span>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span><span class="k">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">  </span><span class="n">label</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="kc">level</span><span class="p">]</span><span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span><span class="p">[</span><span class="n">name</span><span class="p">];</span>
-</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">  </span><span class="n">font-fill</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
-</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">  </span><span class="n">label-follow-line</span><span class="p">:</span><span class="w"> </span><span class="n">true</span><span class="p">;</span>
-</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>stroke: #ededff; stroke-width: 10; label: [level] " " [name]; font-fill: black; label-follow-line: true;</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>The <strong>label</strong> property combines combine several CQL expressions together for a longer label.</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">  </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="mh">#ededff</span><span class="p">;</span>
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span><span class="k">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">  </span><span class="n">label</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="kc">level</span><span class="p">]</span><span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span><span class="p">[</span><span class="n">name</span><span class="p">];</span>
-</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">  </span><span class="n">font-fill</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
-</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">  </span><span class="n">label-follow-line</span><span class="p">:</span><span class="w"> </span><span class="n">true</span><span class="p">;</span>
-</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>stroke: #ededff; stroke-width: 10; label: [level] " " [name]; font-fill: black; label-follow-line: true;</dd>
+</dl>
+<p>}</p>
 <p>The combined <strong>label</strong> property:</p>
 <div class="language-text highlight"><pre><span></span><code>[level] &quot; &quot; [name]
 </code></pre></div>
@@ -2734,14 +2789,15 @@
 </li>
 <li>
 <p>The property <strong>label-follow-line</strong> provides the ability of have a label exactly follow a LineString character by character.</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="mh">#ededff</span><span class="p">;</span>
-</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">  </span><span class="k">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
-</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">  </span><span class="n">label</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="kc">level</span><span class="p">]</span><span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span><span class="p">[</span><span class="n">name</span><span class="p">];</span>
-</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">  </span><span class="n">font-fill</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
-</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">  </span><span class="n">label-follow-line</span><span class="p">:</span><span class="w"> </span><span class="n">true</span><span class="p">;</span>
-</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>stroke: #ededff; stroke-width: 10; label: [level] " " [name]; font-fill: black; label-follow-line: true;</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>The result is a new appearance for our roads.</p>
@@ -2786,12 +2842,15 @@
 <ol>
 <li>
 <p>Review the SLD generated by the <strong>z-index</strong> example.</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">  </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">,</span><span class="w"> </span><span class="mh">#8080E6</span><span class="p">;</span>
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">  </span><span class="k">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
-</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">  </span><span class="k">z-index</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>stroke: black, #8080E6; stroke-width: 5px, 3px; z-index: 0, 1;</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p><em>Challenge:</em> There is an interesting trick in the generated SLD, can you explain how it works?</p>

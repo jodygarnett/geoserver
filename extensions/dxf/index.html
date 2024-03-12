@@ -3046,7 +3046,7 @@
 <p>This extension adds two distinct functionalities to GeoServer, both related to DXF format support as an output.</p>
 <p>DXF is a CAD interchange format, useful to import data in several CAD systems. Being a textual format it can be easily compressed to a much smaller version, so the need for a DXF-ZIP format, for low bandwidth usage.</p>
 <p>There have been multiple revisions of the format, so we need to choose a "version" of DXF to write. The extension implements version 14, but can be easily extended (through SPI providers) to write other versions too.</p>
-<p>The DXF OutputFormat for WFS adds the support for two additional output formats for WFS GetFeature requests. The new formats, DXF and DXF-ZIP are associated to the "application/dxf" and "application/zip" mime type, respectively. They produce a standard DXF file or a DXF file compressed in zip format.</p>
+<p>The DXF OutputFormat for WFS adds the support for two additional output formats for WFS GetFeature requests. The new formats, DXF and DXF-ZIP are associated to the <code>application/dxf</code> and <code>application/zip</code> mime type, respectively. They produce a standard DXF file or a DXF file compressed in zip format.</p>
 <p>The WPS PPIO adds dxf as an on output format option for WPS processes. The WPS PPIO requires the WPS extension to be installed on GeoServer.</p>
 <h2 id="wfs-output-format-usage">WFS Output Format usage</h2>
 <p>Request Example:</p>
@@ -3163,23 +3163,19 @@ EOF
 <p>Each single query is rendered as a layer. Geometries are encoded as entities (if simple enough to be expressed by a single DXF geometry type) or blocks (if complex, such as polygons with holes or collections).</p>
 <p>Some options are available to control the output generated. They are described in the following paragraphs.</p>
 <h2 id="get-requests-format_options">GET requests format_options</h2>
-<dl>
-<dt>The following format_options are supported:</dt>
-<dd>
+<p>The following format_options are supported:</p>
 <ol>
-<li>version: (number) creates a DXF in the specified version format (only 14 is currently supported)</li>
+<li>version: (number) creates a DXF in the specified version format (only <code>14</code> is currently supported)</li>
 <li>asblock: (true/false) if true, all geometries are written as blocks and then inserted as entities. If false, simple geometries are directly written as entities.</li>
-<li>colors: (comma delimited list of numbers): colors to be used for the DXF layers, in sequence. If layers are more than the specified colors, they will be reused many times. A set of default colors is used if the option is not used. Colors are AutoCad color numbers (7=white, etc.).</li>
-<li>ltypes: (comma delimited list of line type descriptors): line types to be used for the DXF layers, in sequence. If layers are more than the specified line types, they will be reused many times. If not specified, all layers will be given a solid, continuous line type. A descriptor has the following format: <name>!<repeatable pattern>[!<base length>], where <name> is the name assigned to the line type, <base length> (optional) is a real number that tells how long is each part of the line pattern (defaults to 0.125), and <repeatable pattern> is a visual description of the repeatable part of the line pattern, as a sequence of - (solid line),<em> (dot) and _ (empty space). For example a dash-dot pattern would be expressed as --_</em>_.</li>
+<li>colors: (comma delimited list of numbers): colors to be used for the DXF layers, in sequence. If layers are more than the specified colors, they will be reused many times. A set of default colors is used if the option is not used. Colors are AutoCad color numbers (<code>7=white</code>, etc.).</li>
+<li>ltypes: (comma delimited list of line type descriptors): line types to be used for the DXF layers, in sequence. If layers are more than the specified line types, they will be reused many times. If not specified, all layers will be given a solid, continuous line type. A descriptor has the following format: <code>&lt;name&gt;!&lt;repeatable pattern&gt;[!&lt;base length&gt;]</code>, where <code>&lt;name&gt;</code> is the name assigned to the line type, <code>&lt;base length&gt;</code> (optional) is a real number that tells how long is each part of the line pattern (defaults to 0.125), and <code>&lt;repeatable pattern&gt;</code> is a visual description of the repeatable part of the line pattern, as a sequence of <code>-</code> (solid line),<code>*</code> (dot) and <code>_</code> (empty space). For example a dash-dot pattern would be expressed as <code>--_*_</code>.</li>
 <li>layers: (comma delimited list of strings) names to be assigned to the DXF layers. If specified, must contain a name for each requested query. By default a standard name will be assigned to layers.</li>
 <li>withattributes: (true/false) enables writing an extra layer with attributes from each feature, the layer has a punctual geometry, with a point in the centroid of the original feature</li>
 </ol>
-</dd>
-</dl>
 <h2 id="post-options">POST options</h2>
 <p>Unfortunately, it's not currently possible to use format_options in POST requests. The only thing we chose to implement is the layers options, via the handle attribute of Query attributes. So, if specified, the layer of a Query will be named as its handle attribute. The handle attribute of the GetFeature tag can also be used to override the name of the file produced.</p>
 <h2 id="wps-ppio">WPS PPIO</h2>
-<p>When the WPS PPIO module is installed, together with the WPS extension, WPS processes returning a FeatureCollection can use application/dxf or application/zip as output mime type to get a DXF (or zipped DXF) in output.</p>
+<p>When the WPS PPIO module is installed, together with the WPS extension, WPS processes returning a FeatureCollection can use <code>application/dxf</code> or <code>application/zip</code> as output mime type to get a DXF (or zipped DXF) in output.</p>
 
 
 

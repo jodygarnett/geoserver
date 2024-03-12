@@ -2386,10 +2386,15 @@
 </li>
 <li>
 <p>Replace the initial CSS definition with the following and click <strong>apply</strong>:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="n">mark</span><span class="p">:</span><span class="w"> </span><span class="nf">symbol</span><span class="p">(</span><span class="kc">circle</span><span class="p">);</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>mark: symbol(circle);</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>And use the <strong>Layer Preview</strong> tab to preview the result.</p>
@@ -2403,10 +2408,15 @@
 <ol>
 <li>
 <p>As a <strong>key property</strong> the presence <strong>mark</strong> triggers the generation of an appropriate PointSymbolizer.</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w"> </span><span class="n">mark</span><span class="p">:</span><span class="w"> </span><span class="nf">symbol</span><span class="p">(</span><span class="kc">square</span><span class="p">);</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>mark: symbol(square);</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>Map Preview:</p>
@@ -2414,10 +2424,15 @@
 </li>
 <li>
 <p>Before we continue we will use a selector to cut down the amount of data shown to a reasonable level.</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="o">[</span><span class="w"> </span><span class="nt">SCALERANK</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">1</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="n">mark</span><span class="p">:</span><span class="w"> </span><span class="nf">symbol</span><span class="p">(</span><span class="kc">square</span><span class="p">);</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>[ SCALERANK &lt; 1 ] {</dt>
+<dd>
+<p>mark: symbol(square);</p>
+</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>Resulting in a considerably cleaner image:</p>
@@ -2428,12 +2443,15 @@
 <p>The <strong>mark-size</strong> property is used to control symbol size.</p>
 <p>The <strong>mark-rotation</strong> property controls orientation, accepting input in degrees.</p>
 <p>Trying these two settings together:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="o">[</span><span class="w"> </span><span class="nt">SCALERANK</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">1</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="n">mark</span><span class="p">:</span><span class="w"> </span><span class="nf">symbol</span><span class="p">(</span><span class="kc">square</span><span class="p">);</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="n">mark-size</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="n">mark-rotation</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">;</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>[ SCALERANK &lt; 1 ] {</dt>
+<dd>
+<p>mark: symbol(square); mark-size: 8; mark-rotation: 45;</p>
+</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>Results in each location being marked with a diamond:</p>
@@ -2444,16 +2462,15 @@
 <p><strong>:symbol</strong> - provides styling for all the symbols in the CSS document.</p>
 <p><strong>:mark</strong> - provides styling for all the mark symbols in the CSS document.</p>
 <p>This form of pseudo-selector is used for all marks:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">[</span><span class="w"> </span><span class="nt">SCALERANK</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">1</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="n">mark</span><span class="p">:</span><span class="w"> </span><span class="nf">symbol</span><span class="p">(</span><span class="kc">square</span><span class="p">);</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="n">mark-size</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="n">mark-rotation</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">;</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">}</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">:</span><span class="nd">mark</span><span class="p">{</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">   </span><span class="k">fill</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">   </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>[ SCALERANK &lt; 1 ] {</dt>
+<dd>
+<p>mark: symbol(square); mark-size: 8; mark-rotation: 45;</p>
+</dd>
+</dl>
+<p>} :mark{ fill: white; stroke: black; }</p>
 </li>
 <li>
 <p>Updating the mark to a white square with a black outline.</p>
@@ -2464,20 +2481,15 @@
 <p><strong>:nth-symbol(1)</strong> - if needed we could specify which symbol in the document we wish to modify.</p>
 <p><strong>:nth-mark(1)</strong> - provides styling for the first mark symbol in the CSS document.</p>
 <p>Using this approach marks can be composed of multiple symbols, each with its own settings:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="o">[</span><span class="w"> </span><span class="nt">SCALERANK</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">1</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="n">mark</span><span class="p">:</span><span class="w"> </span><span class="nf">symbol</span><span class="p">(</span><span class="kc">square</span><span class="p">),</span><span class="nf">symbol</span><span class="p">(</span><span class="kc">cross</span><span class="p">);</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="n">mark-size</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="mi">14</span><span class="p">;</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="n">mark-rotation</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">45</span><span class="p">;</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">}</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">:</span><span class="nd">nth-mark</span><span class="o">(</span><span class="nt">1</span><span class="o">)</span><span class="p">{</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">   </span><span class="k">fill</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">   </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">}</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="p">:</span><span class="nd">nth-mark</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span><span class="p">{</span>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">   </span><span class="k">fill</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">   </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>[ SCALERANK &lt; 1 ] {</dt>
+<dd>
+<p>mark: symbol(square),symbol(cross); mark-size: 16,14; mark-rotation: 0,45;</p>
+</dd>
+</dl>
+<p>} :nth-mark(1){ fill: red; stroke: black; } :nth-mark(2){ fill: black; stroke: white; }</p>
 </li>
 <li>
 <p>Producing an interesting compound symbol effect:</p>
@@ -2494,11 +2506,15 @@
 <p><strong>mark</strong> property is defined with a <strong>url</strong> reference to image.</p>
 <p><strong>mark-mime</strong> property is used to tell the rendering engine what file format to expect</p>
 <p>This technique is used to reference files placed in the styles directory.</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="o">[</span><span class="w"> </span><span class="nt">SCALERANK</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">1</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="n">mark</span><span class="p">:</span><span class="w"> </span><span class="nb">url</span><span class="p">(</span><span class="sx">port.svg</span><span class="p">);</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="n">mark-mime</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;image/svg&quot;</span><span class="p">;</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>[ SCALERANK &lt; 1 ] {</dt>
+<dd>
+<p>mark: url(port.svg); mark-mime: "image/svg";</p>
+</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>Drawing the provided shape in each location:</p>
@@ -2506,12 +2522,15 @@
 </li>
 <li>
 <p>The <strong>mark</strong> property <strong>url</strong> reference can also be used to reference external images. We can make use of the GeoServer logo.</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="o">[</span><span class="w"> </span><span class="nt">SCALERANK</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">1</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">     </span><span class="n">mark</span><span class="p">:</span><span class="w"> </span><span class="nb">url</span><span class="p">(</span><span class="s2">&quot;http://localhost:8080/geoserver/web/wicket/resource/org.geoserver.web.GeoServerBasePage/img/logo.png&quot;</span><span class="p">);</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">     </span><span class="n">mark-mime</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;image/png&quot;</span><span class="p">;</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">     </span><span class="n">mark-size</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">;</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>[ SCALERANK &lt; 1 ] {</dt>
+<dd>
+<p>mark: url("<a href="http://localhost:8080/geoserver/web/wicket/resource/org.geoserver.web.GeoServerBasePage/img/logo.png">http://localhost:8080/geoserver/web/wicket/resource/org.geoserver.web.GeoServerBasePage/img/logo.png</a>"); mark-mime: "image/png"; mark-size: 16;</p>
+</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>As shown in the map preview.</p>
@@ -2521,18 +2540,15 @@
 <p>SVG external graphics styles can also be declared in the CSS code.</p>
 <p>Using the <strong>symbol</strong> function in the <strong>mark</strong> property.</p>
 <p>The styles declarations have to icluded in the <strong>:mark</strong> pseudo-class.</p>
-<div class="language-scss highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cm">/* @title red triangle with blue stroke */</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="o">*</span><span class="p">{</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">   </span><span class="nt">mark</span><span class="nd">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="s1">&#39;https://www.svgrepo.com/show/488433/triangle.svg&#39;</span><span class="o">);</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">   </span><span class="nt">mark-mime</span><span class="nd">:</span><span class="w"> </span><span class="s2">&quot;image/svg&quot;</span><span class="o">;</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">   </span><span class="nt">mark-size</span><span class="nd">:</span><span class="w"> </span><span class="nt">25</span><span class="o">;</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">   </span><span class="nd">:mark</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">      </span><span class="nt">fill</span><span class="nd">:</span><span class="w"> </span><span class="nn">#ff3300</span><span class="o">;</span>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">      </span><span class="nt">stroke</span><span class="nd">:</span><span class="w"> </span><span class="nt">blue</span><span class="o">;</span>
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">      </span><span class="nt">stroke-width</span><span class="nd">:</span><span class="w"> </span><span class="nt">5px</span><span class="o">;</span>
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">   </span><span class="p">}</span>
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="p">}</span>
+<div class="language-scss highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>/<em> @title red triangle with blue stroke </em>/*{</dt>
+<dd>
+<p>mark: symbol('<a href="https://www.svgrepo.com/show/488433/triangle.svg">https://www.svgrepo.com/show/488433/triangle.svg</a>'); mark-mime: "image/svg"; mark-size: 25; :mark { fill: #ff3300; stroke: blue; stroke-width: 5px; }</p>
+</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>Will result in a modified style for an external SVG graphic resource.</p>
@@ -2546,11 +2562,15 @@
 <ol>
 <li>
 <p>Replace <code>point_example</code> with the following:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="o">[</span><span class="w"> </span><span class="nt">SCALERANK</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">1</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="n">mark</span><span class="p">:</span><span class="w"> </span><span class="nf">symbol</span><span class="p">(</span><span class="kc">circle</span><span class="p">);</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="n">label</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">NAME</span><span class="p">];</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>[ SCALERANK &lt; 1 ] {</dt>
+<dd>
+<p>mark: symbol(circle); label: [NAME];</p>
+</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>Confirm the result in <code>Map</code> preview.</p>
@@ -2567,17 +2587,19 @@
 </li>
 <li>
 <p>Using these two facilities together we can center our labels below the symbol, taking care that the displacement used provides an offset just outside the area required for the symbol size.</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="o">[</span><span class="w"> </span><span class="nt">SCALERANK</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">1</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="n">mark</span><span class="p">:</span><span class="w"> </span><span class="nf">symbol</span><span class="p">(</span><span class="kc">circle</span><span class="p">);</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="n">mark-size</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">  </span><span class="n">label</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">NAME</span><span class="p">];</span>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">  </span><span class="n">label-offset</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">-12</span><span class="p">;</span>
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">  </span><span class="n">label-anchor</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span>
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
-</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">  </span><span class="n">font-fill</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
-</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>[ SCALERANK &lt; 1 ] {</dt>
+<dd>
+<p>mark: symbol(circle); mark-size: 10;</p>
+</dd>
+</dl>
+<div class="language-text highlight"><pre><span></span><code>label: [NAME]; label-offset: 0 -12; label-anchor: 0.5 1.0;
+
+font-fill: black;
+</code></pre></div>
+<p>}</p>
 </li>
 <li>
 <p>Each label is now placed under the mark.</p>
@@ -2590,21 +2612,21 @@
 <p><strong>label-max-displacement</strong> vendor parameter provides the rendering engine a maximum distance it is allowed to move labels during conflict resolution.</p>
 <p><strong>label-padding</strong> vendor parameter tells the rendering engine to provide a minimum distance between the labels on the map, ensuring they do not overlap.</p>
 <p>Update our example to use these settings:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="o">[</span><span class="w"> </span><span class="nt">SCALERANK</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">1</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="n">mark</span><span class="p">:</span><span class="w"> </span><span class="nf">symbol</span><span class="p">(</span><span class="kc">circle</span><span class="p">);</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="n">mark-size</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">  </span><span class="n">label</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">NAME</span><span class="p">];</span>
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">  </span><span class="n">label-offset</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">-12</span><span class="p">;</span>
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">  </span><span class="n">label-anchor</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span>
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
-</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">  </span><span class="n">font-fill</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
-</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
-</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">  </span><span class="n">mark-label-obstacle</span><span class="p">:</span><span class="w"> </span><span class="n">true</span><span class="p">;</span>
-</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">  </span><span class="n">label-max-displacement</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
-</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">  </span><span class="n">label-padding</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>[ SCALERANK &lt; 1 ] {</dt>
+<dd>
+<p>mark: symbol(circle); mark-size: 10;</p>
+</dd>
+</dl>
+<div class="language-text highlight"><pre><span></span><code>label: [NAME]; label-offset: 0 -12; label-anchor: 0.5 1.0;
+
+font-fill: black;
+
+mark-label-obstacle: true; label-max-displacement: 100; label-padding: 2;
+</code></pre></div>
+<p>}</p>
 </li>
 <li>
 <p>Resulting in a considerably cleaner image:</p>
@@ -2615,37 +2637,57 @@
 <ol>
 <li>
 <p>We will quickly use <strong>scalerank</strong> to select content based on @scale selectors.</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">4000000</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">   </span><span class="nt">mark</span><span class="o">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">circle</span><span class="o">);</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="p">}</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">4000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">8000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="nt">SCALERANK</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">7</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">   </span><span class="nt">mark</span><span class="o">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">circle</span><span class="o">);</span>
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="p">}</span>
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
-</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">8000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">17000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="nt">SCALERANK</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">5</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">   </span><span class="nt">mark</span><span class="o">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">circle</span><span class="o">);</span>
-</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="p">}</span>
-</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>
-</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">17000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">35000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="nt">SCALERANK</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">4</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">   </span><span class="nt">mark</span><span class="o">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">circle</span><span class="o">);</span>
-</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="p">}</span>
-</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>
-</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">35000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">70000000</span><span class="o">][</span><span class="nt">SCALERANK</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">3</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">   </span><span class="nt">mark</span><span class="o">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">circle</span><span class="o">);</span>
-</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="p">}</span>
-</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>
-</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">70000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">140000000</span><span class="o">][</span><span class="nt">SCALERANK</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">2</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="w">   </span><span class="nt">mark</span><span class="o">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">circle</span><span class="o">);</span>
-</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="p">}</span>
-</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>
-</span><span id="__span-12-24"><a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">140000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="nt">SCALERANK</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">1</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-25"><a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a><span class="w">  </span><span class="nt">mark</span><span class="o">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">circle</span><span class="o">);</span>
-</span><span id="__span-12-26"><a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a><span class="p">}</span>
-</span><span id="__span-12-27"><a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>
-</span><span id="__span-12-28"><a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-29"><a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a><span class="w">  </span><span class="nt">mark-size</span><span class="o">:</span><span class="w"> </span><span class="nt">6</span><span class="o">;</span>
-</span><span id="__span-12-30"><a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>[@scale &lt; 4000000] {</dt>
+<dd>
+<p>mark: symbol(circle);</p>
+</dd>
+</dl>
+<p>} [@scale &gt; 4000000] [@scale &lt; 8000000] [SCALERANK &lt; 7] { mark: symbol(circle); }</p>
+<dl>
+<dt>[@scale &gt; 8000000] [@scale &lt; 17000000] [SCALERANK &lt; 5] {</dt>
+<dd>
+<p>mark: symbol(circle);</p>
+</dd>
+</dl>
+<p>}</p>
+<dl>
+<dt>[@scale &gt; 17000000] [@scale &lt; 35000000] [SCALERANK &lt; 4] {</dt>
+<dd>
+<p>mark: symbol(circle);</p>
+</dd>
+</dl>
+<p>}</p>
+<dl>
+<dt>[@scale &gt; 35000000] [@scale &lt; 70000000][SCALERANK &lt; 3] {</dt>
+<dd>
+<p>mark: symbol(circle);</p>
+</dd>
+</dl>
+<p>}</p>
+<dl>
+<dt>[@scale &gt; 70000000] [@scale &lt; 140000000][SCALERANK &lt; 2] {</dt>
+<dd>
+<p>mark: symbol(circle);</p>
+</dd>
+</dl>
+<p>}</p>
+<dl>
+<dt>[@scale &gt; 140000000] [SCALERANK &lt; 1] {</dt>
+<dd>
+<p>mark: symbol(circle);</p>
+</dd>
+</dl>
+<p>}</p>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>mark-size: 6;</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>Click <strong>Submit</strong> to update the <strong>Map</strong> after each step.</p>
@@ -2653,84 +2695,97 @@
 </li>
 <li>
 <p>To add labeling we must use both the <strong>key properties</strong> mark and label in each scale selector, using rule cascading to define the mark-size and font information once.</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">4000000</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">   </span><span class="nt">mark</span><span class="o">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">circle</span><span class="o">);</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">   </span><span class="nt">label</span><span class="o">:</span><span class="w"> </span><span class="o">[</span><span class="nt">NAME</span><span class="o">];</span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="p">}</span>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">4000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">8000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="nt">SCALERANK</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">7</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">   </span><span class="nt">mark</span><span class="o">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">circle</span><span class="o">);</span>
-</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">   </span><span class="nt">label</span><span class="o">:</span><span class="w"> </span><span class="o">[</span><span class="nt">NAME</span><span class="o">];</span>
-</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="p">}</span>
-</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
-</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">8000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">17000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="nt">SCALERANK</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">5</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">   </span><span class="nt">mark</span><span class="o">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">circle</span><span class="o">);</span>
-</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">   </span><span class="nt">label</span><span class="o">:</span><span class="w"> </span><span class="o">[</span><span class="nt">NAME</span><span class="o">];</span>
-</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="p">}</span>
-</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>
-</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">17000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">35000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="nt">SCALERANK</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">4</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">   </span><span class="nt">mark</span><span class="o">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">circle</span><span class="o">);</span>
-</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">   </span><span class="nt">label</span><span class="o">:</span><span class="w"> </span><span class="o">[</span><span class="nt">NAME</span><span class="o">];</span>
-</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="p">}</span>
-</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>
-</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">35000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">70000000</span><span class="o">][</span><span class="nt">SCALERANK</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">3</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="w">   </span><span class="nt">mark</span><span class="o">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">circle</span><span class="o">);</span>
-</span><span id="__span-13-22"><a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="w">   </span><span class="nt">label</span><span class="o">:</span><span class="w"> </span><span class="o">[</span><span class="nt">NAME</span><span class="o">];</span>
-</span><span id="__span-13-23"><a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a><span class="p">}</span>
-</span><span id="__span-13-24"><a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a>
-</span><span id="__span-13-25"><a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">70000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">140000000</span><span class="o">][</span><span class="nt">SCALERANK</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">2</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-13-26"><a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a><span class="w">   </span><span class="nt">mark</span><span class="o">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">circle</span><span class="o">);</span>
-</span><span id="__span-13-27"><a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a><span class="w">   </span><span class="nt">label</span><span class="o">:</span><span class="w"> </span><span class="o">[</span><span class="nt">NAME</span><span class="o">];</span>
-</span><span id="__span-13-28"><a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a><span class="p">}</span>
-</span><span id="__span-13-29"><a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a>
-</span><span id="__span-13-30"><a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">140000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="nt">SCALERANK</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">1</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-13-31"><a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a><span class="w">   </span><span class="nt">mark</span><span class="o">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">circle</span><span class="o">);</span>
-</span><span id="__span-13-32"><a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a><span class="w">   </span><span class="nt">label</span><span class="o">:</span><span class="w"> </span><span class="o">[</span><span class="nt">NAME</span><span class="o">];</span>
-</span><span id="__span-13-33"><a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a><span class="p">}</span>
-</span><span id="__span-13-34"><a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a>
-</span><span id="__span-13-35"><a id="__codelineno-13-35" name="__codelineno-13-35" href="#__codelineno-13-35"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-13-36"><a id="__codelineno-13-36" name="__codelineno-13-36" href="#__codelineno-13-36"></a><span class="w">  </span><span class="nt">mark-size</span><span class="o">:</span><span class="w"> </span><span class="nt">6</span><span class="o">;</span>
-</span><span id="__span-13-37"><a id="__codelineno-13-37" name="__codelineno-13-37" href="#__codelineno-13-37"></a>
-</span><span id="__span-13-38"><a id="__codelineno-13-38" name="__codelineno-13-38" href="#__codelineno-13-38"></a><span class="w">  </span><span class="nt">font-fill</span><span class="o">:</span><span class="w"> </span><span class="nt">black</span><span class="o">;</span>
-</span><span id="__span-13-39"><a id="__codelineno-13-39" name="__codelineno-13-39" href="#__codelineno-13-39"></a><span class="w">  </span><span class="nt">font-family</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Arial&quot;</span><span class="o">;</span>
-</span><span id="__span-13-40"><a id="__codelineno-13-40" name="__codelineno-13-40" href="#__codelineno-13-40"></a><span class="w">  </span><span class="nt">font-size</span><span class="o">:</span><span class="w"> </span><span class="nt">10</span><span class="o">;</span>
-</span><span id="__span-13-41"><a id="__codelineno-13-41" name="__codelineno-13-41" href="#__codelineno-13-41"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>[@scale &lt; 4000000] {</dt>
+<dd>
+<p>mark: symbol(circle); label: [NAME];</p>
+</dd>
+</dl>
+<p>} [@scale &gt; 4000000] [@scale &lt; 8000000] [SCALERANK &lt; 7] { mark: symbol(circle); label: [NAME]; }</p>
+<dl>
+<dt>[@scale &gt; 8000000] [@scale &lt; 17000000] [SCALERANK &lt; 5] {</dt>
+<dd>
+<p>mark: symbol(circle); label: [NAME];</p>
+</dd>
+</dl>
+<p>}</p>
+<dl>
+<dt>[@scale &gt; 17000000] [@scale &lt; 35000000] [SCALERANK &lt; 4] {</dt>
+<dd>
+<p>mark: symbol(circle); label: [NAME];</p>
+</dd>
+</dl>
+<p>}</p>
+<dl>
+<dt>[@scale &gt; 35000000] [@scale &lt; 70000000][SCALERANK &lt; 3] {</dt>
+<dd>
+<p>mark: symbol(circle); label: [NAME];</p>
+</dd>
+</dl>
+<p>}</p>
+<dl>
+<dt>[@scale &gt; 70000000] [@scale &lt; 140000000][SCALERANK &lt; 2] {</dt>
+<dd>
+<p>mark: symbol(circle); label: [NAME];</p>
+</dd>
+</dl>
+<p>}</p>
+<dl>
+<dt>[@scale &gt; 140000000] [SCALERANK &lt; 1] {</dt>
+<dd>
+<p>mark: symbol(circle); label: [NAME];</p>
+</dd>
+</dl>
+<p>}</p>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>mark-size: 6;</dd>
+</dl>
+<div class="language-text highlight"><pre><span></span><code>font-fill: black; font-family: &quot;Arial&quot;; font-size: 10;
+</code></pre></div>
+<p>}</p>
 <p><img alt="image" src="../../style/img/point_05_label.png" /></p>
 </li>
 <li>
 <p>We will use <strong>label-offset</strong> and <strong>label-anchor</strong> to position the label above each symbol.</p>
 <p>Add the following two lines to the <code>*</code> selector:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="n">mark-size</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">  </span><span class="n">font-fill</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">  </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Arial&quot;</span><span class="p">;</span>
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
-</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
-</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">  </span><span class="n">label-anchor</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">  </span><span class="n">label-offset</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
-</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>mark-size: 6;</dd>
+</dl>
+<div class="language-text highlight"><pre><span></span><code>font-fill: black; font-family: &quot;Arial&quot;; font-size: 10;
+
+label-anchor: 0.5 0; label-offset: 0 6;
+</code></pre></div>
+<p>}</p>
 <p><img alt="image" src="../../style/img/point_05_align.png" /></p>
 </li>
 <li>
 <p>A little bit of work with vendor specific parameters will prevent our labels from colliding with each symbol, while giving the rendering engine some flexibility in how far it is allowed to relocate a label.</p>
 <p>Add the following vendor options to the <code>*</code> selector:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="n">mark-size</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">  </span><span class="n">font-fill</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
-</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">  </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Arial&quot;</span><span class="p">;</span>
-</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
-</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
-</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">  </span><span class="n">label-anchor</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">  </span><span class="n">label-offset</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
-</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>
-</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">  </span><span class="n">mark-label-obstacle</span><span class="p">:</span><span class="w"> </span><span class="n">true</span><span class="p">;</span>
-</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">  </span><span class="n">label-max-displacement</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">;</span>
-</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">  </span><span class="n">label-padding</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>mark-size: 6;</dd>
+</dl>
+<div class="language-text highlight"><pre><span></span><code>font-fill: black; font-family: &quot;Arial&quot;; font-size: 10;
+
+label-anchor: 0.5 0; label-offset: 0 6;
+
+mark-label-obstacle: true; label-max-displacement: 90; label-padding: 2;
+</code></pre></div>
+<p>}</p>
 <p><img alt="image" src="../../style/img/point_06_relocate.png" /></p>
 </li>
 <li>
@@ -2751,95 +2806,58 @@
 <div class="language-text highlight"><pre><span></span><code>[10 - LABELRANK]
 </code></pre></div>
 <p>This expression will result in values between 0 and 10 and will be used for the <strong>label-priority</strong>.</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="n">mark-size</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">10</span><span class="o">-</span><span class="p">(</span><span class="n">SCALERANK</span><span class="o">/</span><span class="mi">2</span><span class="p">)];</span>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">  </span><span class="n">font-fill</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">  </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Arial&quot;</span><span class="p">;</span>
-</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
-</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
-</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">  </span><span class="n">label-anchor</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">  </span><span class="n">label-offset</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">[</span><span class="mi">10</span><span class="o">-</span><span class="p">(</span><span class="n">SCALERANK</span><span class="o">/</span><span class="mi">2</span><span class="p">)];</span>
-</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>
-</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">  </span><span class="n">mark-label-obstacle</span><span class="p">:</span><span class="w"> </span><span class="n">true</span><span class="p">;</span>
-</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="w">  </span><span class="n">label-max-displacement</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">;</span>
-</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="w">  </span><span class="n">label-padding</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="w">  </span><span class="n">label-priority</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">10</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">LABELRANK</span><span class="p">];</span>
-</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>mark-size: [10-(SCALERANK/2)];</dd>
+</dl>
+<div class="language-text highlight"><pre><span></span><code>font-fill: black; font-family: &quot;Arial&quot;; font-size: 10;
+
+label-anchor: 0.5 0; label-offset: 0 [10-(SCALERANK/2)];
+
+mark-label-obstacle: true; label-max-displacement: 90; label-padding: 2; label-priority: [10 - LABELRANK];
+</code></pre></div>
+<p>}</p>
 <p><img alt="image" src="../../style/img/point_07_expression.png" /></p>
 </li>
 <li>
 <p>Next we can use <code>FEATURECLA</code> to check for capital cities.</p>
 <p>Adding a selector for capital cities at the top of the file:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c">/* capitals */</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">70000000</span><span class="o">]</span>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="o">[</span><span class="nt">FEATURECLA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Admin-0 capital&#39;</span><span class="o">]</span><span class="w">  </span><span class="p">{</span>
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">   </span><span class="nt">mark</span><span class="o">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">star</span><span class="o">);</span>
-</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">   </span><span class="nt">label</span><span class="o">:</span><span class="w"> </span><span class="o">[</span><span class="nt">NAME</span><span class="o">];</span>
-</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="p">}</span>
-</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">70000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="nt">SCALERANK</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">2</span><span class="o">]</span>
-</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="o">[</span><span class="nt">FEATURECLA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Admin-0 capital&#39;</span><span class="o">]</span><span class="w">  </span><span class="p">{</span>
-</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">   </span><span class="nt">mark</span><span class="o">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">star</span><span class="o">);</span>
-</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">   </span><span class="nt">label</span><span class="o">:</span><span class="w"> </span><span class="o">[</span><span class="nt">NAME</span><span class="o">];</span>
-</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>
 </span></code></pre></div>
+<p>/<em> capitals </em>/ [@scale &lt; 70000000] [FEATURECLA = 'Admin-0 capital'] { mark: symbol(star); label: [NAME]; } [@scale &gt; 70000000] [SCALERANK &lt; 2] [FEATURECLA = 'Admin-0 capital'] { mark: symbol(star); label: [NAME]; }</p>
 <p>And updating the populated places selectors to ignore capital cities:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c">/* populated places */</span>
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">4000000</span><span class="o">]</span>
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="o">[</span><span class="nt">FEATURECLA</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s1">&#39;Admin-0 capital&#39;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">   </span><span class="nt">mark</span><span class="o">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">circle</span><span class="o">);</span>
-</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">   </span><span class="nt">label</span><span class="o">:</span><span class="w"> </span><span class="o">[</span><span class="nt">NAME</span><span class="o">];</span>
-</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="p">}</span>
-</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">4000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">8000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="nt">SCALERANK</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">7</span><span class="o">]</span>
-</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="o">[</span><span class="nt">FEATURECLA</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s1">&#39;Admin-0 capital&#39;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">   </span><span class="nt">mark</span><span class="o">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">circle</span><span class="o">);</span>
-</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">   </span><span class="nt">label</span><span class="o">:</span><span class="w"> </span><span class="o">[</span><span class="nt">NAME</span><span class="o">];</span>
-</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="p">}</span>
-</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>
-</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">8000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">17000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="nt">SCALERANK</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">5</span><span class="o">]</span>
-</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="o">[</span><span class="nt">FEATURECLA</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s1">&#39;Admin-0 capital&#39;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="w">   </span><span class="nt">mark</span><span class="o">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">circle</span><span class="o">);</span>
-</span><span id="__span-18-16"><a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="w">   </span><span class="nt">label</span><span class="o">:</span><span class="w"> </span><span class="o">[</span><span class="nt">NAME</span><span class="o">];</span>
-</span><span id="__span-18-17"><a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="p">}</span>
-</span><span id="__span-18-18"><a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a>
-</span><span id="__span-18-19"><a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">17000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">35000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="nt">SCALERANK</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">4</span><span class="o">]</span>
-</span><span id="__span-18-20"><a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a><span class="o">[</span><span class="nt">FEATURECLA</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s1">&#39;Admin-0 capital&#39;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-18-21"><a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a><span class="w">   </span><span class="nt">mark</span><span class="o">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">circle</span><span class="o">);</span>
-</span><span id="__span-18-22"><a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a><span class="w">   </span><span class="nt">label</span><span class="o">:</span><span class="w"> </span><span class="o">[</span><span class="nt">NAME</span><span class="o">];</span>
-</span><span id="__span-18-23"><a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a><span class="p">}</span>
-</span><span id="__span-18-24"><a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a>
-</span><span id="__span-18-25"><a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">35000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">70000000</span><span class="o">][</span><span class="nt">SCALERANK</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">3</span><span class="o">]</span>
-</span><span id="__span-18-26"><a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a><span class="o">[</span><span class="nt">FEATURECLA</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s1">&#39;Admin-0 capital&#39;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-18-27"><a id="__codelineno-18-27" name="__codelineno-18-27" href="#__codelineno-18-27"></a><span class="w">   </span><span class="nt">mark</span><span class="o">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">circle</span><span class="o">);</span>
-</span><span id="__span-18-28"><a id="__codelineno-18-28" name="__codelineno-18-28" href="#__codelineno-18-28"></a><span class="w">   </span><span class="nt">label</span><span class="o">:</span><span class="w"> </span><span class="o">[</span><span class="nt">NAME</span><span class="o">];</span>
-</span><span id="__span-18-29"><a id="__codelineno-18-29" name="__codelineno-18-29" href="#__codelineno-18-29"></a><span class="p">}</span>
-</span><span id="__span-18-30"><a id="__codelineno-18-30" name="__codelineno-18-30" href="#__codelineno-18-30"></a>
-</span><span id="__span-18-31"><a id="__codelineno-18-31" name="__codelineno-18-31" href="#__codelineno-18-31"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">70000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">140000000</span><span class="o">][</span><span class="nt">SCALERANK</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">2</span><span class="o">]</span>
-</span><span id="__span-18-32"><a id="__codelineno-18-32" name="__codelineno-18-32" href="#__codelineno-18-32"></a><span class="o">[</span><span class="nt">FEATURECLA</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s1">&#39;Admin-0 capital&#39;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-18-33"><a id="__codelineno-18-33" name="__codelineno-18-33" href="#__codelineno-18-33"></a><span class="w">   </span><span class="nt">mark</span><span class="o">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">circle</span><span class="o">);</span>
-</span><span id="__span-18-34"><a id="__codelineno-18-34" name="__codelineno-18-34" href="#__codelineno-18-34"></a><span class="w">   </span><span class="nt">label</span><span class="o">:</span><span class="w"> </span><span class="o">[</span><span class="nt">NAME</span><span class="o">];</span>
-</span><span id="__span-18-35"><a id="__codelineno-18-35" name="__codelineno-18-35" href="#__codelineno-18-35"></a><span class="p">}</span>
-</span><span id="__span-18-36"><a id="__codelineno-18-36" name="__codelineno-18-36" href="#__codelineno-18-36"></a>
-</span><span id="__span-18-37"><a id="__codelineno-18-37" name="__codelineno-18-37" href="#__codelineno-18-37"></a><span class="o">[</span><span class="p">@</span><span class="k">scale</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">140000000</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="nt">SCALERANK</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nt">1</span><span class="o">]</span>
-</span><span id="__span-18-38"><a id="__codelineno-18-38" name="__codelineno-18-38" href="#__codelineno-18-38"></a><span class="o">[</span><span class="nt">FEATURECLA</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s1">&#39;Admin-0 capital&#39;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-18-39"><a id="__codelineno-18-39" name="__codelineno-18-39" href="#__codelineno-18-39"></a><span class="w">   </span><span class="nt">mark</span><span class="o">:</span><span class="w"> </span><span class="nt">symbol</span><span class="o">(</span><span class="nt">circle</span><span class="o">);</span>
-</span><span id="__span-18-40"><a id="__codelineno-18-40" name="__codelineno-18-40" href="#__codelineno-18-40"></a><span class="w">   </span><span class="nt">label</span><span class="o">:</span><span class="w"> </span><span class="o">[</span><span class="nt">NAME</span><span class="o">];</span>
-</span><span id="__span-18-41"><a id="__codelineno-18-41" name="__codelineno-18-41" href="#__codelineno-18-41"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>
 </span></code></pre></div>
+<p>/<em> populated places </em>/ [@scale &lt; 4000000] [FEATURECLA &lt;&gt; 'Admin-0 capital'] { mark: symbol(circle); label: [NAME]; } [@scale &gt; 4000000] [@scale &lt; 8000000] [SCALERANK &lt; 7] [FEATURECLA &lt;&gt; 'Admin-0 capital'] { mark: symbol(circle); label: [NAME]; }</p>
+<p>[@scale &gt; 8000000] [@scale &lt; 17000000] [SCALERANK &lt; 5] [FEATURECLA &lt;&gt; 'Admin-0 capital'] { mark: symbol(circle); label: [NAME]; }</p>
+<p>[@scale &gt; 17000000] [@scale &lt; 35000000] [SCALERANK &lt; 4] [FEATURECLA &lt;&gt; 'Admin-0 capital'] { mark: symbol(circle); label: [NAME]; }</p>
+<p>[@scale &gt; 35000000] [@scale &lt; 70000000][SCALERANK &lt; 3] [FEATURECLA &lt;&gt; 'Admin-0 capital'] { mark: symbol(circle); label: [NAME]; }</p>
+<p>[@scale &gt; 70000000] [@scale &lt; 140000000][SCALERANK &lt; 2] [FEATURECLA &lt;&gt; 'Admin-0 capital'] { mark: symbol(circle); label: [NAME]; }</p>
+<p>[@scale &gt; 140000000] [SCALERANK &lt; 1] [FEATURECLA &lt;&gt; 'Admin-0 capital'] { mark: symbol(circle); label: [NAME]; }</p>
 <p><img alt="image" src="../../style/img/point_08_symbol.png" /></p>
 </li>
 <li>
 <p>Finally we can fill in the capital city symbols using a combination of a selector to detect capital cities, and pseudo selector to provide mark styling.</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="o">[</span><span class="nt">FEATURECLA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Admin-0 capital&#39;</span><span class="o">]</span><span class="w"> </span><span class="p">:</span><span class="nd">mark</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="k">fill</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
-</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="p">}</span>
-</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
-</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="p">:</span><span class="nd">symbol</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">  </span><span class="k">fill</span><span class="p">:</span><span class="w"> </span><span class="kc">gray</span><span class="p">;</span>
-</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">  </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
-</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>[FEATURECLA = 'Admin-0 capital'] :mark {</dt>
+<dd>
+<p>fill: black;</p>
+</dd>
+</dl>
+<p>}</p>
+<dl>
+<dt>:symbol {</dt>
+<dd>
+<p>fill: gray; stroke: black;</p>
+</dd>
+</dl>
+<p>}</p>
 <p><img alt="image" src="../../style/img/point_09_fill.png" /></p>
 </li>
 <li>
@@ -2879,21 +2897,28 @@
 <li>
 <p>We went to a lot of work to set up selectors to choose between symbol(star) and symbol(circle) for capital cities.</p>
 <p>This approach is straightforward when applied in isolation:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="o">[</span><span class="nt">FEATURECLA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Admin-0 capital&#39;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">   </span><span class="n">mark</span><span class="p">:</span><span class="w"> </span><span class="nf">symbol</span><span class="p">(</span><span class="n">star</span><span class="p">);</span>
-</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="p">}</span>
-</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="o">[</span><span class="nt">FEATURECLA</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s1">&#39;Admin-0 capital&#39;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">   </span><span class="n">mark</span><span class="p">:</span><span class="w"> </span><span class="nf">symbol</span><span class="p">(</span><span class="kc">circle</span><span class="p">);</span>
-</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>[FEATURECLA = 'Admin-0 capital'] {</dt>
+<dd>
+<p>mark: symbol(star);</p>
+</dd>
+</dl>
+<p>} [FEATURECLA &lt;&gt; 'Admin-0 capital'] { mark: symbol(circle); }</p>
 <p>When combined with checking another attribute, or checking @scale as in our example, this approach can quickly lead to many rules which can be difficult to keep straight.</p>
 </li>
 <li>
 <p>Taking a closer look both <code>symbol()</code> and <code>url()</code> can actually be expressed using a string:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="o">[</span><span class="nt">FEATURECLA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Admin-0 capital&#39;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">   </span><span class="n">mark</span><span class="p">:</span><span class="w"> </span><span class="nf">symbol</span><span class="p">(</span><span class="s2">&quot;star&quot;</span><span class="p">);</span>
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>[FEATURECLA = 'Admin-0 capital'] {</dt>
+<dd>
+<p>mark: symbol("star");</p>
+</dd>
+</dl>
+<p>}</p>
 <p>Which is represented in SLD as:</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nt">&lt;sld:PointSymbolizer&gt;</span>
 </span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span><span class="nt">&lt;sld:Graphic&gt;</span>
@@ -2903,18 +2928,27 @@
 </span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">        </span><span class="nt">&lt;sld:Stroke/&gt;</span>
 </span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">     </span><span class="nt">&lt;/sld:Mark&gt;</span>
 </span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="w">  </span><span class="nt">&lt;/sld:Graphic&gt;</span>
-</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="nt">&lt;/sld:PointSymbolizer&gt;</span>
 </span></code></pre></div>
+<p></sld:PointSymbolizer></p>
 </li>
 <li>
 <p>GeoServer recognizes this limitation of SLD Mark and ExternalGraphic and provides an opportunity for dynamic symbolization.</p>
 <p>This is accomplished by embedding a small CQL expression in the string passed to symbol or url. This sub-expression is isolated with <code>\${ }</code> as shown:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">   </span><span class="n">mark</span><span class="p">:</span><span class="w"> </span><span class="nf">symbol</span><span class="p">(</span>
-</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">     </span><span class="s2">&quot;${if_then_else(equalTo(FEATURECLA,&#39;Admin-0 capital&#39;),&#39;star&#39;,&#39;circle&#39;)}&quot;</span>
-</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">   </span><span class="p">);</span>
-</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd></dd>
+</dl>
+<div class="language-text highlight"><pre><span></span><code>mark: symbol(
+
+:   &quot;\${if_then_else(equalTo(FEATURECLA,&#39;Admin-0 capital&#39;),&#39;star&#39;,&#39;circle&#39;)}&quot;
+
+);
+</code></pre></div>
+<p>}</p>
 <p>Which is represented in SLD as:</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nt">&lt;sld:PointSymbolizer&gt;</span>
 </span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">  </span><span class="nt">&lt;sld:Graphic&gt;</span>
@@ -2924,8 +2958,8 @@
 </span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">        </span><span class="nt">&lt;sld:Stroke/&gt;</span>
 </span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="w">     </span><span class="nt">&lt;/sld:Mark&gt;</span>
 </span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="w">  </span><span class="nt">&lt;/sld:Graphic&gt;</span>
-</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="nt">&lt;/sld:PointSymbolizer&gt;</span>
 </span></code></pre></div>
+<p></sld:PointSymbolizer></p>
 </li>
 <li>
 <p><strong>Challenge:</strong> Use this approach to rewrite the <em>Dynamic Styling</em> example.</p>
@@ -2952,20 +2986,27 @@
 </li>
 <li>
 <p>To help start things out here is a style for <code>ne:states_provinces_shp</code>:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span><span class="w">     </span>
-</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">   </span><span class="k">fill</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">,[</span>
-</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">    </span><span class="nf">recode</span><span class="p">(</span><span class="n">mapcolor9</span><span class="p">,</span>
-</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">      </span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;#8dd3c7&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;#ffffb3&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;#bebada&#39;</span><span class="p">,</span>
-</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">      </span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;#fb8072&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;#80b1d3&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;#fdb462&#39;</span><span class="p">,</span>
-</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">      </span><span class="mi">7</span><span class="p">,</span><span class="s1">&#39;#b3de69&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="s1">&#39;#fccde5&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="s1">&#39;#d9d9d9&#39;</span><span class="p">)</span>
-</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="w">   </span><span class="p">];</span>
-</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="w">   </span><span class="k">fill-opacity</span><span class="p">:</span><span class="w"> </span><span class="mi">05</span><span class="kt">%</span><span class="p">,</span><span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
-</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>
-</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="w">   </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
-</span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="w">   </span><span class="k">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="mf">0.25</span><span class="p">;</span>
-</span><span id="__span-25-12"><a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a><span class="w">   </span><span class="k">stroke-opacity</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
-</span><span id="__span-25-13"><a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd></dd>
+</dl>
+<div class="language-text highlight"><pre><span></span><code>fill: white,[
+
+:
+
+    recode(mapcolor9,
+
+    :   1,&#39;#8dd3c7&#39;, 2,&#39;#ffffb3&#39;, 3,&#39;#bebada&#39;, 4,&#39;#fb8072&#39;, 5,&#39;#80b1d3&#39;, 6,&#39;#fdb462&#39;, 7,&#39;#b3de69&#39;, 8,&#39;#fccde5&#39;, 9,&#39;#d9d9d9&#39;)
+
+]; fill-opacity: 05%,50%;
+
+stroke: black; stroke-width: 0.25; stroke-opacity: 50%;
+</code></pre></div>
+<p>}</p>
 </li>
 <li>
 <p>This background is relatively busy and care must be taken to ensure both symbols and labels are clearly visible.</p>
@@ -2984,13 +3025,15 @@
 <ol>
 <li>
 <p>In addition to image formats GeoServer can make use other kinds of graphics, such as True Type fonts:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">   </span><span class="n">mark</span><span class="p">:</span><span class="w"> </span><span class="nf">symbol</span><span class="p">(</span><span class="s2">&quot;ttf://Webdings#0x0064&quot;</span><span class="p">);</span>
-</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="p">}</span>
-</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="p">:</span><span class="nd">mark</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">   </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
-</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>mark: symbol("ttf://Webdings#0x0064");</dd>
+</dl>
+<p>} :mark { stroke: blue; }</p>
 </li>
 <li>
 <p>Additional fonts dropped in the <strong><code>styles</code></strong> directory are available for use.</p>
@@ -3004,13 +3047,15 @@
 </li>
 <li>
 <p>Support has been added for custom graphics using the WKT Geometry representation.</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">   </span><span class="n">mark</span><span class="p">:</span><span class="w"> </span><span class="nf">symbol</span><span class="p">(</span><span class="s2">&quot;wkt://MULTILINESTRING((-0.25 -0.25, -0.125 -0.25), (0.125 -0.25, 0.25 -0.25), (-0.25 0.25, -0.125 0.25), (0.125 0.25, 0.25 0.25))&quot;</span><span class="p">);</span>
-</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="p">}</span>
-</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="p">:</span><span class="nd">mark</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">   </span><span class="k">stroke</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span>
-</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="p">}</span><span class="w"> </span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>mark: symbol("wkt://MULTILINESTRING((-0.25 -0.25, -0.125 -0.25), (0.125 -0.25, 0.25 -0.25), (-0.25 0.25, -0.125 0.25), (0.125 0.25, 0.25 0.25))");</dd>
+</dl>
+<p>} :mark { stroke: blue; }</p>
 </li>
 </ol>
 

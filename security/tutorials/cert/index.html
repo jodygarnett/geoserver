@@ -2171,13 +2171,16 @@
 <li>
 <p>By default, Tomcat has APR enabled. To disable it so the above configuration can work, remove or comment out the following line in the server.xml configuration file</p>
 <blockquote>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;Listener</span><span class="w"> </span><span class="na">className=</span><span class="s">&quot;org.apache.catalina.core.AprLifecycleListener&quot;</span><span class="w"> </span><span class="na">SSLEngine=</span><span class="s">&quot;on&quot;</span><span class="w"> </span><span class="nt">/&gt;</span><span class="w">   </span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>
 </span></code></pre></div>
 </blockquote>
 </li>
-<li>
-<p>Restart Tomcat.</p>
-</li>
+</ol>
+<blockquote>
+<p><Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" /></p>
+</blockquote>
+<ol>
+<li>Restart Tomcat.</li>
 </ol>
 <h2 id="install-the-client-certificate">Install the client certificate</h2>
 <ol>

@@ -3081,59 +3081,68 @@
 <dl>
 <dt>As an instance:</dt>
 <dd>
-<p><code>bash
-wget ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-4/hdf5-1.8.13.tar.gz
-wget ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-4/zlib-1.2.8.tar.gz</code></p>
+<p><code>bash</code></p>
 </dd>
 </dl>
 </li>
+</ol>
+<blockquote>
+<p>wget <a href="ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-4/hdf5-1.8.13.tar.gz">ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-4/hdf5-1.8.13.tar.gz</a> wget <a href="ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-4/zlib-1.2.8.tar.gz">ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-4/zlib-1.2.8.tar.gz</a></p>
+</blockquote>
+<ol>
 <li>
 <p>Download the latest NetCDF-C source code from <a href="https://github.com/Unidata/netcdf-c/releases/">here</a>.</p>
 <dl>
 <dt>As an instance:</dt>
 <dd>
-<p><code>bash
-wget https://github.com/Unidata/netcdf-c/archive/v4.3.3.1.tar.gz</code></p>
+<p><code>bash</code></p>
 </dd>
 </dl>
 </li>
-<li>
-<p>Build and install the required dependencies (The following instructions assume that you will install all NetCDF4 C libs on <code>/work/libs/nc4libs</code>, as an instance).</p>
+</ol>
+<blockquote>
+<p>wget <a href="https://github.com/Unidata/netcdf-c/archive/v4.3.3.1.tar.gz">https://github.com/Unidata/netcdf-c/archive/v4.3.3.1.tar.gz</a></p>
+</blockquote>
 <ol>
+<li>Build and install the required dependencies (The following instructions assume that you will install all NetCDF4 C libs on <code>/work/libs/nc4libs</code>, as an instance).<ol>
 <li>
 <dl>
 <dt>ZLIB</dt>
 <dd>
-<p>``` bash
-./configure --prefix=/work/libs/nc4libs</p>
+<p><code>bash</code></p>
 </dd>
 </dl>
-<div class="language-text highlight"><pre><span></span><code>make check install
-```
-</code></pre></div>
 </li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p>./configure --prefix=/work/libs/nc4libs</p>
+<p>make check install</p>
+<blockquote>
+<ol>
 <li>
 <dl>
 <dt>HDF5</dt>
 <dd>
-<p>``` bash
-./configure --with-zlib=/work/libs/nc4libs --prefix=/work/libs/nc4libs --enable-threadsafe --with-pthread=/DIR/TO/PTHREAD</p>
+<p><code>bash</code></p>
 </dd>
 </dl>
-<div class="language-text highlight"><pre><span></span><code>make check install
-```
-</code></pre></div>
 </li>
 </ol>
-</li>
+</blockquote>
+<p>./configure --with-zlib=/work/libs/nc4libs --prefix=/work/libs/nc4libs --enable-threadsafe --with-pthread=/DIR/TO/PTHREAD</p>
+<p>make check install</p>
+</blockquote>
+<ol>
 <li>
 <p>Build the NetCDF C Library.</p>
 <blockquote>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">CPPFLAGS</span><span class="o">=</span>-I/work/libs/nc4libs/include<span class="w"> </span><span class="nv">LDFLAGS</span><span class="o">=</span>-L/work/libs/nc4libs/lib<span class="w"> </span>./configure<span class="w"> </span>--prefix<span class="o">=</span>/work/libs/nc4libs
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>make<span class="w"> </span>check<span class="w"> </span>install
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>
 </span></code></pre></div>
 </blockquote>
+<p>CPPFLAGS=-I/work/libs/nc4libs/include LDFLAGS=-L/work/libs/nc4libs/lib ./configure --prefix=/work/libs/nc4libs</p>
+<p>make check install</p>
 </li>
 <li>
 <p>Make sure to add the <em>lib</em> folder of the package you have extracted, to the <code>PATH</code> environment variable.</p>

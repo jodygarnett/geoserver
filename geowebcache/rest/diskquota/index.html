@@ -2251,11 +2251,13 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The request body for PUT should contain only the desired properties to be modified. For example, the following will only change the maxConcurrentCleanups property in XML format:</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;gwcQuotaConfiguration&gt;&lt;maxConcurrentCleanUps&gt;</span>2<span class="nt">&lt;/maxConcurrentCleanUps&gt;&lt;/gwcQuotaConfiguration&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>
 </span></code></pre></div>
+<p><gwcQuotaConfiguration><maxConcurrentCleanUps>2</maxConcurrentCleanUps></gwcQuotaConfiguration></p>
 <p>The following will only change the diskBlockSize, enabled, and globalQuota properties in JSON format:</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span><span class="nt">&quot;gwcQuotaConfiguration&quot;</span><span class="p">:{</span><span class="nt">&quot;diskBlockSize&quot;</span><span class="p">:</span><span class="mi">2048</span><span class="p">,</span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;globalQuota&quot;</span><span class="p">:{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;100&quot;</span><span class="p">,</span><span class="nt">&quot;units&quot;</span><span class="p">:</span><span class="s2">&quot;MiB&quot;</span><span class="p">}}</span>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>
 </span></code></pre></div>
+<p>{"gwcQuotaConfiguration":{"diskBlockSize":2048,"enabled":true,"globalQuota":{"value":"100","units":"MiB"}}</p>
 </div>
 <p>The following XML example successfully enables the quota and sets the globalQuota size:</p>
 <div class="language-console highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="go">curl -v -u admin:geoserver &quot;http://localhost:8090/geoserver/gwc/rest/diskquota.xml&quot; -X PUT -d &quot;&lt;gwcQuotaConfiguration&gt;&lt;enabled&gt;true&lt;/enabled&gt;&lt;globalQuota&gt;&lt;value&gt;100&lt;/value&gt;&lt;units&gt;GiB&lt;/units&gt;&lt;/globalQuota&gt;&lt;/gwcQuotaConfiguration&gt;&quot;</span>

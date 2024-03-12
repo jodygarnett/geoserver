@@ -2422,50 +2422,64 @@
 </li>
 <li>
 <p>You can see the equivalent SLD by requesting <code>http://localhost:8080/geoserver/rest/styles/line_example.sld?pretty=true</code> which will currently show the default line symbolizer we created.</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><span class="nt">&lt;sld:StyledLayerDescriptor</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://www.opengis.net/sld&quot;</span><span class="w"> </span><span class="na">xmlns:sld=</span><span class="s">&quot;http://www.opengis.net/sld&quot;</span><span class="w"> </span><span class="na">xmlns:gml=</span><span class="s">&quot;http://www.opengis.net/gml&quot;</span><span class="w"> </span><span class="na">xmlns:ogc=</span><span class="s">&quot;http://www.opengis.net/ogc&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.0.0&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w"> </span><span class="nt">&lt;sld:NamedLayer&gt;</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&lt;sld:Name&gt;</span>line_example<span class="nt">&lt;/sld:Name&gt;</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">&lt;sld:UserStyle&gt;</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">&lt;sld:Name&gt;</span>line_example<span class="nt">&lt;/sld:Name&gt;</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nt">&lt;sld:Title&gt;</span>dark<span class="w"> </span>yellow<span class="w"> </span>line<span class="nt">&lt;/sld:Title&gt;</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nt">&lt;sld:FeatureTypeStyle&gt;</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">      </span><span class="nt">&lt;sld:Name&gt;</span>name<span class="nt">&lt;/sld:Name&gt;</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">      </span><span class="nt">&lt;sld:Rule&gt;</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">        </span><span class="nt">&lt;sld:LineSymbolizer&gt;</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">          </span><span class="nt">&lt;sld:Stroke&gt;</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">            </span><span class="nt">&lt;sld:CssParameter</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;stroke&quot;</span><span class="nt">&gt;</span>#99CC00<span class="nt">&lt;/sld:CssParameter&gt;</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">          </span><span class="nt">&lt;/sld:Stroke&gt;</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">        </span><span class="nt">&lt;/sld:LineSymbolizer&gt;</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">      </span><span class="nt">&lt;/sld:Rule&gt;</span>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="nt">&lt;/sld:FeatureTypeStyle&gt;</span>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">  </span><span class="nt">&lt;/sld:UserStyle&gt;</span>
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w"> </span><span class="nt">&lt;/sld:NamedLayer&gt;</span>
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="nt">&lt;/sld:StyledLayerDescriptor&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>
 </span></code></pre></div>
 </li>
 </ol>
+<blockquote>
+<dl>
+<dt>&lt;?xml version="1.0" encoding="UTF-8"?&gt;<sld:StyledLayerDescriptor xmlns="<a href="http://www.opengis.net/sld">http://www.opengis.net/sld</a>" xmlns:sld="<a href="http://www.opengis.net/sld">http://www.opengis.net/sld</a>" xmlns:gml="<a href="http://www.opengis.net/gml">http://www.opengis.net/gml</a>" xmlns:ogc="<a href="http://www.opengis.net/ogc">http://www.opengis.net/ogc</a>" version="1.0.0"></dt>
+<dd>
+<dl>
+<dt><sld:NamedLayer></dt>
+<dd>
+<p><sld:Name>line_example</sld:Name> <sld:UserStyle> <sld:Name>line_example</sld:Name> <sld:Title>dark yellow line</sld:Title> <sld:FeatureTypeStyle> <sld:Name>name</sld:Name> <sld:Rule> <sld:LineSymbolizer> <sld:Stroke> <sld:CssParameter name="stroke">#99CC00</sld:CssParameter> </sld:Stroke> </sld:LineSymbolizer> </sld:Rule> </sld:FeatureTypeStyle> </sld:UserStyle></p>
+</dd>
+</dl>
+<p></sld:NamedLayer></p>
+</dd>
+</dl>
+<p></sld:StyledLayerDescriptor></p>
+</blockquote>
 <p>We only specified the line symbolizer, so all of the boilerplate around was generated for us.</p>
 <ol>
 <li>
 <p>Additional properties can be used fine-tune appearance. Use <strong>stroke-color</strong> to specify the colour of the line.</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">line</span><span class="p">:</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">stroke-color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blue</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>line:</dt>
+<dd>
+<p>stroke-color: blue</p>
+</dd>
+</dl>
 </li>
 <li>
 <p><strong>stroke-width</strong> lets us make the line wider</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">line</span><span class="p">:</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">stroke-color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blue</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2px</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>line:</dt>
+<dd>
+<p>stroke-color: blue</p>
+</dd>
+</dl>
+<p>stroke-width: 2px</p>
 </li>
 <li>
 <p><strong>stroke-dasharray</strong> applies a dot dash pattern.</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">line</span><span class="p">:</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">stroke-color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blue</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nt">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2px</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">stroke-dasharray</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5 2</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>line:</dt>
+<dd>
+<p>stroke-color: blue</p>
+</dd>
+<dt>stroke-width: 2px</dt>
+<dd>
+<p>stroke-dasharray: 5 2</p>
+</dd>
+</dl>
 </li>
 <li>
 <p>Check the <strong>Layer Preview</strong> tab to preview the result.</p>
@@ -2482,27 +2496,58 @@
 <ol>
 <li>
 <p>Start by filling in a bit of boilerplate that we'll be using</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">feature-styles</span><span class="p">:</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">rules</span><span class="p">:</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">symbolizers</span><span class="p">:</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">line</span><span class="p">:</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">        </span><span class="nt">stroke-color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#8080E6&#39;</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">        </span><span class="nt">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3px</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>
 </span></code></pre></div>
+<p>feature-styles:</p>
+<ul>
+<li>rules:<ul>
+<li>symbolizers:<ul>
+<li>
+<dl>
+<dt>line:</dt>
+<dd>
+<p>stroke-color: '#8080E6' stroke-width: 3px</p>
+</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <p>The line symbolizer is inside a rule, which is inside a feature style.</p>
 </li>
 <li>
 <p>Add a second symbolizer to the rule</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">feature-styles</span><span class="p">:</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">rules</span><span class="p">:</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">symbolizers</span><span class="p">:</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">line</span><span class="p">:</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">        </span><span class="nt">stroke-color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">        </span><span class="nt">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5px</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">line</span><span class="p">:</span>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">        </span><span class="nt">stroke-color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#8080E6&#39;</span>
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">        </span><span class="nt">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3px</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>
 </span></code></pre></div>
+<p>feature-styles:</p>
+<ul>
+<li>rules:<ul>
+<li>
+<p>symbolizers:</p>
+<ul>
+<li>
+<dl>
+<dt>line:</dt>
+<dd>
+<p>stroke-color: black stroke-width: 5px</p>
+</dd>
+</dl>
+</li>
+<li>
+<dl>
+<dt>line:</dt>
+<dd>
+<p>stroke-color: '#8080E6' stroke-width: 3px</p>
+</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <p>The wider black line is first so it is drawn first, then the thinner blue line drawn second and so over top of the black line. This is called the painter's algorithm.</p>
 </li>
 <li>
@@ -2512,18 +2557,32 @@
 </li>
 <li>
 <p>Create a new feature style and move the second symbolizer there.</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">feature-styles</span><span class="p">:</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">rules</span><span class="p">:</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">symbolizers</span><span class="p">:</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">line</span><span class="p">:</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">        </span><span class="nt">stroke-color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">        </span><span class="nt">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5px</span>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">rules</span><span class="p">:</span>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">symbolizers</span><span class="p">:</span>
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">line</span><span class="p">:</span>
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">        </span><span class="nt">stroke-color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#8080E6&#39;</span>
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">        </span><span class="nt">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3px</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>
 </span></code></pre></div>
+<p>feature-styles:</p>
+<ul>
+<li>rules:<ul>
+<li>symbolizers:<ul>
+<li>
+<dl>
+<dt>line:</dt>
+<dd>
+<p>stroke-color: black stroke-width: 5px
+-   rules:
+    -   symbolizers:
+        -   </p>
+</dd>
+<dt>line:</dt>
+<dd>
+<p>stroke-color: '#8080E6' stroke-width: 3px</p>
+</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <p>Again we are using painter's algorithm order: the first feature style is drawn first then the second so the second is drawn on top of the first. The difference is that for each feature style, all of the features are drawn before the next feature style is drawn.</p>
 </li>
 <li>
@@ -2575,9 +2634,13 @@
 </span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">text</span><span class="p">:</span>
 </span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${name}</span>
 </span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span><span class="nt">fill-color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="nt">placement</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">line</span>
-</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">offset</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7px</span>
 </span></code></pre></div>
+<dl>
+<dt>placement: line</dt>
+<dd>
+<p>offset: 7px</p>
+</dd>
+</dl>
 </li>
 <li>
 <p>The <strong>fill-color</strong> property is set to <code>black</code> to provide the colour of the text.</p>
@@ -2636,8 +2699,8 @@
 </span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">    </span><span class="nt">fill-color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
 </span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">    </span><span class="nt">placement</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">line</span>
 </span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">    </span><span class="nt">offset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7px</span>
-</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="nt">x-label-padding</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
 </span></code></pre></div>
+<p>x-label-padding: 10</p>
 </li>
 <li>
 <p>The parameter <strong>x-label-padding</strong> provides additional space around our label for use in collision avoidance.</p>
@@ -2650,8 +2713,8 @@
 </span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">    </span><span class="nt">fill-color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
 </span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">    </span><span class="nt">placement</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">line</span>
 </span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">    </span><span class="nt">offset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7px</span>
-</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="nt">x-label-padding</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
 </span></code></pre></div>
+<p>x-label-padding: 10</p>
 </li>
 <li>
 <p>Each label is now separated from its neighbor, improving legibility.</p>
@@ -2663,13 +2726,22 @@
 <ol>
 <li>
 <p>Replace the <code>line_example</code> YSLD definition with:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nt">rules</span><span class="p">:</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">filter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${scalerank &lt; 4}</span>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span><span class="nt">symbolizers</span><span class="p">:</span>
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">line</span><span class="p">:</span>
-</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">      </span><span class="nt">stroke-color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
-</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">      </span><span class="nt">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>
 </span></code></pre></div>
+<p>rules:</p>
+<ul>
+<li>filter: \${scalerank &lt; 4} symbolizers:<ul>
+<li>
+<dl>
+<dt>line:</dt>
+<dd>
+<p>stroke-color: black stroke-width: 1</p>
+</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
 </li>
 <li>
 <p>And use the <strong>Layer Preview</strong> tab to preview the result.</p>
@@ -2681,18 +2753,28 @@
 <li>
 <p>In addition to testing feature attributes, selectors can also be used to check the state of the rendering engine.</p>
 <p>Replace your YSLD with the following:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nt">rules</span><span class="p">:</span>
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">scale</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">35000000</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">max</span><span class="p p-Indicator">]</span>
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span><span class="nt">symbolizers</span><span class="p">:</span>
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">line</span><span class="p">:</span>
-</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">      </span><span class="nt">stroke-color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
-</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">      </span><span class="nt">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
-</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">scale</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">min</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">35000000</span><span class="p p-Indicator">]</span>
-</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">  </span><span class="nt">symbolizers</span><span class="p">:</span>
-</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">line</span><span class="p">:</span>
-</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">      </span><span class="nt">stroke-color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blue</span>
-</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">      </span><span class="nt">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>
 </span></code></pre></div>
+<p>rules:</p>
+<ul>
+<li>scale: [35000000, max] symbolizers:<ul>
+<li>
+<dl>
+<dt>line:</dt>
+<dd>
+<p>stroke-color: black stroke-width: 1
+-   scale: [min, 35000000] symbolizers:
+    -   </p>
+</dd>
+<dt>line:</dt>
+<dd>
+<p>stroke-color: blue stroke-width: 1</p>
+</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
 </li>
 <li>
 <p>As you adjust the scale in the <strong>Layer Preview</strong> (using the mouse scroll wheel) the color will change between black and blue. You can read the current scale in the bottom right corner, and the legend will change to reflect the current style.</p>
@@ -2700,69 +2782,80 @@
 </li>
 <li>
 <p>Putting these two ideas together allows control of level detail based on scale:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nt">define</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;primaryStyle</span>
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="nt">stroke-color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
-</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="nt">define</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;primaryFilter</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${scalerank &lt;= 4}</span>
-</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
-</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="nt">define</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;secondaryStyle</span>
-</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">  </span><span class="nt">stroke-color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#000055&#39;</span>
-</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="nt">define</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;secondaryFilter</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${scalerank = 5}</span>
-</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
-</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="nt">rules</span><span class="p">:</span>
-</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>
-</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">else</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="w">    </span><span class="nt">scale</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">min</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">9000000</span><span class="p p-Indicator">]</span>
-</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="w">    </span><span class="nt">symbolizers</span><span class="p">:</span>
-</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">line</span><span class="p">:</span>
-</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="w">        </span><span class="nt">stroke-color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#888888&#39;</span>
-</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="w">        </span><span class="nt">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
-</span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>
-</span><span id="__span-19-18"><a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">filter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${scalerank = 7}</span>
-</span><span id="__span-19-19"><a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a><span class="w">    </span><span class="nt">scale</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">min</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">17000000</span><span class="p p-Indicator">]</span>
-</span><span id="__span-19-20"><a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a><span class="w">    </span><span class="nt">symbolizers</span><span class="p">:</span>
-</span><span id="__span-19-21"><a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">line</span><span class="p">:</span>
-</span><span id="__span-19-22"><a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a><span class="w">        </span><span class="nt">stroke-color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#777777&#39;</span>
-</span><span id="__span-19-23"><a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a><span class="w">        </span><span class="nt">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
-</span><span id="__span-19-24"><a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a>
-</span><span id="__span-19-25"><a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">filter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${scalerank = 6}</span>
-</span><span id="__span-19-26"><a id="__codelineno-19-26" name="__codelineno-19-26" href="#__codelineno-19-26"></a><span class="w">    </span><span class="nt">scale</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">min</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">35000000</span><span class="p p-Indicator">]</span>
-</span><span id="__span-19-27"><a id="__codelineno-19-27" name="__codelineno-19-27" href="#__codelineno-19-27"></a><span class="w">    </span><span class="nt">symbolizers</span><span class="p">:</span>
-</span><span id="__span-19-28"><a id="__codelineno-19-28" name="__codelineno-19-28" href="#__codelineno-19-28"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">line</span><span class="p">:</span>
-</span><span id="__span-19-29"><a id="__codelineno-19-29" name="__codelineno-19-29" href="#__codelineno-19-29"></a><span class="w">        </span><span class="nt">stroke-color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#444444&#39;</span>
-</span><span id="__span-19-30"><a id="__codelineno-19-30" name="__codelineno-19-30" href="#__codelineno-19-30"></a><span class="w">        </span><span class="nt">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
-</span><span id="__span-19-31"><a id="__codelineno-19-31" name="__codelineno-19-31" href="#__codelineno-19-31"></a>
-</span><span id="__span-19-32"><a id="__codelineno-19-32" name="__codelineno-19-32" href="#__codelineno-19-32"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">filter</span><span class="p">:</span><span class="w"> </span><span class="nv">*secondaryFilter</span>
-</span><span id="__span-19-33"><a id="__codelineno-19-33" name="__codelineno-19-33" href="#__codelineno-19-33"></a><span class="w">    </span><span class="nt">scale</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">9000000</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">70000000</span><span class="p p-Indicator">]</span>
-</span><span id="__span-19-34"><a id="__codelineno-19-34" name="__codelineno-19-34" href="#__codelineno-19-34"></a><span class="w">    </span><span class="nt">symbolizers</span><span class="p">:</span>
-</span><span id="__span-19-35"><a id="__codelineno-19-35" name="__codelineno-19-35" href="#__codelineno-19-35"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">line</span><span class="p">:</span>
-</span><span id="__span-19-36"><a id="__codelineno-19-36" name="__codelineno-19-36" href="#__codelineno-19-36"></a><span class="w">        </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*secondaryStyle</span>
-</span><span id="__span-19-37"><a id="__codelineno-19-37" name="__codelineno-19-37" href="#__codelineno-19-37"></a><span class="w">        </span><span class="nt">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
-</span><span id="__span-19-38"><a id="__codelineno-19-38" name="__codelineno-19-38" href="#__codelineno-19-38"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">filter</span><span class="p">:</span><span class="w"> </span><span class="nv">*secondaryFilter</span>
-</span><span id="__span-19-39"><a id="__codelineno-19-39" name="__codelineno-19-39" href="#__codelineno-19-39"></a><span class="w">    </span><span class="nt">scale</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">min</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">9000000</span><span class="p p-Indicator">]</span>
-</span><span id="__span-19-40"><a id="__codelineno-19-40" name="__codelineno-19-40" href="#__codelineno-19-40"></a><span class="w">    </span><span class="nt">symbolizers</span><span class="p">:</span>
-</span><span id="__span-19-41"><a id="__codelineno-19-41" name="__codelineno-19-41" href="#__codelineno-19-41"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">line</span><span class="p">:</span>
-</span><span id="__span-19-42"><a id="__codelineno-19-42" name="__codelineno-19-42" href="#__codelineno-19-42"></a><span class="w">        </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*secondaryStyle</span>
-</span><span id="__span-19-43"><a id="__codelineno-19-43" name="__codelineno-19-43" href="#__codelineno-19-43"></a><span class="w">        </span><span class="nt">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
-</span><span id="__span-19-44"><a id="__codelineno-19-44" name="__codelineno-19-44" href="#__codelineno-19-44"></a>
-</span><span id="__span-19-45"><a id="__codelineno-19-45" name="__codelineno-19-45" href="#__codelineno-19-45"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">filter</span><span class="p">:</span><span class="w"> </span><span class="nv">*primaryFilter</span>
-</span><span id="__span-19-46"><a id="__codelineno-19-46" name="__codelineno-19-46" href="#__codelineno-19-46"></a><span class="w">    </span><span class="nt">scale</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">35000000</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">max</span><span class="p p-Indicator">]</span>
-</span><span id="__span-19-47"><a id="__codelineno-19-47" name="__codelineno-19-47" href="#__codelineno-19-47"></a><span class="w">    </span><span class="nt">symbolizers</span><span class="p">:</span>
-</span><span id="__span-19-48"><a id="__codelineno-19-48" name="__codelineno-19-48" href="#__codelineno-19-48"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">line</span><span class="p">:</span>
-</span><span id="__span-19-49"><a id="__codelineno-19-49" name="__codelineno-19-49" href="#__codelineno-19-49"></a><span class="w">        </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*primaryStyle</span>
-</span><span id="__span-19-50"><a id="__codelineno-19-50" name="__codelineno-19-50" href="#__codelineno-19-50"></a><span class="w">        </span><span class="nt">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
-</span><span id="__span-19-51"><a id="__codelineno-19-51" name="__codelineno-19-51" href="#__codelineno-19-51"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">filter</span><span class="p">:</span><span class="w"> </span><span class="nv">*primaryFilter</span>
-</span><span id="__span-19-52"><a id="__codelineno-19-52" name="__codelineno-19-52" href="#__codelineno-19-52"></a><span class="w">    </span><span class="nt">scale</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">9000000</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">35000000</span><span class="p p-Indicator">]</span>
-</span><span id="__span-19-53"><a id="__codelineno-19-53" name="__codelineno-19-53" href="#__codelineno-19-53"></a><span class="w">    </span><span class="nt">symbolizers</span><span class="p">:</span>
-</span><span id="__span-19-54"><a id="__codelineno-19-54" name="__codelineno-19-54" href="#__codelineno-19-54"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">line</span><span class="p">:</span>
-</span><span id="__span-19-55"><a id="__codelineno-19-55" name="__codelineno-19-55" href="#__codelineno-19-55"></a><span class="w">        </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*primaryStyle</span>
-</span><span id="__span-19-56"><a id="__codelineno-19-56" name="__codelineno-19-56" href="#__codelineno-19-56"></a><span class="w">        </span><span class="nt">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
-</span><span id="__span-19-57"><a id="__codelineno-19-57" name="__codelineno-19-57" href="#__codelineno-19-57"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">filter</span><span class="p">:</span><span class="w"> </span><span class="nv">*primaryFilter</span>
-</span><span id="__span-19-58"><a id="__codelineno-19-58" name="__codelineno-19-58" href="#__codelineno-19-58"></a><span class="w">    </span><span class="nt">scale</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">min</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">9000000</span><span class="p p-Indicator">]</span>
-</span><span id="__span-19-59"><a id="__codelineno-19-59" name="__codelineno-19-59" href="#__codelineno-19-59"></a><span class="w">    </span><span class="nt">symbolizers</span><span class="p">:</span>
-</span><span id="__span-19-60"><a id="__codelineno-19-60" name="__codelineno-19-60" href="#__codelineno-19-60"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">line</span><span class="p">:</span>
-</span><span id="__span-19-61"><a id="__codelineno-19-61" name="__codelineno-19-61" href="#__codelineno-19-61"></a><span class="w">        </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*primaryStyle</span>
-</span><span id="__span-19-62"><a id="__codelineno-19-62" name="__codelineno-19-62" href="#__codelineno-19-62"></a><span class="w">        </span><span class="nt">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>define: &amp;primaryStyle</dt>
+<dd>
+<p>stroke-color: black</p>
+</dd>
+</dl>
+<p>define: &amp;primaryFilter \${scalerank &lt;= 4}</p>
+<dl>
+<dt>define: &amp;secondaryStyle</dt>
+<dd>
+<p>stroke-color: '#000055'</p>
+</dd>
+</dl>
+<p>define: &amp;secondaryFilter \${scalerank = 5}</p>
+<p>rules:</p>
+<blockquote>
+<ul>
+<li>else: true scale: [min, 9000000] symbolizers:<ul>
+<li>
+<dl>
+<dt>line:</dt>
+<dd>
+<p>stroke-color: '#888888' stroke-width: 1
+-   filter: \${scalerank = 7} scale: [min, 17000000] symbolizers:
+    -   </p>
+</dd>
+<dt>line:</dt>
+<dd>
+<p>stroke-color: '#777777' stroke-width: 1
+-   filter: \${scalerank = 6} scale: [min, 35000000] symbolizers:
+    -   </p>
+</dd>
+<dt>line:</dt>
+<dd>
+<p>stroke-color: '#444444' stroke-width: 1
+-   filter: *secondaryFilter scale: [9000000, 70000000] symbolizers:
+    -   </p>
+</dd>
+<dt>line:</dt>
+<dd>
+<p>&lt;&lt;: <em>secondaryStyle stroke-width: 1
+-   filter: </em>secondaryFilter scale: [min, 9000000] symbolizers:
+    -   </p>
+</dd>
+<dt>line:</dt>
+<dd>
+<p>&lt;&lt;: <em>secondaryStyle stroke-width: 2
+-   filter: </em>primaryFilter scale: [35000000, max] symbolizers:
+    -   </p>
+</dd>
+<dt>line:</dt>
+<dd>
+<p>&lt;&lt;: <em>primaryStyle stroke-width: 1
+-   filter: </em>primaryFilter scale: [9000000, 35000000] symbolizers:
+    -   </p>
+</dd>
+<dt>line:</dt>
+<dd>
+<p>&lt;&lt;: <em>primaryStyle stroke-width: 2
+-   filter: </em>primaryFilter scale: [min, 9000000] symbolizers:
+    -   </p>
+</dd>
+<dt>line:</dt>
+<dd>
+<p>&lt;&lt;: *primaryStyle stroke-width: 4</p>
+</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
 </li>
 <li>
 <p>When a rule has both a filter and a scale, it will trigger when both are true.</p>
@@ -2784,41 +2877,76 @@
 <ol>
 <li>
 <p>Update <code>line_example</code> with the following:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nt">symbolizers</span><span class="p">:</span>
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">line</span><span class="p">:</span>
-</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">    </span><span class="nt">stroke-color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#EDEDFF&#39;</span>
-</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span><span class="nt">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
-</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">text</span><span class="p">:</span>
-</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">    </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;${level}</span><span class="nv"> </span><span class="s">#${name}&#39;</span>
-</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">    </span><span class="nt">fill-color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#000000&#39;</span>
-</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">    </span><span class="nt">x-followLine</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>
 </span></code></pre></div>
+<p>symbolizers:</p>
+<ul>
+<li>
+<dl>
+<dt>line:</dt>
+<dd>
+<p>stroke-color: '#EDEDFF' stroke-width: 10</p>
+</dd>
+</dl>
+</li>
+<li>
+<dl>
+<dt>text:</dt>
+<dd>
+<p>label: '\${level} #\${name}' fill-color: '#000000' x-followLine: true</p>
+</dd>
+</dl>
+</li>
+</ul>
 <p>The <code>\#</code> character is the comment character in YAML, so we have to quote strings that contain it like colours and in this expression.</p>
 </li>
 <li>
 <p>The property <strong>stroke-width</strong> has been used to make our line thicker in order to provide a backdrop for our label.</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nt">symbolizers</span><span class="p">:</span>
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">line</span><span class="p">:</span>
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">    </span><span class="nt">stroke-color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#EDEDFF&#39;</span>
-</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">    </span><span class="nt">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
-</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">text</span><span class="p">:</span>
-</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">    </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;${level}</span><span class="nv"> </span><span class="s">#${name}&#39;</span>
-</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">    </span><span class="nt">fill-color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#000000&#39;</span>
-</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">    </span><span class="nt">placement</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">point</span>
-</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">    </span><span class="nt">x-followLine</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>
 </span></code></pre></div>
+<p>symbolizers:</p>
+<ul>
+<li>
+<dl>
+<dt>line:</dt>
+<dd>
+<p>stroke-color: '#EDEDFF' stroke-width: 10</p>
+</dd>
+</dl>
+</li>
+<li>
+<dl>
+<dt>text:</dt>
+<dd>
+<p>label: '\${level} #\${name}' fill-color: '#000000' placement: point x-followLine: true</p>
+</dd>
+</dl>
+</li>
+</ul>
 </li>
 <li>
 <p>The <strong>label</strong> property combine several CQL expressions together for a longer label.</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nt">symbolizers</span><span class="p">:</span>
-</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">line</span><span class="p">:</span>
-</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="nt">stroke-color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#EDEDFF&#39;</span>
-</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">    </span><span class="nt">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
-</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">text</span><span class="p">:</span>
-</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">    </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;${level}</span><span class="nv"> </span><span class="s">#${name}&#39;</span>
-</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">    </span><span class="nt">fill-color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#000000&#39;</span>
-</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="w">    </span><span class="nt">x-followLine</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>
 </span></code></pre></div>
+<p>symbolizers:</p>
+<ul>
+<li>
+<dl>
+<dt>line:</dt>
+<dd>
+<p>stroke-color: '#EDEDFF' stroke-width: 10</p>
+</dd>
+</dl>
+</li>
+<li>
+<dl>
+<dt>text:</dt>
+<dd>
+<p>label: '\${level} #\${name}' fill-color: '#000000' x-followLine: true</p>
+</dd>
+</dl>
+</li>
+</ul>
 <p>The expressions in the <strong>label</strong> property:</p>
 <div class="language-text highlight"><pre><span></span><code>${level} #${name}
 </code></pre></div>
@@ -2829,15 +2957,27 @@
 </li>
 <li>
 <p>The property <strong>x-followLine</strong> provides the ability of have a label exactly follow a LineString character by character.</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nt">symbolizers</span><span class="p">:</span>
-</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">line</span><span class="p">:</span>
-</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">    </span><span class="nt">stroke-color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#EDEDFF&#39;</span>
-</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">    </span><span class="nt">stroke-width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
-</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">text</span><span class="p">:</span>
-</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">    </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${level}  ${name}</span>
-</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">    </span><span class="nt">fill-color</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;#000000&#39;</span>
-</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="w">    </span><span class="nt">x-followLine</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>
 </span></code></pre></div>
+<p>symbolizers:</p>
+<ul>
+<li>
+<dl>
+<dt>line:</dt>
+<dd>
+<p>stroke-color: '#EDEDFF' stroke-width: 10</p>
+</dd>
+</dl>
+</li>
+<li>
+<dl>
+<dt>text:</dt>
+<dd>
+<p>label: \${level} \${name} fill-color: '#000000' x-followLine: true</p>
+</dd>
+</dl>
+</li>
+</ul>
 </li>
 <li>
 <p>The result is a new appearance for our roads.</p>

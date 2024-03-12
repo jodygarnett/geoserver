@@ -2066,20 +2066,28 @@
 -   Loggers are used to collect messages from geoserver components, and individual libraries used.
     -   GeoServer Logger names match up with the package names in the project javadocs overview (available for download).</p>
 <p>As an example package <code>org.geoserver.wms</code> is listed, allowing level of WMS service logging to be controlled:</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;Logger</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;org.geoserver.wms&quot;</span><span class="w"> </span><span class="na">level=</span><span class="s">&quot;debug&quot;</span><span class="w"> </span><span class="na">additivity=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">&lt;AppenderRef</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;stdout&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&lt;AppenderRef</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;geoserverlogfile&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">&lt;/Logger&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>
 </span></code></pre></div>
+<dl>
+<dt><Logger name="org.geoserver.wms" level="debug" additivity="false"></dt>
+<dd>
+<p><AppenderRef ref="stdout"/> <AppenderRef ref="geoserverlogfile"/></p>
+</dd>
+</dl>
+<p></Logger></p>
 </li>
 <li>
 <p>GeoTools Logger names match up with the package names in the <a href="https://docs.geotools.org/latest/javadocs/overview-summary.html">project javadocs overview</a>.</p>
 <p>As an example package <code>org.geotools.data.shapefile</code> is listed, allowing level of shapefile logging to be controlled:</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;Logger</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;org.geotools.data.shapefile&quot;</span><span class="w"> </span><span class="na">level=</span><span class="s">&quot;debug&quot;</span><span class="w"> </span><span class="na">additivity=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&lt;AppenderRef</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;stdout&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&lt;AppenderRef</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;geoserverlogfile&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nt">&lt;/Logger&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>
 </span></code></pre></div>
+<dl>
+<dt><Logger name="org.geotools.data.shapefile" level="debug" additivity="false"></dt>
+<dd>
+<p><AppenderRef ref="stdout"/> <AppenderRef ref="geoserverlogfile"/></p>
+</dd>
+</dl>
+<p></Logger></p>
 </li>
 <li>
 <p>Assign a level to each logger indicating the level of detail you wish to record:</p>
@@ -2159,12 +2167,19 @@
 </li>
 <li>
 <p>Double check the Console appender configuration:</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">&lt;Appenders&gt;</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nt">&lt;Console</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;stdout&quot;</span><span class="w"> </span><span class="na">target=</span><span class="s">&quot;SYSTEM_OUT&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">        </span><span class="nt">&lt;PatternLayout</span><span class="w"> </span><span class="na">pattern=</span><span class="s">&quot;%date{dd mmm HH:mm:ss} %-6level [%logger{2}] - %msg%n%&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nt">&lt;/Console&gt;</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nt">&lt;/Appenders&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>
 </span></code></pre></div>
+<dl>
+<dt><Appenders></dt>
+<dd></dd>
+</dl>
+<div class="language-text highlight"><pre><span></span><code>&lt;Console name=&quot;stdout&quot; target=&quot;SYSTEM_OUT&quot;&gt;
+
+:   &lt;PatternLayout pattern=&quot;%date{dd mmm HH:mm:ss} %-6level [%logger{2}] - %msg%n%&quot;/&gt;
+
+&lt;/Console&gt;
+</code></pre></div>
+<p></Appenders></p>
 </li>
 <li>
 <p>Add appenders for geoserver (and any others you wish to track):</p>
@@ -2178,10 +2193,15 @@
 </li>
 <li>
 <p>Double check the root logger:</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">&lt;Root</span><span class="w"> </span><span class="na">level=</span><span class="s">&quot;FATAL&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="nt">&lt;AppenderRef</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;stdout&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nt">&lt;/Root&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>
 </span></code></pre></div>
+<dl>
+<dt><Root level="FATAL"></dt>
+<dd>
+<p><AppenderRef ref="stdout"/></p>
+</dd>
+</dl>
+<p></Root></p>
 </li>
 <li>
 <p>This result provides minimal feedback to the console, only reporting when GeoServer encounters an error.</p>

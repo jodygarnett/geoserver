@@ -3170,9 +3170,7 @@
 <p>Key providers are responsible for mapping the authentication keys to a user. The authentication key itself is a UUID (Universally Unique IDentifier (UUID)). A key provider needs a user/group service and it is responsible for synchronizing the authentication keys with the users contained in this service.</p>
 <h3 id="key-provider-using-user-properties">Key provider using user properties</h3>
 <p>This key provider uses a user property <code>UUID</code> to map the authentication key to the user. User properties are stored in the user/group service. Synchronizing is simple since the logic has to search for users not having the property <code>UUID</code> and add it. The property value is a generated UUID.</p>
-<blockquote>
-<p>UUID=b52d2068-0a9b-45d7-aacc-144d16322018</p>
-</blockquote>
+<p><code>UUID=b52d2068-0a9b-45d7-aacc-144d16322018</code></p>
 <p>If the user/group service is read only, the property has to be added from outside, no synchronizing is possible.</p>
 <h3 id="key-provider-using-a-property-file">Key provider using a property file</h3>
 <p>This key provider uses a property file named <code>authkeys.properties</code>. The default user/group service is named <code>default</code>. The <code>authkeys.properties</code> for this service would be located at</p>
@@ -3190,15 +3188,11 @@ ef18d7e7-963b-470f-9230-c7f9de166888=topp
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th><strong>Option</strong></th>
+<th><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><strong>Option</strong></td>
-<td><strong>Description</strong></td>
-</tr>
 <tr>
 <td><code>Web Service URL, with key placeholder</code></td>
 <td>the complete URL of the key mapping webservice, with a special placeholder ({key}) that will be replaced by the current authentication key</td>
@@ -3222,15 +3216,11 @@ ef18d7e7-963b-470f-9230-c7f9de166888=topp
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th><strong>Regular Expression</strong></th>
+<th><strong>Usage</strong></th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><strong>Regular Expression</strong></td>
-<td><strong>Usage</strong></td>
-</tr>
 <tr>
 <td><code>^\s*(.*)\s*$</code></td>
 <td>all text trimming spaces at both ends</td>
@@ -3250,53 +3240,48 @@ ef18d7e7-963b-470f-9230-c7f9de166888=topp
 <p>When using an external web service to get Auth details, it is possible to define a custom <code>GeoServer UserGroup Service</code> being able to fetch Authorities - aka user's Roles - from the HTTP Body Response.</p>
 <p>The rationale is mostly the same; that kind of <code>GeoServer UserGroup Service</code> will apply a <code>rolesRegex</code> - Roles Regular Expression - to the body response - which can be either XML, JSON or Plain Text/HTML - in order to fetch the list of available Authorities.</p>
 <p>In order to do this, it is possible to configure instances of <strong>AuthKEY WebService Body Response</strong> User Group Service.</p>
-<p>First thing to do is to:</p>
+<p><strong>First</strong>:</p>
 <ol>
 <li>
 <p>Login as an <code>Administrator</code></p>
 </li>
 <li>
 <p>Move to <code>Security</code> &gt; <code>Users, Groups, Roles</code> and select <code>Add new</code> from <code>User Group Services</code></p>
-<blockquote>
-<p><img alt="" src="images/001_user_group_service.png" /></p>
-</blockquote>
+<p><img alt="" src="images/001_user_group_service.png" />
+<em>add new user group service</em></p>
 </li>
 <li>
 <p>Click on <code>AuthKEY WebService Body Response</code></p>
-<blockquote>
-<p><img alt="" src="images/002_user_group_service.png" /></p>
-</blockquote>
+<p><img alt="" src="images/002_user_group_service.png" />
+<em>AuthKEY WebService Body Response</em></p>
 </li>
 <li>
 <p>Provide a <code>Name</code> and select anything you want from <code>Passwords</code> - those won't be used by this service, but they are still mandatory for GeoServer -</p>
-<blockquote>
-<p><img alt="" src="images/003_user_group_service.png" /></p>
-</blockquote>
+<p><img alt="" src="images/003_user_group_service.png" />
+<em>user group service name</em></p>
+</li>
+<li>
+<p>Provide a suitable <code>Roles Regex</code> to apply to your Web Service Response</p>
+<p>This is the only real mandatory value to provide. The others are optional and will allow you to customize the User Group Service behavior (see below)</p>
+<p><img alt="" src="images/004_user_group_service.png" />
+<em>user group service roles regex</em></p>
 </li>
 </ol>
-<p>5. Provide a suitable <code>Roles Regex</code> to apply to your Web Service Response</p>
-<blockquote>
-<p>::: note
-::: title
-Note
-:::</p>
-<p>This is the only real mandatory value to provide. The others are optional and will allow you to customize the User Group Service behavior (see below)
-:::</p>
-<p><img alt="" src="images/004_user_group_service.png" /></p>
-</blockquote>
-<p>Once the new <code>GeoServer UserGroup Service</code> has been configured, it can be easily linked to the <code>Key Provider Web Service Mapper</code>.</p>
+<p><strong>Second</strong>: Once the new <code>GeoServer UserGroup Service</code> has been configured, next it can be linked to the <code>Key Provider Web Service Mapper</code>.</p>
 <ol>
-<li>From <code>Authentication</code> &gt; <code>Authentication Filters</code>, select - or add new - <code>AuthKEY</code> using <code>Web Service</code> as key mapper</li>
+<li>
+<p>From <code>Authentication</code> &gt; <code>Authentication Filters</code>, select - or add new - <code>AuthKEY</code> using <code>Web Service</code> as key mapper</p>
+</li>
+<li>
+<p>Select the newly defined <code>UserGroup Service</code> and save</p>
+<p><img alt="" src="images/005_user_group_service.png" />
+<em>user group service save</em></p>
+</li>
 </ol>
-<p>2. Select the newly defined <code>UserGroup Service</code> and save</p>
-<blockquote>
-<p><img alt="" src="images/005_user_group_service.png" /></p>
-</blockquote>
-<p><strong>Additional Options</strong></p>
+<p><strong>Additional Options:</strong></p>
 <ol>
 <li>
 <p><em>Optional static comma-separated list of available Groups from the Web Service response</em></p>
-<blockquote>
 <p>It is worth notice that this <code>UserGroup Service</code> will <strong>always</strong> translate fetched Roles in the form <code>ROLE_&lt;ROLENAME&gt;</code></p>
 <p>As an instance, if the <code>Roles Regular Expression</code> will match something like:</p>
 <div class="language-text highlight"><pre><span></span><code>my_user_role1, another_custom_user_role, role_External_Role_X
@@ -3309,37 +3294,28 @@ ROLE_EXTERNAL_ROLE_X
 <p>Of course the role names are known only at runtime; nevertheless it is possible to <strong>statically</strong> specify associated <code>GeoServer User Groups</code> to be mapped later to other internal <code>GeoServer User Roles</code>.</p>
 <p>What does this mean? A <code>GeoServer User Group</code> can be defined on the GeoServer Catalog and can be mapped by the active <code>Role Services</code> to one or more specific <code>GeoServer User Roles</code>.</p>
 <p>This mainly depends on the <code>GeoServer Role Service</code> you use. By default, the internal <code>GeoServer Role Service</code> can map Roles and Groups through static configuration stored on the GeoServer Data Dir. This is possible by editing <code>GeoServer User Group</code> details from the <code>Users, Groups, and Roles</code> panel</p>
-<blockquote>
 <p><img alt="" src="images/006_user_group_service.png" /></p>
 <p><img alt="" src="images/007_user_group_service.png" /></p>
-</blockquote>
 <p>Now, this custom <code>UserGroup Service</code> maps dynamically <code>GeoServer User Role</code> to <code>GeoServer User Group</code> as follows:</p>
 <div class="language-text highlight"><pre><span></span><code>ROLE_MY_USER_ROLE1              &lt;&gt; GROUP_MY_USER_ROLE1
 ROLE_ANOTHER_CUSTOM_USER_ROLE   &lt;&gt; GROUP_ANOTHER_CUSTOM_USER_ROLE
 ROLE_EXTERNAL_ROLE_X            &lt;&gt; GROUP_EXTERNAL_ROLE_X
 </code></pre></div>
 <p>In order to be able to assign any <code>GeoServer User Group</code> to other internal <code>GeoServer User Roles</code>, since those are known only at runtime, the <code>UserGroup Service</code> allows us to <strong>statically</strong> specify the <code>GeoServer User Groups</code> the Web Service can use; this possible by setting the <code>Optional static comma-separated list of available Groups from the Web Service response</code> option:</p>
-<blockquote>
 <p><img alt="" src="images/008_user_group_service.png" /></p>
-</blockquote>
 <p>Once this is correctly configured, it will be possible to edit and assign <code>GeoServer User Roles</code> to the Groups by using the standard way</p>
-<blockquote>
 <p><img alt="" src="images/009_user_group_service.png" /></p>
-</blockquote>
-</blockquote>
+</li>
+<li>
+<p><em>Role Service to use</em></p>
+<p>By default, if no <code>Role Service</code> specified, the <code>UserGroup Service</code> will use the <code>GeoServer Active Role Service</code> to resolve <code>GeoServer User Roles</code> from <code>GeoServer User Groups</code> - as specified above -</p>
+<p><img alt="" src="images/010_user_group_service.png" />
+<em>Role service</em></p>
+<p>It is possible to define a <code>Custom Role Service</code> to use instead, to resole <code>GeoServer User Roles</code>; this is possible simply by selecting the <code>Role Service</code> to use from the <code>Role Service to use</code> option</p>
+<p><img alt="" src="images/011_user_group_service.png" />
+<em>Custom role service</em></p>
 </li>
 </ol>
-<p>2. <em>Role Service to use</em></p>
-<blockquote>
-<p>By default, if no <code>Role Service</code> specified, the <code>UserGroup Service</code> will use the <code>GeoServer Active Role Service</code> to resolve <code>GeoServer User Roles</code> from <code>GeoServer User Groups</code> - as specified above -</p>
-<blockquote>
-<p><img alt="" src="images/010_user_group_service.png" /></p>
-</blockquote>
-<p>It is possible to define a <code>Custom Role Service</code> to use instead, to resole <code>GeoServer User Roles</code>; this is possible simply by selecting the <code>Role Service</code> to use from the <code>Role Service to use</code> option</p>
-<blockquote>
-<p><img alt="" src="images/011_user_group_service.png" /></p>
-</blockquote>
-</blockquote>
 <h2 id="configuration">Configuration</h2>
 <p>Configuration can be done using the administrator GUI. There is a new type of authentication filter named <strong>authkey</strong> offering the following options.</p>
 <ol>
@@ -3355,9 +3331,8 @@ ROLE_EXTERNAL_ROLE_X            &lt;&gt; GROUP_EXTERNAL_ROLE_X
 </div>
 <h2 id="enabling-mappers-auto-synchronization">Enabling Mappers' Auto-Synchronization</h2>
 <p>The following check is available for all provides.</p>
-<blockquote>
-<p><img alt="" src="images/001_auto_sync.png" /></p>
-</blockquote>
+<p><img alt="" src="images/001_auto_sync.png" />
+<em>Auto-synchronization</em></p>
 <p>If enabled, the service will automatically invoke the corresponding mapper synchronize method; the one associated to the current AuthKey provider.</p>
 <p>By default the synchronization happens every 60 seconds. In the case an administrator needs to change the auto-sync frequency, he will need to:</p>
 <ol>

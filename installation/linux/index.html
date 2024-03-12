@@ -1851,11 +1851,14 @@
 </li>
 <li>
 <p>Select the version of GeoServer that you wish to download. If you're not sure, select <a href="https://geoserver.org/release/stable">Stable</a> release.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>
-</span></code></pre></div>
+<div class="admonition abstract">
+<p class="admonition-title">Nightly Build</p>
 <p>These instructions are for GeoServer 2.24-SNAPSHOT which is provided as a <a href="https://geoserver.org/release/main">Nightly</a> release. Testing a Nightly release is a great way to try out new features, and test community modules. Nightly releases change on an ongoing basis and are not suitable for a production environment.</p>
-<p><code>not snapshot</code></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Release</p>
 <p>These instructions are for GeoServer 2.24.2.</p>
+</div>
 </li>
 <li>
 <p>Select <strong>Platform Independent Binary</strong> on the download page: <a href="https://sourceforge.net/projects/geoserver/files/GeoServer/2.24.2/geoserver-2.24.2-bin.zip">geoserver-2.24.2-bin.zip</a> (nightly <a href="https://build.geoserver.org/geoserver/2.24.x/geoserver-2.24.x-latest-bin.zip">geoserver-2.24.x-latest-bin.zip</a>)</p>
@@ -1869,20 +1872,21 @@
 </li>
 <li>
 <p>Add an environment variable to save the location of GeoServer by typing the following command:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export GEOSERVER_HOME=/usr/share/geoserver&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.profile
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>.<span class="w"> </span>~/.profile
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>
 </span></code></pre></div>
+<p>echo "export GEOSERVER_HOME=/usr/share/geoserver" &gt;&gt; \~/.profile . \~/.profile</p>
 </li>
 <li>
 <p>Make yourself the owner of the <code>geoserver</code> folder. Type the following command in the terminal window, replacing <code>USER_NAME</code> with your own username :</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>USER_NAME<span class="w"> </span>/usr/share/geoserver/
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>
 </span></code></pre></div>
+<p>sudo chown -R USER_NAME /usr/share/geoserver/</p>
 </li>
 <li>
 <p>Start GeoServer by changing into the directory <strong><code>geoserver/bin</code></strong> and executing the <strong><code>startup.sh</code></strong> script:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span>geoserver/bin
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>sh<span class="w"> </span>startup.sh
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>
 </span></code></pre></div>
+<p>cd geoserver/bin sh startup.sh</p>
 </li>
 <li>
 <p>In a web browser, navigate to <code>http://localhost:8080/geoserver</code>.</p>

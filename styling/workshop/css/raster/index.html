@@ -2403,10 +2403,15 @@
 </li>
 <li>
 <p>Replace the initial CSS definition with:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="n">raster-channels</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>raster-channels: auto;</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>And use the <strong>Layer Preview</strong> tab to preview the result.</p>
@@ -2414,10 +2419,15 @@
 </li>
 <li>
 <p>If required a list three band numbers can be supplied (for images recording in several wavelengths) or a single band number can be used to view a grayscale image.</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="n">raster-channels</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>raster-channels: 2;</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>Isolating just the green band (it will be drawn as a grayscale image):</p>
@@ -2450,10 +2460,15 @@
 </li>
 <li>
 <p>When we use the <strong>raster-channels</strong> property set to <code>auto</code> the rendering engine will select our single band of raster content, and do its best to map these values into a grayscale image. Replace the content of the style with:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="n">raster-channels</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>raster-channels: auto;</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>Use the <strong>Layer Preview</strong> tab to preview the result. The range produced in this case from the highest and lowest values.</p>
@@ -2461,11 +2476,15 @@
 </li>
 <li>
 <p>We can use a bit of image processing to emphasis the generated color mapping by making use <strong>raster-contrast-enhancement</strong>.</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="n">raster-channels</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="n">raster-contrast-enhancement</span><span class="p">:</span><span class="w"> </span><span class="n">histogram</span><span class="p">;</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>raster-channels: 1; raster-contrast-enhancement: histogram;</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>Image processing of this sort should be used with caution as it does distort the presentation (in this case making the landscape look more varied then it is in reality.</p>
@@ -2493,14 +2512,15 @@
 </li>
 <li>
 <p>An opacity value can also be used with <strong>color-map-entry</strong>.</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="n">raster-channels</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="n">raster-color-map</span><span class="p">:</span><span class="w"> </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#9080DB</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">)</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">                    </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#008000</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">)</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">                    </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#105020</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">)</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">                    </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#FFFFFF</span><span class="p">,</span><span class="w"> </span><span class="mi">4000</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>raster-channels: auto; raster-color-map: color-map-entry(#9080DB, 0, 0.0) color-map-entry(#008000, 1, 1.0) color-map-entry(#105020, 200, 1.0) color-map-entry(#FFFFFF, 4000, 1.0);</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>Allowing the areas of zero height to be transparent:</p>
@@ -2516,10 +2536,15 @@
 <ol>
 <li>
 <p>Restore the <code>raster_example</code> CSS style to the following:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="n">raster-channels</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>raster-channels: auto;</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>Producing the following map preview.</p>
@@ -2527,12 +2552,15 @@
 </li>
 <li>
 <p>To start with we can provide our own grayscale using two color map entries.</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="n">raster-channels</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="n">raster-color-map</span><span class="p">:</span><span class="w"> </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#000000</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">                    </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#FFFFFF</span><span class="p">,</span><span class="w"> </span><span class="mi">4000</span><span class="p">);</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>raster-channels: auto; raster-color-map: color-map-entry(#000000, 0) color-map-entry(#FFFFFF, 4000);</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>Use the <strong>Map</strong> tab to zoom in and take a look.</p>
@@ -2546,39 +2574,28 @@
 </li>
 <li>
 <p>Update your style with the following:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="n">raster-channels</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="n">raster-color-map</span><span class="p">:</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#014636</span><span class="p">,</span><span class="w">   </span><span class="mi">0</span><span class="p">)</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#016c59</span><span class="p">,</span><span class="w"> </span><span class="mi">500</span><span class="p">)</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#02818a</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#3690c0</span><span class="p">,</span><span class="mi">1500</span><span class="p">)</span>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#67a9cf</span><span class="p">,</span><span class="mi">2000</span><span class="p">)</span>
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#a6bddb</span><span class="p">,</span><span class="mi">2500</span><span class="p">)</span>
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#d0d1e6</span><span class="p">,</span><span class="mi">3000</span><span class="p">)</span>
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#ece2f0</span><span class="p">,</span><span class="mi">3500</span><span class="p">)</span>
-</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#fff7fb</span><span class="p">,</span><span class="mi">4000</span><span class="p">);</span>
-</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>raster-channels: auto; raster-color-map: color-map-entry(#014636, 0) color-map-entry(#016c59, 500) color-map-entry(#02818a,1000) color-map-entry(#3690c0,1500) color-map-entry(#67a9cf,2000) color-map-entry(#a6bddb,2500) color-map-entry(#d0d1e6,3000) color-map-entry(#ece2f0,3500) color-map-entry(#fff7fb,4000);</dd>
+</dl>
+<p>}</p>
 <p><img alt="image" src="../../style/img/raster_04_PuBuGn.png" /></p>
 </li>
 <li>
 <p>A little bit of work with alpha (to mark the ocean as a no-data section):</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="n">raster-channels</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="n">raster-color-map</span><span class="p">:</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#014636</span><span class="p">,</span><span class="w">   </span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#014636</span><span class="p">,</span><span class="w">   </span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#016c59</span><span class="p">,</span><span class="w"> </span><span class="mi">500</span><span class="p">)</span>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#02818a</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#3690c0</span><span class="p">,</span><span class="mi">1500</span><span class="p">)</span>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#67a9cf</span><span class="p">,</span><span class="mi">2000</span><span class="p">)</span>
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#a6bddb</span><span class="p">,</span><span class="mi">2500</span><span class="p">)</span>
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#d0d1e6</span><span class="p">,</span><span class="mi">3000</span><span class="p">)</span>
-</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#ece2f0</span><span class="p">,</span><span class="mi">3500</span><span class="p">)</span>
-</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#fff7fb</span><span class="p">,</span><span class="mi">4000</span><span class="p">);</span>
-</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>raster-channels: auto; raster-color-map: color-map-entry(#014636, 0,0) color-map-entry(#014636, 1) color-map-entry(#016c59, 500) color-map-entry(#02818a,1000) color-map-entry(#3690c0,1500) color-map-entry(#67a9cf,2000) color-map-entry(#a6bddb,2500) color-map-entry(#d0d1e6,3000) color-map-entry(#ece2f0,3500) color-map-entry(#fff7fb,4000);</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>And we are done:</p>
@@ -2593,11 +2610,15 @@
 </li>
 <li>
 <p>Make use of a simple contrast enhancement with <code>usgs:dem</code>:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="n">raster-channels</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="n">raster-contrast-enhancement</span><span class="p">:</span><span class="w"> </span><span class="n">normalize</span><span class="p">;</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>raster-channels: auto; raster-contrast-enhancement: normalize;</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>Can you explain what happens when zoom in to only show a land area (as indicated with the bounding box below)?</p>
@@ -2628,24 +2649,19 @@
 <p class="admonition-title">Instructor Notes</p>
 <p>By using intervals it becomes very clear how relatively flat most of the continent is. The ramp presentation provided lots of fascinating detail which distracted from this fact.</p>
 <p>Here is style for you to cut and paste:</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="n">raster-channels</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="n">raster-color-map</span><span class="p">:</span>
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#014636</span><span class="p">,</span><span class="w">   </span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#014636</span><span class="p">,</span><span class="w">   </span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#016c59</span><span class="p">,</span><span class="w"> </span><span class="mi">500</span><span class="p">)</span>
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#02818a</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#3690c0</span><span class="p">,</span><span class="mi">1500</span><span class="p">)</span>
-</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#67a9cf</span><span class="p">,</span><span class="mi">2000</span><span class="p">)</span>
-</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#a6bddb</span><span class="p">,</span><span class="mi">2500</span><span class="p">)</span>
-</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#d0d1e6</span><span class="p">,</span><span class="mi">3000</span><span class="p">)</span>
-</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#ece2f0</span><span class="p">,</span><span class="mi">3500</span><span class="p">)</span>
-</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">     </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#fff7fb</span><span class="p">,</span><span class="mi">4000</span><span class="p">);</span>
-</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">  </span><span class="n">raster-color-map-type</span><span class="p">:</span><span class="w"> </span><span class="n">intervals</span><span class="p">;</span>
-</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>
 </span></code></pre></div>
-<p><img alt="image" src="../../style/img/raster_interval.png" /></p>
 </div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>raster-channels: auto; raster-color-map: color-map-entry(#014636, 0,0) color-map-entry(#014636, 1) color-map-entry(#016c59, 500) color-map-entry(#02818a,1000) color-map-entry(#3690c0,1500) color-map-entry(#67a9cf,2000) color-map-entry(#a6bddb,2500) color-map-entry(#d0d1e6,3000) color-map-entry(#ece2f0,3500) color-map-entry(#fff7fb,4000); raster-color-map-type: intervals;</dd>
+</dl>
+<p>}</p>
+<blockquote>
+<p><img alt="image" src="../../style/img/raster_interval.png" /></p>
+</blockquote>
 </li>
 </ol>
 <h2 id="explore-image-processing">Explore Image Processing</h2>
@@ -2658,11 +2674,15 @@
 <ol>
 <li>
 <p>The <strong>raster-contrast-enhancement</strong> property is used to turn on a range of post processing effects. Settings are provided for <code>normalize</code> or <code>histogram</code> or <code>none</code>;</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="n">raster-channels</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="n">raster-contrast-enhancement</span><span class="p">:</span><span class="w"> </span><span class="n">normalize</span><span class="p">;</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>raster-channels: auto; raster-contrast-enhancement: normalize;</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>Producing the following image:</p>
@@ -2670,12 +2690,15 @@
 </li>
 <li>
 <p>The <strong>raster-gamma</strong> property is used adjust the brightness of <strong>raster-contrast-enhancement</strong> output. Values less than 1 are used to brighten the image while values greater than 1 darken the image.</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">   </span><span class="n">raster-channels</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">   </span><span class="n">raster-contrast-enhancement</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">   </span><span class="n">raster-gamma</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="p">;</span>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>
 </span></code></pre></div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>raster-channels: auto; raster-contrast-enhancement: none; raster-gamma: 1.5;</dd>
+</dl>
+<p>}</p>
 </li>
 <li>
 <p>Providing the following effect:</p>
@@ -2696,15 +2719,19 @@
 <div class="admonition abstract">
 <p class="admonition-title">Instructor Notes</p>
 <p>The original was a dark mess, students will hopefully make use of the mid-tones (or even check color brewer) in order to fix this. I have left the ocean dark so the mountains can stand out more.</p>
-<div class="language-css highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="n">raster-channels</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">  </span><span class="n">raster-color-map</span><span class="p">:</span><span class="w"> </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#000000</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">                    </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#444444</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">                    </span><span class="nf">color-map-entry</span><span class="p">(</span><span class="mh">#FFFFFF</span><span class="p">,</span><span class="w"> </span><span class="mi">3000</span><span class="p">);</span>
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="p">}</span>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>
 </span></code></pre></div>
-<p><img alt="image" src="../../style/img/raster_grayscale.png" /></p>
 </div>
+<ul>
+<li>{</li>
+</ul>
+<dl>
+<dd>raster-channels: auto; raster-color-map: color-map-entry(#000000, 0) color-map-entry(#444444, 1) color-map-entry(#FFFFFF, 3000);</dd>
+</dl>
+<p>}</p>
+<blockquote>
+<p><img alt="image" src="../../style/img/raster_grayscale.png" /></p>
+</blockquote>
 </li>
 </ol>
 <h2 id="css.raster.q4">Challenge Raster Opacity</h2>

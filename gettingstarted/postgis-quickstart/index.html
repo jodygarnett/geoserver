@@ -1920,9 +1920,9 @@
 </li>
 <li>
 <p>Create a PostGIS database called <code>nyc</code>. This can be done with the following commands:</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="go">createdb nyc</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="go">psql -d nyc -c &#39;CREATE EXTENSION postgis&#39;</span>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>
 </span></code></pre></div>
+<p>createdb nyc psql -d nyc -c 'CREATE EXTENSION postgis'</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You may need to supply a username and password with these commands.</p>
@@ -1933,8 +1933,9 @@
 </li>
 <li>
 <p>Import <strong><code>nyc_buildings.sql</code></strong> into the <code>nyc</code> database:</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="go">psql -f nyc_buildings.sql nyc</span>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>
 </span></code></pre></div>
+<p>psql -f nyc_buildings.sql nyc</p>
 </li>
 </ol>
 <h2 id="creating-a-new-workspace">Creating a new workspace</h2>

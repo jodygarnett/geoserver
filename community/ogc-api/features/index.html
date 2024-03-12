@@ -4457,18 +4457,17 @@
 </li>
 <li>
 <p>Save file to <strong><code>GEOSERVER_DATA_DIR/workspace/templates/ogc/collections.ftl</code></strong>, and rewrite as:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&lt;#include &quot;common-header.ftl&quot;&gt;
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>       &lt;h2&gt;OGC API Feature Collections&lt;/h2&gt;
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>       &lt;p&gt;List of collections published.&lt;/p&gt;
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>       &lt;p&gt;See also: &lt;#list model.getLinksExcept(null, &quot;text/html&quot;) as link&gt;
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>          &lt;a href=&quot;${link.href}&quot;&gt;${link.type}&lt;/a&gt;&lt;#if link_has_next&gt;, &lt;/#if&gt;&lt;/#list&gt;.&lt;/p&gt;
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>     &lt;#list model.collections as collection&gt;
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>       &lt;h2&gt;&lt;a href=&quot;${serviceLink(&quot;collections/${collection.id}&quot;)}&quot;&gt;${collection.id}&lt;/a&gt;&lt;/h2&gt;
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>       &lt;#include &quot;collection_include.ftl&quot;&gt;
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>     &lt;/#list&gt;
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>&lt;#include &quot;common-footer.ftl&quot;&gt;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>&lt;#include "common-header.ftl"&gt;</dt>
+<dd>
+<p><h2>OGC API Feature Collections</h2> <p>List of collections published.</p> <p>See also: &lt;#list model.getLinksExcept(null, "text/html") as link&gt; <a href="\${link.href}">\${link.type}</a>&lt;#if link_has_next&gt;, <!--#if--><!--#list-->.</p></p>
+</dd>
+</dl>
+<div class="language-text highlight"><pre><span></span><code>&lt;#list model.collections as collection&gt; &lt;h2&gt;&lt;a href=&quot;\${serviceLink(&quot;collections/\${collection.id}&quot;)}&quot;&gt;\${collection.id}&lt;/a&gt;&lt;/h2&gt; &lt;#include &quot;collection_include.ftl&quot;&gt; &lt;!--#list--&gt;
+</code></pre></div>
+<p>&lt;#include "common-footer.ftl"&gt;</p>
 </li>
 <li>
 <p>Many templates are constructed using <code>#include</code>, for example <strong><code>collection.ftl</code></strong> above uses <code>&lt;#include "common-header.ftl"&gt;</code> located next to <strong><code>collections.ftl</code></strong>.</p>
@@ -4481,18 +4480,17 @@
 </li>
 <li>
 <p>Language codes are appended for internationalization. For French create the file <strong><code>GEOSERVER_DATA_DIR/workspace/{workspace}/ogc/collections_fr.ftl</code></strong> and translate contents:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&lt;#include &quot;common-header.ftl&quot;&gt;
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>       &lt;h2&gt;OGC API Feature Service&lt;/h2&gt;
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>       &lt;p&gt;Liste des collections publiées.&lt;/p&gt;
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>       &lt;p&gt;Voir également: &lt;#list model.getLinksExcept(null, &quot;text/html&quot;) as link&gt;
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>          &lt;a href=&quot;${link.href}&quot;&gt;${link.type}&lt;/a&gt;&lt;#if link_has_next&gt;, &lt;/#if&gt;&lt;/#list&gt;.&lt;/p&gt;
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>     &lt;#list model.collections as collection&gt;
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>       &lt;h2&gt;&lt;a href=&quot;${serviceLink(&quot;collections/${collection.id}&quot;)}&quot;&gt;${collection.id}&lt;/a&gt;&lt;/h2&gt;
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>       &lt;#include &quot;collection_include.ftl&quot;&gt;
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>     &lt;/#list&gt;
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>&lt;#include &quot;common-footer.ftl&quot;&gt;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>&lt;#include "common-header.ftl"&gt;</dt>
+<dd>
+<p><h2>OGC API Feature Service</h2> <p>Liste des collections publiées.</p> <p>Voir également: &lt;#list model.getLinksExcept(null, "text/html") as link&gt; <a href="\${link.href}">\${link.type}</a>&lt;#if link_has_next&gt;, <!--#if--><!--#list-->.</p></p>
+</dd>
+</dl>
+<div class="language-text highlight"><pre><span></span><code>&lt;#list model.collections as collection&gt; &lt;h2&gt;&lt;a href=&quot;\${serviceLink(&quot;collections/\${collection.id}&quot;)}&quot;&gt;\${collection.id}&lt;/a&gt;&lt;/h2&gt; &lt;#include &quot;collection_include.ftl&quot;&gt; &lt;!--#list--&gt;
+</code></pre></div>
+<p>&lt;#include "common-footer.ftl"&gt;</p>
 </li>
 <li>
 <p>For details on how to write templates see <a href="../../../tutorials/freemarker/">Freemarker Templates</a> tutorial.</p>

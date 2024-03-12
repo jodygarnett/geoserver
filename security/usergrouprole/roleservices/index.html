@@ -2178,16 +2178,15 @@
 <p>The J2EE role service parses roles from the <code>WEB-INF/web.xml</code> file. As a consequence, this service is a read only role service. Roles are extracted from the following XML elements:</p>
 <h3 id="security-role"><code>&lt;security-role&gt;</code></h3>
 <blockquote>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;security-role&gt;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">   </span><span class="nt">&lt;role-name&gt;</span>role1<span class="nt">&lt;/role-name&gt;</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">&lt;/security-role&gt;</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nt">&lt;security-role&gt;</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">   </span><span class="nt">&lt;role-name&gt;</span>role2<span class="nt">&lt;/role-name&gt;</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nt">&lt;/security-role&gt;</span><span class="w">  </span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="nt">&lt;security-role&gt;</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">   </span><span class="nt">&lt;role-name&gt;</span>employee<span class="nt">&lt;/role-name&gt;</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="nt">&lt;/security-role&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>
 </span></code></pre></div>
+<dl>
+<dt><security-role></dt>
+<dd>
+<p><role-name>role1</role-name></p>
+</dd>
+</dl>
+<p></security-role> <security-role> <role-name>role2</role-name> </security-role> <security-role> <role-name>employee</role-name> </security-role></p>
 <p>Roles retrieved:</p>
 <ul>
 <li><code>role1</code></li>
@@ -2210,8 +2209,8 @@
 </span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">       </span><span class="nt">&lt;role-name&gt;</span>role1<span class="nt">&lt;/role-name&gt;</span>
 </span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">       </span><span class="nt">&lt;role-name&gt;</span>employee<span class="nt">&lt;/role-name&gt;</span>
 </span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">   </span><span class="nt">&lt;/auth-constraint&gt;</span>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="nt">&lt;/security-constraint&gt;</span>
 </span></code></pre></div>
+<p></security-constraint></p>
 <p>Roles retrieved:</p>
 <ul>
 <li><code>role1</code></li>

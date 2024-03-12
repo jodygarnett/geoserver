@@ -1682,7 +1682,7 @@
         
   
   <span class="md-ellipsis">
-    Importer interface reference {: #extensions_importer_guireference }
+    Importer interface reference
   </span>
   
 
@@ -3319,15 +3319,10 @@
 </li>
 <li>
 <p>This curl command can be used for the purpose:</p>
-</li>
-</ol>
-<blockquote>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XPOST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span>-d<span class="w"> </span>@import.json<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>
 </span></code></pre></div>
+<p>curl -u admin:geoserver -XPOST -H "Content-type: application/json" -d @import.json "<a href="http://localhost:8080/geoserver/rest/imports">http://localhost:8080/geoserver/rest/imports</a>"</p>
 <p>The importer will locate the files to be imported, and automatically prepare the tasks, returning the following response:</p>
-<blockquote>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;import&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span>
@@ -3370,63 +3365,32 @@
 </span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="p">}</span>
 </span></code></pre></div>
-</blockquote>
-</blockquote>
-<ol>
+</li>
 <li>
 <p>After checking every task is ready, the import can be initiated by executing a POST on the import resource:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XPOST<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">   </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/9&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>
 </span></code></pre></div>
+<p>curl -u admin:geoserver -XPOST "<a href="http://localhost:8080/geoserver/rest/imports/9">http://localhost:8080/geoserver/rest/imports/9</a>"</p>
 </li>
 <li>
 <p>The resource can then be monitored for progress, and eventually final results:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XGET<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">   </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/9&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>
 </span></code></pre></div>
+<p>curl -u admin:geoserver -XGET "<a href="http://localhost:8080/geoserver/rest/imports/9">http://localhost:8080/geoserver/rest/imports/9</a>"</p>
 <p>Which in case of successful import will look like:</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;import&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/9&quot;</span><span class="p">,</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;COMPLETE&quot;</span><span class="p">,</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nt">&quot;archive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nt">&quot;targetWorkspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">      </span><span class="nt">&quot;workspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tasmania&quot;</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">      </span><span class="p">}</span>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;directory&quot;</span><span class="p">,</span>
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">      </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Shapefile&quot;</span><span class="p">,</span>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">      </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:\\data\\tasmania&quot;</span><span class="p">,</span>
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/9/data&quot;</span>
-</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">    </span><span class="nt">&quot;tasks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">      </span><span class="p">{</span>
-</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">        </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/9/tasks/0&quot;</span><span class="p">,</span>
-</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">        </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;COMPLETE&quot;</span>
-</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">      </span><span class="p">},</span>
-</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">      </span><span class="p">{</span>
-</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">        </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/9/tasks/1&quot;</span><span class="p">,</span>
-</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">        </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;COMPLETE&quot;</span>
-</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="w">      </span><span class="p">},</span>
-</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">      </span><span class="p">{</span>
-</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="w">        </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/9/tasks/2&quot;</span><span class="p">,</span>
-</span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="w">        </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;COMPLETE&quot;</span>
-</span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="w">      </span><span class="p">},</span>
-</span><span id="__span-5-34"><a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="w">      </span><span class="p">{</span>
-</span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
-</span><span id="__span-5-36"><a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="w">        </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/9/tasks/3&quot;</span><span class="p">,</span>
-</span><span id="__span-5-37"><a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a><span class="w">        </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;COMPLETE&quot;</span>
-</span><span id="__span-5-38"><a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a><span class="w">      </span><span class="p">}</span>
-</span><span id="__span-5-39"><a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a><span class="w">    </span><span class="p">]</span>
-</span><span id="__span-5-40"><a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-5-41"><a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a><span class="p">}</span><span class="w"> </span>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>{</dt>
+<dd></dd>
+</dl>
+<div class="language-text highlight"><pre><span></span><code>&quot;import&quot;: {
+
+:   &quot;id&quot;: 9, &quot;href&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/9&gt;&quot;, &quot;state&quot;: &quot;COMPLETE&quot;, &quot;archive&quot;: false, &quot;targetWorkspace&quot;: { &quot;workspace&quot;: { &quot;name&quot;: &quot;tasmania&quot; } }, &quot;data&quot;: { &quot;type&quot;: &quot;directory&quot;, &quot;format&quot;: &quot;Shapefile&quot;, &quot;location&quot;: &quot;C:\\data\\tasmania&quot;, &quot;href&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/9/data&gt;&quot; }, &quot;tasks&quot;: [ { &quot;id&quot;: 0, &quot;href&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/9/tasks/0&gt;&quot;, &quot;state&quot;: &quot;COMPLETE&quot; }, { &quot;id&quot;: 1, &quot;href&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/9/tasks/1&gt;&quot;, &quot;state&quot;: &quot;COMPLETE&quot; }, { &quot;id&quot;: 2, &quot;href&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/9/tasks/2&gt;&quot;, &quot;state&quot;: &quot;COMPLETE&quot; }, { &quot;id&quot;: 3, &quot;href&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/9/tasks/3&gt;&quot;, &quot;state&quot;: &quot;COMPLETE&quot; } ]
+
+}
+</code></pre></div>
+<p>}</p>
 </li>
 </ol>
 <h2 id="configuring-a-shapefile-with-no-projection-information">Configuring a shapefile with no projection information</h2>
@@ -3434,107 +3398,71 @@
 <ol>
 <li>
 <p>We are going to post the following import definition:</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">   </span><span class="nt">&quot;import&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">      </span><span class="nt">&quot;targetWorkspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">         </span><span class="nt">&quot;workspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tasmania&quot;</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">         </span><span class="p">}</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">      </span><span class="p">},</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">      </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;file&quot;</span><span class="p">,</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">        </span><span class="nt">&quot;file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:/data/tasmania/tasmania_cities.shp&quot;</span>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">      </span><span class="p">}</span>
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">   </span><span class="p">}</span>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="p">}</span>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>{</dt>
+<dd></dd>
+</dl>
+<div class="language-text highlight"><pre><span></span><code>&quot;import&quot;: {
+
+:
+
+    &quot;targetWorkspace&quot;: {
+
+    :
+
+        &quot;workspace&quot;: {
+
+        :   &quot;name&quot;: &quot;tasmania&quot;
+
+        }
+
+    }, &quot;data&quot;: { &quot;type&quot;: &quot;file&quot;, &quot;file&quot;: &quot;C:/data/tasmania/tasmania_cities.shp&quot; }
+
+}
+</code></pre></div>
+<p>}</p>
 </li>
 <li>
 <p>With the cURL POST command:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XPOST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">   </span>-d<span class="w"> </span>@import.json<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">   </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>
 </span></code></pre></div>
+<p>curl -u admin:geoserver -XPOST -H "Content-type: application/json" -d @import.json "<a href="http://localhost:8080/geoserver/rest/imports">http://localhost:8080/geoserver/rest/imports</a>"</p>
 <p>The response in case the CRS is missing will be:</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">&quot;import&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/13&quot;</span><span class="p">,</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PENDING&quot;</span><span class="p">,</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="nt">&quot;archive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="nt">&quot;targetWorkspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">      </span><span class="nt">&quot;workspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tasmania&quot;</span>
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">      </span><span class="p">}</span>
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;file&quot;</span><span class="p">,</span>
-</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">      </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Shapefile&quot;</span><span class="p">,</span>
-</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">      </span><span class="nt">&quot;file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tasmania_cities.shp&quot;</span>
-</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">    </span><span class="nt">&quot;tasks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">      </span><span class="p">{</span>
-</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">        </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/13/tasks/0&quot;</span><span class="p">,</span>
-</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="w">        </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NO_CRS&quot;</span>
-</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="w">      </span><span class="p">}</span>
-</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="w">    </span><span class="p">]</span>
-</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="p">}</span>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>{</dt>
+<dd></dd>
+</dl>
+<div class="language-text highlight"><pre><span></span><code>&quot;import&quot;: {
+
+:   &quot;id&quot;: 13, &quot;href&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/13&gt;&quot;, &quot;state&quot;: &quot;PENDING&quot;, &quot;archive&quot;: false, &quot;targetWorkspace&quot;: { &quot;workspace&quot;: { &quot;name&quot;: &quot;tasmania&quot; } }, &quot;data&quot;: { &quot;type&quot;: &quot;file&quot;, &quot;format&quot;: &quot;Shapefile&quot;, &quot;file&quot;: &quot;tasmania_cities.shp&quot; }, &quot;tasks&quot;: [ { &quot;id&quot;: 0, &quot;href&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/13/tasks/0&gt;&quot;, &quot;state&quot;: &quot;NO_CRS&quot; } ]
+
+}
+</code></pre></div>
+<p>}</p>
 </li>
 <li>
 <p>Drilling into the task layer:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XGET<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">     </span>http://localhost:8080/geoserver/rest/imports/13/tasks/0/layer
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>
 </span></code></pre></div>
+<p>curl -u admin:geoserver -XGET -H "Content-type: application/json" <a href="http://localhost:8080/geoserver/rest/imports/13/tasks/0/layer">http://localhost:8080/geoserver/rest/imports/13/tasks/0/layer</a></p>
 <p>We can see the srs information is missing:</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">&quot;layer&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tasmania_cities&quot;</span><span class="p">,</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/13/tasks/0/layer&quot;</span><span class="p">,</span>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tasmania_cities&quot;</span><span class="p">,</span>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="nt">&quot;originalName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tasmania_cities&quot;</span><span class="p">,</span>
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">    </span><span class="nt">&quot;nativeName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tasmania_cities&quot;</span><span class="p">,</span>
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">    </span><span class="nt">&quot;bbox&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">      </span><span class="nt">&quot;minx&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">146.2910004483</span><span class="p">,</span>
-</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">      </span><span class="nt">&quot;miny&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-43.85100181689</span><span class="p">,</span>
-</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">      </span><span class="nt">&quot;maxx&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">148.2910004483</span><span class="p">,</span>
-</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">      </span><span class="nt">&quot;maxy&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-41.85100181689</span>
-</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">    </span><span class="nt">&quot;attributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">      </span><span class="p">{</span>
-</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;the_geom&quot;</span><span class="p">,</span>
-</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">        </span><span class="nt">&quot;binding&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;org.locationtech.jts.geom.MultiPoint&quot;</span>
-</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">      </span><span class="p">},</span>
-</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="w">      </span><span class="p">{</span>
-</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CITY_NAME&quot;</span><span class="p">,</span>
-</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="w">        </span><span class="nt">&quot;binding&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;java.lang.String&quot;</span>
-</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="w">      </span><span class="p">},</span>
-</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="w">      </span><span class="p">{</span>
-</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ADMIN_NAME&quot;</span><span class="p">,</span>
-</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="w">        </span><span class="nt">&quot;binding&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;java.lang.String&quot;</span>
-</span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="w">      </span><span class="p">},</span>
-</span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="w">      </span><span class="p">{</span>
-</span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CNTRY_NAME&quot;</span><span class="p">,</span>
-</span><span id="__span-10-29"><a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a><span class="w">        </span><span class="nt">&quot;binding&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;java.lang.String&quot;</span>
-</span><span id="__span-10-30"><a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a><span class="w">      </span><span class="p">},</span>
-</span><span id="__span-10-31"><a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a><span class="w">      </span><span class="p">{</span>
-</span><span id="__span-10-32"><a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;STATUS&quot;</span><span class="p">,</span>
-</span><span id="__span-10-33"><a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a><span class="w">        </span><span class="nt">&quot;binding&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;java.lang.String&quot;</span>
-</span><span id="__span-10-34"><a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a><span class="w">      </span><span class="p">},</span>
-</span><span id="__span-10-35"><a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a><span class="w">      </span><span class="p">{</span>
-</span><span id="__span-10-36"><a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;POP_CLASS&quot;</span><span class="p">,</span>
-</span><span id="__span-10-37"><a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a><span class="w">        </span><span class="nt">&quot;binding&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;java.lang.String&quot;</span>
-</span><span id="__span-10-38"><a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a><span class="w">      </span><span class="p">}</span>
-</span><span id="__span-10-39"><a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a><span class="w">    </span><span class="p">],</span>
-</span><span id="__span-10-40"><a id="__codelineno-10-40" name="__codelineno-10-40" href="#__codelineno-10-40"></a><span class="w">    </span><span class="nt">&quot;style&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-10-41"><a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tasmania_tasmania_cities2&quot;</span><span class="p">,</span>
-</span><span id="__span-10-42"><a id="__codelineno-10-42" name="__codelineno-10-42" href="#__codelineno-10-42"></a><span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/13/tasks/0/layer/style&quot;</span>
-</span><span id="__span-10-43"><a id="__codelineno-10-43" name="__codelineno-10-43" href="#__codelineno-10-43"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-10-44"><a id="__codelineno-10-44" name="__codelineno-10-44" href="#__codelineno-10-44"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-10-45"><a id="__codelineno-10-45" name="__codelineno-10-45" href="#__codelineno-10-45"></a><span class="p">}</span>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>{</dt>
+<dd></dd>
+</dl>
+<div class="language-text highlight"><pre><span></span><code>&quot;layer&quot;: {
+
+:   &quot;name&quot;: &quot;tasmania_cities&quot;, &quot;href&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/13/tasks/0/layer&gt;&quot;, &quot;title&quot;: &quot;tasmania_cities&quot;, &quot;originalName&quot;: &quot;tasmania_cities&quot;, &quot;nativeName&quot;: &quot;tasmania_cities&quot;, &quot;bbox&quot;: { &quot;minx&quot;: 146.2910004483, &quot;miny&quot;: -43.85100181689, &quot;maxx&quot;: 148.2910004483, &quot;maxy&quot;: -41.85100181689 }, &quot;attributes&quot;: [ { &quot;name&quot;: &quot;the_geom&quot;, &quot;binding&quot;: &quot;org.locationtech.jts.geom.MultiPoint&quot; }, { &quot;name&quot;: &quot;CITY_NAME&quot;, &quot;binding&quot;: &quot;java.lang.String&quot; }, { &quot;name&quot;: &quot;ADMIN_NAME&quot;, &quot;binding&quot;: &quot;java.lang.String&quot; }, { &quot;name&quot;: &quot;CNTRY_NAME&quot;, &quot;binding&quot;: &quot;java.lang.String&quot; }, { &quot;name&quot;: &quot;STATUS&quot;, &quot;binding&quot;: &quot;java.lang.String&quot; }, { &quot;name&quot;: &quot;POP_CLASS&quot;, &quot;binding&quot;: &quot;java.lang.String&quot; } ], &quot;style&quot;: { &quot;name&quot;: &quot;tasmania_tasmania_cities2&quot;, &quot;href&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/13/tasks/0/layer/style&gt;&quot; }
+
+}
+</code></pre></div>
+<p>}</p>
 </li>
 <li>
 <p>Use the following json snippet to update the SRS:</p>
@@ -3545,76 +3473,49 @@
 </span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="o">}</span><span class="w">  </span>
 </span></code></pre></div>
 <p>Using cURL PUT command:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XPUT<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span>-d<span class="w"> </span>@layerUpdate.json<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/13/tasks/0/layer/&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>
 </span></code></pre></div>
+<p>curl -u admin:geoserver -XPUT -H "Content-type: application/json" -d @layerUpdate.json "<a href="http://localhost:8080/geoserver/rest/imports/13/tasks/0/layer/">http://localhost:8080/geoserver/rest/imports/13/tasks/0/layer/</a>"</p>
 </li>
 <li>
 <p>Getting the import definition again:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XGET<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">     </span>http://localhost:8080/geoserver/rest/imports/13/tasks/0
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>
 </span></code></pre></div>
+<p>curl -u admin:geoserver -XGET -H "Content-type: application/json" <a href="http://localhost:8080/geoserver/rest/imports/13/tasks/0">http://localhost:8080/geoserver/rest/imports/13/tasks/0</a></p>
 <p>The import is now ready to execute:</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">{</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="nt">&quot;import&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/13&quot;</span><span class="p">,</span>
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PENDING&quot;</span><span class="p">,</span>
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">    </span><span class="nt">&quot;archive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">    </span><span class="nt">&quot;targetWorkspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">      </span><span class="nt">&quot;workspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tasmania&quot;</span>
-</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">      </span><span class="p">}</span>
-</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;file&quot;</span><span class="p">,</span>
-</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="w">      </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Shapefile&quot;</span><span class="p">,</span>
-</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="w">      </span><span class="nt">&quot;file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tasmania_cities.shp&quot;</span>
-</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="w">    </span><span class="nt">&quot;tasks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="w">      </span><span class="p">{</span>
-</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="w">        </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/13/tasks/0&quot;</span><span class="p">,</span>
-</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a><span class="w">        </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;READY&quot;</span>
-</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="w">      </span><span class="p">}</span>
-</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a><span class="w">    </span><span class="p">]</span>
-</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a><span class="p">}</span>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>{</dt>
+<dd></dd>
+</dl>
+<div class="language-text highlight"><pre><span></span><code>&quot;import&quot;: {
+
+:   &quot;id&quot;: 13, &quot;href&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/13&gt;&quot;, &quot;state&quot;: &quot;PENDING&quot;, &quot;archive&quot;: false, &quot;targetWorkspace&quot;: { &quot;workspace&quot;: { &quot;name&quot;: &quot;tasmania&quot; } }, &quot;data&quot;: { &quot;type&quot;: &quot;file&quot;, &quot;format&quot;: &quot;Shapefile&quot;, &quot;file&quot;: &quot;tasmania_cities.shp&quot; }, &quot;tasks&quot;: [ { &quot;id&quot;: 0, &quot;href&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/13/tasks/0&gt;&quot;, &quot;state&quot;: &quot;READY&quot; } ]
+
+}
+</code></pre></div>
+<p>}</p>
 </li>
 <li>
 <p>A POST request will execute the import:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XPOST<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/13&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>
 </span></code></pre></div>
+<p>curl -u admin:geoserver -XPOST "<a href="http://localhost:8080/geoserver/rest/imports/13">http://localhost:8080/geoserver/rest/imports/13</a>"</p>
 <p>With a successful import marking the task as <code>COMPLETE</code>:</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">{</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="nt">&quot;import&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span>
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/13&quot;</span><span class="p">,</span>
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;COMPLETE&quot;</span><span class="p">,</span>
-</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span><span class="nt">&quot;archive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">    </span><span class="nt">&quot;targetWorkspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">      </span><span class="nt">&quot;workspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tasmania&quot;</span>
-</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">      </span><span class="p">}</span>
-</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;file&quot;</span><span class="p">,</span>
-</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="w">      </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Shapefile&quot;</span><span class="p">,</span>
-</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="w">      </span><span class="nt">&quot;file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tasmania_cities.shp&quot;</span>
-</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="w">    </span><span class="nt">&quot;tasks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="w">      </span><span class="p">{</span>
-</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-</span><span id="__span-16-20"><a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="w">        </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/13/tasks/0&quot;</span><span class="p">,</span>
-</span><span id="__span-16-21"><a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a><span class="w">        </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;COMPLETE&quot;</span>
-</span><span id="__span-16-22"><a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a><span class="w">      </span><span class="p">}</span>
-</span><span id="__span-16-23"><a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a><span class="w">    </span><span class="p">]</span>
-</span><span id="__span-16-24"><a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-16-25"><a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a><span class="p">}</span>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>{</dt>
+<dd></dd>
+</dl>
+<div class="language-text highlight"><pre><span></span><code>&quot;import&quot;: {
+
+:   &quot;id&quot;: 13, &quot;href&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/13&gt;&quot;, &quot;state&quot;: &quot;COMPLETE&quot;, &quot;archive&quot;: false, &quot;targetWorkspace&quot;: { &quot;workspace&quot;: { &quot;name&quot;: &quot;tasmania&quot; } }, &quot;data&quot;: { &quot;type&quot;: &quot;file&quot;, &quot;format&quot;: &quot;Shapefile&quot;, &quot;file&quot;: &quot;tasmania_cities.shp&quot; }, &quot;tasks&quot;: [ { &quot;id&quot;: 0, &quot;href&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/13/tasks/0&gt;&quot;, &quot;state&quot;: &quot;COMPLETE&quot; } ]
+
+}
+</code></pre></div>
+<p>}</p>
 </li>
 </ol>
 <h2 id="uploading-a-shapefile-to-postgis">Uploading a Shapefile to PostGIS</h2>
@@ -3657,10 +3558,9 @@
 </span><span id="__span-17-33"><a id="__codelineno-17-33" name="__codelineno-17-33" href="#__codelineno-17-33"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>Using curl POST:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>curl<span class="w">  </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XPOST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">  </span>-d<span class="w"> </span>@postgis.json<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/workspaces/cite/datastores.json&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>
 </span></code></pre></div>
+<p>curl -u admin:geoserver -XPOST -H "Content-type: application/json" -d @postgis.json "<a href="http://localhost:8080/geoserver/rest/workspaces/cite/datastores.json">http://localhost:8080/geoserver/rest/workspaces/cite/datastores.json</a>"</p>
 </li>
 <li>
 <p>Create the import definition:</p>
@@ -3680,39 +3580,43 @@
 </span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>POST this definition to /geoserver/rest/imports:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XPOST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">  </span>-d<span class="w"> </span>@import.json<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">  </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>
 </span></code></pre></div>
+<p>curl -u admin:geoserver -XPOST -H "Content-type: application/json" -d @import.json "<a href="http://localhost:8080/geoserver/rest/imports">http://localhost:8080/geoserver/rest/imports</a>"</p>
 <p>The response will contain the import ID.</p>
 </li>
 <li>
 <p>We now have an empty import with no tasks. To add a task, POST the shapefile to the list of tasks:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">  </span>-F<span class="w"> </span><span class="nv">name</span><span class="o">=</span>myshapefile.zip<span class="w"> </span>-F<span class="w"> </span><span class="nv">filedata</span><span class="o">=</span>@myshapefile.zip<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">  </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/14/tasks&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>
 </span></code></pre></div>
+<p>curl -u admin:geoserver -F name=myshapefile.zip -F <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#102;&#105;&#108;&#101;&#100;&#97;&#116;&#97;&#61;&#64;&#109;&#121;&#115;&#104;&#97;&#112;&#101;&#102;&#105;&#108;&#101;&#46;&#122;&#105;&#112;">&#102;&#105;&#108;&#101;&#100;&#97;&#116;&#97;&#61;&#64;&#109;&#121;&#115;&#104;&#97;&#112;&#101;&#102;&#105;&#108;&#101;&#46;&#122;&#105;&#112;</a> "<a href="http://localhost:8080/geoserver/rest/imports/14/tasks">http://localhost:8080/geoserver/rest/imports/14/tasks</a>"</p>
 </li>
 <li>
 <p>Since we sent a shapefile, importer assumes the target will be a shapefile store. To import to PostGIS, we will need to reset it.</p>
 <p>Create the following JSON file:</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="p">{</span>
-</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span><span class="nt">&quot;dataStore&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;postgis&quot;</span>
-</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="p">}</span>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>{</dt>
+<dd></dd>
+</dl>
+<div class="language-text highlight"><pre><span></span><code>&quot;dataStore&quot;: {
+
+:   &quot;name&quot;:&quot;postgis&quot;
+
+}
+</code></pre></div>
+<p>}</p>
 <p>PUT this file to /geoserver/rest/imports/14/tasks/0/target:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XPUT<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">  </span>-d<span class="w"> </span>@target.json<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">  </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/14/tasks/0/target&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>
 </span></code></pre></div>
+<p>curl -u admin:geoserver -XPUT -H "Content-type: application/json" -d @target.json "<a href="http://localhost:8080/geoserver/rest/imports/14/tasks/0/target">http://localhost:8080/geoserver/rest/imports/14/tasks/0/target</a>"</p>
 </li>
 <li>
 <p>Finally, we execute the import by sending a POST to /geoserver/rest/imports/14:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XPOST<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">  </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/14&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>
 </span></code></pre></div>
+<p>curl -u admin:geoserver -XPOST "<a href="http://localhost:8080/geoserver/rest/imports/14">http://localhost:8080/geoserver/rest/imports/14</a>"</p>
 </li>
 </ol>
 <h2 id="uploading-a-csv-file-to-postgis-while-transforming-it">Uploading a CSV file to PostGIS while transforming it</h2>
@@ -3720,10 +3624,9 @@
 <ol>
 <li>
 <p>First, we are going to create a empty import with an existing postgis store as the target:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XPOST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">  </span>-d<span class="w"> </span>@import.json<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">  </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>
 </span></code></pre></div>
+<p>curl -u admin:geoserver -XPOST -H "Content-type: application/json" -d @import.json "<a href="http://localhost:8080/geoserver/rest/imports">http://localhost:8080/geoserver/rest/imports</a>"</p>
 <p>Where <strong><code>import.json</code></strong> is:</p>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="p">{</span>
 </span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">   </span><span class="nt">&quot;import&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -3751,40 +3654,23 @@
 </span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>1, 2015-01-01T14:00:00, 10.41, 62.45, 12
 </span></code></pre></div>
 <p>In order to create an import task for it:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-F<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="nb">test</span><span class="w"> </span>-F<span class="w"> </span><span class="nv">filedata</span><span class="o">=</span>@values.csv<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="w">  </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/0/tasks&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>
 </span></code></pre></div>
+<p>curl -u admin:geoserver -F name=test -F <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#102;&#105;&#108;&#101;&#100;&#97;&#116;&#97;&#61;&#64;&#118;&#97;&#108;&#117;&#101;&#115;&#46;&#99;&#115;&#118;">&#102;&#105;&#108;&#101;&#100;&#97;&#116;&#97;&#61;&#64;&#118;&#97;&#108;&#117;&#101;&#115;&#46;&#99;&#115;&#118;</a> "<a href="http://localhost:8080/geoserver/rest/imports/0/tasks">http://localhost:8080/geoserver/rest/imports/0/tasks</a>"</p>
 <p>And we are going to get back a new task definition, with a notification that the CRS is missing:</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="p">{</span>
-</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">  </span><span class="nt">&quot;task&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="w">    </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/0/tasks/0&quot;</span><span class="p">,</span>
-</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NO_CRS&quot;</span><span class="p">,</span>
-</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="w">    </span><span class="nt">&quot;updateMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CREATE&quot;</span><span class="p">,</span>
-</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;file&quot;</span><span class="p">,</span>
-</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="w">      </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CSV&quot;</span><span class="p">,</span>
-</span><span id="__span-29-10"><a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a><span class="w">      </span><span class="nt">&quot;file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;values.csv&quot;</span>
-</span><span id="__span-29-11"><a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-29-12"><a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a><span class="w">    </span><span class="nt">&quot;target&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-29-13"><a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a><span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/0/tasks/0/target&quot;</span><span class="p">,</span>
-</span><span id="__span-29-14"><a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a><span class="w">      </span><span class="nt">&quot;dataStore&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-29-15"><a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;postgis&quot;</span><span class="p">,</span>
-</span><span id="__span-29-16"><a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PostGIS&quot;</span>
-</span><span id="__span-29-17"><a id="__codelineno-29-17" name="__codelineno-29-17" href="#__codelineno-29-17"></a><span class="w">      </span><span class="p">}</span>
-</span><span id="__span-29-18"><a id="__codelineno-29-18" name="__codelineno-29-18" href="#__codelineno-29-18"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-29-19"><a id="__codelineno-29-19" name="__codelineno-29-19" href="#__codelineno-29-19"></a><span class="w">    </span><span class="nt">&quot;progress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/0/tasks/0/progress&quot;</span><span class="p">,</span>
-</span><span id="__span-29-20"><a id="__codelineno-29-20" name="__codelineno-29-20" href="#__codelineno-29-20"></a><span class="w">    </span><span class="nt">&quot;layer&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-29-21"><a id="__codelineno-29-21" name="__codelineno-29-21" href="#__codelineno-29-21"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;values&quot;</span><span class="p">,</span>
-</span><span id="__span-29-22"><a id="__codelineno-29-22" name="__codelineno-29-22" href="#__codelineno-29-22"></a><span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/0/tasks/0/layer&quot;</span>
-</span><span id="__span-29-23"><a id="__codelineno-29-23" name="__codelineno-29-23" href="#__codelineno-29-23"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-29-24"><a id="__codelineno-29-24" name="__codelineno-29-24" href="#__codelineno-29-24"></a><span class="w">    </span><span class="nt">&quot;transformChain&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-29-25"><a id="__codelineno-29-25" name="__codelineno-29-25" href="#__codelineno-29-25"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vector&quot;</span><span class="p">,</span>
-</span><span id="__span-29-26"><a id="__codelineno-29-26" name="__codelineno-29-26" href="#__codelineno-29-26"></a><span class="w">      </span><span class="nt">&quot;transforms&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
-</span><span id="__span-29-27"><a id="__codelineno-29-27" name="__codelineno-29-27" href="#__codelineno-29-27"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-29-28"><a id="__codelineno-29-28" name="__codelineno-29-28" href="#__codelineno-29-28"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-29-29"><a id="__codelineno-29-29" name="__codelineno-29-29" href="#__codelineno-29-29"></a><span class="p">}</span>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>{</dt>
+<dd></dd>
+</dl>
+<div class="language-text highlight"><pre><span></span><code>&quot;task&quot;: {
+
+:   &quot;id&quot;: 0, &quot;href&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/0/tasks/0&gt;&quot;, &quot;state&quot;: &quot;NO_CRS&quot;, &quot;updateMode&quot;: &quot;CREATE&quot;, &quot;data&quot;: { &quot;type&quot;: &quot;file&quot;, &quot;format&quot;: &quot;CSV&quot;, &quot;file&quot;: &quot;values.csv&quot; }, &quot;target&quot;: { &quot;href&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/0/tasks/0/target&gt;&quot;, &quot;dataStore&quot;: { &quot;name&quot;: &quot;postgis&quot;, &quot;type&quot;: &quot;PostGIS&quot; } }, &quot;progress&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/0/tasks/0/progress&gt;&quot;, &quot;layer&quot;: { &quot;name&quot;: &quot;values&quot;, &quot;href&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/0/tasks/0/layer&gt;&quot; }, &quot;transformChain&quot;: { &quot;type&quot;: &quot;vector&quot;, &quot;transforms&quot;: [] }
+
+}
+</code></pre></div>
+<p>}</p>
 </li>
 <li>
 <p>Force the CRS by updating the layer:</p>
@@ -3795,54 +3681,23 @@
 </span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>Using PUT to update task layer:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XPUT<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="w">  </span>-d<span class="w"> </span>@layerUpdate.json<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="w">  </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/0/tasks/0/layer/&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>
 </span></code></pre></div>
+<p>curl -u admin:geoserver -XPUT -H "Content-type: application/json" -d @layerUpdate.json "<a href="http://localhost:8080/geoserver/rest/imports/0/tasks/0/layer/">http://localhost:8080/geoserver/rest/imports/0/tasks/0/layer/</a>"</p>
 <p>Updating the srs:</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="p">{</span>
-</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="w">  </span><span class="nt">&quot;layer&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;values&quot;</span><span class="p">,</span>
-</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="w">    </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/0/tasks/0/layer&quot;</span><span class="p">,</span>
-</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;values&quot;</span><span class="p">,</span>
-</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="w">    </span><span class="nt">&quot;originalName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;values&quot;</span><span class="p">,</span>
-</span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a><span class="w">    </span><span class="nt">&quot;nativeName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;values&quot;</span><span class="p">,</span>
-</span><span id="__span-32-8"><a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a><span class="w">    </span><span class="nt">&quot;srs&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">,</span>
-</span><span id="__span-32-9"><a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="w">    </span><span class="nt">&quot;bbox&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-32-10"><a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a><span class="w">      </span><span class="nt">&quot;minx&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-</span><span id="__span-32-11"><a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a><span class="w">      </span><span class="nt">&quot;miny&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-</span><span id="__span-32-12"><a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a><span class="w">      </span><span class="nt">&quot;maxx&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span>
-</span><span id="__span-32-13"><a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a><span class="w">      </span><span class="nt">&quot;maxy&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span>
-</span><span id="__span-32-14"><a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-32-15"><a id="__codelineno-32-15" name="__codelineno-32-15" href="#__codelineno-32-15"></a><span class="w">    </span><span class="nt">&quot;attributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-32-16"><a id="__codelineno-32-16" name="__codelineno-32-16" href="#__codelineno-32-16"></a><span class="w">      </span><span class="p">{</span>
-</span><span id="__span-32-17"><a id="__codelineno-32-17" name="__codelineno-32-17" href="#__codelineno-32-17"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AssetID&quot;</span><span class="p">,</span>
-</span><span id="__span-32-18"><a id="__codelineno-32-18" name="__codelineno-32-18" href="#__codelineno-32-18"></a><span class="w">        </span><span class="nt">&quot;binding&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;java.lang.Integer&quot;</span>
-</span><span id="__span-32-19"><a id="__codelineno-32-19" name="__codelineno-32-19" href="#__codelineno-32-19"></a><span class="w">      </span><span class="p">},</span>
-</span><span id="__span-32-20"><a id="__codelineno-32-20" name="__codelineno-32-20" href="#__codelineno-32-20"></a><span class="w">      </span><span class="p">{</span>
-</span><span id="__span-32-21"><a id="__codelineno-32-21" name="__codelineno-32-21" href="#__codelineno-32-21"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SampleTime&quot;</span><span class="p">,</span>
-</span><span id="__span-32-22"><a id="__codelineno-32-22" name="__codelineno-32-22" href="#__codelineno-32-22"></a><span class="w">        </span><span class="nt">&quot;binding&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;java.lang.String&quot;</span>
-</span><span id="__span-32-23"><a id="__codelineno-32-23" name="__codelineno-32-23" href="#__codelineno-32-23"></a><span class="w">      </span><span class="p">},</span>
-</span><span id="__span-32-24"><a id="__codelineno-32-24" name="__codelineno-32-24" href="#__codelineno-32-24"></a><span class="w">      </span><span class="p">{</span>
-</span><span id="__span-32-25"><a id="__codelineno-32-25" name="__codelineno-32-25" href="#__codelineno-32-25"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Lat&quot;</span><span class="p">,</span>
-</span><span id="__span-32-26"><a id="__codelineno-32-26" name="__codelineno-32-26" href="#__codelineno-32-26"></a><span class="w">        </span><span class="nt">&quot;binding&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;java.lang.Double&quot;</span>
-</span><span id="__span-32-27"><a id="__codelineno-32-27" name="__codelineno-32-27" href="#__codelineno-32-27"></a><span class="w">      </span><span class="p">},</span>
-</span><span id="__span-32-28"><a id="__codelineno-32-28" name="__codelineno-32-28" href="#__codelineno-32-28"></a><span class="w">      </span><span class="p">{</span>
-</span><span id="__span-32-29"><a id="__codelineno-32-29" name="__codelineno-32-29" href="#__codelineno-32-29"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Lon&quot;</span><span class="p">,</span>
-</span><span id="__span-32-30"><a id="__codelineno-32-30" name="__codelineno-32-30" href="#__codelineno-32-30"></a><span class="w">        </span><span class="nt">&quot;binding&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;java.lang.Double&quot;</span>
-</span><span id="__span-32-31"><a id="__codelineno-32-31" name="__codelineno-32-31" href="#__codelineno-32-31"></a><span class="w">      </span><span class="p">},</span>
-</span><span id="__span-32-32"><a id="__codelineno-32-32" name="__codelineno-32-32" href="#__codelineno-32-32"></a><span class="w">      </span><span class="p">{</span>
-</span><span id="__span-32-33"><a id="__codelineno-32-33" name="__codelineno-32-33" href="#__codelineno-32-33"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Value&quot;</span><span class="p">,</span>
-</span><span id="__span-32-34"><a id="__codelineno-32-34" name="__codelineno-32-34" href="#__codelineno-32-34"></a><span class="w">        </span><span class="nt">&quot;binding&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;java.lang.Double&quot;</span>
-</span><span id="__span-32-35"><a id="__codelineno-32-35" name="__codelineno-32-35" href="#__codelineno-32-35"></a><span class="w">      </span><span class="p">}</span>
-</span><span id="__span-32-36"><a id="__codelineno-32-36" name="__codelineno-32-36" href="#__codelineno-32-36"></a><span class="w">    </span><span class="p">],</span>
-</span><span id="__span-32-37"><a id="__codelineno-32-37" name="__codelineno-32-37" href="#__codelineno-32-37"></a><span class="w">    </span><span class="nt">&quot;style&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-32-38"><a id="__codelineno-32-38" name="__codelineno-32-38" href="#__codelineno-32-38"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;point&quot;</span><span class="p">,</span>
-</span><span id="__span-32-39"><a id="__codelineno-32-39" name="__codelineno-32-39" href="#__codelineno-32-39"></a><span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/0/tasks/0/layer/style&quot;</span>
-</span><span id="__span-32-40"><a id="__codelineno-32-40" name="__codelineno-32-40" href="#__codelineno-32-40"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-32-41"><a id="__codelineno-32-41" name="__codelineno-32-41" href="#__codelineno-32-41"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-32-42"><a id="__codelineno-32-42" name="__codelineno-32-42" href="#__codelineno-32-42"></a><span class="p">}</span>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>{</dt>
+<dd></dd>
+</dl>
+<div class="language-text highlight"><pre><span></span><code>&quot;layer&quot;: {
+
+:   &quot;name&quot;: &quot;values&quot;, &quot;href&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/0/tasks/0/layer&gt;&quot;, &quot;title&quot;: &quot;values&quot;, &quot;originalName&quot;: &quot;values&quot;, &quot;nativeName&quot;: &quot;values&quot;, &quot;srs&quot;: &quot;EPSG:4326&quot;, &quot;bbox&quot;: { &quot;minx&quot;: 0, &quot;miny&quot;: 0, &quot;maxx&quot;: -1, &quot;maxy&quot;: -1 }, &quot;attributes&quot;: [ { &quot;name&quot;: &quot;AssetID&quot;, &quot;binding&quot;: &quot;java.lang.Integer&quot; }, { &quot;name&quot;: &quot;SampleTime&quot;, &quot;binding&quot;: &quot;java.lang.String&quot; }, { &quot;name&quot;: &quot;Lat&quot;, &quot;binding&quot;: &quot;java.lang.Double&quot; }, { &quot;name&quot;: &quot;Lon&quot;, &quot;binding&quot;: &quot;java.lang.Double&quot; }, { &quot;name&quot;: &quot;Value&quot;, &quot;binding&quot;: &quot;java.lang.Double&quot; } ], &quot;style&quot;: { &quot;name&quot;: &quot;point&quot;, &quot;href&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/0/tasks/0/layer/style&gt;&quot; }
+
+}
+</code></pre></div>
+<p>}</p>
 </li>
 <li>
 <p>Then, we are going to create a transformation mapping the Lat/Lon columns to a point:</p>
@@ -3853,16 +3708,15 @@
 </span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>The above will be uploaded task transforms:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XPOST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="w">  </span>-d<span class="w"> </span>@toPoint.json<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="w">  </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/0/tasks/0/transforms&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>
 </span></code></pre></div>
+<p>curl -u admin:geoserver -XPOST -H "Content-type: application/json" -d @toPoint.json "<a href="http://localhost:8080/geoserver/rest/imports/0/tasks/0/transforms">http://localhost:8080/geoserver/rest/imports/0/tasks/0/transforms</a>"</p>
 </li>
 <li>
 <p>Now the import is ready to run, and we'll execute it using:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XPOST<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="w">  </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/0&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>
 </span></code></pre></div>
+<p>curl -u admin:geoserver -XPOST "<a href="http://localhost:8080/geoserver/rest/imports/0">http://localhost:8080/geoserver/rest/imports/0</a>"</p>
 </li>
 <li>
 <p>The new layer is created in PostGIS and registered in GeoServer as a new layer.</p>
@@ -3874,9 +3728,9 @@
 <ol>
 <li>
 <p>Create a new import into <code>cite:postgis</code>:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XPOST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="w">  </span>-d<span class="w"> </span>@import.json<span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>
 </span></code></pre></div>
+<p>curl -u admin:geoserver -XPOST -H "Content-type: application/json" -d @import.json "<a href="http://localhost:8080/geoserver/rest/imports">http://localhost:8080/geoserver/rest/imports</a>"</p>
 <p>Using:</p>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="p">{</span>
 </span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="w">   </span><span class="nt">&quot;import&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -3896,10 +3750,9 @@
 </li>
 <li>
 <p>Use <strong><code>replace.csv</code></strong> to create a new task:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XPOST<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="w">  </span>-F<span class="w"> </span><span class="nv">filedata</span><span class="o">=</span>@replace.csv<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="w">  </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/1/tasks&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>
 </span></code></pre></div>
+<p>curl -u admin:geoserver -XPOST -F <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#102;&#105;&#108;&#101;&#100;&#97;&#116;&#97;&#61;&#64;&#114;&#101;&#112;&#108;&#97;&#99;&#101;&#46;&#99;&#115;&#118;">&#102;&#105;&#108;&#101;&#100;&#97;&#116;&#97;&#61;&#64;&#114;&#101;&#112;&#108;&#97;&#99;&#101;&#46;&#99;&#115;&#118;</a> "<a href="http://localhost:8080/geoserver/rest/imports/1/tasks">http://localhost:8080/geoserver/rest/imports/1/tasks</a>"</p>
 <p>The csv file has an additional column:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>AssetID, SampleTime, Lat, Lon, Value, Status
 </span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>1, 2015-01-01T10:00:00, 10.00, 62.00, 15.2, ready
@@ -3911,10 +3764,9 @@
 </li>
 <li>
 <p>Update task with as a "REPLACE" and supply srs information:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XPUT<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="w">  </span>-d<span class="w"> </span>@taskUpdate.json<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="w">  </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/1/tasks/0&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>
 </span></code></pre></div>
+<p>curl -u admin:geoserver -XPUT -H "Content-type: application/json" -d @taskUpdate.json "<a href="http://localhost:8080/geoserver/rest/imports/1/tasks/0">http://localhost:8080/geoserver/rest/imports/1/tasks/0</a>"</p>
 <p>Using:</p>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="p">{</span>
 </span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="w">   </span><span class="nt">&quot;task&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -3931,10 +3783,9 @@
 </li>
 <li>
 <p>Update transform to supply a geometry column:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XPOST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="w">  </span>-d<span class="w"> </span>@toPoint.json<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="w">  </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/1/tasks/0/transforms&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>
 </span></code></pre></div>
+<p>curl -u admin:geoserver -XPOST -H "Content-type: application/json" -d @toPoint.json "<a href="http://localhost:8080/geoserver/rest/imports/1/tasks/0/transforms">http://localhost:8080/geoserver/rest/imports/1/tasks/0/transforms</a>"</p>
 <p>Using:</p>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="p">{</span>
 </span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AttributesToPointGeometryTransform&quot;</span><span class="p">,</span>
@@ -3945,133 +3796,66 @@
 </li>
 <li>
 <p>Double check import:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XGET<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="w">  </span>http://localhost:8080/geoserver/rest/imports/1.json
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>
 </span></code></pre></div>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="p">{</span>
-</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="w">  </span><span class="nt">&quot;import&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-</span><span id="__span-45-4"><a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a><span class="w">    </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/1&quot;</span><span class="p">,</span>
-</span><span id="__span-45-5"><a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a><span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PENDING&quot;</span><span class="p">,</span>
-</span><span id="__span-45-6"><a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a><span class="w">    </span><span class="nt">&quot;archive&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="__span-45-7"><a id="__codelineno-45-7" name="__codelineno-45-7" href="#__codelineno-45-7"></a><span class="w">    </span><span class="nt">&quot;targetWorkspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-45-8"><a id="__codelineno-45-8" name="__codelineno-45-8" href="#__codelineno-45-8"></a><span class="w">      </span><span class="nt">&quot;workspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-45-9"><a id="__codelineno-45-9" name="__codelineno-45-9" href="#__codelineno-45-9"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cite&quot;</span><span class="p">,</span>
-</span><span id="__span-45-10"><a id="__codelineno-45-10" name="__codelineno-45-10" href="#__codelineno-45-10"></a><span class="w">        </span><span class="nt">&quot;isolated&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
-</span><span id="__span-45-11"><a id="__codelineno-45-11" name="__codelineno-45-11" href="#__codelineno-45-11"></a><span class="w">      </span><span class="p">}</span>
-</span><span id="__span-45-12"><a id="__codelineno-45-12" name="__codelineno-45-12" href="#__codelineno-45-12"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-45-13"><a id="__codelineno-45-13" name="__codelineno-45-13" href="#__codelineno-45-13"></a><span class="w">    </span><span class="nt">&quot;targetStore&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-45-14"><a id="__codelineno-45-14" name="__codelineno-45-14" href="#__codelineno-45-14"></a><span class="w">      </span><span class="nt">&quot;dataStore&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-45-15"><a id="__codelineno-45-15" name="__codelineno-45-15" href="#__codelineno-45-15"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;postgis&quot;</span><span class="p">,</span>
-</span><span id="__span-45-16"><a id="__codelineno-45-16" name="__codelineno-45-16" href="#__codelineno-45-16"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PostGIS&quot;</span>
-</span><span id="__span-45-17"><a id="__codelineno-45-17" name="__codelineno-45-17" href="#__codelineno-45-17"></a><span class="w">      </span><span class="p">}</span>
-</span><span id="__span-45-18"><a id="__codelineno-45-18" name="__codelineno-45-18" href="#__codelineno-45-18"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-45-19"><a id="__codelineno-45-19" name="__codelineno-45-19" href="#__codelineno-45-19"></a><span class="w">    </span><span class="nt">&quot;tasks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-45-20"><a id="__codelineno-45-20" name="__codelineno-45-20" href="#__codelineno-45-20"></a><span class="w">      </span><span class="p">{</span>
-</span><span id="__span-45-21"><a id="__codelineno-45-21" name="__codelineno-45-21" href="#__codelineno-45-21"></a><span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-</span><span id="__span-45-22"><a id="__codelineno-45-22" name="__codelineno-45-22" href="#__codelineno-45-22"></a><span class="w">        </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/1/tasks/0&quot;</span><span class="p">,</span>
-</span><span id="__span-45-23"><a id="__codelineno-45-23" name="__codelineno-45-23" href="#__codelineno-45-23"></a><span class="w">        </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;READY&quot;</span>
-</span><span id="__span-45-24"><a id="__codelineno-45-24" name="__codelineno-45-24" href="#__codelineno-45-24"></a><span class="w">      </span><span class="p">}</span>
-</span><span id="__span-45-25"><a id="__codelineno-45-25" name="__codelineno-45-25" href="#__codelineno-45-25"></a><span class="w">    </span><span class="p">]</span>
-</span><span id="__span-45-26"><a id="__codelineno-45-26" name="__codelineno-45-26" href="#__codelineno-45-26"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-45-27"><a id="__codelineno-45-27" name="__codelineno-45-27" href="#__codelineno-45-27"></a><span class="p">}</span>
+<p>curl -u admin:geoserver -XGET <a href="http://localhost:8080/geoserver/rest/imports/1.json">http://localhost:8080/geoserver/rest/imports/1.json</a></p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>{</dt>
+<dd></dd>
+</dl>
+<div class="language-text highlight"><pre><span></span><code>&quot;import&quot;: {
+
+:   &quot;id&quot;: 2, &quot;href&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/1&gt;&quot;, &quot;state&quot;: &quot;PENDING&quot;, &quot;archive&quot;: false, &quot;targetWorkspace&quot;: { &quot;workspace&quot;: { &quot;name&quot;: &quot;cite&quot;, &quot;isolated&quot;: false } }, &quot;targetStore&quot;: { &quot;dataStore&quot;: { &quot;name&quot;: &quot;postgis&quot;, &quot;type&quot;: &quot;PostGIS&quot; } }, &quot;tasks&quot;: [ { &quot;id&quot;: 0, &quot;href&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/1/tasks/0&gt;&quot;, &quot;state&quot;: &quot;READY&quot; } ]
+
+}
+</code></pre></div>
+<p>}</p>
 <p>Task:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XGET<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="w">  </span>http://localhost:8080/geoserver/rest/imports/1/tasks/0.json
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>
 </span></code></pre></div>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="p">{</span>
-</span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a><span class="w">  </span><span class="nt">&quot;task&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-47-3"><a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-</span><span id="__span-47-4"><a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a><span class="w">    </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/2/tasks/0&quot;</span><span class="p">,</span>
-</span><span id="__span-47-5"><a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a><span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;READY&quot;</span><span class="p">,</span>
-</span><span id="__span-47-6"><a id="__codelineno-47-6" name="__codelineno-47-6" href="#__codelineno-47-6"></a><span class="w">    </span><span class="nt">&quot;updateMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;REPLACE&quot;</span><span class="p">,</span>
-</span><span id="__span-47-7"><a id="__codelineno-47-7" name="__codelineno-47-7" href="#__codelineno-47-7"></a><span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-47-8"><a id="__codelineno-47-8" name="__codelineno-47-8" href="#__codelineno-47-8"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;file&quot;</span><span class="p">,</span>
-</span><span id="__span-47-9"><a id="__codelineno-47-9" name="__codelineno-47-9" href="#__codelineno-47-9"></a><span class="w">      </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CSV&quot;</span><span class="p">,</span>
-</span><span id="__span-47-10"><a id="__codelineno-47-10" name="__codelineno-47-10" href="#__codelineno-47-10"></a><span class="w">      </span><span class="nt">&quot;file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;replace.csv&quot;</span>
-</span><span id="__span-47-11"><a id="__codelineno-47-11" name="__codelineno-47-11" href="#__codelineno-47-11"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-47-12"><a id="__codelineno-47-12" name="__codelineno-47-12" href="#__codelineno-47-12"></a><span class="w">    </span><span class="nt">&quot;target&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-47-13"><a id="__codelineno-47-13" name="__codelineno-47-13" href="#__codelineno-47-13"></a><span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/2/tasks/0/target&quot;</span><span class="p">,</span>
-</span><span id="__span-47-14"><a id="__codelineno-47-14" name="__codelineno-47-14" href="#__codelineno-47-14"></a><span class="w">      </span><span class="nt">&quot;dataStore&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-47-15"><a id="__codelineno-47-15" name="__codelineno-47-15" href="#__codelineno-47-15"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;postgis&quot;</span><span class="p">,</span>
-</span><span id="__span-47-16"><a id="__codelineno-47-16" name="__codelineno-47-16" href="#__codelineno-47-16"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PostGIS&quot;</span>
-</span><span id="__span-47-17"><a id="__codelineno-47-17" name="__codelineno-47-17" href="#__codelineno-47-17"></a><span class="w">      </span><span class="p">}</span>
-</span><span id="__span-47-18"><a id="__codelineno-47-18" name="__codelineno-47-18" href="#__codelineno-47-18"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-47-19"><a id="__codelineno-47-19" name="__codelineno-47-19" href="#__codelineno-47-19"></a><span class="w">    </span><span class="nt">&quot;progress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/2/tasks/0/progress&quot;</span><span class="p">,</span>
-</span><span id="__span-47-20"><a id="__codelineno-47-20" name="__codelineno-47-20" href="#__codelineno-47-20"></a><span class="w">    </span><span class="nt">&quot;layer&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-47-21"><a id="__codelineno-47-21" name="__codelineno-47-21" href="#__codelineno-47-21"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;replace&quot;</span><span class="p">,</span>
-</span><span id="__span-47-22"><a id="__codelineno-47-22" name="__codelineno-47-22" href="#__codelineno-47-22"></a><span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/2/tasks/0/layer&quot;</span>
-</span><span id="__span-47-23"><a id="__codelineno-47-23" name="__codelineno-47-23" href="#__codelineno-47-23"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-47-24"><a id="__codelineno-47-24" name="__codelineno-47-24" href="#__codelineno-47-24"></a><span class="w">    </span><span class="nt">&quot;transformChain&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-47-25"><a id="__codelineno-47-25" name="__codelineno-47-25" href="#__codelineno-47-25"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vector&quot;</span><span class="p">,</span>
-</span><span id="__span-47-26"><a id="__codelineno-47-26" name="__codelineno-47-26" href="#__codelineno-47-26"></a><span class="w">      </span><span class="nt">&quot;transforms&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-47-27"><a id="__codelineno-47-27" name="__codelineno-47-27" href="#__codelineno-47-27"></a><span class="w">        </span><span class="p">{</span>
-</span><span id="__span-47-28"><a id="__codelineno-47-28" name="__codelineno-47-28" href="#__codelineno-47-28"></a><span class="w">          </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AttributesToPointGeometryTransform&quot;</span><span class="p">,</span>
-</span><span id="__span-47-29"><a id="__codelineno-47-29" name="__codelineno-47-29" href="#__codelineno-47-29"></a><span class="w">          </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/2/tasks/0/transforms/0&quot;</span>
-</span><span id="__span-47-30"><a id="__codelineno-47-30" name="__codelineno-47-30" href="#__codelineno-47-30"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-47-31"><a id="__codelineno-47-31" name="__codelineno-47-31" href="#__codelineno-47-31"></a><span class="w">      </span><span class="p">]</span>
-</span><span id="__span-47-32"><a id="__codelineno-47-32" name="__codelineno-47-32" href="#__codelineno-47-32"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-47-33"><a id="__codelineno-47-33" name="__codelineno-47-33" href="#__codelineno-47-33"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-47-34"><a id="__codelineno-47-34" name="__codelineno-47-34" href="#__codelineno-47-34"></a><span class="p">}</span>
+<p>curl -u admin:geoserver -XGET <a href="http://localhost:8080/geoserver/rest/imports/1/tasks/0.json">http://localhost:8080/geoserver/rest/imports/1/tasks/0.json</a></p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>{</dt>
+<dd></dd>
+</dl>
+<div class="language-text highlight"><pre><span></span><code>&quot;task&quot;: {
+
+:   &quot;id&quot;: 0, &quot;href&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/2/tasks/0&gt;&quot;, &quot;state&quot;: &quot;READY&quot;, &quot;updateMode&quot;: &quot;REPLACE&quot;, &quot;data&quot;: { &quot;type&quot;: &quot;file&quot;, &quot;format&quot;: &quot;CSV&quot;, &quot;file&quot;: &quot;replace.csv&quot; }, &quot;target&quot;: { &quot;href&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/2/tasks/0/target&gt;&quot;, &quot;dataStore&quot;: { &quot;name&quot;: &quot;postgis&quot;, &quot;type&quot;: &quot;PostGIS&quot; } }, &quot;progress&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/2/tasks/0/progress&gt;&quot;, &quot;layer&quot;: { &quot;name&quot;: &quot;replace&quot;, &quot;href&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/2/tasks/0/layer&gt;&quot; }, &quot;transformChain&quot;: { &quot;type&quot;: &quot;vector&quot;, &quot;transforms&quot;: [ { &quot;type&quot;: &quot;AttributesToPointGeometryTransform&quot;, &quot;href&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/2/tasks/0/transforms/0&gt;&quot; } ] }
+
+}
+</code></pre></div>
+<p>}</p>
 <p>Check layer to ensure <code>name</code> indicates layer to replace, and <code>nativeName</code> indicates the table contents to replace:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XGET<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a><span class="w">  </span>http://localhost:8080/geoserver/rest/imports/1/tasks/0/layer.json
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>
 </span></code></pre></div>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="p">{</span>
-</span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a><span class="w">  </span><span class="nt">&quot;layer&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-49-3"><a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;values&quot;</span><span class="p">,</span>
-</span><span id="__span-49-4"><a id="__codelineno-49-4" name="__codelineno-49-4" href="#__codelineno-49-4"></a><span class="w">    </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/1/tasks/0/layer&quot;</span><span class="p">,</span>
-</span><span id="__span-49-5"><a id="__codelineno-49-5" name="__codelineno-49-5" href="#__codelineno-49-5"></a><span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;values&quot;</span><span class="p">,</span>
-</span><span id="__span-49-6"><a id="__codelineno-49-6" name="__codelineno-49-6" href="#__codelineno-49-6"></a><span class="w">    </span><span class="nt">&quot;originalName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;replace&quot;</span><span class="p">,</span>
-</span><span id="__span-49-7"><a id="__codelineno-49-7" name="__codelineno-49-7" href="#__codelineno-49-7"></a><span class="w">    </span><span class="nt">&quot;nativeName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;replace&quot;</span><span class="p">,</span>
-</span><span id="__span-49-8"><a id="__codelineno-49-8" name="__codelineno-49-8" href="#__codelineno-49-8"></a><span class="w">    </span><span class="nt">&quot;srs&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">,</span>
-</span><span id="__span-49-9"><a id="__codelineno-49-9" name="__codelineno-49-9" href="#__codelineno-49-9"></a><span class="w">    </span><span class="nt">&quot;bbox&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-49-10"><a id="__codelineno-49-10" name="__codelineno-49-10" href="#__codelineno-49-10"></a><span class="w">      </span><span class="nt">&quot;minx&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-</span><span id="__span-49-11"><a id="__codelineno-49-11" name="__codelineno-49-11" href="#__codelineno-49-11"></a><span class="w">      </span><span class="nt">&quot;miny&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-</span><span id="__span-49-12"><a id="__codelineno-49-12" name="__codelineno-49-12" href="#__codelineno-49-12"></a><span class="w">      </span><span class="nt">&quot;maxx&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span>
-</span><span id="__span-49-13"><a id="__codelineno-49-13" name="__codelineno-49-13" href="#__codelineno-49-13"></a><span class="w">      </span><span class="nt">&quot;maxy&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span>
-</span><span id="__span-49-14"><a id="__codelineno-49-14" name="__codelineno-49-14" href="#__codelineno-49-14"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-49-15"><a id="__codelineno-49-15" name="__codelineno-49-15" href="#__codelineno-49-15"></a><span class="w">    </span><span class="nt">&quot;attributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-49-16"><a id="__codelineno-49-16" name="__codelineno-49-16" href="#__codelineno-49-16"></a><span class="w">      </span><span class="p">{</span>
-</span><span id="__span-49-17"><a id="__codelineno-49-17" name="__codelineno-49-17" href="#__codelineno-49-17"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AssetID&quot;</span><span class="p">,</span>
-</span><span id="__span-49-18"><a id="__codelineno-49-18" name="__codelineno-49-18" href="#__codelineno-49-18"></a><span class="w">        </span><span class="nt">&quot;binding&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;java.lang.Integer&quot;</span>
-</span><span id="__span-49-19"><a id="__codelineno-49-19" name="__codelineno-49-19" href="#__codelineno-49-19"></a><span class="w">      </span><span class="p">},</span>
-</span><span id="__span-49-20"><a id="__codelineno-49-20" name="__codelineno-49-20" href="#__codelineno-49-20"></a><span class="w">      </span><span class="p">{</span>
-</span><span id="__span-49-21"><a id="__codelineno-49-21" name="__codelineno-49-21" href="#__codelineno-49-21"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SampleTime&quot;</span><span class="p">,</span>
-</span><span id="__span-49-22"><a id="__codelineno-49-22" name="__codelineno-49-22" href="#__codelineno-49-22"></a><span class="w">        </span><span class="nt">&quot;binding&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;java.lang.String&quot;</span>
-</span><span id="__span-49-23"><a id="__codelineno-49-23" name="__codelineno-49-23" href="#__codelineno-49-23"></a><span class="w">      </span><span class="p">},</span>
-</span><span id="__span-49-24"><a id="__codelineno-49-24" name="__codelineno-49-24" href="#__codelineno-49-24"></a><span class="w">      </span><span class="p">{</span>
-</span><span id="__span-49-25"><a id="__codelineno-49-25" name="__codelineno-49-25" href="#__codelineno-49-25"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Lat&quot;</span><span class="p">,</span>
-</span><span id="__span-49-26"><a id="__codelineno-49-26" name="__codelineno-49-26" href="#__codelineno-49-26"></a><span class="w">        </span><span class="nt">&quot;binding&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;java.lang.Double&quot;</span>
-</span><span id="__span-49-27"><a id="__codelineno-49-27" name="__codelineno-49-27" href="#__codelineno-49-27"></a><span class="w">      </span><span class="p">},</span>
-</span><span id="__span-49-28"><a id="__codelineno-49-28" name="__codelineno-49-28" href="#__codelineno-49-28"></a><span class="w">      </span><span class="p">{</span>
-</span><span id="__span-49-29"><a id="__codelineno-49-29" name="__codelineno-49-29" href="#__codelineno-49-29"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Lon&quot;</span><span class="p">,</span>
-</span><span id="__span-49-30"><a id="__codelineno-49-30" name="__codelineno-49-30" href="#__codelineno-49-30"></a><span class="w">        </span><span class="nt">&quot;binding&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;java.lang.Double&quot;</span>
-</span><span id="__span-49-31"><a id="__codelineno-49-31" name="__codelineno-49-31" href="#__codelineno-49-31"></a><span class="w">      </span><span class="p">},</span>
-</span><span id="__span-49-32"><a id="__codelineno-49-32" name="__codelineno-49-32" href="#__codelineno-49-32"></a><span class="w">      </span><span class="p">{</span>
-</span><span id="__span-49-33"><a id="__codelineno-49-33" name="__codelineno-49-33" href="#__codelineno-49-33"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Value&quot;</span><span class="p">,</span>
-</span><span id="__span-49-34"><a id="__codelineno-49-34" name="__codelineno-49-34" href="#__codelineno-49-34"></a><span class="w">        </span><span class="nt">&quot;binding&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;java.lang.Integer&quot;</span>
-</span><span id="__span-49-35"><a id="__codelineno-49-35" name="__codelineno-49-35" href="#__codelineno-49-35"></a><span class="w">      </span><span class="p">}</span>
-</span><span id="__span-49-36"><a id="__codelineno-49-36" name="__codelineno-49-36" href="#__codelineno-49-36"></a><span class="w">    </span><span class="p">],</span>
-</span><span id="__span-49-37"><a id="__codelineno-49-37" name="__codelineno-49-37" href="#__codelineno-49-37"></a><span class="w">    </span><span class="nt">&quot;style&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-49-38"><a id="__codelineno-49-38" name="__codelineno-49-38" href="#__codelineno-49-38"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;point&quot;</span><span class="p">,</span>
-</span><span id="__span-49-39"><a id="__codelineno-49-39" name="__codelineno-49-39" href="#__codelineno-49-39"></a><span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/1/tasks/0/layer/style&quot;</span>
-</span><span id="__span-49-40"><a id="__codelineno-49-40" name="__codelineno-49-40" href="#__codelineno-49-40"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-49-41"><a id="__codelineno-49-41" name="__codelineno-49-41" href="#__codelineno-49-41"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-49-42"><a id="__codelineno-49-42" name="__codelineno-49-42" href="#__codelineno-49-42"></a><span class="p">}</span>
+<p>curl -u admin:geoserver -XGET <a href="http://localhost:8080/geoserver/rest/imports/1/tasks/0/layer.json">http://localhost:8080/geoserver/rest/imports/1/tasks/0/layer.json</a></p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>{</dt>
+<dd></dd>
+</dl>
+<div class="language-text highlight"><pre><span></span><code>&quot;layer&quot;: {
+
+:   &quot;name&quot;: &quot;values&quot;, &quot;href&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/1/tasks/0/layer&gt;&quot;, &quot;title&quot;: &quot;values&quot;, &quot;originalName&quot;: &quot;replace&quot;, &quot;nativeName&quot;: &quot;replace&quot;, &quot;srs&quot;: &quot;EPSG:4326&quot;, &quot;bbox&quot;: { &quot;minx&quot;: 0, &quot;miny&quot;: 0, &quot;maxx&quot;: -1, &quot;maxy&quot;: -1 }, &quot;attributes&quot;: [ { &quot;name&quot;: &quot;AssetID&quot;, &quot;binding&quot;: &quot;java.lang.Integer&quot; }, { &quot;name&quot;: &quot;SampleTime&quot;, &quot;binding&quot;: &quot;java.lang.String&quot; }, { &quot;name&quot;: &quot;Lat&quot;, &quot;binding&quot;: &quot;java.lang.Double&quot; }, { &quot;name&quot;: &quot;Lon&quot;, &quot;binding&quot;: &quot;java.lang.Double&quot; }, { &quot;name&quot;: &quot;Value&quot;, &quot;binding&quot;: &quot;java.lang.Integer&quot; } ], &quot;style&quot;: { &quot;name&quot;: &quot;point&quot;, &quot;href&quot;: &quot;&lt;http://localhost:8080/geoserver/rest/imports/1/tasks/0/layer/style&gt;&quot; }
+
+}
+</code></pre></div>
+<p>}</p>
 <p>Transform:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XGET<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a><span class="w">  </span>http://localhost:8080/geoserver/rest/imports/1/tasks/0/transforms/0.json
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>
 </span></code></pre></div>
+<p>curl -u admin:geoserver -XGET <a href="http://localhost:8080/geoserver/rest/imports/1/tasks/0/transforms/0.json">http://localhost:8080/geoserver/rest/imports/1/tasks/0/transforms/0.json</a></p>
 </li>
 <li>
 <p>To run the import:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XPOST<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a><span class="w">  </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/1&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>
 </span></code></pre></div>
+<p>curl -u admin:geoserver -XPOST "<a href="http://localhost:8080/geoserver/rest/imports/1">http://localhost:8080/geoserver/rest/imports/1</a>"</p>
 </li>
 </ol>
 <h2 id="uploading-and-optimizing-a-geotiff-with-ground-control-points">Uploading and optimizing a GeoTiff with ground control points</h2>
@@ -4128,113 +3912,113 @@ curl -u admin:geoserver -XPOST -H &quot;Content-type: application/json&quot; -d 
 <p>curl -u admin:geoserver -XPOST -H "Content-type: application/json" -d @import.json "<a href="http://localhost:8080/geoserver/rest/imports">http://localhost:8080/geoserver/rest/imports</a>"</p>
 </blockquote>
 <p>Where import.json is:</p>
-<div class="language-text highlight"><pre><span></span><code>{
-   &quot;import&quot;: {
-      &quot;targetWorkspace&quot;: {
-         &quot;workspace&quot;: {
-            &quot;name&quot;: &quot;topp&quot;
-         }
-      },
-      &quot;data&quot;: {
-        &quot;type&quot;: &quot;file&quot;,
-        &quot;file&quot;: &quot;/home/aaime/devel/gisData/ndimensional/data/world/world.200407.3x5400x2700.tiff&quot;
-      },
-      &quot;targetStore&quot;: {
-         &quot;dataStore&quot;: {
-            &quot;name&quot;: &quot;bluemarble&quot;
-         }
-      }
-   }
-}
-</code></pre></div>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="p">{</span>
+</span><span id="__span-52-2"><a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a><span class="w">   </span><span class="nt">&quot;import&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-52-3"><a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a><span class="w">      </span><span class="nt">&quot;targetWorkspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-52-4"><a id="__codelineno-52-4" name="__codelineno-52-4" href="#__codelineno-52-4"></a><span class="w">         </span><span class="nt">&quot;workspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-52-5"><a id="__codelineno-52-5" name="__codelineno-52-5" href="#__codelineno-52-5"></a><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;topp&quot;</span>
+</span><span id="__span-52-6"><a id="__codelineno-52-6" name="__codelineno-52-6" href="#__codelineno-52-6"></a><span class="w">         </span><span class="p">}</span>
+</span><span id="__span-52-7"><a id="__codelineno-52-7" name="__codelineno-52-7" href="#__codelineno-52-7"></a><span class="w">      </span><span class="p">},</span>
+</span><span id="__span-52-8"><a id="__codelineno-52-8" name="__codelineno-52-8" href="#__codelineno-52-8"></a><span class="w">      </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-52-9"><a id="__codelineno-52-9" name="__codelineno-52-9" href="#__codelineno-52-9"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;file&quot;</span><span class="p">,</span>
+</span><span id="__span-52-10"><a id="__codelineno-52-10" name="__codelineno-52-10" href="#__codelineno-52-10"></a><span class="w">        </span><span class="nt">&quot;file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/home/aaime/devel/gisData/ndimensional/data/world/world.200407.3x5400x2700.tiff&quot;</span>
+</span><span id="__span-52-11"><a id="__codelineno-52-11" name="__codelineno-52-11" href="#__codelineno-52-11"></a><span class="w">      </span><span class="p">},</span>
+</span><span id="__span-52-12"><a id="__codelineno-52-12" name="__codelineno-52-12" href="#__codelineno-52-12"></a><span class="w">      </span><span class="nt">&quot;targetStore&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-52-13"><a id="__codelineno-52-13" name="__codelineno-52-13" href="#__codelineno-52-13"></a><span class="w">         </span><span class="nt">&quot;dataStore&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-52-14"><a id="__codelineno-52-14" name="__codelineno-52-14" href="#__codelineno-52-14"></a><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bluemarble&quot;</span>
+</span><span id="__span-52-15"><a id="__codelineno-52-15" name="__codelineno-52-15" href="#__codelineno-52-15"></a><span class="w">         </span><span class="p">}</span>
+</span><span id="__span-52-16"><a id="__codelineno-52-16" name="__codelineno-52-16" href="#__codelineno-52-16"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-52-17"><a id="__codelineno-52-17" name="__codelineno-52-17" href="#__codelineno-52-17"></a><span class="w">   </span><span class="p">}</span>
+</span><span id="__span-52-18"><a id="__codelineno-52-18" name="__codelineno-52-18" href="#__codelineno-52-18"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>We are then going to append the transformations to harmonize the file with the rest of the mosaic:</p>
-<div class="language-text highlight"><pre><span></span><code>curl -u admin:geoserver -XPOST -H &quot;Content-type: application/json&quot; -d @gtx.json &quot;http://localhost:8080/geoserver/rest/imports/0/tasks/0/transforms&quot;
-curl -u admin:geoserver -XPOST -H &quot;Content-type: application/json&quot; -d @gad.json &quot;http://localhost:8080/geoserver/rest/imports/0/tasks/0/transforms&quot;
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XPOST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-type: application/json&quot;</span><span class="w"> </span>-d<span class="w"> </span>@gtx.json<span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/0/tasks/0/transforms&quot;</span>
+</span><span id="__span-53-2"><a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XPOST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-type: application/json&quot;</span><span class="w"> </span>-d<span class="w"> </span>@gad.json<span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/0/tasks/0/transforms&quot;</span>
+</span></code></pre></div>
 <p><code>gtx.json</code> is:</p>
-<div class="language-text highlight"><pre><span></span><code>{
-  &quot;type&quot;: &quot;GdalTranslateTransform&quot;,
-  &quot;options&quot;: [ &quot;-co&quot;, &quot;TILED=YES&quot;]
-}
-</code></pre></div>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="p">{</span>
+</span><span id="__span-54-2"><a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a><span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GdalTranslateTransform&quot;</span><span class="p">,</span>
+</span><span id="__span-54-3"><a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a><span class="w">  </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;-co&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;TILED=YES&quot;</span><span class="p">]</span>
+</span><span id="__span-54-4"><a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <p><code>gad.json</code> is:</p>
-<div class="language-text highlight"><pre><span></span><code>{
-  &quot;type&quot;: &quot;GdalAddoTransform&quot;,
-  &quot;options&quot;: [ &quot;-r&quot;, &quot;average&quot;],
-  &quot;levels&quot; : [2, 4, 8, 16, 32, 64, 128]
-}
-</code></pre></div>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="p">{</span>
+</span><span id="__span-55-2"><a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a><span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GdalAddoTransform&quot;</span><span class="p">,</span>
+</span><span id="__span-55-3"><a id="__codelineno-55-3" name="__codelineno-55-3" href="#__codelineno-55-3"></a><span class="w">  </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;-r&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;average&quot;</span><span class="p">],</span>
+</span><span id="__span-55-4"><a id="__codelineno-55-4" name="__codelineno-55-4" href="#__codelineno-55-4"></a><span class="w">  </span><span class="nt">&quot;levels&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="mi">64</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">]</span>
+</span><span id="__span-55-5"><a id="__codelineno-55-5" name="__codelineno-55-5" href="#__codelineno-55-5"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>Now the import is ready to run, and we'll execute it using:</p>
-<div class="language-text highlight"><pre><span></span><code>curl -u admin:geoserver -XPOST &quot;http://localhost:8080/geoserver/rest/imports/0&quot;
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XPOST<span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/0&quot;</span>
+</span></code></pre></div>
 <p>The new granule will be ingested into the mosaic, and will thus be available for time based requests.</p>
 <h2 id="asynchronously-fetching-and-importing-data-from-a-remote-server">Asynchronously fetching and importing data from a remote server</h2>
 <p>We assume a remote FTP server contains multiple shapefiles that we need to import in GeoServer as new layers. The files are large, and the server has much better bandwidth than the client, so it's best if GeoServer performs the data fetching on its own.</p>
 <p>In this case a asynchronous request using <code>remote</code> data will be the best fit:</p>
-<div class="language-text highlight"><pre><span></span><code>curl -u admin:geoserver -XPOST -H &quot;Content-type: application/json&quot; -d @import.json &quot;http://localhost:8080/geoserver/rest/imports?async=true&quot;
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XPOST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-type: application/json&quot;</span><span class="w"> </span>-d<span class="w"> </span>@import.json<span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports?async=true&quot;</span>
+</span></code></pre></div>
 <p>Where import.json is:</p>
-<div class="language-text highlight"><pre><span></span><code>{
-   &quot;import&quot;: {
-      &quot;targetWorkspace&quot;: {
-         &quot;workspace&quot;: {
-            &quot;name&quot;: &quot;topp&quot;
-         }
-      },
-      &quot;data&quot;: {
-        &quot;type&quot;: &quot;remote&quot;,
-        &quot;location&quot;: &quot;ftp://myserver/data/bc_shapefiles&quot;,
-        &quot;username&quot;: &quot;dan&quot;,
-        &quot;password&quot;: &quot;secret&quot;
-      }
-   }
-}
-</code></pre></div>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="p">{</span>
+</span><span id="__span-58-2"><a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a><span class="w">   </span><span class="nt">&quot;import&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-58-3"><a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a><span class="w">      </span><span class="nt">&quot;targetWorkspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-58-4"><a id="__codelineno-58-4" name="__codelineno-58-4" href="#__codelineno-58-4"></a><span class="w">         </span><span class="nt">&quot;workspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-58-5"><a id="__codelineno-58-5" name="__codelineno-58-5" href="#__codelineno-58-5"></a><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;topp&quot;</span>
+</span><span id="__span-58-6"><a id="__codelineno-58-6" name="__codelineno-58-6" href="#__codelineno-58-6"></a><span class="w">         </span><span class="p">}</span>
+</span><span id="__span-58-7"><a id="__codelineno-58-7" name="__codelineno-58-7" href="#__codelineno-58-7"></a><span class="w">      </span><span class="p">},</span>
+</span><span id="__span-58-8"><a id="__codelineno-58-8" name="__codelineno-58-8" href="#__codelineno-58-8"></a><span class="w">      </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-58-9"><a id="__codelineno-58-9" name="__codelineno-58-9" href="#__codelineno-58-9"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;remote&quot;</span><span class="p">,</span>
+</span><span id="__span-58-10"><a id="__codelineno-58-10" name="__codelineno-58-10" href="#__codelineno-58-10"></a><span class="w">        </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ftp://myserver/data/bc_shapefiles&quot;</span><span class="p">,</span>
+</span><span id="__span-58-11"><a id="__codelineno-58-11" name="__codelineno-58-11" href="#__codelineno-58-11"></a><span class="w">        </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dan&quot;</span><span class="p">,</span>
+</span><span id="__span-58-12"><a id="__codelineno-58-12" name="__codelineno-58-12" href="#__codelineno-58-12"></a><span class="w">        </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;secret&quot;</span>
+</span><span id="__span-58-13"><a id="__codelineno-58-13" name="__codelineno-58-13" href="#__codelineno-58-13"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-58-14"><a id="__codelineno-58-14" name="__codelineno-58-14" href="#__codelineno-58-14"></a><span class="w">   </span><span class="p">}</span>
+</span><span id="__span-58-15"><a id="__codelineno-58-15" name="__codelineno-58-15" href="#__codelineno-58-15"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>The request will return immediately with an import context in "INIT" state, and it will remain in such state until the data is fetched and the tasks created. Once the state switches to "PENDING" the import will be ready for execution. Since there is a lot of shapefiles to process, also the import run will be done in asynchronous mode:</p>
-<div class="language-text highlight"><pre><span></span><code>curl -u admin:geoserver -XPOST &quot;http://localhost:8080/geoserver/rest/imports/0?async=true&quot;
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XPOST<span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports/0?async=true&quot;</span>
+</span></code></pre></div>
 <p>The response will return immediately in this case as well, and the progress can be followed as the tasks in the import switch state.</p>
 <h2 id="importing-and-optimizing-a-large-image-with-a-single-request">Importing and optimizing a large image with a single request</h2>
 <p>A large image appears every now and then on a mounted disk share, the image needs to be optimized and imported into GeoServer as a new layer. Since the source is large and we need to copy it on the local disk where the data dir resides, a "remote" data is the right tool for the job, an asynchronous execution is also recommended to avoid waiting on a possibly large command. In this case the request will also contains the "exec=true" parameter to force the importer an immediate execution of the command.</p>
 <p>The request will then look as follows:</p>
-<div class="language-text highlight"><pre><span></span><code>curl -u admin:geoserver -XPOST -H &quot;Content-type: application/json&quot; -d @import.json &quot;http://localhost:8080/geoserver/rest/imports?async=true&amp;exec=true&quot;
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>curl<span class="w"> </span>-u<span class="w"> </span>admin:geoserver<span class="w"> </span>-XPOST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-type: application/json&quot;</span><span class="w"> </span>-d<span class="w"> </span>@import.json<span class="w"> </span><span class="s2">&quot;http://localhost:8080/geoserver/rest/imports?async=true&amp;exec=true&quot;</span>
+</span></code></pre></div>
 <p>Where import.json is:</p>
-<div class="language-text highlight"><pre><span></span><code>{
-  &quot;import&quot;: {
-    &quot;targetWorkspace&quot;: {
-      &quot;workspace&quot;: {
-        &quot;name&quot;: &quot;topp&quot;
-      }
-    },
-    &quot;data&quot;: {
-      &quot;type&quot;: &quot;remote&quot;,
-      &quot;location&quot;: &quot;\/mnt\/remoteDisk\/bluemarble.tiff&quot;
-    },
-    &quot;transforms&quot;: [
-      {
-        &quot;type&quot;: &quot;GdalTranslateTransform&quot;,
-        &quot;options&quot;: [
-          &quot;-co&quot;, &quot;TILED=YES&quot;,
-          &quot;-co&quot;, &quot;COMPRESS=JPEG&quot;,
-          &quot;-co&quot;, &quot;JPEG_QUALITY=85&quot;,
-          &quot;-co&quot;, &quot;PHOTOMETRIC=YCBCR&quot;
-        ]
-      },
-      {
-        &quot;type&quot;: &quot;GdalAddoTransform&quot;,
-        &quot;options&quot;: [
-          &quot;-r&quot;,
-          &quot;average&quot;,
-          &quot;--config&quot;, &quot;COMPRESS_OVERVIEW&quot;, &quot;JPEG&quot;,
-          &quot;--config&quot;, &quot;PHOTOMETRIC_OVERVIEW&quot;, &quot;YCBCR&quot;
-        ],
-        &quot;levels&quot;: [ 2, 4, 8, 16, 32, 64 ]
-      }
-    ]
-  }
-}
-</code></pre></div>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="p">{</span>
+</span><span id="__span-61-2"><a id="__codelineno-61-2" name="__codelineno-61-2" href="#__codelineno-61-2"></a><span class="w">  </span><span class="nt">&quot;import&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-61-3"><a id="__codelineno-61-3" name="__codelineno-61-3" href="#__codelineno-61-3"></a><span class="w">    </span><span class="nt">&quot;targetWorkspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-61-4"><a id="__codelineno-61-4" name="__codelineno-61-4" href="#__codelineno-61-4"></a><span class="w">      </span><span class="nt">&quot;workspace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-61-5"><a id="__codelineno-61-5" name="__codelineno-61-5" href="#__codelineno-61-5"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;topp&quot;</span>
+</span><span id="__span-61-6"><a id="__codelineno-61-6" name="__codelineno-61-6" href="#__codelineno-61-6"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-61-7"><a id="__codelineno-61-7" name="__codelineno-61-7" href="#__codelineno-61-7"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-61-8"><a id="__codelineno-61-8" name="__codelineno-61-8" href="#__codelineno-61-8"></a><span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-61-9"><a id="__codelineno-61-9" name="__codelineno-61-9" href="#__codelineno-61-9"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;remote&quot;</span><span class="p">,</span>
+</span><span id="__span-61-10"><a id="__codelineno-61-10" name="__codelineno-61-10" href="#__codelineno-61-10"></a><span class="w">      </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;\/mnt\/remoteDisk\/bluemarble.tiff&quot;</span>
+</span><span id="__span-61-11"><a id="__codelineno-61-11" name="__codelineno-61-11" href="#__codelineno-61-11"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-61-12"><a id="__codelineno-61-12" name="__codelineno-61-12" href="#__codelineno-61-12"></a><span class="w">    </span><span class="nt">&quot;transforms&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-61-13"><a id="__codelineno-61-13" name="__codelineno-61-13" href="#__codelineno-61-13"></a><span class="w">      </span><span class="p">{</span>
+</span><span id="__span-61-14"><a id="__codelineno-61-14" name="__codelineno-61-14" href="#__codelineno-61-14"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GdalTranslateTransform&quot;</span><span class="p">,</span>
+</span><span id="__span-61-15"><a id="__codelineno-61-15" name="__codelineno-61-15" href="#__codelineno-61-15"></a><span class="w">        </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-61-16"><a id="__codelineno-61-16" name="__codelineno-61-16" href="#__codelineno-61-16"></a><span class="w">          </span><span class="s2">&quot;-co&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;TILED=YES&quot;</span><span class="p">,</span>
+</span><span id="__span-61-17"><a id="__codelineno-61-17" name="__codelineno-61-17" href="#__codelineno-61-17"></a><span class="w">          </span><span class="s2">&quot;-co&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;COMPRESS=JPEG&quot;</span><span class="p">,</span>
+</span><span id="__span-61-18"><a id="__codelineno-61-18" name="__codelineno-61-18" href="#__codelineno-61-18"></a><span class="w">          </span><span class="s2">&quot;-co&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;JPEG_QUALITY=85&quot;</span><span class="p">,</span>
+</span><span id="__span-61-19"><a id="__codelineno-61-19" name="__codelineno-61-19" href="#__codelineno-61-19"></a><span class="w">          </span><span class="s2">&quot;-co&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;PHOTOMETRIC=YCBCR&quot;</span>
+</span><span id="__span-61-20"><a id="__codelineno-61-20" name="__codelineno-61-20" href="#__codelineno-61-20"></a><span class="w">        </span><span class="p">]</span>
+</span><span id="__span-61-21"><a id="__codelineno-61-21" name="__codelineno-61-21" href="#__codelineno-61-21"></a><span class="w">      </span><span class="p">},</span>
+</span><span id="__span-61-22"><a id="__codelineno-61-22" name="__codelineno-61-22" href="#__codelineno-61-22"></a><span class="w">      </span><span class="p">{</span>
+</span><span id="__span-61-23"><a id="__codelineno-61-23" name="__codelineno-61-23" href="#__codelineno-61-23"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GdalAddoTransform&quot;</span><span class="p">,</span>
+</span><span id="__span-61-24"><a id="__codelineno-61-24" name="__codelineno-61-24" href="#__codelineno-61-24"></a><span class="w">        </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-61-25"><a id="__codelineno-61-25" name="__codelineno-61-25" href="#__codelineno-61-25"></a><span class="w">          </span><span class="s2">&quot;-r&quot;</span><span class="p">,</span>
+</span><span id="__span-61-26"><a id="__codelineno-61-26" name="__codelineno-61-26" href="#__codelineno-61-26"></a><span class="w">          </span><span class="s2">&quot;average&quot;</span><span class="p">,</span>
+</span><span id="__span-61-27"><a id="__codelineno-61-27" name="__codelineno-61-27" href="#__codelineno-61-27"></a><span class="w">          </span><span class="s2">&quot;--config&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;COMPRESS_OVERVIEW&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;JPEG&quot;</span><span class="p">,</span>
+</span><span id="__span-61-28"><a id="__codelineno-61-28" name="__codelineno-61-28" href="#__codelineno-61-28"></a><span class="w">          </span><span class="s2">&quot;--config&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;PHOTOMETRIC_OVERVIEW&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;YCBCR&quot;</span>
+</span><span id="__span-61-29"><a id="__codelineno-61-29" name="__codelineno-61-29" href="#__codelineno-61-29"></a><span class="w">        </span><span class="p">],</span>
+</span><span id="__span-61-30"><a id="__codelineno-61-30" name="__codelineno-61-30" href="#__codelineno-61-30"></a><span class="w">        </span><span class="nt">&quot;levels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="mi">64</span><span class="w"> </span><span class="p">]</span>
+</span><span id="__span-61-31"><a id="__codelineno-61-31" name="__codelineno-61-31" href="#__codelineno-61-31"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-61-32"><a id="__codelineno-61-32" name="__codelineno-61-32" href="#__codelineno-61-32"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-61-33"><a id="__codelineno-61-33" name="__codelineno-61-33" href="#__codelineno-61-33"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-61-34"><a id="__codelineno-61-34" name="__codelineno-61-34" href="#__codelineno-61-34"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>Given the request is asynchronous, the client will have to poll the server in order to check if the initialization and execution have succeeded.</p>
 
 

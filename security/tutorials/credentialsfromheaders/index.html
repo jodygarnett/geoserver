@@ -2133,15 +2133,15 @@
 <h2 id="configure-apache-httpd-to-forward-an-header-with-authentication-credentials">Configure Apache HTTPD to forward an Header with authentication credentials</h2>
 <p>This can be done with an HTTPD configuration that looks like the following:</p>
 <blockquote>
-<div class="language-apacheconf highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;Location</span><span class="w">  </span><span class="s">/geoserver</span><span class="nt">&gt;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nb">Session</span><span class="w"> </span><span class="k">On</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nb">SessionEnv</span><span class="w"> </span><span class="k">On</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nb">SessionHeader</span><span class="w"> </span>X-Replace-Session
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nb">SessionCookieName</span><span class="w"> </span>session<span class="w"> </span>path=/
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nb">SessionCryptoPassphrase</span><span class="w"> </span>secret
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nb">RequestHeader</span><span class="w"> </span>set<span class="w"> </span>X-Credentials<span class="w"> </span><span class="s2">&quot;%{HTTP_SESSION}e&quot;</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nt">&lt;/Location&gt;</span>
+<div class="language-apacheconf highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>
 </span></code></pre></div>
+<dl>
+<dt><Location /geoserver></dt>
+<dd>
+<p>Session On SessionEnv On SessionHeader X-Replace-Session SessionCookieName session path=/ SessionCryptoPassphrase secret RequestHeader set X-Credentials "%{HTTP_SESSION}e"</p>
+</dd>
+</dl>
+<p></Location></p>
 </blockquote>
 <p>This configuration adds a new <code>X-Credentials</code> Request Header to each GeoServer request. The request header will contain the HTTPD Session information in a special format.</p>
 <p>An example of the Session content is the following:</p>

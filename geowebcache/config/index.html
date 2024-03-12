@@ -2333,68 +2333,47 @@
 <h4 id="configuration-with-hazelcastxml">Configuration with <em>hazelcast.xml</em></h4>
 <p>Here can be found an example file:</p>
 <blockquote>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;hazelcast</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://www.hazelcast.com/schema/config&quot;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">           </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">           </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.hazelcast.com/schema/config</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="s">                               https://hazelcast.com/schema/config/hazelcast-config-5.3.xsd&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&lt;cluster-name&gt;</span>gsCacheCluster<span class="nt">&lt;/cluster-name&gt;</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">&lt;network&gt;</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="cm">&lt;!--</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="cm">        Typical usage: multicast enabled with port auto-increment enabled</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="cm">        or tcp-ip enabled with port auto-increment disabled. Note that you </span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="cm">        must choose between multicast and tcp-ip. Another option could be</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="cm">        aws, but will not be described here.</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="cm">    --&gt;</span>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="nt">&lt;port</span><span class="w"> </span><span class="na">auto-increment=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>5701<span class="nt">&lt;/port&gt;</span>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">        </span><span class="nt">&lt;join&gt;</span>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">             </span><span class="nt">&lt;multicast</span><span class="w"> </span><span class="na">enabled=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">                </span><span class="nt">&lt;multicast-group&gt;</span>224.2.2.3<span class="nt">&lt;/multicast-group&gt;</span>
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">                </span><span class="nt">&lt;multicast-port&gt;</span>54327<span class="nt">&lt;/multicast-port&gt;</span>
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">            </span><span class="nt">&lt;/multicast&gt;</span>
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">            </span><span class="nt">&lt;tcp-ip</span><span class="w"> </span><span class="na">enabled=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">                </span><span class="nt">&lt;interface&gt;</span>192.168.1.32<span class="nt">&lt;/interface&gt;</span><span class="w">     </span>
-</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">                </span><span class="nt">&lt;interface&gt;</span>192.168.1.110<span class="nt">&lt;/interface&gt;</span><span class="w"> </span>
-</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">            </span><span class="nt">&lt;/tcp-ip&gt;</span>
-</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">        </span><span class="nt">&lt;/join&gt;</span>
-</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">  </span><span class="nt">&lt;/network&gt;</span>
-</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>
-</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">  </span><span class="nt">&lt;map</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;CacheProviderMap&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">        </span><span class="nt">&lt;eviction</span><span class="w"> </span><span class="na">eviction-policy=</span><span class="s">&quot;LRU&quot;</span><span class="w"> </span><span class="na">max-size-policy=</span><span class="s">&quot;USED_HEAP_SIZE&quot;</span><span class="w"> </span><span class="na">size=</span><span class="s">&quot;16&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">  </span><span class="nt">&lt;/map&gt;</span>
-</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>
-</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="nt">&lt;/hazelcast&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>
 </span></code></pre></div>
+<dl>
+<dt>&lt;hazelcast xmlns="<a href="http://www.hazelcast.com/schema/config">http://www.hazelcast.com/schema/config</a>"</dt>
+<dd>
+<p>xmlns:xsi="<a href="http://www.w3.org/2001/XMLSchema-instance">http://www.w3.org/2001/XMLSchema-instance</a>" xsi:schemaLocation="<a href="http://www.hazelcast.com/schema/config">http://www.hazelcast.com/schema/config</a> <a href="https://hazelcast.com/schema/config/hazelcast-config-5.3.xsd">https://hazelcast.com/schema/config/hazelcast-config-5.3.xsd</a>"&gt; <cluster-name>gsCacheCluster</cluster-name></p>
+<p><network> &lt;!--Typical usage: multicast enabled with port auto-increment enabled or tcp-ip enabled with port auto-increment disabled. Note that you must choose between multicast and tcp-ip. Another option could be aws, but will not be described here.</p>
+<p>&rarr; <port auto-increment="false">5701</port> <join> <multicast enabled="false"> <multicast-group>224.2.2.3</multicast-group> <multicast-port>54327</multicast-port> </multicast> <tcp-ip enabled="true"> <interface>192.168.1.32</interface> <interface>192.168.1.110</interface> </tcp-ip> </join> </network></p>
+<p><map name="CacheProviderMap"> <eviction eviction-policy="LRU" max-size-policy="USED_HEAP_SIZE" size="16" /> </map></p>
+</dd>
+</dl>
+<p></hazelcast></p>
 </blockquote>
 <h4 id="configuration-with-applicationcontext">Configuration with ApplicationContext</h4>
 <p>For configuring caching directly from the GeoServer application context, the user must edit the file <em>geowebcache-distributed.xml</em> inside the <em>gs-gwc</em> jar file. More informations about using Spring with Hazelcast can be found in the <a href="http://docs.hazelcast.org/docs/3.3/manual/html/springintegration.html">Hazelcast related documentation</a>. The modified application context is presented below:</p>
 <blockquote>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;hz:hazelcast</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;instance1&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&lt;hz:config&gt;</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="nt">&lt;hz:group</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;dev&quot;</span><span class="w"> </span><span class="na">password=</span><span class="s">&quot;password&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">        </span><span class="nt">&lt;hz:network</span><span class="w"> </span><span class="na">port=</span><span class="s">&quot;5701&quot;</span><span class="w"> </span><span class="na">port-auto-increment=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">            </span><span class="nt">&lt;hz:join&gt;</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">                </span><span class="nt">&lt;hz:multicast</span><span class="w"> </span><span class="na">enabled=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">multicast-group=</span><span class="s">&quot;224.2.2.3&quot;</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">                    </span><span class="na">multicast-port=</span><span class="s">&quot;54327&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">            </span><span class="nt">&lt;hz:tcp-ip</span><span class="w"> </span><span class="na">enabled=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">              </span><span class="nt">&lt;hz:members&gt;</span>10.10.1.2,<span class="w"> </span>10.10.1.3<span class="nt">&lt;/hz:members&gt;</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">            </span><span class="nt">&lt;/hz:tcp-ip&gt;</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">            </span><span class="nt">&lt;/hz:join&gt;</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">        </span><span class="nt">&lt;/hz:network&gt;</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">        </span><span class="nt">&lt;hz:map</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;CacheProviderMap&quot;</span><span class="w"> </span><span class="na">max-size=</span><span class="s">&quot;16&quot;</span><span class="w"> </span><span class="na">eviction-policy=</span><span class="s">&quot;LRU&quot;</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">            </span><span class="na">max-size-policy=</span><span class="s">&quot;USED_HEAP_SIZE&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="nt">&lt;/hz:config&gt;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">   </span><span class="nt">&lt;hz:config&gt;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">      </span><span class="nt">&lt;hz:group</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;dev&quot;</span><span class="w"> </span><span class="na">password=</span><span class="s">&quot;password&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">      </span><span class="nt">&lt;hz:network</span><span class="w"> </span><span class="na">port=</span><span class="s">&quot;5701&quot;</span><span class="w"> </span><span class="na">port-auto-increment=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">         </span><span class="nt">&lt;hz:join&gt;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">            </span><span class="nt">&lt;hz:multicast</span><span class="w"> </span><span class="na">enabled=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">multicast-group=</span><span class="s">&quot;224.2.2.3&quot;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">               </span><span class="na">multicast-port=</span><span class="s">&quot;54327&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">         </span><span class="nt">&lt;hz:tcp-ip</span><span class="w"> </span><span class="na">enabled=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">           </span><span class="nt">&lt;hz:members&gt;</span>10.10.1.2,<span class="w"> </span>10.10.1.3<span class="nt">&lt;/hz:members&gt;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">         </span><span class="nt">&lt;/hz:tcp-ip&gt;</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">         </span><span class="nt">&lt;/hz:join&gt;</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">      </span><span class="nt">&lt;/hz:network&gt;</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">      </span><span class="nt">&lt;hz:map</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;CacheProviderMap&quot;</span><span class="w"> </span><span class="na">max-size=</span><span class="s">&quot;16&quot;</span><span class="w"> </span><span class="na">eviction-policy=</span><span class="s">&quot;LRU&quot;</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">         </span><span class="na">max-size-policy=</span><span class="s">&quot;USED_HEAP_SIZE&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">   </span><span class="nt">&lt;/hz:config&gt;</span>
 </span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="nt">&lt;/hz:hazelcast&gt;</span>
 </span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
 </span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;HazelCastLoader1&quot;</span>
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="na">class=</span><span class="s">&quot;org.geowebcache.storage.blobstore.memory.distributed.HazelcastLoader&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;instance&quot;</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;instance1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">   </span><span class="na">class=</span><span class="s">&quot;org.geowebcache.storage.blobstore.memory.distributed.HazelcastLoader&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">   </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;instance&quot;</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;instance1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="nt">&lt;/bean&gt;</span>
 </span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
 </span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;HazelCastCacheProvider1&quot;</span>
-</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">    </span><span class="na">class=</span><span class="s">&quot;org.geowebcache.storage.blobstore.memory.distributed.HazelcastCacheProvider&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">    </span><span class="nt">&lt;constructor-arg</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;HazelCastLoader1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">   </span><span class="na">class=</span><span class="s">&quot;org.geowebcache.storage.blobstore.memory.distributed.HazelcastCacheProvider&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">   </span><span class="nt">&lt;constructor-arg</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;HazelCastLoader1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="nt">&lt;/bean&gt;</span>
 </span></code></pre></div>
 </blockquote>
@@ -2405,45 +2384,28 @@
 <li>
 <p>Cache expiration time:</p>
 <blockquote>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;map</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;CacheProviderMap&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>...
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">&lt;time-to-live-seconds&gt;</span>0<span class="nt">&lt;/time-to-live-seconds&gt;</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nt">&lt;max-idle-seconds&gt;</span>0<span class="nt">&lt;/max-idle-seconds&gt;</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nt">&lt;/map&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>
 </span></code></pre></div>
-<p>Where <em>time-to-live-seconds</em> indicates how many seconds an entry can stay in cache and <em>max-idle-seconds</em> indicates how many seconds an entry may be not accessed before being evicted.</p>
+<p><map name="CacheProviderMap"> ...</p>
+<p><time-to-live-seconds>0</time-to-live-seconds> <max-idle-seconds>0</max-idle-seconds></p>
+</map>
 </blockquote>
 </li>
+</ul>
+<p>Where <em>time-to-live-seconds</em> indicates how many seconds an entry can stay in cache and <em>max-idle-seconds</em> indicates how many seconds an entry may be not accessed before being evicted.</p>
+<ul>
 <li>
 <p>Near Cache.</p>
 <blockquote>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;map</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;CacheProviderMap&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>...
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">&lt;near-cache&gt;</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="cm">&lt;!--</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="cm">    Same configuration parameters of the Hazelcast Map. Note that size indicates the maximum number of </span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="cm">    entries in the near cache. A value of Integer.MAX_VALUE indicates no limit on the maximum </span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="cm">    size.</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="cm">  --&gt;</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="nt">&lt;time-to-live-seconds&gt;</span>0<span class="nt">&lt;/time-to-live-seconds&gt;</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">  </span><span class="nt">&lt;max-idle-seconds&gt;</span>60<span class="nt">&lt;/max-idle-seconds&gt;</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">  </span><span class="nt">&lt;eviction</span><span class="w"> </span><span class="na">eviction-policy=</span><span class="s">&quot;LRU&quot;</span><span class="w"> </span><span class="na">size=</span><span class="s">&quot;5000&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
-</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">  </span><span class="cm">&lt;!--</span>
-</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="cm">    Indicates if a cached entry can be evicted if the same value is modified in the Hazelcast Map. Default is true.</span>
-</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="cm">  --&gt;</span>
-</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">  </span><span class="nt">&lt;invalidate-on-change&gt;</span>true<span class="nt">&lt;/invalidate-on-change&gt;</span>
-</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
-</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">  </span><span class="cm">&lt;!--</span>
-</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="cm">    Indicates if local entries must be cached. Default is false.</span>
-</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="cm">  --&gt;</span>
-</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">  </span><span class="nt">&lt;cache-local-entries&gt;</span>false<span class="nt">&lt;/cache-local-entries&gt;</span>
-</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="nt">&lt;/near-cache&gt;</span>
-</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>
-</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="nt">&lt;/map&gt;</span><span class="w">  </span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>
 </span></code></pre></div>
+<p><map name="CacheProviderMap"> ... <near-cache> <!--Same configuration parameters of the Hazelcast Map. Note that size indicates the maximum number of entries in the near cache. A value of Integer.MAX_VALUE indicates no limit on the maximum size. --> <time-to-live-seconds>0</time-to-live-seconds> <max-idle-seconds>60</max-idle-seconds> <eviction eviction-policy="LRU" size="5000" /></p>
+<p><!--Indicates if a cached entry can be evicted if the same value is modified in the Hazelcast Map. Default is true. --> <invalidate-on-change>true</invalidate-on-change></p>
+<p><!--Indicates if local entries must be cached. Default is false. --> <cache-local-entries>false</cache-local-entries> </near-cache></p>
+</map>
+</blockquote>
+</li>
+</ul>
 <p>Near Cache is a local cache for each cluster instance which is used for caching entries in the other cluster instances. This behaviour avoids requesting those entries each time by executing a remote call. This feature could be helpful in order to improve Hazelcast Cache performance.</p>
 <p>::: note
 ::: title
@@ -2451,9 +2413,6 @@ Note
 :::</p>
 <p>A value of <em>max-size</em> bigger or equal to Integer.MAX_VALUE cannot be used in order to avoid an uncontrollable growth of the cache size.
 :::</p>
-</blockquote>
-</li>
-</ul>
 </blockquote>
 
 
