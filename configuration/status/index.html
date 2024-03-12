@@ -1877,199 +1877,135 @@
 <em>Status Page (default tab)</em></p>
 <h3 id="status-field-descriptions">Status Field Descriptions</h3>
 <p>The following table describes the current status indicators.</p>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Data directory</td>
-<td>Shows the path to the GeoServer data directory (<code>GEOSERVER_DATA_DIR</code> property).</td>
-</tr>
-<tr>
-<td>Locks</td>
-<td>A WFS has the ability to lock features to prevent more than one person from updating the feature at one time. If data is locked, edits can be performed by a single WFS editor. When the edits are posted, the locks are released and features can be edited by other WFS editors. A zero in the locks field means all locks are released. If locks is non-zero then a client has reserved some content for editing.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>Press <strong>Free locks</strong> to release all feature locks currently held by the server and update the field value to zero.</td>
-</tr>
-<tr>
-<td>Connections</td>
-<td>Refers to the numbers of stores GeoServer is connected to, in the above case 9, that are enabled and available.</td>
-</tr>
-<tr>
-<td>Memory Usage</td>
-<td>The amount of memory currently used by GeoServer. In the above example, 174 MB of memory used out of a total of 3.56 GB available to Java.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>Press <strong>Free Memory</strong> to recycle unused memory by running the garbage collector.</td>
-</tr>
-<tr>
-<td>JVM Version</td>
-<td>Denotes which version of the JVM (Java Virtual Machine) is being used to power the server. Here the JVM is AdoptOpenJDK 1.8.0_282.</td>
-</tr>
-<tr>
-<td>Java Rendering Engine</td>
-<td>Shows the rendering engine used for vector operations.</td>
-</tr>
-<tr>
-<td>Available Fonts</td>
-<td>Shows the number of fonts available. Selecting the link will show the full list.</td>
-</tr>
-<tr>
-<td>Native JAI</td>
-<td>GeoServer uses <a href="https://www.oracle.com/java/technologies/java-archive-downloads-java-client-downloads.html">Java Advanced Imaging</a> (JAI) framework for image rendering and coverage manipulation.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>We recommend the use of JAI-EXT operations for greater stability.</td>
-</tr>
-<tr>
-<td>Native JAI ImageIO</td>
-<td>GeoServer uses <a href="https://docs.oracle.com/javase/6/docs/technotes/guides/imageio/">JAI Image IO</a> (JAI) framework for raster data loading and image encoding.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>We recommend use of libjpeg-turbo for those interested in increasing encoding performance.</td>
-</tr>
-<tr>
-<td>JAI Maximum Memory</td>
-<td>The amount of memory available for the image processing tile cache, in this case 1.78 GB.</td>
-</tr>
-<tr>
-<td>JAI Memory Usage</td>
-<td>Run-time amount of memory is used for the tile cache.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>Press <strong>Free Memory</strong> to clear available JAI memory by flushing the tile cache.</td>
-</tr>
-<tr>
-<td>JAI Memory Threshold</td>
-<td>Refers to the percentage, e.g. 75, of cache memory to retain during tile removal.</td>
-</tr>
-<tr>
-<td>Number of JAI Tile Threads</td>
-<td>The number of parallel threads used by the scheduler to handle tiles.</td>
-</tr>
-<tr>
-<td>JAI Tile Thread Priority</td>
-<td>Schedules the global tile scheduler priority. The priority value defaults to 5, and must fall between 1 and 10.</td>
-</tr>
-<tr>
-<td>Thread Pool Core Pool Size</td>
-<td>Number of threads that the ThreadPoolExecutor will create. This is underlying Java runtime functionality - see the Java documentation for ThreadPoolExecutor for more information.</td>
-</tr>
-<tr>
-<td>Thread Pool Max Pool Size</td>
-<td>Maximum number of threads that the ThreadPoolExecutor will create. This is underlying Java runtime functionality - see the Java documentation for ThreadPoolExecutor for more information.</td>
-</tr>
-<tr>
-<td>Thread Pool Keep Alive Time</td>
-<td>Timeout for threads to be terminated if they are idle and more than the core pool number exist. This is underlying Java runtime functionality - see the Java documentation for ThreadPoolExecutor for more information.</td>
-</tr>
-<tr>
-<td>Update Sequence</td>
-<td>Refers to the number of times, e.g. 157, the server configuration has been modified.</td>
-</tr>
-<tr>
-<td>Resource cache</td>
-<td>GeoServer maintains a resource cache with connections to stores, feature type definitions, external graphics, font definitions, and CRS definitions. This includes custom CRS definitions defined in data directory <strong><code>user_projections/epsg.properties</code></strong>.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>Press <strong>Clear</strong> to empty the resource cache. This will force GeoServer to reconnect to stores, reconnect to databases, re-read icon and font information, and reload custom CRS definitions.</td>
-</tr>
-<tr>
-<td>Configuration and catalog</td>
-<td>GeoServer keeps its configuration data in memory.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>Press <strong>Reload</strong> to force GeoServer to reload all of its configuration from disk. This is useful if for any reason that configuration information has become stale (e.g., an external utility has modified the configuration on disk).</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Option</dt>
+<dd>
+<p>Description</p>
+</dd>
+<dt>Data directory</dt>
+<dd>
+<p>Shows the path to the GeoServer data directory (<code>GEOSERVER_DATA_DIR</code> property).</p>
+</dd>
+<dt>Locks</dt>
+<dd>
+<p>A WFS has the ability to lock features to prevent more than one person from updating the feature at one time. If data is locked, edits can be performed by a single WFS editor. When the edits are posted, the locks are released and features can be edited by other WFS editors. A zero in the locks field means all locks are released. If locks is non-zero then a client has reserved some content for editing.</p>
+<p>Press <strong>Free locks</strong> to release all feature locks currently held by the server and update the field value to zero.</p>
+</dd>
+<dt>Connections</dt>
+<dd>
+<p>Refers to the numbers of stores GeoServer is connected to, in the above case 9, that are enabled and available.</p>
+</dd>
+<dt>Memory Usage</dt>
+<dd>
+<p>The amount of memory currently used by GeoServer. In the above example, 174 MB of memory used out of a total of 3.56 GB available to Java.</p>
+<p>Press <strong>Free Memory</strong> to recycle unused memory by running the garbage collector.</p>
+</dd>
+<dt>JVM Version</dt>
+<dd>
+<p>Denotes which version of the JVM (Java Virtual Machine) is being used to power the server. Here the JVM is AdoptOpenJDK 1.8.0_282.</p>
+</dd>
+<dt>Java Rendering Engine</dt>
+<dd>
+<p>Shows the rendering engine used for vector operations.</p>
+</dd>
+<dt>Available Fonts</dt>
+<dd>
+<p>Shows the number of fonts available. Selecting the link will show the full list.</p>
+</dd>
+<dt>Native JAI</dt>
+<dd>
+<p>GeoServer uses <a href="https://www.oracle.com/java/technologies/java-archive-downloads-java-client-downloads.html">Java Advanced Imaging</a> (JAI) framework for image rendering and coverage manipulation.</p>
+<p>We recommend the use of JAI-EXT operations for greater stability.</p>
+</dd>
+<dt>Native JAI ImageIO</dt>
+<dd>
+<p>GeoServer uses <a href="https://docs.oracle.com/javase/6/docs/technotes/guides/imageio/">JAI Image IO</a> (JAI) framework for raster data loading and image encoding.</p>
+<p>We recommend use of libjpeg-turbo for those interested in increasing encoding performance.</p>
+</dd>
+<dt>JAI Maximum Memory</dt>
+<dd>
+<p>The amount of memory available for the image processing tile cache, in this case 1.78 GB.</p>
+</dd>
+<dt>JAI Memory Usage</dt>
+<dd>
+<p>Run-time amount of memory is used for the tile cache.</p>
+<p>Press <strong>Free Memory</strong> to clear available JAI memory by flushing the tile cache.</p>
+</dd>
+<dt>JAI Memory Threshold</dt>
+<dd>
+<p>Refers to the percentage, e.g. 75, of cache memory to retain during tile removal.</p>
+</dd>
+<dt>Number of JAI Tile Threads</dt>
+<dd>
+<p>The number of parallel threads used by the scheduler to handle tiles.</p>
+</dd>
+<dt>JAI Tile Thread Priority</dt>
+<dd>
+<p>Schedules the global tile scheduler priority. The priority value defaults to 5, and must fall between 1 and 10.</p>
+</dd>
+<dt>Thread Pool Core Pool Size</dt>
+<dd>
+<p>Number of threads that the ThreadPoolExecutor will create. This is underlying Java runtime functionality - see the Java documentation for ThreadPoolExecutor for more information.</p>
+</dd>
+<dt>Thread Pool Max Pool Size</dt>
+<dd>
+<p>Maximum number of threads that the ThreadPoolExecutor will create. This is underlying Java runtime functionality - see the Java documentation for ThreadPoolExecutor for more information.</p>
+</dd>
+<dt>Thread Pool Keep Alive Time</dt>
+<dd>
+<p>Timeout for threads to be terminated if they are idle and more than the core pool number exist. This is underlying Java runtime functionality - see the Java documentation for ThreadPoolExecutor for more information.</p>
+</dd>
+<dt>Update Sequence</dt>
+<dd>
+<p>Refers to the number of times, e.g. 157, the server configuration has been modified.</p>
+</dd>
+<dt>Resource cache</dt>
+<dd>
+<p>GeoServer maintains a resource cache with connections to stores, feature type definitions, external graphics, font definitions, and CRS definitions. This includes custom CRS definitions defined in data directory <strong><code>user_projections/epsg.properties</code></strong>.</p>
+<p>Press <strong>Clear</strong> to empty the resource cache. This will force GeoServer to reconnect to stores, reconnect to databases, re-read icon and font information, and reload custom CRS definitions.</p>
+</dd>
+<dt>Configuration and catalog</dt>
+<dd>
+<p>GeoServer keeps its configuration data in memory.</p>
+<p>Press <strong>Reload</strong> to force GeoServer to reload all of its configuration from disk. This is useful if for any reason that configuration information has become stale (e.g., an external utility has modified the configuration on disk).</p>
+</dd>
+</dl>
 <h2 id="config_serverstatus_module">Module Status</h2>
 <p>The <strong>Modules</strong> tab provides a summary of the status of all installed modules in the running server.</p>
 <p><img alt="" src="../img/module_status.png" />
 <em>Module Status</em></p>
 <h3 id="field-descriptions">Field Descriptions</h3>
-<table>
-<thead>
-<tr>
-<th>Module Name</th>
-<th>Human readable name of the module, this links to a popup containing the full details and messages of the module</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Module ID</td>
-<td>The internal package name of the module</td>
-</tr>
-<tr>
-<td>Available</td>
-<td>Whether the module is available to GeoServer.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>A database extension requiring a third-party database driver to be installed would not be available for use.</td>
-</tr>
-<tr>
-<td>Enabled</td>
-<td>Whether the module is enabled in the current GeoServer configuration</td>
-</tr>
-<tr>
-<td>Component</td>
-<td>Functional component provided by the module.</td>
-</tr>
-<tr>
-<td>Version</td>
-<td>The version of the installed module</td>
-</tr>
-<tr>
-<td>Message (popup)</td>
-<td>Status message such as what Java rendering engine is in use, or the library path if the module/driver is unavailable</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Module Name</dt>
+<dd>
+<p>Human readable name of the module, this links to a popup containing the full details and messages of the module</p>
+</dd>
+<dt>Module ID</dt>
+<dd>
+<p>The internal package name of the module</p>
+</dd>
+<dt>Available</dt>
+<dd>
+<p>Whether the module is available to GeoServer.</p>
+<p>A database extension requiring a third-party database driver to be installed would not be available for use.</p>
+</dd>
+<dt>Enabled</dt>
+<dd>
+<p>Whether the module is enabled in the current GeoServer configuration</p>
+</dd>
+<dt>Component</dt>
+<dd>
+<p>Functional component provided by the module.</p>
+</dd>
+<dt>Version</dt>
+<dd>
+<p>The version of the installed module</p>
+</dd>
+<dt>Message (popup)</dt>
+<dd>
+<p>Status message such as what Java rendering engine is in use, or the library path if the module/driver is unavailable</p>
+</dd>
+</dl>
 <p><img alt="" src="../img/module_popup.png" />
 <em>Module Status popup</em></p>
 <h2 id="config_serverstatus_system">System Status</h2>

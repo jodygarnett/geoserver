@@ -1874,72 +1874,56 @@
 </ul>
 <h2 id="ecql_literal">Literal</h2>
 <p>Literals specify constant values of various types.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Type</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td><em>Number</em></td>
-<td>Integer or floating-point number. Scientific notation is supported.</td>
-</tr>
-<tr>
-<td><em>Boolean</em></td>
-<td><code>TRUE</code> or <code>FALSE</code></td>
-</tr>
-<tr>
-<td><em>String</em></td>
-<td>String literal delimited by single quotes. To include a single quote in the string use two single-quotes: <code>''</code></td>
-</tr>
-<tr>
-<td><em>Geometry</em></td>
-<td>Geometry in WKT or EWKT format. WKT is defined in the OGC <a href="http://www.opengeospatial.org/standards/sfs">Simple Features for SQL</a> specification. All standard geometry types are supported: <code>POINT</code>, <code>LINESTRING</code>, <code>POLYGON</code>, <code>MULTIPOINT</code>, <code>MULTILINESTRING</code>, <code>MULTIPOLYGON</code>, <code>GEOMETRYCOLLECTION</code>. EWKT allows specifying a geometry spatial reference system by prefixing it with a numerical code, in the form <code>SRID=number;WKT</code>, for example, <code>SRID=4326;POINT (1 2)</code>. A custom type of Envelope is also supported with syntax <code>ENVELOPE (</code> <em>x1</em> <em>x2</em> <em>y1</em> <em>y2</em> <code>)</code>.</td>
-</tr>
-<tr>
-<td><em>Time</em></td>
-<td>A UTC date/time value in the format <code>yyyy-mm-hhThh:mm:ss</code>. The seconds value may have a decimal fraction. The time zone may be specified as <code>Z</code> or <code>+/-hh:mm</code>. Example: <code>2006-11-30T00:30:00Z</code></td>
-</tr>
-<tr>
-<td><em>Duration</em></td>
-<td>A time duration specified as <code>P</code> <strong>[</strong> y <code>Y</code> m <code>M</code> d <code>D</code> <strong>]</strong> <code>T</code> <strong>[</strong> h <code>H</code> m <code>M</code> s <code>S</code> <strong>]</strong>. The duration can be specified to any desired precision by including only the required year, month, day, hour, minute and second components. Examples: <code>P1Y2M</code>, <code>P4Y2M20D</code>, <code>P4Y2M1DT20H3M36S</code></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Type</strong></dt>
+<dd>
+<p><strong>Description</strong></p>
+</dd>
+<dt><em>Number</em></dt>
+<dd>
+<p>Integer or floating-point number. Scientific notation is supported.</p>
+</dd>
+<dt><em>Boolean</em></dt>
+<dd>
+<p><code>TRUE</code> or <code>FALSE</code></p>
+</dd>
+<dt><em>String</em></dt>
+<dd>
+<p>String literal delimited by single quotes. To include a single quote in the string use two single-quotes: <code>''</code></p>
+</dd>
+<dt><em>Geometry</em></dt>
+<dd>
+<p>Geometry in WKT or EWKT format. WKT is defined in the OGC <a href="http://www.opengeospatial.org/standards/sfs">Simple Features for SQL</a> specification. All standard geometry types are supported: <code>POINT</code>, <code>LINESTRING</code>, <code>POLYGON</code>, <code>MULTIPOINT</code>, <code>MULTILINESTRING</code>, <code>MULTIPOLYGON</code>, <code>GEOMETRYCOLLECTION</code>. EWKT allows specifying a geometry spatial reference system by prefixing it with a numerical code, in the form <code>SRID=number;WKT</code>, for example, <code>SRID=4326;POINT (1 2)</code>. A custom type of Envelope is also supported with syntax <code>ENVELOPE (</code> <em>x1</em> <em>x2</em> <em>y1</em> <em>y2</em> <code>)</code>.</p>
+</dd>
+<dt><em>Time</em></dt>
+<dd>
+<p>A UTC date/time value in the format <code>yyyy-mm-hhThh:mm:ss</code>. The seconds value may have a decimal fraction. The time zone may be specified as <code>Z</code> or <code>+/-hh:mm</code>. Example: <code>2006-11-30T00:30:00Z</code></p>
+</dd>
+<dt><em>Duration</em></dt>
+<dd>
+<p>A time duration specified as <code>P</code> <strong>[</strong> y <code>Y</code> m <code>M</code> d <code>D</code> <strong>]</strong> <code>T</code> <strong>[</strong> h <code>H</code> m <code>M</code> s <code>S</code> <strong>]</strong>. The duration can be specified to any desired precision by including only the required year, month, day, hour, minute and second components. Examples: <code>P1Y2M</code>, <code>P4Y2M20D</code>, <code>P4Y2M1DT20H3M36S</code></p>
+</dd>
+</dl>
 <h3 id="ecql_period">Time Period</h3>
 <p>Specifies a period of time, in several different formats.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Syntax</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td><a href="ecql_reference.rst#ecql_literal">Time</a> <code>/</code> <a href="ecql_reference.rst#ecql_literal">Time</a></td>
-<td>Period specified by a start and end time</td>
-</tr>
-<tr>
-<td><a href="ecql_reference.rst#ecql_literal">Duration</a> <code>/</code> <a href="ecql_reference.rst#ecql_literal">Time</a></td>
-<td>Period specified by a duration before a given time</td>
-</tr>
-<tr>
-<td><a href="ecql_reference.rst#ecql_literal">Time</a> <code>/</code> <a href="ecql_reference.rst#ecql_literal">Duration</a></td>
-<td>Period specified by a duration after a given time</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Syntax</strong></dt>
+<dd>
+<p><strong>Description</strong></p>
+</dd>
+<dt><a href="ecql_reference.rst#ecql_literal">Time</a> <code>/</code> <a href="ecql_reference.rst#ecql_literal">Time</a></dt>
+<dd>
+<p>Period specified by a start and end time</p>
+</dd>
+<dt><a href="ecql_reference.rst#ecql_literal">Duration</a> <code>/</code> <a href="ecql_reference.rst#ecql_literal">Time</a></dt>
+<dd>
+<p>Period specified by a duration before a given time</p>
+</dd>
+<dt><a href="ecql_reference.rst#ecql_literal">Time</a> <code>/</code> <a href="ecql_reference.rst#ecql_literal">Duration</a></dt>
+<dd>
+<p>Period specified by a duration after a given time</p>
+</dd>
+</dl>
 
 
 

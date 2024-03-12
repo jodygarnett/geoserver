@@ -3624,28 +3624,18 @@ GET http://localhost:8080/geoserver/rest/monitor/requests.html?count=100&amp;off
 </table>
 <h3 id="order-parameter">order Parameter</h3>
 <p>Specifies which request attribute to sort by, and optionally specifies the sort direction.</p>
-<table>
-<thead>
-<tr>
-<th>Syntax</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>order=&lt;attribute&gt;[;&lt;ASC|DESC&gt;]</code></td>
-<td>requests.html?order=path</td>
-</tr>
-<tr>
-<td></td>
-<td>requests.html?order=startTime;DESC</td>
-</tr>
-<tr>
-<td></td>
-<td>requests.html?order=totalTime;ASC</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Syntax</dt>
+<dd>
+<p>Example</p>
+</dd>
+<dt><code>order=&lt;attribute&gt;[;&lt;ASC|DESC&gt;]</code></dt>
+<dd>
+<p>requests.html?order=path</p>
+<p>requests.html?order=startTime;DESC</p>
+<p>requests.html?order=totalTime;ASC</p>
+</dd>
+</dl>
 
 
 

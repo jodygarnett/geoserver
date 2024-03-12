@@ -4285,36 +4285,32 @@
 </table>
 <h3 id="restworkspacesworkspace-namefeaturetypesfeaturetype-namefeaturestemplates"><code>/rest/workspaces/&lt;workspace name&gt;/featuretypes/&lt;featureType name&gt;/featurestemplates</code></h3>
 <p>Finds all templates in the <code>featuretype</code> directory or creates a new template in the <code>featuretype</code> directory.</p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Consumes</th>
-<th>Produces</th>
-<th>Action</th>
-<th>Supported parameters</th>
-<th>Response</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td></td>
-<td><code>application/json</code>, application/xml.</td>
-<td>List of all the templates available in the <code>featuretype</code> directory</td>
-<td></td>
-<td><code>200</code>. List of rules in XML or JSON.</td>
-</tr>
-<tr>
-<td>POST</td>
-<td><code>application/xml</code>, <code>text/xml</code>, <code>application/json</code>, <code>text/json</code>, <code>application/xhtml+xml</code>, <code>application/zip</code>.</td>
-<td><code>text/plain</code>.</td>
-<td>Add the template in the request body (text or zip file) as a new Template in the <code>Feature Type</code> directory.</td>
-<td>templateName (mandatory when posting a raw template, optional when posting a zip file)</td>
-<td><code>201</code>. Created <code>Location</code> header.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Method</dt>
+<dd>
+<p>Consumes</p>
+<p>Produces</p>
+<p>Action</p>
+<p>Supported parameters</p>
+<p>Response</p>
+</dd>
+</dl>
+<p>GET</p>
+<blockquote>
+<p><code>application/json</code>, application/xml.</p>
+<p>List of all the templates available in the <code>featuretype</code> directory</p>
+<p><code>200</code>. List of rules in XML or JSON.</p>
+</blockquote>
+<dl>
+<dt>POST</dt>
+<dd>
+<p><code>application/xml</code>, <code>text/xml</code>, <code>application/json</code>, <code>text/json</code>, <code>application/xhtml+xml</code>, <code>application/zip</code>.</p>
+<p><code>text/plain</code>.</p>
+<p>Add the template in the request body (text or zip file) as a new Template in the <code>Feature Type</code> directory.</p>
+<p>templateName (mandatory when posting a raw template, optional when posting a zip file)</p>
+<p><code>201</code>. Created <code>Location</code> header.</p>
+</dd>
+</dl>
 <h3 id="restfeaturestemplatestemplate-name"><code>/rest/featurestemplates/&lt;template name&gt;</code></h3>
 <p>If the template with the specified name exists in the global (<code>features-templating</code>) directory, returns the template or replaces the template content with the one in the request body.</p>
 <table>

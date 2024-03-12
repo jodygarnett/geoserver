@@ -2348,120 +2348,102 @@
 <p>To add a new LDAP user/group service, click the <strong>Add new</strong> link, and then the <strong>LDAP</strong> option at the top of the following form. The following figure shows the configuration options for a LDAP user/group service.</p>
 <p><img alt="" src="../images/ldap_group_service.png" />
 <em>Adding a user/group service via LDAP</em></p>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>Name of the LDAP role service in GeoServer</td>
-</tr>
-<tr>
-<td>Password encryption</td>
-<td>The method to used to <a href="../../passwd/#security_passwd_encryption">encrypt user passwords</a></td>
-</tr>
-<tr>
-<td>Password policy</td>
-<td>The <a href="../../passwd/#security_passwd_policy">policy</a> to use to enforce constraints on user passwords</td>
-</tr>
-<tr>
-<td>Server URL</td>
-<td>URL for the LDAP server connection. It must include the protocol, host, and port, as well as the "distinguished name" (DN) for the root of the LDAP tree.</td>
-</tr>
-<tr>
-<td>TLS</td>
-<td>Enables a STARTTLS connection. (See the section on <a href="../../auth/providers/#security_auth_provider_ldap_secure">Secure LDAP connections</a>.)</td>
-</tr>
-<tr>
-<td>Group search base</td>
-<td>Relative name of the node in the tree to use as the base for LDAP groups. Example: <code>ou=groups</code>. The root DN specified as port of the <em>Server URL</em> is automatically appended.</td>
-</tr>
-<tr>
-<td>Filter to search all groups</td>
-<td>Sets the LDAP filter for search all groups available. Leave blank to derive from attribute.</td>
-</tr>
-<tr>
-<td>Filter to search group by name</td>
-<td>Sets the LDAP filter for search a group by its name. Leave blank to derive from attribute.</td>
-</tr>
-<tr>
-<td>Attribute which contains the name of the group</td>
-<td>Sets attribute containing the group name. Leave blank to derive from name filter.</td>
-</tr>
-<tr>
-<td>Query format to retrieve the user/group mapping</td>
-<td>Query format used for mapping user/group memberships. Leave blank to derive from attribute. This may contain some placeholder values:</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td><code>{0}</code>, the <code>username</code> of the user, for example <code>bob</code>.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td><code>{1}</code>, the full DN of the user, for example <code>uid=bob,ou=users</code>.</td>
-</tr>
-<tr>
-<td>Attribute name to retrieve the user/group mapping</td>
-<td>Attribute name used for mapping user/group memberships. Leave blank to derive from filter.</td>
-</tr>
-<tr>
-<td>User search base</td>
-<td>LDAP search base for users.</td>
-</tr>
-<tr>
-<td>Filter to search all users</td>
-<td>Sets the filter for search all available users. Leave blank to derive from attribute.</td>
-</tr>
-<tr>
-<td>Filter to search user by name</td>
-<td>Sets the filter format for search a user by its name. Leave blank to derive from attribute.</td>
-</tr>
-<tr>
-<td>Attribute which contains the name of the user</td>
-<td>Sets the attribute containing the name for users. Leave blank to derive from name filter.</td>
-</tr>
-<tr>
-<td>List of attributes to populate</td>
-<td>Sets a comma separated list of attributes to populate on users.</td>
-</tr>
-<tr>
-<td>Authenticated onto the LDAP before querying</td>
-<td>When checked all LDAP searches will be done in authenticated mode, using the credentials given with the <em>Username</em> and <em>Password</em> options</td>
-</tr>
-<tr>
-<td>Username</td>
-<td>Username to use when connecting to the LDAP server. Only applicable when the <em>Authenticated onto the LDAP before querying</em> parameter is <strong>checked</strong>.</td>
-</tr>
-<tr>
-<td>Password</td>
-<td>Password to use when connecting to the LDAP server. Only applicable when the <em>Authenticated onto the LDAP before querying</em> parameter is <strong>checked</strong>.</td>
-</tr>
-<tr>
-<td>Enable Hierarchical groups search</td>
-<td>When checked all LDAP group searches will use hierarchical mode, retrieving LDAP parent groups too.</td>
-</tr>
-<tr>
-<td>Max depth for hierarchical groups search</td>
-<td>Max depth number for hierarchical LDAP groups search, use -1 for infinite depth. Only applicable when the <em>Enable Hierarchical groups search</em> parameter is <strong>checked</strong>.</td>
-</tr>
-<tr>
-<td>Nested group search filter</td>
-<td>LDAP search pattern for searching parent groups. Only applicable when the <em>Enable Hierarchical groups search</em> parameter is <strong>checked</strong>.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Option</dt>
+<dd>
+<p>Description</p>
+</dd>
+<dt>Name</dt>
+<dd>
+<p>Name of the LDAP role service in GeoServer</p>
+</dd>
+<dt>Password encryption</dt>
+<dd>
+<p>The method to used to <a href="../../passwd/#security_passwd_encryption">encrypt user passwords</a></p>
+</dd>
+<dt>Password policy</dt>
+<dd>
+<p>The <a href="../../passwd/#security_passwd_policy">policy</a> to use to enforce constraints on user passwords</p>
+</dd>
+<dt>Server URL</dt>
+<dd>
+<p>URL for the LDAP server connection. It must include the protocol, host, and port, as well as the "distinguished name" (DN) for the root of the LDAP tree.</p>
+</dd>
+<dt>TLS</dt>
+<dd>
+<p>Enables a STARTTLS connection. (See the section on <a href="../../auth/providers/#security_auth_provider_ldap_secure">Secure LDAP connections</a>.)</p>
+</dd>
+<dt>Group search base</dt>
+<dd>
+<p>Relative name of the node in the tree to use as the base for LDAP groups. Example: <code>ou=groups</code>. The root DN specified as port of the <em>Server URL</em> is automatically appended.</p>
+</dd>
+<dt>Filter to search all groups</dt>
+<dd>
+<p>Sets the LDAP filter for search all groups available. Leave blank to derive from attribute.</p>
+</dd>
+<dt>Filter to search group by name</dt>
+<dd>
+<p>Sets the LDAP filter for search a group by its name. Leave blank to derive from attribute.</p>
+</dd>
+<dt>Attribute which contains the name of the group</dt>
+<dd>
+<p>Sets attribute containing the group name. Leave blank to derive from name filter.</p>
+</dd>
+<dt>Query format to retrieve the user/group mapping</dt>
+<dd>
+<p>Query format used for mapping user/group memberships. Leave blank to derive from attribute. This may contain some placeholder values:</p>
+<p><code>{0}</code>, the <code>username</code> of the user, for example <code>bob</code>.</p>
+<p><code>{1}</code>, the full DN of the user, for example <code>uid=bob,ou=users</code>.</p>
+</dd>
+<dt>Attribute name to retrieve the user/group mapping</dt>
+<dd>
+<p>Attribute name used for mapping user/group memberships. Leave blank to derive from filter.</p>
+</dd>
+<dt>User search base</dt>
+<dd>
+<p>LDAP search base for users.</p>
+</dd>
+<dt>Filter to search all users</dt>
+<dd>
+<p>Sets the filter for search all available users. Leave blank to derive from attribute.</p>
+</dd>
+<dt>Filter to search user by name</dt>
+<dd>
+<p>Sets the filter format for search a user by its name. Leave blank to derive from attribute.</p>
+</dd>
+<dt>Attribute which contains the name of the user</dt>
+<dd>
+<p>Sets the attribute containing the name for users. Leave blank to derive from name filter.</p>
+</dd>
+<dt>List of attributes to populate</dt>
+<dd>
+<p>Sets a comma separated list of attributes to populate on users.</p>
+</dd>
+<dt>Authenticated onto the LDAP before querying</dt>
+<dd>
+<p>When checked all LDAP searches will be done in authenticated mode, using the credentials given with the <em>Username</em> and <em>Password</em> options</p>
+</dd>
+<dt>Username</dt>
+<dd>
+<p>Username to use when connecting to the LDAP server. Only applicable when the <em>Authenticated onto the LDAP before querying</em> parameter is <strong>checked</strong>.</p>
+</dd>
+<dt>Password</dt>
+<dd>
+<p>Password to use when connecting to the LDAP server. Only applicable when the <em>Authenticated onto the LDAP before querying</em> parameter is <strong>checked</strong>.</p>
+</dd>
+<dt>Enable Hierarchical groups search</dt>
+<dd>
+<p>When checked all LDAP group searches will use hierarchical mode, retrieving LDAP parent groups too.</p>
+</dd>
+<dt>Max depth for hierarchical groups search</dt>
+<dd>
+<p>Max depth number for hierarchical LDAP groups search, use -1 for infinite depth. Only applicable when the <em>Enable Hierarchical groups search</em> parameter is <strong>checked</strong>.</p>
+</dd>
+<dt>Nested group search filter</dt>
+<dd>
+<p>LDAP search pattern for searching parent groups. Only applicable when the <em>Enable Hierarchical groups search</em> parameter is <strong>checked</strong>.</p>
+</dd>
+</dl>
 <h2 id="edit-usergroup-service">Edit user/group service</h2>
 <p>Once the new user/group service is added (either XML or JDBC), clicking on it in the list of user/group services will allow additional options to be specified, such as the users and groups associated with the service.</p>
 <p>There are three tabs in the resulting menu: <strong>Settings</strong>, <strong>Users</strong>, and <strong>Groups</strong>. The Settings tab is identical to that found when creating the user/group service, while the others are described below.</p>
@@ -2679,84 +2661,80 @@
 <p>To add a new LDAP role service, click the <strong>Add new</strong> link, and then the <strong>LDAP</strong> option at the top of the following form. The following figure shows the configuration options for a LDAP role service.</p>
 <p><img alt="" src="../images/ldap_role_empty.png" />
 <em>Adding a role service via LDAP</em></p>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>Name of the LDAP role service in GeoServer</td>
-</tr>
-<tr>
-<td>Administrator role</td>
-<td>The name of the role that performs the administrator function</td>
-</tr>
-<tr>
-<td>Group administrator role</td>
-<td>The name of the role that performs the group administrator function</td>
-</tr>
-<tr>
-<td>Server URL</td>
-<td>URL for the LDAP server connection. It must include the protocol, host, and port, as well as the "distinguished name" (DN) for the root of the LDAP tree.</td>
-</tr>
-<tr>
-<td>TLS</td>
-<td>Enables a STARTTLS connection. (See the section on <a href="../../auth/providers/#security_auth_provider_ldap_secure">Secure LDAP connections</a>.)</td>
-</tr>
-<tr>
-<td>Group search base</td>
-<td>Relative name of the node in the tree to use as the base for LDAP groups. Example: <code>ou=groups</code>. The root DN specified as port of the <em>Server URL</em> is automatically appended.</td>
-</tr>
-<tr>
-<td>Group user membership search filter</td>
-<td>Search pattern for extracting users of a LDAP group a user belongs to. This may contain some placeholder values: <code>{0}</code>, the <code>username</code> of the user, for example <code>bob</code>. <code>{1}</code>, the full DN of the user, for example <code>uid=bob,ou=users</code>. To use this placeholder, the <em>Filter used to lookup user</em> needs to be defined, so that the dn of a user can be extracted from its username.</td>
-</tr>
-<tr>
-<td>All groups search filter</td>
-<td>Search pattern for locating the LDAP groups to be mapped to GeoServer roles inside the <em>Group search base</em> root node</td>
-</tr>
-<tr>
-<td>Filter used to lookup user.</td>
-<td>optional filter used to extract a user dn, to be used together with <em>Group user membership search filter</em> when the {1} placeholder is specified. This may contain a placeholder value: <code>{0}</code>, the <code>username</code> of the user, for example <code>bob</code>.</td>
-</tr>
-<tr>
-<td>Role prefix</td>
-<td>Prefix appended in front of role names extracted from the LDAP. If left blank, no prefix will be inserted.</td>
-</tr>
-<tr>
-<td>Convert Role To Upper Case</td>
-<td>If selected all role names extracted from the LDAP will be converted to upper case.</td>
-</tr>
-<tr>
-<td>Authenticate to extract roles</td>
-<td>When checked all LDAP searches will be done in authenticated mode, using the credentials given with the <em>Username</em> and <em>Password</em> options</td>
-</tr>
-<tr>
-<td>Username</td>
-<td>Username to use when connecting to the LDAP server. Only applicable when the <em>Authenticate to extract roles</em> parameter is <strong>checked</strong>.</td>
-</tr>
-<tr>
-<td>Password</td>
-<td>Password to use when connecting to the LDAP server. Only applicable when the <em>Authenticate to extract roles</em> parameter is <strong>checked</strong>.</td>
-</tr>
-<tr>
-<td>Enable Hierarchical groups search</td>
-<td>When checked all LDAP group searches will use hierarchical mode, retrieving LDAP parent groups too.</td>
-</tr>
-<tr>
-<td>Max depth for hierarchical groups search</td>
-<td>Max depth number for hierarchical LDAP groups search, use -1 for infinite depth. Only applicable when the <em>Enable Hierarchical groups search</em> parameter is <strong>checked</strong>.</td>
-</tr>
-<tr>
-<td>Nested group search filter</td>
-<td>LDAP search pattern for searching parent groups. Only applicable when the <em>Enable Hierarchical groups search</em> parameter is <strong>checked</strong>.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Option</dt>
+<dd>
+<p>Description</p>
+</dd>
+<dt>Name</dt>
+<dd>
+<p>Name of the LDAP role service in GeoServer</p>
+</dd>
+<dt>Administrator role</dt>
+<dd>
+<p>The name of the role that performs the administrator function</p>
+</dd>
+<dt>Group administrator role</dt>
+<dd>
+<p>The name of the role that performs the group administrator function</p>
+</dd>
+<dt>Server URL</dt>
+<dd>
+<p>URL for the LDAP server connection. It must include the protocol, host, and port, as well as the "distinguished name" (DN) for the root of the LDAP tree.</p>
+</dd>
+<dt>TLS</dt>
+<dd>
+<p>Enables a STARTTLS connection. (See the section on <a href="../../auth/providers/#security_auth_provider_ldap_secure">Secure LDAP connections</a>.)</p>
+</dd>
+<dt>Group search base</dt>
+<dd>
+<p>Relative name of the node in the tree to use as the base for LDAP groups. Example: <code>ou=groups</code>. The root DN specified as port of the <em>Server URL</em> is automatically appended.</p>
+</dd>
+<dt>Group user membership search filter</dt>
+<dd>
+<p>Search pattern for extracting users of a LDAP group a user belongs to. This may contain some placeholder values: <code>{0}</code>, the <code>username</code> of the user, for example <code>bob</code>. <code>{1}</code>, the full DN of the user, for example <code>uid=bob,ou=users</code>. To use this placeholder, the <em>Filter used to lookup user</em> needs to be defined, so that the dn of a user can be extracted from its username.</p>
+</dd>
+<dt>All groups search filter</dt>
+<dd>
+<p>Search pattern for locating the LDAP groups to be mapped to GeoServer roles inside the <em>Group search base</em> root node</p>
+</dd>
+<dt>Filter used to lookup user.</dt>
+<dd>
+<p>optional filter used to extract a user dn, to be used together with <em>Group user membership search filter</em> when the {1} placeholder is specified. This may contain a placeholder value: <code>{0}</code>, the <code>username</code> of the user, for example <code>bob</code>.</p>
+</dd>
+<dt>Role prefix</dt>
+<dd>
+<p>Prefix appended in front of role names extracted from the LDAP. If left blank, no prefix will be inserted.</p>
+</dd>
+<dt>Convert Role To Upper Case</dt>
+<dd>
+<p>If selected all role names extracted from the LDAP will be converted to upper case.</p>
+</dd>
+<dt>Authenticate to extract roles</dt>
+<dd>
+<p>When checked all LDAP searches will be done in authenticated mode, using the credentials given with the <em>Username</em> and <em>Password</em> options</p>
+</dd>
+<dt>Username</dt>
+<dd>
+<p>Username to use when connecting to the LDAP server. Only applicable when the <em>Authenticate to extract roles</em> parameter is <strong>checked</strong>.</p>
+</dd>
+<dt>Password</dt>
+<dd>
+<p>Password to use when connecting to the LDAP server. Only applicable when the <em>Authenticate to extract roles</em> parameter is <strong>checked</strong>.</p>
+</dd>
+<dt>Enable Hierarchical groups search</dt>
+<dd>
+<p>When checked all LDAP group searches will use hierarchical mode, retrieving LDAP parent groups too.</p>
+</dd>
+<dt>Max depth for hierarchical groups search</dt>
+<dd>
+<p>Max depth number for hierarchical LDAP groups search, use -1 for infinite depth. Only applicable when the <em>Enable Hierarchical groups search</em> parameter is <strong>checked</strong>.</p>
+</dd>
+<dt>Nested group search filter</dt>
+<dd>
+<p>LDAP search pattern for searching parent groups. Only applicable when the <em>Enable Hierarchical groups search</em> parameter is <strong>checked</strong>.</p>
+</dd>
+</dl>
 <h2 id="edit-role-service">Edit role service</h2>
 <p>Once the new role service is added (either XML or JDBC), clicking it in the list of role services will allow the additional options to be specified, such as the roles associated with the service.</p>
 <p>There are two tabs in the resulting menu: <strong>Settings</strong> and <strong>Roles</strong>. The Settings tab is identical to that found when creating the role service, while the Roles tab is described below.</p>
@@ -2766,28 +2744,24 @@
 <h3 id="security_webadmin_roles">Add role</h3>
 <p><img alt="" src="../images/ugr_newrole.png" />
 <em>Creating or editing a role</em></p>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Role name</td>
-<td>The name of role. Convention is uppercase, but is not required.</td>
-</tr>
-<tr>
-<td>Parent roles</td>
-<td>The role that this role inherits. See the section on <a href="../../usergrouprole/roles/">Roles</a> for more information on inheritance.</td>
-</tr>
-<tr>
-<td>Role parameters</td>
-<td>Key/value pairs associated with the role. Used for associating additional information with the role.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Option</dt>
+<dd>
+<p>Description</p>
+</dd>
+<dt>Role name</dt>
+<dd>
+<p>The name of role. Convention is uppercase, but is not required.</p>
+</dd>
+<dt>Parent roles</dt>
+<dd>
+<p>The role that this role inherits. See the section on <a href="../../usergrouprole/roles/">Roles</a> for more information on inheritance.</p>
+</dd>
+<dt>Role parameters</dt>
+<dd>
+<p>Key/value pairs associated with the role. Used for associating additional information with the role.</p>
+</dd>
+</dl>
 
 
 

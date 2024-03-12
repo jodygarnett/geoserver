@@ -2336,32 +2336,28 @@
 </span></code></pre></div>
 <p>GET requests are simplest to decode, but the POST requests are equivalent.</p>
 <p>The parameters for GetCapabilities are:</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Required?</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>service</code></td>
-<td>Yes</td>
-<td>Service name---Value is <code>WFS</code></td>
-</tr>
-<tr>
-<td><code>version</code></td>
-<td>Yes</td>
-<td>Service version---Value is the current version number. The full version number must be supplied ("1.1.0", "1.0.0"), not the abbreviated form ("1" or "1.1").</td>
-</tr>
-<tr>
-<td><code>request</code></td>
-<td>Yes</td>
-<td>Operation name---Value is <code>GetCapabilities</code></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Parameter</dt>
+<dd>
+<p>Required?</p>
+<p>Description</p>
+</dd>
+<dt><code>service</code></dt>
+<dd>
+<p>Yes</p>
+<p>Service name---Value is <code>WFS</code></p>
+</dd>
+<dt><code>version</code></dt>
+<dd>
+<p>Yes</p>
+<p>Service version---Value is the current version number. The full version number must be supplied ("1.1.0", "1.0.0"), not the abbreviated form ("1" or "1.1").</p>
+</dd>
+<dt><code>request</code></dt>
+<dd>
+<p>Yes</p>
+<p>Operation name---Value is <code>GetCapabilities</code></p>
+</dd>
+</dl>
 <p>Although all of the above parameters are technically required as per the specification, GeoServer will provide default values if any parameters are omitted from a request.</p>
 <p>The GetCapabilities response is a lengthy XML document, the format of which is different for each of the supported versions. There are five main components in a GetCapabilities document:</p>
 <table>

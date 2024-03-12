@@ -2271,19 +2271,23 @@
   identifier=JTS:buffer
 </code></pre></div>
 <p>The response XML document contains the following information:</p>
-<p>+--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| <strong>Title</strong>          | "Buffers a geometry using a certain distance"                                                                                                 |
-+--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| <strong>Inputs</strong>         | <strong>geom</strong>: "The geometry to be buffered" <em>(geometry, mandatory)</em>                                                                               |
-|                    |                                                                                                                                                 |
-|                    | <strong>distance</strong>: "The distance (same unit of measure as the geometry)" <em>(double, mandatory)</em>                                                     |
-|                    |                                                                                                                                                 |
-|                    | <strong>quadrant segments</strong>: "Number of quadrant segments. Use &gt; 0 for round joins, 0 for flat joins, &lt; 0 for mitred joins" <em>(integer, optional)</em> |
-|                    |                                                                                                                                                 |
-|                    | <strong>capstyle</strong>: "The buffer cap style, round, flat, square" <em>(literal value, optional)</em>                                                         |
-+--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| <strong>Output formats</strong> | One of the GeoServer supported formats for Geometry encoding                                                                                    |
-+--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+</p>
+<dl>
+<dt><strong>Title</strong></dt>
+<dd>
+<p>"Buffers a geometry using a certain distance"</p>
+</dd>
+<dt><strong>Inputs</strong></dt>
+<dd>
+<p><strong>geom</strong>: "The geometry to be buffered" <em>(geometry, mandatory)</em></p>
+<p><strong>distance</strong>: "The distance (same unit of measure as the geometry)" <em>(double, mandatory)</em></p>
+<p><strong>quadrant segments</strong>: "Number of quadrant segments. Use &gt; 0 for round joins, 0 for flat joins, &lt; 0 for mitred joins" <em>(integer, optional)</em></p>
+<p><strong>capstyle</strong>: "The buffer cap style, round, flat, square" <em>(literal value, optional)</em></p>
+</dd>
+<dt><strong>Output formats</strong></dt>
+<dd>
+<p>One of the GeoServer supported formats for Geometry encoding</p>
+</dd>
+</dl>
 <p>In general, GeoServer processes use complex objects as inputs and objects, like geometries, feature collections and raster data.</p>
 <p>The formats available for input and output of each of those complex processes are commonly managed by Process Parameter IO classes, generic encoders/decoders that are attached to each process by the WPS machinery.</p>
 <p>In the core of GeoServer WPS, the following PPIOs are available:</p>

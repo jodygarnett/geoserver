@@ -1834,27 +1834,18 @@
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nt">&lt;/Graphic&gt;</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="nt">&lt;/PointSymbolizer&gt;</span>
 </span></code></pre></div>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Name</strong></td>
-<td><strong>Arguments</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td>env</td>
-<td><code>variable</code>:String</td>
-<td>Returns the value of the environment variable <code>variable</code>.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Name</strong></dt>
+<dd>
+<p><strong>Arguments</strong></p>
+<p><strong>Description</strong></p>
+</dd>
+<dt>env</dt>
+<dd>
+<p><code>variable</code>:String</p>
+<p>Returns the value of the environment variable <code>variable</code>.</p>
+</dd>
+</dl>
 <h2 id="feature-functions">Feature functions</h2>
 <table>
 <thead>
@@ -1971,227 +1962,218 @@
 </tbody>
 </table>
 <h2 id="geometric-functions">Geometric functions</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Name</strong></td>
-<td><strong>Arguments</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td>area</td>
-<td><code>geometry</code>:Geometry</td>
-<td>The area of the specified geometry. Works in a Cartesian plane, the result will be in the same unit of measure as the geometry coordinates (which also means the results won't make any sense for geographic data)</td>
-</tr>
-<tr>
-<td>boundary</td>
-<td><code>geometry</code>:Geometry</td>
-<td>Returns the boundary of a geometry</td>
-</tr>
-<tr>
-<td>boundaryDimension</td>
-<td><code>geometry</code>:Geometry</td>
-<td>Returns the number of dimensions of the geometry boundary</td>
-</tr>
-<tr>
-<td>buffer</td>
-<td><code>geometry</code>:Geometry, <code>distance</code>:Double</td>
-<td>Returns the buffered area around the geometry using the specified distance</td>
-</tr>
-<tr>
-<td>bufferWithSegments</td>
-<td><code>geometry</code>:Geometry, <code>distance</code>:Double, <code>segments</code>:Integer</td>
-<td>Returns the buffered area around the geometry using the specified distance and using the specified number of segments to represent a quadrant of a circle.</td>
-</tr>
-<tr>
-<td>centroid</td>
-<td><code>geometry</code>:Geometry</td>
-<td>Returns the centroid of the geometry. Can be often used as a label point for polygons, though there is no guarantee it will actually lie inside the geometry</td>
-</tr>
-<tr>
-<td>convexHull</td>
-<td><code>geometry</code>:Geometry</td>
-<td>Returns the convex hull of the specified geometry</td>
-</tr>
-<tr>
-<td>difference</td>
-<td><code>a</code>:Geometry, <code>b</code>:Geometry</td>
-<td>Returns all the points that sit in <code>a</code> but not in <code>b</code></td>
-</tr>
-<tr>
-<td>dimension</td>
-<td><code>a</code>:Geometry</td>
-<td>Returns the dimension of the specified geometry</td>
-</tr>
-<tr>
-<td>distance</td>
-<td><code>a</code>:Geometry, <code>b</code>:Geometry</td>
-<td>Returns the euclidean distance between the two geometries</td>
-</tr>
-<tr>
-<td>endAngle</td>
-<td><code>line</code>:LineString</td>
-<td>Returns the angle of the end segment of the linestring</td>
-</tr>
-<tr>
-<td>endPoint</td>
-<td><code>line</code>:LineString</td>
-<td>Returns the end point of the linestring</td>
-</tr>
-<tr>
-<td>envelope</td>
-<td><code>geometry</code>:geometry</td>
-<td>Returns the polygon representing the envelope of the geometry, that is, the minimum rectangle with sides parallels to the axis containing it</td>
-</tr>
-<tr>
-<td>exteriorRing</td>
-<td><code>poly</code>:Polygon</td>
-<td>Returns the exterior ring of the specified polygon</td>
-</tr>
-<tr>
-<td>geometryType</td>
-<td><code>geometry</code>:Geometry</td>
-<td>Returns the type of the geometry as a string. May be <code>Point</code>, <code>MultiPoint</code>, <code>LineString</code>, <code>LinearRing</code>, <code>MultiLineString</code>, <code>Polygon</code>, <code>MultiPolygon</code>, <code>GeometryCollection</code></td>
-</tr>
-<tr>
-<td>geomFromWKT</td>
-<td><code>wkt</code>:String</td>
-<td>Returns the <code>Geometry</code> represented in the Well Known Text format contained in the <code>wkt</code> parameter</td>
-</tr>
-<tr>
-<td>geomLength</td>
-<td><code>geometry</code>:Geometry</td>
-<td>Returns the length/perimeter of this geometry (computed in Cartesian space)</td>
-</tr>
-<tr>
-<td>getGeometryN</td>
-<td><code>collection</code>:GeometryCollection, <code>n</code>:Integer</td>
-<td>Returns the n-th geometry inside the collection</td>
-</tr>
-<tr>
-<td>getX</td>
-<td><code>p</code>:Point</td>
-<td>Returns the <code>x</code> ordinate of <code>p</code></td>
-</tr>
-<tr>
-<td>getY</td>
-<td><code>p</code>:Point</td>
-<td>Returns the <code>y</code> ordinate of <code>p</code></td>
-</tr>
-<tr>
-<td>getZ</td>
-<td><code>p</code>:Point</td>
-<td>Returns the <code>z</code> ordinate of <code>p</code></td>
-</tr>
-<tr>
-<td>interiorPoint</td>
-<td><code>geometry</code>:Geometry</td>
-<td>Returns a point that is either interior to the geometry, when possible, or sitting on its boundary, otherwise</td>
-</tr>
-<tr>
-<td>interiorRingN</td>
-<td><code>polyg</code>:Polygon, <code>n</code>:Integer</td>
-<td>Returns the n-th interior ring of the polygon</td>
-</tr>
-<tr>
-<td>intersection</td>
-<td><code>a</code>:Geometry, <code>b</code>:Geometry</td>
-<td>Returns the intersection between <code>a</code> and <code>b</code>. The intersection result can be anything including a geometry collection of heterogeneous, if the result is empty, it will be represented by an empty collection.</td>
-</tr>
-<tr>
-<td>isClosed</td>
-<td><code>line</code>: LineString</td>
-<td>Returns true if <code>line</code> forms a closed ring, that is, if the first and last coordinates are equal</td>
-</tr>
-<tr>
-<td>isEmpty</td>
-<td><code>geometry</code>:Geometry</td>
-<td>Returns true if the geometry does not contain any point (typical case, an empty geometry collection)</td>
-</tr>
-<tr>
-<td>isometric</td>
-<td><code>geometry</code>:Geometry, <code>extrusion</code>:Double</td>
-<td>Returns a MultiPolygon containing the isometric extrusions of all components of the input geometry. The extrusion distance is <code>extrusion</code>, expressed in the same unit as the geometry coordinates. Can be used to get a pseudo-3d effect in a map</td>
-</tr>
-<tr>
-<td>isRing</td>
-<td><code>line</code>:LineString</td>
-<td>Returns true if the <code>line</code> is actually a closed ring (equivalent to <code>isRing(line) and isSimple(line)</code>)</td>
-</tr>
-<tr>
-<td>isSimple</td>
-<td><code>line</code>:LineString</td>
-<td>Returns true if the geometry self intersects only at boundary points</td>
-</tr>
-<tr>
-<td>isValid</td>
-<td><code>geometry</code>: Geometry</td>
-<td>Returns true if the geometry is topologically valid (rings are closed, holes are inside the hull, and so on)</td>
-</tr>
-<tr>
-<td>numGeometries</td>
-<td><code>collection</code>: GeometryCollection</td>
-<td>Returns the number of geometries contained in the geometry collection</td>
-</tr>
-<tr>
-<td>numInteriorRing</td>
-<td><code>poly</code>: Polygon</td>
-<td>Returns the number of interior rings (holes) inside the specified polygon</td>
-</tr>
-<tr>
-<td>numPoint</td>
-<td><code>geometry</code>: Geometry</td>
-<td>Returns the number of points (vertexes) contained in <code>geometry</code></td>
-</tr>
-<tr>
-<td>offset</td>
-<td><code>geometry</code>: Geometry, <code>offsetX</code>:Double, <code>offsetY</code>:Double</td>
-<td>Offsets all points in a geometry by the specified X and Y offsets. Offsets are working in the same coordinate system as the geometry own coordinates.</td>
-</tr>
-<tr>
-<td>pointN</td>
-<td><code>geometry</code>: Geometry, <code>n</code>:Integer</td>
-<td>Returns the n-th point inside the specified geometry</td>
-</tr>
-<tr>
-<td>startAngle</td>
-<td><code>line</code>: LineString</td>
-<td>Returns the angle of the starting segment of the input linestring</td>
-</tr>
-<tr>
-<td>startPoint</td>
-<td><code>line</code>: LineString</td>
-<td>Returns the starting point of the input linestring</td>
-</tr>
-<tr>
-<td>symDifference</td>
-<td><code>a</code>: Geometry, <code>b</code>:Geometry</td>
-<td>Returns the symmetrical difference between <code>a</code> and <code>b</code> (all points that are inside <code>a</code> or <code>b</code>, but not both)</td>
-</tr>
-<tr>
-<td>toWKT</td>
-<td><code>geometry</code>: Geometry</td>
-<td>Returns the WKT representation of <code>geometry</code></td>
-</tr>
-<tr>
-<td>union</td>
-<td><code>a</code>: Geometry, <code>b</code>:Geometry</td>
-<td>Returns the union of <code>a</code> and <code>b</code> (the result may be a geometry collection)</td>
-</tr>
-<tr>
-<td>vertices</td>
-<td><code>geom</code>: Geometry</td>
-<td>Returns a multi-point made with all the vertices of <code>geom</code></td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Name</strong></dt>
+<dd>
+<p><strong>Arguments</strong></p>
+<p><strong>Description</strong></p>
+</dd>
+<dt>area</dt>
+<dd>
+<p><code>geometry</code>:Geometry</p>
+<p>The area of the specified geometry. Works in a Cartesian plane, the result will be in the same unit of measure as the geometry coordinates (which also means the results won't make any sense for geographic data)</p>
+</dd>
+<dt>boundary</dt>
+<dd>
+<p><code>geometry</code>:Geometry</p>
+<p>Returns the boundary of a geometry</p>
+</dd>
+<dt>boundaryDimension</dt>
+<dd>
+<p><code>geometry</code>:Geometry</p>
+<p>Returns the number of dimensions of the geometry boundary</p>
+</dd>
+<dt>buffer</dt>
+<dd>
+<p><code>geometry</code>:Geometry, <code>distance</code>:Double</p>
+<p>Returns the buffered area around the geometry using the specified distance</p>
+</dd>
+<dt>bufferWithSegments</dt>
+<dd>
+<p><code>geometry</code>:Geometry, <code>distance</code>:Double, <code>segments</code>:Integer</p>
+<p>Returns the buffered area around the geometry using the specified distance and using the specified number of segments to represent a quadrant of a circle.</p>
+</dd>
+<dt>centroid</dt>
+<dd>
+<p><code>geometry</code>:Geometry</p>
+<p>Returns the centroid of the geometry. Can be often used as a label point for polygons, though there is no guarantee it will actually lie inside the geometry</p>
+</dd>
+<dt>convexHull</dt>
+<dd>
+<p><code>geometry</code>:Geometry</p>
+<p>Returns the convex hull of the specified geometry</p>
+</dd>
+<dt>difference</dt>
+<dd>
+<p><code>a</code>:Geometry, <code>b</code>:Geometry</p>
+<p>Returns all the points that sit in <code>a</code> but not in <code>b</code></p>
+</dd>
+<dt>dimension</dt>
+<dd>
+<p><code>a</code>:Geometry</p>
+<p>Returns the dimension of the specified geometry</p>
+</dd>
+<dt>distance</dt>
+<dd>
+<p><code>a</code>:Geometry, <code>b</code>:Geometry</p>
+<p>Returns the euclidean distance between the two geometries</p>
+</dd>
+<dt>endAngle</dt>
+<dd>
+<p><code>line</code>:LineString</p>
+<p>Returns the angle of the end segment of the linestring</p>
+</dd>
+<dt>endPoint</dt>
+<dd>
+<p><code>line</code>:LineString</p>
+<p>Returns the end point of the linestring</p>
+</dd>
+<dt>envelope</dt>
+<dd>
+<p><code>geometry</code>:geometry</p>
+<p>Returns the polygon representing the envelope of the geometry, that is, the minimum rectangle with sides parallels to the axis containing it</p>
+</dd>
+<dt>exteriorRing</dt>
+<dd>
+<p><code>poly</code>:Polygon</p>
+<p>Returns the exterior ring of the specified polygon</p>
+</dd>
+<dt>geometryType</dt>
+<dd>
+<p><code>geometry</code>:Geometry</p>
+<p>Returns the type of the geometry as a string. May be <code>Point</code>, <code>MultiPoint</code>, <code>LineString</code>, <code>LinearRing</code>, <code>MultiLineString</code>, <code>Polygon</code>, <code>MultiPolygon</code>, <code>GeometryCollection</code></p>
+</dd>
+<dt>geomFromWKT</dt>
+<dd>
+<p><code>wkt</code>:String</p>
+<p>Returns the <code>Geometry</code> represented in the Well Known Text format contained in the <code>wkt</code> parameter</p>
+</dd>
+<dt>geomLength</dt>
+<dd>
+<p><code>geometry</code>:Geometry</p>
+<p>Returns the length/perimeter of this geometry (computed in Cartesian space)</p>
+</dd>
+<dt>getGeometryN</dt>
+<dd>
+<p><code>collection</code>:GeometryCollection, <code>n</code>:Integer</p>
+<p>Returns the n-th geometry inside the collection</p>
+</dd>
+<dt>getX</dt>
+<dd>
+<p><code>p</code>:Point</p>
+<p>Returns the <code>x</code> ordinate of <code>p</code></p>
+</dd>
+<dt>getY</dt>
+<dd>
+<p><code>p</code>:Point</p>
+<p>Returns the <code>y</code> ordinate of <code>p</code></p>
+</dd>
+<dt>getZ</dt>
+<dd>
+<p><code>p</code>:Point</p>
+<p>Returns the <code>z</code> ordinate of <code>p</code></p>
+</dd>
+<dt>interiorPoint</dt>
+<dd>
+<p><code>geometry</code>:Geometry</p>
+<p>Returns a point that is either interior to the geometry, when possible, or sitting on its boundary, otherwise</p>
+</dd>
+<dt>interiorRingN</dt>
+<dd>
+<p><code>polyg</code>:Polygon, <code>n</code>:Integer</p>
+<p>Returns the n-th interior ring of the polygon</p>
+</dd>
+<dt>intersection</dt>
+<dd>
+<p><code>a</code>:Geometry, <code>b</code>:Geometry</p>
+<p>Returns the intersection between <code>a</code> and <code>b</code>. The intersection result can be anything including a geometry collection of heterogeneous, if the result is empty, it will be represented by an empty collection.</p>
+</dd>
+<dt>isClosed</dt>
+<dd>
+<p><code>line</code>: LineString</p>
+<p>Returns true if <code>line</code> forms a closed ring, that is, if the first and last coordinates are equal</p>
+</dd>
+<dt>isEmpty</dt>
+<dd>
+<p><code>geometry</code>:Geometry</p>
+<p>Returns true if the geometry does not contain any point (typical case, an empty geometry collection)</p>
+</dd>
+<dt>isometric</dt>
+<dd>
+<p><code>geometry</code>:Geometry, <code>extrusion</code>:Double</p>
+<p>Returns a MultiPolygon containing the isometric extrusions of all components of the input geometry. The extrusion distance is <code>extrusion</code>, expressed in the same unit as the geometry coordinates. Can be used to get a pseudo-3d effect in a map</p>
+</dd>
+<dt>isRing</dt>
+<dd>
+<p><code>line</code>:LineString</p>
+<p>Returns true if the <code>line</code> is actually a closed ring (equivalent to <code>isRing(line) and isSimple(line)</code>)</p>
+</dd>
+<dt>isSimple</dt>
+<dd>
+<p><code>line</code>:LineString</p>
+<p>Returns true if the geometry self intersects only at boundary points</p>
+</dd>
+<dt>isValid</dt>
+<dd>
+<p><code>geometry</code>: Geometry</p>
+<p>Returns true if the geometry is topologically valid (rings are closed, holes are inside the hull, and so on)</p>
+</dd>
+<dt>numGeometries</dt>
+<dd>
+<p><code>collection</code>: GeometryCollection</p>
+<p>Returns the number of geometries contained in the geometry collection</p>
+</dd>
+<dt>numInteriorRing</dt>
+<dd>
+<p><code>poly</code>: Polygon</p>
+<p>Returns the number of interior rings (holes) inside the specified polygon</p>
+</dd>
+<dt>numPoint</dt>
+<dd>
+<p><code>geometry</code>: Geometry</p>
+<p>Returns the number of points (vertexes) contained in <code>geometry</code></p>
+</dd>
+<dt>offset</dt>
+<dd>
+<p><code>geometry</code>: Geometry, <code>offsetX</code>:Double, <code>offsetY</code>:Double</p>
+<p>Offsets all points in a geometry by the specified X and Y offsets. Offsets are working in the same coordinate system as the geometry own coordinates.</p>
+</dd>
+<dt>pointN</dt>
+<dd>
+<p><code>geometry</code>: Geometry, <code>n</code>:Integer</p>
+<p>Returns the n-th point inside the specified geometry</p>
+</dd>
+<dt>startAngle</dt>
+<dd>
+<p><code>line</code>: LineString</p>
+<p>Returns the angle of the starting segment of the input linestring</p>
+</dd>
+<dt>startPoint</dt>
+<dd>
+<p><code>line</code>: LineString</p>
+<p>Returns the starting point of the input linestring</p>
+</dd>
+<dt>symDifference</dt>
+<dd>
+<p><code>a</code>: Geometry, <code>b</code>:Geometry</p>
+<p>Returns the symmetrical difference between <code>a</code> and <code>b</code> (all points that are inside <code>a</code> or <code>b</code>, but not both)</p>
+</dd>
+<dt>toWKT</dt>
+<dd>
+<p><code>geometry</code>: Geometry</p>
+<p>Returns the WKT representation of <code>geometry</code></p>
+</dd>
+<dt>union</dt>
+<dd>
+<p><code>a</code>: Geometry, <code>b</code>:Geometry</p>
+<p>Returns the union of <code>a</code> and <code>b</code> (the result may be a geometry collection)</p>
+</dd>
+<dt>vertices</dt>
+<dd>
+<p><code>geom</code>: Geometry</p>
+<p>Returns a multi-point made with all the vertices of <code>geom</code></p>
+</dd>
+</dl>
 <h2 id="math-functions">Math functions</h2>
 <table>
 <thead>
@@ -2361,117 +2343,108 @@
 </table>
 <h2 id="string-functions">String functions</h2>
 <p>String functions generally will accept any type of value for <code>String</code> arguments. Non-string values will be converted into a string representation automatically.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Name</strong></td>
-<td><strong>Arguments</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td>Concatenate</td>
-<td><code>s1</code>:String, <code>s2</code>:String, ...</td>
-<td>Concatenates any number of strings. Non-string arguments are allowed.</td>
-</tr>
-<tr>
-<td>strAbbreviate</td>
-<td><code>sentence</code>:String, <code>lower</code>:Integer, <code>upper</code>:Integer, <code>append</code>:String</td>
-<td>Abbreviates the sentence at first space beyond <code>lower</code> (or at <code>upper</code> if no space). Appends <code>append</code> if string is abbreviated.</td>
-</tr>
-<tr>
-<td>strCapitalize</td>
-<td><code>sentence</code>:String</td>
-<td>Fully capitalizes the sentence. For example, "HoW aRe YOU?" will be turned into "How Are You?"</td>
-</tr>
-<tr>
-<td>strConcat</td>
-<td><code>a</code>:String, <code>b</code>:String</td>
-<td>Concatenates the two strings into one</td>
-</tr>
-<tr>
-<td>strDefaultIfBlank</td>
-<td><code>str</code>:String, <code>default</code>:String</td>
-<td>returns <code>default</code> if <code>str</code> is empty, blank or null</td>
-</tr>
-<tr>
-<td>strEndsWith</td>
-<td><code>string</code>:String, <code>suffix</code>:String</td>
-<td>Returns true if <code>string</code> ends with <code>suffix</code></td>
-</tr>
-<tr>
-<td>strEqualsIgnoreCase</td>
-<td><code>a</code>:String, <code>b</code>:String</td>
-<td>Returns true if the two strings are equal ignoring case considerations</td>
-</tr>
-<tr>
-<td>strIndexOf</td>
-<td><code>string</code>:String, <code>substring</code>:String</td>
-<td>Returns the index within this string of the first occurrence of the specified substring, or <code>-1</code> if not found</td>
-</tr>
-<tr>
-<td>strLastIndexOf</td>
-<td><code>string</code>:String, <code>substring</code>:String</td>
-<td>Returns the index within this string of the last occurrence of the specified substring, or <code>-1</code> if not found</td>
-</tr>
-<tr>
-<td>strLength</td>
-<td><code>string</code>:String</td>
-<td>Returns the string length</td>
-</tr>
-<tr>
-<td>strMatches</td>
-<td><code>string</code>:String, <code>pattern</code>:String</td>
-<td>Returns true if the string matches the specified regular expression. For the full syntax of the pattern specification see the <a href="http://java.sun.com/javase/6/docs/api/java/util/regex/Pattern.html">Java Pattern class javadocs</a></td>
-</tr>
-<tr>
-<td>strReplace</td>
-<td><code>string</code>:String, <code>pattern</code>:String, <code>replacement</code>:String, <code>global</code>: boolean</td>
-<td>Returns the string with the pattern replaced with the given replacement text. If the <code>global</code> argument is <code>true</code> then all occurrences of the pattern will be replaced, otherwise only the first. For the full syntax of the pattern specification see the <a href="http://java.sun.com/javase/6/docs/api/java/util/regex/Pattern.html">Java Pattern class javadocs</a></td>
-</tr>
-<tr>
-<td>strStartsWith</td>
-<td><code>string</code>:String, <code>prefix</code>:String</td>
-<td>Returns true if <code>string</code> starts with <code>prefix</code></td>
-</tr>
-<tr>
-<td>strStripAccents</td>
-<td><code>string</code>:String</td>
-<td>Removes diacritics (\~= accents) from a string. The case will not be altered.</td>
-</tr>
-<tr>
-<td>strSubstring</td>
-<td><code>string</code>:String, <code>begin</code>:Integer, <code>end</code>:Integer</td>
-<td>Returns a new string that is a substring of this string. The substring begins at the specified <code>begin</code> and extends to the character at index <code>endIndex - 1</code> (indexes are zero-based).</td>
-</tr>
-<tr>
-<td>strSubstringStart</td>
-<td><code>string</code>:String, <code>begin</code>:Integer</td>
-<td>Returns a new string that is a substring of this string. The substring begins at the specified <code>begin</code> and extends to the last character of the string</td>
-</tr>
-<tr>
-<td>strToLowerCase</td>
-<td><code>string</code>:String</td>
-<td>Returns the lower case version of the string</td>
-</tr>
-<tr>
-<td>strToUpperCase</td>
-<td><code>string</code>:String</td>
-<td>Returns the upper case version of the string</td>
-</tr>
-<tr>
-<td>strTrim</td>
-<td><code>string</code>:String</td>
-<td>Returns a copy of the string, with leading and trailing blank-space omitted</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Name</strong></dt>
+<dd>
+<p><strong>Arguments</strong></p>
+<p><strong>Description</strong></p>
+</dd>
+<dt>Concatenate</dt>
+<dd>
+<p><code>s1</code>:String, <code>s2</code>:String, ...</p>
+<p>Concatenates any number of strings. Non-string arguments are allowed.</p>
+</dd>
+<dt>strAbbreviate</dt>
+<dd>
+<p><code>sentence</code>:String, <code>lower</code>:Integer, <code>upper</code>:Integer, <code>append</code>:String</p>
+<p>Abbreviates the sentence at first space beyond <code>lower</code> (or at <code>upper</code> if no space). Appends <code>append</code> if string is abbreviated.</p>
+</dd>
+<dt>strCapitalize</dt>
+<dd>
+<p><code>sentence</code>:String</p>
+<p>Fully capitalizes the sentence. For example, "HoW aRe YOU?" will be turned into "How Are You?"</p>
+</dd>
+<dt>strConcat</dt>
+<dd>
+<p><code>a</code>:String, <code>b</code>:String</p>
+<p>Concatenates the two strings into one</p>
+</dd>
+<dt>strDefaultIfBlank</dt>
+<dd>
+<p><code>str</code>:String, <code>default</code>:String</p>
+<p>returns <code>default</code> if <code>str</code> is empty, blank or null</p>
+</dd>
+<dt>strEndsWith</dt>
+<dd>
+<p><code>string</code>:String, <code>suffix</code>:String</p>
+<p>Returns true if <code>string</code> ends with <code>suffix</code></p>
+</dd>
+<dt>strEqualsIgnoreCase</dt>
+<dd>
+<p><code>a</code>:String, <code>b</code>:String</p>
+<p>Returns true if the two strings are equal ignoring case considerations</p>
+</dd>
+<dt>strIndexOf</dt>
+<dd>
+<p><code>string</code>:String, <code>substring</code>:String</p>
+<p>Returns the index within this string of the first occurrence of the specified substring, or <code>-1</code> if not found</p>
+</dd>
+<dt>strLastIndexOf</dt>
+<dd>
+<p><code>string</code>:String, <code>substring</code>:String</p>
+<p>Returns the index within this string of the last occurrence of the specified substring, or <code>-1</code> if not found</p>
+</dd>
+<dt>strLength</dt>
+<dd>
+<p><code>string</code>:String</p>
+<p>Returns the string length</p>
+</dd>
+<dt>strMatches</dt>
+<dd>
+<p><code>string</code>:String, <code>pattern</code>:String</p>
+<p>Returns true if the string matches the specified regular expression. For the full syntax of the pattern specification see the <a href="http://java.sun.com/javase/6/docs/api/java/util/regex/Pattern.html">Java Pattern class javadocs</a></p>
+</dd>
+<dt>strReplace</dt>
+<dd>
+<p><code>string</code>:String, <code>pattern</code>:String, <code>replacement</code>:String, <code>global</code>: boolean</p>
+<p>Returns the string with the pattern replaced with the given replacement text. If the <code>global</code> argument is <code>true</code> then all occurrences of the pattern will be replaced, otherwise only the first. For the full syntax of the pattern specification see the <a href="http://java.sun.com/javase/6/docs/api/java/util/regex/Pattern.html">Java Pattern class javadocs</a></p>
+</dd>
+<dt>strStartsWith</dt>
+<dd>
+<p><code>string</code>:String, <code>prefix</code>:String</p>
+<p>Returns true if <code>string</code> starts with <code>prefix</code></p>
+</dd>
+<dt>strStripAccents</dt>
+<dd>
+<p><code>string</code>:String</p>
+<p>Removes diacritics (\~= accents) from a string. The case will not be altered.</p>
+</dd>
+<dt>strSubstring</dt>
+<dd>
+<p><code>string</code>:String, <code>begin</code>:Integer, <code>end</code>:Integer</p>
+<p>Returns a new string that is a substring of this string. The substring begins at the specified <code>begin</code> and extends to the character at index <code>endIndex - 1</code> (indexes are zero-based).</p>
+</dd>
+<dt>strSubstringStart</dt>
+<dd>
+<p><code>string</code>:String, <code>begin</code>:Integer</p>
+<p>Returns a new string that is a substring of this string. The substring begins at the specified <code>begin</code> and extends to the last character of the string</p>
+</dd>
+<dt>strToLowerCase</dt>
+<dd>
+<p><code>string</code>:String</p>
+<p>Returns the lower case version of the string</p>
+</dd>
+<dt>strToUpperCase</dt>
+<dd>
+<p><code>string</code>:String</p>
+<p>Returns the upper case version of the string</p>
+</dd>
+<dt>strTrim</dt>
+<dd>
+<p><code>string</code>:String</p>
+<p>Returns a copy of the string, with leading and trailing blank-space omitted</p>
+</dd>
+</dl>
 <h2 id="parsing-and-formatting-functions">Parsing and formatting functions</h2>
 <table>
 <thead>
@@ -2553,25 +2526,33 @@
 </table>
 <h2 id="transformation-functions">Transformation functions</h2>
 <p>Transformation functions transform values from one data space into another. These functions provide a concise way to compute styling parameters from feature attribute values. See also <a href="../../styling/sld/tipstricks/transformation-func/">Styling using Transformation Functions</a>.</p>
-<p>+-------------+----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <strong>Name</strong>    | <strong>Arguments</strong>                                      | <strong>Description</strong>                                                                                                                                                                                                                                                                                                                                                                                                    |
-+-------------+----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Recode      | <code>lookupValue</code>:Object,                              | Transforms a <code>lookupValue</code> from a set of discrete data values into another set of values. Any number of <code>data</code>/<code>value</code> pairs may be specified.                                                                                                                                                                                                                                                                     |
-|             |                                                    |                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|             | <code>data</code>:Object, <code>value</code>:Object, ...                |                                                                                                                                                                                                                                                                                                                                                                                                                    |
-+-------------+----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Categorize  | <code>lookupValue</code>:Object, <code>value</code>:Object,              | Transforms a continuous-valued attribute value into a set of discrete values. <code>lookupValue</code> and <code>value</code> must be an orderable type (typically numeric). The initial <code>value</code> is required. Any number of additional <code>threshold</code>/<code>value</code> pairs may be specified. <code>belongsTo</code> is optional, with the value <code>succeeding</code> or <code>preceding</code>. It defines which interval to use when the lookup value equals a threshold value. |
-|             |                                                    |                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|             | <code>threshold</code>:Object, ... <code>value</code>:Object,           |                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|             |                                                    |                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|             | <code>belongsTo</code> : String                               |                                                                                                                                                                                                                                                                                                                                                                                                                    |
-+-------------+----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Interpolate | <code>lookupValue</code>:Numeric,                             | Transforms a continuous-valued attribute value into another continuous range of values. Any number of <code>data</code>/<code>value</code> pairs may be specified. <code>mode</code> is optional, with the value <code>linear</code>, <code>cosine</code> or <code>cubic</code>. It defines the interpolation algorithm to use. <code>method</code> is optional, with the value <code>numeric</code> or <code>color</code>. It defines whether the target values are numeric or RGB color specifications.             |
-|             |                                                    |                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|             | <code>data</code>:Numeric, <code>value</code>:Numeric <em>or</em> #RRGGBB, ... |                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|             |                                                    |                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|             | <code>mode</code>:String, <code>method</code>:String                     |                                                                                                                                                                                                                                                                                                                                                                                                                    |
-+-------------+----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</p>
+<dl>
+<dt><strong>Name</strong></dt>
+<dd>
+<p><strong>Arguments</strong></p>
+<p><strong>Description</strong></p>
+</dd>
+<dt>Recode</dt>
+<dd>
+<p><code>lookupValue</code>:Object,</p>
+<p><code>data</code>:Object, <code>value</code>:Object, ...</p>
+<p>Transforms a <code>lookupValue</code> from a set of discrete data values into another set of values. Any number of <code>data</code>/<code>value</code> pairs may be specified.</p>
+</dd>
+<dt>Categorize</dt>
+<dd>
+<p><code>lookupValue</code>:Object, <code>value</code>:Object,</p>
+<p><code>threshold</code>:Object, ... <code>value</code>:Object,</p>
+<p><code>belongsTo</code> : String</p>
+<p>Transforms a continuous-valued attribute value into a set of discrete values. <code>lookupValue</code> and <code>value</code> must be an orderable type (typically numeric). The initial <code>value</code> is required. Any number of additional <code>threshold</code>/<code>value</code> pairs may be specified. <code>belongsTo</code> is optional, with the value <code>succeeding</code> or <code>preceding</code>. It defines which interval to use when the lookup value equals a threshold value.</p>
+</dd>
+<dt>Interpolate</dt>
+<dd>
+<p><code>lookupValue</code>:Numeric,</p>
+<p><code>data</code>:Numeric, <code>value</code>:Numeric <em>or</em> #RRGGBB, ...</p>
+<p><code>mode</code>:String, <code>method</code>:String</p>
+<p>Transforms a continuous-valued attribute value into another continuous range of values. Any number of <code>data</code>/<code>value</code> pairs may be specified. <code>mode</code> is optional, with the value <code>linear</code>, <code>cosine</code> or <code>cubic</code>. It defines the interpolation algorithm to use. <code>method</code> is optional, with the value <code>numeric</code> or <code>color</code>. It defines whether the target values are numeric or RGB color specifications.</p>
+</dd>
+</dl>
 
 
 

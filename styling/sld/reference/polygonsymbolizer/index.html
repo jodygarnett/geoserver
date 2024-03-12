@@ -2496,32 +2496,23 @@
 <p>The <code>&lt;CssParameter&gt;</code> elements describe the styling of a solid polygon fill. Any number of <code>&lt;CssParameter&gt;</code> elements can be specified.</p>
 <p>The <code>name</code> <strong>attribute</strong> indicates what aspect of styling an element specifies, using the standard CSS/SVG styling model. The <strong>content</strong> of the element supplies the value of the styling parameter. The value may contain <a href="../pointsymbolizer/#sld_reference_parameter_expressions">expressions</a>.</p>
 <p>The following parameters are supported:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Parameter</strong></td>
-<td><strong>Required?</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td><code>name="fill"</code></td>
-<td>No</td>
-<td>Specifies the fill color, in the form <code>#RRGGBB</code>. Default is grey (<code>#808080</code>).</td>
-</tr>
-<tr>
-<td><code>name="fill-opacity"</code></td>
-<td>No</td>
-<td>Specifies the opacity (transparency) of the fill. The value is a decimal number between <code>0</code> (completely transparent) and <code>1</code> (completely opaque). Default is <code>1</code>.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt><strong>Parameter</strong></dt>
+<dd>
+<p><strong>Required?</strong></p>
+<p><strong>Description</strong></p>
+</dd>
+<dt><code>name="fill"</code></dt>
+<dd>
+<p>No</p>
+<p>Specifies the fill color, in the form <code>#RRGGBB</code>. Default is grey (<code>#808080</code>).</p>
+</dd>
+<dt><code>name="fill-opacity"</code></dt>
+<dd>
+<p>No</p>
+<p>Specifies the opacity (transparency) of the fill. The value is a decimal number between <code>0</code> (completely transparent) and <code>1</code> (completely opaque). Default is <code>1</code>.</p>
+</dd>
+</dl>
 <h2 id="example">Example</h2>
 <p>The following symbolizer is taken from the <a href="../../cookbook/polygons/">Polygons</a> section in the <a href="../../cookbook/">SLD Cookbook</a>.</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;PolygonSymbolizer&gt;</span>

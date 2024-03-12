@@ -2340,76 +2340,44 @@ feature-styles:
 <p>For more details on syntax, please see the section on <a href="../symbolizers/">symbolizers</a>.</p>
 </div>
 <p>The structure of a typical YSLD file is as follows:</p>
-<table>
-<thead>
-<tr>
-<th>Structure</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Variable definitions</code></td>
-<td>For common style settings</td>
-</tr>
-<tr>
-<td><code>Scale grid / zoom levels</code></td>
-<td>Used to define style based on tile set zoom level</td>
-</tr>
-<tr>
-<td><code>style header</code></td>
-<td>Document name, title, and abstract followed by feature-styles</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td><img alt="image" src="img/structure_header.*" /></td>
-</tr>
-<tr>
-<td><a href="../featurestyles/">feature style</a></td>
-<td>Independent block that can contain one or many rules.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td><img alt="image" src="img/structure_feature_style.*" /></td>
-</tr>
-<tr>
-<td><a href="../rules/">rule</a></td>
-<td>Directive that can contain one or many <a href="../symbolizers/">symbolizers</a>.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td><img alt="image" src="img/structure_rule_all.*" /></td>
-</tr>
-<tr>
-<td><a href="../filters/">filter</a></td>
-<td>A rule "includes" all features unless made to be selective by the use of a <a href="../filters/">filter</a>.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td><img alt="image" src="img/structure_rule.*" /></td>
-</tr>
-<tr>
-<td><a href="../symbolizers/">symbolizers</a></td>
-<td>basic unit of a style containing the actual visualization instructions for individual features.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+<dt>Structure</dt>
+<dd>
+<p>Description</p>
+</dd>
+<dt><code>Variable definitions</code></dt>
+<dd>
+<p>For common style settings</p>
+</dd>
+<dt><code>Scale grid / zoom levels</code></dt>
+<dd>
+<p>Used to define style based on tile set zoom level</p>
+</dd>
+<dt><code>style header</code></dt>
+<dd>
+<p>Document name, title, and abstract followed by feature-styles</p>
+<p><img alt="image" src="img/structure_header.*" /></p>
+</dd>
+<dt><a href="../featurestyles/">feature style</a></dt>
+<dd>
+<p>Independent block that can contain one or many rules.</p>
+<p><img alt="image" src="img/structure_feature_style.*" /></p>
+</dd>
+<dt><a href="../rules/">rule</a></dt>
+<dd>
+<p>Directive that can contain one or many <a href="../symbolizers/">symbolizers</a>.</p>
+<p><img alt="image" src="img/structure_rule_all.*" /></p>
+</dd>
+<dt><a href="../filters/">filter</a></dt>
+<dd>
+<p>A rule "includes" all features unless made to be selective by the use of a <a href="../filters/">filter</a>.</p>
+<p><img alt="image" src="img/structure_rule.*" /></p>
+</dd>
+<dt><a href="../symbolizers/">symbolizers</a></dt>
+<dd>
+<p>basic unit of a style containing the actual visualization instructions for individual features.</p>
+</dd>
+</dl>
 <p>The structure YSLD files is outlined using indentation.</p>
 <p><img alt="" src="img/structure_example.*" />
 <em>Structure of YSLD style_example</em></p>
