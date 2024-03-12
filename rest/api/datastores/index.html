@@ -2492,71 +2492,95 @@
 <p>A <code>data store</code> contains vector format spatial data. It can be a file (such as a shapefile), a database (such as PostGIS), or a server (such as a <a href="../../../data/cascaded/wfs/">remote Web Feature Service</a>).</p>
 <h2 id="workspaceswsdatastoresformat"><code>/workspaces/&lt;ws&gt;/datastores[.&lt;format&gt;]</code></h2>
 <p>Controls all data stores in a given workspace.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>List all data stores in workspace <code>ws</code></p>
-<p>200</p>
-<p>HTML, XML, JSON</p>
-<p>HTML</p>
-</dd>
-<dt>POST</dt>
-<dd>
-<p>Create a new data store</p>
-<p>201 with <code>Location</code> header</p>
-<p>XML, JSON</p>
-</dd>
-</dl>
-<p>PUT</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<p>DELETE</p>
-<blockquote>
-<p>405</p>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>List all data stores in workspace <code>ws</code></td>
+<td>200</td>
+<td>HTML, XML, JSON</td>
+<td>HTML</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Create a new data store</td>
+<td>201 with <code>Location</code> header</td>
+<td>XML, JSON</td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="workspaceswsdatastoresdsformat"><code>/workspaces/&lt;ws&gt;/datastores/&lt;ds&gt;[.&lt;format&gt;]</code></h2>
 <p>Controls a particular data store in a given workspace.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-<p>Parameters</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Return data store <code>ds</code></p>
-<p>200</p>
-<p>HTML, XML, JSON</p>
-<p>HTML</p>
-<p><a href="./#rest_api_datastores_quietOnNotFound">quietOnNotFound</a></p>
-</dd>
-</dl>
-<p>POST</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<dl>
-<dt>PUT</dt>
-<dd>
-<p>Modify data store <code>ds</code></p>
-</dd>
-<dt>DELETE</dt>
-<dd>
-<p>Delete data store <code>ds</code></p>
-<p><a href="./#rest_api_datastores_recurse">recurse</a></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Return data store <code>ds</code></td>
+<td>200</td>
+<td>HTML, XML, JSON</td>
+<td>HTML</td>
+<td><a href="./#rest_api_datastores_quietOnNotFound">quietOnNotFound</a></td>
+</tr>
+<tr>
+<td>POST</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Modify data store <code>ds</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Delete data store <code>ds</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="./#rest_api_datastores_recurse">recurse</a></td>
+</tr>
+</tbody>
+</table>
 <h3 id="exceptions">Exceptions</h3>
 <table>
 <thead>
@@ -2596,78 +2620,100 @@
 <li><code>url</code>---Uploads a file from an remote source. The body of the request is a URL pointing to the file to upload. This URL must be visible from the server.</li>
 <li><code>external</code>---Uses an existing file on the server. The body of the request is the absolute path to the existing file.</li>
 </ul>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-<p>Parameters</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p><em>Deprecated</em>. Retrieve the underlying files for the data store as a zip file with MIME type <code>application/zip</code></p>
-<p>200</p>
-</dd>
-</dl>
-<p>POST</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<dl>
-<dt>PUT</dt>
-<dd>
-<p>Uploads files to the data store <code>ds</code>, creating it if necessary</p>
-<p>200</p>
-<p><a href="./#rest_api_datastores_file_put">See note below</a></p>
-<p><a href="./#rest_api_datastores_configure">configure</a>, <a href="./#rest_api_datastores_target">target</a>, <a href="./#rest_api_datastores_update">update</a>, <a href="./#rest_api_datastores_charset">charset</a></p>
-</dd>
-</dl>
-<p>DELETE</p>
-<blockquote>
-<p>405</p>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><em>Deprecated</em>. Retrieve the underlying files for the data store as a zip file with MIME type <code>application/zip</code></td>
+<td>200</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>POST</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Uploads files to the data store <code>ds</code>, creating it if necessary</td>
+<td>200</td>
+<td><a href="./#rest_api_datastores_file_put">See note below</a></td>
+<td></td>
+<td><a href="./#rest_api_datastores_configure">configure</a>, <a href="./#rest_api_datastores_target">target</a>, <a href="./#rest_api_datastores_update">update</a>, <a href="./#rest_api_datastores_charset">charset</a></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h3 id="exceptions_1">Exceptions</h3>
-<dl>
-<dt>Exception</dt>
-<dd>
-<p>Status code</p>
-</dd>
-<dt>GET for a data store that does not exist</dt>
-<dd>
-<p>404</p>
-</dd>
-<dt>GET for a data store that is not file based</dt>
-<dd>
-<p>404</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Exception</th>
+<th>Status code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET for a data store that does not exist</td>
+<td>404</td>
+</tr>
+<tr>
+<td>GET for a data store that is not file based</td>
+<td>404</td>
+</tr>
+</tbody>
+</table>
 <h3 id="parameters_1">Parameters</h3>
 <h4 id="rest_api_datastores_extension"><code>extension</code></h4>
 <p>The <code>extension</code> parameter specifies the type of data being uploaded. The following extensions are supported:</p>
-<dl>
-<dt>Extension</dt>
-<dd>
-<p>Datastore</p>
-</dd>
-<dt>shp</dt>
-<dd>
-<p>Shapefile</p>
-</dd>
-<dt>properties</dt>
-<dd>
-<p>Property file</p>
-</dd>
-<dt>h2</dt>
-<dd>
-<p>H2 Database</p>
-</dd>
-<dt>appschema</dt>
-<dd>
-<p>App-schema mapping configuration</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Extension</th>
+<th>Datastore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>shp</td>
+<td>Shapefile</td>
+</tr>
+<tr>
+<td>properties</td>
+<td>Property file</td>
+</tr>
+<tr>
+<td>h2</td>
+<td>H2 Database</td>
+</tr>
+<tr>
+<td>appschema</td>
+<td>App-schema mapping configuration</td>
+</tr>
+</tbody>
+</table>
 <h4 id="rest_api_datastores_file_put">File PUT</h4>
 <p>A file can be PUT to a data store as a standalone or zipped archive file. Standalone files are only suitable for data stores that work with a single file such as a GML store. Data stores that work with multiple files, such as the shapefile store, must be sent as a zip archive.</p>
 <p>When uploading a standalone file, set the <code>Content-type</code> appropriately based on the file type. If you are loading a zip archive, set the <code>Content-type</code> to <code>application/zip</code>.</p>

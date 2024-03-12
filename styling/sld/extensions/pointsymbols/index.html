@@ -2629,117 +2629,209 @@
 <h3 id="shape-symbols">Shape symbols</h3>
 <p>The shape symbols set adds extra symbols that are not part of the basic set.</p>
 <ol>
-<li>To enable ensure that the WMS Settings ****Mark Factory Precedence<code>has</code>ShapeMarkFactory`` selected.</li>
+<li>
+<p>To enable ensure that the WMS Settings ****Mark Factory Precedence<code>has</code>ShapeMarkFactory`` selected.</p>
+</li>
+<li>
+<p>The shape symbols are prefixed by <code>shape://</code></p>
+<table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<ul>
+<li><strong>Name</strong></li>
+<li><strong>Description</strong></li>
+</ul>
+</li>
+<li>
+<ul>
+<li><code>shape://vertline</code></li>
+<li>A vertical line (suitable for hatch fills or to make railroad symbols)</li>
+</ul>
+</li>
+<li>
+<ul>
+<li><code>shape://horline</code></li>
+<li>A horizontal line (suitable for hatch fills)</li>
+</ul>
+</li>
+<li>
+<ul>
+<li><code>shape://slash</code></li>
+<li>A diagonal line leaning forwards like the "slash" keyboard symbol (suitable for diagonal hatches)</li>
+</ul>
+</li>
+<li>
+<ul>
+<li><code>shape://backslash</code></li>
+<li>Same as <code>shape://slash</code>, but oriented in the opposite direction</li>
+</ul>
+</li>
+<li>
+<ul>
+<li><code>shape://dot</code></li>
+<li>A very small circle with space around</li>
+</ul>
+</li>
+<li>
+<ul>
+<li><code>shape://plus</code></li>
+<li>A + symbol, without space around (suitable for cross-hatch fills)</li>
+</ul>
+</li>
+<li>
+<ul>
+<li><code>shape://times</code></li>
+<li>A "X" symbol, without space around (suitable for cross-hatch fills)</li>
+</ul>
+</li>
+<li>
+<ul>
+<li><code>shape://oarrow</code></li>
+<li>An open arrow symbol (triangle without one side, suitable for placing arrows at the end of lines)</li>
+</ul>
+</li>
+<li>
+<ul>
+<li><code>shape://carrow</code></li>
+<li>A closed arrow symbol (closed triangle, suitable for placing arrows at the end of lines)</li>
+</ul>
+</li>
+</ul>
+</li>
 </ol>
-<p>2. The shape symbols are prefixed by <code>shape://</code></p>
-<blockquote>
-<dl>
-<dt><strong>Name</strong></dt>
-<dd>
-<p><strong>Description</strong></p>
-</dd>
-<dt><code>shape://vertline</code></dt>
-<dd>
-<p>A vertical line (suitable for hatch fills or to make railroad symbols)</p>
-</dd>
-<dt><code>shape://horline</code></dt>
-<dd>
-<p>A horizontal line (suitable for hatch fills)</p>
-</dd>
-<dt><code>shape://slash</code></dt>
-<dd>
-<p>A diagonal line leaning forwards like the "slash" keyboard symbol (suitable for diagonal hatches)</p>
-</dd>
-<dt><code>shape://backslash</code></dt>
-<dd>
-<p>Same as <code>shape://slash</code>, but oriented in the opposite direction</p>
-</dd>
-<dt><code>shape://dot</code></dt>
-<dd>
-<p>A very small circle with space around</p>
-</dd>
-<dt><code>shape://plus</code></dt>
-<dd>
-<p>A + symbol, without space around (suitable for cross-hatch fills)</p>
-</dd>
-<dt><code>shape://times</code></dt>
-<dd>
-<p>A "X" symbol, without space around (suitable for cross-hatch fills)</p>
-</dd>
-<dt><code>shape://oarrow</code></dt>
-<dd>
-<p>An open arrow symbol (triangle without one side, suitable for placing arrows at the end of lines)</p>
-</dd>
-<dt><code>shape://carrow</code></dt>
-<dd>
-<p>A closed arrow symbol (closed triangle, suitable for placing arrows at the end of lines)</p>
-</dd>
-</dl>
-</blockquote>
 <h3 id="weather-symbols">Weather Symbols</h3>
 <p>The weather symbols are prefixed by the <code>extshape://</code> protocol in the SLD:</p>
 <ol>
-<li>To enable ensure that the WMS Settings ****Mark Factory Precedence<code>has</code>MeteoMarkFactory`` selected.</li>
+<li>
+<p>To enable ensure that the WMS Settings ****Mark Factory Precedence<code>has</code>MeteoMarkFactory`` selected.</p>
+</li>
 <li>
 <p>These symbols are:</p>
-<dl>
-<dt><strong>Name</strong></dt>
-<dd>
-<p><strong>Description</strong></p>
-</dd>
-</dl>
-<div class="language-text highlight"><pre><span></span><code>**Produces**
-</code></pre></div>
-<dl>
-<dt><code>extshape://triangle</code></dt>
-<dd>
-<p>cold front</p>
-</dd>
-<dt><code>extshape://emicircle</code></dt>
-<dd>
-<p>warm front</p>
-</dd>
-<dt><code>extshape://triangleemicircle</code></dt>
-<dd>
-<p>stationary front</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<ul>
+<li><strong>Name</strong></li>
+<li><strong>Description</strong></li>
+<li><strong>Produces</strong></li>
+</ul>
+</li>
+<li>
+<ul>
+<li><code>extshape://triangle</code></li>
+<li>cold front</li>
+<li><img alt="triangle" src="../images/triangle.png" /></li>
+</ul>
+</li>
+<li>
+<ul>
+<li><code>extshape://emicircle</code></li>
+<li>warm front</li>
+<li><img alt="emicircle" src="../images/emicircle.png" /></li>
+</ul>
+</li>
+<li>
+<ul>
+<li><code>extshape://triangleemicircle</code></li>
+<li>stationary front</li>
+<li><img alt="triangleemicircle" src="../images/triangleemicircle.png" /></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>You can use <code>extshape://</code> for a few additional built-in shapes:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<ul>
+<li><code>extshape://narrow</code></li>
+<li>North Arrow</li>
+</ul>
+</li>
+<li>
+<ul>
+<li><code>extshape://sarrow</code></li>
+<li>South Arrow</li>
+</ul>
+</li>
+</ul>
 </li>
 </ol>
-<p>3. You can use <code>extshape://</code> for a few additional built-in shapes:</p>
-<blockquote>
-<dl>
-<dt><code>extshape://narrow</code></dt>
-<dd>
-<p>North Arrow</p>
-</dd>
-<dt><code>extshape://sarrow</code></dt>
-<dd>
-<p>South Arrow</p>
-</dd>
-</dl>
-</blockquote>
 <p>More complex symbols like Wind Barbs can be created with the <code>windbarbs://</code> prefix.</p>
 <ol>
-<li>To enable ensure that the WMS Settings ****Mark Factory Precedence<code>has</code>WindBarbsmFactory`` selected.</li>
+<li>
+<p>To enable ensure that the WMS Settings ****Mark Factory Precedence<code>has</code>WindBarbsmFactory`` selected.</p>
+</li>
+<li>
+<p>There are some examples:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<ul>
+<li><strong>Name</strong></li>
+<li><strong>Description</strong></li>
+</ul>
+</li>
+<li>
+<ul>
+<li><code>windbarbs://default(15)[kts]</code></li>
+<li><em>15</em> wind intensity with <em>[kts]</em> unit of measure</li>
+</ul>
+</li>
+<li>
+<ul>
+<li><code>windbarbs://default(9)[m/s]?hemisphere=s</code></li>
+<li><em>9</em> wind intensity with <em>[m/s]</em> unit of measure, in the south hemisphere</li>
+</ul>
+</li>
+</ul>
+</li>
 </ol>
-<p>2. There are some examples:</p>
-<blockquote>
-<dl>
-<dt><strong>Name</strong></dt>
-<dd>
-<p><strong>Description</strong></p>
-</dd>
-<dt><code>windbarbs://default(15)[kts]</code></dt>
-<dd>
-<p><em>15</em> wind intensity with <em>[kts]</em> unit of measure</p>
-</dd>
-<dt><code>windbarbs://default(9)[m/s]?hemisphere=s</code></dt>
-<dd>
-<p><em>9</em> wind intensity with <em>[m/s]</em> unit of measure, in the south hemisphere</p>
-</dd>
-</dl>
-</blockquote>
 <h3 id="custom-wkt-shapes">Custom WKT Shapes</h3>
 <p>Custom shapes can be defined using your own Geometry, to enable use WMS Settings ****Mark Factory Precedence<code>to select</code>WKTMarkFactory<code>.  Geometry is defined using the same well-known-text format used for CQL_FILTER.  .. code-block:: xml     &lt;LineSymbolizer&gt;      &lt;Stroke&gt;        &lt;GraphicStroke&gt;          &lt;Graphic&gt;            &lt;Mark&gt;              &lt;WellKnownName&gt;wkt://MULTILINESTRING((-0.25 -0.25, -0.125 -0.25), (0.125 -0.25, 0.25 -0.25), (-0.25 0.25, -0.125 0.25), (0.125 0.25, 0.25 0.25))&lt;/WellKnownName&gt;              &lt;Fill&gt;                &lt;CssParameter name="fill"&gt;#0000ff&lt;/CssParameter&gt;              &lt;/Fill&gt;              &lt;Stroke&gt;                &lt;CssParameter name="stroke"&gt;#0000ff&lt;/CssParameter&gt;                &lt;CssParameter name="stroke-width"&gt;1&lt;/CssParameter&gt;              &lt;/Stroke&gt;            &lt;/Mark&gt;            &lt;Size&gt;6&lt;/Size&gt;          &lt;/Graphic&gt;        &lt;/GraphicStroke&gt;      &lt;/Stroke&gt;    &lt;/LineSymbolizer&gt;  Which produces double dashed line:  .. image:: images/double-dashed-line.png  You can also make use of curves when defining WKT:  .. code-block:: xml      &lt;LineSymbolizer&gt;       &lt;Stroke&gt;         &lt;GraphicStroke&gt;           &lt;Graphic&gt;             &lt;Mark&gt;               &lt;WellKnownName&gt;wkt://COMPOUNDCURVE((0 0, 0.25 0), CIRCULARSTRING(0.25 0, 0.5 0.5, 0.75 0), (0.75 0, 1 0))&lt;/WellKnownName&gt;               &lt;Fill&gt;                 &lt;CssParameter name="fill"&gt;#0000ff&lt;/CssParameter&gt;               &lt;/Fill&gt;               &lt;Stroke&gt;                 &lt;CssParameter name="stroke"&gt;#0000ff&lt;/CssParameter&gt;                 &lt;CssParameter name="stroke-width"&gt;1&lt;/CssParameter&gt;               &lt;/Stroke&gt;             &lt;/Mark&gt;             &lt;Size&gt;10&lt;/Size&gt;           &lt;/Graphic&gt;         &lt;/GraphicStroke&gt;       &lt;/Stroke&gt;     &lt;/LineSymbolizer&gt;  Producing an "emi circle" line:  .. image:: images/emicircle-line.png  Bulk TTF marks ~~~~~~~~~~~~~~  It is possible to create a mark using glyphs from any decorative or symbolic True Type Font, such as Wingdings, WebDings, or the many symbol fonts available on the internet. To enable use WMS Settings ****Mark Factory Precedence</code> to select <code>TTFMarkFactory</code>.</p>
 <p>The syntax for specifying this is:</p>

@@ -2480,55 +2480,73 @@
 <p>A <strong>LineSymbolizer</strong> styles features as <strong>lines</strong>. Lines are one-dimensional geometries that have both position and length. Each line is comprised of one or more <strong>line segments</strong>, and has either two <strong>ends</strong> or none (if it is closed).</p>
 <h2 id="syntax">Syntax</h2>
 <p>A <code>&lt;LineSymbolizer&gt;</code> contains an optional <code>&lt;Geometry&gt;</code> element, and a required <code>&lt;Stroke&gt;</code> element specifying the line symbology.</p>
-<dl>
-<dt><strong>Tag</strong></dt>
-<dd>
-<p><strong>Required?</strong></p>
-<p><strong>Description</strong></p>
-</dd>
-<dt><code>&lt;Geometry&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>Specifies the geometry to be rendered.</p>
-</dd>
-<dt><code>&lt;Stroke&gt;</code></dt>
-<dd>
-<p>Yes</p>
-<p>Specifies the styling for the line.</p>
-</dd>
-<dt><code>&lt;PerpendicularOffset&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>Specifies the perpendicular offset for the current line</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tag</strong></td>
+<td><strong>Required?</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>&lt;Geometry&gt;</code></td>
+<td>No</td>
+<td>Specifies the geometry to be rendered.</td>
+</tr>
+<tr>
+<td><code>&lt;Stroke&gt;</code></td>
+<td>Yes</td>
+<td>Specifies the styling for the line.</td>
+</tr>
+<tr>
+<td><code>&lt;PerpendicularOffset&gt;</code></td>
+<td>No</td>
+<td>Specifies the perpendicular offset for the current line</td>
+</tr>
+</tbody>
+</table>
 <h3 id="geometry">Geometry</h3>
 <p>The <code>&lt;Geometry&gt;</code> element is optional. If present, it specifies the featuretype property from which to obtain the geometry to style using the <code>PropertyName</code> element. See also <a href="../../extensions/geometry-transformations/">Geometry transformations in SLD</a> for GeoServer extensions for specifying geometry.</p>
 <p>Any kind of geometry may be styled with a <code>&lt;LineSymbolizer&gt;</code>. Point geometries are treated as lines of zero length, with a horizontal orientation. For polygonal geometries the boundary (or boundaries) are used as the lines, each line being a closed ring with no ends.</p>
 <h3 id="sld_reference_stroke">Stroke</h3>
 <p>The <code>&lt;Stroke&gt;</code> element specifies the styling of a line. There are three elements that can be included inside the <code>&lt;Stroke&gt;</code> element.</p>
-<dl>
-<dt><strong>Tag</strong></dt>
-<dd>
-<p><strong>Required?</strong></p>
-<p><strong>Description</strong></p>
-</dd>
-<dt><code>&lt;GraphicFill&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>Renders the pixels of the line with a repeated pattern.</p>
-</dd>
-<dt><code>&lt;GraphicStroke&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>Renders the line with a repeated linear graphic.</p>
-</dd>
-<dt><code>&lt;CssParameter&gt;</code></dt>
-<dd>
-<p>0..N</p>
-<p>Determines the stroke styling parameters.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tag</strong></td>
+<td><strong>Required?</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>&lt;GraphicFill&gt;</code></td>
+<td>No</td>
+<td>Renders the pixels of the line with a repeated pattern.</td>
+</tr>
+<tr>
+<td><code>&lt;GraphicStroke&gt;</code></td>
+<td>No</td>
+<td>Renders the line with a repeated linear graphic.</td>
+</tr>
+<tr>
+<td><code>&lt;CssParameter&gt;</code></td>
+<td>0..N</td>
+<td>Determines the stroke styling parameters.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="graphicfill">GraphicFill</h3>
 <p>The <code>&lt;GraphicFill&gt;</code> element specifies that the pixels of the line are to be filled with a repeating graphic image or symbol. The graphic is specified by a <code>&lt;Graphic&gt;</code> sub-element, which is described in the <code>PointSymbolizer</code> <a href="../pointsymbolizer/#sld_reference_graphic">Graphic</a> section.</p>
 <h3 id="sld_reference_linesymbolizer_graphicstroke">GraphicStroke</h3>

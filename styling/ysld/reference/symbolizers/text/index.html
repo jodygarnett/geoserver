@@ -2661,140 +2661,144 @@
 </tbody>
 </table>
 <p>The following properties are equivalent to SLD "vendor options".</p>
-<dl>
-<dt>Property</dt>
-<dd>
-<p>Required?</p>
-<p>Description</p>
-<p>Default value</p>
-</dd>
-<dt><code>x-allowOverruns</code></dt>
-<dd>
-<p>No</p>
-<p>Allows labels on lines to move slightly beyond the beginning or end of the line.</p>
-<p><code>true</code></p>
-</dd>
-<dt><code>x-autoWrap</code></dt>
-<dd>
-<p>No</p>
-<p>The number of pixels beyond which a label will be wrapped over multiple lines. Cannot use with <code>x-followLine</code>.</p>
-<p>0</p>
-</dd>
-<dt><code>x-conflictResolution</code></dt>
-<dd>
-<p>No</p>
-<p>Enables conflict resolution, meaning no two labels will be allowed to overlap. Without conflict resolution, symbolizers can overlap with other labels.</p>
-<p><code>true</code></p>
-</dd>
-<dt><code>x-followLine</code></dt>
-<dd>
-<p>No</p>
-<p>On linear geometries, the label will follow the shape of the current line, as opposed to being drawn at a tangent. Will override</p>
-<p><code>false</code></p>
-</dd>
-<dt><code>x-forceLeftToRight</code></dt>
-<dd>
-<p>No</p>
-<p>Forces labels to a readable orientation, otherwise will follow the line orientation, possibly making the label look upside-down. This setting is useful when using symbol fonts to add direction markers along a line.</p>
-<p><code>false</code></p>
-</dd>
-<dt><code>x-goodnessOfFit</code></dt>
-<dd>
-<p>No</p>
-<p>Percentage (expressed as a decimal between 0-1) of the label that must fit inside the geometry to permit the label to be drawn. Works only on polygon features.</p>
-<p>0.5</p>
-</dd>
-<dt><code>x-graphic-margin</code></dt>
-<dd>
-<p>No</p>
-<p>Number of pixels between the stretched graphic and the text. Only applies when <code>x-graphic-resize</code> is set to <code>stretch</code> or <code>proportional</code>.</p>
-<p>0</p>
-</dd>
-<dt><code>x-graphic-resize</code></dt>
-<dd>
-<p>No</p>
-<p>Allows for stretching the graphic underneath a label to fit the label size. Options are <code>none</code>, <code>stretch</code> or <code>proportional</code>. Used in conjunction with <code>x-graphic-margin</code>..</p>
-<p><code>none</code></p>
-</dd>
-<dt><code>x-group</code></dt>
-<dd>
-<p>No</p>
-<p>Geometries with identical labels will be considered a single entity to be labeled. Used to control repeated labels.</p>
-<p><code>false</code></p>
-</dd>
-<dt><code>x-labelAllGroup</code></dt>
-<dd>
-<p>No</p>
-<p>Used in conjunction with <code>x-group</code>. When <code>true</code> all items in a group are labeled. When <code>false</code>, only the largest geometry in the group is labeled. Valid for lines only.</p>
-<p><code>false</code></p>
-</dd>
-<dt><code>x-repeat</code></dt>
-<dd>
-<p>No</p>
-<p>Desired distance (in pixels) between labels drawn on a group. If zero, only one label will be drawn. Used in conjunction with <code>x-group</code>. Valid for lines only.</p>
-<p>0</p>
-</dd>
-<dt><code>x-maxAngleDelta</code></dt>
-<dd>
-<p>No</p>
-<p>Maximum allowed angle (in degrees) between two characters in a curved label. Used in conjunction with <code>x-followLine</code>. Values higher than <code>30</code> may cause loss of legibility of the label.</p>
-<p>22.5</p>
-</dd>
-<dt><code>x-maxDisplacement</code></dt>
-<dd>
-<p>No</p>
-<p>Distance (in pixels) a label can be displaced from its natural position in an attempt to eliminate conflict with other labels.</p>
-<p>0</p>
-</dd>
-<dt><code>x-minGroupDistance</code></dt>
-<dd>
-<p>No</p>
-<p>Minimum distance (in pixels) between two labels in the same label group. Used in conjunction with <code>displacement</code> or <code>repeat</code> to avoid having two labels too close to each other</p>
-<p>No minimum distance</p>
-</dd>
-<dt><code>x-partials</code></dt>
-<dd>
-<p>No</p>
-<p>Will display partial labels (truncated on the border of the display area).</p>
-<p><code>false</code></p>
-</dd>
-<dt><code>x-polygonAlign</code></dt>
-<dd>
-<p>No</p>
-<p>Overrides manual rotation to align label rotation automatically. Valid for polygons only.</p>
-<p><code>false</code></p>
-</dd>
-<dt><code>x-spaceAround</code></dt>
-<dd>
-<p>No</p>
-<p>Minimum distance (in pixels) between two labels. A negative value specifies the maximum overlap between two labels.</p>
-<p>0</p>
-</dd>
-<dt><code>x-underlineText</code></dt>
-<dd>
-<p>No</p>
-<p>Instruct the renderer to underline labels.</p>
-<p><code>false</code></p>
-</dd>
-<dt><code>x-strikethroughText</code></dt>
-<dd>
-<p>No</p>
-<p>Instruct the renderer to strikethrough labels.</p>
-<p><code>false</code></p>
-</dd>
-<dt><code>x-charSpacing</code></dt>
-<dd>
-<p>No</p>
-<p>The option controls the amount of space between characters, a positive value increases it, a negative value shrinks it (and will eventually make characters overlap). The value is specified in pixels.</p>
-<p>0</p>
-</dd>
-<dt><code>x-wordSpacing</code></dt>
-<dd>
-<p>No</p>
-<p>The option controls the amount of space between words, for this option only positive values (or zero) are accepted. The value is specified in pixels.</p>
-<p>0</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Required?</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x-allowOverruns</code></td>
+<td>No</td>
+<td>Allows labels on lines to move slightly beyond the beginning or end of the line.</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>x-autoWrap</code></td>
+<td>No</td>
+<td>The number of pixels beyond which a label will be wrapped over multiple lines. Cannot use with <code>x-followLine</code>.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>x-conflictResolution</code></td>
+<td>No</td>
+<td>Enables conflict resolution, meaning no two labels will be allowed to overlap. Without conflict resolution, symbolizers can overlap with other labels.</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>x-followLine</code></td>
+<td>No</td>
+<td>On linear geometries, the label will follow the shape of the current line, as opposed to being drawn at a tangent. Will override</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>x-forceLeftToRight</code></td>
+<td>No</td>
+<td>Forces labels to a readable orientation, otherwise will follow the line orientation, possibly making the label look upside-down. This setting is useful when using symbol fonts to add direction markers along a line.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>x-goodnessOfFit</code></td>
+<td>No</td>
+<td>Percentage (expressed as a decimal between 0-1) of the label that must fit inside the geometry to permit the label to be drawn. Works only on polygon features.</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td><code>x-graphic-margin</code></td>
+<td>No</td>
+<td>Number of pixels between the stretched graphic and the text. Only applies when <code>x-graphic-resize</code> is set to <code>stretch</code> or <code>proportional</code>.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>x-graphic-resize</code></td>
+<td>No</td>
+<td>Allows for stretching the graphic underneath a label to fit the label size. Options are <code>none</code>, <code>stretch</code> or <code>proportional</code>. Used in conjunction with <code>x-graphic-margin</code>..</td>
+<td><code>none</code></td>
+</tr>
+<tr>
+<td><code>x-group</code></td>
+<td>No</td>
+<td>Geometries with identical labels will be considered a single entity to be labeled. Used to control repeated labels.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>x-labelAllGroup</code></td>
+<td>No</td>
+<td>Used in conjunction with <code>x-group</code>. When <code>true</code> all items in a group are labeled. When <code>false</code>, only the largest geometry in the group is labeled. Valid for lines only.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>x-repeat</code></td>
+<td>No</td>
+<td>Desired distance (in pixels) between labels drawn on a group. If zero, only one label will be drawn. Used in conjunction with <code>x-group</code>. Valid for lines only.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>x-maxAngleDelta</code></td>
+<td>No</td>
+<td>Maximum allowed angle (in degrees) between two characters in a curved label. Used in conjunction with <code>x-followLine</code>. Values higher than <code>30</code> may cause loss of legibility of the label.</td>
+<td>22.5</td>
+</tr>
+<tr>
+<td><code>x-maxDisplacement</code></td>
+<td>No</td>
+<td>Distance (in pixels) a label can be displaced from its natural position in an attempt to eliminate conflict with other labels.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>x-minGroupDistance</code></td>
+<td>No</td>
+<td>Minimum distance (in pixels) between two labels in the same label group. Used in conjunction with <code>displacement</code> or <code>repeat</code> to avoid having two labels too close to each other</td>
+<td>No minimum distance</td>
+</tr>
+<tr>
+<td><code>x-partials</code></td>
+<td>No</td>
+<td>Will display partial labels (truncated on the border of the display area).</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>x-polygonAlign</code></td>
+<td>No</td>
+<td>Overrides manual rotation to align label rotation automatically. Valid for polygons only.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>x-spaceAround</code></td>
+<td>No</td>
+<td>Minimum distance (in pixels) between two labels. A negative value specifies the maximum overlap between two labels.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>x-underlineText</code></td>
+<td>No</td>
+<td>Instruct the renderer to underline labels.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>x-strikethroughText</code></td>
+<td>No</td>
+<td>Instruct the renderer to strikethrough labels.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>x-charSpacing</code></td>
+<td>No</td>
+<td>The option controls the amount of space between characters, a positive value increases it, a negative value shrinks it (and will eventually make characters overlap). The value is specified in pixels.</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>x-wordSpacing</code></td>
+<td>No</td>
+<td>The option controls the amount of space between words, for this option only positive values (or zero) are accepted. The value is specified in pixels.</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
 <p>Additional "vendor options" properties for <a href="../../../../sld/extensions/composite-blend/">Color compositing and color blending</a>:</p>
 <table>
 <thead>

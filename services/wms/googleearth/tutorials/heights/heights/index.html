@@ -2546,24 +2546,32 @@ Expression PERSONS.value is not numerical
 <div class="language-text highlight"><pre><span></span><code>http://localhost:8080/geoserver/wms/reflect?layers=topp:states&amp;format=application/vnd.google-earth.kml%2Bxml&amp;format_options=extrude:false
 </code></pre></div>
 <p>We also have a few options for how Google Earth interprets the height field. By default, the height is interpreted as relative to the ground, but we can also set the heights relative to sea level, or to be ignored (useful for reverting to the 'flat' look without erasing your template). This is controlled with a format option named altitudeMode, whose values are summarized below.</p>
-<dl>
-<dt><strong>altitudeMode</strong></dt>
-<dd>
-<p><strong>Purpose</strong></p>
-</dd>
-<dt>altitudeMode</dt>
-<dd>
-<p>Interpret height as relative to ground level</p>
-</dd>
-<dt>absolute</dt>
-<dd>
-<p>Interpret height as relative to sea level</p>
-</dd>
-<dt>clampToGround</dt>
-<dd>
-<p>Ignore height entirely</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>altitudeMode</strong></td>
+<td><strong>Purpose</strong></td>
+</tr>
+<tr>
+<td>altitudeMode</td>
+<td>Interpret height as relative to ground level</td>
+</tr>
+<tr>
+<td>absolute</td>
+<td>Interpret height as relative to sea level</td>
+</tr>
+<tr>
+<td>clampToGround</td>
+<td>Ignore height entirely</td>
+</tr>
+</tbody>
+</table>
 
 
 

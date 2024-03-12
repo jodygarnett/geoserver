@@ -2418,20 +2418,38 @@
 </li>
 <li>
 <p>Create a new style <code>polygon_example</code>.</p>
-<dl>
-<dt>Name:</dt>
-<dd>
-<p><code>polygon_example</code></p>
-</dd>
-<dt>Workspace:</dt>
-<dd>
-<p><code>No workspace</code></p>
-</dd>
-<dt>Format:</dt>
-<dd>
-<p><code>CSS</code></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<ul>
+<li>Name:</li>
+<li><code>polygon_example</code></li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Workspace:</li>
+<li><code>No workspace</code></li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Format:</li>
+<li><code>CSS</code></li>
+</ul>
+</li>
+</ul>
 <p><img alt="image" src="../../style/img/polygon_02_create.png" /></p>
 </li>
 <li>
@@ -2741,13 +2759,15 @@
 <p>We can adjust how the label is drawn at the polygon centroid.</p>
 <p><img alt="image" src="../../style/img/LabelAnchorPoint_CSS.svg" /></p>
 <p>The property <strong>label-anchor</strong> provides two numbers expressing how a label is aligned with respect to the centroid. The first value controls the horizontal alignment, while the second value controls the vertical alignment. Alignment is expressed between 0.0 and 1.0 as shown in the following table.</p>
-<hr />
-<div class="language-text highlight"><pre><span></span><code>         Left      Center    Right
-</code></pre></div>
-<p>Top        0.0 1.0   0.5 1.0   1.0 1.0</p>
-<p>Middle     0.0 0.5   0.5 0.5   1.0 0.5</p>
-<p>Bottom     0.0 0.0   0.5 0.0   1.0 0.0</p>
-<hr />
+<p>+----------+---------+---------+---------+
+|          | Left    | Center  | Right   |
++----------+---------+---------+---------+
+| Top      | 0.0 1.0 | 0.5 1.0 | 1.0 1.0 |
++----------+---------+---------+---------+
+| Middle   | 0.0 0.5 | 0.5 0.5 | 1.0 0.5 |
++----------+---------+---------+---------+
+| Bottom   | 0.0 0.0 | 0.5 0.0 | 1.0 0.0 |
++----------+---------+---------+---------+</p>
 <p>Adjusting the <strong>label-anchor</strong> is the recommended approach to positioning your labels.</p>
 </li>
 <li>

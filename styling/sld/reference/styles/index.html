@@ -2325,38 +2325,47 @@
 <h2 id="userstyle">UserStyle</h2>
 <p>The <strong>UserStyle</strong> element defines styling for a layer.</p>
 <p>The <code>&lt;UserStyle&gt;</code> element contains the following elements:</p>
-<dl>
-<dt><strong>Tag</strong></dt>
-<dd>
-<p><strong>Required?</strong></p>
-<p><strong>Description</strong></p>
-</dd>
-<dt><code>&lt;Name&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>The name of the style, used to reference it externally. (Ignored for catalog styles.)</p>
-</dd>
-<dt><code>&lt;Title&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>The title of the style.</p>
-</dd>
-<dt><code>&lt;Abstract&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>The description for the style.</p>
-</dd>
-<dt><code>&lt;IsDefault&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>Whether the style is the default one for a named layer. Used in SLD <strong>Library Mode</strong>. Values are <code>1</code> or <code>0</code> (default).</p>
-</dd>
-<dt><code>&lt;FeatureTypeStyle&gt;</code></dt>
-<dd>
-<p>1..N</p>
-<p>Defines the symbology for rendering a single feature type.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tag</strong></td>
+<td><strong>Required?</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>&lt;Name&gt;</code></td>
+<td>No</td>
+<td>The name of the style, used to reference it externally. (Ignored for catalog styles.)</td>
+</tr>
+<tr>
+<td><code>&lt;Title&gt;</code></td>
+<td>No</td>
+<td>The title of the style.</td>
+</tr>
+<tr>
+<td><code>&lt;Abstract&gt;</code></td>
+<td>No</td>
+<td>The description for the style.</td>
+</tr>
+<tr>
+<td><code>&lt;IsDefault&gt;</code></td>
+<td>No</td>
+<td>Whether the style is the default one for a named layer. Used in SLD <strong>Library Mode</strong>. Values are <code>1</code> or <code>0</code> (default).</td>
+</tr>
+<tr>
+<td><code>&lt;FeatureTypeStyle&gt;</code></td>
+<td>1..N</td>
+<td>Defines the symbology for rendering a single feature type.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="featuretypestyle">FeatureTypeStyle</h2>
 <p>The <strong>FeatureTypeStyle</strong> element specifies the styling that is applied to a single feature type of a layer. It contains a list of rules which determine the symbology to be applied to each feature of a layer.</p>
 <p>The <code>&lt;FeatureTypeStyle&gt;</code> element contains the following elements:</p>

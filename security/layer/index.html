@@ -2018,14 +2018,37 @@ workspace.workspaceLayerGroup.permission=role[,role2,...]
 <li>Layer rules get precedence over all layer group rules when it comes to allow access to layers.</li>
 </ul>
 <p>The following tables summarizes the layer group behavior depending on whether they are used in a public or secured environment:</p>
-<hr />
-<p><strong>Mode</strong>               <strong>Public behavior</strong>                                                                                                                                <strong>Restricted behavior</strong></p>
-<hr />
-<p><strong>Single</strong>             Looks like a stand-alone layer, can be requested directly and acts as an alias for a layer list. Layers are also visible at root level             Does not control layer access at all</p>
-<p><strong>Opaque container</strong>   Looks like a stand-alone layer, can be requested directly and acts as an alias for a layer list. Layers in it are not available for WMS requests   Same as public behavior</p>
-<p><strong>Named tree</strong>         Contained layers are visible as children in the capabilities document, the name can be used as a shortcut to request all layers.                   Restricting access to the group restricts also the contained layers, unless another "tree" group allows access to the same layer</p>
-<p><strong>Container tree</strong>     Same as "named tree", but does not have a name published in the capabilities document and thus cannot be requested directly                      Same as "named tree"</p>
-<hr />
+<table>
+<thead>
+<tr>
+<th><strong>Mode</strong></th>
+<th><strong>Public behavior</strong></th>
+<th><strong>Restricted behavior</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Single</strong></td>
+<td>Looks like a stand-alone layer, can be requested directly and acts as an alias for a layer list. Layers are also visible at root level</td>
+<td>Does not control layer access at all</td>
+</tr>
+<tr>
+<td><strong>Opaque container</strong></td>
+<td>Looks like a stand-alone layer, can be requested directly and acts as an alias for a layer list. Layers in it are not available for WMS requests</td>
+<td>Same as public behavior</td>
+</tr>
+<tr>
+<td><strong>Named tree</strong></td>
+<td>Contained layers are visible as children in the capabilities document, the name can be used as a shortcut to request all layers.</td>
+<td>Restricting access to the group restricts also the contained layers, unless another "tree" group allows access to the same layer</td>
+</tr>
+<tr>
+<td><strong>Container tree</strong></td>
+<td>Same as "named tree", but does not have a name published in the capabilities document and thus cannot be requested directly</td>
+<td>Same as "named tree"</td>
+</tr>
+</tbody>
+</table>
 <h2 id="catalog-mode">Catalog Mode</h2>
 <p>The <code>layers.properties</code> file may contain a further directive that specifies how GeoServer will advertise secured layers and behave when a secured layer is accessed without the necessary privileges. The parameter is <code>mode</code> and is commonly referred to as the "catalog mode".</p>
 <p>The syntax is:</p>

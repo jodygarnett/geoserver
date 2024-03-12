@@ -2517,58 +2517,67 @@
 <p>Labelling is a complex operation, and effective labelling is crucial to obtaining legible and visually pleasing cartographic output. For this reason SLD provides many options to control label placement. To improve quality even more GeoServer provides additional options and parameters. The usage of the standard and extended options are described in greater detail in the following section on <a href="../labeling/">Labeling</a>.</p>
 <h2 id="syntax">Syntax</h2>
 <p>A <code>&lt;TextSymbolizer&gt;</code> contains the following elements:</p>
-<dl>
-<dt><strong>Tag</strong></dt>
-<dd>
-<p><strong>Required?</strong></p>
-<p><strong>Description</strong></p>
-</dd>
-<dt><code>&lt;Geometry&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>The geometry to be labelled.</p>
-</dd>
-<dt><code>&lt;Label&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>The text content for the label.</p>
-</dd>
-<dt><code>&lt;Font&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>The font information for the label.</p>
-</dd>
-<dt><code>&lt;LabelPlacement&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>Sets the position of the label relative to its associated geometry.</p>
-</dd>
-<dt><code>&lt;Halo&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>Creates a colored background around the label text, for improved legibility.</p>
-</dd>
-<dt><code>&lt;Fill&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>The fill style of the label text.</p>
-</dd>
-<dt><code>&lt;Graphic&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>A graphic to be displayed behind the label text. See <a href="../pointsymbolizer/#sld_reference_graphic">Graphic</a> for content syntax.</p>
-</dd>
-<dt><code>&lt;Priority&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>The priority of the label during conflict resolution. Content may contains <a href="../pointsymbolizer/#sld_reference_parameter_expressions">expressions</a>. See also <a href="../labeling/#labeling_priority">Priority Labeling</a>.</p>
-</dd>
-<dt><code>&lt;VendorOption&gt;</code></dt>
-<dd>
-<p>0..N</p>
-<p>A GeoServer-specific option. See <a href="../labeling/">Labeling</a> for descriptions of the available options. Any number of options may be specified.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tag</strong></td>
+<td><strong>Required?</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>&lt;Geometry&gt;</code></td>
+<td>No</td>
+<td>The geometry to be labelled.</td>
+</tr>
+<tr>
+<td><code>&lt;Label&gt;</code></td>
+<td>No</td>
+<td>The text content for the label.</td>
+</tr>
+<tr>
+<td><code>&lt;Font&gt;</code></td>
+<td>No</td>
+<td>The font information for the label.</td>
+</tr>
+<tr>
+<td><code>&lt;LabelPlacement&gt;</code></td>
+<td>No</td>
+<td>Sets the position of the label relative to its associated geometry.</td>
+</tr>
+<tr>
+<td><code>&lt;Halo&gt;</code></td>
+<td>No</td>
+<td>Creates a colored background around the label text, for improved legibility.</td>
+</tr>
+<tr>
+<td><code>&lt;Fill&gt;</code></td>
+<td>No</td>
+<td>The fill style of the label text.</td>
+</tr>
+<tr>
+<td><code>&lt;Graphic&gt;</code></td>
+<td>No</td>
+<td>A graphic to be displayed behind the label text. See <a href="../pointsymbolizer/#sld_reference_graphic">Graphic</a> for content syntax.</td>
+</tr>
+<tr>
+<td><code>&lt;Priority&gt;</code></td>
+<td>No</td>
+<td>The priority of the label during conflict resolution. Content may contains <a href="../pointsymbolizer/#sld_reference_parameter_expressions">expressions</a>. See also <a href="../labeling/#labeling_priority">Priority Labeling</a>.</td>
+</tr>
+<tr>
+<td><code>&lt;VendorOption&gt;</code></td>
+<td>0..N</td>
+<td>A GeoServer-specific option. See <a href="../labeling/">Labeling</a> for descriptions of the available options. Any number of options may be specified.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="geometry">Geometry</h3>
 <p>The <code>&lt;Geometry&gt;</code> element is optional. If present, it specifies the featuretype property from which to obtain the geometry to label, using a <code>&lt;PropertyName&gt;</code> element. See also <a href="../../extensions/geometry-transformations/">Geometry transformations in SLD</a> for GeoServer extensions for specifying geometry.</p>
 <p>Any kind of geometry may be labelled with a <code>&lt;TextSymbolizer&gt;</code>. For non-point geometries, a representative point is used (such as the centroid of a line or polygon).</p>

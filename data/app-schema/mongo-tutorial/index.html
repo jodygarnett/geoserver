@@ -2491,33 +2491,42 @@
 <p>Both parameters can also be specified via the REST API, see <a href="../../../rest/appschema/">Cleaning schemas on internal MongoDB stores</a> for more details.</p>
 <h3 id="nested-elements">Nested elements</h3>
 <p>MongoDB objects may contain nested elements and nested collections. The following three functions make possible to select nested elements and link nested collections using a JSON path:</p>
-<dl>
-<dt><strong>Function</strong></dt>
-<dd>
-<p><strong>Example</strong></p>
-<p><strong>Description</strong></p>
-</dd>
-<dt>jsonSelect</dt>
-<dd>
-<p>jsonSelect('contact.mail')</p>
-<p>Used to retrieve the value for the mapping from a MongoDB object.</p>
-</dd>
-<dt>collectionLink</dt>
-<dd>
-<p>collectionLink('measurements.values')</p>
-<p>Used when chaining entities with a nested collection.</p>
-</dd>
-<dt>collectionId</dt>
-<dd>
-<p>collectionId()</p>
-<p>Instructs the mapper to generate a ID for the nested collection.</p>
-</dd>
-<dt>nestedCollectionLink</dt>
-<dd>
-<p>nestedCollectionLink()</p>
-<p>Used on the nested collection to create a link with the parent feature.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Function</strong></td>
+<td><strong>Example</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td>jsonSelect</td>
+<td>jsonSelect('contact.mail')</td>
+<td>Used to retrieve the value for the mapping from a MongoDB object.</td>
+</tr>
+<tr>
+<td>collectionLink</td>
+<td>collectionLink('measurements.values')</td>
+<td>Used when chaining entities with a nested collection.</td>
+</tr>
+<tr>
+<td>collectionId</td>
+<td>collectionId()</td>
+<td>Instructs the mapper to generate a ID for the nested collection.</td>
+</tr>
+<tr>
+<td>nestedCollectionLink</td>
+<td>nestedCollectionLink()</td>
+<td>Used on the nested collection to create a link with the parent feature.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="mappings-file-example">Mappings file example</h3>
 <p>A station data is composed of some meta-information about the station and a list of measurements. Each measurement as some meta-information and contains a list of values. The mappings will contain three top entities: the station, the measurements and the values.</p>
 <p>Follows a the complete mappings file:</p>

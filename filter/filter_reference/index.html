@@ -1982,28 +1982,37 @@
 </table>
 <h4 id="propertyisbetweeen-operator">PropertyIsBetweeen operator</h4>
 <p>The <code>&lt;PropertyIsBetween&gt;</code> operator tests whether an expression value lies within a range given by a lower and upper bound (inclusive). It contains the elements:</p>
-<dl>
-<dt><strong>Element</strong></dt>
-<dd>
-<p><strong>Required?</strong></p>
-<p><strong>Description</strong></p>
-</dd>
-<dt><a href="./#filter_expression">Expression</a></dt>
-<dd>
-<p>Yes</p>
-<p>The value to test</p>
-</dd>
-<dt><code>&lt;LowerBoundary&gt;</code></dt>
-<dd>
-<p>Yes</p>
-<p>Contains an <a href="./#filter_expression">Expression</a> giving the lower bound of the range</p>
-</dd>
-<dt><code>&lt;UpperBoundary&gt;</code></dt>
-<dd>
-<p>Yes</p>
-<p>Contains an <a href="./#filter_expression">Expression</a> giving the upper bound of the range</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Element</strong></td>
+<td><strong>Required?</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><a href="./#filter_expression">Expression</a></td>
+<td>Yes</td>
+<td>The value to test</td>
+</tr>
+<tr>
+<td><code>&lt;LowerBoundary&gt;</code></td>
+<td>Yes</td>
+<td>Contains an <a href="./#filter_expression">Expression</a> giving the lower bound of the range</td>
+</tr>
+<tr>
+<td><code>&lt;UpperBoundary&gt;</code></td>
+<td>Yes</td>
+<td>Contains an <a href="./#filter_expression">Expression</a> giving the upper bound of the range</td>
+</tr>
+</tbody>
+</table>
 <h3 id="spatial-operators">Spatial operators</h3>
 <p>Spatial operators are used to specify conditions on the geometric attributes of a feature. The following spatial operators are available:</p>
 <h4 id="topological-operators">Topological operators</h4>
@@ -2056,47 +2065,65 @@
 </ul>
 </blockquote>
 <p>They contain the elements:</p>
-<dl>
-<dt><strong>Element</strong></dt>
-<dd>
-<p><strong>Required?</strong></p>
-<p><strong>Description</strong></p>
-</dd>
-<dt><code>&lt;PropertyName&gt;</code></dt>
-<dd>
-<p>Yes</p>
-<p>Contains a string specifying the name of the property to be tested. If omitted, the <em>default geometry attribute</em> is assumed.</p>
-</dd>
-<dt><em>GML Geometry</em></dt>
-<dd>
-<p>Yes</p>
-<p>A literal value specifying a geometry to compute the distance to. This may be either a geometry or an envelope in GML 3 format</p>
-</dd>
-<dt><code>&lt;Distance&gt;</code></dt>
-<dd>
-<p>Yes</p>
-<p>Contains the numeric value for the distance tolerance. The element may include an optional <code>units</code> attribute.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Element</strong></td>
+<td><strong>Required?</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>&lt;PropertyName&gt;</code></td>
+<td>Yes</td>
+<td>Contains a string specifying the name of the property to be tested. If omitted, the <em>default geometry attribute</em> is assumed.</td>
+</tr>
+<tr>
+<td><em>GML Geometry</em></td>
+<td>Yes</td>
+<td>A literal value specifying a geometry to compute the distance to. This may be either a geometry or an envelope in GML 3 format</td>
+</tr>
+<tr>
+<td><code>&lt;Distance&gt;</code></td>
+<td>Yes</td>
+<td>Contains the numeric value for the distance tolerance. The element may include an optional <code>units</code> attribute.</td>
+</tr>
+</tbody>
+</table>
 <h4 id="bounding-box-operator">Bounding Box operator</h4>
 <p>The <code>&lt;BBOX&gt;</code> operator tests whether a geometry-valued property intersects a fixed bounding box. It contains the elements:</p>
-<dl>
-<dt><strong>Element</strong></dt>
-<dd>
-<p><strong>Required?</strong></p>
-<p><strong>Description</strong></p>
-</dd>
-<dt><code>&lt;PropertyName&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>Contains a string specifying the name of the property to be tested. If omitted, the <em>default geometry attribute</em> is assumed.</p>
-</dd>
-<dt><code>&lt;gml:Box&gt;</code></dt>
-<dd>
-<p>Yes</p>
-<p>A GML Box literal value specifying the bounding box to test against</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Element</strong></td>
+<td><strong>Required?</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>&lt;PropertyName&gt;</code></td>
+<td>No</td>
+<td>Contains a string specifying the name of the property to be tested. If omitted, the <em>default geometry attribute</em> is assumed.</td>
+</tr>
+<tr>
+<td><code>&lt;gml:Box&gt;</code></td>
+<td>Yes</td>
+<td>A GML Box literal value specifying the bounding box to test against</td>
+</tr>
+</tbody>
+</table>
 <h4 id="examples">Examples</h4>
 <ul>
 <li>This filter selects features with a geometry that intersects the point (1,1).</li>

@@ -3121,36 +3121,44 @@
 <h2 id="requests">Requests</h2>
 <h3 id="geofencerulecacheinfo"><code>/geofence/ruleCache/info</code></h3>
 <p>Retrieve information about the geofence cache status.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Parameters</p>
-<p>Response</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Retrieve information about the geofence cache status. Per cache (rules, admin rules and users) we retrieve the cache size, hits, misses, load successes, load failures, load times and evictions.</p>
-<hr />
-<p>200 OK. Text Format.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Parameters</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Retrieve information about the geofence cache status. Per cache (rules, admin rules and users) we retrieve the cache size, hits, misses, load successes, load failures, load times and evictions.</td>
+<td>---</td>
+<td>200 OK. Text Format.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="geofencerulecacheinvalidate"><code>/geofence/ruleCache/invalidate</code></h3>
 <p>Invalidate the geofence cache.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Parameters</p>
-<p>Response</p>
-</dd>
-<dt>PUT</dt>
-<dd>
-<p>Invalidate (clear) the geofence cache</p>
-<hr />
-<p>200 OK.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Parameters</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PUT</td>
+<td>Invalidate (clear) the geofence cache</td>
+<td>---</td>
+<td>200 OK.</td>
+</tr>
+</tbody>
+</table>
 
 
 

@@ -4240,48 +4240,52 @@
 <li>Creation of a layer configuration can be done either by post-ing to <code>/oseo/collection/{COLLECTION}/layers</code> or by put-int to <code>/oseo/collection/{COLLECTION}/layers/{layer}</code>.</li>
 </ul>
 <p>The layer configuration fields are:</p>
-<dl>
-<dt>Attribute</dt>
-<dd>
-<p>Description</p>
-</dd>
-<dt>workspace</dt>
-<dd>
-<p>The workspace that will contain the store and layer to be published</p>
-</dd>
-<dt>layer</dt>
-<dd>
-<p>The name of the layer that will be created</p>
-</dd>
-<dt>separateBands</dt>
-<dd>
-<p>A boolean value, true if the underlying granule table has the "band" column populated with values, meaning the product bands are split among different files, false if a single product is stored in a single file</p>
-</dd>
-<dt>heterogeneousCRS</dt>
-<dd>
-<p>A boolean value, indicating if the products in the collection share the same CRS (false) or are expressed in different CRSses (true)</p>
-</dd>
-<dt>timeRanges</dt>
-<dd>
-<p>A boolean value, indicating if the products are associated to a single time (false) or have have a time range of validity (true)</p>
-</dd>
-<dt>bands</dt>
-<dd>
-<p>The list of bands used in this layer (to be specified only if "separateBands" is used)</p>
-</dd>
-<dt>browseBands</dt>
-<dd>
-<p>An array of 1 or 3 band names used to create the default display for the layer</p>
-</dd>
-<dt>mosaicCRS</dt>
-<dd>
-<p>The identifier of the CRS used by the mosaic (must match the granules table one)</p>
-</dd>
-<dt>defaultLayer</dt>
-<dd>
-<p>A flag indicating if the layer is considered the default one for the collection (thus also appearing at <code>/oseo/collection/{COLLECTION}/layer</code></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>workspace</td>
+<td>The workspace that will contain the store and layer to be published</td>
+</tr>
+<tr>
+<td>layer</td>
+<td>The name of the layer that will be created</td>
+</tr>
+<tr>
+<td>separateBands</td>
+<td>A boolean value, true if the underlying granule table has the "band" column populated with values, meaning the product bands are split among different files, false if a single product is stored in a single file</td>
+</tr>
+<tr>
+<td>heterogeneousCRS</td>
+<td>A boolean value, indicating if the products in the collection share the same CRS (false) or are expressed in different CRSses (true)</td>
+</tr>
+<tr>
+<td>timeRanges</td>
+<td>A boolean value, indicating if the products are associated to a single time (false) or have have a time range of validity (true)</td>
+</tr>
+<tr>
+<td>bands</td>
+<td>The list of bands used in this layer (to be specified only if "separateBands" is used)</td>
+</tr>
+<tr>
+<td>browseBands</td>
+<td>An array of 1 or 3 band names used to create the default display for the layer</td>
+</tr>
+<tr>
+<td>mosaicCRS</td>
+<td>The identifier of the CRS used by the mosaic (must match the granules table one)</td>
+</tr>
+<tr>
+<td>defaultLayer</td>
+<td>A flag indicating if the layer is considered the default one for the collection (thus also appearing at <code>/oseo/collection/{COLLECTION}/layer</code></td>
+</tr>
+</tbody>
+</table>
 <p>The layer configuration specification will have different contents depending on the collection structure:</p>
 <ul>
 <li>

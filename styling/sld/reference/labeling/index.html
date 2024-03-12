@@ -3169,24 +3169,32 @@ New York    |   8,107,916
 <p>GeoServer normally tries to place labels horizontally within a polygon, and gives up if the label position is busy or if the label does not fit enough in the polygon. This option allows GeoServer to try alternate rotations for the labels.</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;polygonAlign&quot;</span><span class="nt">&gt;</span>mbr<span class="nt">&lt;/VendorOption&gt;</span>
 </span></code></pre></div>
-<dl>
-<dt><strong>Option</strong></dt>
-<dd>
-<p><strong>Description</strong></p>
-</dd>
-<dt><code>manual</code></dt>
-<dd>
-<p>The default value. Only a rotation manually specified in the <code>&lt;Rotation&gt;</code> tag will be used</p>
-</dd>
-<dt><code>ortho</code></dt>
-<dd>
-<p>If the label does not fit horizontally and the polygon is taller than wider then vertical alignment will also be tried</p>
-</dd>
-<dt><code>mbr</code></dt>
-<dd>
-<p>If the label does not fit horizontally the minimum bounding rectangle will be computed and a label aligned to it will be tried out as well</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Option</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>manual</code></td>
+<td>The default value. Only a rotation manually specified in the <code>&lt;Rotation&gt;</code> tag will be used</td>
+</tr>
+<tr>
+<td><code>ortho</code></td>
+<td>If the label does not fit horizontally and the polygon is taller than wider then vertical alignment will also be tried</td>
+</tr>
+<tr>
+<td><code>mbr</code></td>
+<td>If the label does not fit horizontally the minimum bounding rectangle will be computed and a label aligned to it will be tried out as well</td>
+</tr>
+</tbody>
+</table>
 <h3 id="labeling_graphic_resize">graphic-resize</h3>
 <p>When a <code>&lt;Graphic&gt;</code> is specified for a label by default it is displayed at its native size and aspect ratio. The <code>graphic-resize</code> option instructs the renderer to magnify or stretch the graphic to fully contain the text of the label. If this option is used the <code>graphic-margin</code> option may also be specified.</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nt">&lt;VendorOption</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;graphic-resize&quot;</span><span class="nt">&gt;</span>stretch<span class="nt">&lt;/VendorOption&gt;</span>

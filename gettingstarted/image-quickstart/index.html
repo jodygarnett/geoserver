@@ -1957,16 +1957,32 @@
 </li>
 <li>
 <p>You will be prompted to enter a workspace <strong>Name</strong> and <strong>Namespace URI</strong>.</p>
-<dl>
-<dt>Name:</dt>
-<dd>
-<p><code>tutorial</code></p>
-</dd>
-<dt>Namespace URI</dt>
-<dd>
-<p><code>http://localhost:8080/geoserver/tutorial</code></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<ul>
+<li>Name:</li>
+<li><code>tutorial</code></li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Namespace URI</li>
+<li><code>http://localhost:8080/geoserver/tutorial</code></li>
+</ul>
+</li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>A workspace name is an identifier describing your project. It must not exceed ten characters or contain spaces.</p>
@@ -2005,20 +2021,38 @@
 </li>
 <li>
 <p>Begin by configuring the <strong>Basic Store Info</strong>.</p>
-<dl>
-<dt>workspace</dt>
-<dd>
-<p><code>tutorial</code></p>
-</dd>
-<dt>Data Source Name</dt>
-<dd>
-<p><code>ShadedRelief</code></p>
-</dd>
-<dt>Description</dt>
-<dd>
-<p><code>Grayscale shaded relief of land areas.</code></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<ul>
+<li>workspace</li>
+<li><code>tutorial</code></li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Data Source Name</li>
+<li><code>ShadedRelief</code></li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Description</li>
+<li><code>Grayscale shaded relief of land areas.</code></li>
+</ul>
+</li>
+</ul>
 <p>This information is internal to GeoServer and is not used as part of the web service protocols. We recommend keeping the <strong>Data Source Name</strong> simple as they will be used to form folders in the data directory (so keep any operating system restrictions on character use in mind).</p>
 <p><img alt="" src="images/layer_basic.png" />
 <em>Basic Store info</em></p>
@@ -2031,12 +2065,26 @@
 </li>
 <li>
 <p>The <strong>Connection Parameters</strong> for our geopackage are:</p>
-<dl>
-<dt>database</dt>
-<dd>
-<p><code>file:data/ne/SR_50M.tif</code></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<ul>
+<li>database</li>
+<li><code>file:data/ne/SR_50M.tif</code></li>
+</ul>
+</li>
+</ul>
 <p>The use of <strong>read_only</strong> above indicates that we will not be writing to this GeoPackage, allowing GeoServer to avoid managing write locks when accessing this content for greater performance.</p>
 <p><img alt="" src="images/connection_params.png" />
 <em>Connection Parameters</em></p>
@@ -2067,20 +2115,38 @@
 </li>
 <li>
 <p>Locate <strong>Basic Resource Info</strong> and define the layer:</p>
-<dl>
-<dt>Name</dt>
-<dd>
-<p><code>shaded</code></p>
-</dd>
-<dt>Title</dt>
-<dd>
-<p><code>Shaded Relief</code></p>
-</dd>
-<dt>Abstract</dt>
-<dd>
-<p><code>Grayscale shaded relief of land areas.</code></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<ul>
+<li>Name</li>
+<li><code>shaded</code></li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Title</li>
+<li><code>Shaded Relief</code></li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Abstract</li>
+<li><code>Grayscale shaded relief of land areas.</code></li>
+</ul>
+</li>
+</ul>
 <p>The naming of a layer is important, and while GeoServer does not offer restrictions many of the individual protocols will only work with very simple names.</p>
 <p><img alt="" src="images/layer_basic.png" />
 <em>Basic Resource Info</em></p>
@@ -2091,20 +2157,38 @@
 <p class="admonition-title">Note</p>
 <p>In this case select <code>Force declared</code> to prefer the GeoServer internal EPSG database definition of WGS84 over the <strong><code>prj</code></strong> file provided alongside the same image.</p>
 </div>
-<dl>
-<dt>Native SRS</dt>
-<dd>
-<p><code>EPSG:4326</code></p>
-</dd>
-<dt>Declaired SRS</dt>
-<dd>
-<p><code>EPSG:4326</code></p>
-</dd>
-<dt>SRS Handling</dt>
-<dd>
-<p><code>Force declared</code></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<ul>
+<li>Native SRS</li>
+<li><code>EPSG:4326</code></li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Declaired SRS</li>
+<li><code>EPSG:4326</code></li>
+</ul>
+</li>
+<li>
+<ul>
+<li>SRS Handling</li>
+<li><code>Force declared</code></li>
+</ul>
+</li>
+</ul>
 <p><img alt="" src="images/layer_crs.png" />
 <em>Coordinate Reference Systems</em></p>
 </li>

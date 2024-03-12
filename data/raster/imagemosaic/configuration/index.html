@@ -2217,78 +2217,82 @@
 </div>
 <h3 id="primary-configuration-file">Primary configuration file</h3>
 <p>The mosaic configuration file is the primary file used to store the configuration parameters that control the ImageMosaic plugin. When created by GeoServer it is by default called <code>&lt;directory&gt;.properties</code>, where <code>&lt;directory&gt;</code> is the name of the root directory of the store. (It is not related to the store name in GeoServer.) It can have other names, as long as it does not conflict with other files such as <strong><code>datastore.properties</code></strong> or <strong><code>indexer.properties</code></strong>. This file usually does not require manual editing.</p>
-<dl>
-<dt>Parameter</dt>
-<dd>
-<p>Mandatory</p>
-<p>Description</p>
-</dd>
-<dt>Levels</dt>
-<dd>
-<p>Required</p>
-<p>Represents the resolutions for the various levels of the granules of this mosaic.</p>
-</dd>
-<dt>Heterogeneous</dt>
-<dd>
-<p>Optional</p>
-<p>Sets whether the image files are heterogeneous. Default is <code>false</code>.</p>
-</dd>
-<dt>AbsolutePath</dt>
-<dd>
-<p>Required</p>
-<p>Controls whether or not the path stored inside the <code>location</code> attribute represents an absolute path or a path relative to the location of the shapefile index. Notice that a relative index ensures much more portability of the mosaic itself. Default value for this parameter is <code>false</code>, which means relative paths.</p>
-</dd>
-<dt>Name</dt>
-<dd>
-<p>Optional</p>
-<p>The name to be assigned to the index. If unspecified, the index name will usually match the name of the folder containing the mosaic.</p>
-</dd>
-<dt>TypeName</dt>
-<dd>
-<p>Required</p>
-<p>Featuretype name for this mosaic. Usually the name as <code>Name</code>.</p>
-</dd>
-<dt>Caching</dt>
-<dd>
-<p>Optional</p>
-<p>Boolean value to enable caching. When set to <code>true</code>, the ImageMosaic will try to save in memory the entire contents of the index to reduce loading/query time. Set to <code>false</code> for a large granule index and/or if new granules are to be ingested (for example, when the index is on a database and we interact directly with it). Default is <code>false</code>.</p>
-</dd>
-<dt>ExpandToRGB</dt>
-<dd>
-<p>Optional</p>
-<p>Boolean flag to force color expansion from index color model (paletted datasets) to component color model (RGB). Default is <code>false</code>.</p>
-</dd>
-<dt>LocationAttribute</dt>
-<dd>
-<p>Required</p>
-<p>The name of the attribute path in the shapefile index. Default is <code>location</code>.</p>
-</dd>
-<dt>SuggestedSPI</dt>
-<dd>
-<p>Required</p>
-<p>Suggested plugin for reading the image files.</p>
-</dd>
-<dt>SuggestedFormat</dt>
-<dd>
-<p>Optional</p>
-<p>Suggested GridFormat for reading the image files.</p>
-</dd>
-<dt>Envelope2D</dt>
-<dd>
-<p>Optional</p>
-<p>Envelope for the mosaic formatted as <code>LLX,LLY URX,URY</code> (notice the space between the lower left and upper right coordinate pairs).</p>
-</dd>
-<dt>CheckAuxiliaryMetadata</dt>
-<dd>
-<p>Optional</p>
-<p>This parameter allows to specify whether the ImageMosaic plugin should check for the presence of a GDAL aux.xml file beside each granule file. For most common use cases, you don't need to set or specify this parameter. Being disabled by Default, ImageMosaic won't look for an ancillary file for each granule being initialized in the GranuleCatalog. This avoid useless checks, especially when dealing with thousand of granules. You should set that parameter to <code>true</code> when you want to instruct the ImageMosaic to look for a GDAL generated aux.xml file containing PAM (Persistent Auxiliary Metadata) for each granule, to be attached to the Granule info (GranuleDescriptor). This is specially useful when you have setup a <a href="../../../../community/colormap/">Dynamic ColorMap rendering transformation</a> which dynamically set a color map based on the statistics collected into the granule's GDAL PAM being previously generated with a gdalinfo -stats parameter.</p>
-</dd>
-<dt>LevelsNum</dt>
-<dd>
-<p>Required</p>
-<p>Represents the number of reduced resolution layers that we currently have for the granules of this mosaic.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Levels</td>
+<td>Required</td>
+<td>Represents the resolutions for the various levels of the granules of this mosaic.</td>
+</tr>
+<tr>
+<td>Heterogeneous</td>
+<td>Optional</td>
+<td>Sets whether the image files are heterogeneous. Default is <code>false</code>.</td>
+</tr>
+<tr>
+<td>AbsolutePath</td>
+<td>Required</td>
+<td>Controls whether or not the path stored inside the <code>location</code> attribute represents an absolute path or a path relative to the location of the shapefile index. Notice that a relative index ensures much more portability of the mosaic itself. Default value for this parameter is <code>false</code>, which means relative paths.</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>Optional</td>
+<td>The name to be assigned to the index. If unspecified, the index name will usually match the name of the folder containing the mosaic.</td>
+</tr>
+<tr>
+<td>TypeName</td>
+<td>Required</td>
+<td>Featuretype name for this mosaic. Usually the name as <code>Name</code>.</td>
+</tr>
+<tr>
+<td>Caching</td>
+<td>Optional</td>
+<td>Boolean value to enable caching. When set to <code>true</code>, the ImageMosaic will try to save in memory the entire contents of the index to reduce loading/query time. Set to <code>false</code> for a large granule index and/or if new granules are to be ingested (for example, when the index is on a database and we interact directly with it). Default is <code>false</code>.</td>
+</tr>
+<tr>
+<td>ExpandToRGB</td>
+<td>Optional</td>
+<td>Boolean flag to force color expansion from index color model (paletted datasets) to component color model (RGB). Default is <code>false</code>.</td>
+</tr>
+<tr>
+<td>LocationAttribute</td>
+<td>Required</td>
+<td>The name of the attribute path in the shapefile index. Default is <code>location</code>.</td>
+</tr>
+<tr>
+<td>SuggestedSPI</td>
+<td>Required</td>
+<td>Suggested plugin for reading the image files.</td>
+</tr>
+<tr>
+<td>SuggestedFormat</td>
+<td>Optional</td>
+<td>Suggested GridFormat for reading the image files.</td>
+</tr>
+<tr>
+<td>Envelope2D</td>
+<td>Optional</td>
+<td>Envelope for the mosaic formatted as <code>LLX,LLY URX,URY</code> (notice the space between the lower left and upper right coordinate pairs).</td>
+</tr>
+<tr>
+<td>CheckAuxiliaryMetadata</td>
+<td>Optional</td>
+<td>This parameter allows to specify whether the ImageMosaic plugin should check for the presence of a GDAL aux.xml file beside each granule file. For most common use cases, you don't need to set or specify this parameter. Being disabled by Default, ImageMosaic won't look for an ancillary file for each granule being initialized in the GranuleCatalog. This avoid useless checks, especially when dealing with thousand of granules. You should set that parameter to <code>true</code> when you want to instruct the ImageMosaic to look for a GDAL generated aux.xml file containing PAM (Persistent Auxiliary Metadata) for each granule, to be attached to the Granule info (GranuleDescriptor). This is specially useful when you have setup a <a href="../../../../community/colormap/">Dynamic ColorMap rendering transformation</a> which dynamically set a color map based on the statistics collected into the granule's GDAL PAM being previously generated with a gdalinfo -stats parameter.</td>
+</tr>
+<tr>
+<td>LevelsNum</td>
+<td>Required</td>
+<td>Represents the number of reduced resolution layers that we currently have for the granules of this mosaic.</td>
+</tr>
+</tbody>
+</table>
 <p>A sample configuration file follows:</p>
 <div class="language-text highlight"><pre><span></span><code>Levels=0.4,0.4
 Heterogeneous=false
@@ -2314,42 +2318,102 @@ LevelsNum=1
 <p class="admonition-title">Warning</p>
 <p>At the time of writing the following spatial DBMS have been tested successfully: Oracle, PostgreSQL, H2, SQLServer.</p>
 </div>
-<dl>
-<dt><code>Parameter</code></dt>
-<dd>
-<p>Mandatory</p>
-<p>Description</p>
-</dd>
-<dt>StoreName</dt>
-<dd>
-<p>Optional</p>
-<p>Can be used to refer to a GeoServer registered store, using a "workspace:storeName" syntax. When this is used, the no other connection parameters need to be provided. The SPI can still be provided to inform the mosaic of the resulting type of store (e.g., Oracle) in case specific behavior need to be enacted for it (e.g., in the case of Oracle the attributes are all uppercase and cannot be longer than 30 chars, the mosaic will respect the limits but the <code>SPI</code> parameter needs to be explicitly set to <code>org.geotools.data.oracle.OracleNGDataStoreFactory</code> as the actual store type is hidden when it reaches the mosaic code). Also, as a reminder, the code is picking up a Store reference, not a layer one, meaning that security restrictions that might have been applied to a layer exposing the feature type do not apply to the mosaic code (e.g., if a user has restrictions such as a spatial filter on said layer, it won't transfer to the mosaic, which needs to be secured separately)</p>
-</dd>
-<dt>SPI</dt>
-<dd>
-<p>Required</p>
-<p>The DataStoreFactory used to connect to the index store:</p>
-<ul>
-<li>PostGIS: <code>org.geotools.data.postgis.PostgisNGDataStoreFactory</code></li>
-<li>Oracle: <code>org.geotools.data.oracle.OracleNGDataStoreFactory</code></li>
-<li>H2: <code>org.geotools.data.h2.H2DataStoreFactory</code></li>
-<li>SQLServer: <code>org.geotools.data.sqlserver.SQLServerDataStoreFactory</code></li>
-</ul>
-<p><a href="../../../../tutorials/tomcat-jndi/tomcat-jndi/">JNDI</a> can also be used with any of these stores. If JNDI is used, the DataStoreFactory name will differ from the above.</p>
-</dd>
-<dt>Connection parameters</dt>
-<dd>
-<p>Required</p>
-<p>The connection parameters used by the specified SPI. The list of these connection parameters can be found in the GeoTools documentation on the relevant store:</p>
-<ul>
-<li><a href="https://docs.geotools.org/latest/userguide/library/jdbc/postgis.html">PostGIS</a></li>
-<li><a href="https://docs.geotools.org/latest/userguide/library/jdbc/oracle.html">Oracle</a></li>
-<li><a href="https://docs.geotools.org/latest/userguide/library/jdbc/h2.html">H2</a></li>
-<li><a href="https://docs.geotools.org/latest/userguide/library/jdbc/sqlserver.html">SQLServer</a></li>
-</ul>
-<p>If JNDI is used, the connection parameters will include <code>jndiReferenceName</code> instead of <code>host</code>, <code>port</code>, etc. Note that for any connection parameters that include a space (such as <code>loose bbox</code>), the space must be escaped by preceding it with a backslash (<code>loose\ bbox</code>).</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th><code>Parameter</code></th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>StoreName</td>
+<td>Optional</td>
+<td>Can be used to refer to a GeoServer registered store, using a "workspace:storeName" syntax. When this is used, the no other connection parameters need to be provided. The SPI can still be provided to inform the mosaic of the resulting type of store (e.g., Oracle) in case specific behavior need to be enacted for it (e.g., in the case of Oracle the attributes are all uppercase and cannot be longer than 30 chars, the mosaic will respect the limits but the <code>SPI</code> parameter needs to be explicitly set to <code>org.geotools.data.oracle.OracleNGDataStoreFactory</code> as the actual store type is hidden when it reaches the mosaic code). Also, as a reminder, the code is picking up a Store reference, not a layer one, meaning that security restrictions that might have been applied to a layer exposing the feature type do not apply to the mosaic code (e.g., if a user has restrictions such as a spatial filter on said layer, it won't transfer to the mosaic, which needs to be secured separately)</td>
+</tr>
+<tr>
+<td>SPI</td>
+<td>Required</td>
+<td>The DataStoreFactory used to connect to the index store:</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>-   PostGIS: <code>org.geotools.data.postgis.PostgisNGDataStoreFactory</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>-   Oracle: <code>org.geotools.data.oracle.OracleNGDataStoreFactory</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>-   H2: <code>org.geotools.data.h2.H2DataStoreFactory</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>-   SQLServer: <code>org.geotools.data.sqlserver.SQLServerDataStoreFactory</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><a href="../../../../tutorials/tomcat-jndi/tomcat-jndi/">JNDI</a> can also be used with any of these stores. If JNDI is used, the DataStoreFactory name will differ from the above.</td>
+</tr>
+<tr>
+<td>Connection parameters</td>
+<td>Required</td>
+<td>The connection parameters used by the specified SPI. The list of these connection parameters can be found in the GeoTools documentation on the relevant store:</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>-   <a href="https://docs.geotools.org/latest/userguide/library/jdbc/postgis.html">PostGIS</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>-   <a href="https://docs.geotools.org/latest/userguide/library/jdbc/oracle.html">Oracle</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>-   <a href="https://docs.geotools.org/latest/userguide/library/jdbc/h2.html">H2</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>-   <a href="https://docs.geotools.org/latest/userguide/library/jdbc/sqlserver.html">SQLServer</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>If JNDI is used, the connection parameters will include <code>jndiReferenceName</code> instead of <code>host</code>, <code>port</code>, etc. Note that for any connection parameters that include a space (such as <code>loose bbox</code>), the space must be escaped by preceding it with a backslash (<code>loose\ bbox</code>).</td>
+</tr>
+</tbody>
+</table>
 <p>Here is a sample <strong><code>datastore.properties</code></strong> file for a PostGIS index:</p>
 <div class="language-text highlight"><pre><span></span><code>SPI=org.geotools.data.postgis.PostgisNGDataStoreFactory
 host=localhost
@@ -2633,77 +2697,184 @@ AbsolutePath=false
 <p><img alt="" src="../images/coverageparameters.png" />
 <em>Coverage parameters</em></p>
 <p>The parameters are as follows:</p>
-<dl>
-<dt>Parameter</dt>
-<dd>
-<p>Description</p>
-</dd>
-<dt>Accurate resolution computation</dt>
-<dd>
-<p>Boolean value. If <code>true</code>, computes the resolution of the granules in 9 points: the corners of the requested area and the middle points, taking the better one. This will provide better results for cases where there is a lot more deformation on a subregion (top/bottom/sides) of the requested bounding box with respect to others. If <code>false</code>, computes the resolution using a basic affine scale transform.</p>
-</dd>
-<dt>AllowMultithreading</dt>
-<dd>
-<p>If <code>true</code>, enables multithreaded tile loading. This allows performing parallelized loading of the granules that compose the mosaic. Setting this to <code>true</code> makes sense only if you set USE_JAI_IMAGEREAD to <code>false</code> at the same time to force immediate loading of data into memory.</p>
-</dd>
-<dt>BackgroundValues</dt>
-<dd>
-<p>Sets the value of the mosaic background. Depending on the nature of the mosaic it is wise to set a value for the "nodata" area (usually -9999). This value is repeated on all the mosaic bands.</p>
-</dd>
-<dt>Filter</dt>
-<dd>
-<p>Sets the default mosaic filter. It should be a valid <a href="../../../../tutorials/cql/cql_tutorial/">ECQL query</a> to be used by default if no <code>cql_filter</code> is specified (instead of Filter.INCLUDE). This filter will be applied against the mosaic index, and may include any attributes exposed by the index store. If the <code>cql_filter</code> is specified in the request it will be overridden.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Do not use this filter to change time or elevation dimensions defaults. It will be added as AND condition with CURRENT for "time" and LOWER for "elevation".</p>
-</div>
-</dd>
-<dt>FootprintBehavior</dt>
-<dd>
-<p>Sets the behavior of the regions of a granule that are outside of the granule footprint. Can be <code>None</code> (ignore the footprint), <code>Cut</code> (remove regions outside the footprint from the image and don't add an alpha channel), or <code>Transparent</code> (make regions outside the footprint completely transparent, and add an alpha channel if one is not already present). Defaults to <code>None</code>.</p>
-</dd>
-<dt>InputTransparentColor</dt>
-<dd>
-<p>Sets the transparent color of the granules prior to processing by the ImageMosaic plugin, in order to control how they are superimposed. When GeoServer composes the granules to satisfy a user request, some can overlap others; setting this parameter with an appropriate color avoids the overlap of "nodata" areas between granules. See below for an example:</p>
-<p><img alt="" src="../images/input_color.png" />
-<em>InputTransparentColor parameter not configured</em></p>
-<p><img alt="" src="../images/input_color2.png" />
-<em>InputTransparentColor parameter configured</em></p>
-</dd>
-<dt>MaxAllowedTiles</dt>
-<dd>
-<p>Sets the maximum number of tiles that can be loaded simultaneously for a request. For large mosaics, this parameter should be set to avoid saturating the server by loading too many granules simultaneously.</p>
-</dd>
-<dt>MergeBehavior</dt>
-<dd>
-<p>The method used to handle overlapping granules during the mosaic operation. Can be <code>FLAT</code> (only the topmost granule is visible in the case of an overlap) or <code>STACK</code> (a band-stacking merge is applied to the overlapping granules). Default is <code>FLAT</code>.</p>
-</dd>
-<dt>OutputTransparentColor</dt>
-<dd>
-<p>Set the transparent color for the mosaic. This parameter make sense for RGB or paletted mosaics, but not for a DEM or MetOc data. See below for an example:</p>
-<p><img alt="" src="../images/output_color.png" />
-<em>OutputTransparentColor parameter configured with "no color"</em></p>
-<p><img alt="" src="../images/output_color2.png" />
-<em>OutputTransparentColor parameter configured with "nodata" color</em></p>
-</dd>
-<dt>SORTING</dt>
-<dd>
-<p>Controls the order in which the granules are passed to the mosaic operation. Only useful if MergeBehavior is set to <code>FLAT</code>. Should be the name of an attribute in the index file, followed by a space, followed by <code>A</code> for ascending, or <code>D</code> for descending. For example: <code>sortattr D</code>.</p>
-</dd>
-<dt>SUGGESTED_TILE_SIZE</dt>
-<dd>
-<p>Controls the tile size of the input granules as well as the tile size of the output mosaic. It consists of two positive integers separated by a comma. Default is <code>512,512</code>. If your data is properly tiled, you might want to set this parameter to blank to avoid unnecessarily reformatting when reading.</p>
-</dd>
-<dt>USE_JAI_IMAGEREAD</dt>
-<dd>
-<p>Controls the low-level mechanism used to read the granules. If set to <code>true</code>, GeoServer will use the JAI ImageRead operation and its deferred loading mechanism. If set to <code>false</code>, GeoServer will perform direct ImageIO read calls, which will result in immediate loading.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Deferred loading consumes less memory since it uses a streaming approach to only load into memory the data immediately needed for processing, but may cause problems under heavy load since it keeps the granule files open for a long time.</p>
-<p>Immediate loading consumes more memory since it loads the requested mosaic into memory all at once, but usually performs faster and prevents the "too many files open" error conditions that can occur with deferred loading.</p>
-</div>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accurate resolution computation</td>
+<td>Boolean value. If <code>true</code>, computes the resolution of the granules in 9 points: the corners of the requested area and the middle points, taking the better one. This will provide better results for cases where there is a lot more deformation on a subregion (top/bottom/sides) of the requested bounding box with respect to others. If <code>false</code>, computes the resolution using a basic affine scale transform.</td>
+</tr>
+<tr>
+<td>AllowMultithreading</td>
+<td>If <code>true</code>, enables multithreaded tile loading. This allows performing parallelized loading of the granules that compose the mosaic. Setting this to <code>true</code> makes sense only if you set USE_JAI_IMAGEREAD to <code>false</code> at the same time to force immediate loading of data into memory.</td>
+</tr>
+<tr>
+<td>BackgroundValues</td>
+<td>Sets the value of the mosaic background. Depending on the nature of the mosaic it is wise to set a value for the "nodata" area (usually -9999). This value is repeated on all the mosaic bands.</td>
+</tr>
+<tr>
+<td>Filter</td>
+<td>Sets the default mosaic filter. It should be a valid <a href="../../../../tutorials/cql/cql_tutorial/">ECQL query</a> to be used by default if no <code>cql_filter</code> is specified (instead of Filter.INCLUDE). This filter will be applied against the mosaic index, and may include any attributes exposed by the index store. If the <code>cql_filter</code> is specified in the request it will be overridden.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>::: note</td>
+</tr>
+<tr>
+<td></td>
+<td>::: title</td>
+</tr>
+<tr>
+<td></td>
+<td>Note</td>
+</tr>
+<tr>
+<td></td>
+<td>:::</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Do not use this filter to change time or elevation dimensions defaults. It will be added as AND condition with CURRENT for "time" and LOWER for "elevation".</td>
+</tr>
+<tr>
+<td></td>
+<td>:::</td>
+</tr>
+<tr>
+<td>FootprintBehavior</td>
+<td>Sets the behavior of the regions of a granule that are outside of the granule footprint. Can be <code>None</code> (ignore the footprint), <code>Cut</code> (remove regions outside the footprint from the image and don't add an alpha channel), or <code>Transparent</code> (make regions outside the footprint completely transparent, and add an alpha channel if one is not already present). Defaults to <code>None</code>.</td>
+</tr>
+<tr>
+<td>InputTransparentColor</td>
+<td>Sets the transparent color of the granules prior to processing by the ImageMosaic plugin, in order to control how they are superimposed. When GeoServer composes the granules to satisfy a user request, some can overlap others; setting this parameter with an appropriate color avoids the overlap of "nodata" areas between granules. See below for an example:</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><img alt="" src="../images/input_color.png" /></td>
+</tr>
+<tr>
+<td></td>
+<td><em>InputTransparentColor parameter not configured</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><img alt="" src="../images/input_color2.png" /></td>
+</tr>
+<tr>
+<td></td>
+<td><em>InputTransparentColor parameter configured</em></td>
+</tr>
+<tr>
+<td>MaxAllowedTiles</td>
+<td>Sets the maximum number of tiles that can be loaded simultaneously for a request. For large mosaics, this parameter should be set to avoid saturating the server by loading too many granules simultaneously.</td>
+</tr>
+<tr>
+<td>MergeBehavior</td>
+<td>The method used to handle overlapping granules during the mosaic operation. Can be <code>FLAT</code> (only the topmost granule is visible in the case of an overlap) or <code>STACK</code> (a band-stacking merge is applied to the overlapping granules). Default is <code>FLAT</code>.</td>
+</tr>
+<tr>
+<td>OutputTransparentColor</td>
+<td>Set the transparent color for the mosaic. This parameter make sense for RGB or paletted mosaics, but not for a DEM or MetOc data. See below for an example:</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><img alt="" src="../images/output_color.png" /></td>
+</tr>
+<tr>
+<td></td>
+<td><em>OutputTransparentColor parameter configured with "no color"</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><img alt="" src="../images/output_color2.png" /></td>
+</tr>
+<tr>
+<td></td>
+<td><em>OutputTransparentColor parameter configured with "nodata" color</em></td>
+</tr>
+<tr>
+<td>SORTING</td>
+<td>Controls the order in which the granules are passed to the mosaic operation. Only useful if MergeBehavior is set to <code>FLAT</code>. Should be the name of an attribute in the index file, followed by a space, followed by <code>A</code> for ascending, or <code>D</code> for descending. For example: <code>sortattr D</code>.</td>
+</tr>
+<tr>
+<td>SUGGESTED_TILE_SIZE</td>
+<td>Controls the tile size of the input granules as well as the tile size of the output mosaic. It consists of two positive integers separated by a comma. Default is <code>512,512</code>. If your data is properly tiled, you might want to set this parameter to blank to avoid unnecessarily reformatting when reading.</td>
+</tr>
+<tr>
+<td>USE_JAI_IMAGEREAD</td>
+<td>Controls the low-level mechanism used to read the granules. If set to <code>true</code>, GeoServer will use the JAI ImageRead operation and its deferred loading mechanism. If set to <code>false</code>, GeoServer will perform direct ImageIO read calls, which will result in immediate loading.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>::: note</td>
+</tr>
+<tr>
+<td></td>
+<td>::: title</td>
+</tr>
+<tr>
+<td></td>
+<td>Note</td>
+</tr>
+<tr>
+<td></td>
+<td>:::</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Deferred loading consumes less memory since it uses a streaming approach to only load into memory the data immediately needed for processing, but may cause problems under heavy load since it keeps the granule files open for a long time.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Immediate loading consumes more memory since it loads the requested mosaic into memory all at once, but usually performs faster and prevents the "too many files open" error conditions that can occur with deferred loading.</td>
+</tr>
+<tr>
+<td></td>
+<td>:::</td>
+</tr>
+</tbody>
+</table>
 <p>Continue on with the <a href="../tutorial/">ImageMosaic tutorial</a> to learn more and see examples.</p>
 
 

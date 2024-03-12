@@ -2364,39 +2364,47 @@
 <li>The REST API</li>
 </ul>
 </blockquote>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Fetch all rules</p>
-<p>200,403</p>
-<p>XML, JSON</p>
-</dd>
-<dt>POST</dt>
-<dd>
-<p>Add a set of rules</p>
-<p>200,403,409</p>
-<p>XML, JSON</p>
-</dd>
-<dt>PUT</dt>
-<dd>
-<p>Modify a set of rules</p>
-<p>200,403,409</p>
-<p>XML, JSON</p>
-</dd>
-<dt>DELETE</dt>
-<dd>
-<p>Delete a specific rule</p>
-<p>200,404,409</p>
-<p>XML, JSON</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Fetch all rules</td>
+<td>200,403</td>
+<td>XML, JSON</td>
+<td></td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Add a set of rules</td>
+<td>200,403,409</td>
+<td>XML, JSON</td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Modify a set of rules</td>
+<td>200,403,409</td>
+<td>XML, JSON</td>
+<td></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Delete a specific rule</td>
+<td>200,404,409</td>
+<td>XML, JSON</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p>Format for DELETE:</p>
 <p>The specified rule has to be the last part in the URI:</p>
 <div class="language-text highlight"><pre><span></span><code>/security/acl/layers/*.*.r

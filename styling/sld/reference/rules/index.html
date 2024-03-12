@@ -2360,68 +2360,77 @@
 <p>Styling <strong>rules</strong> define the portrayal of features. A rule combines a <a href="../filters/">filter</a> with any number of symbolizers. Features for which the filter condition evaluates as true are rendered using the symbolizers in the rule.</p>
 <h2 id="syntax">Syntax</h2>
 <p>The <code>&lt;Rule&gt;</code> element contains the following elements:</p>
-<dl>
-<dt><strong>Tag</strong></dt>
-<dd>
-<p><strong>Required?</strong></p>
-<p><strong>Description</strong></p>
-</dd>
-<dt><code>&lt;Name&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>Specifies a name for the rule.</p>
-</dd>
-<dt><code>&lt;Title&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>Specifies a title for the rule. The title is used in display lists and legends.</p>
-</dd>
-<dt><code>&lt;Abstract&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>Specifies an abstract describing the rule.</p>
-</dd>
-<dt><code>&lt;Filter&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>Specifies a filter controlling when the rule is applied. See <a href="../filters/">Filters</a></p>
-</dd>
-<dt><code>&lt;MinScaleDenominator&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>Specifies the minimum scale denominator (inclusive) for the scale range in which this rule applies. If present, the rule applies at the given scale and all smaller scales.</p>
-</dd>
-<dt><code>&lt;MaxScaleDenominator&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>Specifies the maximum scale denominator (exclusive) for the scale range in which this rule applies. If present, the rule applies at scales larger than the given scale.</p>
-</dd>
-<dt><code>&lt;PointSymbolizer&gt;</code></dt>
-<dd>
-<p>0..N</p>
-<p>Specifies styling as points. See <a href="../pointsymbolizer/">PointSymbolizer</a></p>
-</dd>
-<dt><code>&lt;LineSymbolizer&gt;</code></dt>
-<dd>
-<p>0..N</p>
-<p>Specifies styling as lines. See <a href="../linesymbolizer/">LineSymbolizer</a></p>
-</dd>
-<dt><code>&lt;PolygonSymbolizer&gt;</code></dt>
-<dd>
-<p>0..N</p>
-<p>Specifies styling as polygons. See <a href="../polygonsymbolizer/">PolygonSymbolizer</a></p>
-</dd>
-<dt><code>&lt;TextSymbolizer&gt;</code></dt>
-<dd>
-<p>0..N</p>
-<p>Specifies styling for text labels. See <a href="../textsymbolizer/">TextSymbolizer</a></p>
-</dd>
-<dt><code>&lt;RasterSymbolizer&gt;</code></dt>
-<dd>
-<p>0..N</p>
-<p>Specifies styling for raster data. See <a href="../rastersymbolizer/">RasterSymbolizer</a></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tag</strong></td>
+<td><strong>Required?</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>&lt;Name&gt;</code></td>
+<td>No</td>
+<td>Specifies a name for the rule.</td>
+</tr>
+<tr>
+<td><code>&lt;Title&gt;</code></td>
+<td>No</td>
+<td>Specifies a title for the rule. The title is used in display lists and legends.</td>
+</tr>
+<tr>
+<td><code>&lt;Abstract&gt;</code></td>
+<td>No</td>
+<td>Specifies an abstract describing the rule.</td>
+</tr>
+<tr>
+<td><code>&lt;Filter&gt;</code></td>
+<td>No</td>
+<td>Specifies a filter controlling when the rule is applied. See <a href="../filters/">Filters</a></td>
+</tr>
+<tr>
+<td><code>&lt;MinScaleDenominator&gt;</code></td>
+<td>No</td>
+<td>Specifies the minimum scale denominator (inclusive) for the scale range in which this rule applies. If present, the rule applies at the given scale and all smaller scales.</td>
+</tr>
+<tr>
+<td><code>&lt;MaxScaleDenominator&gt;</code></td>
+<td>No</td>
+<td>Specifies the maximum scale denominator (exclusive) for the scale range in which this rule applies. If present, the rule applies at scales larger than the given scale.</td>
+</tr>
+<tr>
+<td><code>&lt;PointSymbolizer&gt;</code></td>
+<td>0..N</td>
+<td>Specifies styling as points. See <a href="../pointsymbolizer/">PointSymbolizer</a></td>
+</tr>
+<tr>
+<td><code>&lt;LineSymbolizer&gt;</code></td>
+<td>0..N</td>
+<td>Specifies styling as lines. See <a href="../linesymbolizer/">LineSymbolizer</a></td>
+</tr>
+<tr>
+<td><code>&lt;PolygonSymbolizer&gt;</code></td>
+<td>0..N</td>
+<td>Specifies styling as polygons. See <a href="../polygonsymbolizer/">PolygonSymbolizer</a></td>
+</tr>
+<tr>
+<td><code>&lt;TextSymbolizer&gt;</code></td>
+<td>0..N</td>
+<td>Specifies styling for text labels. See <a href="../textsymbolizer/">TextSymbolizer</a></td>
+</tr>
+<tr>
+<td><code>&lt;RasterSymbolizer&gt;</code></td>
+<td>0..N</td>
+<td>Specifies styling for raster data. See <a href="../rastersymbolizer/">RasterSymbolizer</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="scale-selection">Scale Selection</h2>
 <p>Rules support <strong>scale selection</strong> to allow specifying the scale range in which a rule may be applied (assuming the filter condition is satisfied as well, if present). Scale selection allows for varying portrayal of features at different map scales. In particular, at smaller scales it is common to use simpler styling for features, or even prevent the display of some features altogether.</p>
 <p>Scale ranges are specified by using <strong>scale denominators</strong>. These values correspond directly to the ground distance covered by a map, but are inversely related to the common "large" and "small" terminology for map scale. In other words:</p>

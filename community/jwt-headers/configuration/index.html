@@ -4023,29 +4023,44 @@
 </ol>
 <h2 id="configuration-options">Configuration Options</h2>
 <h3 id="user-name-options">User Name Options</h3>
-<dl>
-<dt>Config Option</dt>
-<dd>
-<p>Meaning</p>
-</dd>
-<dt>Request header attribute for User Name</dt>
-<dd>
-<p>The name of the HTTP header item that contains the user name.</p>
-</dd>
-<dt>Format the Header value is in</dt>
-<dd>
-<p>Format that the user name is in:</p>
-<ul>
-<li>Simple String - user name is the header's value.</li>
-<li>JSON - The header is a JSON string. Use "JSON path" for where the user name is in the JSON.</li>
-<li>JWT - The header is a JWT (base64) string. Use "JSON path" for where the user name is in the JWT claims.</li>
-</ul>
-</dd>
-<dt>JSON path for the User Name</dt>
-<dd>
-<p>If the user name is in JSON or JWT format, this is the JSON path to the user's name.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Config Option</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Request header attribute for User Name</td>
+<td>The name of the HTTP header item that contains the user name.</td>
+</tr>
+<tr>
+<td>Format the Header value is in</td>
+<td>Format that the user name is in:</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>-   Simple String - user name is the header's value.</td>
+</tr>
+<tr>
+<td></td>
+<td>-   JSON - The header is a JSON string. Use "JSON path" for where the user name is in the JSON.</td>
+</tr>
+<tr>
+<td></td>
+<td>-   JWT - The header is a JWT (base64) string. Use "JSON path" for where the user name is in the JWT claims.</td>
+</tr>
+<tr>
+<td>JSON path for the User Name</td>
+<td>If the user name is in JSON or JWT format, this is the JSON path to the user's name.</td>
+</tr>
+</tbody>
+</table>
 <p>If you are using <a href="https://github.com/OpenIDC/mod_auth_openidc">Apache's mod_auth_openidc</a>, then Apache will typically add:</p>
 <ul>
 <li>an <code>OIDC_id_token_payload</code> header item (containing a JSON string of the ID token claims)</li>
@@ -4074,28 +4089,40 @@
 </ul>
 <h3 id="new-role-source-options">New Role Source Options</h3>
 <p>You can use the standard role source options in GeoServer (<code>Request Header</code>, <code>User Group Service</code>, or <code>Role Service</code>). The JWT Headers module adds two more role sources - <code>Header Containing JSON String</code> and <code>Header containing JWT</code>.</p>
-<dl>
-<dt>Config Option</dt>
-<dd>
-<p>Meaning</p>
-</dd>
-<dt>Role Source</dt>
-<dd>
-<p>Which Role Source to use:</p>
-<ul>
-<li>Header containing JSON String - Header contains a JSON claims object</li>
-<li>Header Containing JWT - Header contains a Base64 JWT Access Token</li>
-</ul>
-</dd>
-<dt>Request Header attribute for Roles</dt>
-<dd>
-<p>Name of the header item the JSON or JWT is contained in</p>
-</dd>
-<dt>JSON Path</dt>
-<dd>
-<p>Path in the JSON object or JWT claims that contains the roles. This should either be a simple string (single role) or a list of strings.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Config Option</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Role Source</td>
+<td>Which Role Source to use:</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>-   Header containing JSON String - Header contains a JSON claims object</td>
+</tr>
+<tr>
+<td></td>
+<td>-   Header Containing JWT - Header contains a Base64 JWT Access Token</td>
+</tr>
+<tr>
+<td>Request Header attribute for Roles</td>
+<td>Name of the header item the JSON or JWT is contained in</td>
+</tr>
+<tr>
+<td>JSON Path</td>
+<td>Path in the JSON object or JWT claims that contains the roles. This should either be a simple string (single role) or a list of strings.</td>
+</tr>
+</tbody>
+</table>
 <p>Using the example <code>OIDC_id_token_payload</code> (JSON) or <code>OIDC_access_token</code> (JWT) shown above, the claims are:</p>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">&quot;exp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1708555947</span><span class="p">,</span>

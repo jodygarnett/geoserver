@@ -2426,28 +2426,37 @@
 <p>A <strong>PolygonSymbolizer</strong> styles features as <strong>polygons</strong>. Polygons are two-dimensional geometries. They can be depicted with styling for their interior (fill) and their border (stroke). Polygons may contain one or more holes, which are stroked but not filled. When rendering a polygon, the fill is rendered before the border is stroked.</p>
 <h2 id="syntax">Syntax</h2>
 <p>A <code>&lt;PolygonSymbolizer&gt;</code> contains an optional <code>&lt;Geometry&gt;</code> element, and two elements <code>&lt;Fill&gt;</code> and <code>&lt;Stroke&gt;</code> for specifying styling:</p>
-<dl>
-<dt><strong>Tag</strong></dt>
-<dd>
-<p><strong>Required?</strong></p>
-<p><strong>Description</strong></p>
-</dd>
-<dt><code>&lt;Geometry&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>Specifies the geometry to be rendered.</p>
-</dd>
-<dt><code>&lt;Fill&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>Specifies the styling for the polygon interior.</p>
-</dd>
-<dt><code>&lt;Stroke&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>Specifies the styling for the polygon border.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tag</strong></td>
+<td><strong>Required?</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>&lt;Geometry&gt;</code></td>
+<td>No</td>
+<td>Specifies the geometry to be rendered.</td>
+</tr>
+<tr>
+<td><code>&lt;Fill&gt;</code></td>
+<td>No</td>
+<td>Specifies the styling for the polygon interior.</td>
+</tr>
+<tr>
+<td><code>&lt;Stroke&gt;</code></td>
+<td>No</td>
+<td>Specifies the styling for the polygon border.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="geometry">Geometry</h3>
 <p>The <code>&lt;Geometry&gt;</code> element is optional. If present, it specifies the featuretype property from which to obtain the geometry to style using the <code>PropertyName</code> element. See also <a href="../../extensions/geometry-transformations/">Geometry transformations in SLD</a> for GeoServer extensions for specifying geometry.</p>
 <p>Any kind of geometry may be styled with a <code>&lt;PolygonSymbolizer&gt;</code>. Point geometries are treated as small orthonormal square polygons. Linear geometries are closed by joining their ends.</p>
@@ -2487,23 +2496,32 @@
 <p>The <code>&lt;CssParameter&gt;</code> elements describe the styling of a solid polygon fill. Any number of <code>&lt;CssParameter&gt;</code> elements can be specified.</p>
 <p>The <code>name</code> <strong>attribute</strong> indicates what aspect of styling an element specifies, using the standard CSS/SVG styling model. The <strong>content</strong> of the element supplies the value of the styling parameter. The value may contain <a href="../pointsymbolizer/#sld_reference_parameter_expressions">expressions</a>.</p>
 <p>The following parameters are supported:</p>
-<dl>
-<dt><strong>Parameter</strong></dt>
-<dd>
-<p><strong>Required?</strong></p>
-<p><strong>Description</strong></p>
-</dd>
-<dt><code>name="fill"</code></dt>
-<dd>
-<p>No</p>
-<p>Specifies the fill color, in the form <code>#RRGGBB</code>. Default is grey (<code>#808080</code>).</p>
-</dd>
-<dt><code>name="fill-opacity"</code></dt>
-<dd>
-<p>No</p>
-<p>Specifies the opacity (transparency) of the fill. The value is a decimal number between <code>0</code> (completely transparent) and <code>1</code> (completely opaque). Default is <code>1</code>.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Parameter</strong></td>
+<td><strong>Required?</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>name="fill"</code></td>
+<td>No</td>
+<td>Specifies the fill color, in the form <code>#RRGGBB</code>. Default is grey (<code>#808080</code>).</td>
+</tr>
+<tr>
+<td><code>name="fill-opacity"</code></td>
+<td>No</td>
+<td>Specifies the opacity (transparency) of the fill. The value is a decimal number between <code>0</code> (completely transparent) and <code>1</code> (completely opaque). Default is <code>1</code>.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="example">Example</h2>
 <p>The following symbolizer is taken from the <a href="../../cookbook/polygons/">Polygons</a> section in the <a href="../../cookbook/">SLD Cookbook</a>.</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;PolygonSymbolizer&gt;</span>

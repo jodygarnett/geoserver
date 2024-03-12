@@ -3173,13 +3173,27 @@
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Geonetwork test</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://geonetwork-opensource.org/test/srv/api/records/${UUID}/formatters/xml?attachment=true</span>
 </span></code></pre></div>
-<p>+----------+----------+--------------------------------------------------------------------------------------------------------------------------+
-| Key      | Required | Description                                                                                                              |
-+==========+==========+==========================================================================================================================+
-| <strong>name</strong> | &gt; yes    | &gt; The name of the Geonetwork endpoint that will be shown in the dropdown.                                                |
-+----------+----------+--------------------------------------------------------------------------------------------------------------------------+
-| <strong>url</strong>  | &gt; yes    | &gt; The url of the XML export of the metadata in the Geonetwork, where <code>${UUID}</code> will be replaced by the metadata's UUID. |
-+----------+----------+--------------------------------------------------------------------------------------------------------------------------+</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>name</strong></td>
+<td>&gt; yes</td>
+<td>&gt; The name of the Geonetwork endpoint that will be shown in the dropdown.</td>
+</tr>
+<tr>
+<td><strong>url</strong></td>
+<td>&gt; yes</td>
+<td>&gt; The url of the XML export of the metadata in the Geonetwork, where <code>${UUID}</code> will be replaced by the metadata's UUID.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="geonetwork-mapping-configuration">Geonetwork mapping configuration</h3>
 <p>Each field from Geonetwork can be mapped to a native field from GeoServer or a field from the metadata module. The configuration for simple components are added under the yaml attribute <code>geonetworkmapping</code>. The fields of the type <code>COMPLEX</code> are mapped under the attribute <code>objectmapping</code>.</p>
 <p>The example will map one field (UUID) from the geonetwork xml to UI.</p>
@@ -3206,16 +3220,37 @@
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">   </span><span class="nt">geonetwork</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:alternateTitle/gco:CharacterString/text()</span>
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">   </span><span class="nt">mappingType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NATIVE</span>
 </span></code></pre></div>
-<p>+------------------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| Key              | Required | Description                                                                                                                               |
-+==================+==========+===========================================================================================================================================+
-| <strong>geoserver</strong>    | &gt; yes    | the key for the attributes in geoserver                                                                                                   |
-+------------------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| <strong>geonetwork</strong>   | &gt; yes    | The <a href="https://developer.mozilla.org/en-US/docs/Web/XPath">xpath</a> expression pointing to the content from the geonetwork metadata xml file. |
-+------------------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| <strong>mappingType:</strong> | &gt; no     | &gt; | CUSTOM (default; map to fields from the metadata module configuration)                                                                |
-|                  |          | &gt; | NATIVE (map to geoserver native fields)                                                                                               |
-+------------------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>geoserver</strong></td>
+<td>&gt; yes</td>
+<td>the key for the attributes in geoserver</td>
+</tr>
+<tr>
+<td><strong>geonetwork</strong></td>
+<td>&gt; yes</td>
+<td>The <a href="https://developer.mozilla.org/en-US/docs/Web/XPath">xpath</a> expression pointing to the content from the geonetwork metadata xml file.</td>
+</tr>
+<tr>
+<td><strong>mappingType:</strong></td>
+<td>&gt; no</td>
+<td>&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>&gt;</td>
+</tr>
+</tbody>
+</table>
 <h2 id="community_metadata_advanced_configuration_custom_native">Custom to Native Mapping</h2>
 <p>Sometimes your custom metadata configuration may contain a more complex version of fields already present in geoserver native metadata, or you may want to derive geoserver native fields (such as URL's, keywords, etcetera) from information in your custom metadata. Native fields are used by <code>GetCapabilities</code> requests, and you want to avoid filling in the same information twice. We can automatise deriving these native fields from custom fields using a custom-to-native mapping configuration. For example in the following configuration:</p>
 <div class="language-YAML highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">customNativeMappings</span><span class="p">:</span>
@@ -3238,16 +3273,42 @@
 </span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text/xml</span>
 </span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">      </span><span class="nt">metadataType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ISO191156:2003</span>
 </span></code></pre></div>
-<p>+-------------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Key         | Required | Description                                                                                                                                                                       |
-+=============+==========+===================================================================================================================================================================================+
-| <strong>type</strong>    | &gt; yes    | currently supported: KEYWORDS, IDENTIFIERS, METADATALINKS                                                                                                                         |
-+-------------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <strong>mapping</strong> | &gt; yes    | | List of key to value pairs. Value contains a literal with or without placeholder that contains custom attribute path (the <code>/</code> symbol denoting subfields inside complex fields). |
-|             |          | | Possible keys for KEYWORDS: value, vocabulary                                                                                                                                   |
-|             |          | | Possible keys for METADATALINKS: value, type, metadataType, about                                                                                                               |
-|             |          | | Possible keys for IDENTIFIERS: value, authority                                                                                                                                 |
-+-------------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>type</strong></td>
+<td>&gt; yes</td>
+<td>currently supported: KEYWORDS, IDENTIFIERS, METADATALINKS</td>
+</tr>
+<tr>
+<td><strong>mapping</strong></td>
+<td>&gt; yes</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p>The synchronisation of the metadata takes place each time a layer is saved. Any information that has been entered by the user in mapped native fields via the GUI will be lost.</p>
 
 

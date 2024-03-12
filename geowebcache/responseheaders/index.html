@@ -2159,38 +2159,56 @@
 <p>From this, one can learn that the tile was found in the cache (<code>HIT</code>), the requested tile was from the gridset called <code>GlobalCRS84Pixel</code> and had a CRS of <code>EPSG:4326</code>.</p>
 <h3 id="list-of-custom-response-headers">List of custom response headers</h3>
 <p>The following is the full list of custom response headers. Whenever GeoWebCache serves a tile request, it will write some or all of the following custom headers on the HTTP response.</p>
-<dl>
-<dt>Response Header</dt>
-<dd>
-<p>Description</p>
-</dd>
-<dt><code>geowebcache-cache-result</code></dt>
-<dd>
-<p>Shows whether the GeoWebCache WMS was used. Options are:</p>
-<ul>
-<li><code>HIT</code>: Tile requested was found on the cache</li>
-<li><code>MISS</code>: Tile was not found on the cache but was acquired from the layer's data source</li>
-<li><code>WMS</code>: Request was proxied directly to the origin WMS (for example, for GetFeatureInfo requests)</li>
-<li><code>OTHER</code>: Response was the default white/transparent tile or an error occurred</li>
-</ul>
-</dd>
-<dt><code>geowebcache-tile-index</code></dt>
-<dd>
-<p>Contains the three-dimensional tile index in x,y,z order of the returned tile image in the corresponding grid space (e.g. <code>[1, 0, 0]</code>)</p>
-</dd>
-<dt><code>geowebcache-tile-bounds</code></dt>
-<dd>
-<p>Bounds of the returned tile in the corresponding coordinate reference system (e.g. <code>-180,-90,0,90</code>)</p>
-</dd>
-<dt><code>geowebcache-gridset</code></dt>
-<dd>
-<p>Name of the gridset the tile belongs to (see <a href="../webadmin/gridsets/">Gridsets</a> for more information)</p>
-</dd>
-<dt><code>geowebcache-crs</code></dt>
-<dd>
-<p>Coordinate reference system code of the matching gridset (e.g. <code>EPSG:900913</code>, <code>EPSG:4326</code>, etc).</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Response Header</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>geowebcache-cache-result</code></td>
+<td>Shows whether the GeoWebCache WMS was used. Options are:</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>-   <code>HIT</code>: Tile requested was found on the cache</td>
+</tr>
+<tr>
+<td></td>
+<td>-   <code>MISS</code>: Tile was not found on the cache but was acquired from the layer's data source</td>
+</tr>
+<tr>
+<td></td>
+<td>-   <code>WMS</code>: Request was proxied directly to the origin WMS (for example, for GetFeatureInfo requests)</td>
+</tr>
+<tr>
+<td></td>
+<td>-   <code>OTHER</code>: Response was the default white/transparent tile or an error occurred</td>
+</tr>
+<tr>
+<td><code>geowebcache-tile-index</code></td>
+<td>Contains the three-dimensional tile index in x,y,z order of the returned tile image in the corresponding grid space (e.g. <code>[1, 0, 0]</code>)</td>
+</tr>
+<tr>
+<td><code>geowebcache-tile-bounds</code></td>
+<td>Bounds of the returned tile in the corresponding coordinate reference system (e.g. <code>-180,-90,0,90</code>)</td>
+</tr>
+<tr>
+<td><code>geowebcache-gridset</code></td>
+<td>Name of the gridset the tile belongs to (see <a href="../webadmin/gridsets/">Gridsets</a> for more information)</td>
+</tr>
+<tr>
+<td><code>geowebcache-crs</code></td>
+<td>Coordinate reference system code of the matching gridset (e.g. <code>EPSG:900913</code>, <code>EPSG:4326</code>, etc).</td>
+</tr>
+</tbody>
+</table>
 <h2 id="gwc_lastmodifiedheaders">Last-Modified and If-Modified-Since</h2>
 <p>Well behaved HTTP 1.1 clients and server applications can make use of <code>Last-Modified</code> and <code>If-Modified-Since</code> HTTP control mechanisms to know when locally cached content is up to date, eliminating the need to download the same content again. This can result in considerable bandwidth savings. (See HTTP 1.1 <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC 2616</a>, sections 14.29 and 14.25, for more information on these mechanisms.)</p>
 <p>GeoWebCache will write a <code>Last-Modified</code> HTTP response header when serving a tile image. The date is written as an RFC-1123 <code>HTTP-Date</code>:</p>

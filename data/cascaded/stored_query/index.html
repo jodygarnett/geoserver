@@ -1946,24 +1946,32 @@
 <h2 id="cql-expressions">CQL expressions</h2>
 <p>Parameter mappings configured as CQL expressions are evaluated for each request using a context derived from the request query and the view parameters. General information on CQL expressions is available here <a href="../../../filter/ecql_reference/#ecql_expr">Expression</a>.</p>
 <p>The context contains the following properties that may be used in the expressions:</p>
-<dl>
-<dt><strong>Property name</strong></dt>
-<dd>
-<p><strong>Explanation</strong></p>
-</dd>
-<dt><code>bboxMinX</code> <code>bboxMinY</code> <code>bboxMaxX</code> <code>bboxMaxY</code></dt>
-<dd>
-<p>Evaluates to a corner coordinate of the full extent of the query</p>
-</dd>
-<dt><code>defaultSRS</code></dt>
-<dd>
-<p>Evaluates to the default SRS of the feature type</p>
-</dd>
-<dt><code>viewparam:name</code></dt>
-<dd>
-<p>Evaluates to the value of the view parameter <em>name</em> in this query</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Property name</strong></td>
+<td><strong>Explanation</strong></td>
+</tr>
+<tr>
+<td><code>bboxMinX</code> <code>bboxMinY</code> <code>bboxMaxX</code> <code>bboxMaxY</code></td>
+<td>Evaluates to a corner coordinate of the full extent of the query</td>
+</tr>
+<tr>
+<td><code>defaultSRS</code></td>
+<td>Evaluates to the default SRS of the feature type</td>
+</tr>
+<tr>
+<td><code>viewparam:name</code></td>
+<td>Evaluates to the value of the view parameter <em>name</em> in this query</td>
+</tr>
+</tbody>
+</table>
 <h2 id="configuring-a-cascaded-stored-query-layer">Configuring a cascaded stored query layer</h2>
 <p>In order to create a cascaded stored query layer the administrator invokes the Create new layer page. When an <a href="../wfs/">External Web Feature Server</a> is selected, the usual list of tables and views available for publication appears, a link <strong>Configure Cascaded Stored Query...</strong> also appears:</p>
 <p><img alt="" src="../images/csqaddnew.png" /></p>

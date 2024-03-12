@@ -3275,53 +3275,57 @@
 <h1 id="data-reference">Data Reference</h1>
 <p>The following is a list of all the attributes of a request that are captured by the monitor extension.</p>
 <h2 id="general">General</h2>
-<dl>
-<dt>Attribute</dt>
-<dd>
-<p>Description</p>
-<p>Type</p>
-</dd>
-<dt>ID</dt>
-<dd>
-<p>Numeric identifier of the request. Every request is assigned an identifier upon its creation.</p>
-<p>Numeric</p>
-</dd>
-<dt>Status</dt>
-<dd>
-<p>Status of the request. See <a href="./#status">notes</a> below.</p>
-<p>String</p>
-</dd>
-<dt>Category</dt>
-<dd>
-<p>The type of request being made, for example an OGC service request, a REST call, etc... See <a href="./#category">notes</a> below.</p>
-<p>String</p>
-</dd>
-<dt>Start time</dt>
-<dd>
-<p>The time of the start of the request.</p>
-<p>Timestamp</p>
-</dd>
-<dt>End time</dt>
-<dd>
-<p>The time of the completion of the request.</p>
-<p>Timestamp</p>
-</dd>
-<dt>Total time</dt>
-<dd>
-<p>The total time spent handling the request, measured in milliseconds, equal to the end time - start time.</p>
-<p>Numeric</p>
-</dd>
-<dt>Error message</dt>
-<dd>
-<p>The exception message if the request failed or resulted in an error.</p>
-<p>String</p>
-</dd>
-<dt>Error</dt>
-<dd>
-<p>The raw exception if the message failed or resulted in an error.</p>
-<p>Text blob</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>Numeric identifier of the request. Every request is assigned an identifier upon its creation.</td>
+<td>Numeric</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Status of the request. See <a href="./#status">notes</a> below.</td>
+<td>String</td>
+</tr>
+<tr>
+<td>Category</td>
+<td>The type of request being made, for example an OGC service request, a REST call, etc... See <a href="./#category">notes</a> below.</td>
+<td>String</td>
+</tr>
+<tr>
+<td>Start time</td>
+<td>The time of the start of the request.</td>
+<td>Timestamp</td>
+</tr>
+<tr>
+<td>End time</td>
+<td>The time of the completion of the request.</td>
+<td>Timestamp</td>
+</tr>
+<tr>
+<td>Total time</td>
+<td>The total time spent handling the request, measured in milliseconds, equal to the end time - start time.</td>
+<td>Numeric</td>
+</tr>
+<tr>
+<td>Error message</td>
+<td>The exception message if the request failed or resulted in an error.</td>
+<td>String</td>
+</tr>
+<tr>
+<td>Error</td>
+<td>The raw exception if the message failed or resulted in an error.</td>
+<td>Text blob</td>
+</tr>
+</tbody>
+</table>
 <h3 id="status">Status</h3>
 <p>The status of a request changes over it's life cycle and may have one of the following values:</p>
 <ul>
@@ -3434,53 +3438,57 @@
 </table>
 <h2 id="owsogc">OWS/OGC</h2>
 <p>The following attributes are OGC service specific.</p>
-<dl>
-<dt>Attribute</dt>
-<dd>
-<p>Description</p>
-<p>Type</p>
-</dd>
-<dt>Service</dt>
-<dd>
-<p>The OGC service identifier, for example: "WMS", "WFS", etc...</p>
-<p>String</p>
-</dd>
-<dt>Operation</dt>
-<dd>
-<p>The OGC operation name, for example: "GetMap", "GetFeature", etc...</p>
-<p>String</p>
-</dd>
-<dt>Sub operation</dt>
-<dd>
-<p>The ogc sub operation (if it applies). For instance when the operation is a WFS Transaction the sub operation may be one of "Insert", "Update", etc...</p>
-<p>String</p>
-</dd>
-<dt>OWS/OGC Version</dt>
-<dd>
-<p>The OGC service version, for example with WFS the version may be "1.0.0", "1.1.0", etc...</p>
-<p>String</p>
-</dd>
-<dt>Resources</dt>
-<dd>
-<p>Names of resources (layers, processes, etc...) specified as part of the request.</p>
-<p>List of String</p>
-</dd>
-<dt>Resources processing times in milliseconds.</dt>
-<dd>
-<p>Rendering times for resources. Rendering is performed by two concurrent threads, one reading and preprocessing data and styles towards a Java2D compatible format, the other painting the results of the first on the canvas. When the first thread starts reading the next layer, the second thread is likely still painting features from the layer before it, thus, times in this list are overlapping with each other, and the sum will be greater than the actual wall rendering time.</p>
-<p>List of Numeric</p>
-</dd>
-<dt>Labels Processing Time</dt>
-<dd>
-<p>Processing time in milliseconds for the labels of all resources listed.</p>
-<p>Numeric</p>
-</dd>
-<dt>Bounding box</dt>
-<dd>
-<p>The bounding box specified as part of the request. In some cases this is not possible to obtain this reliable, an example being a complex WFS query with a nested "BBOX" filter.</p>
-<p>List of Numeric</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Service</td>
+<td>The OGC service identifier, for example: "WMS", "WFS", etc...</td>
+<td>String</td>
+</tr>
+<tr>
+<td>Operation</td>
+<td>The OGC operation name, for example: "GetMap", "GetFeature", etc...</td>
+<td>String</td>
+</tr>
+<tr>
+<td>Sub operation</td>
+<td>The ogc sub operation (if it applies). For instance when the operation is a WFS Transaction the sub operation may be one of "Insert", "Update", etc...</td>
+<td>String</td>
+</tr>
+<tr>
+<td>OWS/OGC Version</td>
+<td>The OGC service version, for example with WFS the version may be "1.0.0", "1.1.0", etc...</td>
+<td>String</td>
+</tr>
+<tr>
+<td>Resources</td>
+<td>Names of resources (layers, processes, etc...) specified as part of the request.</td>
+<td>List of String</td>
+</tr>
+<tr>
+<td>Resources processing times in milliseconds.</td>
+<td>Rendering times for resources. Rendering is performed by two concurrent threads, one reading and preprocessing data and styles towards a Java2D compatible format, the other painting the results of the first on the canvas. When the first thread starts reading the next layer, the second thread is likely still painting features from the layer before it, thus, times in this list are overlapping with each other, and the sum will be greater than the actual wall rendering time.</td>
+<td>List of Numeric</td>
+</tr>
+<tr>
+<td>Labels Processing Time</td>
+<td>Processing time in milliseconds for the labels of all resources listed.</td>
+<td>Numeric</td>
+</tr>
+<tr>
+<td>Bounding box</td>
+<td>The bounding box specified as part of the request. In some cases this is not possible to obtain this reliable, an example being a complex WFS query with a nested "BBOX" filter.</td>
+<td>List of Numeric</td>
+</tr>
+</tbody>
+</table>
 <h2 id="geoip">GeoIP</h2>
 <p>The following attributes are specific to GeoIP look ups and are not captured out of the box. See <a href="../geoip/">GeoIP</a> for more details.</p>
 <table>

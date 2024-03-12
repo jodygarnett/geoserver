@@ -2300,175 +2300,219 @@
 <p>GeoServer includes several types of OGC services like WCS, WFS and WMS, commonly referred to as "OWS" services. These services can be global for the whole GeoServer instance or local to a particular workspace. In this last case, they are called <a href="../../../configuration/virtual-services/">virtual services</a>.</p>
 <h2 id="serviceswcssettingsformat"><code>/services/wcs/settings[.&lt;format&gt;]</code></h2>
 <p>Controls Web Coverage Service settings.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Return global WCS settings</p>
-<p>200</p>
-<p>XML, JSON</p>
-<p>HTML</p>
-</dd>
-</dl>
-<p>POST</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<dl>
-<dt>PUT</dt>
-<dd>
-<p>Modify global WCS settings</p>
-<p>200</p>
-</dd>
-</dl>
-<p>DELETE</p>
-<blockquote>
-<p>405</p>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Return global WCS settings</td>
+<td>200</td>
+<td>XML, JSON</td>
+<td>HTML</td>
+</tr>
+<tr>
+<td>POST</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Modify global WCS settings</td>
+<td>200</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="serviceswcsworkspaceswssettingsformat"><code>/services/wcs/workspaces/&lt;ws&gt;/settings[.&lt;format&gt;]</code></h2>
 <p>Controls Web Coverage Service settings for a given workspace.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Return WCS settings for workspace <code>ws</code></p>
-<p>200</p>
-<p>HTML, XML, JSON</p>
-<p>HTML</p>
-</dd>
-</dl>
-<p>POST</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<dl>
-<dt>PUT</dt>
-<dd>
-<p>Create or modify WCS settings for workspace <code>ws</code></p>
-<p>200</p>
-<p>XML,JSON</p>
-</dd>
-<dt>DELETE</dt>
-<dd>
-<p>Delete WCS settings for workspace <code>ws</code></p>
-<p>200</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Return WCS settings for workspace <code>ws</code></td>
+<td>200</td>
+<td>HTML, XML, JSON</td>
+<td>HTML</td>
+</tr>
+<tr>
+<td>POST</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Create or modify WCS settings for workspace <code>ws</code></td>
+<td>200</td>
+<td>XML,JSON</td>
+<td></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Delete WCS settings for workspace <code>ws</code></td>
+<td>200</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="serviceswfssettingsformat"><code>/services/wfs/settings[.&lt;format&gt;]</code></h2>
 <p>Controls Web Feature Service settings.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Return global WFS settings</p>
-<p>200</p>
-<p>HTML, XML, JSON</p>
-<p>HTML</p>
-</dd>
-</dl>
-<p>POST</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<dl>
-<dt>PUT</dt>
-<dd>
-<p>Modify global WFS settings</p>
-<p>200</p>
-<p>XML,JSON</p>
-</dd>
-</dl>
-<p>DELETE</p>
-<blockquote>
-<p>405</p>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Return global WFS settings</td>
+<td>200</td>
+<td>HTML, XML, JSON</td>
+<td>HTML</td>
+</tr>
+<tr>
+<td>POST</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Modify global WFS settings</td>
+<td>200</td>
+<td>XML,JSON</td>
+<td></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="serviceswfsworkspaceswssettingsformat"><code>/services/wfs/workspaces/&lt;ws&gt;/settings[.&lt;format&gt;]</code></h2>
 <p>Controls Web Feature Service settings for a given workspace.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Return WFS settings for workspace <code>ws</code></p>
-<p>200</p>
-<p>HTML, XML, JSON</p>
-<p>HTML</p>
-</dd>
-</dl>
-<p>POST</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<dl>
-<dt>PUT</dt>
-<dd>
-<p>Modify WFS settings for workspace <code>ws</code></p>
-<p>200</p>
-<p>XML,JSON</p>
-</dd>
-<dt>DELETE</dt>
-<dd>
-<p>Delete WFS settings for workspace <code>ws</code></p>
-<p>200</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Return WFS settings for workspace <code>ws</code></td>
+<td>200</td>
+<td>HTML, XML, JSON</td>
+<td>HTML</td>
+</tr>
+<tr>
+<td>POST</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Modify WFS settings for workspace <code>ws</code></td>
+<td>200</td>
+<td>XML,JSON</td>
+<td></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Delete WFS settings for workspace <code>ws</code></td>
+<td>200</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="serviceswmssettingsformat"><code>/services/wms/settings[.&lt;format&gt;]</code></h2>
 <p>Controls Web Map Service settings.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Return global WMS settings</p>
-<p>200</p>
-<p>HTML, XML, JSON</p>
-<p>HTML</p>
-</dd>
-</dl>
-<p>POST</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<dl>
-<dt>PUT</dt>
-<dd>
-<p>Modify global WMS settings</p>
-<p>200</p>
-<p>XML,JSON</p>
-</dd>
-</dl>
-<p>DELETE</p>
-<blockquote>
-<p>405</p>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Return global WMS settings</td>
+<td>200</td>
+<td>HTML, XML, JSON</td>
+<td>HTML</td>
+</tr>
+<tr>
+<td>POST</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Modify global WMS settings</td>
+<td>200</td>
+<td>XML,JSON</td>
+<td></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="serviceswmsworkspaceswssettingsformat"><code>/services/wms/workspaces/&lt;ws&gt;/settings[.&lt;format&gt;]</code></h2>
 <p>Controls Web Map Service settings for a given workspace.</p>
 <table>
@@ -2514,38 +2558,47 @@
 </table>
 <h2 id="serviceswmtssettingsformat"><code>/services/wmts/settings[.&lt;format&gt;]</code></h2>
 <p>Controls Web Map Tile Service settings.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Return global WMTS settings</p>
-<p>200</p>
-<p>HTML, XML, JSON</p>
-<p>HTML</p>
-</dd>
-</dl>
-<p>POST</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<dl>
-<dt>PUT</dt>
-<dd>
-<p>Modify global WMTS settings</p>
-<p>200</p>
-<p>XML,JSON</p>
-</dd>
-</dl>
-<p>DELETE</p>
-<blockquote>
-<p>405</p>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Return global WMTS settings</td>
+<td>200</td>
+<td>HTML, XML, JSON</td>
+<td>HTML</td>
+</tr>
+<tr>
+<td>POST</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Modify global WMTS settings</td>
+<td>200</td>
+<td>XML,JSON</td>
+<td></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="serviceswmtsworkspaceswssettingsformat"><code>/services/wmts/workspaces/&lt;ws&gt;/settings[.&lt;format&gt;]</code></h2>
 <p>Controls Web Map Tile Service settings for a given workspace.</p>
 <table>

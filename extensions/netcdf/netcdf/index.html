@@ -3297,17 +3297,47 @@
 <em>NetCDF viewer in ToolsUI for 2D coordinate variables</em></p>
 <h2 id="netcdf_multidim">Two-Dimensional Coordinate Variables</h2>
 <p>Two-dimension coordinate variables are exposed in GeoServer as single dimensions. Their domain is exposed in GetCapabilities as a flat list of possible values. However, they imply an interdependence between the different dimensions, where some combinations of values exist (have data) and other combinations do not. For example:</p>
-<p>+-----------+----------+----------+----------+----------+
-| &gt; Runtime |          | &gt; Time   |          |          |
-+===========+==========+==========+==========+==========+
-|           |          | &gt; 0      | &gt; 1      | &gt; 2      |
-+-----------+----------+----------+----------+----------+
-| 0         | 1/1/2017 | 1/1/2017 | &frac12;/2017 | &frac14;/2017 |
-+-----------+----------+----------+----------+----------+
-| 1         | &frac12;/2017 | &frac12;/2017 | &#8531;/2017 | &gt; XXXX   |
-+-----------+----------+----------+----------+----------+
-| 2         | &#8531;/2017 | &#8531;/2017 | &gt; XXXX   | &gt; XXXX   |
-+-----------+----------+----------+----------+----------+</p>
+<table>
+<thead>
+<tr>
+<th>&gt; Runtime</th>
+<th></th>
+<th>&gt; Time</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td>&gt; 0</td>
+<td>&gt; 1</td>
+<td>&gt; 2</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1/1/2017</td>
+<td>1/1/2017</td>
+<td>&frac12;/2017</td>
+<td>&frac14;/2017</td>
+</tr>
+<tr>
+<td>1</td>
+<td>&frac12;/2017</td>
+<td>&frac12;/2017</td>
+<td>&#8531;/2017</td>
+<td>&gt; XXXX</td>
+</tr>
+<tr>
+<td>2</td>
+<td>&#8531;/2017</td>
+<td>&#8531;/2017</td>
+<td>&gt; XXXX</td>
+<td>&gt; XXXX</td>
+</tr>
+</tbody>
+</table>
 <p>The time dimension would thus be exposed in GeoServer as {1/1/2017, &frac12;/2017, &#8531;/2017, &frac14;/2017}. However, the combinations (runtime=1/1/2017, time=&#8531;/2017), (runtime=&frac12;/2017, time=1/1/2017), (runtime=&frac12;/2017, time=&frac14;/2017) , (runtime=&#8531;/2017, time=1/1/2017), (runtime=&#8531;/2017, time=&frac12;/2017) and (runtime=&#8531;/2017, time=&frac14;/2017) do not exist.</p>
 <p>Some additional functionality was introduced to maximally exploit two-dimensional coordinate variables:</p>
 <blockquote>

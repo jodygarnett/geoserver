@@ -2340,44 +2340,76 @@ feature-styles:
 <p>For more details on syntax, please see the section on <a href="../symbolizers/">symbolizers</a>.</p>
 </div>
 <p>The structure of a typical YSLD file is as follows:</p>
-<dl>
-<dt>Structure</dt>
-<dd>
-<p>Description</p>
-</dd>
-<dt><code>Variable definitions</code></dt>
-<dd>
-<p>For common style settings</p>
-</dd>
-<dt><code>Scale grid / zoom levels</code></dt>
-<dd>
-<p>Used to define style based on tile set zoom level</p>
-</dd>
-<dt><code>style header</code></dt>
-<dd>
-<p>Document name, title, and abstract followed by feature-styles</p>
-<p><img alt="image" src="img/structure_header.*" /></p>
-</dd>
-<dt><a href="../featurestyles/">feature style</a></dt>
-<dd>
-<p>Independent block that can contain one or many rules.</p>
-<p><img alt="image" src="img/structure_feature_style.*" /></p>
-</dd>
-<dt><a href="../rules/">rule</a></dt>
-<dd>
-<p>Directive that can contain one or many <a href="../symbolizers/">symbolizers</a>.</p>
-<p><img alt="image" src="img/structure_rule_all.*" /></p>
-</dd>
-<dt><a href="../filters/">filter</a></dt>
-<dd>
-<p>A rule "includes" all features unless made to be selective by the use of a <a href="../filters/">filter</a>.</p>
-<p><img alt="image" src="img/structure_rule.*" /></p>
-</dd>
-<dt><a href="../symbolizers/">symbolizers</a></dt>
-<dd>
-<p>basic unit of a style containing the actual visualization instructions for individual features.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Structure</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Variable definitions</code></td>
+<td>For common style settings</td>
+</tr>
+<tr>
+<td><code>Scale grid / zoom levels</code></td>
+<td>Used to define style based on tile set zoom level</td>
+</tr>
+<tr>
+<td><code>style header</code></td>
+<td>Document name, title, and abstract followed by feature-styles</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><img alt="image" src="img/structure_header.*" /></td>
+</tr>
+<tr>
+<td><a href="../featurestyles/">feature style</a></td>
+<td>Independent block that can contain one or many rules.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><img alt="image" src="img/structure_feature_style.*" /></td>
+</tr>
+<tr>
+<td><a href="../rules/">rule</a></td>
+<td>Directive that can contain one or many <a href="../symbolizers/">symbolizers</a>.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><img alt="image" src="img/structure_rule_all.*" /></td>
+</tr>
+<tr>
+<td><a href="../filters/">filter</a></td>
+<td>A rule "includes" all features unless made to be selective by the use of a <a href="../filters/">filter</a>.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><img alt="image" src="img/structure_rule.*" /></td>
+</tr>
+<tr>
+<td><a href="../symbolizers/">symbolizers</a></td>
+<td>basic unit of a style containing the actual visualization instructions for individual features.</td>
+</tr>
+</tbody>
+</table>
 <p>The structure YSLD files is outlined using indentation.</p>
 <p><img alt="" src="img/structure_example.*" />
 <em>Structure of YSLD style_example</em></p>
@@ -2386,23 +2418,66 @@ feature-styles:
 <div class="language-text highlight"><pre><span></span><code>&lt;property&gt;: &lt;value&gt;
 </code></pre></div>
 <p>The <code>&lt;property&gt;</code> is a string denoting the property name, while the <code>&lt;value&gt;</code> can be one of a number of different types depending on context. These different types require slightly different markup, as shown in the following table:</p>
-<p>+-------------------------------------------+------------------------------+----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Type                                      | Syntax                       | Example              | Notes                                                                                                                                                                                                                                                                                                                   |
-+===========================================+==============================+======================+=========================================================================================================================================================================================================================================================================================================================+
-| Integer                                   | Value only                   | <code>12</code>                 | Quotes allowed as well                                                                                                                                                                                                                                                                                                  |
-+-------------------------------------------+------------------------------+----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Float                                     | Value only                   | <code>0.75</code>               | Quotes allowed as well                                                                                                                                                                                                                                                                                                  |
-+-------------------------------------------+------------------------------+----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Text                                      | Quotes                       | <code>Title</code>              | Spaces, colons, and other special characters are allowed. If value is ambiguous, use single quotes.                                                                                                                                                                                                                     |
-+-------------------------------------------+------------------------------+----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Color                                     | -   '# + six digits' (hex) | -   <code>'#FF00FF'</code>      | Used when specifying RGB colors. For hex, use <code>'#RRGGBB'</code> with each two character pair having a value from <code>00</code> to <code>FF</code>. For decimal, use <code>rgb(rrr,ggg,bbb)</code> with each ordinate having a value from <code>0</code> to <code>255</code>. Quotes are not required when using <a href="http://www.w3schools.com/html/html_colornames.asp">named colors</a>. |
-|                                           | -   rgb(r,g,b) (decimal)     | -   <code>rgb(255,0,255)</code> |                                                                                                                                                                                                                                                                                                                         |
-|                                           | -   Text (named colors)      | -   <code>fuchsia</code>        |                                                                                                                                                                                                                                                                                                                         |
-+-------------------------------------------+------------------------------+----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Tuple                                     | Brackets                     | <code>[0,15000]</code>          | Use two single quotes to denote blank entries in the tuple (for example: <code>['#FFFFFF',0,0,'']</code>).                                                                                                                                                                                                                         |
-+-------------------------------------------+------------------------------+----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <a href="../filters/">Filter</a> or other expression | \${<expression>}           | <code>${type = road}</code>     | If attribute name is ambiguous, encase in brackets (for example: <code>${[type] = road}</code>). If value is ambiguous, use single quotes (<code>${type = 'road'}</code>).                                                                                                                                                                    |
-+-------------------------------------------+------------------------------+----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Syntax</th>
+<th>Example</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Integer</td>
+<td>Value only</td>
+<td><code>12</code></td>
+<td>Quotes allowed as well</td>
+</tr>
+<tr>
+<td>Float</td>
+<td>Value only</td>
+<td><code>0.75</code></td>
+<td>Quotes allowed as well</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>Quotes</td>
+<td><code>Title</code></td>
+<td>Spaces, colons, and other special characters are allowed. If value is ambiguous, use single quotes.</td>
+</tr>
+<tr>
+<td>Color</td>
+<td>-   '# + six digits' (hex)</td>
+<td>-   <code>'#FF00FF'</code></td>
+<td>Used when specifying RGB colors. For hex, use <code>'#RRGGBB'</code> with each two character pair having a value from <code>00</code> to <code>FF</code>. For decimal, use <code>rgb(rrr,ggg,bbb)</code> with each ordinate having a value from <code>0</code> to <code>255</code>. Quotes are not required when using <a href="http://www.w3schools.com/html/html_colornames.asp">named colors</a>.</td>
+</tr>
+<tr>
+<td></td>
+<td>-   rgb(r,g,b) (decimal)</td>
+<td>-   <code>rgb(255,0,255)</code></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>-   Text (named colors)</td>
+<td>-   <code>fuchsia</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Tuple</td>
+<td>Brackets</td>
+<td><code>[0,15000]</code></td>
+<td>Use two single quotes to denote blank entries in the tuple (for example: <code>['#FFFFFF',0,0,'']</code>).</td>
+</tr>
+<tr>
+<td><a href="../filters/">Filter</a> or other expression</td>
+<td>\${<expression>}</td>
+<td><code>${type = road}</code></td>
+<td>If attribute name is ambiguous, encase in brackets (for example: <code>${[type] = road}</code>). If value is ambiguous, use single quotes (<code>${type = 'road'}</code>).</td>
+</tr>
+</tbody>
+</table>
 <h2 id="expressions">Expressions</h2>
 <p>Throughout the reference guide, there are references to values that are denoted by <code>&lt;expression&gt;</code>. An <strong>expression</strong> is a flexible term meaning that the value can be one of the following kinds of objects:</p>
 <ul>

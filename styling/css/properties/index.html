@@ -2254,74 +2254,78 @@
 <h1 id="property-listing">Property listing</h1>
 <p>This page lists the supported rendering properties. See <a href="../valuetypes/">CSS value types</a> for more information about the value types for each.</p>
 <h2 id="css_properties_point">Point symbology</h2>
-<dl>
-<dt>Property</dt>
-<dd>
-<p>Type</p>
-<p>Meaning</p>
-<p>Accepts Expression?</p>
-</dd>
-<dt><code>mark</code></dt>
-<dd>
-<p>url, symbol</p>
-<p>The image or well-known shape to render for points</p>
-<p>yes</p>
-</dd>
-<dt><code>mark-composite</code></dt>
-<dd>
-<p>string</p>
-<p>The composite mode to be used and the optional opacity separated with a comma. See the <a href="../../sld/extensions/composite-blend/modes/">full list of available modes</a>.</p>
-<p>no</p>
-</dd>
-<dt><code>mark-mime</code></dt>
-<dd>
-<p>string (<a href="http://en.wikipedia.org/wiki/MIME">MIME Type</a>)</p>
-<p>The type of the image referenced by a url()</p>
-<p>No, defaults to 'image/jpeg'</p>
-</dd>
-<dt><code>mark-geometry</code></dt>
-<dd>
-<p>expression</p>
-<p>An expression to use for the geometry when rendering features</p>
-<p>yes</p>
-</dd>
-<dt><code>mark-size</code></dt>
-<dd>
-<p>length</p>
-<p>The width to assume for the provided image. The height will be adjusted to preserve the source aspect ratio.</p>
-<p>yes</p>
-</dd>
-<dt><code>mark-rotation</code></dt>
-<dd>
-<p>angle</p>
-<p>A rotation to be applied (clockwise) to the mark image.</p>
-<p>yes</p>
-</dd>
-<dt><code>z-index</code></dt>
-<dd>
-<p>integer</p>
-<p>Controls the z ordering of output</p>
-<p>no</p>
-</dd>
-<dt><code>mark-label-obstacle</code></dt>
-<dd>
-<p>boolean</p>
-<p>If true the point symbol will be considered an obstacle for labels, no label will overlap it</p>
-<p>no</p>
-</dd>
-<dt><code>mark-anchor</code></dt>
-<dd>
-<p>expression</p>
-<p>The part of the mark to place over the point or middle of the polygon. This takes 2 values - x y where x=0 is the left edge of the label, x=1 is the right edge. y=0 is the bottom edge of the label, y=1 is the top edge. Specify 0.5 0.5 to centre a label.</p>
-<p>yes</p>
-</dd>
-<dt><code>mark-offset</code></dt>
-<dd>
-<p>expression</p>
-<p>This is for fine-tuning mark-anchor. x and y values specify pixel offsets to adjust the mark position.</p>
-<p>yes</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Meaning</th>
+<th>Accepts Expression?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mark</code></td>
+<td>url, symbol</td>
+<td>The image or well-known shape to render for points</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>mark-composite</code></td>
+<td>string</td>
+<td>The composite mode to be used and the optional opacity separated with a comma. See the <a href="../../sld/extensions/composite-blend/modes/">full list of available modes</a>.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>mark-mime</code></td>
+<td>string (<a href="http://en.wikipedia.org/wiki/MIME">MIME Type</a>)</td>
+<td>The type of the image referenced by a url()</td>
+<td>No, defaults to 'image/jpeg'</td>
+</tr>
+<tr>
+<td><code>mark-geometry</code></td>
+<td>expression</td>
+<td>An expression to use for the geometry when rendering features</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>mark-size</code></td>
+<td>length</td>
+<td>The width to assume for the provided image. The height will be adjusted to preserve the source aspect ratio.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>mark-rotation</code></td>
+<td>angle</td>
+<td>A rotation to be applied (clockwise) to the mark image.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>z-index</code></td>
+<td>integer</td>
+<td>Controls the z ordering of output</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>mark-label-obstacle</code></td>
+<td>boolean</td>
+<td>If true the point symbol will be considered an obstacle for labels, no label will overlap it</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>mark-anchor</code></td>
+<td>expression</td>
+<td>The part of the mark to place over the point or middle of the polygon. This takes 2 values - x y where x=0 is the left edge of the label, x=1 is the right edge. y=0 is the bottom edge of the label, y=1 is the top edge. Specify 0.5 0.5 to centre a label.</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>mark-offset</code></td>
+<td>expression</td>
+<td>This is for fine-tuning mark-anchor. x and y values specify pixel offsets to adjust the mark position.</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
 <h2 id="css_properties_line">Line symbology</h2>
 <table>
 <thead>
@@ -2820,86 +2824,90 @@
 </tbody>
 </table>
 <h2 id="css_properties_raster">Raster symbology</h2>
-<dl>
-<dt>Property</dt>
-<dd>
-<p>Type</p>
-<p>Meaning</p>
-<p>Accepts Expression?</p>
-</dd>
-<dt><code>raster-channels</code></dt>
-<dd>
-<p>string</p>
-<p>The list of raster channels to be used in the output. It can be "auto" to make the renderer choose the best course of action, or a list of band numbers, a single one will generate a gray image, three will generate an RGB one, four will generate a RGBA one. E.g., "1 3 7" to choose the first, third and seventh band of the input raster to make an RGB image</p>
-<p>no</p>
-</dd>
-<dt><code>raster-composite</code></dt>
-<dd>
-<p>string</p>
-<p>The composite mode to be used and the optional opacity separated with a comma. See the <a href="../../sld/extensions/composite-blend/modes/">full list of available modes</a>.</p>
-<p>no</p>
-</dd>
-<dt><code>raster-geometry</code></dt>
-<dd>
-<p>expression</p>
-<p>The attribute containing the raster to be painted. Normally not needed, but it would work if you had a custom vector data source that contains a GridCoverage attribute, in order to select it</p>
-<p>yes</p>
-</dd>
-<dt><code>raster-opacity</code></dt>
-<dd>
-<p>floating point</p>
-<p>A value comprised between 0 and 1, 0 meaning completely transparent, 1 meaning completely opaque. This controls the whole raster transparency.</p>
-<p>no</p>
-</dd>
-<dt><code>raster-contrast-enhancement</code></dt>
-<dd>
-<p>string</p>
-<p>Allows to stretch the range of data/colors in order to enhance tiny differences. Possible values are 'normalize', 'histogram' and 'none'</p>
-<p>no</p>
-</dd>
-<dt><code>raster-gamma</code></dt>
-<dd>
-<p>floating point</p>
-<p>Gamma adjustment for the output raster</p>
-<p>no</p>
-</dd>
-<dt><code>raster-z-index</code></dt>
-<dd>
-<p>integer</p>
-<p>Controls the z ordering of the raster output</p>
-<p>no</p>
-</dd>
-<dt><code>raster-color-map</code></dt>
-<dd>
-<p>string</p>
-<p>Applies a color map to single banded input. The contents are a space separate list of <code>color-map-entry(color, value)</code> (opacity assumed to be 1 and label will have a null value), or <code>color-map-entry(color, value, opacity, label)</code>. The values must be provided in increasing order.</p>
-<p>no</p>
-</dd>
-<dt><code>raster-color-map-type</code></dt>
-<dd>
-<p>string</p>
-<p>Controls how the color map entries are interpreted, the possible values are "ramp", "intervals" and "values", with ramp being the default if no "raster-color-map-type" is provided. The default "ramp" behavior is to linearly interpolate color between the provided values, and assign the lowest color to all values below the lowest value, and the highest color to all values above the highest value. The "intervals" behavior instead assigns solid colors between values, whilst "values" only assigns colors to the specified values, every other value in the raster is not painted at all</p>
-<p>no</p>
-</dd>
-<dt><code>raster-color-map-extended</code></dt>
-<dd>
-<p>string</p>
-<p>Enables "extended color map" mode, which makes the color map use 65536 entries instead of 256, and thus allows for a more precise color mapping. The default is "false", which means the color map is limited to 256 entries (if more than 256 colors are used, the extended color map mode is enabled automatically). This property is ignored if the "raster-color-map" property is not provided.</p>
-<p>no</p>
-</dd>
-<dt><code>raster-label-fi</code></dt>
-<dd>
-<p>string</p>
-<p>Controls if and how color map entry labels are included, as attributes, in the GetFeatureInfo output. Valid values are <code>add</code>, adding the labels as extra attributes, <code>replace</code>, using the labels in place of the actual value, or <code>none</code> (the default) which does not include the labels in the output.</p>
-<p>no</p>
-</dd>
-<dt><code>raster-label-name</code></dt>
-<dd>
-<p>string</p>
-<p>If color map entry labels are included in the GetFeatureInfo output, this property controls then name of the attribute that will contain them.</p>
-<p>no</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Meaning</th>
+<th>Accepts Expression?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>raster-channels</code></td>
+<td>string</td>
+<td>The list of raster channels to be used in the output. It can be "auto" to make the renderer choose the best course of action, or a list of band numbers, a single one will generate a gray image, three will generate an RGB one, four will generate a RGBA one. E.g., "1 3 7" to choose the first, third and seventh band of the input raster to make an RGB image</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>raster-composite</code></td>
+<td>string</td>
+<td>The composite mode to be used and the optional opacity separated with a comma. See the <a href="../../sld/extensions/composite-blend/modes/">full list of available modes</a>.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>raster-geometry</code></td>
+<td>expression</td>
+<td>The attribute containing the raster to be painted. Normally not needed, but it would work if you had a custom vector data source that contains a GridCoverage attribute, in order to select it</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>raster-opacity</code></td>
+<td>floating point</td>
+<td>A value comprised between 0 and 1, 0 meaning completely transparent, 1 meaning completely opaque. This controls the whole raster transparency.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>raster-contrast-enhancement</code></td>
+<td>string</td>
+<td>Allows to stretch the range of data/colors in order to enhance tiny differences. Possible values are 'normalize', 'histogram' and 'none'</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>raster-gamma</code></td>
+<td>floating point</td>
+<td>Gamma adjustment for the output raster</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>raster-z-index</code></td>
+<td>integer</td>
+<td>Controls the z ordering of the raster output</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>raster-color-map</code></td>
+<td>string</td>
+<td>Applies a color map to single banded input. The contents are a space separate list of <code>color-map-entry(color, value)</code> (opacity assumed to be 1 and label will have a null value), or <code>color-map-entry(color, value, opacity, label)</code>. The values must be provided in increasing order.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>raster-color-map-type</code></td>
+<td>string</td>
+<td>Controls how the color map entries are interpreted, the possible values are "ramp", "intervals" and "values", with ramp being the default if no "raster-color-map-type" is provided. The default "ramp" behavior is to linearly interpolate color between the provided values, and assign the lowest color to all values below the lowest value, and the highest color to all values above the highest value. The "intervals" behavior instead assigns solid colors between values, whilst "values" only assigns colors to the specified values, every other value in the raster is not painted at all</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>raster-color-map-extended</code></td>
+<td>string</td>
+<td>Enables "extended color map" mode, which makes the color map use 65536 entries instead of 256, and thus allows for a more precise color mapping. The default is "false", which means the color map is limited to 256 entries (if more than 256 colors are used, the extended color map mode is enabled automatically). This property is ignored if the "raster-color-map" property is not provided.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>raster-label-fi</code></td>
+<td>string</td>
+<td>Controls if and how color map entry labels are included, as attributes, in the GetFeatureInfo output. Valid values are <code>add</code>, adding the labels as extra attributes, <code>replace</code>, using the labels in place of the actual value, or <code>none</code> (the default) which does not include the labels in the output.</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>raster-label-name</code></td>
+<td>string</td>
+<td>If color map entry labels are included in the GetFeatureInfo output, this property controls then name of the attribute that will contain them.</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
 <h2 id="css_properties_shared">Shared</h2>
 <table>
 <thead>

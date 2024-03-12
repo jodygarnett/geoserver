@@ -3326,17 +3326,42 @@
 <h2 id="requests">Requests</h2>
 <h3 id="restgeofencebatchexec"><code>/rest/geofence/batch/exec</code></h3>
 <p>Issue a Batch operation executing all the declared operations.</p>
-<hr />
-<p>Method   Action            Response code   Response</p>
-<hr />
-<p>POST     Execute a batch   200             OK</p>
-<div class="language-text highlight"><pre><span></span><code>                         400             BadRequest: malformed request body, duplicate rule addition
-
-                         404             NotFound: rule not found
-
-                         500             InternalServerError: unexpected error
-</code></pre></div>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Response code</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td>Execute a batch</td>
+<td>200</td>
+<td>OK</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>400</td>
+<td>BadRequest: malformed request body, duplicate rule addition</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>404</td>
+<td>NotFound: rule not found</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>500</td>
+<td>InternalServerError: unexpected error</td>
+</tr>
+</tbody>
+</table>
 
 
 

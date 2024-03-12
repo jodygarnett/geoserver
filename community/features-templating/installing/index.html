@@ -3926,16 +3926,13 @@
 
 
 <h1 id="installing-the-geoserver-features-templating-extension">Installing the GeoServer FEATURES-TEMPLATING extension</h1>
-<blockquote>
 <ol>
 <li>
 <p>Download the Features Templating community module from <a href="https://build.geoserver.org/geoserver/2.24.x/community-latest/geoserver-2.24-SNAPSHOT-features-templating-plugin.zip">geoserver-2.24-SNAPSHOT-features-templating-plugin.zip</a>.</p>
-<p>::: warning
-::: title
-Warning
-:::</p>
-<p>Make sure to match the version of the extension to the version of the GeoServer instance!
-:::</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure to match the version of the extension to the version of the GeoServer instance!</p>
+</div>
 </li>
 <li>
 <p>Extract the contents of the archive into the <code>WEB-INF/lib</code> directory of the GeoServer installation.</p>
@@ -3944,7 +3941,6 @@ Warning
 <p>The full package requires the OGC API - Features service to be available. If the server does not include it, the jar <code>gs-features-templating-ogcapi-&lt;version&gt;.jar</code> should be removed from <code>WEB-INF/lib</code></p>
 </li>
 </ol>
-</blockquote>
 
 
 

@@ -2531,28 +2531,37 @@
 <h3 id="mark">Mark</h3>
 <p><strong>Marks</strong> are predefined vector shapes identified by a well-known name. Their fill and stroke can be defined explicitly in the SLD. For GeoServer extensions for specifying mark symbols, see <a href="../../extensions/pointsymbols/">Graphic symbology in GeoServer</a>.</p>
 <p>The <code>&lt;Mark&gt;</code> element has the sub-elements:</p>
-<dl>
-<dt><strong>Tag</strong></dt>
-<dd>
-<p><strong>Required?</strong></p>
-<p><strong>Description</strong></p>
-</dd>
-<dt><code>&lt;WellKnownName&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>The name of the shape. Standard SLD shapes are <code>circle</code>, <code>square</code>, <code>triangle</code>, <code>star</code>, <code>cross</code>, or <code>x</code>. Default is <code>square</code>.</p>
-</dd>
-<dt><code>&lt;Fill&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>Specifies how the symbol should be filled (for closed shapes). Options are to use <code>&lt;CssParameter name="fill"&gt;</code> to specify a solid fill color, or using <code>&lt;GraphicFill&gt;</code> for a tiled graphic fill. See the <code>PolygonSymbolizer</code> <a href="../polygonsymbolizer/#sld_reference_fill">Fill</a> for the full syntax.</p>
-</dd>
-<dt><code>&lt;Stroke&gt;</code></dt>
-<dd>
-<p>No</p>
-<p>Specifies how the symbol linework should be drawn. Some options are using <code>&lt;CssParameter name="stroke"&gt;</code> to specify a stroke color, or using <code>&lt;GraphicStroke&gt;</code> for a repeated graphic. See the <code>LineSymbolizer</code> <a href="../linesymbolizer/#sld_reference_stroke">Stroke</a> for the full syntax.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tag</strong></td>
+<td><strong>Required?</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><code>&lt;WellKnownName&gt;</code></td>
+<td>No</td>
+<td>The name of the shape. Standard SLD shapes are <code>circle</code>, <code>square</code>, <code>triangle</code>, <code>star</code>, <code>cross</code>, or <code>x</code>. Default is <code>square</code>.</td>
+</tr>
+<tr>
+<td><code>&lt;Fill&gt;</code></td>
+<td>No</td>
+<td>Specifies how the symbol should be filled (for closed shapes). Options are to use <code>&lt;CssParameter name="fill"&gt;</code> to specify a solid fill color, or using <code>&lt;GraphicFill&gt;</code> for a tiled graphic fill. See the <code>PolygonSymbolizer</code> <a href="../polygonsymbolizer/#sld_reference_fill">Fill</a> for the full syntax.</td>
+</tr>
+<tr>
+<td><code>&lt;Stroke&gt;</code></td>
+<td>No</td>
+<td>Specifies how the symbol linework should be drawn. Some options are using <code>&lt;CssParameter name="stroke"&gt;</code> to specify a stroke color, or using <code>&lt;GraphicStroke&gt;</code> for a repeated graphic. See the <code>LineSymbolizer</code> <a href="../linesymbolizer/#sld_reference_stroke">Stroke</a> for the full syntax.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="example">Example</h2>
 <p>The following symbolizer is taken from the <a href="../../cookbook/points/">Points</a> section in the <a href="../../cookbook/">SLD Cookbook</a>.</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;PointSymbolizer&gt;</span>

@@ -4583,29 +4583,33 @@ Content-Type: application/json
 }
 </code></pre></div>
 <h4 id="importstasksdatafiles_1">/imports/<importId>/tasks/<taskId>/data/files/<fileId></h4>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status Code/Headers</p>
-<p>Input</p>
-<p>Output</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Retrieve the file with id <fileId> from the data of a task with id <taskId> within import with id <importId></p>
-<p>200</p>
-<p>n/a</p>
-<p>Task</p>
-</dd>
-<dt>DELETE</dt>
-<dd>
-<p>Remove a specific file from the task with id <taskId> within import with id <importId></p>
-<p>200</p>
-<p>n/a</p>
-<p>n/a</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status Code/Headers</th>
+<th>Input</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Retrieve the file with id <fileId> from the data of a task with id <taskId> within import with id <importId></td>
+<td>200</td>
+<td>n/a</td>
+<td>Task</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Remove a specific file from the task with id <taskId> within import with id <importId></td>
+<td>200</td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+</tbody>
+</table>
 <p>Following the links we'll get to the representation of a single file, notice how in this case a main file can be associate to sidecar files:</p>
 <div class="language-text highlight"><pre><span></span><code>Status: 200 OK
 Content-Type: application/json
@@ -4734,29 +4738,33 @@ Content-Type: application/json
 <h3 id="task-target-layer">Task target layer</h3>
 <h4 id="importstaskslayer">/imports/<importId>/tasks/<taskId>/layer</h4>
 <p>The layer defines how the target layer will be created</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status Code/Headers</p>
-<p>Input</p>
-<p>Output</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Retrieve the layer of a task with id <taskId> within import with id <importId></p>
-<p>200</p>
-<p>n/a</p>
-<p>A layer JSON representation</p>
-</dd>
-<dt>PUT</dt>
-<dd>
-<p>Modify the target layer for a task with id <taskId> within import with id <importId></p>
-<p>200</p>
-<p>Task</p>
-<p>Task</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status Code/Headers</th>
+<th>Input</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Retrieve the layer of a task with id <taskId> within import with id <importId></td>
+<td>200</td>
+<td>n/a</td>
+<td>A layer JSON representation</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Modify the target layer for a task with id <taskId> within import with id <importId></td>
+<td>200</td>
+<td>Task</td>
+<td>Task</td>
+</tr>
+</tbody>
+</table>
 <p>Requesting the task layer will result in the following:</p>
 <div class="language-text highlight"><pre><span></span><code>Status: 200 OK
 Content-Type: application/json
@@ -4945,47 +4953,55 @@ Content-Type: application/json
 <h3 id="transformations">Transformation reference</h3>
 <h4 id="attributeremaptransform">AttributeRemapTransform</h4>
 <p>Remaps a certain field to a given target data type</p>
-<dl>
-<dt>Parameter</dt>
-<dd>
-<p>Optional</p>
-<p>Description</p>
-</dd>
-<dt>field</dt>
-<dd>
-<p>N</p>
-<p>The name of the field to be remapped</p>
-</dd>
-<dt>target</dt>
-<dd>
-<p>N</p>
-<p>The "target" field type, as a fully qualified Java class name</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field</td>
+<td>N</td>
+<td>The name of the field to be remapped</td>
+</tr>
+<tr>
+<td>target</td>
+<td>N</td>
+<td>The "target" field type, as a fully qualified Java class name</td>
+</tr>
+</tbody>
+</table>
 <h4 id="attributecomputetransform">AttributeComputeTransform</h4>
 <p>Computes a new field based on an expression that can use the other field values</p>
-<dl>
-<dt>Parameter</dt>
-<dd>
-<p>Optional</p>
-<p>Description</p>
-</dd>
-<dt>field</dt>
-<dd>
-<p>N</p>
-<p>The name of the field to be computed</p>
-</dd>
-<dt>fieldType</dt>
-<dd>
-<p>N</p>
-<p>The field type, as a fully qualified Java class name (e.g., <code>java.lang.String</code>, <code>java.lang.Integer</code>, <code>java.util.Date</code> and so on)</p>
-</dd>
-<dt>cql</dt>
-<dd>
-<p>N</p>
-<p>The (E)CQL expression used to compute the new field (can be a constant value, e.g. <code>'My String'</code>)</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field</td>
+<td>N</td>
+<td>The name of the field to be computed</td>
+</tr>
+<tr>
+<td>fieldType</td>
+<td>N</td>
+<td>The field type, as a fully qualified Java class name (e.g., <code>java.lang.String</code>, <code>java.lang.Integer</code>, <code>java.util.Date</code> and so on)</td>
+</tr>
+<tr>
+<td>cql</td>
+<td>N</td>
+<td>The (E)CQL expression used to compute the new field (can be a constant value, e.g. <code>'My String'</code>)</td>
+</tr>
+</tbody>
+</table>
 <h4 id="attributestopointgeometrytransform">AttributesToPointGeometryTransform</h4>
 <p>Transforms two numeric fields <code>latField</code> and <code>lngField</code> into a point geometry representation with <code>pointFieldName</code> setting name of the point <code>POINT(lngField,latField)</code>, the source fields will be removed if <code>preserveGeometry</code> is false.</p>
 <table>

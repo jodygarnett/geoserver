@@ -3582,36 +3582,113 @@
 </blockquote>
 <h3 id="key">key</h3>
 <p>The key is the identifier for the field and should therefore be unique. Other configurations can refer the field by using this identifier. E.g the geonetwork mapping, internationalization.</p>
-<p>+-------+----------+-------------------+
-| Key   | Required | Value             |
-+=======+==========+===================+
-| &gt; key | &gt; yes    | &gt; a unique string |
-+-------+----------+-------------------+</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Required</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt; key</td>
+<td>&gt; yes</td>
+<td>&gt; a unique string</td>
+</tr>
+</tbody>
+</table>
 <h3 id="fieldtype">fieldType</h3>
 <p>Chooses the type of input widget for the field. A detailed description for each type can be found in the <a href="#field-types">Field Types</a> section.</p>
-<p>+-------------+----------+------------------+
-| Key         | Required | Value            |
-+=============+==========+==================+
-| &gt; fieldType | &gt; yes    | &gt; -   COMPLEX    |
-|             |          | &gt; -   TEXT       |
-|             |          | &gt; -   NUMBER     |
-|             |          | &gt; -   TEXT_AREA  |
-|             |          | &gt; -   DATE       |
-|             |          | &gt; -   DATETIME   |
-|             |          | &gt; -   BOOLEAN    |
-|             |          | &gt; -   UUID       |
-|             |          | &gt; -   DROPDOWN   |
-|             |          | &gt; -   SUGGESTBOX |
-|             |          | &gt; -   REQUIREBOX |
-|             |          | &gt; -   DERIVED    |
-+-------------+----------+------------------+</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Required</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt; fieldType</td>
+<td>&gt; yes</td>
+<td>&gt; -   COMPLEX</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>&gt; -   TEXT</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>&gt; -   NUMBER</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>&gt; -   TEXT_AREA</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>&gt; -   DATE</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>&gt; -   DATETIME</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>&gt; -   BOOLEAN</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>&gt; -   UUID</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>&gt; -   DROPDOWN</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>&gt; -   SUGGESTBOX</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>&gt; -   REQUIREBOX</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>&gt; -   DERIVED</td>
+</tr>
+</tbody>
+</table>
 <h3 id="label">label</h3>
 <p>If present this value will be used as the label for the field. When the label is not present in the yaml configuration the key will be used as label. Note: when the key is present in the internationalization (i18n) file see <a href="#internationalization-support">Internationalization support</a> than the value from that file will be used as the label.</p>
-<p>+---------+----------+--------------+
-| Key     | Required | Value        |
-+=========+==========+==============+
-| &gt; label | &gt; no     | &gt; any string |
-+---------+----------+--------------+</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Required</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt; label</td>
+<td>&gt; no</td>
+<td>&gt; any string</td>
+</tr>
+</tbody>
+</table>
 <h3 id="occurrence">occurrence</h3>
 <p>The value for <code>occurrence</code> determines whether or not the field should displayed as a table or as a single input field. <code>SINGLE</code> will result in one input field.</p>
 <blockquote>
@@ -3624,12 +3701,27 @@
 <em>e.g. field of fieldType <code>TEXT</code> rendered as a table.</em></p>
 </blockquote>
 <p>The data in table can be sorted using the green arrow buttons.</p>
-<p>+--------------+----------+------------------------+
-| Key          | Required | Value                  |
-+==============+==========+========================+
-| &gt; occurrence | &gt; no     | &gt; -   SINGLE (Default) |
-|              |          | &gt; -   REPEAT           |
-+--------------+----------+------------------------+</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Required</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt; occurrence</td>
+<td>&gt; no</td>
+<td>&gt; -   SINGLE (Default)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>&gt; -   REPEAT</td>
+</tr>
+</tbody>
+</table>
 <h3 id="condition">condition</h3>
 <p>Conditional attributes are attributes that are only visible for some layers. A typical example are attributes only present for raster or vector layers. The condition is specified in <a href="../../../tutorials/cql/cql_tutorial/">CQL</a> which is evaluated against the layer's <a href="../../../services/csw/features/">ResourceInfo</a> object.</p>
 <p>For example:</p>

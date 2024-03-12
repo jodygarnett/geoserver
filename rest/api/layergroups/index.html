@@ -2336,36 +2336,47 @@
 <p>A <code>layer group</code> is a grouping of layers and styles that can be accessed as a single layer in a WMS GetMap request. A layer group is sometimes referred to as a "base map".</p>
 <h2 id="layergroupsformat"><code>/layergroups[.&lt;format&gt;]</code></h2>
 <p>Controls all layer groups.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Return all layer groups</p>
-<p>200</p>
-<p>HTML, XML, JSON</p>
-<p>HTML</p>
-</dd>
-<dt>POST</dt>
-<dd>
-<p>Add a new layer group</p>
-<p>201, with <code>Location</code> header</p>
-<p>XML,JSON</p>
-</dd>
-</dl>
-<p>PUT</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<p>DELETE</p>
-<blockquote>
-<p>405</p>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Return all layer groups</td>
+<td>200</td>
+<td>HTML, XML, JSON</td>
+<td>HTML</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Add a new layer group</td>
+<td>201, with <code>Location</code> header</td>
+<td>XML,JSON</td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="layergroupslgformat"><code>/layergroups/&lt;lg&gt;[.&lt;format&gt;]</code></h2>
 <p>Controls a particular layer group.</p>
 <table>
@@ -2442,36 +2453,47 @@
 <p>The <code>quietOnNotFound</code> parameter avoids to log an Exception when the layergroup is not present. Note that 404 status code will be returned anyway.</p>
 <h2 id="workspaceswslayergroupsformat"><code>/workspaces/&lt;ws&gt;/layergroups[.&lt;format&gt;]</code></h2>
 <p>Controls all layer groups in a given workspace.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Return all layer groups within workspace <code>ws</code></p>
-<p>200</p>
-<p>HTML, XML, JSON</p>
-<p>HTML</p>
-</dd>
-<dt>POST</dt>
-<dd>
-<p>Add a new layer group within workspace <code>ws</code></p>
-<p>201, with <code>Location</code> header</p>
-<p>XML,JSON</p>
-</dd>
-</dl>
-<p>PUT</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<p>DELETE</p>
-<blockquote>
-<p>405</p>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Return all layer groups within workspace <code>ws</code></td>
+<td>200</td>
+<td>HTML, XML, JSON</td>
+<td>HTML</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Add a new layer group within workspace <code>ws</code></td>
+<td>201, with <code>Location</code> header</td>
+<td>XML,JSON</td>
+<td></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="workspaceswslayergroupslgformat"><code>/workspaces/&lt;ws&gt;/layergroups/&lt;lg&gt;[.&lt;format&gt;]</code></h2>
 <p>Controls a particular layer group in a given workspace.</p>
 <table>

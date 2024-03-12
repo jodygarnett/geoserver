@@ -2195,36 +2195,40 @@
 <p>This filter allows gathering user credentials (username and password) from request headers in a flexible and configurable way.</p>
 <p><img alt="" src="../images/auth_filter_credentials_from_header.png" />
 <em>Creating a new authentication filter fetching credentials from request headers</em></p>
-<dl>
-<dt>Option</dt>
-<dd>
-<p>Description</p>
-</dd>
-<dt>Name</dt>
-<dd>
-<p>Name of the filter</p>
-</dd>
-<dt>Username Header</dt>
-<dd>
-<p>Name of the Request Header containing the username</p>
-</dd>
-<dt>Regular Expression for Username</dt>
-<dd>
-<p>Regular Expression used to extract the username from the related Header. Must define a group that will match the username.</p>
-</dd>
-<dt>Password Header</dt>
-<dd>
-<p>Name of the Request Header containing the password</p>
-</dd>
-<dt>Regular Expression for Password</dt>
-<dd>
-<p>Regular Expression used to extract the password from the related Header. Must define a group that will match the password.</p>
-</dd>
-<dt>Parse Arguments as Uri Components</dt>
-<dd>
-<p>If checked username and password are URI decoded before being used as credentials</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Name of the filter</td>
+</tr>
+<tr>
+<td>Username Header</td>
+<td>Name of the Request Header containing the username</td>
+</tr>
+<tr>
+<td>Regular Expression for Username</td>
+<td>Regular Expression used to extract the username from the related Header. Must define a group that will match the username.</td>
+</tr>
+<tr>
+<td>Password Header</td>
+<td>Name of the Request Header containing the password</td>
+</tr>
+<tr>
+<td>Regular Expression for Password</td>
+<td>Regular Expression used to extract the password from the related Header. Must define a group that will match the password.</td>
+</tr>
+<tr>
+<td>Parse Arguments as Uri Components</td>
+<td>If checked username and password are URI decoded before being used as credentials</td>
+</tr>
+</tbody>
+</table>
 <h2 id="authentication-providers">Authentication providers</h2>
 <p>This section manages the <code>security_auth_providers</code> (adding, removing, and editing). The default authentication provider uses basic <code class="interpreted-text" role="ref">username/password authentication &lt;../auth/providers.rst#security_auth_provider_userpasswd&gt;</code>_. <a href="../../auth/providers/#security_auth_provider_jdbc">JDBC</a> and <a href="../../auth/providers/#security_auth_provider_ldap">LDAP</a> authentication can also be used.</p>
 <p>Click <strong>Add new</strong> to create a new provider. Click an existing provider to edit its parameters.</p>
@@ -2288,78 +2292,96 @@
 <em>Configuring the LDAP authentication provider using LDAP groups for role assignment</em></p>
 <p><img alt="" src="../images/auth_ldap2.png" />
 <em>Configuring the LDAP authentication provider using user/group service for authentication</em></p>
-<dl>
-<dt>Option</dt>
-<dd>
-<p>Description</p>
-</dd>
-<dt>Name</dt>
-<dd>
-<p>Name of the LDAP connection in GeoServer</p>
-</dd>
-<dt>Server URL</dt>
-<dd>
-<p>URL for the LDAP server connection. It must include the protocol, host, and port, as well as the "distinguished name" (DN) for the root of the LDAP tree.</p>
-</dd>
-<dt>TLS</dt>
-<dd>
-<p>Enables a STARTTLS connection. (See the section on <a href="../../auth/providers/#security_auth_provider_ldap_secure">Secure LDAP connections</a>.)</p>
-</dd>
-<dt>User DN pattern</dt>
-<dd>
-<p>Search pattern to use to match the DN of the user in the LDAP database. The pattern should contain the placeholder <code>{0}</code> which is injected with the <code>uid</code> of the user. Example: <code>uid={0},ou=people</code>. The root DN specified as port of the <em>Server URL</em> is automatically appended.</p>
-</dd>
-<dt>User Filter</dt>
-<dd>
-<p>LDAP Filter used to extract User data from LDAP database. Used alternatively to User DN pattern and combined with User Format to separate bind and user data extraction handling. Example: <code>(userPrincipalName={0})</code>. Gets user data searching for a single record matching the filter. This may contain two placeholder values: <code>{0}</code>, the full DN of the user, for example <code>uid=bob,ou=people,dc=acme,dc=com</code> <code>{1}</code>, the <code>uid</code> portion of the full DN, for example <code>bob</code>.</p>
-</dd>
-<dt>User Format</dt>
-<dd>
-<p>String formatter used to build username used for binding. Used alternatively to User DN pattern and combined with User Filter to separate bind and user data extraction handling. Example: <code>{0}@domain</code>. Binds user with the username built applying the format. This may contain one placeholder: <code>{0}</code>, the username, for example <code>bob</code></p>
-</dd>
-<dt>Use LDAP groups for authorization</dt>
-<dd>
-<p>Specifies whether to use LDAP groups for role assignment</p>
-</dd>
-<dt>Bind before group search</dt>
-<dd>
-<p>Specifies whether to bind to LDAP server with the user credentials before doing group search</p>
-</dd>
-<dt>Group search base</dt>
-<dd>
-<p>Relative name of the node in the tree to use as the base for LDAP groups. Example: <code>ou=groups</code>. The root DN specified as port of the <em>Server URL</em> is automatically appended. Only applicable when the <em>Use LDAP groups for authorization( parameter ischecked</em>*.</p>
-</dd>
-<dt>Group search filter</dt>
-<dd>
-<p>Search pattern for locating the LDAP groups a user belongs to. This may contain two placeholder values: <code>{0}</code>, the full DN of the user, for example <code>uid=bob,ou=people,dc=acme,dc=com</code> <code>{1}</code>, the <code>uid</code> portion of the full DN, for example <code>bob</code>. Only applicable when the <em>Use LDAP groups for authorization( parameter ischecked</em>*.</p>
-</dd>
-<dt>Admin Group</dt>
-<dd>
-<p>Name of the group to be mapped to Administrator role (defaults to ADMINISTRATOR). Example: <code>ADMIN</code>. Adds the role ROLE_ADMINISTRATOR if the user belongs to a group named ADMIN (case insensitive)</p>
-</dd>
-<dt>Group Admin Group</dt>
-<dd>
-<p>Name of the group to be mapped to Group Administrator role (defaults to GROUP_ADMIN). Example: <code>GROUPADMIN</code>. Adds the role ROLE_GROUP_ADMIN if the user belongs to a group named GROUPADMIN (case insensitive)</p>
-</dd>
-<dt>User Group Service</dt>
-<dd>
-<p>The user/group service to use for role assignment. Only applicable when the <em>Use LDAP groups for authorization</em> parameter is <strong>cleared</strong>.</p>
-</dd>
-<dt>Enable Hierarchical groups search</dt>
-<dd>
-<p>Specifies whether to use Hierarchical LDAP groups search for role assignment</p>
-</dd>
-<dt>Max depth for hierarchical groups search</dt>
-<dd>
-<p>Specifies the max group search depth level to use with Hierarchical LDAP groups search. Use <code>-1</code> for no limit. Only applicable when the <em>Enable Hierarchical groups search( parameter ischecked</em>*.</p>
-</dd>
-<dt>Nested group search filter</dt>
-<dd>
-<p>Search pattern for locating parent LDAP groups a group belongs to. This may contain two placeholder values:</p>
-<p><code>{0}</code>, the full DN of the user, for example <code>cn=it,ou=groups,dc=acme,dc=com</code></p>
-<p><code>{1}</code>, the <code>cn</code> portion of the full DN, for example <code>it</code>. Only applicable when the <em>Enable Hierarchical groups search( parameter ischecked</em>*.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Name of the LDAP connection in GeoServer</td>
+</tr>
+<tr>
+<td>Server URL</td>
+<td>URL for the LDAP server connection. It must include the protocol, host, and port, as well as the "distinguished name" (DN) for the root of the LDAP tree.</td>
+</tr>
+<tr>
+<td>TLS</td>
+<td>Enables a STARTTLS connection. (See the section on <a href="../../auth/providers/#security_auth_provider_ldap_secure">Secure LDAP connections</a>.)</td>
+</tr>
+<tr>
+<td>User DN pattern</td>
+<td>Search pattern to use to match the DN of the user in the LDAP database. The pattern should contain the placeholder <code>{0}</code> which is injected with the <code>uid</code> of the user. Example: <code>uid={0},ou=people</code>. The root DN specified as port of the <em>Server URL</em> is automatically appended.</td>
+</tr>
+<tr>
+<td>User Filter</td>
+<td>LDAP Filter used to extract User data from LDAP database. Used alternatively to User DN pattern and combined with User Format to separate bind and user data extraction handling. Example: <code>(userPrincipalName={0})</code>. Gets user data searching for a single record matching the filter. This may contain two placeholder values: <code>{0}</code>, the full DN of the user, for example <code>uid=bob,ou=people,dc=acme,dc=com</code> <code>{1}</code>, the <code>uid</code> portion of the full DN, for example <code>bob</code>.</td>
+</tr>
+<tr>
+<td>User Format</td>
+<td>String formatter used to build username used for binding. Used alternatively to User DN pattern and combined with User Filter to separate bind and user data extraction handling. Example: <code>{0}@domain</code>. Binds user with the username built applying the format. This may contain one placeholder: <code>{0}</code>, the username, for example <code>bob</code></td>
+</tr>
+<tr>
+<td>Use LDAP groups for authorization</td>
+<td>Specifies whether to use LDAP groups for role assignment</td>
+</tr>
+<tr>
+<td>Bind before group search</td>
+<td>Specifies whether to bind to LDAP server with the user credentials before doing group search</td>
+</tr>
+<tr>
+<td>Group search base</td>
+<td>Relative name of the node in the tree to use as the base for LDAP groups. Example: <code>ou=groups</code>. The root DN specified as port of the <em>Server URL</em> is automatically appended. Only applicable when the <em>Use LDAP groups for authorization( parameter ischecked</em>*.</td>
+</tr>
+<tr>
+<td>Group search filter</td>
+<td>Search pattern for locating the LDAP groups a user belongs to. This may contain two placeholder values: <code>{0}</code>, the full DN of the user, for example <code>uid=bob,ou=people,dc=acme,dc=com</code> <code>{1}</code>, the <code>uid</code> portion of the full DN, for example <code>bob</code>. Only applicable when the <em>Use LDAP groups for authorization( parameter ischecked</em>*.</td>
+</tr>
+<tr>
+<td>Admin Group</td>
+<td>Name of the group to be mapped to Administrator role (defaults to ADMINISTRATOR). Example: <code>ADMIN</code>. Adds the role ROLE_ADMINISTRATOR if the user belongs to a group named ADMIN (case insensitive)</td>
+</tr>
+<tr>
+<td>Group Admin Group</td>
+<td>Name of the group to be mapped to Group Administrator role (defaults to GROUP_ADMIN). Example: <code>GROUPADMIN</code>. Adds the role ROLE_GROUP_ADMIN if the user belongs to a group named GROUPADMIN (case insensitive)</td>
+</tr>
+<tr>
+<td>User Group Service</td>
+<td>The user/group service to use for role assignment. Only applicable when the <em>Use LDAP groups for authorization</em> parameter is <strong>cleared</strong>.</td>
+</tr>
+<tr>
+<td>Enable Hierarchical groups search</td>
+<td>Specifies whether to use Hierarchical LDAP groups search for role assignment</td>
+</tr>
+<tr>
+<td>Max depth for hierarchical groups search</td>
+<td>Specifies the max group search depth level to use with Hierarchical LDAP groups search. Use <code>-1</code> for no limit. Only applicable when the <em>Enable Hierarchical groups search( parameter ischecked</em>*.</td>
+</tr>
+<tr>
+<td>Nested group search filter</td>
+<td>Search pattern for locating parent LDAP groups a group belongs to. This may contain two placeholder values:</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><code>{0}</code>, the full DN of the user, for example <code>cn=it,ou=groups,dc=acme,dc=com</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><code>{1}</code>, the <code>cn</code> portion of the full DN, for example <code>it</code>. Only applicable when the <em>Enable Hierarchical groups search( parameter ischecked</em>*.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="authentication-chain">Authentication chain</h2>
 <p>This section selects the authentication chain. Currently, only one default authentication chain is available. For further information about the default chain, please refer to <a href="../../auth/chain/">Authentication chain</a>.</p>
 <p><img alt="" src="../images/auth_chain.png" />

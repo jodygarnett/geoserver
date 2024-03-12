@@ -2627,39 +2627,52 @@
 <p>The <code>pretty</code> parameter returns the style in a human-readable format, with proper blank-space and indentation. This parameter has no effect if you request a style in its native format - in this case the API returns the exact content of the underlying file. The HTML, XML, and JSON formats do not support this parameter.</p>
 <h2 id="workspaceswsstylesformat"><code>/workspaces/&lt;ws&gt;/styles[.&lt;format&gt;]</code></h2>
 <p>Controls all styles in a given workspace.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Status code</p>
-<p>Formats</p>
-<p>Default Format</p>
-<p>Parameters</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>Return all styles within workspace <code>ws</code></p>
-<p>200</p>
-<p>HTML, XML, JSON</p>
-<p>HTML</p>
-</dd>
-<dt>POST</dt>
-<dd>
-<p>Create a new style within workspace <code>ws</code></p>
-<p>201 with <code>Location</code> header</p>
-<p>SLD, XML, JSON, ZIP <a href="./#rest_api_styles_post_put">See note above</a></p>
-<p><a href="./#rest_api_styles_name">name</a> <a href="./#rest_api_styles_raw">raw</a></p>
-</dd>
-</dl>
-<p>PUT</p>
-<blockquote>
-<p>405</p>
-</blockquote>
-<p>DELETE</p>
-<blockquote>
-<p>405</p>
-<p><a href="./#rest_api_styles_purge">purge</a></p>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Status code</th>
+<th>Formats</th>
+<th>Default Format</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Return all styles within workspace <code>ws</code></td>
+<td>200</td>
+<td>HTML, XML, JSON</td>
+<td>HTML</td>
+<td></td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Create a new style within workspace <code>ws</code></td>
+<td>201 with <code>Location</code> header</td>
+<td>SLD, XML, JSON, ZIP <a href="./#rest_api_styles_post_put">See note above</a></td>
+<td></td>
+<td><a href="./#rest_api_styles_name">name</a> <a href="./#rest_api_styles_raw">raw</a></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td></td>
+<td>405</td>
+<td></td>
+<td></td>
+<td><a href="./#rest_api_styles_purge">purge</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="workspaceswsstylessformat"><code>/workspaces/&lt;ws&gt;/styles/&lt;s&gt;[.&lt;format&gt;]</code></h2>
 <p>Controls a particular style in a given workspace.</p>
 <table>

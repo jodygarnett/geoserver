@@ -3338,76 +3338,84 @@
 </code></pre></div>
 <h3 id="filter-parameters">Filter Parameters</h3>
 <p>All filter parameters are optional.</p>
-<dl>
-<dt>Name</dt>
-<dd>
-<p>Type</p>
-<p>Description</p>
-</dd>
-<dt>page</dt>
-<dd>
-<p>number</p>
-<p>Used for paging a list of rules. Specifies the number of the page. Leave out for no paging. If specified, <code>entries</code> should also be specified.</p>
-</dd>
-<dt>entries</dt>
-<dd>
-<p>number</p>
-<p>Used for paging a list of rules. Specifies the number of entries per page. Leave out for no paging. If specified, <code>page</code> should also be specified.</p>
-</dd>
-<dt>userName</dt>
-<dd>
-<p>string</p>
-<p>Filter rules on username (excludes all other specified usernames).</p>
-</dd>
-<dt>userAny</dt>
-<dd>
-<p>0 or 1.</p>
-<p>Specify whether rules matching any username should be included or not.</p>
-</dd>
-<dt>roleName</dt>
-<dd>
-<p>string</p>
-<p>Filter rules on rolename (excludes all other specified rolenames).</p>
-</dd>
-<dt>roleAny</dt>
-<dd>
-<p>0 or 1.</p>
-<p>Specify whether rules matching any rolename should be included or not.</p>
-</dd>
-<dt>workspace</dt>
-<dd>
-<p>string</p>
-<p>Filter rules on workspace (excludes all other specified workspaces).</p>
-</dd>
-<dt>workspaceAny</dt>
-<dd>
-<p>0 or 1.</p>
-<p>Specify whether rules matching any workspace should be included or not.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>page</td>
+<td>number</td>
+<td>Used for paging a list of rules. Specifies the number of the page. Leave out for no paging. If specified, <code>entries</code> should also be specified.</td>
+</tr>
+<tr>
+<td>entries</td>
+<td>number</td>
+<td>Used for paging a list of rules. Specifies the number of entries per page. Leave out for no paging. If specified, <code>page</code> should also be specified.</td>
+</tr>
+<tr>
+<td>userName</td>
+<td>string</td>
+<td>Filter rules on username (excludes all other specified usernames).</td>
+</tr>
+<tr>
+<td>userAny</td>
+<td>0 or 1.</td>
+<td>Specify whether rules matching any username should be included or not.</td>
+</tr>
+<tr>
+<td>roleName</td>
+<td>string</td>
+<td>Filter rules on rolename (excludes all other specified rolenames).</td>
+</tr>
+<tr>
+<td>roleAny</td>
+<td>0 or 1.</td>
+<td>Specify whether rules matching any rolename should be included or not.</td>
+</tr>
+<tr>
+<td>workspace</td>
+<td>string</td>
+<td>Filter rules on workspace (excludes all other specified workspaces).</td>
+</tr>
+<tr>
+<td>workspaceAny</td>
+<td>0 or 1.</td>
+<td>Specify whether rules matching any workspace should be included or not.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="requests">Requests</h2>
 <h3 id="geofencerestadminrules"><code>/geofence/rest/adminrules/</code></h3>
 <p>Query all adminrules or add a new adminrule.</p>
-<dl>
-<dt>Method</dt>
-<dd>
-<p>Action</p>
-<p>Supported parameters</p>
-<p>Response</p>
-</dd>
-<dt>GET</dt>
-<dd>
-<p>List all adminrules, with respect to any added filters</p>
-<p>page, entries, userName, userAny, roleName, roleAny, workspace, workspaceAny</p>
-<p>200 OK. List of adminrules in XML.</p>
-</dd>
-<dt>POST</dt>
-<dd>
-<p>Add a new adminrule</p>
-<p>None</p>
-<p>201 Inserted. Created <code>ID</code> header.</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Action</th>
+<th>Supported parameters</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>List all adminrules, with respect to any added filters</td>
+<td>page, entries, userName, userAny, roleName, roleAny, workspace, workspaceAny</td>
+<td>200 OK. List of adminrules in XML.</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Add a new adminrule</td>
+<td>None</td>
+<td>201 Inserted. Created <code>ID</code> header.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="geofencerestadminrulescount"><code>/geofence/rest/adminrules/count</code></h3>
 <p>Counts (filtered) adminrules.</p>
 <table>

@@ -2217,28 +2217,32 @@
 </tbody>
 </table>
 <p>The <strong>scaleratio</strong> decoration (<code>type="scaleratio"</code>) overlays a text description of the map's scale ratio onto the document.</p>
-<dl>
-<dt>Option Name</dt>
-<dd>
-<p>Meaning</p>
-</dd>
-<dt><code>bgcolor</code></dt>
-<dd>
-<p>the background color for the text. supports RGB or RGBA colors specified as hex values.</p>
-</dd>
-<dt><code>fgcolor</code></dt>
-<dd>
-<p>the color for the text and border. follows the color specification from bgcolor.</p>
-</dd>
-<dt><code>format</code></dt>
-<dd>
-<p>the number format pattern, specified using Java own <a href="https://docs.oracle.com/javase/8/docs/api/java/text/DecimalFormat.html">DecimalFormat</a> syntax</p>
-</dd>
-<dt><code>formatLanguage</code></dt>
-<dd>
-<p>the language used to drive number formatting (applies only if also <code>format</code> is used), using a valid Java <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html">Locale</a></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Option Name</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bgcolor</code></td>
+<td>the background color for the text. supports RGB or RGBA colors specified as hex values.</td>
+</tr>
+<tr>
+<td><code>fgcolor</code></td>
+<td>the color for the text and border. follows the color specification from bgcolor.</td>
+</tr>
+<tr>
+<td><code>format</code></td>
+<td>the number format pattern, specified using Java own <a href="https://docs.oracle.com/javase/8/docs/api/java/text/DecimalFormat.html">DecimalFormat</a> syntax</td>
+</tr>
+<tr>
+<td><code>formatLanguage</code></td>
+<td>the language used to drive number formatting (applies only if also <code>format</code> is used), using a valid Java <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html">Locale</a></td>
+</tr>
+</tbody>
+</table>
 <p>The <strong>scaleline</strong> decoration (<code>type="scaleline"</code>) overlays a graphic showing the scale of the map in world units.</p>
 <table>
 <thead>
@@ -2271,59 +2275,67 @@
 </tbody>
 </table>
 <p>The <strong>legend</strong> decoration (<code>type="legend"</code>) overlays a graphic containing legends for the layers in the map.</p>
-<dl>
-<dt>Option Name</dt>
-<dd>
-<p>Meaning</p>
-</dd>
-<dt><code>legend_options</code></dt>
-<dd>
-<p>the list of legend_options used as in <a href="./get_legend_graphic/index.html#controlling-legend-appearance-with-legend-options">GetLegendGraphic</a></p>
-</dd>
-<dt><code>opacity</code></dt>
-<dd>
-<p>the legend opacity with a value between 0 and 1</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Option Name</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>legend_options</code></td>
+<td>the list of legend_options used as in <a href="./get_legend_graphic/index.html#controlling-legend-appearance-with-legend-options">GetLegendGraphic</a></td>
+</tr>
+<tr>
+<td><code>opacity</code></td>
+<td>the legend opacity with a value between 0 and 1</td>
+</tr>
+</tbody>
+</table>
 <p>The <strong>text</strong> decoration (<code>type="text"</code>) overlays a parametric, single line text message on top of the map. The parameter values can be fed via the <code>env</code> request parameter, just like SLD environment parameters.</p>
-<dl>
-<dt>Option Name</dt>
-<dd>
-<p>Meaning</p>
-</dd>
-<dt><code>message</code></dt>
-<dd>
-<p>the message to be displayed, as plain text or Freemarker template that can use the <code>env</code> map contents to expand variables</p>
-</dd>
-<dt><code>font-family</code></dt>
-<dd>
-<p>the name of the font used to display the message, e.g., <code>Arial</code>, defaults to <code>Serif</code></p>
-</dd>
-<dt><code>font-size</code></dt>
-<dd>
-<p>the size of the font to use (can have decimals), defaults to 12</p>
-</dd>
-<dt><code>font-italic</code></dt>
-<dd>
-<p>it <code>true</code> the font will be italic, defaults to <code>false</code></p>
-</dd>
-<dt><code>font-bold</code></dt>
-<dd>
-<p>if <code>true</code> the font will be bold, defaults to <code>false</code></p>
-</dd>
-<dt><code>font-color</code></dt>
-<dd>
-<p>the color of the message, in <code>#RRGGBB</code> or <code>#RRGGBBAA</code> format, defaults to black</p>
-</dd>
-<dt><code>halo-radius</code></dt>
-<dd>
-<p>the radius of a halo around the message, can have decimals, defaults to 0</p>
-</dd>
-<dt><code>halo-color</code></dt>
-<dd>
-<p>the halo fill color, in <code>#RRGGBB</code> or <code>#RRGGBBAA</code> format, defaults to white</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Option Name</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>message</code></td>
+<td>the message to be displayed, as plain text or Freemarker template that can use the <code>env</code> map contents to expand variables</td>
+</tr>
+<tr>
+<td><code>font-family</code></td>
+<td>the name of the font used to display the message, e.g., <code>Arial</code>, defaults to <code>Serif</code></td>
+</tr>
+<tr>
+<td><code>font-size</code></td>
+<td>the size of the font to use (can have decimals), defaults to 12</td>
+</tr>
+<tr>
+<td><code>font-italic</code></td>
+<td>it <code>true</code> the font will be italic, defaults to <code>false</code></td>
+</tr>
+<tr>
+<td><code>font-bold</code></td>
+<td>if <code>true</code> the font will be bold, defaults to <code>false</code></td>
+</tr>
+<tr>
+<td><code>font-color</code></td>
+<td>the color of the message, in <code>#RRGGBB</code> or <code>#RRGGBBAA</code> format, defaults to black</td>
+</tr>
+<tr>
+<td><code>halo-radius</code></td>
+<td>the radius of a halo around the message, can have decimals, defaults to 0</td>
+</tr>
+<tr>
+<td><code>halo-color</code></td>
+<td>the halo fill color, in <code>#RRGGBB</code> or <code>#RRGGBBAA</code> format, defaults to white</td>
+</tr>
+</tbody>
+</table>
 <h2 id="example">Example</h2>
 <p>A layout configuration file might look like this:</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;layout&gt;</span>

@@ -1966,11 +1966,11 @@
           <li class="md-nav__item">
   <a href="#property-and-cql-directive-simple-feature-example" class="md-nav__link">
     <span class="md-ellipsis">
-      \${property} and \$\${cql} directive (Simple Feature example)
+      ${property} and $${cql} directive (Simple Feature example)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="\${property} and \$\${cql} directive (Simple Feature example)">
+    <nav class="md-nav" aria-label="${property} and $${cql} directive (Simple Feature example)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4272,11 +4272,11 @@
           <li class="md-nav__item">
   <a href="#property-and-cql-directive-simple-feature-example" class="md-nav__link">
     <span class="md-ellipsis">
-      \${property} and \$\${cql} directive (Simple Feature example)
+      ${property} and $${cql} directive (Simple Feature example)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="\${property} and \$\${cql} directive (Simple Feature example)">
+    <nav class="md-nav" aria-label="${property} and $${cql} directive (Simple Feature example)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4558,107 +4558,106 @@
 <p>The following constitutes a summary of all the template directives and it is meant to be used for quick reference. Each directive is explained in detail in the sections below.</p>
 <h3 id="json-based-templates">JSON based templates</h3>
 <p>The following are the directives available in JSON based templates.</p>
-<dl>
-<dt><strong>Usage</strong></dt>
-<dd>
-<p><strong>Syntax</strong></p>
-<p><strong>Description</strong></p>
-</dd>
-<dt>property interpolation</dt>
-<dd>
-<p>\${property}</p>
-<p>specify it as an attribute value (<code>"json_attribute":"${property}"</code>)</p>
-</dd>
-<dt>cql evaluation</dt>
-<dd>
-<p>\$\${cql}</p>
-<p>specify it as an element value (<code>"json_attribute":"$${cql}"</code>)</p>
-</dd>
-<dt>setting the evaluation context for child attributes.</dt>
-<dd>
-<p>\${source}.</p>
-<p>specify it as the first nested object in arrays (<code>{"$source":"property"}</code>) or as an attribute in objects (<code>"$source":"property"</code>)</p>
-</dd>
-<dt>filter the array, object, attribute</dt>
-<dd>
-<p>\$filter</p>
-<p>specify it inside the first nested object in arrays (<code>{"$filter":"condition"}</code>) or as an attribute in objects (<code>"$filter":"condition"</code>) or in an attribute next to the attribute value separated by a <code>,</code> (<code>"attribute":"$filter{condition}, ${property}"</code>)</p>
-</dd>
-<dt>defines options to customize the output outside of a feature scope</dt>
-<dd>
-<p>\$options</p>
-<p>specify it at the top of the JSON template as a JSON object (GeoJSON options: <code>"$options":{"flat_output":true, "separator":"."}</code>; JSON-LD options: <code>"$options":{"@context": "the context json", "encode_as_string": true, "@type":"schema:SpecialAnnouncement", "collection_name":"customCollectionName"}</code>).</p>
-</dd>
-<dt>allows including a template into another</dt>
-<dd>
-<p>\$include, \$includeFlat</p>
-<p>specify the <code>$include</code> option as an attribute value (<code>"attribute":"$include{subProperty.json}"</code>) and the <code>$includeFlat</code> as an attribute name with the included template path as a value (<code>"$includeFlat":"included.json"</code>)</p>
-</dd>
-<dt>allows a template to extend another template</dt>
-<dd>
-<p>\$merge</p>
-<p>specify the <code>$merge</code> directive as an attribute name containing the path to the extended template (:code: <code>"\$merged":"base_template.json"</code>).</p>
-</dd>
-<dt>allows null values to be encoded. default is not encoded.</dt>
-<dd>
-<p>\${property}! or \$\${expression}!</p>
-<p>! at the end of a property interpolation or cql directive (<code>"attribute":"${property}!"</code> or <code>"attribute":"$${expression}!"</code>).</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th><strong>Usage</strong></th>
+<th><strong>Syntax</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>property interpolation</td>
+<td><code>${property}</code></td>
+<td>specify it as an attribute value (<code>"json_attribute":"${property}"</code>)</td>
+</tr>
+<tr>
+<td>cql evaluation</td>
+<td><code>$${cql}</code></td>
+<td>specify it as an element value (<code>"json_attribute":"$${cql}"</code>)</td>
+</tr>
+<tr>
+<td>setting the evaluation context for child attributes.</td>
+<td><code>${source}.</code></td>
+<td>specify it as the first nested object in arrays (<code>{"$source":"property"}</code>) or as an attribute in objects (<code>"$source":"property"</code>)</td>
+</tr>
+<tr>
+<td>filter the array, object, attribute</td>
+<td><code>$filter</code></td>
+<td>specify it inside the first nested object in arrays (<code>{"$filter":"condition"}</code>) or as an attribute in objects (<code>"$filter":"condition"</code>) or in an attribute next to the attribute value separated by a <code>,</code> (<code>"attribute":"$filter{condition}, ${property}"</code>)</td>
+</tr>
+<tr>
+<td>defines options to customize the output outside of a feature scope</td>
+<td><code>$options</code></td>
+<td>specify it at the top of the JSON template as a JSON object (GeoJSON options: <code>"$options":{"flat_output":true, "separator":"."}</code>; JSON-LD options: <code>"$options":{"@context": "the context json", "encode_as_string": true, "@type":"schema:SpecialAnnouncement", "collection_name":"customCollectionName"}</code>).</td>
+</tr>
+<tr>
+<td>allows including a template into another</td>
+<td><code>$include</code>, <code>$includeFlat</code></td>
+<td>specify the <code>$include</code> option as an attribute value (<code>"attribute":"$include{subProperty.json}"</code>) and the <code>$includeFlat</code> as an attribute name with the included template path as a value (<code>"$includeFlat":"included.json"</code>)</td>
+</tr>
+<tr>
+<td>allows a template to extend another template</td>
+<td><code>$merge</code></td>
+<td>specify the <code>$merge</code> directive as an attribute name containing the path to the extended template (:code: <code>"\$merged":"base_template.json"</code>).</td>
+</tr>
+<tr>
+<td>allows null values to be encoded. default is not encoded.</td>
+<td><code>${property}!</code> or <code>$${expression}!</code></td>
+<td>! at the end of a property interpolation or cql directive (<code>"attribute":"${property}!"</code> or <code>"attribute":"$${expression}!"</code>).</td>
+</tr>
+</tbody>
+</table>
 <h3 id="xml-based-templates">XML based templates</h3>
 <p>The following are the directives available in XML based templates.</p>
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
-<th></th>
+<th><strong>Usage</strong></th>
+<th><strong>Syntax</strong></th>
+<th><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Usage</strong></td>
-<td><strong>Syntax</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
 <td>property interpolation</td>
-<td>\${property}</td>
+<td><code>${property}</code></td>
 <td>specify it either as an element value (<code>&lt;element&gt;${property}&lt;/element&gt;</code>) or as an xml attribute value (<code>&lt;element attribute:"${property}"/&gt;</code>)</td>
 </tr>
 <tr>
 <td>cql evaluation</td>
-<td>\$\${cql}</td>
+<td><code>$${cql}</code></td>
 <td>specify them either as an element value (<code>&lt;element&gt;$${cql}&lt;/element&gt;</code>) or as an xml attribute value (<code>&lt;element attribute:"$${cql}"/&gt;</code>)</td>
 </tr>
 <tr>
 <td>setting the evaluation context for property interpolation and cql evaluation in child elements.</td>
-<td>gft:source</td>
+<td><code>gft:source</code></td>
 <td>specify it as an xml attribute (<code>&lt;element gft:source:"property"&gt;</code>)</td>
 </tr>
 <tr>
 <td>filter the element to which is applied based on the defined condition</td>
-<td>gft:filter</td>
+<td><code>gft:filter</code></td>
 <td>specify it as an XML attribute on the element to be filtered (<code>&lt;element gft:filter:"condition"&gt;</code>)</td>
 </tr>
 <tr>
 <td>marks the beginning of an XML template.</td>
-<td>gft:Template</td>
+<td><code>gft:Template</code></td>
 <td>It has to be the root element of an XML template (<code>&lt;gft:Template&gt; Template content&lt;/gft:Template&gt;</code>)</td>
 </tr>
 <tr>
 <td>defines options to customize the output outside of a feature scope</td>
-<td>gft:Options</td>
-<td>specify it as an element at the beginning of the xml document after the <code>&lt;gft:Template&gt;</code> one (<code>&lt;gft:Options&gt;&lt;/gft:Options&gt;</code>). GML options: <code>&lt;gtf:Namespaces&gt;</code>,<code>&lt;gtf:SchemaLocation&gt;</code>. HTML options: <code>&lt;script&gt;</code>, :code: <code>&lt;script type="application/ld+json"/&gt;</code>, <code>&lt;style&gt;</code>, :code: <code>&lt;link&gt;</code>.</td>
+<td><code>gft:Options</code></td>
+<td>specify it as an element at the beginning of the xml document after the <code>&lt;gft:Template&gt;</code> one (<code>&lt;gft:Options&gt;&lt;/gft:Options&gt;</code>). GML options: <code>&lt;gtf:Namespaces&gt;</code>, <code>&lt;gtf:SchemaLocation&gt;</code>. HTML options: <code>&lt;script&gt;</code>, <code>&lt;script type="application/ld+json"/&gt;</code>, <code>&lt;style&gt;</code>, <code>&lt;link&gt;</code>.</td>
 </tr>
 <tr>
 <td>allows including a template into another</td>
-<td>\$include, gft:includeFlat</td>
+<td><code>$include</code>, <code>gft:includeFlat</code></td>
 <td>specify the <code>$include</code> option as an element value (<code>&lt;element&gt;$include{included.xml}&lt;/element&gt;</code>) and the <code>gft:includeFlat</code> as an element having the included template as text content (<code>&lt;gft:includeFlat&gt;included.xml&lt;/gft:includeFlat&gt;</code>)</td>
 </tr>
 <tr>
 <td>allows null values to be encoded. default is not encoded.</td>
-<td>\${property}!</td>
+<td><code>${property}!</code></td>
 <td>specify it either as an element value (<code>&lt;element&gt;${property}!&lt;/element&gt;</code>) or as an xml attribute value (<code>&lt;element attribute:"${property}!"/&gt;</code>)</td>
 </tr>
 </tbody>
@@ -4669,7 +4668,7 @@
 <li>A <code>@context</code> needs to be specified (see the <code>options</code> section below).</li>
 <li>The standard mandates that attributes' values are all strings.</li>
 </ul>
-<h3 id="property-and-cql-directive-simple-feature-example">\${property} and \$\${cql} directive (Simple Feature example)</h3>
+<h3 id="property-and-cql-directive-simple-feature-example"><code>${property}</code> and <code>$${cql}</code> directive (Simple Feature example)</h3>
 <h4 id="geojson">GeoJSON</h4>
 <p>Assume that we want to change the default geojson output of the <code>topp:states</code> layer. A single feature in the default output is like the following:</p>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
@@ -5355,23 +5354,10 @@
 <h4 id="html">HTML</h4>
 <p>HTML templates can use several <code>options</code>:</p>
 <ul>
-<li>
-<p><code>&lt;script&gt;</code> allows defining whatever javascript is needed, e.g. to create a tree view (as in the example below) or an openlayers map client.</p>
-</li>
-<li>
-<dl>
-<dt>code</dt>
-<dd>
-<p><code>&lt;script type="application/ld+json"/&gt;</code> allows to inject the JSON-LD representation of the features being templated in the <code>&lt;head&gt;</code>. In order to have the option working properly a JSON-LD template must be configured for the layer, or GeoServer will return an error message.</p>
-</dd>
-</dl>
-</li>
-<li>
-<p><code>&lt;style&gt;</code> allows defining css content.</p>
-</li>
-<li>
-<p><code>&lt;link&gt;</code> allows linking to external resources.</p>
-</li>
+<li><code>&lt;script&gt;</code> allows defining whatever javascript is needed, e.g. to create a tree view (as in the example below) or an openlayers map client.</li>
+<li><code>&lt;script type="application/ld+json"/&gt;</code> allows to inject the JSON-LD representation of the features being templated in the <code>&lt;head&gt;</code>. In order to have the option working properly a JSON-LD template must be configured for the layer, or GeoServer will return an error message.</li>
+<li><code>&lt;style&gt;</code> allows defining css content.</li>
+<li><code>&lt;link&gt;</code> allows linking to external resources.</li>
 </ul>
 <p>The content of <code>&lt;script&gt;</code> and <code>&lt;style&gt;</code> needs to be provided as <code>&lt;![CDATA[</code>.</p>
 <p>The following is an example of a HTML template that will output the Stations features as a tree view. Also in this example we are using the same filter on <code>st:meteoObservations</code> as in the other template examples.:</p>
@@ -5551,7 +5537,7 @@
 </span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">   </span><span class="nt">&quot;cProperty&quot;</span><span class="p">:</span><span class="s2">&quot;30&quot;</span>
 </span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>\${property} value:</p>
+<p><code>${property}</code> value:</p>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="p">{</span>
 </span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">   </span><span class="nt">&quot;aProperty&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10&quot;</span><span class="p">,</span><span class="w"> </span>
 </span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">   </span><span class="nt">&quot;bProperty&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20&quot;</span>
@@ -5573,7 +5559,7 @@
 </span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">   </span><span class="s2">&quot;$includeFlat{${property}}&quot;</span>
 </span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="p">]</span>
 </span></code></pre></div>
-<p>\${property} value:</p>
+<p><code>${property}</code>value:</p>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="p">[</span>
 </span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">   </span><span class="s2">&quot;value4&quot;</span><span class="p">,</span><span class="w"> </span>
 </span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">   </span><span class="s2">&quot;value5&quot;</span>
@@ -5762,7 +5748,7 @@
 <p>As it is possible to see this template has some differences comparing to the one seen above:</p>
 <ul>
 <li>Property interpolation (<code>${property}</code>) and cql evaluation (<code>$${cql}</code>) directives are referencing the column name of the attribute that is meant to be included in the final output. The names match the ones of the columns and no namespaces prefix is being used.</li>
-<li>Inside the \$\${cql} directive instead of using an <code>xpath</code> function the <code>propertyPath</code> function is being use. It must be used when the property references domain names inside a <code>$${cql}</code> directive. Paths in this case are no more separated by a <code>/</code> but by a <code>.</code> dot.</li>
+<li>Inside the <code>$${cql}</code> directive instead of using an <code>xpath</code> function the <code>propertyPath</code> function is being use. It must be used when the property references domain names inside a <code>$${cql}</code> directive. Paths in this case are no more separated by a <code>/</code> but by a <code>.</code> dot.</li>
 <li>The <code>$source</code> directive references the table names.</li>
 <li>When a <code>column/property</code> in a <code>table/source</code> is referenced from the context of the upper <code>table/source</code>, as in all the filters in the template, the table name needs to be prefixed with a <code>-&gt;</code> symbol, and column name can come next separated by a <code>.</code> dot. Putting it in another way: the <code>-&gt;</code> signals that the next path part is a table joined to the last source defined.</li>
 </ul>
@@ -5774,27 +5760,17 @@
 <h2 id="controlling-attributes-with-n-cardinality">Controlling Attributes With N Cardinality</h2>
 <p>When a property interpolation targets an attribute with multiple cardinality in a Complex Feature, feature templating will output the result as an array. This default behaviour can be controlled and modified with the usage of a set of CQL functions that are available in the plug-in, which allow to control how the list should be encoded in the template.</p>
 <ul>
-<li>
-<p><code>aggregate</code>: takes as arguments an expression (a property name or a function) that returns a list of values and a literal with the aggregation type eg. <code>aggregate(my.property.name,'MIN')</code>. The supported aggregation type are the following:</p>
-<blockquote>
-<ul>
+<li><code>aggregate</code>: takes as arguments an expression (a property name or a function) that returns a list of values and a literal with the aggregation type eg. <code>aggregate(my.property.name,'MIN')</code>. The supported aggregation type are the following:<ul>
 <li><code>MIN</code> will return the minimum value from a list of numeric values.</li>
 <li><code>MAX</code> will return the max value from a list of numeric values.</li>
 <li><code>AVG</code> will return the average value from a list of numeric values.</li>
 <li><code>UNIQUE</code> will remove duplicates values from a list of values.</li>
 <li><code>JOIN</code> will concatenate the list of values in a single string. It accepts a parameter to specify the separator that by default is blank space: <code>aggregate(my.property.name,'JOIN(,)')</code> .</li>
 </ul>
-</blockquote>
 </li>
-<li>
-<p><code>stream</code>: takes an undefined number of expressions as parameters and chain them so that each expression evaluate on top of the output of the previous expression: eg. <code>stream(aPropertyName,aFunction,anotherPropertyName)</code> while evaluate the <code>aFunction</code> on the output of <code>aPropertyName</code> evaluation and finally <code>anotherPropertyName</code> will evaluate on top of the result of <code>aFunction</code>.</p>
-</li>
-<li>
-<p><code>filter</code>: takes a literal cql filter as a parameter and evaluates it. Every string literal value in the cql filter must be between double quotes escaped: eg. <code>filter('aProperty = "someValue"')</code>.</p>
-</li>
-<li>
-<p><code>sort</code>: sort the list of values in ascending or descending order. It accepts as a parameter the sort order (<code>ASC</code>,<code>DESC</code>) and optionally a property name to target the property on which the sorting should be executed. If no property name is defined the sorting will be applied on the current node on which the function evaluates: <code>sort('DESC',nested.property)</code>, <code>sort('ASC')</code>.</p>
-</li>
+<li><code>stream</code>: takes an undefined number of expressions as parameters and chain them so that each expression evaluate on top of the output of the previous expression: eg. <code>stream(aPropertyName,aFunction,anotherPropertyName)</code> while evaluate the <code>aFunction</code> on the output of <code>aPropertyName</code> evaluation and finally <code>anotherPropertyName</code> will evaluate on top of the result of <code>aFunction</code>.</li>
+<li><code>filter</code>: takes a literal cql filter as a parameter and evaluates it. Every string literal value in the cql filter must be between double quotes escaped: eg. <code>filter('aProperty = "someValue"')</code>.</li>
+<li><code>sort</code>: sort the list of values in ascending or descending order. It accepts as a parameter the sort order (<code>ASC</code>,<code>DESC</code>) and optionally a property name to target the property on which the sorting should be executed. If no property name is defined the sorting will be applied on the current node on which the function evaluates: <code>sort('DESC',nested.property)</code>, <code>sort('ASC')</code>.</li>
 </ul>
 <p>The above functions can be combined allowing fine grained control over the encoding of list values in a template. Assuming to write a template for the <a href="#source-and-filter-complex-feature-example">meteo stations use case</a>, these are some example of the usage of the functions (simplified property access is used in the example below):</p>
 <ul>

@@ -2259,28 +2259,32 @@
 <p><img alt="" src="../img/services_WFS_csv.png" />
 <em>WFS configuration options - CSV section</em></p>
 <p>CSV is still widely used as a format to exchange tabular data. For GeoServer CSV output format, the date field format can specified using the Date Format text box as shown above. Here are some common formatting patterns supported</p>
-<dl>
-<dt>Date and Time Pattern</dt>
-<dd>
-<p>Result</p>
-</dd>
-<dt><code>yyyy.MM.dd G 'at' HH:mm:ss z</code></dt>
-<dd>
-<p>2001.07.04 AD at 12:08:56 PDT</p>
-</dd>
-<dt><code>EEE, MMM d, ''yy</code></dt>
-<dd>
-<p>Wed, Jul 4, '01</p>
-</dd>
-<dt><code>yyyy-MM-dd'T'HH:mm:ss.SSSZ</code></dt>
-<dd>
-<p>2001-07-04T12:08:56.235-0700</p>
-</dd>
-<dt><code>yyyy-MM-dd'T'HH:mm:ss.SSSXXX</code></dt>
-<dd>
-<p>2001-07-04T12:08:56.235-07:00</p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>Date and Time Pattern</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>yyyy.MM.dd G 'at' HH:mm:ss z</code></td>
+<td>2001.07.04 AD at 12:08:56 PDT</td>
+</tr>
+<tr>
+<td><code>EEE, MMM d, ''yy</code></td>
+<td>Wed, Jul 4, '01</td>
+</tr>
+<tr>
+<td><code>yyyy-MM-dd'T'HH:mm:ss.SSSZ</code></td>
+<td>2001-07-04T12:08:56.235-0700</td>
+</tr>
+<tr>
+<td><code>yyyy-MM-dd'T'HH:mm:ss.SSSXXX</code></td>
+<td>2001-07-04T12:08:56.235-07:00</td>
+</tr>
+</tbody>
+</table>
 <p>Here, <strong>yyyy-MM-dd'T'HH<img alt="🇲🇲" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f1f2-1f1f2.svg" title=":mm:" />ss.SSS'Z'</strong> pattern represents the year, month, day, hour, minute, second and milliseconds. The components are separated by a hyphen character. A literal 'T' character is used to separate the date and time parts. A literal 'Z' character represents the UTC time zone. For instance, yyyy represents the year with four digits, MM represents the month with leading zeros, dd represents the day with leading zeros, and so on.</p>
 <p>Similarly, patterns can be formed by using the characters provided below</p>
 <div class="language-text highlight"><pre><span></span><code>y- Year (four digits) 

@@ -2337,16 +2337,20 @@
 </table>
 <p>The <code>roles</code> table is the primary table and contains the list of roles. Roles in GeoServer support inheritance, so a role may optionally have a link to a parent role. The <code>role_props</code> table maps additional properties to a role. (See the section on <a href="../roles/">Roles</a> for more details.) The <code>user_roles</code> table maps users to the roles they are assigned. Similarly, the <code>group_roles</code> table maps which groups have been assigned to which roles.</p>
 <p>The default GeoServer security configuration is:</p>
-<dl>
-<dt>name</dt>
-<dd>
-<p>parent</p>
-</dd>
-<dt><em>Empty</em></dt>
-<dd>
-<p><em>Empty</em></p>
-</dd>
-</dl>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>parent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Empty</em></td>
+<td><em>Empty</em></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
