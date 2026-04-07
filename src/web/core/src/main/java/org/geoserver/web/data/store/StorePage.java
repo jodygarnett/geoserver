@@ -15,9 +15,11 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.markup.html.panel.Fragment;
 import org.apache.wicket.util.string.StringValue;
+import org.geoserver.catalog.LayerGroupHelper;
 import org.geoserver.catalog.LayerGroupInfo;
 import org.geoserver.catalog.LayerInfo;
 import org.geoserver.catalog.Predicates;
+import org.geoserver.catalog.PublishedInfo;
 import org.geoserver.catalog.StoreInfo;
 import org.geoserver.web.ComponentAuthorizer;
 import org.geoserver.web.GeoServerSecuredPage;
@@ -71,7 +73,8 @@ public class StorePage extends GeoServerSecuredPage {
             } else {
                 LayerGroupInfo layerGroup = getCatalog().getLayerGroupByName(targetLayer);
                 if (layerGroup != null) {
-                    for (LayerInfo li : layerGroup.layers()) {
+                    LayerGroupHelper helper = new LayerGroupHelper(layerGroup);
+                    for (LayerInfo li : helper.allLayers()) {
                         if (li.getResource() != null && li.getResource().getStore() != null) {
                             StoreInfo store = li.getResource().getStore();
                             if (store.getId() != null) {
