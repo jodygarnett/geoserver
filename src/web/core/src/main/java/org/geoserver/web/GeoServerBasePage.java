@@ -135,7 +135,7 @@ public class GeoServerBasePage extends WebPage implements IAjaxIndicatorAware {
         add(new ExternalLink("faviconLink", faviconUrl, null));
 
         // page title
-        add(new Label("pageTitle", LambdaModel.of( this::getPageTitle )));
+        add(new Label("pageTitle", LambdaModel.of(this::getPageTitle)));
 
         // login / logout stuff
         GeoServerSecurityManager securityManager = getGeoServerApplication().getSecurityManager();
@@ -339,7 +339,7 @@ public class GeoServerBasePage extends WebPage implements IAjaxIndicatorAware {
         add(new WebMarkupContainer(HEADER_PANEL));
 
         // allow the subclasses to initialize before getTitle/getDescription are called
-        add(new Label("gbpTitle", LambdaModel.of( this::getTitle)));
+        add(new Label("gbpTitle", LambdaModel.of(this::getTitle)));
         Label gbpDescription = new Label("gbpDescription", new LoadableDetachableModel<String>() {
 
             @Override
@@ -542,6 +542,7 @@ public class GeoServerBasePage extends WebPage implements IAjaxIndicatorAware {
 
     /**
      * Get title displayed at the top of the page in {@code page-header} h1.
+     *
      * @return title displayed at the top of the page.
      */
     protected String getTitle() {
@@ -553,7 +554,8 @@ public class GeoServerBasePage extends WebPage implements IAjaxIndicatorAware {
     }
 
     /**
-     * Gets the page title as included in page header, from the PageName.title resource, falling back on "GeoServer" if not found
+     * Gets the page title as included in page header, from the PageName.title resource, falling back on "GeoServer" if
+     * not found
      */
     String getPageTitle() {
         try {
