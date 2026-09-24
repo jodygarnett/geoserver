@@ -9,10 +9,12 @@ import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.not;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.wicket.ajax.AbstractDefaultAjaxBehavior;
 import org.apache.wicket.extensions.markup.html.tabs.ITab;
 import org.apache.wicket.extensions.markup.html.tabs.TabbedPanel;
 import org.apache.wicket.util.tester.FormTester;
@@ -127,6 +129,43 @@ public class MapsServiceAdminPanelTest extends GeoServerWicketTestSupport {
             assertTrue(row.contains("data-in-effect-true=\"true\""));
             assertTrue(row.contains("data-in-effect-false=\"false\""));
         } finally {
+            wms.setCiteCompliant(false);
+            getGeoServer().save(wms);
+        }
+    }
+
+    /**
+     * Filter depends on Filter on maps, off by default in strict mode: enabling the latter, before saving, is enough
+     * for the page to show Filter can be turned on.
+     */
+    @Test
+    public void testUnsavedDependencyRecomputed() {
+        WMSInfo wms = getGeoServer().getService(WMSInfo.class);
+        wms.setCiteCompliant(true);
+        getGeoServer().save(wms);
+        try {
+            login();
+            tester.startPage(WMSAdminPage.class);
+            tester.clickLink("form:tabs:tabs-container:tabs:" + mapsTabIndex() + ":link");
+
+            ConformanceTable table = tester.getLastRenderedPage()
+                    .visitChildren(
+                            ConformanceTable.class, (IVisitor<ConformanceTable, ConformanceTable>) (c, v) -> v.stop(c));
+            String filter = table.getMarkupId() + " " + MapsConformance.FILTER.getId();
+            String mapFilter = table.getMarkupId() + " " + MapsConformance.MAP_FILTER.getId();
+
+            tester.getRequest().addParameter("s", mapFilter + "=true");
+            tester.getRequest().addParameter("s", filter + "=true");
+            tester.executeBehavior(
+                    table.getBehaviors(AbstractDefaultAjaxBehavior.class).get(0));
+
+            String response = tester.getLastResponseAsString();
+            assertTrue(response.contains("\"" + filter + "\":{\"unset\":true,\"true\":true,\"false\":false}"));
+            // nothing is saved by recomputing
+            assertNull(MapsConformance.configuration(getGeoServer().getService(WMSInfo.class))
+                    .isMapFilter());
+        } finally {
+            wms = getGeoServer().getService(WMSInfo.class);
             wms.setCiteCompliant(false);
             getGeoServer().save(wms);
         }
