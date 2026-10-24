@@ -103,6 +103,12 @@ GeoServer Property Reference
      - x
      - x
      - x
+   * - GEOSERVER_REMEMBERME_KEY
+       
+       Shared key that signs remember-me cookies across a cluster. See :ref:`security_webadmin_rememberme`.
+     - x
+     - x
+     - x
    * - org.geoserver.catalog.loadingThreads
        
        Number of threads used to load catalogue (Default 4).
@@ -156,6 +162,36 @@ GeoServer Property Reference
        :doc:`/production/config`, default SAMEORIGIN
      - x
      - x
+     - x
+   * - GEOSERVER_FORCE_FREEMARKER_ESCAPING
+
+       :doc:`/production/config`, default true
+     - x
+     - x
+     - x
+   * - GEOSERVER_FREEMARKER_ALLOW_LIST
+
+       :doc:`/tutorials/GetFeatureInfo/html`
+     - x
+     - x
+     - x
+   * - GEOSERVER_FREEMARKER_BLOCK_LIST
+
+       :doc:`/tutorials/GetFeatureInfo/html`
+     - x
+     - x
+     - x
+   * - GEOSERVER_FREEMARKER_API_EXPOSED
+
+       :doc:`/tutorials/GetFeatureInfo/html`, default false
+     - x
+     - x
+     - x
+   * - GS_FILETYPES_UNRESTRICTED
+
+       If true, do not validate uploaded file type, default false
+     -
+     -
      - x
    * - ows10.exception.xml.responsetype
        
@@ -349,6 +385,12 @@ GeoServer Property Reference
    * - GEOSERVER_ROOT_LOGIN_ENABLED
 
        :ref:`security_root`
+     - x
+     - x
+     - x
+   * - GEOSERVER_JDBC_EXTRA_PARAMETERS
+
+       Extra connection URL parameters accepted for JDBC user/group services, role services and authentication providers. GeoServer accepts only a known list of parameters for each driver. Format is ``driverClass:param1,param2;driverClass2:param3``, for example ``com.ibm.db2.jcc.DB2Driver:currentSchema``. Use it to allow a parameter, or a driver, that is not known. A legacy driver class name, such as ``org.hsqldb.jdbcDriver``, shares the parameters of its current name. Each parameter added this way is passed to the driver unchecked, so add only parameters that cannot read or write files or load classes.
      - x
      - x
      - x
